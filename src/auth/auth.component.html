@@ -1,0 +1,79 @@
+<mat-tab-group>
+    <mat-tab label="Sign up">
+        <mat-card>
+            <mat-card-title>Registration</mat-card-title>
+            <mat-card-content>
+                <div fxLayout="column" fxLayoutAlign="center center">
+                    <div fxLayout="row">
+                        <mat-form-field>
+                            <input matInput placeholder="first name" [(ngModel)]="errorMessageExample1" required>
+                            <mat-error>This field is required</mat-error>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input matInput placeholder="last name" [(ngModel)]="errorMessageExample1" required>
+                            <mat-error>This field is required</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <mat-form-field>
+                        <input matInput placeholder="email" [formControl]="emailFormControl">
+                        <mat-error *ngIf="emailFormControl.hasError('required')">
+                            This field is required
+                        </mat-error>
+                        <mat-error *ngIf="emailFormControl.hasError('pattern')">
+                            Please enter a valid email address
+                        </mat-error>
+                    </mat-form-field>
+                    <div fxFlex="row">
+                        <mat-form-field>
+                            <input matInput placeholder="password" [(ngModel)]="errorMessageExample1" required>
+                            <mat-error>This field is required</mat-error>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input matInput placeholder="confirm password" [(ngModel)]="errorMessageExample1" required>
+                            <mat-error>This field is required</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <button style="margin-top: 20px" mat-raised-button color="primary">Register</button>
+                </div>
+            </mat-card-content>
+            <mat-card-actions fxLayoutAlign="space-around center">
+                <button mat-button>
+                    <mat-icon svgIcon="google"></mat-icon>
+                    Google
+                </button>
+                <button mat-button>
+                    <mat-icon svgIcon="facebook"></mat-icon>
+                    Facebook
+                </button>
+            </mat-card-actions>
+        </mat-card>
+    </mat-tab>
+    <mat-tab label="Log in">
+        <mat-card>
+            <mat-card-content>
+                <div fxLayout="column" fxLayoutAlign="center center">
+                    <mat-form-field>
+                        <input matInput placeholder="username" [(ngModel)]="errorMessageExample1" required>
+                        <mat-error>This field is required</mat-error>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput placeholder="password" [(ngModel)]="errorMessageExample1" required>
+                        <mat-error>This field is required</mat-error>
+                    </mat-form-field>
+                    <button style="margin-top: 20px" mat-raised-button color="primary">Log in</button>
+                    <button style="margin-top: 20px" mat-button color="primary">Forgot Password</button>
+                </div>
+            </mat-card-content>
+            <mat-card-actions fxLayoutAlign="space-around center">
+                <button mat-button>
+                    <mat-icon svgIcon="google"></mat-icon>
+                    Google
+                </button>
+                <button mat-button>
+                    <mat-icon svgIcon="facebook"></mat-icon>
+                    Facebook
+                </button>
+            </mat-card-actions>
+        </mat-card>
+    </mat-tab>
+</mat-tab-group>
