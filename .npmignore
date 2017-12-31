@@ -12,7 +12,6 @@ docs/*
 .idea
 .project
 .settings
-.idea/*
 *.iml
 
 # VS Code
