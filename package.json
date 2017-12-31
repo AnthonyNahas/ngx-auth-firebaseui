@@ -39,7 +39,6 @@
   "engines": {
     "node": ">=6.0.0"
   },
-  ,
   "dependencies": {
     "@angular/animations": "^5.1.2",
     "@angular/cdk": "^5.0.2",
