@@ -33,3 +33,4 @@ Desktop.ini
 src/*
 build/*
 /playground/
+/.playground/
