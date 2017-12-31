@@ -37,7 +37,7 @@
                 </div>
             </mat-card-content>
             <mat-card-actions fxLayoutAlign="space-around center">
-                <button mat-button>
+                <button mat-button (click)="signInWithGoogle()">
                     <mat-icon svgIcon="google"></mat-icon>
                     Google
                 </button>
@@ -61,7 +61,7 @@
                         <mat-error>This field is required</mat-error>
                     </mat-form-field>
                     <button style="margin-top: 20px" mat-raised-button color="primary">Log in</button>
-                    <button style="margin-top: 20px" mat-button color="primary">Forgot Password</button>
+                    <button style="margin-top: 20px" mat-button color="primary">Forgot Password?</button>
                 </div>
             </mat-card-content>
             <mat-card-actions fxLayoutAlign="space-around center">
