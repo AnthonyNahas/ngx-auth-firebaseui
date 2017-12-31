@@ -12,12 +12,13 @@
     "lite": "lite-server",
     "playground:build": "tsc -p playground -w",
     "playground": "concurrently \"npm run build:watch\" \"npm run playground:build\" \"npm run lite\"",
+    "prepublish": "npm run build",
     "tsc": "tsc",
     "test": "tsc && karma start"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/username/repo"
+    "url": "https://github.com/AnthonyNahas/ngx-auth-firebaseui.git"
   },
   "author": {
     "name": "Anthony",
@@ -25,13 +26,28 @@
   },
   "keywords": [
     "angular",
+    "angularfire2",
     "firebase",
-    "firebase ui",
+    "firebaseui",
+    "firebase auth",
     "authentication"
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/username/repo/issues"
+    "url": "https://github.com/AnthonyNahas/ngx-auth-firebaseui/issues"
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  ,
+  "dependencies": {
+    "@angular/animations": "^5.1.2",
+    "@angular/cdk": "^5.0.2",
+    "@angular/flex-layout": "^2.0.0-beta.12",
+    "@angular/forms": "^5.1.2",
+    "@angular/material": "^5.0.2",
+    "angularfire2": "^5.0.0-rc.4",
+    "firebase": "4.8.0"
   },
   "devDependencies": {
     "@angular/common": "^5.0.0",
@@ -72,17 +88,5 @@
     "tslint": "~5.7.0",
     "typescript": "~2.4.2",
     "zone.js": "^0.8.14"
-  },
-  "engines": {
-    "node": ">=6.0.0"
-  },
-  "dependencies": {
-    "@angular/animations": "^5.1.2",
-    "@angular/cdk": "^5.0.2",
-    "@angular/flex-layout": "^2.0.0-beta.12",
-    "@angular/forms": "^5.1.2",
-    "@angular/material": "^5.0.2",
-    "angularfire2": "^5.0.0-rc.4",
-    "firebase": "4.8.0"
   }
 }
