@@ -35,9 +35,9 @@ export class AuthComponent {
         this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider())
             .then((response) => {
                 // This gives you a Google Access Token. You can use it to access the Google API.
-                var token = response.credential.accessToken;
+                let token = response.credential.accessToken;
                 // The signed-in user info.
-                var user = response.user;
+                let user = response.user;
                 // ...
                 console.log(response);
                 this._snackbar.openFromComponent(ResponseSnackbarComponent, {
@@ -45,12 +45,12 @@ export class AuthComponent {
                 });
             }).catch((error) => {
             // Handle Errors here.
-            var errorCode = error.code;
-            var errorMessage = error.message;
+            let errorCode = error.code;
+            let errorMessage = error.message;
             // The email of the user's account used.
-            var email = error.email;
+            let email = error.email;
             // The firebase.auth.AuthCredential type that was used.
-            var credential = error.credential;
+            let credential = error.credential;
             // ...
             console.error(error);
             this._snackbar.open(error.message, 'OK', {
