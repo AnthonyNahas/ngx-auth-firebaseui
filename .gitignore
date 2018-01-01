@@ -33,3 +33,5 @@ dist/*
 # Playground tmp files
 .playground
 /playground/
+/demo-app/node_modules/
+/demo-app/src/firebase_app_config.ts

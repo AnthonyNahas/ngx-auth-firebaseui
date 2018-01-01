@@ -49,6 +49,7 @@
     "firebase": "4.8.0"
   },
   "devDependencies": {
+    "@angular/cli": "^1.6.3",
     "@angular/common": "^5.0.0",
     "@angular/compiler": "^5.0.0",
     "@angular/compiler-cli": "^5.0.0",
