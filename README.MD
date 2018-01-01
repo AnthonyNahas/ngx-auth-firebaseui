@@ -19,7 +19,7 @@ This package is now under development. For every new suggestion i would be thank
 - feedback or message when error occured while signing up/in
 ![ngx-auth-firebaseui](https://firebasestorage.googleapis.com/v0/b/ngx-auth-firebaseui.appspot.com/o/localhost_3000_(Nexus%205X)%20(2).png?alt=media&token=8408d00d-cbe7-43ab-b3b3-37b41314e2b6)
 
-## Installation
+## (1) Installation
 
 To install this library, run:
 
@@ -59,9 +59,10 @@ import { NgxAuthFirebaseUIModule } from 'ngx-auth-firebaseui';
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
 ```
 
-Once your library is imported, you can use its components, directives and pipes in your Angular application:
+Once the library is imported, you can use its components, directives and pipes in your Angular application:
 
 ```xml
 <!-- You can now use the library component in app.component.html -->
@@ -71,6 +72,40 @@ Once your library is imported, you can use its components, directives and pipes 
 <ngx-auth-firebaseui></ngx-auth-firebaseui>
 ```
 
+## (2) Configuration
+todo
+
+## (3) Additional Requirements
+#### With Angular CLI
+- open the file `.angular-cli.json`
+- add the following into the `assets` section
+```
+{
+          "glob": "**/*",
+          "input": "../node_modules/ngx-auth-firebaseui/dist/assets/",
+          "output": "./assets/"
+}
+```
+- after that the required images will be copied to the assets dir and will be available for the app.
+- finally the `assets` section should be in a way similar to that -->
+```angular2html
+"assets": [
+        "assets",
+        "favicon.ico",
+        {
+          "glob": "**/*",
+          "input": "../node_modules/ngx-auth-firebaseui/dist/assets/",
+          "output": "./assets/"
+        }
+      ]
+```
+
+
+#### Without Angular CLI
+copy the assets directory into the root of your project, so that your app can get the required images for the UI.
+This is an example of requesting an image from the library
+`Request URL:http://localhost:4200/assets/google.svg`.
+Please make sur that the images will be hosted in the right place
 ## Development
 
 To generate all `*.js`, `*.d.ts` and `*.metadata.json` files:
