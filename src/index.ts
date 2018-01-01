@@ -1,9 +1,5 @@
 import {NgModule, ModuleWithProviders, InjectionToken} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {SampleComponent} from './sample.component';
-import {SampleDirective} from './sample.directive';
-import {SamplePipe} from './sample.pipe';
-import {SampleService} from './sample.service';
 import {AuthComponent} from './auth/auth.component';
 import {
     MatButtonModule, MatCardModule, MatChipsModule, MatIconModule, MatInputModule, MatSnackBarModule,
@@ -18,10 +14,8 @@ import {AngularFireModule, FirebaseAppConfig, FirebaseAppConfigToken, FirebaseAp
 import {AngularFireAuthModule} from 'angularfire2/auth';
 import {ResponseSnackbarComponent} from './auth/response/response.snackbar.component';
 
-export * from './sample.component';
-export * from './sample.directive';
-export * from './sample.pipe';
-export * from './sample.service';
+export * from './auth/auth.component'
+
 
 @NgModule({
     imports: [
@@ -44,17 +38,11 @@ export * from './sample.service';
         [
             AuthComponent,
             ResponseSnackbarComponent,
-            SampleComponent,
-            SampleDirective,
-            SamplePipe
         ],
     exports:
         [
             AuthComponent,
             ResponseSnackbarComponent,
-            SampleComponent,
-            SampleDirective,
-            SamplePipe
         ],
     entryComponents:
         [
@@ -69,7 +57,6 @@ export class NgxAuthFirebaseUIModule extends AngularFireModule {
             ngModule: NgxAuthFirebaseUIModule,
             providers:
                 [
-                    SampleService,
                     {
                         provide: FirebaseAppConfigToken,
                         useValue: configFactory
@@ -86,15 +73,3 @@ export class NgxAuthFirebaseUIModule extends AngularFireModule {
         }
     }
 }
-
-// export class Angularfire2WorkaroundConfigModule {
-//     static initializeApp(configFactory: () => FirebaseAppConfig, appNameFactory: () => string) {
-//         return {
-//             ngModule: AngularFireModule,
-//             providers: [
-//                 {provide: FirebaseAppConfigToken, useFactory: configFactory},
-//                 {provide: FirebaseAppName, useFactory: appNameFactory}
-//             ]
-//         };
-//     }
-// }
