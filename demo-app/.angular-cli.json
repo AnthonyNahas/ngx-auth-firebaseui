@@ -9,7 +9,12 @@
       "outDir": "dist",
       "assets": [
         "assets",
-        "favicon.ico"
+        "favicon.ico",
+        {
+          "glob": "**/*",
+          "input": "../node_modules/ngx-auth-firebaseui/dist/assets/",
+          "output": "./assets/"
+        }
       ],
       "index": "index.html",
       "main": "main.ts",
