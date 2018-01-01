@@ -75,7 +75,12 @@ Once the library is imported, you can use its components, directives and pipes i
 ## (2) Configuration
 todo
 
-## (3) Additional Requirements
+## (3) Additional Requirements - material (Include a theme)
+#### With Angular CLI
+Please take a look of the official documentation of **angular material themes** [here](https://material.angular.io/guide/getting-started#step-4-include-a-theme)
+#### Without Angular CLI
+
+## (4) Additional Requirements - assets
 #### With Angular CLI
 - open the file `.angular-cli.json`
 - add the following into the `assets` section
@@ -106,6 +111,27 @@ copy the assets directory into the root of your project, so that your app can ge
 This is an example of requesting an image from the library
 `Request URL:http://localhost:4200/assets/google.svg`.
 Please make sur that the images will be hosted in the right place
+
+## Run Demo App
+- [clone this repo](https://github.com/AnthonyNahas/ngx-auth-firebaseui.git) by running
+```bash
+$ git clone https://github.com/AnthonyNahas/ngx-auth-firebaseui.git
+```
+- navigate to the demo app directory
+```bash
+$ cd demo-app
+```
+- run/start/serve the app
+```bash
+$ npm run start
+```
+or
+```bash
+$ ng serve --open
+```
+- the app is now hosted by `http://localhost:4200/` 
+
+
 ## Development
 
 To generate all `*.js`, `*.d.ts` and `*.metadata.json` files:
