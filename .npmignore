@@ -33,4 +33,4 @@ src/*
 build/*
 /playground/
 /.playground/
-/demo-app/src/firebase_app_config.ts
+/demo-app/

@@ -4,7 +4,7 @@ import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
 import {YourFirebaseAppConfig} from '../firebase_app_config';
-import {NgxAuthFirebaseUIModule} from '../../../src';
+import {NgxAuthFirebaseUIModule} from 'ngx-auth-firebaseui/dist';
 
 
 @NgModule({
