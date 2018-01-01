@@ -1,5 +1,6 @@
 /* eslint-disable */
 const gulp = require('gulp'),
+    fs = require('fs'),
     path = require('path'),
     ngc = require('@angular/compiler-cli/src/main').main,
     rollup = require('gulp-rollup'),
@@ -11,8 +12,10 @@ const gulp = require('gulp'),
     gif = require('imagemin-gifsicle'),
     jpg = require('imagemin-jpegoptim'),
     png = require('imagemin-optipng'),
-    svg = require('imagemin-svgo');
+    svg = require('imagemin-svgo'),
+    shell = require('gulp-shell');
 
+let version = '0.0.0';
 const rootFolder = path.join(__dirname);
 const srcFolder = path.join(rootFolder, 'src');
 const tmpFolder = path.join(rootFolder, '.tmp');
@@ -173,7 +176,7 @@ gulp.task('copy:readme', function () {
  * 9.5 copy the asset directory to dist
  */
 gulp.task('copy:assets', () => {
-    gulp.src(['./src/assets/**/*'])
+    gulp.src([`${srcFolder}/assets/**/*`])
         .pipe(imagemin([
             jpg({max: 50}),
             png({optimizationLevel: 3}),
@@ -201,8 +204,23 @@ gulp.task('clean:build', function () {
 });
 
 /**
- * 12. Update ngx-auth-firebaseui's pack (@demoapp too)
+ * 12. Fetch package's version
  */
+gulp.task('fetch:version', function () {
+    const json = JSON.parse(fs.readFileSync('./package.json'));
+    version = json.version;
+    console.log(`ngx-auth-firebaseui@${version}`);
+    return version;
+});
+
+/**
+ * 13. Update ngx-auth-firebaseui's pack (@demoapp too)
+ */
+gulp.task('update:ngx-auth-firebaseui', shell.task([
+    'npm pack',
+    'cd demo-app',
+    `echo ${version}`
+]));
 
 gulp.task('compile', function () {
     runSequence(

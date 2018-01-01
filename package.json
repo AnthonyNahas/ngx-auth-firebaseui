@@ -39,6 +39,13 @@
   "engines": {
     "node": ">=6.0.0"
   },
+  "files": [
+    "dist"
+  ],
+  "main": "dist/ngx-auth-firebaseui.umd.js",
+  "module": "dist/ngx-auth-firebaseui.js",
+  "jsnext:main": "dist/ngx-auth-firebaseui.js",
+  "typings": "dist/ngx-auth-firebaseui.d.ts",
   "dependencies": {
     "@angular/animations": "^5.1.2",
     "@angular/cdk": "^5.0.2",
@@ -95,7 +102,9 @@
     "typescript": "~2.4.2",
     "zone.js": "^0.8.14"
   },
-  "files": [
-    "dist"
-  ]
+  "peerDependencies": {
+    "@angular/core": "^4.0.0",
+    "rxjs": "^5.1.0",
+    "zone.js": "^0.8.4"
+  }
 }
