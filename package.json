@@ -1,6 +1,6 @@
 {
   "name": "ngx-auth-firebaseui",
-  "version": "0.1.3",
+  "version": "0.1.3-alpha",
   "scripts": {
     "build": "gulp build",
     "build:watch": "gulp",
