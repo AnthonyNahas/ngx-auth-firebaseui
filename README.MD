@@ -1,5 +1,43 @@
 # ngx-auth-firebaseui
 
+Angular UI component for firebase authentication. 
+This library is an angular module (including angular components) that allow to authenticate
+your users with your firebase project. NgxAuthFirebseUI is compatible with
+[angular material](https://material.angular.io/) and [angular flexLayout](https://github.com/angular/flex-layout).
+If you need me to support [bootstrap](https://getbootstrap.com/) please let me know and i will try to do it. 
+I am aiming to support server side rendering too (angular universal). For that to succeed, i need more feedback
+from the angular and firebase community.
+
+Supported Provider:
+- email and password (traditional)
+- google
+- facebook (not done) 
+- twitter (todo)
+- github (todo)
+- phone number (todo) 
+
+Supported Processes and Actions:
+- sign up (in dev)
+- sign in (in dev)
+
+Why to use ngx-auth-firebaseui ?
+- it uses a responsive web design UX/UI from google material concepts and components (supporting desktop and mobile view).
+- easy to use with an angular based project (project that is created with [angular-cli](https://cli.angular.io/))
+- optional configuration
+- reusable components for every project that need an authentication with a firebase project/app.
+
+Requirements:
+- angular material theme (described below)
+- if you need a built in theme --> please let me know
+
+## Demo [ngx-auth-firebaseui demo pwa](https://ngx-auth-firebaseui.firebaseapp.com/)
+- Try it out 
+```js
+if(issues || feedback || you_need_more_features){
+    // send me an email -> to: anthony.na@hotmail.de
+}
+```
+
 ### Note:
 This package is now under development. For every new suggestion i would be thankful.
 
@@ -112,7 +150,7 @@ This is an example of requesting an image from the library
 `Request URL:http://localhost:4200/assets/google.svg`.
 Please make sur that the images will be hosted in the right place
 
-## Run Demo App
+## Run Demo App Locally
 - [clone this repo](https://github.com/AnthonyNahas/ngx-auth-firebaseui.git) by running
 ```bash
 $ git clone https://github.com/AnthonyNahas/ngx-auth-firebaseui.git
@@ -120,6 +158,18 @@ $ git clone https://github.com/AnthonyNahas/ngx-auth-firebaseui.git
 - navigate to the demo app directory
 ```bash
 $ cd demo-app
+```
+- fill the file with the name `src/firebase_app_config.ts` with the right properties of your firebase app
+```angular2html
+export const YourFirebaseAppConfig = {
+  apiKey: 'your-firebase-apiKey',
+  authDomain: 'your-firebase-authDomain',
+  databaseURL: 'your-firebase-databaseURL',
+  projectId: 'your-firebase-projectId',
+  storageBucket: 'your-firebase-storageBucket',
+  messagingSenderId: 'your-firebase-messagingSenderId'
+};
+
 ```
 - run/start/serve the app
 ```bash
@@ -145,6 +195,9 @@ To lint all `*.ts` files:
 ```bash
 $ npm run lint
 ```
+
+## Support
+Drop an email to: [anthony.na@hotmail.de](mailto:anthony.na@hotmail.de) and i will help you!
 
 ## License
 
