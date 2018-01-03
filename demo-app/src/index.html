@@ -2,6 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="msapplication-config" content="./assets/images/icons/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/icons/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/icons/favicon-32x32.png">
+  <link rel="manifest" href="./assets/images/icons/manifest.json">
+  <link rel="shortcut icon" href="./assets/images/icons/favicon.ico">
+
   <title>DemoApp</title>
   <base href="/">
 
@@ -9,6 +19,17 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
-  <app-root></app-root>
+<app-root></app-root>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js')
+      .then((registration) => {
+        console.log('SW registered');
+      })
+      .catch((err) => {
+        console.log('SW error', err);
+      });
+  }
+</script>
 </body>
 </html>

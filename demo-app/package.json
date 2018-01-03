@@ -5,7 +5,9 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start:prod": " ng serve --prod --aot=false --build-optimizer=false --port 8080",
     "build": "ng build --prod",
+    "build:prod": "ng build --prod && sw-precache --root=dist --config=precache-config.js",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
