@@ -1,11 +1,13 @@
-import {Component} from '@angular/core';
+import {Component, Output} from '@angular/core';
 import {AbstractControl, FormControl, Validators} from '@angular/forms';
 import {DomSanitizer} from '@angular/platform-browser';
 import {MatIconRegistry, MatSnackBar} from '@angular/material';
 import {AngularFireAuth} from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 import {ResponseSnackbarComponent} from './response/response.snackbar.component';
-import {SignUpProcess, SignInProcess} from '../classes';
+import {SignInProcess} from '../classes/SignInProcess';
+import {SignUpProcess} from '../classes/SignUpProcess';
+
 
 const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
@@ -16,6 +18,12 @@ const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA
 })
 
 export class AuthComponent {
+
+    @Output()
+    onSuccess;
+
+    @Output()
+    onError;
 
     emailFormControl: AbstractControl = new FormControl('', [Validators.required, Validators.pattern(EMAIL_REGEX)]);
 
@@ -30,6 +38,15 @@ export class AuthComponent {
                 _sanitizer.bypassSecurityTrustResourceUrl('/assets/google.svg'))
             .addSvgIcon('facebook',
                 _sanitizer.bypassSecurityTrustResourceUrl('/assets/facebook.svg'))
+            .addSvgIcon('twitter',
+                _sanitizer.bypassSecurityTrustResourceUrl('/assets/twitter.svg'))
+            .addSvgIcon('github',
+                _sanitizer.bypassSecurityTrustResourceUrl('/assets/github.svg'))
+            .addSvgIcon('phone',
+                _sanitizer.bypassSecurityTrustResourceUrl('/assets/phone.svg'))
+
+        this.onSuccess = signInProcess.onSuccessEmitter;
+        this.onError = signInProcess.onErrorEmitter;
     }
 
     public submit() {

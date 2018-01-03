@@ -2,9 +2,10 @@ import {ISignUpProcess} from '../interfaces';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {Injectable} from '@angular/core';
 import {MatSnackBar} from '@angular/material';
+import {SignInProcess} from './SignInProcess';
 
 @Injectable()
-export class SignUpProcess implements ISignUpProcess {
+export class SignUpProcess extends SignInProcess implements ISignUpProcess {
 
     firstName: string;
     lastName: string;
@@ -13,7 +14,8 @@ export class SignUpProcess implements ISignUpProcess {
     passwordConfirmation: string;
 
     constructor(public afAuth: AngularFireAuth,
-                private _snackbar: MatSnackBar) {
+                public snackbar: MatSnackBar) {
+        super(afAuth, snackbar);
     }
 
     /**
@@ -24,10 +26,12 @@ export class SignUpProcess implements ISignUpProcess {
         try {
             const user = await this.afAuth.auth.createUserWithEmailAndPassword(this.email, this.password);
             console.log(user);
+            this.onSuccessEmitter.next(user);
         }
         catch (err) {
             console.error(err);
-            this._snackbar.open(err.message, 'OK', {duration: 5000});
+            this.snackbar.open(err.message, 'OK', {duration: 5000});
+            this.onErrorEmitter.next(err);
         }
     }
 
