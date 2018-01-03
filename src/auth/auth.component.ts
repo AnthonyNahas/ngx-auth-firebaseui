@@ -5,6 +5,7 @@ import {MatIconRegistry, MatSnackBar} from '@angular/material';
 import {AngularFireAuth} from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 import {ResponseSnackbarComponent} from './response/response.snackbar.component';
+import {SignUpProcess, SignInProcess} from '../classes';
 
 const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
@@ -16,10 +17,11 @@ const EMAIL_REGEX = /^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA
 
 export class AuthComponent {
 
-    errorMessageExample1;
     emailFormControl: AbstractControl = new FormControl('', [Validators.required, Validators.pattern(EMAIL_REGEX)]);
 
     constructor(public afAuth: AngularFireAuth,
+                public signUpProcess: SignUpProcess,
+                public signInProcess: SignInProcess,
                 private _iconRegistry: MatIconRegistry,
                 private _sanitizer: DomSanitizer,
                 private _snackbar: MatSnackBar) {
@@ -28,6 +30,10 @@ export class AuthComponent {
                 _sanitizer.bypassSecurityTrustResourceUrl('/assets/google.svg'))
             .addSvgIcon('facebook',
                 _sanitizer.bypassSecurityTrustResourceUrl('/assets/facebook.svg'))
+    }
+
+    public submit() {
+        return this.signUpProcess.signUp();
     }
 
     public async signInWithGoogle() {

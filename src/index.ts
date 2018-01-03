@@ -13,6 +13,8 @@ import {IAuthFirebaseUIConfig} from './interfaces/config.interface';
 import {AngularFireModule, FirebaseAppConfig, FirebaseAppConfigToken, FirebaseAppName} from 'angularfire2';
 import {AngularFireAuthModule} from 'angularfire2/auth';
 import {ResponseSnackbarComponent} from './auth/response/response.snackbar.component';
+import {SignUpProcess} from './classes/SignUpProcess';
+import {SignInProcess} from './classes/SignInProcess';
 
 export * from './auth/auth.component'
 
@@ -47,7 +49,12 @@ export * from './auth/auth.component'
     entryComponents:
         [
             ResponseSnackbarComponent
-        ]
+        ],
+    providers:
+        [
+            SignUpProcess,
+            SignInProcess
+        ],
 })
 
 
