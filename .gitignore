@@ -35,6 +35,7 @@ dist/*
 /playground/
 
 # Demp App
+/demo-app/dist/
 /demo-app/node_modules/
 /demo-app/src/firebase_app_config.ts
 /demo-app/firebase-debug.log
