@@ -15,8 +15,11 @@ import {AngularFireAuthModule} from 'angularfire2/auth';
 import {ResponseSnackbarComponent} from './auth/response/response.snackbar.component';
 import {SignUpProcess} from './classes/SignUpProcess';
 import {SignInProcess} from './classes/SignInProcess';
+import {AuthProvidersComponent} from './auth/providers/auth.providers.component';
 
-export * from './auth/auth.component'
+// export * from './classes';
+export * from './interfaces';
+export * from './auth/auth.component';
 
 
 @NgModule({
@@ -39,11 +42,13 @@ export * from './auth/auth.component'
     declarations:
         [
             AuthComponent,
+            AuthProvidersComponent,
             ResponseSnackbarComponent,
         ],
     exports:
         [
             AuthComponent,
+            AuthProvidersComponent,
             ResponseSnackbarComponent,
         ],
     entryComponents:
