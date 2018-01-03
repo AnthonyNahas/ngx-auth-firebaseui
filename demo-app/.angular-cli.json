@@ -9,6 +9,7 @@
       "outDir": "dist",
       "assets": [
         "assets",
+        "assets/images/icons/manifest.json",
         "favicon.ico",
         {
           "glob": "**/*",
