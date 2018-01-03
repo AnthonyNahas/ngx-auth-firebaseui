@@ -1,6 +1,6 @@
 {
   "name": "ngx-auth-firebaseui",
-  "version": "0.1.2",
+  "version": "0.2.0-alpha",
   "repository": {
     "type": "git",
     "url": "https://github.com/AnthonyNahas/ngx-auth-firebaseui.git"
