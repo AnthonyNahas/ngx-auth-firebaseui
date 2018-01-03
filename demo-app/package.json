@@ -8,7 +8,7 @@
     "start:prod": "ng serve --prod --aot=false --build-optimizer=false --port 8080",
     "start:prod:firebase": "npm run build:prod && firebase serve",
     "build": "ng build --prod",
-    "build:prod": "ng build --prod && sw-precache --root=dist --config=precache-config.js",
+    "build:prod": "ng build --prod --aot=false --build-optimizer=false && sw-precache --root=dist --config=precache-config.js",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
