@@ -5,7 +5,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "start:prod": " ng serve --prod --aot=false --build-optimizer=false --port 8080",
+    "start:prod": "ng serve --prod --aot=false --build-optimizer=false --port 8080",
+    "start:prod:firebase": "npm run build:prod && firebase serve",
     "build": "ng build --prod",
     "build:prod": "ng build --prod && sw-precache --root=dist --config=precache-config.js",
     "test": "ng test",
