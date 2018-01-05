@@ -5,6 +5,8 @@ import {NgModule} from '@angular/core';
 import {AppComponent} from './app.component';
 import {YourFirebaseAppConfig} from '../firebase_app_config';
 import {NgxAuthFirebaseUIModule} from 'ngx-auth-firebaseui';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatButtonModule, MatCardModule, MatIconModule, MatToolbarModule } from '@angular/material';
 
 
 @NgModule({
@@ -13,7 +15,12 @@ import {NgxAuthFirebaseUIModule} from 'ngx-auth-firebaseui';
   ],
   imports: [
     BrowserModule,
-    NgxAuthFirebaseUIModule.forRoot(YourFirebaseAppConfig)
+    NgxAuthFirebaseUIModule.forRoot(YourFirebaseAppConfig),
+    FlexLayoutModule,
+    MatToolbarModule,
+    MatCardModule,
+    MatButtonModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

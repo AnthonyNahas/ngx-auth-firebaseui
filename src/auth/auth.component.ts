@@ -43,7 +43,7 @@ export class AuthComponent {
             .addSvgIcon('github',
                 _sanitizer.bypassSecurityTrustResourceUrl('/assets/github.svg'))
             .addSvgIcon('phone',
-                _sanitizer.bypassSecurityTrustResourceUrl('/assets/phone.svg'))
+                _sanitizer.bypassSecurityTrustResourceUrl('/assets/phone.svg'));
 
         this.onSuccess = signInProcess.onSuccessEmitter;
         this.onError = signInProcess.onErrorEmitter;
