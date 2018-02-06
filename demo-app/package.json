@@ -9,6 +9,7 @@
     "start:prod:firebase": "npm run build:prod && firebase serve",
     "build": "ng build --prod",
     "build:prod": "ng build --prod --aot=false --build-optimizer=false && sw-precache --root=dist --config=precache-config.js",
+    "firebase:deploy": "firebase deploy",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -28,8 +29,6 @@
     "@angular/platform-browser-dynamic": "^5.2.3",
     "@angular/platform-server": "^5.2.3",
     "@angular/router": "^5.2.3",
-    "@nguniversal/express-engine": "^5.0.0-beta.5",
-    "@nguniversal/module-map-ngfactory-loader": "^5.0.0-beta.5",
     "angularfire2": "^5.0.0-rc.5-next",
     "core-js": "^2.4.1",
     "firebase": "4.9.1",
