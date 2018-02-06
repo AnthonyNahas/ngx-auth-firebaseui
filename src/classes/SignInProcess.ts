@@ -1,12 +1,12 @@
 import {EventEmitter, Injectable} from '@angular/core';
 import {MatSnackBar} from '@angular/material';
-import {ISignInProcess} from '../interfaces';
 import {AngularFireAuth} from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 import GoogleAuthProvider = firebase.auth.GoogleAuthProvider;
 import FacebookAuthProvider = firebase.auth.FacebookAuthProvider;
 import TwitterAuthProvider = firebase.auth.TwitterAuthProvider;
 import GithubAuthProvider = firebase.auth.GithubAuthProvider;
+import {ISignInProcess} from '../';
 
 @Injectable()
 export class SignInProcess implements ISignInProcess {

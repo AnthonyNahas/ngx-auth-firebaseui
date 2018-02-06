@@ -1,8 +1,8 @@
-import {ISignUpProcess} from '../interfaces';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {Injectable} from '@angular/core';
 import {MatSnackBar} from '@angular/material';
 import {SignInProcess} from './SignInProcess';
+import {ISignUpProcess} from '../';
 
 @Injectable()
 export class SignUpProcess extends SignInProcess implements ISignUpProcess {

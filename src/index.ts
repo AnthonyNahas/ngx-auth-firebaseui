@@ -18,7 +18,8 @@ import {SignInProcess} from './classes/SignInProcess';
 import {AuthProvidersComponent} from './auth/providers/auth.providers.component';
 
 // export * from './classes';
-export * from './interfaces';
+// todo export all interfaces within the ngx-auth-firebaseui module
+export * from './interfaces/main.interface';
 export * from './auth/auth.component';
 
 
