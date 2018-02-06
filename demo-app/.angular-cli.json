@@ -25,7 +25,9 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "styles.css"
+        "styles.css",
+        "ngx-auth-firebaseui_theme.scss",
+        "../node_modules/material-design-icons/iconfont/material-icons.css"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",
