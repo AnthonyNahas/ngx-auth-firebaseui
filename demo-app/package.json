@@ -33,7 +33,7 @@
     "core-js": "^2.4.1",
     "firebase": "4.9.1",
     "material-design-icons": "^3.0.1",
-    "ngx-auth-firebaseui": "file:../ngx-auth-firebaseui-0.2.1-alpha.tgz",
+    "ngx-auth-firebaseui": "^0.2.1-alpha",
     "rxjs": "^5.5.6",
     "zone.js": "^0.8.14"
   },
