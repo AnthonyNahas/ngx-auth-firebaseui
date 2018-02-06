@@ -60,6 +60,23 @@ This package is now under development. For every new suggestion i would be thank
 - feedback or message when error occured while signing up/in
 ![ngx-auth-firebaseui](https://firebasestorage.googleapis.com/v0/b/ngx-auth-firebaseui.appspot.com/o/localhost_3000_(Nexus%205X)%20(2).png?alt=media&token=8408d00d-cbe7-43ab-b3b3-37b41314e2b6)
 
+## (0) Please make sure that peerDependencies are installed
+
+```json
+"peerDependencies": {
+    "@angular/core": "^5.x",
+    "@angular/animations": "^5.x",
+    "@angular/cdk": "^5.x",
+    "@angular/flex-layout": "^2.0.0-beta.12",
+    "@angular/forms": "^5.x",
+    "@angular/material": "^5.x",
+    "angularfire2": "^5.0.0-rc.5-next",
+    "firebase": ">= 4.9.1 <= 4.8.0",
+    "rxjs": "^5.1.0",
+    "zone.js": "^0.8.4"
+  }
+```
+
 ## (1) Installation
 
 To install this library, run:
