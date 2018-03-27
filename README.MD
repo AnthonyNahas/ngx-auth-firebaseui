@@ -1,10 +1,24 @@
 # ngx-auth-firebaseui
 
-Angular UI component for firebase authentication. 
+[![npm version](https://badge.fury.io/js/ngx-auth-firebaseui.svg)](https://badge.fury.io/js/ngx-auth-firebaseui)
+[![CircleCI branch](https://img.shields.io/circleci/project/github/AnthonyNahas/ngx-auth-firebaseui/master.svg?label=circleci)](https://circleci.com/gh/AnthonyNahas/ngx-auth-firebaseui)
+[![npm](https://img.shields.io/npm/dt/ngx-auth-firebaseui.svg?style=flat-square)](https://www.npmjs.com/package/ngx-auth-firebaseui)
+[![Github All Releases](https://img.shields.io/github/downloads/anthonynahas/ngx-auth-firebaseui/total.svg)](https://github.com/AnthonyNahas/ngx-auth-firebaseui)
+[![npm](https://img.shields.io/npm/v/ngx-auth-firebaseui.svg)](https://www.npmjs.com/package/ngx-auth-firebaseui)[![David](https://img.shields.io/david/AnthonyNahas/ngx-auth-firebaseui.svg?style=flat-square)](https://www.npmjs.com/package/ngx-auth-firebaseui)
+[![node](https://img.shields.io/node/v/ngx-auth-firebaseui.svg)](https://www.npmjs.com/package/ngx-auth-firebaseui)
+[![npm](https://img.shields.io/badge/demo-online-ed1c46.svg)](https://ngx-auth-firebaseui.firebaseapp.com)
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square)](https://github.com/AnthonyNahas/ngx-auth-firebaseui/blob/master/LICENSE)
+[![GitHub forks](https://img.shields.io/github/forks/anthonynahas/ngx-auth-firebaseui.svg?style=social&label=Fork)](https://github.com/AnthonyNahas/ngx-auth-firebaseui/fork)
+[![GitHub stars](https://img.shields.io/github/stars/anthonynahas/ngx-auth-firebaseui.svg?style=social&label=Star)](https://github.com/AnthonyNahas/ngx-auth-firebaseui)
+[![GitHub followers](https://img.shields.io/github/followers/anthonynahas.svg?style=social&label=Follow)](https://github.com/AnthonyNahas/ngx-auth-firebaseui)
+[![Twitter URL](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://github.com/AnthonyNahas)
+[![Twitter Follow](https://img.shields.io/twitter/follow/ngAnthonyy.svg?style=social&label=Follow)](https://twitter.com/ngAnthonyy)
+
+Angular UI component for [firebase](https://firebase.google.com/docs/auth/web/firebaseui) authentication.
 This library is an angular module (including angular components) that allow to authenticate
 your users with your firebase project. NgxAuthFirebseUI is compatible with
 [angular material](https://material.angular.io/) and [angular flexLayout](https://github.com/angular/flex-layout).
-If you need me to support [bootstrap](https://getbootstrap.com/) please let me know and i will try to do it. 
+If you need me to support [bootstrap](https://getbootstrap.com/) please let me know and i will try to do it.
 I am aiming to support server side rendering too (angular universal). For that to succeed, i need more feedback
 from the angular and firebase community.
 
@@ -14,7 +28,7 @@ Supported Provider:
 - facebook
 - twitter
 - github
-- phone number (todo) 
+- phone number (todo)
 
 Supported Processes and Actions:
 - sign up (in dev)
@@ -25,7 +39,7 @@ Why to use ngx-auth-firebaseui ?
 - easy to use with an angular based project (project that is created with [angular-cli](https://cli.angular.io/))
 - optional configuration
 - reusable components for every project that need an authentication with a firebase project/app.
-- built in feedback mechanism in form of a [snackbar](https://material.angular.io/components/snack-bar/overview) when an error occurred. 
+- built in feedback mechanism in form of a [snackbar](https://material.angular.io/components/snack-bar/overview) when an error occurred.
 Requirements:
 - angular material theme (described below)
 - if you need a built in theme --> please let me know
@@ -34,7 +48,7 @@ like facebook, twitter, github... (todo)
 - Forgot Password as feature (todo)
 
 ## Demo [ngx-auth-firebaseui demo pwa](https://ngx-auth-firebaseui.firebaseapp.com/)
-- Try it out 
+- Try it out
 ```js
 if(issues || feedback || you_need_more_features){
     // send me an email -> to: anthony.na@hotmail.de
@@ -52,7 +66,7 @@ This package is now under development. For every new suggestion i would be thank
 
 
 
-## Screenshots - Mobile Browser 
+## Screenshots - Mobile Browser
 - Sign up
 ![ngx-auth-firebaseui](https://firebasestorage.googleapis.com/v0/b/ngx-auth-firebaseui.appspot.com/o/Screenshot%202018-01-03%2023.04.24.png?alt=media&token=94a6c855-f19a-42f5-9291-5810277e78d5)
 - sign in
@@ -226,7 +240,7 @@ or
 ```bash
 $ ng serve --open
 ```
-- the app is now hosted by `http://localhost:4200/` 
+- the app is now hosted by `http://localhost:4200/`
 
 
 ## Development
