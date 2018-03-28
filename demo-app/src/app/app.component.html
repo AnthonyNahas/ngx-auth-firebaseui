@@ -1,20 +1,34 @@
 <!--The content below is only a placeholder and can be replaced.-->
 
-<div class="demo-toolbar">
-  <p>
-    <mat-toolbar>
-      <mat-icon class="demo-toolbar-icon">menu</mat-icon>
-      <span>Default Toolbar</span>
+<div fxLayout="column">
+  <div class="demo-toolbar">
+    <p>
+      <mat-toolbar color="primary">
+        <mat-icon class="demo-toolbar-icon">menu</mat-icon>
+        <span>Demo App</span>
 
-      <span class="demo-fill-remaining"></span>
+        <span class="demo-fill-remaining"></span>
 
-      <!--<mat-icon>code</mat-icon>-->
-    </mat-toolbar>
-  </p>
-</div>
-<div style="text-align:center">
-  <img width="300" alt="Angular Logo"
-       src="../assets/images/logo/ngx-auth-firebaseui-logo.png">
-  <ngx-auth-firebaseui (onSuccess)="printUser($event)" (onError)="printError($event)"></ngx-auth-firebaseui>
+        <!--<mat-icon>code</mat-icon>-->
+      </mat-toolbar>
+    </p>
+  </div>
+  <div style="text-align:center">
+    <img style="width: 100px; height: 150px" alt="Ngx-auth-firebaseui Logo"
+         src="../assets/images/logo/ngx-auth-firebaseui-logo.png">
+  </div>
+
+  <div style="margin: 2rem" fxFlex="50" fxLayout="row" fxFlexAlign="center">
+    <mat-card>
+      <mat-card-title>
+        ngx-auth-firebaseui
+      </mat-card-title>
+      <mat-card-content>
+        <ngx-auth-firebaseui (onSuccess)="printUser($event)"
+                             (onError)="printError($event)">
+        </ngx-auth-firebaseui>
+      </mat-card-content>
+    </mat-card>
+  </div>
 </div>
 

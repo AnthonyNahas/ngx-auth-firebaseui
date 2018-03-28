@@ -1,12 +1,11 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-
-
 import {AppComponent} from './app.component';
 import {YourFirebaseAppConfig} from '../firebase_app_config';
 import {NgxAuthFirebaseUIModule} from 'ngx-auth-firebaseui';
-import { FlexLayoutModule } from '@angular/flex-layout';
-import { MatButtonModule, MatCardModule, MatIconModule, MatToolbarModule } from '@angular/material';
+import {FlexLayoutModule} from '@angular/flex-layout';
+import {MatButtonModule, MatCardModule, MatIconModule, MatToolbarModule} from '@angular/material';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -15,6 +14,7 @@ import { MatButtonModule, MatCardModule, MatIconModule, MatToolbarModule } from 
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     NgxAuthFirebaseUIModule.forRoot(YourFirebaseAppConfig),
     FlexLayoutModule,
     MatToolbarModule,
