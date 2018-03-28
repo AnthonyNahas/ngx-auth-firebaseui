@@ -20,10 +20,10 @@
                                required>
                         <mat-icon matSuffix [color]="color">email</mat-icon>
                         <mat-error *ngIf="resetPasswordEmailFormControl.hasError('required')">
-                            E-Mail ist erforderlich um das Passwort zurückzusetzen!
+                            E-mail is required to reset the password!
                         </mat-error>
                         <mat-error *ngIf="resetPasswordEmailFormControl.hasError('pattern')">
-                            Bitte geben Sie eine gültige E-Mail-Adresse ein
+                            Please enter a valid e-mail address
                         </mat-error>
                     </mat-form-field>
                 </mat-card-content>
@@ -32,11 +32,11 @@
                             type="submit"
                             [color]="color"
                             [disabled]="passReset">
-                        Zurücksetzen
+                        Reset
                     </button>
                 </mat-card-actions>
                 <mat-card-footer *ngIf="passReset" fxLayoutAlign="center">
-                    <p>Zurücksetzen angefordert. Überprüfen Sie Ihre E-Mail-Anweisungen.</p>
+                    <p>Reset requested. Check your e-mail instructions.</p>
                 </mat-card-footer>
             </mat-card>
         </form>
@@ -56,10 +56,10 @@
                                    required>
                             <mat-icon matSuffix [color]="color">email</mat-icon>
                             <mat-error *ngIf="signInEmailFormControl.hasError('required')">
-                                E-Mail ist erforderlich
+                                E-mail is required
                             </mat-error>
                             <mat-error *ngIf="signInEmailFormControl.hasError('pattern')">
-                                Bitte geben Sie eine gültige E-Mail-Adresse ein
+                                Please enter a valid e-mail address
                             </mat-error>
                         </mat-form-field>
                         <mat-form-field>
@@ -75,20 +75,20 @@
                                 {{signInFormGroup.value.password.length}} / 25
                             </mat-hint>
                             <mat-error *ngIf="sigInPasswordFormControl.hasError('required')">
-                                Bitte das Passwort nicht vergessen
+                                Please do not forget the password
                             </mat-error>
                             <mat-error *ngIf="sigInPasswordFormControl.hasError('minlength')">
-                                Das Passwort muss mindestens 6 Zeichen lang sein.
+                                The password must be at least 6 characters long.
                             </mat-error>
                             <mat-error *ngIf="sigInPasswordFormControl.hasError('maxlength')">
-                                Das Passwort darf nicht länger als 25 Zeichen sein.
+                                The password must not exceed 25 characters
                             </mat-error>
                         </mat-form-field>
                         <button mat-raised-button
                                 type="submit"
                                 class="space-top"
                                 [color]="color">
-                            Anmelden
+                            Log In
                         </button>
                     </div>
                 </form>
@@ -97,7 +97,7 @@
                             class="space-top"
                             [color]="color"
                             (click)="passwordResetWished = true">
-                        Passwort vergessen?
+                        Forgot Password?
                     </button>
                 </div>
             </mat-card-content>
@@ -125,13 +125,13 @@
                                     {{signUpFormGroup.value.name.length}} / 25
                                 </mat-hint>
                                 <mat-error *ngIf="sigUpNameFormControl.hasError('required')">
-                                    E-Mail ist erforderlich
+                                    E-mail is required
                                 </mat-error>
                                 <mat-error *ngIf="sigUpPasswordFormControl.hasError('minlength')">
-                                    Der Name ist zu kurz!
+                                    The name is too short!
                                 </mat-error>
                                 <mat-error *ngIf="sigUpPasswordFormControl.hasError('maxlength')">
-                                    Der Name ist zu lang!
+                                    The name is too long!
                                 </mat-error>
                             </mat-form-field>
 
@@ -141,10 +141,10 @@
                                        [formControl]="sigUpEmailFormControl">
                                 <mat-icon matSuffix [color]="color">email</mat-icon>
                                 <mat-error *ngIf="sigUpEmailFormControl.hasError('required')">
-                                    E-Mail ist erforderlich
+                                    E-mail is required
                                 </mat-error>
                                 <mat-error *ngIf="sigUpEmailFormControl.hasError('pattern')">
-                                    Bitte geben Sie eine gültige E-Mail-Adresse ein
+                                    Please enter a valid e-mail address
                                 </mat-error>
                             </mat-form-field>
                             <mat-form-field>
@@ -159,13 +159,13 @@
                                     {{signUpFormGroup.value.password.length}} / 25
                                 </mat-hint>
                                 <mat-error *ngIf="sigUpPasswordFormControl.hasError('required')">
-                                    Bitte das Passwort nicht vergessen
+                                    Please do not forget the password
                                 </mat-error>
                                 <mat-error *ngIf="sigUpPasswordFormControl.hasError('minlength')">
-                                    Das Passwort muss mindestens 6 Zeichen lang sein.
+                                    The password must be at least 6 characters long.
                                 </mat-error>
                                 <mat-error *ngIf="sigUpPasswordFormControl.hasError('maxlength')">
-                                    Das Passwort darf nicht länger als 25 Zeichen sein.
+                                    The password can not be longer than 25 characters.
                                 </mat-error>
                             </mat-form-field>
                             <!--
