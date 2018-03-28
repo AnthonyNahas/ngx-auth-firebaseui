@@ -50,7 +50,7 @@ function inlineResources(projectPath) {
       }))
       .then(content => writeFile(fullFilePath, content))
       .catch(err => {
-        console.error('An response occured: ', err);
+        console.error('An error occured: ', err);
       });
   }));
 }
@@ -118,7 +118,7 @@ function inlineStyle(content, urlResolver) {
  * build sass content to css
  * @param content {string} the css content
  * @param sourceFile {string} the scss file sourceFile
- * @return {string} the generated css, empty string if response occured
+ * @return {string} the generated css, empty string if error occured
  */
 function buildSass(content, sourceFile) {
   try {

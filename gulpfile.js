@@ -1,21 +1,13 @@
 /* eslint-disable */
-const gulp = require('gulp'),
-    fs = require('fs'),
-    path = require('path'),
-    ngc = require('@angular/compiler-cli/src/main').main,
-    rollup = require('gulp-rollup'),
-    rename = require('gulp-rename'),
-    del = require('del'),
-    runSequence = require('run-sequence'),
-    inlineResources = require('./tools/gulp/inline-resources'),
-    imagemin = require('gulp-imagemin'),
-    gif = require('imagemin-gifsicle'),
-    jpg = require('imagemin-jpegoptim'),
-    png = require('imagemin-optipng'),
-    svg = require('imagemin-svgo'),
-    shell = require('gulp-shell');
+var gulp = require('gulp'),
+  path = require('path'),
+  ngc = require('@angular/compiler-cli/src/main').main,
+  rollup = require('gulp-rollup'),
+  rename = require('gulp-rename'),
+  fs = require('fs-extra'),
+  runSequence = require('run-sequence'),
+  inlineResources = require('./tools/gulp/inline-resources');
 
-let version = '0.0.0';
 const rootFolder = path.join(__dirname);
 const srcFolder = path.join(rootFolder, 'src');
 const tmpFolder = path.join(rootFolder, '.tmp');
@@ -27,9 +19,9 @@ const distFolder = path.join(rootFolder, 'dist');
  */
 gulp.task('clean:dist', function () {
 
-    // Delete contents but not dist folder to avoid broken npm links
-    // when dist directory is removed while npm link references it.
-    return deleteFolders([distFolder + '/**', '!' + distFolder]);
+  // Delete contents but not dist folder to avoid broken npm links
+  // when dist directory is removed while npm link references it.
+  return fs.emptyDirSync(distFolder);
 });
 
 /**
@@ -38,8 +30,8 @@ gulp.task('clean:dist', function () {
  *    when copying to /.tmp.
  */
 gulp.task('copy:source', function () {
-    return gulp.src([`${srcFolder}/**/*`, `!${srcFolder}/node_modules`])
-        .pipe(gulp.dest(tmpFolder));
+  return gulp.src([`${srcFolder}/**/*`, `!${srcFolder}/node_modules`])
+    .pipe(gulp.dest(tmpFolder));
 });
 
 /**
@@ -47,8 +39,8 @@ gulp.task('copy:source', function () {
  *    We do this on the /.tmp folder to avoid editing the original /src files
  */
 gulp.task('inline-resources', function () {
-    return Promise.resolve()
-        .then(() => inlineResources(tmpFolder));
+  return Promise.resolve()
+    .then(() => inlineResources(tmpFolder));
 });
 
 
@@ -59,8 +51,8 @@ gulp.task('inline-resources', function () {
  *    As of Angular 5, ngc accepts an array and no longer returns a promise.
  */
 gulp.task('ngc', function () {
-    ngc(['--project', `${tmpFolder}/tsconfig.es5.json`]);
-    return Promise.resolve()
+  ngc(['--project', `${tmpFolder}/tsconfig.es5.json`]);
+  return Promise.resolve()
 });
 
 /**
@@ -68,32 +60,34 @@ gulp.task('ngc', function () {
  *    generated file into the /dist folder
  */
 gulp.task('rollup:fesm', function () {
-    return gulp.src(`${buildFolder}/**/*.js`)
+  return gulp.src(`${buildFolder}/**/*.js`)
     // transform the files here.
-        .pipe(rollup({
+    .pipe(rollup({
 
-            // Bundle's entry point
-            // See "input" in https://rollupjs.org/#core-functionality
-            input: `${buildFolder}/index.js`,
+      // Bundle's entry point
+      // See "input" in https://rollupjs.org/#core-functionality
+      input: `${buildFolder}/index.js`,
 
-            // Allow mixing of hypothetical and actual files. "Actual" files can be files
-            // accessed by Rollup or produced by plugins further down the chain.
-            // This prevents errors like: 'path/file' does not exist in the hypothetical file system
-            // when subdirectories are used in the `src` directory.
-            allowRealFiles: true,
+      // Allow mixing of hypothetical and actual files. "Actual" files can be files
+      // accessed by Rollup or produced by plugins further down the chain.
+      // This prevents errors like: 'path/file' does not exist in the hypothetical file system
+      // when subdirectories are used in the `src` directory.
+      allowRealFiles: true,
 
-            // A list of IDs of modules that should remain external to the bundle
-            // See "external" in https://rollupjs.org/#core-functionality
-            external: [
-                '@angular/core',
-                '@angular/common'
-            ],
+      // A list of IDs of modules that should remain external to the bundle
+      // See "external" in https://rollupjs.org/#core-functionality
+      external: [
+        '@angular/core',
+        '@angular/common'
+      ],
 
-            // Format of generated bundle
-            // See "format" in https://rollupjs.org/#core-functionality
-            format: 'es'
-        }))
-        .pipe(gulp.dest(distFolder));
+      output: {
+        // Format of generated bundle
+        // See "format" in https://rollupjs.org/#core-functionality
+        format: 'es'
+      }
+    }))
+    .pipe(gulp.dest(distFolder));
 });
 
 /**
@@ -101,48 +95,50 @@ gulp.task('rollup:fesm', function () {
  *    generated file into the /dist folder
  */
 gulp.task('rollup:umd', function () {
-    return gulp.src(`${buildFolder}/**/*.js`)
+  return gulp.src(`${buildFolder}/**/*.js`)
     // transform the files here.
-        .pipe(rollup({
+    .pipe(rollup({
 
-            // Bundle's entry point
-            // See "input" in https://rollupjs.org/#core-functionality
-            input: `${buildFolder}/index.js`,
+      // Bundle's entry point
+      // See "input" in https://rollupjs.org/#core-functionality
+      input: `${buildFolder}/index.js`,
 
-            // Allow mixing of hypothetical and actual files. "Actual" files can be files
-            // accessed by Rollup or produced by plugins further down the chain.
-            // This prevents errors like: 'path/file' does not exist in the hypothetical file system
-            // when subdirectories are used in the `src` directory.
-            allowRealFiles: true,
+      // Allow mixing of hypothetical and actual files. "Actual" files can be files
+      // accessed by Rollup or produced by plugins further down the chain.
+      // This prevents errors like: 'path/file' does not exist in the hypothetical file system
+      // when subdirectories are used in the `src` directory.
+      allowRealFiles: true,
 
-            // A list of IDs of modules that should remain external to the bundle
-            // See "external" in https://rollupjs.org/#core-functionality
-            external: [
-                '@angular/core',
-                '@angular/common'
-            ],
+      // A list of IDs of modules that should remain external to the bundle
+      // See "external" in https://rollupjs.org/#core-functionality
+      external: [
+        '@angular/core',
+        '@angular/common'
+      ],
 
-            // Format of generated bundle
-            // See "format" in https://rollupjs.org/#core-functionality
-            format: 'umd',
+      output: {
+        // The name to use for the module for UMD/IIFE bundles
+        // (required for bundles with exports)
+        // See "name" in https://rollupjs.org/#core-functionality
+        name: 'ngx-auth-firebaseui',
 
-            // Export mode to use
-            // See "exports" in https://rollupjs.org/#danger-zone
-            exports: 'named',
+        // See "globals" in https://rollupjs.org/#core-functionality
+        globals: {
+          typescript: 'ts'
+        },
 
-            // The name to use for the module for UMD/IIFE bundles
-            // (required for bundles with exports)
-            // See "name" in https://rollupjs.org/#core-functionality
-            name: 'ngx-auth-firebaseui',
+        // Format of generated bundle
+        // See "format" in https://rollupjs.org/#core-functionality
+        format: 'umd',
 
-            // See "globals" in https://rollupjs.org/#core-functionality
-            globals: {
-                typescript: 'ts'
-            }
+        // Export mode to use
+        // See "exports" in https://rollupjs.org/#danger-zone
+        exports: 'named'
+      }
 
-        }))
-        .pipe(rename('ngx-auth-firebaseui.umd.js'))
-        .pipe(gulp.dest(distFolder));
+    }))
+    .pipe(rename('ngx-auth-firebaseui.umd.js'))
+    .pipe(gulp.dest(distFolder));
 });
 
 /**
@@ -151,117 +147,89 @@ gulp.task('rollup:umd', function () {
  *    on step 5.
  */
 gulp.task('copy:build', function () {
-    return gulp.src([`${buildFolder}/**/*`, `!${buildFolder}/**/*.js`])
-        .pipe(gulp.dest(distFolder));
+  return gulp.src([`${buildFolder}/**/*`, `!${buildFolder}/**/*.js`])
+    .pipe(gulp.dest(distFolder));
 });
 
 /**
  * 8. Copy package.json from /src to /dist
  */
 gulp.task('copy:manifest', function () {
-    return gulp.src([`${srcFolder}/package.json`])
-        .pipe(gulp.dest(distFolder));
+  return gulp.src([`${srcFolder}/package.json`])
+    .pipe(gulp.dest(distFolder));
 });
 
 /**
  * 9. Copy README.md from / to /dist
  */
 gulp.task('copy:readme', function () {
-    return gulp.src([path.join(rootFolder, 'README.MD')])
-        .pipe(gulp.dest(distFolder));
-});
-
-
-/**
- * 9.5 copy the asset directory to dist
- */
-gulp.task('copy:assets', () => {
-    gulp.src([`${srcFolder}/assets/**/*`])
-        .pipe(imagemin([
-            jpg({max: 50}),
-            png({optimizationLevel: 3}),
-            gif({optimizationLevel: 3}),
-            svg({
-                minifyStyles: true,
-                removeDoctype: true
-            })
-        ]))
-        .pipe(gulp.dest(`${distFolder}/assets/`));
+  return gulp.src([path.join(rootFolder, 'README.MD')])
+    .pipe(gulp.dest(distFolder));
 });
 
 /**
  * 10. Delete /.tmp folder
  */
 gulp.task('clean:tmp', function () {
-    return deleteFolders([tmpFolder]);
+  return deleteFolder(tmpFolder);
 });
 
 /**
  * 11. Delete /build folder
  */
 gulp.task('clean:build', function () {
-    return deleteFolders([buildFolder]);
+  return deleteFolder(buildFolder);
 });
-
-/**
- * 12. Fetch package's version
- */
-gulp.task('fetch:version', function () {
-    const json = JSON.parse(fs.readFileSync('./package.json'));
-    version = json.version;
-    console.log(`ngx-auth-firebaseui@${version}`);
-    return version;
-});
-
-/**
- * 13. Update ngx-auth-firebaseui's pack (@demoapp too)
- */
-gulp.task('update:ngx-auth-firebaseui', shell.task([
-    'npm pack',
-    'cd demo-app',
-    `echo ${version}`
-]));
 
 gulp.task('compile', function () {
-    runSequence(
-        'clean:dist',
-        'copy:source',
-        'inline-resources',
-        'ngc',
-        'rollup:fesm',
-        'rollup:umd',
-        'copy:build',
-        'copy:manifest',
-        'copy:readme',
-        'copy:assets',
-        'clean:build',
-        'clean:tmp',
-        function (err) {
-            if (err) {
-                console.log('ERROR:', err.message);
-                deleteFolders([distFolder, tmpFolder, buildFolder]);
-            } else {
-                console.log('Compilation finished succesfully');
-            }
-        });
+  runSequence(
+    'clean:dist',
+    'copy:source',
+    'inline-resources',
+    'ngc',
+    'rollup:fesm',
+    'rollup:umd',
+    'copy:build',
+    'copy:manifest',
+    'copy:readme',
+    'clean:build',
+    'clean:tmp',
+    function (err) {
+      if (err) {
+        console.log('ERROR:', err.message);
+        deleteFolder(distFolder);
+        deleteFolder(tmpFolder);
+        deleteFolder(buildFolder);
+      } else {
+        console.log('Compilation finished succesfully');
+      }
+    });
 });
 
 /**
  * Watch for any change in the /src folder and compile files
  */
 gulp.task('watch', function () {
-    gulp.watch(`${srcFolder}/**/*`, ['compile']);
+  gulp.watch(`${srcFolder}/**/*`, ['compile']);
 });
 
-gulp.task('clean', ['clean:dist', 'clean:tmp', 'clean:build']);
+gulp.task('clean', function (callback) {
+  runSequence('clean:dist', 'clean:tmp', 'clean:build', callback);
+});
 
-gulp.task('build', ['clean', 'compile']);
-gulp.task('build:watch', ['build', 'watch']);
+gulp.task('build', function (callback) {
+  runSequence('clean', 'compile', callback);
+});
+
+gulp.task('build:watch', function (callback) {
+  runSequence('build', 'watch', callback);
+});
+
 gulp.task('default', ['build:watch']);
 
 /**
  * Deletes the specified folder
  */
-function deleteFolders(folders) {
-    return del(folders);
+function deleteFolder(folder) {
+  return fs.removeSync(folder);
 }
