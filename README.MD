@@ -24,7 +24,7 @@ If you need me to support [bootstrap](https://getbootstrap.com/) please let me k
 I am aiming to support server side rendering too (angular universal). For that to succeed, i need more feedback
 from the angular and firebase community.
 
-Supported Provider:
+## Supported Provider:
 - email and password (traditional)
 - google
 - facebook
@@ -32,11 +32,11 @@ Supported Provider:
 - github
 - phone number (todo)
 
-Supported Processes and Actions:
-- sign up (in dev)
-- sign in (in dev)
+## Supported Processes and Actions:
+- sign up 
+- sign in 
 
-Why to use ngx-auth-firebaseui ?
+## Why to use ngx-auth-firebaseui ?
 - it uses a responsive web design UX/UI from google material concepts and components (supporting desktop and mobile view).
 - easy to use with an angular based project (project that is created with [angular-cli](https://cli.angular.io/))
 - optional configuration
@@ -49,7 +49,9 @@ Requirements:
 like facebook, twitter, github... (todo)
 - Forgot Password as feature (todo)
 
-## Demo [ngx-auth-firebaseui demo pwa](https://ngx-auth-firebaseui.firebaseapp.com/)
+# Sync user's authentication with FIRESTORE (documentation coming soon)
+
+## Demo [ngx-auth-firebaseui demo](https://ngx-auth-firebaseui.firebaseapp.com/)
 - Try it out
 ```js
 if(issues || feedback || you_need_more_features){
@@ -118,6 +120,7 @@ import { NgxAuthFirebaseUIModule } from 'ngx-auth-firebaseui';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
 
     // Specify the ngx-auth-firebaseui library as an import
     NgxAuthFirebaseUIModule.forRoot({
