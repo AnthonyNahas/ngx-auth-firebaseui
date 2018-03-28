@@ -22,7 +22,7 @@ export enum AuthProvider {
 }
 
 @Injectable()
-export class AuthProcess implements ISignInProcess, ISignUpProcess {
+export class AuthProcessService implements ISignInProcess, ISignUpProcess {
 
     onSuccessEmitter: EventEmitter<any> = new EventEmitter<any>();
     onErrorEmitter: EventEmitter<any> = new EventEmitter<any>();

@@ -19,10 +19,12 @@ import {IAuthFirebaseUIConfig} from './interfaces/config.interface';
 import {AngularFireModule, FirebaseAppConfig, FirebaseAppConfigToken, FirebaseAppName} from 'angularfire2';
 import {AngularFireAuthModule} from 'angularfire2/auth';
 import {ResponseSnackbarComponent} from './components/response/response.snackbar.component';
-import {AuthProcess} from './services/auth-process.service';
+import {AuthProcessService} from './services/auth-process.service';
 import {AuthComponent} from './components/auth/auth.component';
 import {AuthProvidersComponent} from './components/providers/auth.providers.component';
 import {EmailConfirmationComponent} from './components/email-confirmation/email-confirmation.component';
+import {FirestoreSyncService} from './services/firestore-sync.service';
+import {AngularFirestoreModule} from 'angularfire2/firestore';
 
 // export * from './classes';
 // todo export all interfaces within the ngx-auth-firebaseui module
@@ -48,6 +50,7 @@ export * from './components/auth/auth.component';
         MatTooltipModule,
         MatDialogModule,
         AngularFireAuthModule,
+        AngularFirestoreModule,
     ],
     declarations:
         [
@@ -68,7 +71,8 @@ export * from './components/auth/auth.component';
         ],
     providers:
         [
-            AuthProcess
+            AuthProcessService,
+            FirestoreSyncService
         ],
 })
 

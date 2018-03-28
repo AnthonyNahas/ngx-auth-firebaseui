@@ -4,7 +4,7 @@ import {DomSanitizer} from '@angular/platform-browser';
 import {MatIconRegistry} from '@angular/material';
 import {AngularFireAuth} from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
-import {AuthProcess, AuthProvider} from '../../services/auth-process.service';
+import {AuthProcessService, AuthProvider} from '../../services/auth-process.service';
 import {Subscription} from 'rxjs/Subscription';
 import {isPlatformBrowser} from '@angular/common';
 
@@ -49,7 +49,7 @@ export class AuthComponent implements OnInit, OnDestroy {
 
     constructor(@Inject(PLATFORM_ID) private platformId: Object,
                 public auth: AngularFireAuth,
-                public authProcess: AuthProcess,
+                public authProcess: AuthProcessService,
                 private _formBuilder: FormBuilder,
                 private _iconRegistry: MatIconRegistry,
                 private _sanitizer: DomSanitizer) {

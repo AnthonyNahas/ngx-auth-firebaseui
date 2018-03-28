@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {AuthProcess, AuthProvider} from '../../services/auth-process.service';
+import {AuthProcessService, AuthProvider} from '../../services/auth-process.service';
 
 @Component({
     selector: 'ngx-auth-firebaseui-providers',
@@ -11,7 +11,7 @@ export class AuthProvidersComponent {
 
     providers = AuthProvider;
 
-    constructor(public authProcess: AuthProcess) {
+    constructor(public authProcess: AuthProcessService) {
     }
 
 }
