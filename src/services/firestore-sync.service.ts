@@ -1,8 +1,7 @@
 import {Injectable} from '@angular/core';
 import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from 'angularfire2/firestore';
 import {QueryFn} from 'angularfire2/firestore/interfaces';
-import * as firebase from 'firebase';
-import User = firebase.User;
+import {IUser} from '../interfaces/user.interface';
 
 @Injectable()
 export class FirestoreSyncService {
@@ -20,7 +19,7 @@ export class FirestoreSyncService {
      * @param {string} uid - the user uid
      * @return {AngularFirestoreDocument<IUser>} - the request user
      */
-    public getUserDocRefByUID(uid: string): AngularFirestoreDocument<User> {
+    public getUserDocRefByUID(uid: string): AngularFirestoreDocument<IUser> {
         return this._afs.doc(`${collections.users}/${uid}`);
     }
 
@@ -30,19 +29,21 @@ export class FirestoreSyncService {
      * @param {QueryFn} queryFn - optional for queries
      * @return {AngularFirestoreCollection<IUser>} - collection reference of the users
      */
-    public getUsersCollectionRef(queryFn?: QueryFn): AngularFirestoreCollection<User> {
+    public getUsersCollectionRef(queryFn?: QueryFn): AngularFirestoreCollection<IUser> {
         return this._afs.collection(`${collections.users}/`, queryFn);
     }
 
-    public updateUserData(user: User): Promise<any> {
+    public updateUserData(user: IUser): Promise<any> {
         console.log('on updateUser Data for user: ', user);
         // Sets user$ data to firestore on login
-        const userRef: AngularFirestoreDocument<User> = this.getUserDocRefByUID(user.uid);
-        const data: User = {
+        const userRef: AngularFirestoreDocument<IUser> = this.getUserDocRefByUID(user.uid);
+        const data: IUser = {
             uid: user.uid,
             email: user.email,
             displayName: user.displayName,
-            photoURL: user.photoURL
+            photoURL: user.photoURL,
+            phoneNumber: user.phoneNumber,
+            providerId: user.providerId
         };
         return userRef.set(data, {merge: true});
     }
