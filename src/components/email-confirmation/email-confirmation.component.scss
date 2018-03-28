@@ -1,0 +1,31 @@
+.material-icons {
+  font-size: 4rem;
+}
+
+.mat-icon {
+  height: 4rem;
+  width: 4rem;
+  color: rgba(0, 0, 0, .54);
+}
+
+.title {
+  font-size: 20px;
+  margin-top: 16px;
+}
+
+.subtitle{
+  margin: 16px auto;
+  max-width: 300px;
+  color: rgba(0,0,0,.54);
+  font-size: 15px;
+  text-align: center;
+
+  p {
+    display: block;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+  }
+
+}

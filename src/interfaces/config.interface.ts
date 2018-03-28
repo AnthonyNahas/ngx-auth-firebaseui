@@ -1,4 +1,4 @@
-import * as firebase from 'firebase/app';
+import * as firebase from 'firebase';
 import GoogleAuthProvider = firebase.auth.GoogleAuthProvider;
 import FacebookAuthProvider = firebase.auth.FacebookAuthProvider;
 import TwitterAuthProvider = firebase.auth.TwitterAuthProvider;
@@ -8,7 +8,7 @@ export interface IAuthFirebaseUIConfig {
     authNextURL?: string,
     authMethod?: string, // popup or redirect
     authProviders?: [firebase.auth.AuthProvider],
-    languageCode?: string,
+    languageCode?: string, // todo: 28.3.18
     onlyEmailPasswordAuth?: boolean,
     onlyProvidersAuth?: boolean,
     toastMessageOnAuthSuccess?: boolean,

@@ -50,7 +50,7 @@
   "devDependencies": {
     "@angular/animations": "^5.2.9",
     "@angular/cdk": "^5.2.4",
-    "@angular/cli": "1.6.7",
+    "@angular/cli": "^1.7.3",
     "@angular/common": "^5.2.9",
     "@angular/compiler": "^5.2.9",
     "@angular/compiler-cli": "^5.2.9",
@@ -72,7 +72,7 @@
     "concurrently": "^3.4.0",
     "core-js": "^2.5.4",
     "del": "^2.2.2",
-    "firebase": "4.9.1",
+    "firebase": "^4.9.1",
     "gulp": "^3.9.1",
     "gulp-imagemin": "^4.1.0",
     "gulp-rename": "^1.2.2",

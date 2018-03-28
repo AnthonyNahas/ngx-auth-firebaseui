@@ -1,25 +1,16 @@
-export interface ISignUpProcess {
-    firstName: string;
-    lastName: string;
-    // email: string;
-    // password: string;
-    passwordConfirmation: string;
+import {AuthProvider} from '../services/auth-process.service';
 
-    signUp();
+export interface ISignUpProcess {
+
+    signUp(name: string, email: string, password: string);
 }
 
 export interface ISignInProcess {
-    email: string;
-    password: string;
+
     onSuccessEmitter;
     onErrorEmitter;
 
-    resetPassword();
+    signInWith(provider: AuthProvider, email?: string, password?: string);
 
-    signIn();
-    signInWithGoogle();
-    signInWithFaceBook();
-    signInWithTwitter();
-    signInWithGithub();
-    signInWithPhoneNumber();
+    resetPassword(email: string);
 }
