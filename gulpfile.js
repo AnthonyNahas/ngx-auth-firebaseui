@@ -9,6 +9,11 @@ const gulp = require('gulp'),
     fs = require('fs-extra'),
     runSequence = require('run-sequence'),
     pump = require('pump'),
+    imagemin = require('gulp-imagemin'),
+    gif = require('imagemin-gifsicle'),
+    jpg = require('imagemin-jpegoptim'),
+    png = require('imagemin-optipng'),
+    svg = require('imagemin-svgo'),
     inlineResources = require('./tools/gulp/inline-resources');
 
 const rootFolder = path.join(__dirname);
@@ -156,7 +161,7 @@ gulp.task('es5', () =>
 );
 
 /**
- * Minify/Uglify all js files
+ * 6.2 Minify/Uglify all js files
  */
 gulp.task('compress', function (cb) {
     pump([
@@ -167,6 +172,24 @@ gulp.task('compress', function (cb) {
         cb
     );
 });
+
+/**
+ * 6.3 copy the asset directory to dist
+ */
+gulp.task('copy:assets', () => {
+    gulp.src([`${srcFolder}/assets/**/*`])
+        .pipe(imagemin([
+            jpg({max: 50}),
+            png({optimizationLevel: 3}),
+            gif({optimizationLevel: 3}),
+            svg({
+                minifyStyles: true,
+                removeDoctype: true
+            })
+        ]))
+        .pipe(gulp.dest(`${distFolder}/assets/`));
+});
+
 
 /**
  * 7. Copy all the files from /build to /dist, except .js files. We ignore all .js from /build
@@ -218,6 +241,7 @@ gulp.task('compile', function () {
         'rollup:umd',
         'es5',
         'compress',
+        'copy:assets',
         'copy:build',
         'copy:manifest',
         'copy:readme',
