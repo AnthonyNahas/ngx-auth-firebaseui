@@ -1,5 +1,5 @@
 <mat-tab-group [color]="color">
-    <mat-tab *ngIf="passwordResetWished" label="Passwort zurücksetzen">
+    <mat-tab *ngIf="passwordResetWished" label="Reset Password">
         <form [formGroup]="resetPasswordFormGroup" (ngSubmit)="resetPasswordFormGroup.valid && resetPassword()">
             <mat-card>
                 <mat-card-header fxLayoutAlign="end">
@@ -15,7 +15,7 @@
                     <mat-form-field class="full-width">
                         <input matInput
                                [readonly]="passReset"
-                               placeholder="E-Mail-Adresse zum Passwort zurücksetzen"
+                               placeholder="Reset e-mail address to password"
                                formControlName="email"
                                required>
                         <mat-icon matSuffix [color]="color">email</mat-icon>
@@ -41,7 +41,7 @@
             </mat-card>
         </form>
     </mat-tab>
-    <mat-tab label="Anmelden">
+    <mat-tab label="Sign in">
         <mat-card>
             <mat-card-content>
                 <form [formGroup]="signInFormGroup"
@@ -51,7 +51,7 @@
                     <div fxLayout="column" fxLayoutAlign="center center">
                         <mat-form-field>
                             <input matInput
-                                   placeholder="E-Mail-Adresse"
+                                   placeholder="E-mail address"
                                    formControlName="email"
                                    required>
                             <mat-icon matSuffix [color]="color">email</mat-icon>
@@ -65,7 +65,7 @@
                         <mat-form-field>
                             <input matInput
                                    type="password"
-                                   placeholder="Passwort"
+                                   placeholder="Password"
                                    minlength="6"
                                    maxlength="25"
                                    formControlName="password"
@@ -85,6 +85,7 @@
                             </mat-error>
                         </mat-form-field>
                         <button mat-raised-button
+                                style="margin-top: 20px"
                                 type="submit"
                                 class="space-top"
                                 [color]="color">
@@ -103,7 +104,7 @@
             </mat-card-content>
         </mat-card>
     </mat-tab>
-    <mat-tab label="Registrieren">
+    <mat-tab label="Register">
         <mat-card>
             <mat-card-title>Registration</mat-card-title>
             <div *ngIf="!authProcess.emailConfirmationSent; then register else confirm"></div>
@@ -137,7 +138,7 @@
 
                             <mat-form-field>
                                 <input matInput
-                                       placeholder="E-Mail-Adresse"
+                                       placeholder="E-mail address"
                                        [formControl]="sigUpEmailFormControl">
                                 <mat-icon matSuffix [color]="color">email</mat-icon>
                                 <mat-error *ngIf="sigUpEmailFormControl.hasError('required')">
@@ -149,7 +150,7 @@
                             </mat-form-field>
                             <mat-form-field>
                                 <input matInput
-                                       placeholder="Passwort"
+                                       placeholder="Password"
                                        type="password"
                                        name="password"
                                        [formControl]="sigUpPasswordFormControl"
