@@ -3,11 +3,12 @@ import GoogleAuthProvider = firebase.auth.GoogleAuthProvider;
 import FacebookAuthProvider = firebase.auth.FacebookAuthProvider;
 import TwitterAuthProvider = firebase.auth.TwitterAuthProvider;
 import GithubAuthProvider = firebase.auth.GithubAuthProvider;
+import AuthProvider = firebase.auth.AuthProvider;
 
 export interface IAuthFirebaseUIConfig {
     authNextURL?: string,
     authMethod?: string, // popup or redirect
-    authProviders?: [firebase.auth.AuthProvider],
+    authProviders?: Array<AuthProvider>,
     languageCode?: string, // todo: 28.3.18
     onlyEmailPasswordAuth?: boolean,
     onlyProvidersAuth?: boolean,

@@ -1,5 +1,7 @@
 # ngx-auth-firebaseui
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/AnthonyNahas/ngx-auth-firebaseui.svg)](https://greenkeeper.io/)
+
 [![preview](ngx-auth-firebaseui-logo.png)](ngx-auth-firebaseui-logo.png)
 
 [![npm version](https://badge.fury.io/js/ngx-auth-firebaseui.svg)](https://badge.fury.io/js/ngx-auth-firebaseui)
