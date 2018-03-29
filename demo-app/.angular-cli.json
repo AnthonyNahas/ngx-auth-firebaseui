@@ -27,9 +27,12 @@
       "styles": [
         "styles.css",
         "ngx-auth-firebaseui_theme.scss",
+        "assets/lib/hljs/highlight/styles/idea.css",
         "../node_modules/material-design-icons/iconfont/material-icons.css"
       ],
-      "scripts": [],
+      "scripts": [
+        "assets/lib/hljs/highlight/highlight.pack.js"
+      ],
       "environmentSource": "environments/environment.ts",
       "environments": {
         "dev": "environments/environment.ts",

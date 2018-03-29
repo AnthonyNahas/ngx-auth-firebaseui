@@ -8,23 +8,51 @@
 [![Github All Releases](https://img.shields.io/github/downloads/anthonynahas/ngx-auth-firebaseui/total.svg)](https://github.com/AnthonyNahas/ngx-auth-firebaseui)
 [![npm](https://img.shields.io/npm/v/ngx-auth-firebaseui.svg)](https://www.npmjs.com/package/ngx-auth-firebaseui)[![David](https://img.shields.io/david/AnthonyNahas/ngx-auth-firebaseui.svg?style=flat-square)](https://www.npmjs.com/package/ngx-auth-firebaseui)
 [![node](https://img.shields.io/node/v/ngx-auth-firebaseui.svg)](https://www.npmjs.com/package/ngx-auth-firebaseui)
-[![npm](https://img.shields.io/badge/demo-online-ed1c46.svg)](https://ngx-auth-firebaseui.firebaseapp.com)
-[![license](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square)](https://github.com/AnthonyNahas/ngx-auth-firebaseui/blob/master/LICENSE)
+[![npm](https://img.shields.io/badge/ngx-auth-firebaseui.svg)](https://ngx-auth-firebaseui.firebaseapp.com)
+[![license](https://img.shields.io/github/license/anthonynahas/ngx-auth-firebaseui.svg?style=flat-square)](https://github.com/AnthonyNahas/ngx-auth-firebaseui/blob/master/LICENSE)
 [![GitHub forks](https://img.shields.io/github/forks/anthonynahas/ngx-auth-firebaseui.svg?style=social&label=Fork)](https://github.com/AnthonyNahas/ngx-auth-firebaseui/fork)
 [![GitHub stars](https://img.shields.io/github/stars/anthonynahas/ngx-auth-firebaseui.svg?style=social&label=Star)](https://github.com/AnthonyNahas/ngx-auth-firebaseui)
 [![GitHub followers](https://img.shields.io/github/followers/anthonynahas.svg?style=social&label=Follow)](https://github.com/AnthonyNahas/ngx-auth-firebaseui)
 [![Twitter URL](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/ngAnthonyy)
 [![Twitter Follow](https://img.shields.io/twitter/follow/ngAnthonyy.svg?style=social&label=Follow)](https://twitter.com/ngAnthonyy)
 
+## Open Source Library for Angular Web Apps to integrate within a min as Firebase UI component for authentication.
+
 Angular UI component for [firebase](https://firebase.google.com/docs/auth/web/firebaseui) authentication.
-This library is an angular module (including angular components) that allow to authenticate
+This library is an angular module (including angular components) that allows to authenticate
 your users with your firebase project. NgxAuthFirebseUI is compatible with
 [angular material](https://material.angular.io/) and [angular flexLayout](https://github.com/angular/flex-layout).
-If you need me to support [bootstrap](https://getbootstrap.com/) please let me know and i will try to do it.
-I am aiming to support server side rendering too (angular universal). For that to succeed, i need more feedback
-from the angular and firebase community.
+If you need me to support [bootstrap](https://getbootstrap.com/) please let me know and i will do it.
 
-## Supported Provider:
+| Features                                       | ngx-auth-firebaseui       | firebaseui  |
+| -----------------------------------------------|:-------------:|         :-------------------:  |
+| Sign Up                                        | :heavy_check_mark:    |  :heavy_check_mark:    |
+| Sign In                                        | :heavy_check_mark:    |  :heavy_check_mark:    |
+| Sign In with Facebook                          | :heavy_check_mark:    |  :heavy_check_mark:    |
+| Sign In with Twitter                           | :heavy_check_mark:    |  :heavy_check_mark:    |
+| Sign In with Github                            | :heavy_check_mark:    |  :heavy_check_mark:    |
+| Sign In with PhoneNumber                       | :x:                   |  :heavy_check_mark:    |
+| Forgot/Reset Password                          | :heavy_check_mark:    |  :x:                   |
+| Sync user'auth with Firestore                  | :heavy_check_mark:    |  :x:                   |
+| Angular v2-5 friendly                          | :heavy_check_mark:    |  :x:                   |
+| Real time form validation                      | :heavy_check_mark:    |  :x:                   |
+| Easy to integrate                              | :heavy_check_mark:    |  :x:                   |
+| Support Server Side Rendering                          | :heavy_check_mark:    |  :x:                   |
+| Support SPA without further config             | :heavy_check_mark:    |  :x:                   |
+| Support Safari private browsing                | :heavy_check_mark:    |  :x:                   |
+
+## Why to use ngx-auth-firebaseui ?
+- it uses a responsive and accessible web design UX/UI from google material concepts and components (supporting desktop and mobile view).
+- pick up your own theme! change the primary, accent and warn colors whenever you need (e.g to support light and dark themes)
+- easy to use with an angular based project (project that is created with [angular-cli](https://cli.angular.io/))
+- optional configuration
+- reusable components for every project that need an authentication with a firebase project/app.
+- built in feedback mechanism in form of a [snackbar](https://material.angular.io/components/snack-bar/overview) when an error occurred.
+### - Sync user's authentication with FIRESTORE (documentation coming soon)
+#### - Forgot Password as feature
+#### - Supports SSR - Server Side Rendering
+
+## Supported Providers:
 - email and password (traditional)
 - google
 - facebook
@@ -35,21 +63,14 @@ from the angular and firebase community.
 ## Supported Processes and Actions:
 - sign up 
 - sign in 
+- forgot password
+- sending email verifications
 
-## Why to use ngx-auth-firebaseui ?
-- it uses a responsive web design UX/UI from google material concepts and components (supporting desktop and mobile view).
-- easy to use with an angular based project (project that is created with [angular-cli](https://cli.angular.io/))
-- optional configuration
-- reusable components for every project that need an authentication with a firebase project/app.
-- built in feedback mechanism in form of a [snackbar](https://material.angular.io/components/snack-bar/overview) when an error occurred.
-Requirements:
-- angular material theme (described below)
+
+### Requirements:
+- angular material theme (described below) + cdk
+- FlexLayout
 - if you need a built in theme --> please let me know
-- the option to use only email and password to authenticate users without other providers
-like facebook, twitter, github... (todo)
-- Forgot Password as feature (todo)
-
-# Sync user's authentication with FIRESTORE (documentation coming soon)
 
 ## Demo [ngx-auth-firebaseui demo](https://ngx-auth-firebaseui.firebaseapp.com/)
 - Try it out
@@ -60,7 +81,7 @@ if(issues || feedback || you_need_more_features){
 ```
 
 ### Note:
-This package is now under development. For every new suggestion i would be thankful.
+This package is now under development. For further suggestions, please provide a PR.
 
 ## Screenshots - Browser
 - Sign up
@@ -85,7 +106,7 @@ This package is now under development. For every new suggestion i would be thank
     "@angular/core": "^5.x",
     "@angular/animations": "^5.x",
     "@angular/cdk": "^5.x",
-    "@angular/flex-layout": "^2.0.0-beta.12",
+    "@angular/flex-layout": "^5.0.0-beta.13",
     "@angular/forms": "^5.x",
     "@angular/material": "^5.x",
     "angularfire2": "^5.0.0-rc.5-next",
@@ -105,7 +126,7 @@ $ npm install ngx-auth-firebaseui --save
 
 and then from your Angular `AppModule`:
 
-```typescript
+```ts
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -113,6 +134,7 @@ import { AppComponent } from './app.component';
 
 // Import your library
 import { NgxAuthFirebaseUIModule } from 'ngx-auth-firebaseui';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -141,7 +163,7 @@ export class AppModule { }
 
 Once the library is imported, you can use its components, directives and pipes in your Angular application:
 
-```angular2html
+```ts
 <!-- You can now use the library component in app.component.html  -->
 <h1>
   {{title}}
@@ -149,7 +171,7 @@ Once the library is imported, you can use its components, directives and pipes i
 <ngx-auth-firebaseui (onSuccess)="printUser($event)" (onError)="printError()"></ngx-auth-firebaseui>
 ```
 
-```angular2html
+```ts
 <!-- or simply in the app.component.ts -->
 @Component({
     selector: 'app',
@@ -188,7 +210,7 @@ Please take a look of the official documentation of **angular material themes** 
 #### With Angular CLI
 - open the file `.angular-cli.json`
 - add the following into the `assets` section
-```
+```ts
 {
           "glob": "**/*",
           "input": "../node_modules/ngx-auth-firebaseui/dist/assets/",
@@ -197,7 +219,7 @@ Please take a look of the official documentation of **angular material themes** 
 ```
 - after that the required images will be copied to the assets dir and will be available for the app.
 - finally the `assets` section should be in a way similar to that -->
-```angular2html
+```ts
 "assets": [
         "assets",
         "favicon.ico",
@@ -226,7 +248,7 @@ $ git clone https://github.com/AnthonyNahas/ngx-auth-firebaseui.git
 $ cd demo-app
 ```
 - fill the file with the name `src/firebase_app_config.ts` with the right properties of your firebase app
-```angular2html
+```ts
 export const YourFirebaseAppConfig = {
   apiKey: 'your-firebase-apiKey',
   authDomain: 'your-firebase-authDomain',

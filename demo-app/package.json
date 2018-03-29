@@ -1,6 +1,6 @@
 {
   "name": "demo-app",
-  "version": "0.2.0-alpha",
+  "version": "0.3.0-alpha",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
@@ -33,7 +33,7 @@
     "core-js": "^2.5.4",
     "firebase": "4.9.1",
     "material-design-icons": "^3.0.1",
-    "ngx-auth-firebaseui": "file:../ngx-auth-firebaseui-0.2.2-alpha.tgz",
+    "ngx-auth-firebaseui": "file:../ngx-auth-firebaseui-0.3.0-alpha.tgz",
     "rxjs": "^5.5.8",
     "zone.js": "^0.8.20"
   },
