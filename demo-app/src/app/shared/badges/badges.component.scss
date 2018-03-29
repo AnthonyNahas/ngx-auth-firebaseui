@@ -1,0 +1,15 @@
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 0.5em;
+  flex-wrap: wrap;
+  > * {
+    margin: 0 3px;
+    height: 20px;
+  }
+
+  iframe {
+    margin-top: 2px;
+  }
+}
