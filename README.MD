@@ -86,20 +86,27 @@ if(issues || feedback || you_need_more_features){
 This package is now under development. For further suggestions, please provide a PR.
 
 ## Screenshots - Browser
-- Sign up
-![ngx-auth-firebaseui](https://firebasestorage.googleapis.com/v0/b/ngx-auth-firebaseui.appspot.com/o/Screenshot%202018-01-03%2023.35.31.png?alt=media&token=05bf2d68-787e-4d51-be51-08ff884888f4)
 - sign in
-![ngx-auth-firebaseui](https://firebasestorage.googleapis.com/v0/b/ngx-auth-firebaseui.appspot.com/o/Screenshot%202018-01-03%2023.35.39.png?alt=media&token=b908285f-b98a-4e87-bb49-aa82672a1881)
+![ngx-auth-firebaseui](https://firebasestorage.googleapis.com/v0/b/ngx-auth-firebaseui.appspot.com/o/0.3.3-alpha%2Fsignin.png?alt=media&token=027b5bf8-388e-4b08-a098-a5ab6e215bbd)
 
-
-
-## Screenshots - Mobile Browser
 - Sign up
-![ngx-auth-firebaseui](https://firebasestorage.googleapis.com/v0/b/ngx-auth-firebaseui.appspot.com/o/Screenshot%202018-01-03%2023.04.24.png?alt=media&token=94a6c855-f19a-42f5-9291-5810277e78d5)
-- sign in
-![ngx-auth-firebaseui](https://firebasestorage.googleapis.com/v0/b/ngx-auth-firebaseui.appspot.com/o/Screenshot%202018-01-03%2023.04.14.png?alt=media&token=035fcc02-fa9c-4945-bdeb-c551d3722689)
-- feedback or message when error occured while signing up/in
-![ngx-auth-firebaseui](https://firebasestorage.googleapis.com/v0/b/ngx-auth-firebaseui.appspot.com/o/localhost_3000_(Nexus%205X)%20(2).png?alt=media&token=8408d00d-cbe7-43ab-b3b3-37b41314e2b6)
+![ngx-auth-firebaseui](https://firebasestorage.googleapis.com/v0/b/ngx-auth-firebaseui.appspot.com/o/0.3.3-alpha%2Fregister.png?alt=media&token=ec45629a-b885-49a5-a931-1f4d007a7740)
+
+
+## Screenshots - Mobile/Tablet Browser
+- Sign in - mobile
+![ngx-auth-firebaseui](https://firebasestorage.googleapis.com/v0/b/ngx-auth-firebaseui.appspot.com/o/0.3.3-alpha%2Fsignin_iphone.png?alt=media&token=5cd0974a-e359-4675-81fa-7f742033cf95)
+- sign in - tablet
+![ngx-auth-firebaseui](https://firebasestorage.googleapis.com/v0/b/ngx-auth-firebaseui.appspot.com/o/0.3.3-alpha%2Fsignin_tablet.png?alt=media&token=6bfc618e-b2dd-440c-ab5c-cf50f15de8e9)
+
+## Screenshots - Reset Password
+
+- Before
+![ngx-auth-firebaseui](https://firebasestorage.googleapis.com/v0/b/ngx-auth-firebaseui.appspot.com/o/0.3.3-alpha%2Freset_passowrd.png?alt=media&token=2b9a7361-1187-49e9-a241-4af33590637d)
+
+- After
+![ngx-auth-firebaseui](https://firebasestorage.googleapis.com/v0/b/ngx-auth-firebaseui.appspot.com/o/0.3.3-alpha%2Freset_password_check_instructions.png?alt=media&token=ac37b942-6922-463e-b765-a69adff9ae2a)
+
 
 ## (0) Please make sure that peerDependencies are installed
 
@@ -241,6 +248,9 @@ This is an example of requesting an image from the library
 Please make sur that the images will be hosted in the right place
 
 ## Run Demo App Locally
+
+![ngx-auth-firebaseui](https://firebasestorage.googleapis.com/v0/b/ngx-auth-firebaseui.appspot.com/o/0.3.3-alpha%2Fdemo_app.png?alt=media&token=e8b000ce-bbe7-40be-b877-ea562d08ba96)
+
 - [clone this repo](https://github.com/AnthonyNahas/ngx-auth-firebaseui.git) by running
 ```bash
 $ git clone https://github.com/AnthonyNahas/ngx-auth-firebaseui.git
