@@ -63,7 +63,7 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
                     break;
 
                 default:
-                    throw new Error(`${provider} is now available as auth provider`);
+                    throw new Error(`${AuthProvider[provider]} is not available as auth provider`);
 
             }
 
