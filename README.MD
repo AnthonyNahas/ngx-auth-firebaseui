@@ -1,13 +1,12 @@
 # ngx-auth-firebaseui
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/AnthonyNahas/ngx-auth-firebaseui.svg)](https://greenkeeper.io/)
-
 [![preview](ngx-auth-firebaseui-logo.png)](ngx-auth-firebaseui-logo.png)
-
 [![npm version](https://badge.fury.io/js/ngx-auth-firebaseui.svg)](https://badge.fury.io/js/ngx-auth-firebaseui)
+[![npm](https://img.shields.io/badge/demo-online-ed1c46.svg)](https://ngx-auth-firebaseui.firebaseapp.com)
 [![CircleCI branch](https://img.shields.io/circleci/project/github/AnthonyNahas/ngx-auth-firebaseui/master.svg?label=circleci)](https://circleci.com/gh/AnthonyNahas/ngx-auth-firebaseui)
 [![npm](https://img.shields.io/npm/dt/ngx-auth-firebaseui.svg?style=flat-square)](https://www.npmjs.com/package/ngx-auth-firebaseui)
 [![Github All Releases](https://img.shields.io/github/downloads/anthonynahas/ngx-auth-firebaseui/total.svg)](https://github.com/AnthonyNahas/ngx-auth-firebaseui)
+[![Greenkeeper badge](https://badges.greenkeeper.io/AnthonyNahas/ngx-auth-firebaseui.svg)](https://greenkeeper.io/)
 [![npm](https://img.shields.io/npm/v/ngx-auth-firebaseui.svg)](https://www.npmjs.com/package/ngx-auth-firebaseui)[![David](https://img.shields.io/david/AnthonyNahas/ngx-auth-firebaseui.svg?style=flat-square)](https://www.npmjs.com/package/ngx-auth-firebaseui)
 [![node](https://img.shields.io/node/v/ngx-auth-firebaseui.svg)](https://www.npmjs.com/package/ngx-auth-firebaseui)
 [![npm](https://img.shields.io/badge/ngx-auth-firebaseui.svg)](https://ngx-auth-firebaseui.firebaseapp.com)
@@ -18,7 +17,7 @@
 [![Twitter URL](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/ngAnthonyy)
 [![Twitter Follow](https://img.shields.io/twitter/follow/ngAnthonyy.svg?style=social&label=Follow)](https://twitter.com/ngAnthonyy)
 
-## Open Source Library for Angular Web Apps to integrate within a min as Firebase UI component for authentication.
+## Open Source Library for Angular Web Apps to integrate an user interface for firebase authentication.
 
 Angular UI component for [firebase](https://firebase.google.com/docs/auth/web/firebaseui) authentication.
 This library is an angular module (including angular components) that allows to authenticate
@@ -35,6 +34,11 @@ If you need me to support [bootstrap](https://getbootstrap.com/) please let me k
 | Sign In with Github                            | :heavy_check_mark:    |  :heavy_check_mark:    |
 | Sign In with PhoneNumber                       | :x:                   |  :heavy_check_mark:    |
 | Forgot/Reset Password                          | :heavy_check_mark:    |  :x:                   |
+| Sign out                                       | :heavy_check_mark:    |  :x:                   |
+| Delete account                                 | :heavy_check_mark:    |  :x:                   |
+| User Profile                                   | :heavy_check_mark:    |  :x:                   |
+| Edit User (name, email)                        | :heavy_check_mark:    |  :x:                   |
+| Edit User (name, email)                        | :heavy_check_mark:    |  :x:                   |
 | Sync user'auth with Firestore                  | :heavy_check_mark:    |  :x:                   |
 | Angular v2-5 friendly                          | :heavy_check_mark:    |  :x:                   |
 | Real time form validation                      | :heavy_check_mark:    |  :x:                   |
@@ -50,9 +54,17 @@ If you need me to support [bootstrap](https://getbootstrap.com/) please let me k
 - optional configuration
 - reusable components for every project that need an authentication with a firebase project/app.
 - built in feedback mechanism in form of a [snackbar](https://material.angular.io/components/snack-bar/overview) when an error occurred.
+- ability to sign out or to event to delete totally the account
+- user profile component to display user's data
+- update user profile as feature
+
 ### - Sync user's authentication with FIRESTORE (documentation coming soon)
 #### - Forgot Password as feature
 #### - Supports SSR - Server Side Rendering
+
+## Library's components
+- <ngx-auth-firebaseui> used for the authentication process
+- <ngx-auth-firebaseui-user> used to diplasy/edit the data of the current authenticated user
 
 ## Supported Providers:
 - email and password (traditional)
@@ -65,7 +77,7 @@ If you need me to support [bootstrap](https://getbootstrap.com/) please let me k
 ## Supported Processes and Actions:
 - sign up 
 - sign in 
-- forgot password
+- forgot/reset password
 - sending email verifications
 
 
@@ -85,12 +97,20 @@ if(issues || feedback || you_need_more_features){
 ### Note:
 This package is now under development. For further suggestions, please provide a PR.
 
-## Screenshots - Browser
+## Screenshots - Browser <ngx-auth-firebaseui></ngx-auth-firebaseui>
 - sign in
 ![ngx-auth-firebaseui](https://firebasestorage.googleapis.com/v0/b/ngx-auth-firebaseui.appspot.com/o/0.3.3-alpha%2Fsignin.png?alt=media&token=027b5bf8-388e-4b08-a098-a5ab6e215bbd)
 
 - Sign up
 ![ngx-auth-firebaseui](https://firebasestorage.googleapis.com/v0/b/ngx-auth-firebaseui.appspot.com/o/0.3.3-alpha%2Fregister.png?alt=media&token=ec45629a-b885-49a5-a931-1f4d007a7740)
+
+
+## Screenshots  <ngx-auth-firebaseui-user></ngx-auth-firebaseui-user>
+- user profile 
+![ngx-auth-firebaseui](https://firebasestorage.googleapis.com/v0/b/ngx-auth-firebaseui.appspot.com/o/0.4.0-alpha%2Fuser.png?alt=media&token=9f99dbbe-b622-4ca7-8538-7cf1fd31562c)
+
+- edit user
+![ngx-auth-firebaseui](https://firebasestorage.googleapis.com/v0/b/ngx-auth-firebaseui.appspot.com/o/0.4.0-alpha%2Fuser_edit.png?alt=media&token=771a8610-ac79-4f1e-8f67-24c61c8ce873)
 
 
 ## Screenshots - Mobile/Tablet Browser
@@ -179,7 +199,7 @@ Once the library is imported, you can use its components, directives and pipes i
 </h1>
 <ngx-auth-firebaseui (onSuccess)="printUser($event)" (onError)="printError()"></ngx-auth-firebaseui>
 ```
-
+or 
 ```ts
 <!-- or simply in the app.component.ts -->
 @Component({
