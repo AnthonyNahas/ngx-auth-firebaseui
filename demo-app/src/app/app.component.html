@@ -14,7 +14,7 @@
   <div fxLayout="column" fxLayoutGap="40px">
     <div fxLayoutAlign="center ">
       <mat-card fxFlex="50" fxFlex.xs="80">
-        <div fxLayoutAlign="center center" >
+        <div fxLayoutAlign="center center">
           <img alt="Ngx-auth-firebaseui Logo" mat-card-md-image
                src="../assets/images/logo/ngx-auth-firebaseui-logo.png">
         </div>
@@ -29,8 +29,7 @@
         </mat-card-subtitle>
         <mat-card-content>
           <pre><code>{{element}}</code></pre>
-          is for Angular Web Apps to integrate within a min as
-          Firebase UI component for authentication
+          Open Source Library for Angular Web Apps to integrate an user interface for firebase authentication.
         </mat-card-content>
       </mat-card>
     </div>
@@ -55,7 +54,7 @@
 
   <div style="margin: 2rem" fxLayout="row" fxLayout.lt-lg="column" fxLayoutAlign.xs="center center"
        fxLayoutAlign="center" fxLayoutGap.lt-lg="20px" fxLayoutGap="50px">
-    <mat-card fxFlex="50" fxFlexAlign="center">
+    <mat-card fxFlex="50" fxFlexAlign.lt-lg="center">
       <mat-card-title>
         ngx-auth-firebaseui
       </mat-card-title>
@@ -68,12 +67,22 @@
 
     <mat-card fxFlex="50" fxFlexAlign.lt-lg="center" fxFlexOrder.lt-lg="-1">
       <mat-card-content>
-        <mat-tab-group [color]="color">
+        <mat-tab-group [color]="color" [selectedIndex]="index">
           <mat-tab label="TS">
             <pre><code>{{code}}</code></pre>
           </mat-tab>
           <mat-tab label="HTML">
             <pre><code>{{html}}</code></pre>
+          </mat-tab>
+          <mat-tab *ngIf="auth.authState | async" label="Current User">
+            <mat-card>
+              <mat-card-title>
+                ngx-auth-firebaseui-user
+              </mat-card-title>
+              <mat-card-content>
+                <ngx-auth-firebaseui-user></ngx-auth-firebaseui-user>
+              </mat-card-content>
+            </mat-card>
           </mat-tab>
         </mat-tab-group>
       </mat-card-content>

@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {AngularFireAuth} from 'angularfire2/auth';
 
 @Component({
   selector: 'app-root',
@@ -33,7 +34,11 @@ export class AppComponent {
              (onError)="printError($event)">
         </ngx-auth-firebaseui>`;
 
+  public index: number;
   private _color: string;
+
+  constructor(public auth: AngularFireAuth) {
+  }
 
 
   get color(): string {
@@ -43,6 +48,7 @@ export class AppComponent {
   printUser(event) {
     console.log(event);
     this.error = false;
+    this.index = 2;
   }
 
   printError(event) {
