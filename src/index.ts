@@ -25,6 +25,7 @@ import {AuthProvidersComponent} from './components/providers/auth.providers.comp
 import {EmailConfirmationComponent} from './components/email-confirmation/email-confirmation.component';
 import {FirestoreSyncService} from './services/firestore-sync.service';
 import {AngularFirestoreModule} from 'angularfire2/firestore';
+import {UserComponent} from './components/user/user.component';
 
 // export * from './classes';
 // todo export all interfaces within the ngx-auth-firebaseui module
@@ -55,6 +56,7 @@ export * from './components/auth/auth.component';
     declarations:
         [
             AuthComponent,
+            UserComponent,
             AuthProvidersComponent,
             EmailConfirmationComponent,
             ResponseSnackbarComponent
@@ -62,6 +64,7 @@ export * from './components/auth/auth.component';
     exports:
         [
             AuthComponent,
+            UserComponent,
             AuthProvidersComponent,
             ResponseSnackbarComponent,
         ],
