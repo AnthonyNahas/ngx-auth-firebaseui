@@ -31,6 +31,7 @@ import {UserComponent} from './components/user/user.component';
 // todo export all interfaces within the ngx-auth-firebaseui module
 export * from './interfaces/main.interface';
 export * from './components/auth/auth.component';
+export * from './components/user/user.component';
 
 
 @NgModule({
