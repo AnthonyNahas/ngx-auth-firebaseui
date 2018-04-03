@@ -1,12 +1,18 @@
-# ngx-auth-firebaseui
+<p align="center">
+  <img height="256px" width="256px" style="text-align: center;" src="https://cdn.rawgit.com/anthonynahas/ngx-auth-firebaseui/master/demo/src/assets/logo.svg">
+</p>
 
-## Open Source Library for Angular Web Apps to integrate a material user interface for firebase authentication.
+# ngx-auth-firebaseui - Open Source Library for Angular Web Apps to integrate a material user interface for firebase authentication.
+
 
 [![preview](ngx-auth-firebaseui-logo.png)](ngx-auth-firebaseui-logo.png)
 
 [![npm version](https://badge.fury.io/js/ngx-auth-firebaseui.svg)](https://badge.fury.io/js/ngx-auth-firebaseui)
 [![npm](https://img.shields.io/badge/demo-online-ed1c46.svg)](https://ngx-auth-firebaseui.firebaseapp.com)
 [![CircleCI branch](https://img.shields.io/circleci/project/github/AnthonyNahas/ngx-auth-firebaseui/master.svg?label=circleci)](https://circleci.com/gh/AnthonyNahas/ngx-auth-firebaseui)
+[![Coverage Status](https://coveralls.io/repos/github/anthonynahas/ngx-auth-firebaseui/badge.svg?branch=master)](https://coveralls.io/github/anthonynahas/ngx-auth-firebaseui?branch=master)
+[![dependency Status](https://david-dm.org/anthonynahas/ngx-auth-firebaseui/status.svg)](https://david-dm.org/anthonynahas/ngx-auth-firebaseui)
+[![devDependency Status](https://david-dm.org/anthonynahas/ngx-auth-firebaseui/dev-status.svg?branch=master)](https://david-dm.org/anthonynahas/ngx-auth-firebaseui#info=devDependencies)
 [![npm](https://img.shields.io/npm/dt/ngx-auth-firebaseui.svg?style=flat-square)](https://www.npmjs.com/package/ngx-auth-firebaseui)
 [![Github All Releases](https://img.shields.io/github/downloads/anthonynahas/ngx-auth-firebaseui/total.svg)](https://github.com/AnthonyNahas/ngx-auth-firebaseui)
 [![Greenkeeper badge](https://badges.greenkeeper.io/AnthonyNahas/ngx-auth-firebaseui.svg)](https://greenkeeper.io/)
@@ -88,6 +94,7 @@ If you need me to support [bootstrap](https://getbootstrap.com/) please let me k
 - if you need a built in theme --> please let me know
 
 ## Demo [ngx-auth-firebaseui demo](https://ngx-auth-firebaseui.firebaseapp.com/)
+
 - Try it out
 ```js
 if(issues || feedback || you_need_more_features){
@@ -146,17 +153,29 @@ This package is now under development. For further suggestions, please provide a
   }
 ```
 
+## Dependencies
+* [Angular](https://angular.io) (*requires* Angular 2 or higher, tested with 2.0.0)
+
+
 ## (1) Installation
 
-To install this library, run:
+Install above dependencies via *npm*. 
 
-```bash
-$ npm install ngx-auth-firebaseui --save
+Now install `ngx-auth-firebaseui` via:
+```shell
+npm install --save ngx-auth-firebaseui
 ```
+Once installed you need to import the main module:
+```js
+import { NgxAuthFirebaseUIModule } from 'ngx-auth-firebaseui';
+```
+The only remaining part is to list the imported module in your application module. The exact method will be slightly
+different for the root (top-level) module for which you should end up with the code similar to (notice ` NgxAuthFirebaseUIModule .forRoot()`):
+
 
 and then from your Angular `AppModule`:
 
-```ts
+```js
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -191,9 +210,33 @@ export class AppModule { }
 
 ```
 
+Other modules in your application can simply import ` NgxAuthFirebaseUIModule `:
+
+```js
+import { NgxAuthFirebaseUIModule } from 'ngx-auth-firebaseui';
+
+@NgModule({
+  declarations: [OtherComponent, ...],
+  imports: [NgxAuthFirebaseUIModule, ...], 
+})
+export class OtherModule {
+}
+```
+
+---
+##### SystemJS
+>**Note**:If you are using `SystemJS`, you should adjust your configuration to point to the UMD bundle.
+In your systemjs config file, `map` needs to tell the System loader where to look for `ngx-auth-firebaseui`:
+```js
+map: {
+  'ngx-auth-firebaseui': 'node_modules/ngx-auth-firebaseui/bundles/ngx-auth-firebaseui.umd.js',
+}
+```
+---
+
 Once the library is imported, you can use its components, directives and pipes in your Angular application:
 
-```ts
+```html
 <!-- You can now use the library component in app.component.html  -->
 <h1>
   {{title}}
@@ -320,6 +363,7 @@ $ npm run lint
 ## Support
 Drop an email to: [anthony.na@hotmail.de](mailto:anthony.na@hotmail.de) and i will help you!
 
+
 ## License
 
-MIT © [Anthony](mailto:anthony.na@hotmail.de)
+Copyright (c) 2018 [Anthony Nahas](mailto:anthony.na@hotmail.de). Licensed under the MIT License (MIT)
