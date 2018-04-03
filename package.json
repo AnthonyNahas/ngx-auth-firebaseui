@@ -1,7 +1,7 @@
 {
   "name": "ngx-auth-firebaseui",
   "description": "Open Source Library for Angular Web Apps to integrate a material user interface for firebase authentication",
-  "version": "0.4.1-alpha",
+  "version": "0.5.0",
   "homepage": "https://github.com/anthonynahas/ngx-auth-firebaseui",
   "author": {
     "name": "anthonynahas",
