@@ -1,7 +1,35 @@
 {
-  "generator-angular2-library": {
-    "promptValues": {
-      "gitRepositoryUrl": "https://github.com/username/repo"
-    }
+  "generator-ngx-library": {
+    "version": "5.7.1",
+    "authorName": "anthonynahas",
+    "authorEmail": "anthony.na@hotmail.de",
+    "githubUsername": "anthonynahas",
+    "githubRepoName": "ngx-auth-firebaseui",
+    "projectName": "ngx-auth-firebaseui",
+    "projectVersion": "0.0.1",
+    "projectDescription": " Open Source Library for Angular Web Apps to integrate an user interface for firebase authentication.",
+    "projectKeywords": [
+      "ng",
+      "angular",
+      "library"
+    ],
+    "ngVersion": "5.0.0",
+    "ngModules": [
+      "core",
+      "common"
+    ],
+    "otherDependencies": [],
+    "dependenciesRange": "^",
+    "ngPrefix": "my-lib",
+    "testingFramework": "karma",
+    "useGreenkeeper": true,
+    "useCompodoc": true,
+    "enforceNgGitCommitMsg": true,
+    "exclusions": [
+      "demo/src/jestGlobalMocks.ts",
+      "demo/src/setupJest.ts",
+      "config/jestGlobalMocks.ts",
+      "config/setupJest.ts"
+    ]
   }
 }
