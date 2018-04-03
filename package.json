@@ -33,7 +33,7 @@
   "scripts": {
     "build": "gulp build",
     "build:watch": "gulp build:watch",
-    "build:watch:fast": "gulp build:watch:fast",
+    "build:watch:fast": "gulp build:watch-fast",
     "test": " gulp test",
     "test:watch": " gulp test:watch",
     "demo": " gulp build:demo",
