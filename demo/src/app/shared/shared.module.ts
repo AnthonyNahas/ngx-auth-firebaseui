@@ -15,6 +15,7 @@ import {
 } from '@angular/material';
 import {AngularFireAuthModule} from 'angularfire2/auth';
 import {AngularFirestoreModule} from 'angularfire2/firestore';
+import {BadgesComponent} from './badges/badges.component';
 
 @NgModule({
   imports: [
@@ -33,6 +34,7 @@ import {AngularFirestoreModule} from 'angularfire2/firestore';
     HeaderComponent,
     FooterComponent,
     ContentWrapperComponent,
+    BadgesComponent,
     FlexLayoutModule,
     MatToolbarModule,
     MatTabsModule,
@@ -43,7 +45,8 @@ import {AngularFirestoreModule} from 'angularfire2/firestore';
   declarations: [
     HeaderComponent,
     FooterComponent,
-    ContentWrapperComponent
+    ContentWrapperComponent,
+    BadgesComponent
   ],
   providers: [],
 })
