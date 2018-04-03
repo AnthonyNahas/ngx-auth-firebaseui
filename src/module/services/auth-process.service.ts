@@ -1,10 +1,9 @@
 import {EventEmitter, Injectable} from '@angular/core';
 import {MatSnackBar} from '@angular/material';
 import {AngularFireAuth} from 'angularfire2/auth';
-import {ISignInProcess} from '../index';
-import {ISignUpProcess} from '../interfaces/main.interface';
+import {ISignInProcess, ISignUpProcess} from '../interfaces/main.interface';
 import {FirestoreSyncService} from './firestore-sync.service';
-import * as firebase from 'firebase/app';
+import * as firebase from 'firebase';
 import User = firebase.User;
 import GoogleAuthProvider = firebase.auth.GoogleAuthProvider;
 import FacebookAuthProvider = firebase.auth.FacebookAuthProvider;

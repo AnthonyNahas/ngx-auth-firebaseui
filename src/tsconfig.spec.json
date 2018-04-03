@@ -1,18 +1,15 @@
 {
-  "extends": "./tsconfig.es5.json",
+  "extends": "../tsconfig.json",
   "compilerOptions": {
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "outDir": "../out-tsc/spec",
-    "module": "commonjs",
-    "target": "es6",
     "baseUrl": "",
-    "types": [
-      "jest",
-      "node"
+    "module": "commonjs",
+    "declaration": false,
+    "emitDecoratorMetadata": true,
+    "typeRoots": [
+      "../node_modules/@types"
     ]
   },
-  "files": [
-    "**/*.spec.ts"
-  ]
+  "awesomeTypescriptLoaderOptions": {
+    "useWebpackText": true
+  }
 }
