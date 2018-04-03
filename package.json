@@ -1,6 +1,6 @@
 {
   "name": "ngx-auth-firebaseui",
-  "description": "Angular library built with ❤ using ngx-library yeoman generator.",
+  "description": "Open Source Library for Angular Web Apps to integrate a material user interface for firebase authentication",
   "version": "0.4.1-alpha",
   "homepage": "https://github.com/anthonynahas/ngx-auth-firebaseui",
   "author": {
@@ -31,8 +31,11 @@
   },
   "private": true,
   "scripts": {
-    "start": "gulp build",
+    "build": "gulp build",
+    "build:watch": "gulp build:watch",
+    "build:watch:fast": "gulp build:watch:fast",
     "test": " gulp test",
+    "test:watch": " gulp test:watch",
     "demo": " gulp build:demo",
     "check-travis": " travis-status --repo=anthonynahas/ngx-auth-firebaseui --branch=master --fail-pending || echo 'Not yet passing'"
   },
