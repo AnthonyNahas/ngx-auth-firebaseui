@@ -1,5 +1,16 @@
+<a name="0.5.1"></a>
+## [0.5.1](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v0.5.0...v0.5.1) (2018-04-04)
+
+
+### Features
+
+* **ngx-auth-firebaseui:** added password strength component ([b1b7fd5](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/b1b7fd5))
+* **ngx-auth-firebaseui:** integration of password strength + added loading progress bar ([d068716](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/d068716))
+
+
+
 <a name="0.5.0"></a>
-# [0.5.0](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/0.4.1-alpha...0.5.0) (2018-04-03)
+# [0.5.0](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/0.4.1-alpha...v0.5.0) (2018-04-03)
 
 
 ### Bug Fixes
