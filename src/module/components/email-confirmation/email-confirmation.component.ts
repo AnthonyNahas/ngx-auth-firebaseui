@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'ngx-auth-firebaseui-email-confirmation',
@@ -7,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmailConfirmationComponent implements OnInit {
 
-  constructor() { }
+  @Input()
+  email: string;
+
+  constructor() {
+  }
 
   ngOnInit() {
   }
