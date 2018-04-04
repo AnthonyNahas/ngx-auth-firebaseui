@@ -25,9 +25,11 @@ import {
   MatInputModule,
   MatSnackBarModule,
   MatTabsModule,
-  MatTooltipModule
+  MatTooltipModule,
+  MatProgressBarModule
 } from '@angular/material';
 import {AngularFirestoreModule} from 'angularfire2/firestore';
+import {PasswordStrengthComponent} from './components/password-strength/password-strength.component';
 
 // Export module's public API
 export {LibComponent} from './component/lib.component';
@@ -50,6 +52,7 @@ export {LibService} from './service/lib.service';
     MatChipsModule,
     MatTooltipModule,
     MatDialogModule,
+    MatProgressBarModule,
     AngularFireAuthModule,
     AngularFirestoreModule,
   ],
@@ -59,7 +62,9 @@ export {LibService} from './service/lib.service';
     UserComponent,
     AuthProvidersComponent,
     EmailConfirmationComponent,
-    ResponseSnackbarComponent
+    ResponseSnackbarComponent,
+    AngularFireAuthModule,
+    AngularFirestoreModule
   ],
   declarations: [
     LibComponent,
@@ -67,7 +72,9 @@ export {LibService} from './service/lib.service';
     UserComponent,
     AuthProvidersComponent,
     EmailConfirmationComponent,
-    ResponseSnackbarComponent]
+    ResponseSnackbarComponent,
+    PasswordStrengthComponent
+  ]
 })
 
 

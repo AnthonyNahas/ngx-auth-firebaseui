@@ -25,7 +25,9 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
 
   onSuccessEmitter: EventEmitter<any> = new EventEmitter<any>();
   onErrorEmitter: EventEmitter<any> = new EventEmitter<any>();
+  isLoading: boolean;
   emailConfirmationSent: boolean;
+  emailToConfirm: string;
 
   constructor(public auth: AngularFireAuth,
               private _fireStoreService: FirestoreSyncService,
@@ -41,6 +43,7 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
 
   public async signInWith(provider: AuthProvider, email?: string, password?: string) {
     try {
+      this.isLoading = true;
       let signInResult: User | UserCredential;
 
       switch (provider) {
@@ -78,6 +81,8 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
       console.error(err);
       this._snackBar.open(err.message, 'OK', {duration: 5000});
       this.onErrorEmitter.next(err);
+    } finally {
+      this.isLoading = false;
     }
   }
 
@@ -87,6 +92,7 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
    */
   public async signUp(name: string, email: string, password: string) {
     try {
+      this.isLoading = true;
       console.log(`name: ${name} | email: ${email} --> ${password}`);
       const user: User = await this.auth.auth.createUserWithEmailAndPassword(email, password);
       const res = await this._fireStoreService
@@ -102,12 +108,15 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
       const sendEmailVerification = await user.sendEmailVerification();
       this.emailConfirmationSent = true;
       console.log('on sign up with sendEmailVerification', sendEmailVerification);
+      this.emailToConfirm = email;
       this._snackBar.open(`Hallo ${name}!`, 'OK', {duration: 10000});
       this.onSuccessEmitter.next(user);
     } catch (err) {
       console.error(err);
       this._snackBar.open(err.message, 'OK', {duration: 5000});
       this.onErrorEmitter.next(err);
+    } finally {
+      this.isLoading = false;
     }
   }
 
