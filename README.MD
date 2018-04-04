@@ -14,7 +14,6 @@
 [![dependency Status](https://david-dm.org/anthonynahas/ngx-auth-firebaseui/status.svg)](https://david-dm.org/anthonynahas/ngx-auth-firebaseui)
 [![devDependency Status](https://david-dm.org/anthonynahas/ngx-auth-firebaseui/dev-status.svg?branch=master)](https://david-dm.org/anthonynahas/ngx-auth-firebaseui#info=devDependencies)
 [![npm](https://img.shields.io/npm/dt/ngx-auth-firebaseui.svg?style=flat-square)](https://www.npmjs.com/package/ngx-auth-firebaseui)
-[![Github All Releases](https://img.shields.io/github/downloads/anthonynahas/ngx-auth-firebaseui/total.svg)](https://github.com/AnthonyNahas/ngx-auth-firebaseui)
 [![Greenkeeper badge](https://badges.greenkeeper.io/AnthonyNahas/ngx-auth-firebaseui.svg)](https://greenkeeper.io/)
 [![npm](https://img.shields.io/npm/v/ngx-auth-firebaseui.svg)](https://www.npmjs.com/package/ngx-auth-firebaseui)[![David](https://img.shields.io/david/AnthonyNahas/ngx-auth-firebaseui.svg?style=flat-square)](https://www.npmjs.com/package/ngx-auth-firebaseui)
 [![node](https://img.shields.io/node/v/ngx-auth-firebaseui.svg)](https://www.npmjs.com/package/ngx-auth-firebaseui)
@@ -40,8 +39,10 @@ If you need me to support [bootstrap](https://getbootstrap.com/) please let me k
 | Sign In with Twitter                           | :heavy_check_mark:    |  :heavy_check_mark:    |
 | Sign In with Github                            | :heavy_check_mark:    |  :heavy_check_mark:    |
 | Sign In with PhoneNumber                       | :x:                   |  :heavy_check_mark:    |
-| Forgot/Reset Password                          | :heavy_check_mark:    |  :x:                   |
 | Sign out                                       | :heavy_check_mark:    |  :x:                   |
+| Sign in/up progress indicator                  | :heavy_check_mark:    |  :x:                   |
+| Password Strength indicator                    | :heavy_check_mark:    |  :x:                   |
+| Forgot/Reset Password                          | :heavy_check_mark:    |  :x:                   |
 | Delete account                                 | :heavy_check_mark:    |  :x:                   |
 | User Profile                                   | :heavy_check_mark:    |  :x:                   |
 | Edit User (name, email)                        | :heavy_check_mark:    |  :x:                   |
@@ -50,7 +51,7 @@ If you need me to support [bootstrap](https://getbootstrap.com/) please let me k
 | Angular v2-5 friendly                          | :heavy_check_mark:    |  :x:                   |
 | Real time form validation                      | :heavy_check_mark:    |  :x:                   |
 | Easy to integrate                              | :heavy_check_mark:    |  :x:                   |
-| Support Server Side Rendering                          | :heavy_check_mark:    |  :x:                   |
+| Support Server Side Rendering                  | :heavy_check_mark:    |  :x:                   |
 | Support SPA without further config             | :heavy_check_mark:    |  :x:                   |
 | Support Safari private browsing                | :heavy_check_mark:    |  :x:                   |
 
@@ -361,7 +362,7 @@ $ npm run lint
 ```
 
 ## Support
-Drop an email to: [anthony.na@hotmail.de](mailto:anthony.na@hotmail.de) and i will help you!
+Drop an email to: [anthony.na@hotmail.de](mailto:anthony.na@hotmail.de) and I will help you!
 
 
 ## License
