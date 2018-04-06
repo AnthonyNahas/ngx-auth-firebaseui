@@ -4,6 +4,11 @@ const gulp = require('gulp');
 const gulpUtil = require('gulp-util');
 const helpers = require('./config/helpers');
 const isDocker = require('is-docker');
+const imagemin = require('gulp-imagemin'),
+  gif = require('imagemin-gifsicle'),
+  jpg = require('imagemin-jpegoptim'),
+  png = require('imagemin-optipng'),
+  svg = require('imagemin-svgo');
 
 /** TSLint checker */
 const tslint = require('tslint');
@@ -80,6 +85,7 @@ const config = {
   allTs: 'src/**/!(*.spec).ts',
   allSass: 'src/**/*.+(scss|sass)',
   allHtml: 'src/**/*.html',
+  assets: 'src/module/assets/**/*',
   demoDir: 'demo/',
   buildDir: 'tmp/',
   outputDir: 'dist/',
@@ -303,7 +309,7 @@ gulp.task('build:watch-fast', ['build-watch-no-tests'], () => {
 /////////////////////////////////////////////////////////////////////////////
 
 // Prepare 'dist' folder for publication to NPM
-gulp.task('npm-package', (cb) => {
+gulp.task('npm-package', ['copy:assets'], (cb) => {
   let pkgJson = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
   let targetPkgJson = {};
   let fieldsToCopy = ['version', 'description', 'keywords', 'author', 'repository', 'license', 'bugs', 'homepage'];
@@ -330,9 +336,11 @@ gulp.task('npm-package', (cb) => {
   // copy the needed additional files in the 'dist' folder
   pump(
     [
-      gulp.src(['README.md', 'LICENSE', 'CHANGELOG.md',
-        `${config.buildDir}/lib-es5/**/*.d.ts`,
-        `${config.buildDir}/lib-es5/**/*.metadata.json`]),
+      gulp.src(
+        ['README.md', 'LICENSE', 'CHANGELOG.md',
+          `${config.buildDir}/lib-es5/**/*.d.ts`,
+          `${config.buildDir}/lib-es5/**/*.metadata.json`,
+        ]),
       gulpFile('package.json', JSON.stringify(targetPkgJson, null, 2)),
       gulp.dest(config.outputDir)
     ], cb);
@@ -457,6 +465,23 @@ gulp.task('rollup-bundle', (cb) => {
       gulpUtil.log(gulpUtil.colors.red(e));
       process.exit(1);
     });
+});
+
+/////////////////////////////////////////////////////////////////////////////
+// Copy Assets - images, i18n, json files...
+/////////////////////////////////////////////////////////////////////////////
+gulp.task('copy:assets', () => {
+  gulp.src([`${config.assets}`])
+    .pipe(imagemin([
+      jpg({max: 50}),
+      png({optimizationLevel: 3}),
+      gif({optimizationLevel: 3}),
+      svg({
+        minifyStyles: true,
+        removeDoctype: true
+      })
+    ]))
+    .pipe(gulp.dest(`${config.outputDir}/assets`));
 });
 
 
