@@ -1,3 +1,13 @@
+<a name="0.5.2"></a>
+## [0.5.2](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v0.5.1...v0.5.2) (2018-04-06)
+
+
+### Bug Fixes
+
+* **ngx-auth-firebaseui:** updated gulp script to copy the assets dir ([0f3bdcf](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/0f3bdcf))
+
+
+
 <a name="0.5.1"></a>
 ## [0.5.1](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v0.5.0...v0.5.1) (2018-04-04)
 

@@ -19,7 +19,14 @@ import {AngularFireModule} from 'angularfire2';
     // The application ID can be any identifier which is unique on
     // the page.
     BrowserModule.withServerTransition({appId: 'ngx-auth-firebaseui-demo-id'}),
-    AngularFireModule.initializeApp(),
+    AngularFireModule.initializeApp({
+      apiKey: 'AIzaSyASG7KxDO2z5AH9r0jlUmwiw68Ap8kG20c',
+      authDomain: 'ngx-auth-firebaseui.firebaseapp.com',
+      databaseURL: 'https://ngx-auth-firebaseui.firebaseio.com',
+      projectId: 'ngx-auth-firebaseui',
+      storageBucket: 'ngx-auth-firebaseui.appspot.com',
+      messagingSenderId: '520699629648'
+    }),
     BrowserAnimationsModule,
     FormsModule,
     HttpModule,
