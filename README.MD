@@ -4,14 +4,12 @@
 
 # ngx-auth-firebaseui - Open Source Library for Angular Web Apps to integrate a material user interface for firebase authentication.
 
-[![Join the chat at https://gitter.im/ngx-auth-firebaseui/Lobby](https://badges.gitter.im/ngx-auth-firebaseui/Lobby.svg)](https://gitter.im/ngx-auth-firebaseui/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-
-
 [![preview](ngx-auth-firebaseui-logo.png)](ngx-auth-firebaseui-logo.png)
 
 [![npm version](https://badge.fury.io/js/ngx-auth-firebaseui.svg)](https://badge.fury.io/js/ngx-auth-firebaseui)
 [![npm](https://img.shields.io/badge/demo-online-ed1c46.svg)](https://ngx-auth-firebaseui.firebaseapp.com)
 [![CircleCI branch](https://img.shields.io/circleci/project/github/AnthonyNahas/ngx-auth-firebaseui/master.svg?label=circleci)](https://circleci.com/gh/AnthonyNahas/ngx-auth-firebaseui)
+[![Join the chat at https://gitter.im/ngx-auth-firebaseui/Lobby](https://badges.gitter.im/ngx-auth-firebaseui/Lobby.svg)](https://gitter.im/ngx-auth-firebaseui/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Coverage Status](https://coveralls.io/repos/github/anthonynahas/ngx-auth-firebaseui/badge.svg?branch=master)](https://coveralls.io/github/anthonynahas/ngx-auth-firebaseui?branch=master)
 [![dependency Status](https://david-dm.org/anthonynahas/ngx-auth-firebaseui/status.svg)](https://david-dm.org/anthonynahas/ngx-auth-firebaseui)
 [![devDependency Status](https://david-dm.org/anthonynahas/ngx-auth-firebaseui/dev-status.svg?branch=master)](https://david-dm.org/anthonynahas/ngx-auth-firebaseui#info=devDependencies)
@@ -85,15 +83,17 @@ If you need me to support [bootstrap](https://getbootstrap.com/) please let me k
 - phone number (todo)
 
 ## Supported Processes and Actions:
-- sign up 
-- sign in 
+- sign up
+- sign in
 - forgot/reset password
 - sending email verifications
 
 
 ### Requirements:
-- angular material theme (described below) + cdk
-- FlexLayout
+- [angular material ](https://www.npmjs.com/package/@angular/material)
+- [angular material theme](https://material.angular.io/guide/getting-started#step-4-include-a-theme)
+- [angular cdk ](https://www.npmjs.com/package/@angular/cdk)
+- [angular flex-layout ](https://www.npmjs.com/package/@angular/flex-layout)
 - if you need a built in theme --> please let me know
 
 ## Demo [ngx-auth-firebaseui demo](https://ngx-auth-firebaseui.firebaseapp.com/)
@@ -117,7 +117,7 @@ This package is now under development. For further suggestions, please provide a
 
 
 ## Screenshots  <ngx-auth-firebaseui-user></ngx-auth-firebaseui-user>
-- user profile 
+- user profile
 ![ngx-auth-firebaseui](https://firebasestorage.googleapis.com/v0/b/ngx-auth-firebaseui.appspot.com/o/0.4.0-alpha%2Fuser.png?alt=media&token=9f99dbbe-b622-4ca7-8538-7cf1fd31562c)
 
 - edit user
@@ -156,13 +156,19 @@ This package is now under development. For further suggestions, please provide a
   }
 ```
 
+e.g:
+
+```bash
+npm i -s @angular/material @angular/cdk @angular/flex-layout
+```
+
 ## Dependencies
 * [Angular](https://angular.io) (*requires* Angular 2 or higher, tested with 2.0.0)
 
 
 ## (1) Installation
 
-Install above dependencies via *npm*. 
+Install above dependencies via *npm*.
 
 Now install `ngx-auth-firebaseui` via:
 ```shell
@@ -220,7 +226,7 @@ import { NgxAuthFirebaseUIModule } from 'ngx-auth-firebaseui';
 
 @NgModule({
   declarations: [OtherComponent, ...],
-  imports: [NgxAuthFirebaseUIModule, ...], 
+  imports: [NgxAuthFirebaseUIModule, ...],
 })
 export class OtherModule {
 }
@@ -246,7 +252,7 @@ Once the library is imported, you can use its components, directives and pipes i
 </h1>
 <ngx-auth-firebaseui (onSuccess)="printUser($event)" (onError)="printError()"></ngx-auth-firebaseui>
 ```
-or 
+or
 ```ts
 <!-- or simply in the app.component.ts -->
 @Component({
@@ -364,7 +370,7 @@ $ npm run lint
 ```
 
 ## Support
-Drop an email to: [anthony.na@hotmail.de](mailto:anthony.na@hotmail.de) and I will help you!
+Drop an email to: [Anthony Nahas](mailto:anthony.na@hotmail.de) and I will help you!
 
 
 ## License
