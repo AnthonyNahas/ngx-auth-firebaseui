@@ -1,6 +1,5 @@
 import {Component, ContentChildren, Input, OnInit, QueryList} from '@angular/core';
 import {Title} from '@angular/platform-browser';
-import {StepContentComponent} from './step-content/step-content.component';
 
 
 @Component({
@@ -10,8 +9,6 @@ import {StepContentComponent} from './step-content/step-content.component';
 })
 export class GettingStartedComponent implements OnInit {
 
-  /** Steps that the stepper holds. */
-  @ContentChildren(StepContentComponent) _stepsContent: QueryList<StepContentComponent>;
 
   @Input()
   index: number = 0;
