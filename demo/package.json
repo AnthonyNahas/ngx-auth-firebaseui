@@ -18,13 +18,13 @@
   "dependencies": {
     "@angular/animations": "^5.2.9",
     "@angular/cdk": "^5.2.4",
-    "@angular/material": "^5.2.4",
     "@angular/common": "^5.2.9",
     "@angular/compiler": "^5.2.9",
     "@angular/core": "^5.2.9",
     "@angular/flex-layout": "^5.0.0-beta.14",
     "@angular/forms": "^5.2.9",
     "@angular/http": "^5.2.9",
+    "@angular/material": "^5.2.4",
     "@angular/platform-browser": "^5.2.9",
     "@angular/platform-browser-dynamic": "^5.2.9",
     "@angular/platform-server": "^5.2.9",
@@ -37,6 +37,7 @@
     "font-awesome": "^4.7.0",
     "include-media": "^1.4.9",
     "material-design-icons": "^3.0.1",
+    "ngx-disqus": "^2.3.7",
     "rxjs": "^5.5.8",
     "zone.js": "^0.8.24"
   },
@@ -67,5 +68,55 @@
     "express": "^4.16.2",
     "@nguniversal/express-engine": "^5.0.0-beta.5",
     "@nguniversal/module-map-ngfactory-loader": "^5.0.0-beta.5"
+  },
+  "peerDependencies": {
+    "@angular/animations": "^5.x",
+    "@angular/cdk": "^5.x",
+    "@angular/flex-layout": "^5.0.0-beta.13",
+    "@angular/forms": "^5.x",
+    "@angular/material": "^5.x",
+    "angularfire2": "^5.0.0-rc.5-next",
+    "firebase": ">= 4.9.1 <= 4.8.0",
+    "rxjs": "^5.x",
+    "zone.js": "^0.8.x"
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "greenkeeper": {
+    "ignore": [
+      "@angular/core",
+      "@angular/common",
+      "@angular/compiler",
+      "@angular/platform-server",
+      "@angular/platform-browser",
+      "@angular/platform-browser-dynamic",
+      "@angular/compiler-cli",
+      "zone.js",
+      "rxjs",
+      "tslint",
+      "gulp-tslint",
+      "typescript",
+      "awesome-typescript-loader",
+      "codelyzer",
+      "@angular/animations",
+      "@types/jasmine"
+    ]
+  },
+  "commitplease": {
+    "style": "angular",
+    "types": [
+      "feat",
+      "fix",
+      "docs",
+      "style",
+      "refactor",
+      "perf",
+      "test",
+      "chore",
+      "revert",
+      "demo"
+    ],
+    "scope": "\\S+.*"
   }
 }
