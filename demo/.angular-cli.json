@@ -12,10 +12,11 @@
         "assets",
         "favicon.ico",
         {
-          "glob": "**/*",
-          "input": "../node_modules/ngx-auth-firebaseui/assets/",
-          "output": "./assets/"
-        }
+  "glob": "**/*",
+  "input": "../node_modules/ngx-auth-firebaseui/assets/",
+  "output": "./assets/",
+  "allowOutsideOutDir": false
+}
       ],
       "index": "index.html",
       "main": "main.ts",
@@ -24,6 +25,7 @@
       "tsconfig": "tsconfig.app.json",
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
+      "serviceWorker": true,
       "styles": [
         "styles.scss",
         "ngx-auth-firebaseui_theme.scss",
@@ -91,6 +93,7 @@
   },
   "defaults": {
     "styleExt": "scss",
-    "component": {}
+    "component": {
+    }
   }
 }

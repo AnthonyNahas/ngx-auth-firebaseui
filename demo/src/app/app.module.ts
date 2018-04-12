@@ -9,6 +9,9 @@ import {HomeModule} from './home/home.module';
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AngularFireModule} from 'angularfire2';
+import {NgxAuthFirebaseUIModule} from '../../../dist';
+import {environment} from '../environments/environment';
+import {ServiceWorkerModule} from '@angular/service-worker';
 
 @NgModule({
   declarations: [
@@ -19,6 +22,7 @@ import {AngularFireModule} from 'angularfire2';
     // The application ID can be any identifier which is unique on
     // the page.
     BrowserModule.withServerTransition({appId: 'ngx-auth-firebaseui-demo-id'}),
+    ServiceWorkerModule.register('/ngsw-worker.js', {enabled: environment.production}),
     AngularFireModule.initializeApp({
       apiKey: 'AIzaSyASG7KxDO2z5AH9r0jlUmwiw68Ap8kG20c',
       authDomain: 'ngx-auth-firebaseui.firebaseapp.com',
