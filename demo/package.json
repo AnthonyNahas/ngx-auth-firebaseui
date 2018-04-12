@@ -29,6 +29,7 @@
     "@angular/platform-browser-dynamic": "^5.2.9",
     "@angular/platform-server": "^5.2.9",
     "@angular/router": "^5.2.9",
+    "@angular/service-worker": "^5.2.9",
     "@ng-bootstrap/ng-bootstrap": "1.0.2",
     "angularfire2": "^5.0.0-rc.5-next",
     "bootstrap": "4.0.0",
@@ -37,7 +38,10 @@
     "font-awesome": "^4.7.0",
     "include-media": "^1.4.9",
     "material-design-icons": "^3.0.1",
+    "ngx-clipboard": "^10.0.0",
     "ngx-disqus": "^2.3.7",
+    "ngx-highlightjs": "^1.4.1",
+    "ngx-material-pages": "^1.1.2",
     "rxjs": "^5.5.8",
     "zone.js": "^0.8.24"
   },

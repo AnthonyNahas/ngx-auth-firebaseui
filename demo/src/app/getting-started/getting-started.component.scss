@@ -38,6 +38,22 @@
   }
 }
 
-::ng-deep .mat-tab-label-container {
-  display: none !important;
+video {
+  max-width: 100%;
+}
+
+button:focus {
+  outline: none;
+}
+
+.comment-container {
+  margin: 1rem;
+}
+
+.mat-button {
+  white-space: normal !important;
+}
+
+::ng-deep ngx-auth-firebaseui .mat-tab-label-container {
+  display: flex;
 }
