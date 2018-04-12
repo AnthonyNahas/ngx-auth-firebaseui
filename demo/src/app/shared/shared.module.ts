@@ -16,20 +16,11 @@ import {
 import {AngularFireAuthModule} from 'angularfire2/auth';
 import {AngularFirestoreModule} from 'angularfire2/firestore';
 import {BadgesComponent} from './badges/badges.component';
-import {NgxAuthFirebaseUIModule} from '../../../../dist';
 
 @NgModule({
   imports: [
     RouterModule,
     NgbCollapseModule.forRoot(),
-    NgxAuthFirebaseUIModule.forRoot({
-      apiKey: 'AIzaSyASG7KxDO2z5AH9r0jlUmwiw68Ap8kG20c',
-      authDomain: 'ngx-auth-firebaseui.firebaseapp.com',
-      databaseURL: 'https://ngx-auth-firebaseui.firebaseio.com',
-      projectId: 'ngx-auth-firebaseui',
-      storageBucket: 'ngx-auth-firebaseui.appspot.com',
-      messagingSenderId: '520699629648'
-    }),
     FlexLayoutModule,
     MatToolbarModule,
     MatTabsModule,
@@ -43,7 +34,6 @@ import {NgxAuthFirebaseUIModule} from '../../../../dist';
     HeaderComponent,
     FooterComponent,
     ContentWrapperComponent,
-    NgxAuthFirebaseUIModule,
     BadgesComponent,
     FlexLayoutModule,
     MatToolbarModule,

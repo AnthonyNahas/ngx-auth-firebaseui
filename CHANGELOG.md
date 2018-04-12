@@ -1,3 +1,8 @@
+<a name="0.5.4"></a>
+## [0.5.4](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v0.5.3...v0.5.4) (2018-04-12)
+
+
+
 <a name="0.5.3"></a>
 ## [0.5.3](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v0.5.2...v0.5.3) (2018-04-11)
 
