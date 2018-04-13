@@ -107,14 +107,21 @@ export class GettingStartedComponent implements OnInit {
   'ngx-auth-firebaseui': 'node_modules/ngx-auth-firebaseui/bundles/ngx-auth-firebaseui.umd.js',
   }`;
 
-  importNgxMaterialPagesModule = `import { NgxMaterialPagesModule } from 'ngx-auth-firebaseui';`;
+  importNgxAuthFirebaseUIModule = `import { NgxAuthFirebaseUIModule } from 'ngx-auth-firebaseui';`;
 
-  importNgxMaterialPagesModuleInAppModule = `import { NgxMaterialPagesModule } from 'ngx-auth-firebaseui';
+  importNgxAuthFirebaseUIModuleInAppModule = `import { NgxAuthFirebaseUIModule } from 'ngx-auth-firebaseui';
                                               import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
                                               @NgModule({
                                                 declarations: [AppComponent, ...],
-                                                imports: [NgxMaterialPagesModule.forRoot(),
+                                                imports: [NgxAuthFirebaseUIModule.forRoot({
+                                                  apiKey: 'your-firebase-apiKey',
+                                                  authDomain: 'your-firebase-authDomain',
+                                                  databaseURL: 'your-firebase-databaseURL',
+                                                  projectId: 'your-firebase-projectId',
+                                                  storageBucket: 'your-firebase-storageBucket',
+                                                  messagingSenderId: 'your-firebase-messagingSenderId'
+                                              }),
                                                 BrowserAnimationsModule,
                                                  ...],
                                                 bootstrap: [AppComponent]
@@ -122,14 +129,41 @@ export class GettingStartedComponent implements OnInit {
                                               export class AppModule {
                                               }`;
 
-  importNgxMaterialPagesModuleInOtherModule = `import { NgxMaterialPagesModule } from 'ngx-auth-firebaseui';
+  importNgxAuthFirebaseUIModuleInOtherModule = `import { NgxAuthFirebaseUIModule } from 'ngx-auth-firebaseui';
 
                                                 @NgModule({
                                                   declarations: [OtherComponent, ...],
-                                                  imports: [NgxMaterialPagesModule, ...],
+                                                  imports: [NgxAuthFirebaseUIModule, ...],
                                                 })
                                                 export class OtherModule {
                                                 }`;
+
+  firebaseConfiguration = `{
+                    apiKey: 'your-firebase-apiKey',
+                    authDomain: 'your-firebase-authDomain',
+                    databaseURL: 'your-firebase-databaseURL',
+                    projectId: 'your-firebase-projectId',
+                    storageBucket: 'your-firebase-storageBucket',
+                    messagingSenderId: 'your-firebase-messagingSenderId'
+                }`;
+
+  copyAssetSnippet = `{
+                      "glob": "**/*",
+                      "input": "../node_modules/ngx-auth-firebaseui/dist/assets/",
+                      "output": "./assets/"
+                      }`;
+
+  afterCopyingAssestSnippet = `"assets": [
+                                  "assets",
+                                  "favicon.ico",
+                                  {
+                                    "glob": "**/*",
+                                    "input": "../node_modules/ngx-auth-firebaseui/dist/assets/",
+                                    "output": "./assets/"
+                                  }
+                                ]`;
+
+  exampleNgxAuthFirebaseUI = `<ngx-auth-firebaseui (onSuccess)="printUser($event)" (onError)="printError()"></ngx-auth-firebaseui>`;
 
 
   constructor(private titleService: Title,
