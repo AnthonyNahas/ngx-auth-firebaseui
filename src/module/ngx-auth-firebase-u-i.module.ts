@@ -29,7 +29,7 @@ import {
   MatProgressBarModule
 } from '@angular/material';
 import {AngularFirestoreModule} from 'angularfire2/firestore';
-import {PasswordStrengthComponent} from './components/password-strength/password-strength.component';
+import {NgxMaterialPasswordStrengthModule} from 'ngx-material-password-strength';
 
 // Export module's public API
 export {LibComponent} from './component/lib.component';
@@ -55,6 +55,7 @@ export {LibService} from './service/lib.service';
     MatProgressBarModule,
     AngularFireAuthModule,
     AngularFirestoreModule,
+    NgxMaterialPasswordStrengthModule,
   ],
   exports: [
     LibComponent,
@@ -72,8 +73,7 @@ export {LibService} from './service/lib.service';
     UserComponent,
     AuthProvidersComponent,
     EmailConfirmationComponent,
-    ResponseSnackbarComponent,
-    PasswordStrengthComponent
+    ResponseSnackbarComponent
   ]
 })
 
