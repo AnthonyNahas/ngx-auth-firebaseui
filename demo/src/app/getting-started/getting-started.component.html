@@ -599,7 +599,6 @@
             </mat-card-title>
             <mat-card-content>
               <ngx-auth-firebaseui></ngx-auth-firebaseui>
-              <!--<ngx-auth-firebaseui-user></ngx-auth-firebaseui-user>-->
             </mat-card-content>
           </mat-card>
 
@@ -611,20 +610,10 @@
             <mat-card-subtitle>
               ngx-auth-firebaseui-user is used to display/edit the data of the current authenticated user.
               Please note if you want to try out this component, you need to be authenticated. So if you sign in/up,
-              ngx-auth-firebaseui-user will be displayed.
+              <strong>ngx-auth-firebaseui-user</strong> will be displayed.
             </mat-card-subtitle>
             <mat-card-content>
-              <div fxLayout="row" fxLayoutAlign="space-between">
-                 <pre><code highlight
-                            [code]="example"></code></pre>
-                <button mat-icon-button
-                        ngxClipboard
-                        [cbContent]="example"
-                        matTooltip="copy"
-                        (click)="showCopyMessage(example)">
-                  <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
-                </button>
-              </div>
+              <ngx-auth-firebaseui-user></ngx-auth-firebaseui-user>
             </mat-card-content>
           </mat-card>
         </ngx-material-page-content>
