@@ -1,3 +1,14 @@
+<a name="0.5.5"></a>
+## [0.5.5](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v0.5.4...v0.5.5) (2018-04-15)
+
+
+### Bug Fixes
+
+* **ngx-auth-firebaseui:** added ngx-material-password-strength as npm dependency ([c185039](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/c185039))
+* **ngx-auth-firebaseui:** added the peerDependencies to gulp for rollup ([7ea4809](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/7ea4809))
+
+
+
 <a name="0.5.4"></a>
 ## [0.5.4](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v0.5.3...v0.5.4) (2018-04-12)
 
