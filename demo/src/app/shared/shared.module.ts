@@ -16,7 +16,7 @@ import {
 import {AngularFireAuthModule} from 'angularfire2/auth';
 import {AngularFirestoreModule} from 'angularfire2/firestore';
 import {BadgesComponent} from './badges/badges.component';
-import {NgxAuthFirebaseUIModule} from '../../../../dist';
+import {NgxAuthFirebaseUIModule} from 'ngx-auth-firebaseui';
 
 @NgModule({
   imports: [

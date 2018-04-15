@@ -9,7 +9,6 @@ import {HomeModule} from './home/home.module';
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AngularFireModule} from 'angularfire2';
-import {NgxAuthFirebaseUIModule} from '../../../dist';
 import {environment} from '../environments/environment';
 import {ServiceWorkerModule} from '@angular/service-worker';
 
