@@ -362,6 +362,10 @@ gulp.task('rollup-bundle', (cb) => {
         // Angular dependencies
         '@angular/core': 'ng.core',
         '@angular/common': 'ng.common',
+        '@angular/animations': 'ng.animations',
+        '@angular/cdk': 'ng.cdk',
+        '@angular/material': 'ng.material',
+        '@angular/flex-layout': 'ng.flex-layout',
 
         // Rxjs dependencies
         'rxjs/Subject': 'Rx',
@@ -388,7 +392,9 @@ gulp.task('rollup-bundle', (cb) => {
         // Add any other dependency or peer dependency of your library here
         // This is required for UMD bundle users.
         // See https://github.com/tinesoft/generator-ngx-library/TROUBLESHOUTING.md if trouble
-        'ngx-material-password-strength': _.camelCase('ngx-material-password-strength'.replace('/', '.'))
+        'ngx-material-password-strength': _.camelCase('ngx-material-password-strength'.replace('/', '.')),
+        'angularfire2': _.camelCase('angularfire2'.replace('/', '.')),
+        'firebase': _.camelCase('firebase'.replace('/', '.'))
 
 
       };

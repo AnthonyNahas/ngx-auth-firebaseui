@@ -40,20 +40,20 @@
     "check-travis": " travis-status --repo=anthonynahas/ngx-auth-firebaseui --branch=master --fail-pending || echo 'Not yet passing'"
   },
   "dependencies": {
+    "@angular/animations": "^5.2.9",
+    "@angular/cdk": "^5.2.4",
     "@angular/common": "^5.2.9",
     "@angular/core": "^5.2.9",
+    "@angular/flex-layout": "^5.0.0-beta.14",
+    "@angular/forms": "^5.2.9",
+    "@angular/material": "^5.2.4",
+    "angularfire2": "^5.0.0-rc.5-next",
+    "firebase": "^4.9.1",
     "ngx-material-password-strength": "^1.0.2"
-  },
-  "peerDependencies": {
-    "@angular/animations": "^5.2.9",
-    "@angular/cdk": "^5.2.4"
   },
   "devDependencies": {
     "@angular/compiler": "^5.2.9",
     "@angular/compiler-cli": "^5.2.9",
-    "@angular/flex-layout": "^5.0.0-beta.14",
-    "@angular/forms": "^5.2.9",
-    "@angular/material": "^5.2.4",
     "@angular/platform-browser": "^5.2.9",
     "@angular/platform-browser-dynamic": "^5.2.9",
     "@angular/platform-server": "^5.2.9",
@@ -62,7 +62,6 @@
     "@types/node": "9.6.5",
     "angular-cli-ghpages": "0.5.1",
     "angular2-template-loader": "0.6.2",
-    "angularfire2": "^5.0.0-rc.5-next",
     "autoprefixer": "7.1.5",
     "awesome-typescript-loader": "5.0.0",
     "codelyzer": "4.0.0",
@@ -72,7 +71,6 @@
     "css-loader": "0.28.7",
     "cssnano": "3.10.0",
     "del": "3.0.0",
-    "firebase": "^4.9.1",
     "gulp": "3.9.1",
     "gulp-bump": "2.8.0",
     "gulp-conventional-changelog": "1.1.6",
