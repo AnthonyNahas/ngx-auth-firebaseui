@@ -388,6 +388,7 @@ gulp.task('rollup-bundle', (cb) => {
         // Add any other dependency or peer dependency of your library here
         // This is required for UMD bundle users.
         // See https://github.com/tinesoft/generator-ngx-library/TROUBLESHOUTING.md if trouble
+        'ngx-material-password-strength': _.camelCase('ngx-material-password-strength'.replace('/', '.'))
 
 
       };

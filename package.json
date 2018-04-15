@@ -42,11 +42,13 @@
   "dependencies": {
     "@angular/common": "^5.2.9",
     "@angular/core": "^5.2.9",
-    "ngx-material-password-strength": "^1.0.0"
+    "ngx-material-password-strength": "^1.0.2"
+  },
+  "peerDependencies": {
+    "@angular/animations": "^5.2.9",
+    "@angular/cdk": "^5.2.4"
   },
   "devDependencies": {
-    "@angular/animations": "^5.2.9",
-    "@angular/cdk": "^5.2.4",
     "@angular/compiler": "^5.2.9",
     "@angular/compiler-cli": "^5.2.9",
     "@angular/flex-layout": "^5.0.0-beta.14",
