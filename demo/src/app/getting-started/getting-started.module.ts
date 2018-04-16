@@ -8,8 +8,7 @@ import {
   MatIconModule,
   MatInputModule,
   MatSidenavModule, MatSnackBarModule,
-  MatStepperModule,
-  MatTabsModule, MatTooltipModule
+  MatStepperModule, MatTooltipModule
 } from '@angular/material';
 import {AppSharedModule} from '../shared';
 import {DisqusModule} from 'ngx-disqus';
@@ -21,7 +20,7 @@ import {ClipboardModule} from 'ngx-clipboard';
   imports: [
     CommonModule,
     GettingStartedRoutingModule,
-    NgxMaterialPagesModule.forRoot(),
+    NgxMaterialPagesModule,
     HighlightModule.forRoot(),
     DisqusModule.forRoot('ngx-auth-firebaseui'),
     ClipboardModule,
@@ -30,7 +29,6 @@ import {ClipboardModule} from 'ngx-clipboard';
     MatStepperModule,
     MatCheckboxModule,
     MatInputModule,
-    MatTabsModule,
     MatIconModule,
     MatDividerModule,
     MatSnackBarModule,

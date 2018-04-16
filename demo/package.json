@@ -41,7 +41,7 @@
     "ngx-clipboard": "^10.0.0",
     "ngx-disqus": "^2.3.7",
     "ngx-highlightjs": "^1.4.1",
-    "ngx-material-pages": "^1.1.6",
+    "ngx-material-pages": "^1.2.0",
     "rxjs": "^5.5.8",
     "zone.js": "^0.8.24"
   },
@@ -72,17 +72,6 @@
     "tslint": "~5.9.1",
     "typescript": "~2.5.3",
     "webpack-node-externals": "~1.6.0"
-  },
-  "peerDependencies": {
-    "@angular/animations": "^5.x",
-    "@angular/cdk": "^5.x",
-    "@angular/flex-layout": "^5.0.0-beta.13",
-    "@angular/forms": "^5.x",
-    "@angular/material": "^5.x",
-    "angularfire2": "^5.0.0-rc.5-next",
-    "firebase": ">= 4.9.1 <= 4.8.0",
-    "rxjs": "^5.x",
-    "zone.js": "^0.8.x"
   },
   "engines": {
     "node": ">=6.0.0"

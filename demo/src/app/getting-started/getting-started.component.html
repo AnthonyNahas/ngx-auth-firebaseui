@@ -6,7 +6,7 @@
 
 <section class="getting-started">
   <div class="container">
-    <ngx-material-pages>
+    <ngx-material-pages title="ngx-auth-firebaseui">
       <!--1-->
       <ngx-material-page-loader>
         <ngx-material-page-outlook title="Setup Development Environment">
@@ -659,6 +659,20 @@
             </button>
           </div>
           <div class="comment-container">
+            <p>install the dependencies</p>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="space-between">
+                 <pre><code highlight
+                            [code]="'$ npm i'"></code></pre>
+            <button mat-icon-button
+                    ngxClipboard
+                    [cbContent]="'npm i'"
+                    matTooltip="copy"
+                    (click)="showCopyMessage('npm i')">
+              <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+            </button>
+          </div>
+          <div class="comment-container">
             <p>start the app</p>
           </div>
           <div fxLayout="row" fxLayoutAlign="space-between">
@@ -673,7 +687,7 @@
             </button>
           </div>
           <div class="comment-container">
-            <p>the app is now hosted by http://localhost:4200/</p>
+            <p>the app is now hosted on http://localhost:4200/</p>
           </div>
         </ngx-material-page-content>
       </ngx-material-page-loader>

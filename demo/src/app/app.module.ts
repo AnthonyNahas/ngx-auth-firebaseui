@@ -11,6 +11,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AngularFireModule} from 'angularfire2';
 import {environment} from '../environments/environment';
 import {ServiceWorkerModule} from '@angular/service-worker';
+import {NgxMaterialPagesModule} from 'ngx-material-pages';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import {ServiceWorkerModule} from '@angular/service-worker';
       storageBucket: 'ngx-auth-firebaseui.appspot.com',
       messagingSenderId: '520699629648'
     }),
+    NgxMaterialPagesModule.forRoot(),
     BrowserAnimationsModule,
     FormsModule,
     HttpModule,
