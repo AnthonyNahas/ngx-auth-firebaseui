@@ -369,6 +369,11 @@ To lint all `*.ts` files:
 $ npm run lint
 ```
 
+## Other Angular Libraries
+- [ngx-material-pages](https://github.com/AnthonyNahas/ngx-material-pages)
+- [ngx-material-password-strength](https://github.com/AnthonyNahas/ngx-material-password-strength)
+
+
 ## Support
 Drop an email to: [Anthony Nahas](mailto:anthony.na@hotmail.de) and I will help you!
 
