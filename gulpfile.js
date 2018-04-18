@@ -28,6 +28,7 @@ const pump = require('pump');
 
 /** Testing/Code Coverage */
 const gulpCoveralls = require('gulp-coveralls');
+const jestCli = require('jest-cli');
 
 /** To order tasks */
 const runSequence = require('run-sequence');
@@ -61,6 +62,9 @@ const conventionalGithubReleaser = require('conventional-github-releaser');
 
 /** To load gulp tasks from multiple files */
 const gulpHub = require('gulp-hub');
+
+/** Documentation generation tools **/
+const gulpCompodoc = require('@compodoc/gulp-compodoc');
 
 const yargs = require('yargs');
 const argv = yargs
@@ -211,6 +215,10 @@ gulp.task('clean:coverage', () => {
   return del(config.coverageDir);
 });
 
+gulp.task('clean:doc', () => {
+  return del(`${config.outputDir}/doc`);
+});
+
 gulp.task('clean', ['clean:dist', 'clean:coverage', 'clean:build']);
 
 /////////////////////////////////////////////////////////////////////////////
@@ -275,7 +283,7 @@ gulp.task('ng-compile', () => {
 
 // Lint, Prepare Build, , Sass to css, Inline templates & Styles and Ng-Compile
 gulp.task('compile', (cb) => {
-  runSequence('pre-compile', 'inline-templates', 'ng-compile', cb);
+  runSequence('lint', 'pre-compile', 'inline-templates', 'ng-compile', cb);
 });
 
 // Build the 'dist' folder (without publishing it to NPM)
@@ -491,6 +499,31 @@ gulp.task('copy:assets', () => {
     .pipe(gulp.dest(`${config.outputDir}/assets`));
 });
 
+/////////////////////////////////////////////////////////////////////////////
+// Documentation Tasks
+/////////////////////////////////////////////////////////////////////////////
+gulp.task('build:doc', (cb) => {
+  pump([
+    gulp.src('src/**/*.ts'),
+    gulpCompodoc({
+      tsconfig: 'src/tsconfig.lib.json',
+      hideGenerator:true,
+      disableCoverage: true,
+      output: `${config.outputDemoDir}/doc/`
+    })
+  ], cb);
+});
+
+gulp.task('serve:doc', ['clean:doc'], (cb) => {
+  pump([
+    gulp.src('src/**/*.ts'),
+    gulpCompodoc({
+      tsconfig: 'src/tsconfig.lib.json',
+      serve: true,
+      output: `${config.outputDir}/doc/`
+    })
+  ], cb);
+});
 
 /////////////////////////////////////////////////////////////////////////////
 // Demo Tasks
