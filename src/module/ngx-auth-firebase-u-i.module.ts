@@ -1,13 +1,10 @@
 import {CommonModule} from '@angular/common';
 import {NgModule, ModuleWithProviders, InjectionToken} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {LibComponent} from './component/lib.component';
-import {LibService} from './service/lib.service';
 import {HttpClientModule} from '@angular/common/http';
 import {AuthComponent} from './components/auth/auth.component';
 import {UserComponent} from './components/user/user.component';
 import {AuthProvidersComponent} from './components/providers/auth.providers.component';
-import {ResponseSnackbarComponent} from './components/response/response.snackbar.component';
 import {EmailConfirmationComponent} from './components/email-confirmation/email-confirmation.component';
 import {IAuthFirebaseUIConfig} from './interfaces/config.interface';
 import {FirestoreSyncService} from './services/firestore-sync.service';
@@ -32,8 +29,6 @@ import {AngularFirestoreModule} from 'angularfire2/firestore';
 import {NgxMaterialPasswordStrengthModule} from 'ngx-material-password-strength';
 
 // Export module's public API
-export {LibComponent} from './component/lib.component';
-export {LibService} from './service/lib.service';
 
 @NgModule({
   imports: [
@@ -58,22 +53,18 @@ export {LibService} from './service/lib.service';
     NgxMaterialPasswordStrengthModule,
   ],
   exports: [
-    LibComponent,
     AuthComponent,
     UserComponent,
     AuthProvidersComponent,
     EmailConfirmationComponent,
-    ResponseSnackbarComponent,
     AngularFireAuthModule,
     AngularFirestoreModule
   ],
   declarations: [
-    LibComponent,
     AuthComponent,
     UserComponent,
     AuthProvidersComponent,
     EmailConfirmationComponent,
-    ResponseSnackbarComponent
   ]
 })
 
@@ -96,7 +87,6 @@ export class NgxAuthFirebaseUIModule extends AngularFireModule {
             provide: new InjectionToken<IAuthFirebaseUIConfig>('IAuthFirebaseUIConfig - main config'),
             useValue: config
           },
-          LibService,
           AuthProcessService,
           FirestoreSyncService
         ],
