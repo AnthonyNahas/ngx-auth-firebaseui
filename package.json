@@ -54,7 +54,7 @@
     "@angular/flex-layout": "^5.0.0-beta.14",
     "@angular/forms": "^5.2.9",
     "@angular/material": "^5.2.4",
-    "angularfire2": "^5.0.0-rc.5-next",
+    "angularfire2": "^5.0.0-rc.6.0",
     "firebase": "^4.9.1",
     "jest-cli": "^22.4.3",
     "ngx-material-password-strength": "^1.0.2"
