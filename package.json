@@ -43,6 +43,7 @@
     "unlink": "gulp unlink",
     "test": " gulp test",
     "test:watch": " gulp test:watch",
+    "demo": " gulp build:demo",
     "check-travis": " travis-status --repo=anthonynahas/ngx-auth-firebaseui --branch=master --fail-pending || echo 'Not yet passing'"
   },
   "dependencies": {
@@ -55,6 +56,7 @@
     "@angular/material": "^5.2.4",
     "angularfire2": "^5.0.0-rc.5-next",
     "firebase": "^4.9.1",
+    "jest-cli": "^22.4.3",
     "ngx-material-password-strength": "^1.0.2"
   },
   "devDependencies": {
@@ -67,7 +69,7 @@
     "@types/lodash": "4.14.107",
     "@compodoc/gulp-compodoc": "0.0.9",
     "jest": "^22.4.3",
-    "@types/node": "9.6.5",
+    "@types/node": "9.6.6",
     "angular-cli-ghpages": "0.5.1",
     "angular2-template-loader": "0.6.2",
     "autoprefixer": "8.3.0",
@@ -98,7 +100,7 @@
     "is-docker": "1.1.0",
     "istanbul-instrumenter-loader": "3.0.0",
     "jasmine-core": "2.8.0",
-    "karma": "1.7.0",
+    "karma": "2.0.2",
     "karma-chrome-launcher": "2.2.0",
     "karma-coverage": "1.1.1",
     "karma-jasmine": "1.1.1",
@@ -113,7 +115,7 @@
     "postcss-strip-inline-comments": "0.1.5",
     "pump": "1.0.2",
     "raw-loader": "0.5.1",
-    "rollup": "0.58.0",
+    "rollup": "0.58.1",
     "rollup-plugin-commonjs": "9.1.0",
     "rollup-plugin-node-resolve": "3.2.0",
     "rollup-plugin-sourcemaps": "0.4.2",
