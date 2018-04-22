@@ -3,6 +3,10 @@ import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} 
 import {QueryFn} from 'angularfire2/firestore/interfaces';
 import {IUser} from '../interfaces/user.interface';
 
+export const collections = {
+  users: 'users',
+};
+
 @Injectable()
 export class FirestoreSyncService {
 
@@ -37,7 +41,3 @@ export class FirestoreSyncService {
     return userRef.set(data, {merge: true});
   }
 }
-
-export const collections = {
-  users: 'users',
-};
