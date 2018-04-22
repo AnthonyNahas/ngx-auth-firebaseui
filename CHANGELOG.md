@@ -1,3 +1,13 @@
+<a name="0.5.7"></a>
+## [0.5.7](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v0.5.6...v0.5.7) (2018-04-22)
+
+
+### Bug Fixes
+
+* **ngx-auth-firebaseui:** removed unwanted imports ([16b4292](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/16b4292))
+
+
+
 <a name="0.5.6"></a>
 ## [0.5.6](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v0.5.5...v0.5.6) (2018-04-16)
 
