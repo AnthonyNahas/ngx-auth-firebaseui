@@ -116,7 +116,7 @@
     "component-selector": [
       true,
       "element",
-      "my-lib",
+      "ngx",
       "kebab-case"
     ],
     "use-input-property-decorator": true,

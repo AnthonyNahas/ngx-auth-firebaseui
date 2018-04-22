@@ -20,7 +20,7 @@
     ],
     "otherDependencies": [],
     "dependenciesRange": "^",
-    "ngPrefix": "my-lib",
+    "ngPrefix": "ngx",
     "testingFramework": "karma",
     "useGreenkeeper": true,
     "useCompodoc": true,
