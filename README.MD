@@ -149,9 +149,9 @@ This package is now under development. For further suggestions, please provide a
     "@angular/flex-layout": "^5.0.0-beta.13",
     "@angular/forms": "^5.x",
     "@angular/material": "^5.x",
-    "angularfire2": "^5.0.0-rc.5-next",
-    "firebase": ">= 4.9.1 <= 4.8.0",
-    "rxjs": "^5.1.0",
+    "angularfire2": "^5.0.0-rc.6.0",
+    "firebase": ">= 4.8.0 <= 4.10.1",
+    "rxjs": "^5.5.8",
     "zone.js": "^0.8.4"
   }
 ```
