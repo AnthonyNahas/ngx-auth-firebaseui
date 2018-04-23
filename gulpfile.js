@@ -10,6 +10,8 @@ const imagemin = require('gulp-imagemin'),
   png = require('imagemin-optipng'),
   svg = require('imagemin-svgo');
 
+const dependencies = ['ngx-material-password-strength'];
+
 /** TSLint checker */
 const tslint = require('tslint');
 const gulpTslint = require('gulp-tslint');
@@ -335,10 +337,15 @@ gulp.task('npm-package', ['copy:assets'], (cb) => {
   targetPkgJson['typings'] = `./${config.unscopedLibraryName}.d.ts`;
 
   // defines project's dependencies as 'peerDependencies' for final users
+  targetPkgJson.dependencies = {};
   targetPkgJson.peerDependencies = {};
   Object.keys(pkgJson.dependencies).forEach((dependency) => {
     // versions are defined as '^' by default, but you can customize it by editing "dependenciesRange" in '.yo-rc.json' file
-    targetPkgJson.peerDependencies[dependency] = `^${pkgJson.dependencies[dependency].replace(/[\^~><=]/, '')}`;
+    console.log("dep -> ", dependency, dependencies.includes(dependency));
+    dependencies.includes(dependency) ?
+      targetPkgJson.dependencies[dependency] = `^${pkgJson.dependencies[dependency].replace(/[\^~><=]/, '')}`
+      : targetPkgJson.peerDependencies[dependency] = `^${pkgJson.dependencies[dependency].replace(/[\^~><=]/, '')}`;
+
   });
 
   // copy the needed additional files in the 'dist' folder
@@ -507,7 +514,7 @@ gulp.task('build:doc', (cb) => {
     gulp.src('src/**/*.ts'),
     gulpCompodoc({
       tsconfig: 'src/tsconfig.lib.json',
-      hideGenerator:true,
+      hideGenerator: true,
       disableCoverage: true,
       output: `${config.outputDemoDir}/doc/`
     })
