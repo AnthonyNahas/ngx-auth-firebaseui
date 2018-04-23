@@ -142,7 +142,7 @@
         <ngx-material-page-outlook title="Peer dependencies">
         </ngx-material-page-outlook>
         <ngx-material-page-content>
-          <mat-card-title>Animations + Material + CDK</mat-card-title>
+          <mat-card-title>Animations + Material + CDK + FlexLayout + Firebase + Angularfire2</mat-card-title>
           <div class="comment-container">
             <p><a href="https://www.npmjs.com/package/ngx-auth-firebaseui"
                   mat-button
@@ -217,6 +217,47 @@
             <a href="https://material.angular.io/guide/getting-started#step-2-animations"
                mat-button color="primary">Learn more</a>
           </mat-card-footer>
+
+          <!--<div fxLayoutAlign="center">-->
+          <!--<video *ngIf="true" autoplay loop aria-label="install angular animations with npm">-->
+          <!--<source-->
+          <!--src="https://firebasestorage.googleapis.com/v0/b/ngx-auth-firebaseui.appspot.com/o/tutorials%2Fnpm_i_animations.mp4?alt=media&token=c8fcac6a-7fd6-48ab-871b-785991eb2fdb"-->
+          <!--type="video/mp4">-->
+          <!--</video>-->
+          <!--</div>-->
+          <div class="comment-container">
+            <p>Flexy Plexy --> FLEX LAYOUT MODULE is wanted!</p>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="space-between">
+            <pre><code highlight [code]="'$ npm i -s @angular/flex-layout'"></code></pre>
+            <button mat-icon-button
+                    ngxClipboard
+                    [cbContent]="'npm i -s @angular/flex-layout'"
+                    matTooltip="copy"
+                    (click)="showCopyMessage('npm i -s @angular/flex-layout')">
+              <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+            </button>
+          </div>
+          <mat-card>
+            <mat-card-content>
+              <pre><code highlight [code]="importFlexLayoutModule"></code></pre>
+            </mat-card-content>
+          </mat-card>
+
+          <div class="comment-container">
+            <p>Fire Fire Firebase!</p>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="space-between">
+            <pre><code highlight [code]="'$ npm i -s firebase angularfire2'"></code></pre>
+            <button mat-icon-button
+                    ngxClipboard
+                    [cbContent]="'npm i -s firebase angularfire2'"
+                    matTooltip="copy"
+                    (click)="showCopyMessage('npm i -s firebase angularfire2')">
+              <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+            </button>
+          </div>
+
         </ngx-material-page-content>
       </ngx-material-page-loader>
 

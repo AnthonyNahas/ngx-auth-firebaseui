@@ -59,6 +59,15 @@ export class GettingStartedComponent implements OnInit {
                                     })
                                     export class YourAppModule { }`;
 
+  importFlexLayoutModule = `import {FlexLayoutModule} from '@angular/flex-layout';
+
+                                    @NgModule({
+                                      ...
+                                      imports: [FlexLayoutModule],
+                                      ...
+                                    })
+                                    export class YourAppModule { }`;
+
   importNoopAnimationsModule = `import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 
                                     @NgModule({
