@@ -120,6 +120,7 @@
                                authProcess.signUp
                                (signUpFormGroup.value.name,signUpFormGroup.value.email,signUpFormGroup.value.password)">
             <div fxLayout="column" fxLayoutAlign="center center">
+              <!--name-->
               <mat-form-field>
                 <input matInput
                        placeholder="Name"
@@ -132,7 +133,7 @@
                   {{signUpFormGroup.value.name.length}} / 25
                 </mat-hint>
                 <mat-error *ngIf="sigUpNameFormControl.hasError('required')">
-                  E-mail is required
+                  Name is required
                 </mat-error>
                 <mat-error *ngIf="sigUpPasswordFormControl.hasError('minlength')">
                   The name is too short!
@@ -142,8 +143,10 @@
                 </mat-error>
               </mat-form-field>
 
+              <!--email-->
               <mat-form-field>
                 <input matInput
+                       type="email"
                        placeholder="E-mail address"
                        [formControl]="sigUpEmailFormControl">
                 <mat-icon matSuffix [color]="color">email</mat-icon>
@@ -154,6 +157,8 @@
                   Please enter a valid e-mail address
                 </mat-error>
               </mat-form-field>
+
+              <!--password-->
               <div>
                 <mat-form-field>
                   <input matInput
@@ -180,30 +185,7 @@
                   [password]="signUpFormGroup.value.password"
                   [externalError]="sigUpPasswordFormControl.dirty">
                 </ngx-material-password-strength>
-                <!--<mat-progress-bar mode="determinate" [color]="sigUpPasswordFormControl.dirty? 'warn' : 'primary'"-->
-                <!--[value]="'20'"></mat-progress-bar>-->
               </div>
-              <!--
-              <mat-form-field>
-                  <input matInput
-                         placeholder="Passwort bestätigen"
-                         type="password"
-                         name="passwordConfirmation"
-                         required>
-                  <mat-hint align="end" aria-live="polite">
-                      {{signUpFormGroup.value.password.length}} / 25
-                  </mat-hint>
-                  <mat-error *ngIf="sigUpPasswordFormControl.hasError('required')">
-                      Bitte das Passwort nicht vergessen
-                  </mat-error>
-                  <mat-error *ngIf="sigUpPasswordFormControl.hasError('minlength')">
-                      Das Passwort muss mindestens 6 Zeichen lang sein.
-                  </mat-error>
-                  <mat-error *ngIf="sigUpPasswordFormControl.hasError('maxlength')">
-                      Das Passwort darf nicht länger als 25 Zeichen sein.
-                  </mat-error>
-              </mat-form-field>
-              -->
               <button mat-raised-button
                       style="margin-top: 20px"
                       type="submit"
