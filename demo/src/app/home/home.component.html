@@ -26,15 +26,9 @@
       <mat-toolbar [color]="color">
         <span>Demo App</span>
         <span class="demo-fill-remaining"></span>
-
-        <!--<mat-icon>code</mat-icon>-->
       </mat-toolbar>
-      <div style="text-align:center">
 
-      </div>
-
-      <!--<pre><code>{{code}}</code></pre>-->
-
+      <!--Overview-->
       <div fxLayout="column" fxLayoutGap="40px">
         <div fxLayoutAlign="center ">
           <mat-card fxFlex="50" fxFlex.xs="80">
@@ -68,7 +62,7 @@
               <p>This demo app uses a real connection of firebase. That means if you enable firestore's synchronisation,
                 your account will be saved in the db. If you are just expirementing the demo app, please make sure to
                 delete
-                you account before to quit. The will remove your document from firestore (if it was enabled) and your
+                you account before to quit. That will remove your document from firestore (if it was enabled) and your
                 account
                 from the firebase authentication system.</p>
             </mat-card-content>
@@ -92,12 +86,15 @@
         <mat-card fxFlex="50" fxFlexAlign.lt-lg="center" fxFlexOrder.lt-lg="-1">
           <mat-card-content>
             <mat-tab-group [color]="color" [selectedIndex]="index">
+              <!--tab 1-->
               <mat-tab label="TS">
                 <pre><code>{{code}}</code></pre>
               </mat-tab>
+              <!--tab 2-->
               <mat-tab label="HTML">
                 <pre><code>{{html}}</code></pre>
               </mat-tab>
+              <!--tab 3-->
               <mat-tab *ngIf="auth.authState | async" label="Current User">
                 <mat-card>
                   <mat-card-title>
