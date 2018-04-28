@@ -29,6 +29,14 @@ import {AngularFirestoreModule} from 'angularfire2/firestore';
 import {NgxMaterialPasswordStrengthModule} from 'ngx-material-password-strength';
 
 // Export module's public API
+// components
+export {AuthComponent} from './components/auth/auth.component';
+export {UserComponent} from './components/user/user.component';
+export {AuthProvidersComponent} from './components/providers/auth.providers.component';
+// services
+export {AuthProcessService, AuthProvider} from './services/auth-process.service';
+export {INgxAuthFirebaseUIConfig} from './interfaces/config.interface';
+export {FirestoreSyncService} from './services/firestore-sync.service';
 
 @NgModule({
   imports: [
