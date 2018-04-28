@@ -6,7 +6,7 @@ import {AuthComponent} from './components/auth/auth.component';
 import {UserComponent} from './components/user/user.component';
 import {AuthProvidersComponent} from './components/providers/auth.providers.component';
 import {EmailConfirmationComponent} from './components/email-confirmation/email-confirmation.component';
-import {IAuthFirebaseUIConfig} from './interfaces/config.interface';
+import {INgxAuthFirebaseUIConfig} from './interfaces/config.interface';
 import {FirestoreSyncService} from './services/firestore-sync.service';
 import {AuthProcessService} from './services/auth-process.service';
 import {AngularFireModule, FirebaseAppConfig, FirebaseAppConfigToken, FirebaseAppName} from 'angularfire2';
@@ -70,7 +70,7 @@ import {NgxMaterialPasswordStrengthModule} from 'ngx-material-password-strength'
 
 
 export class NgxAuthFirebaseUIModule extends AngularFireModule {
-  static forRoot(configFactory: FirebaseAppConfig, appNameFactory?: () => string, config?: IAuthFirebaseUIConfig): ModuleWithProviders {
+  static forRoot(configFactory: FirebaseAppConfig, appNameFactory?: () => string, config?: INgxAuthFirebaseUIConfig): ModuleWithProviders {
     return {
       ngModule: NgxAuthFirebaseUIModule,
       providers:
@@ -84,7 +84,7 @@ export class NgxAuthFirebaseUIModule extends AngularFireModule {
             useFactory: appNameFactory
           },
           {
-            provide: new InjectionToken<IAuthFirebaseUIConfig>('IAuthFirebaseUIConfig - main config'),
+            provide: new InjectionToken<INgxAuthFirebaseUIConfig>('IAuthFirebaseUIConfig - main config'),
             useValue: config
           },
           AuthProcessService,
