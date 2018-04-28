@@ -1,19 +1,31 @@
 <mat-dialog-actions fxLayout.xs="column"
-                  fxLayoutAlign="space-around center">
-    <button mat-button [ngClass.xs]="{'space-full-xs':true}" (click)="authProcess.signInWith(providers.Google)">
-        <mat-icon svgIcon="google"></mat-icon>
-        Google
-    </button>
-    <button mat-button [ngClass.xs]="{'space-full-xs':true}" (click)="authProcess.signInWith(providers.Facebook)">
-        <mat-icon svgIcon="facebook"></mat-icon>
-        Facebook
-    </button>
-    <button mat-button [ngClass.xs]="{'space-full-xs':true}" (click)="authProcess.signInWith(providers.Twitter)">
-        <mat-icon svgIcon="twitter"></mat-icon>
-        Twitter
-    </button>
-    <button mat-button [ngClass.xs]="{'space-full-xs':true}" (click)="authProcess.signInWith(providers.Github)">
-        <mat-icon svgIcon="github"></mat-icon>
-        GitHub
-    </button>
+                    fxLayoutAlign="space-around center">
+  <button *ngIf="!providers || providers.includes(authProvider.Google)"
+          mat-button
+          [ngClass.xs]="{'space-full-xs':true}"
+          (click)="authProcess.signInWith(authProvider.Google)">
+    <mat-icon svgIcon="google"></mat-icon>
+    Google
+  </button>
+  <button *ngIf="!providers || providers.includes(authProvider.Facebook)"
+          mat-button
+          [ngClass.xs]="{'space-full-xs':true}"
+          (click)="authProcess.signInWith(authProvider.Facebook)">
+    <mat-icon svgIcon="facebook"></mat-icon>
+    Facebook
+  </button>
+  <button *ngIf="!providers || providers.includes(authProvider.Twitter)"
+          mat-button
+          [ngClass.xs]="{'space-full-xs':true}"
+          (click)="authProcess.signInWith(authProvider.Twitter)">
+    <mat-icon svgIcon="twitter"></mat-icon>
+    Twitter
+  </button>
+  <button *ngIf="!providers || providers.includes(authProvider.Github)"
+          mat-button
+          [ngClass.xs]="{'space-full-xs':true}"
+          (click)="authProcess.signInWith(authProvider.Github)">
+    <mat-icon svgIcon="github"></mat-icon>
+    GitHub
+  </button>
 </mat-dialog-actions>

@@ -1,17 +1,20 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {AuthProcessService, AuthProvider} from '../../services/auth-process.service';
 
 @Component({
-    selector: 'ngx-auth-firebaseui-providers',
-    templateUrl: 'auth.providers.component.html',
-    styleUrls: ['auth.providers.component.scss']
+  selector: 'ngx-auth-firebaseui-providers',
+  templateUrl: 'auth.providers.component.html',
+  styleUrls: ['auth.providers.component.scss']
 })
 
 export class AuthProvidersComponent {
 
-    providers = AuthProvider;
+  @Input()
+  providers: string[]; //  google, facebook, twitter, github
 
-    constructor(public authProcess: AuthProcessService) {
-    }
+  authProvider = AuthProvider;
+
+  constructor(public authProcess: AuthProcessService) {
+  }
 
 }

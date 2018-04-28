@@ -1,4 +1,4 @@
-import {Component, Inject, OnDestroy, OnInit, Output, PLATFORM_ID} from '@angular/core';
+import {Component, Inject, Input, OnDestroy, OnInit, Output, PLATFORM_ID} from '@angular/core';
 import {AbstractControl, FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {DomSanitizer} from '@angular/platform-browser';
 import {MatIconRegistry} from '@angular/material';
@@ -22,6 +22,9 @@ const EMAIL_REGEX = new RegExp(['^(([^<>()[\\]\\\.,;:\\s@\"]+(\\.[^<>()\\[\\]\\\
 
 export class AuthComponent implements OnInit, OnDestroy {
 
+  @Input()
+  providers: string[]; //  google, facebook, twitter, github
+
   @Output()
   onSuccess: any;
 
@@ -39,7 +42,7 @@ export class AuthComponent implements OnInit, OnDestroy {
 
   passReset = false;
 
-  providers = AuthProvider;
+  authProviders = AuthProvider;
 
   signInEmailFormControl: AbstractControl;
   sigInPasswordFormControl: AbstractControl;

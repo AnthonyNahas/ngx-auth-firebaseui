@@ -50,7 +50,7 @@
         <form [formGroup]="signInFormGroup"
               (ngSubmit)="signInFormGroup.valid &&
                                authProcess.signInWith
-                               (providers.EmailAndPassword,signInFormGroup.value.email,signInFormGroup.value.password)">
+                               (authProviders.EmailAndPassword,signInFormGroup.value.email,signInFormGroup.value.password)">
           <div fxLayout="column" fxLayoutAlign="center center">
             <mat-form-field>
               <input matInput
@@ -207,4 +207,4 @@
   </mat-tab>
 </mat-tab-group>
 <mat-divider></mat-divider>
-<ngx-auth-firebaseui-providers></ngx-auth-firebaseui-providers>
+<ngx-auth-firebaseui-providers [providers]="providers"></ngx-auth-firebaseui-providers>
