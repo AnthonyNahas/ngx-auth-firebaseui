@@ -1,11 +1,11 @@
-
 <div class="container" style="padding-left: 0; padding-right: 0;">
   <header class="navbar navbar-light navbar-fixed-top navbar-expand-lg">
 
     <a class="navbar-brand" routerLink="/home" (click)="navbarCollapsed = true">ngx-auth-firebaseui</a>
 
     <button class="navbar-toggler navbar-toggler-right" type="button" (click)="navbarCollapsed = !navbarCollapsed"
-            [attr.aria-expanded]="!navbarCollapsed" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+            [attr.aria-expanded]="!navbarCollapsed" aria-controls="navbarContent" aria-expanded="false"
+            aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -13,6 +13,9 @@
       <ul class="navbar-nav mr-auto">
         <li class="nav-item" routerLinkActive="active">
           <a class="nav-link" routerLink="/getting-started" (click)="navbarCollapsed = true">Getting Started</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" routerLink="/examples" (click)="navbarCollapsed = true">Examples</a>
         </li>
       </ul>
     </div>
