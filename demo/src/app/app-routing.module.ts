@@ -10,7 +10,11 @@ const routes: Routes = [
     {
         path: 'getting-started',
         loadChildren: 'app/getting-started/getting-started.module#GettingStartedModule'
-    }
+    },
+  {
+    path: 'examples',
+    loadChildren: 'app/example/example.module#ExampleModule'
+  }
 ];
 
 @NgModule({

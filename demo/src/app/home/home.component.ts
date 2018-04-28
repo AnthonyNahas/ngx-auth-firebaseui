@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Title} from '@angular/platform-browser';
 import {AngularFireAuth} from 'angularfire2/auth';
+import {AuthProvider} from 'ngx-auth-firebaseui';
 
 @Component({
   selector: 'app-home',
@@ -31,13 +32,15 @@ export class HomeComponent implements OnInit {
    }
   }`;
 
-  html = `<ngx-auth-firebaseui 
+  html = `<ngx-auth-firebaseui
              (onSuccess)="printUser($event)"
              (onError)="printError($event)">
         </ngx-auth-firebaseui>`;
 
   public index: number;
   private _color: string;
+
+  providers = [AuthProvider.Facebook];
 
 
   constructor(private titleService: Title,
