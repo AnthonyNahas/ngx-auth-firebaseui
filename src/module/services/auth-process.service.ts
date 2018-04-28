@@ -12,12 +12,12 @@ import UserCredential = firebase.auth.UserCredential;
 import GithubAuthProvider = firebase.auth.GithubAuthProvider;
 
 export enum AuthProvider {
-  EmailAndPassword,
-  Google,
-  Facebook,
-  Twitter,
-  Github,
-  PhoneNumber
+  EmailAndPassword = 'firebase',
+  Google = 'google',
+  Facebook = 'facebook',
+  Twitter = 'twitter',
+  Github = 'github',
+  PhoneNumber = 'phoneNumber'
 }
 
 @Injectable()
