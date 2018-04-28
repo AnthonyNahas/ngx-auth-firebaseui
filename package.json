@@ -111,7 +111,7 @@
     "karma-webpack": "2.0.5",
     "lodash": "4.17.9",
     "node-sass": "4.9.0",
-    "postcss": "6.0.13",
+    "postcss": "6.0.22",
     "postcss-strip-inline-comments": "0.1.5",
     "pump": "1.0.2",
     "raw-loader": "0.5.1",
