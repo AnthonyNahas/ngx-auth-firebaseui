@@ -11,7 +11,7 @@ import {
   MatCardModule,
   MatIconModule,
   MatToolbarModule,
-  MatTabsModule
+  MatTabsModule, MatTooltipModule
 } from '@angular/material';
 import {AngularFireAuthModule} from 'angularfire2/auth';
 import {AngularFirestoreModule} from 'angularfire2/firestore';
@@ -40,6 +40,7 @@ import {DisqusModule} from 'ngx-disqus';
     MatCardModule,
     MatButtonModule,
     MatIconModule,
+    MatTooltipModule,
     AngularFireAuthModule,
     AngularFirestoreModule,
   ],
@@ -57,6 +58,7 @@ import {DisqusModule} from 'ngx-disqus';
     MatCardModule,
     MatButtonModule,
     MatIconModule,
+    MatTooltipModule
   ],
   declarations: [
     HeaderComponent,
