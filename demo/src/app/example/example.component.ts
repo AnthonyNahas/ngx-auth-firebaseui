@@ -12,6 +12,17 @@ export class ExampleComponent implements OnInit {
 
   providers = AuthProvider;
 
+  importAuthProvider = `import {AuthProvider} from 'ngx-auth-firebaseui';
+
+export class ExampleComponent implements OnInit {
+
+  providers = AuthProvider;
+
+  ngOnInit() {
+    }
+
+
+}`;
 
   allProvidersHTML = `<ngx-auth-firebaseui></ngx-auth-firebaseui>`;
   gftProvidersHTML = `<ngx-auth-firebaseui

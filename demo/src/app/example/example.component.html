@@ -6,6 +6,26 @@
 
 <section>
   <div class="container">
+    <mat-card class="space-bottom">
+      <mat-card-title>
+        In your component, import the AuthProvider from ngx-auth-firebaseui
+      </mat-card-title>
+      <mat-card-subtitle>
+        and save it in a variable, e.g: in providers! See below
+      </mat-card-subtitle>
+      <mat-card-content>
+        <div fxLayout="row" fxLayoutAlign="space-between">
+          <pre><code highlight [code]="importAuthProvider"></code></pre>
+          <button mat-icon-button
+                  ngxClipboard
+                  [cbContent]="importAuthProvider"
+                  matTooltip="copy"
+                  (click)="showCopyMessage(importAuthProvider)">
+            <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+          </button>
+        </div>
+      </mat-card-content>
+    </mat-card>
     <div class="cards-container"
          fxFlex="100"
          fxLayout="row"
