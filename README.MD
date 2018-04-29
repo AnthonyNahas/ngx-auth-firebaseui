@@ -15,8 +15,6 @@
 [![devDependency Status](https://david-dm.org/anthonynahas/ngx-auth-firebaseui/dev-status.svg?branch=master)](https://david-dm.org/anthonynahas/ngx-auth-firebaseui#info=devDependencies)
 [![npm](https://img.shields.io/npm/dt/ngx-auth-firebaseui.svg?style=flat-square)](https://www.npmjs.com/package/ngx-auth-firebaseui)
 [![Greenkeeper badge](https://badges.greenkeeper.io/AnthonyNahas/ngx-auth-firebaseui.svg)](https://greenkeeper.io/)
-[![npm](https://img.shields.io/npm/v/ngx-auth-firebaseui.svg)](https://www.npmjs.com/package/ngx-auth-firebaseui)[![David](https://img.shields.io/david/AnthonyNahas/ngx-auth-firebaseui.svg?style=flat-square)](https://www.npmjs.com/package/ngx-auth-firebaseui)
-[![node](https://img.shields.io/node/v/ngx-auth-firebaseui.svg)](https://www.npmjs.com/package/ngx-auth-firebaseui)
 [![npm](https://img.shields.io/badge/ngx-auth-firebaseui.svg)](https://ngx-auth-firebaseui.firebaseapp.com)
 [![license](https://img.shields.io/github/license/anthonynahas/ngx-auth-firebaseui.svg?style=flat-square)](https://github.com/AnthonyNahas/ngx-auth-firebaseui/blob/master/LICENSE)
 [![GitHub forks](https://img.shields.io/github/forks/anthonynahas/ngx-auth-firebaseui.svg?style=social&label=Fork)](https://github.com/AnthonyNahas/ngx-auth-firebaseui/fork)
@@ -26,7 +24,7 @@
 [![Twitter Follow](https://img.shields.io/twitter/follow/ngAnthonyy.svg?style=social&label=Follow)](https://twitter.com/ngAnthonyy)
 
 Angular UI component for [firebase](https://firebase.google.com/docs/auth/web/firebaseui) authentication.
-This library is an angular module (including angular components) that allows to authenticate
+This library is an angular module (including angular components and services) that allows to authenticate
 your users with your firebase project. NgxAuthFirebseUI is compatible with
 [angular material](https://material.angular.io/) and [angular flexLayout](https://github.com/angular/flex-layout).
 If you need me to support [bootstrap](https://getbootstrap.com/) please let me know and i will do it.
@@ -35,6 +33,7 @@ If you need me to support [bootstrap](https://getbootstrap.com/) please let me k
 | -----------------------------------------------|:-------------:|         :-------------------:  |
 | Sign Up                                        | :heavy_check_mark:    |  :heavy_check_mark:    |
 | Sign In                                        | :heavy_check_mark:    |  :heavy_check_mark:    |
+| Sign In with Google                            | :heavy_check_mark:    |  :heavy_check_mark:    |
 | Sign In with Facebook                          | :heavy_check_mark:    |  :heavy_check_mark:    |
 | Sign In with Twitter                           | :heavy_check_mark:    |  :heavy_check_mark:    |
 | Sign In with Github                            | :heavy_check_mark:    |  :heavy_check_mark:    |
@@ -46,7 +45,8 @@ If you need me to support [bootstrap](https://getbootstrap.com/) please let me k
 | Delete account                                 | :heavy_check_mark:    |  :x:                   |
 | User Profile                                   | :heavy_check_mark:    |  :x:                   |
 | Edit User (name, email)                        | :heavy_check_mark:    |  :x:                   |
-| Edit User (name, email)                        | :heavy_check_mark:    |  :x:                   |
+| Configure and choose your favorite auth        | :heavy_check_mark:    |  :x:                   |
+ provider in runtime                             
 | Sync user'auth with Firestore                  | :heavy_check_mark:    |  :x:                   |
 | Angular v2-5 friendly                          | :heavy_check_mark:    |  :x:                   |
 | Real time form validation                      | :heavy_check_mark:    |  :x:                   |
@@ -58,15 +58,15 @@ If you need me to support [bootstrap](https://getbootstrap.com/) please let me k
 ## Why to use ngx-auth-firebaseui ?
 - it uses a responsive and accessible web design UX/UI from google material concepts and components (supporting desktop and mobile view).
 - pick up your own theme! change the primary, accent and warn colors whenever you need (e.g to support light and dark themes)
-- easy to use with an angular based project (project that is created with [angular-cli](https://cli.angular.io/))
+- super easy to use with an angular based project (project that is created with [angular-cli](https://cli.angular.io/))
 - optional configuration
+- configure your authentication providers in runtime
 - reusable components for every project that need an authentication with a firebase project/app.
 - built in feedback mechanism in form of a [snackbar](https://material.angular.io/components/snack-bar/overview) when an error occurred.
 - ability to sign out or to event to delete totally the account
 - user profile component to display user's data
 - update user profile as feature
-
-### - Sync user's authentication with FIRESTORE (documentation coming soon)
+#### - Sync user's authentication with FIRESTORE (documentation coming soon)
 #### - Forgot Password as feature
 #### - Supports SSR - Server Side Rendering
 
@@ -85,6 +85,7 @@ If you need me to support [bootstrap](https://getbootstrap.com/) please let me k
 ## Supported Processes and Actions:
 - sign up
 - sign in
+- validation of password's strength while creating a new account using [ngx-material-password-strength](https://github.com/AnthonyNahas/ngx-material-password-strength)
 - forgot/reset password
 - sending email verifications
 
@@ -92,9 +93,13 @@ If you need me to support [bootstrap](https://getbootstrap.com/) please let me k
 ### Requirements:
 - [angular material ](https://www.npmjs.com/package/@angular/material)
 - [angular material theme](https://material.angular.io/guide/getting-started#step-4-include-a-theme)
+- [angular material icons](https://material.angular.io/guide/getting-started#step-6-optional-add-material-icons)
 - [angular cdk ](https://www.npmjs.com/package/@angular/cdk)
+- [angular forms ](https://www.npmjs.com/package/@angular/forms)
 - [angular flex-layout ](https://www.npmjs.com/package/@angular/flex-layout)
 - if you need a built in theme --> please let me know
+
+the full tutorial guide can be found [here](https://ngx-auth-firebaseui.firebaseapp.com/getting-started)
 
 ## Demo [ngx-auth-firebaseui demo](https://ngx-auth-firebaseui.firebaseapp.com/)
 
@@ -105,8 +110,10 @@ if(issues || feedback || you_need_more_features){
 }
 ```
 
+## [Documentation](https://ngx-auth-firebaseui.firebaseapp.com/doc/index.html)
+
 ### Note:
-This package is now under development. For further suggestions, please provide a PR.
+This package is now under development. For further suggestions, please provide a PR or open an appropriate issue.
 
 ## Screenshots - Browser <ngx-auth-firebaseui></ngx-auth-firebaseui>
 - sign in
@@ -162,11 +169,13 @@ e.g:
 npm i -s @angular/material @angular/cdk @angular/flex-layout
 ```
 
+[help!](https://ngx-auth-firebaseui.firebaseapp.com/getting-started)
+
 ## Dependencies
 * [Angular](https://angular.io) (*requires* Angular 2 or higher, tested with 2.0.0)
 
 
-## (1) Installation
+## (1) [Installation](https://ngx-auth-firebaseui.firebaseapp.com/getting-started)
 
 Install above dependencies via *npm*.
 
@@ -242,6 +251,7 @@ map: {
 }
 ```
 ---
+## (2) [Usage](https://ngx-auth-firebaseui.firebaseapp.com/getting-started)
 
 Once the library is imported, you can use its components, directives and pipes in your Angular application:
 
@@ -271,17 +281,42 @@ class AppComponent {
     }
 }
 ```
+## API
 
-### Events
+| option | bind  |  type  |   default    | description  |
+|:---------------------|:------:|:------:|:------------:|:-------------------------------------------------------------------------------------------------|    
+| providers            | Input()  | string[] | ['all'] or [AuthProvider.All] | choose your favorite authentication provider: google | facebook | twitter | github 
+| onSuccess            | Output() | any     | - | this will be fired when an authentication process was success. The authenticated user is emitted!
+| onError              | Output() | any     | - | this event will be fired when an error occurred during the authentication process! An error message is emitted!
 
-#### onSuccess
-- this will be fired when an authentication process was success
 
-#### onError
-- this event will be fired when an error occurred during the authentication process
+### How to configure your input providers ? [see the examples](https://ngx-auth-firebaseui.firebaseapp.com/examples)
+e.g:
+in your component, import the AuthProvider enum to pick up your favorite provider:
 
-## (2) Configuration
-todo
+```typescript
+import {AuthProvider} from 'ngx-auth-firebaseui';
+
+export class ExampleComponent implements OnInit {
+  
+  providers = AuthProvider;
+  
+  ngOnInit() {
+    }
+
+  
+}
+```
+
+in your template --> 
+```html
+  <ngx-auth-firebaseui 
+  [providers]="[providers.Google, providers.Facebook, providers.Twitter]"
+  (onSuccess)="printUser($event)"
+   (onError)="printError()"></ngx-auth-firebaseui>
+```
+
+take a look at the full documentation [here](https://ngx-auth-firebaseui.firebaseapp.com/doc/index.html)
 
 ## (3) Additional Requirements - material (Include a theme)
 #### With Angular CLI
@@ -330,9 +365,15 @@ $ git clone https://github.com/AnthonyNahas/ngx-auth-firebaseui.git
 ```
 - navigate to the demo app directory
 ```bash
-$ cd demo-app
+$ cd demo
 ```
-- fill the file with the name `src/firebase_app_config.ts` with the right properties of your firebase app
+
+- install the dependencies
+```bash
+$ npm i
+```
+
+- use your own firebase config use for the NgxAuthFirebaseUIModule
 ```ts
 export const YourFirebaseAppConfig = {
   apiKey: 'your-firebase-apiKey',
@@ -372,7 +413,9 @@ $ npm run lint
 ## Other Angular Libraries
 - [ngx-material-pages](https://github.com/AnthonyNahas/ngx-material-pages)
 - [ngx-material-password-strength](https://github.com/AnthonyNahas/ngx-material-password-strength)
-
+- [ngx-material-contacts](https://github.com/AnthonyNahas/ngx-material-contacts)
+- [ngx-material-faq](https://github.com/AnthonyNahas/ngx-material-faq)
+- [ngx-combination-generator](https://github.com/AnthonyNahas/combination-generator)
 
 ## Support
 Drop an email to: [Anthony Nahas](mailto:anthony.na@hotmail.de) and I will help you!
