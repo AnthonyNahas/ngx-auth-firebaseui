@@ -21,57 +21,59 @@
 
 <section class="home">
   <div class="container">
-
     <div fxLayout="column">
       <mat-toolbar [color]="color">
         <span>Demo App</span>
         <span class="demo-fill-remaining"></span>
       </mat-toolbar>
 
-      <!--Overview-->
-      <div fxLayout="column" fxLayoutGap="40px">
-        <div fxLayoutAlign="center ">
-          <mat-card fxFlex="50" fxFlex.xs="80">
-            <div fxLayoutAlign="center center">
-              <img alt="Ngx-auth-firebaseui Logo" mat-card-md-image style="height: auto"
-                   src="../assets/images/logo/ngx-auth-firebaseui-logo.png">
-            </div>
-            <mat-card-title>
-              <mat-icon [color]="color">
-                Overview
-              </mat-icon>
+
+      <div fxLayout="row" fxLayoutGap="40px">
+        <!--Overview-->
+        <mat-card fxFlex="50" fxFlex.xs="80">
+          <div fxLayoutAlign="center center">
+            <img alt="Ngx-auth-firebaseui Logo" mat-card-md-image style="height: auto"
+                 src="../assets/images/logo/ngx-auth-firebaseui-logo.png">
+          </div>
+          <mat-card-title>
+            <mat-icon [color]="color">
               Overview
-            </mat-card-title>
-            <mat-card-subtitle>
-              <app-badges></app-badges>
-            </mat-card-subtitle>
-            <mat-card-content>
-              <pre><code>{{element}}</code></pre>
-            </mat-card-content>
-          </mat-card>
-        </div>
-        <div fxLayoutAlign="center center">
-          <mat-card fxFlex="50" fxFlex.xs="80">
-            <mat-card-title>
-              <mat-icon [color]="color">
-                warning
-              </mat-icon>
-              Attention!
-            </mat-card-title>
-            <mat-card-content>
-              <p>This demo app uses a real connection of firebase. That means if you enable firestore's synchronisation,
-                your account will be saved in the db. If you are just expirementing the demo app, please make sure to
-                delete
-                you account before to quit. That will remove your document from firestore (if it was enabled) and your
-                account
-                from the firebase authentication system.</p>
-            </mat-card-content>
-          </mat-card>
-        </div>
+            </mat-icon>
+            Overview
+          </mat-card-title>
+          <mat-card-subtitle>
+            <app-badges></app-badges>
+          </mat-card-subtitle>
+          <mat-card-content>
+            <pre><code>{{element}}</code></pre>
+          </mat-card-content>
+        </mat-card>
+        <!--Attention-->
+        <mat-card fxFlex="50" fxFlex.xs="80">
+          <mat-card-title>
+            <mat-icon [color]="color">
+              warning
+            </mat-icon>
+            Attention!
+          </mat-card-title>
+          <mat-card-content>
+            <p>This demo app uses a real connection of firebase. That means if you enable firestore's synchronisation,
+              your account will be saved in the db. If you are just expirementing the demo app, please make sure to
+              delete
+              you account before to quit. That will remove your document from firestore (if it was enabled) and your
+              account
+              from the firebase authentication system.</p>
+          </mat-card-content>
+        </mat-card>
       </div>
 
-      <div style="margin: 2rem" fxLayout="row" fxLayout.lt-lg="column" fxLayoutAlign.xs="center center"
-           fxLayoutAlign="center" fxLayoutGap.lt-lg="20px" fxLayoutGap="50px">
+      <div style="margin: 2rem 0 2rem 0"
+           fxLayout="row"
+           fxLayout.lt-lg="column"
+           fxLayoutAlign.xs="center center"
+           fxLayoutAlign="center"
+           fxLayoutGap.lt-lg="20px"
+           fxLayoutGap="40px">
         <mat-card fxFlex="50" fxFlexAlign.lt-lg="center">
           <mat-card-title>
             ngx-auth-firebaseui
@@ -83,7 +85,7 @@
           </mat-card-content>
         </mat-card>
 
-        <mat-card fxFlex="50" fxFlexAlign.lt-lg="center" fxFlexOrder.lt-lg="-1">
+        <mat-card fxFlex="50" fxFlexAlign.lt-lg="center">
           <mat-card-content>
             <mat-tab-group [color]="color" [selectedIndex]="index">
               <!--tab 1-->
