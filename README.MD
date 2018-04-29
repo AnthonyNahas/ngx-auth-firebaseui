@@ -45,8 +45,7 @@ If you need me to support [bootstrap](https://getbootstrap.com/) please let me k
 | Delete account                                 | :heavy_check_mark:    |  :x:                   |
 | User Profile                                   | :heavy_check_mark:    |  :x:                   |
 | Edit User (name, email)                        | :heavy_check_mark:    |  :x:                   |
-| Configure and choose your favorite auth        | :heavy_check_mark:    |  :x:                   |
- provider in runtime                             
+| Configure your favorite auth provider in runtime| :heavy_check_mark:    |  :x:                   |                          
 | Sync user'auth with Firestore                  | :heavy_check_mark:    |  :x:                   |
 | Angular v2-5 friendly                          | :heavy_check_mark:    |  :x:                   |
 | Real time form validation                      | :heavy_check_mark:    |  :x:                   |
@@ -312,6 +311,15 @@ in your template -->
 ```html
   <ngx-auth-firebaseui 
   [providers]="[providers.Google, providers.Facebook, providers.Twitter]"
+  (onSuccess)="printUser($event)"
+   (onError)="printError()"></ngx-auth-firebaseui>
+```
+
+or
+
+```html
+  <ngx-auth-firebaseui 
+  [providers]="['google', 'facebook', 'twitter']"
   (onSuccess)="printUser($event)"
    (onError)="printError()"></ngx-auth-firebaseui>
 ```
