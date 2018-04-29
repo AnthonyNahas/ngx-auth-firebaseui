@@ -19,7 +19,16 @@
         </mat-card-title>
         <mat-card-subtitle>
           all providers
-          <pre><code highlight [code]="allProvidersHTML"></code></pre>
+          <div fxLayout="row" fxLayoutAlign="space-between">
+            <pre><code highlight [code]="allProvidersHTML"></code></pre>
+            <button mat-icon-button
+                    ngxClipboard
+                    [cbContent]="allProvidersHTML"
+                    matTooltip="copy"
+                    (click)="showCopyMessage(allProvidersHTML)">
+              <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+            </button>
+          </div>
         </mat-card-subtitle>
         <mat-card-content>
           <ngx-auth-firebaseui></ngx-auth-firebaseui>
@@ -33,7 +42,16 @@
         </mat-card-title>
         <mat-card-subtitle>
           google, facebook, twitter
-          <pre><code highlight [code]="gftProvidersHTML"></code></pre>
+          <div fxLayout="row" fxLayoutAlign="space-between">
+            <pre><code highlight [code]="gftProvidersHTML"></code></pre>
+            <button mat-icon-button
+                    ngxClipboard
+                    [cbContent]="gftProvidersHTML"
+                    matTooltip="copy"
+                    (click)="showCopyMessage(gftProvidersHTML)">
+              <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+            </button>
+          </div>
         </mat-card-subtitle>
         <mat-card-content>
           <ngx-auth-firebaseui
@@ -49,7 +67,16 @@
         </mat-card-title>
         <mat-card-subtitle>
           facebook, twitter
-          <pre><code highlight [code]="ftProvidersHTML"></code></pre>
+          <div fxLayout="row" fxLayoutAlign="space-between">
+            <pre><code highlight [code]="ftProvidersHTML"></code></pre>
+            <button mat-icon-button
+                    ngxClipboard
+                    [cbContent]="ftProvidersHTML"
+                    matTooltip="copy"
+                    (click)="showCopyMessage(ftProvidersHTML)">
+              <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+            </button>
+          </div>
         </mat-card-subtitle>
         <mat-card-content>
           <ngx-auth-firebaseui
@@ -64,11 +91,120 @@
         </mat-card-title>
         <mat-card-subtitle>
           google, github
-          <pre><code highlight [code]="ggProvidersHTML"></code></pre>
+          <div fxLayout="row" fxLayoutAlign="space-between">
+            <pre><code highlight [code]="ggProvidersHTML"></code></pre>
+            <button mat-icon-button
+                    ngxClipboard
+                    [cbContent]="ggProvidersHTML"
+                    matTooltip="copy"
+                    (click)="showCopyMessage(ggProvidersHTML)">
+              <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+            </button>
+          </div>
         </mat-card-subtitle>
         <mat-card-content>
           <ngx-auth-firebaseui
             [providers]="[ providers.Google, providers.Github]"></ngx-auth-firebaseui>
+        </mat-card-content>
+      </mat-card>
+
+      <!--google-->
+      <mat-card class="card-sub-container">
+        <mat-card-title>
+          ngx-auth-firebase
+        </mat-card-title>
+        <mat-card-subtitle>
+          google
+          <div fxLayout="row" fxLayoutAlign="space-between">
+            <pre><code highlight [code]="gProviderHTML"></code></pre>
+            <button mat-icon-button
+                    ngxClipboard
+                    [cbContent]="gProviderHTML"
+                    matTooltip="copy"
+                    (click)="showCopyMessage(gProviderHTML)">
+              <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+            </button>
+          </div>
+        </mat-card-subtitle>
+        <mat-card-content>
+          <ngx-auth-firebaseui
+            [providers]="[ providers.Google]">
+          </ngx-auth-firebaseui>
+        </mat-card-content>
+      </mat-card>
+
+      <!--facebook-->
+      <mat-card class="card-sub-container">
+        <mat-card-title>
+          ngx-auth-firebase
+        </mat-card-title>
+        <mat-card-subtitle>
+          facebook
+          <div fxLayout="row" fxLayoutAlign="space-between">
+            <pre><code highlight [code]="fProviderHTML"></code></pre>
+            <button mat-icon-button
+                    ngxClipboard
+                    [cbContent]="fProviderHTML"
+                    matTooltip="copy"
+                    (click)="showCopyMessage(fProviderHTML)">
+              <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+            </button>
+          </div>
+        </mat-card-subtitle>
+        <mat-card-content>
+          <ngx-auth-firebaseui
+            [providers]="[ providers.Facebook]">
+          </ngx-auth-firebaseui>
+        </mat-card-content>
+      </mat-card>
+
+      <!--twitter-->
+      <mat-card class="card-sub-container">
+        <mat-card-title>
+          ngx-auth-firebase
+        </mat-card-title>
+        <mat-card-subtitle>
+          twitter
+          <div fxLayout="row" fxLayoutAlign="space-between">
+            <pre><code highlight [code]="tProviderHTML"></code></pre>
+            <button mat-icon-button
+                    ngxClipboard
+                    [cbContent]="tProviderHTML"
+                    matTooltip="copy"
+                    (click)="showCopyMessage(tProviderHTML)">
+              <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+            </button>
+          </div>
+        </mat-card-subtitle>
+        <mat-card-content>
+          <ngx-auth-firebaseui
+            [providers]="[ providers.Twitter]">
+          </ngx-auth-firebaseui>
+        </mat-card-content>
+      </mat-card>
+
+      <!--github-->
+      <mat-card class="card-sub-container">
+        <mat-card-title>
+          ngx-auth-firebase
+        </mat-card-title>
+        <mat-card-subtitle>
+          github
+          <div fxLayout="row" fxLayoutAlign="space-between">
+            <pre><code highlight [code]="gitProviderHTML"></code></pre>
+            <button mat-icon-button
+                    ngxClipboard
+                    [cbContent]="gitProviderHTML"
+                    matTooltip="copy"
+                    (click)="showCopyMessage(gitProviderHTML)">
+              <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+            </button>
+          </div>
+        </mat-card-subtitle>
+        <mat-card-content>
+          <ngx-auth-firebaseui
+            [providers]="[ providers.Github]">
+          </ngx-auth-firebaseui>
         </mat-card-content>
       </mat-card>
 

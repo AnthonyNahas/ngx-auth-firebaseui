@@ -1,5 +1,6 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {AuthProvider} from 'ngx-auth-firebaseui';
+import {MatSnackBar} from '@angular/material';
 
 @Component({
   selector: 'app-example',
@@ -18,15 +19,39 @@ export class ExampleComponent implements OnInit {
             </ngx-auth-firebaseui>`;
 
   ftProvidersHTML = `<ngx-auth-firebaseui
-            [providers]="[ providers.Facebook, providers.Twitter]"></ngx-auth-firebaseui>`;
+            [providers]="[ providers.Facebook, providers.Twitter]">
+            </ngx-auth-firebaseui>`;
 
   ggProvidersHTML = `<ngx-auth-firebaseui
-            [providers]="[ providers.Google, providers.Github]"></ngx-auth-firebaseui>`;
+            [providers]="[ providers.Google, providers.Github]">
+            </ngx-auth-firebaseui>`;
 
-  constructor() {
+  gProviderHTML = `<ngx-auth-firebaseui
+            [providers]="[ providers.Google]">
+          </ngx-auth-firebaseui>`;
+
+  fProviderHTML = `<ngx-auth-firebaseui
+            [providers]="[ providers.Facebook]">
+          </ngx-auth-firebaseui>`;
+
+  tProviderHTML = `<ngx-auth-firebaseui
+            [providers]="[ providers.Twitter]">
+          </ngx-auth-firebaseui>`;
+
+  gitProviderHTML = `<ngx-auth-firebaseui
+            [providers]="[ providers.Github]">
+          </ngx-auth-firebaseui>`;
+
+  constructor(public snackBar: MatSnackBar) {
   }
 
   ngOnInit() {
+  }
+
+  showCopyMessage(content: string) {
+    this.snackBar.open(`${content} copied`, 'OK', {
+      duration: 3000
+    });
   }
 
 }
