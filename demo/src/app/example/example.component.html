@@ -1,3 +1,77 @@
-<p>
-  example works!
-</p>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1>Examples</h1>
+  </div>
+</div>
+
+<section>
+  <div class="container">
+    <div class="cards-container"
+         fxFlex="100"
+         fxLayout="row"
+         fxlayout.xs="column"
+         fxLayoutAlign="center"
+         fxLayoutGap="20px">
+      <!--all providers-->
+      <mat-card class="card-sub-container">
+        <mat-card-title>
+          ngx-auth-firebase
+        </mat-card-title>
+        <mat-card-subtitle>
+          all providers
+          <pre><code highlight [code]="allProvidersHTML"></code></pre>
+        </mat-card-subtitle>
+        <mat-card-content>
+          <ngx-auth-firebaseui></ngx-auth-firebaseui>
+        </mat-card-content>
+      </mat-card>
+
+      <!--google, github-->
+      <mat-card class="card-sub-container">
+        <mat-card-title>
+          ngx-auth-firebase
+        </mat-card-title>
+        <mat-card-subtitle>
+          google, facebook, twitter
+          <pre><code highlight [code]="gftProvidersHTML"></code></pre>
+        </mat-card-subtitle>
+        <mat-card-content>
+          <ngx-auth-firebaseui
+            [providers]="[providers.Google, providers.Facebook, providers.Twitter]"></ngx-auth-firebaseui>
+        </mat-card-content>
+      </mat-card>
+
+
+      <!--all providers-->
+      <mat-card class="card-sub-container">
+        <mat-card-title>
+          ngx-auth-firebase
+        </mat-card-title>
+        <mat-card-subtitle>
+          facebook, twitter
+          <pre><code highlight [code]="ftProvidersHTML"></code></pre>
+        </mat-card-subtitle>
+        <mat-card-content>
+          <ngx-auth-firebaseui
+            [providers]="[ providers.Facebook, providers.Twitter]"></ngx-auth-firebaseui>
+        </mat-card-content>
+      </mat-card>
+
+      <!--google, github-->
+      <mat-card class="card-sub-container">
+        <mat-card-title>
+          ngx-auth-firebase
+        </mat-card-title>
+        <mat-card-subtitle>
+          google, github
+          <pre><code highlight [code]="ggProvidersHTML"></code></pre>
+        </mat-card-subtitle>
+        <mat-card-content>
+          <ngx-auth-firebaseui
+            [providers]="[ providers.Google, providers.Github]"></ngx-auth-firebaseui>
+        </mat-card-content>
+      </mat-card>
+
+    </div>
+  </div>
+</section>
