@@ -136,6 +136,43 @@
   "engines": {
     "node": ">=6.0.0"
   },
+  "jest": {
+    "preset": "jest-preset-angular",
+    "roots": [
+      "<rootDir>/src/"
+    ],
+    "coverageReporters": [
+      "lcov",
+      "text"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/config",
+      "/dist/"
+    ],
+    "setupTestFrameworkScriptFile": "<rootDir>/config/setupJest.ts"
+  },
+  "greenkeeper": {
+    "ignore": [
+      "@angular/core",
+      "@angular/common",
+      "@angular/compiler",
+      "@angular/platform-server",
+      "@angular/platform-browser",
+      "@angular/platform-browser-dynamic",
+      "@angular/compiler-cli",
+      "webpack",
+      "zone.js",
+      "rxjs",
+      "tslint",
+      "gulp-tslint",
+      "typescript",
+      "awesome-typescript-loader",
+      "codelyzer",
+      "@angular/animations",
+      "@types/jasmine"
+    ]
+  },
   "commitplease": {
     "style": "angular",
     "types": [
