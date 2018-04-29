@@ -12,6 +12,7 @@ import UserCredential = firebase.auth.UserCredential;
 import GithubAuthProvider = firebase.auth.GithubAuthProvider;
 
 export enum AuthProvider {
+  ALL = 'all',
   EmailAndPassword = 'firebase',
   Google = 'google',
   Facebook = 'facebook',

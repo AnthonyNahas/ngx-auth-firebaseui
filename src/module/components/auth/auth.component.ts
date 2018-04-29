@@ -23,7 +23,7 @@ const EMAIL_REGEX = new RegExp(['^(([^<>()[\\]\\\.,;:\\s@\"]+(\\.[^<>()\\[\\]\\\
 export class AuthComponent implements OnInit, OnDestroy {
 
   @Input()
-  providers: string[]; //  google, facebook, twitter, github
+  providers: string[] | string = AuthProvider.ALL; //  google, facebook, twitter, github as array or all as one single string
 
   @Output()
   onSuccess: any;
