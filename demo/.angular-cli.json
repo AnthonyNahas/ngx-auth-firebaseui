@@ -12,11 +12,11 @@
         "assets",
         "favicon.ico",
         {
-  "glob": "**/*",
-  "input": "../node_modules/ngx-auth-firebaseui/assets/",
-  "output": "./assets/",
-  "allowOutsideOutDir": false
-}
+          "glob": "**/*",
+          "input": "../node_modules/ngx-auth-firebaseui/assets/",
+          "output": "./assets/",
+          "allowOutsideOutDir": false
+        }
       ],
       "index": "index.html",
       "main": "main.ts",

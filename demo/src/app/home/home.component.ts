@@ -40,7 +40,7 @@ export class HomeComponent implements OnInit {
   public index: number;
   private _color: string;
 
-  providers = [AuthProvider.Facebook];
+  providers  = [AuthProvider.Facebook];
 
 
   constructor(private titleService: Title,

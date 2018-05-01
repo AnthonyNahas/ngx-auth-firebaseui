@@ -314,11 +314,15 @@
                 </button>
               </div>
             </mat-card-content>
+            <mat-card-footer fxLayoutAlign="center">
+              <a href="https://material.angular.io/guide/theming"
+                 target="_blank"
+                 mat-button
+                 color="primary">
+                <mat-icon>link</mat-icon>
+                Learn more about angular material themes</a>
+            </mat-card-footer>
           </mat-card>
-          <div fxLayoutAlign="center">
-            <a href="https://material.angular.io/guide/theming"
-               mat-button color="primary">Learn more about angular material themes</a>
-          </div>
         </ngx-material-page-content>
       </ngx-material-page-loader>
 
@@ -329,109 +333,119 @@
         </ngx-material-page-outlook>
         <ngx-material-page-content>
           <mat-card-title>Linking the icons</mat-card-title>
-          <div class="comment-container">
-            <p>The easiest way to load the material design icons is to provide the
-              following link in your
-            <p>
-            <pre><code highlight [code]="'index.html '"></code></pre>
-            <p>file </p>
-          </div>
-          <div fxLayout="row" fxLayoutAlign="space-between">
-            <pre><code highlight [code]="materialIconsLink"></code></pre>
-            <button mat-icon-button
-                    ngxClipboard
-                    [cbContent]="materialIconsLink"
-                    matTooltip="copy"
-                    (click)="showCopyMessage(materialIconsLink)">
-              <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
-            </button>
-          </div>
-          <div fxLayoutAlign="center">
-            <video *ngIf="true" autoplay loop aria-label="video of linking material design icons">
-              <source
-                src="https://firebasestorage.googleapis.com/v0/b/ngx-auth-firebaseui.appspot.com/o/tutorials%2Flink_material_design_icons.mp4?alt=media&token=d3e7848b-6977-4044-909c-c75b701988a4"
-                type="video/mp4">
-            </video>
-          </div>
-          <div class="comment-container">
-            <p>Or, if you want to host the material design icons by yourself, please follow these two steps.</p>
-          </div>
+          <mat-card-content>
+            <div class="comment-container">
+              <p>The easiest way to load the material design icons is to provide the
+                following link in your
+              <p>
+              <pre><code highlight [code]="'index.html '"></code></pre>
+              <p>file </p>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="space-between">
+              <pre><code highlight [code]="materialIconsLink"></code></pre>
+              <button mat-icon-button
+                      ngxClipboard
+                      [cbContent]="materialIconsLink"
+                      matTooltip="copy"
+                      (click)="showCopyMessage(materialIconsLink)">
+                <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+              </button>
+            </div>
+            <div fxLayoutAlign="center">
+              <video *ngIf="true" autoplay loop aria-label="video of linking material design icons">
+                <source
+                  src="https://firebasestorage.googleapis.com/v0/b/ngx-auth-firebaseui.appspot.com/o/tutorials%2Flink_material_design_icons.mp4?alt=media&token=d3e7848b-6977-4044-909c-c75b701988a4"
+                  type="video/mp4">
+              </video>
+            </div>
+            <div class="comment-container">
+              <p>Or, if you want to host the material design icons by yourself, please follow these two steps.</p>
+            </div>
 
-          <div class="comment-container">
-            <p>First, install the <a href="https://www.npmjs.com/package/material-design-icons"
-                                     mat-button color="primary">material design icons' npm module</a></p>
-          </div>
-          <div fxLayout="row" fxLayoutAlign="space-between">
-            <pre><code highlight [code]="'$ npm i -s material-design-icons'"></code></pre>
-            <button mat-icon-button
-                    ngxClipboard
-                    [cbContent]="'npm i -s material-design-icons'"
-                    matTooltip="copy"
-                    (click)="showCopyMessage('npm i -s material-design-icons')">
-              <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
-            </button>
-          </div>
-          <div class="comment-container">
-            <p>After that, you need to update you
-            <p>
-            <pre><code highlight [code]="'angular-cli.json'"></code></pre>
-            <p>files. Under the styles sections, add
-              the path of the material design icons in order to be imported to your distribution files
-              when you build your app. <i>See below</i></p>
-          </div>
-          <div class="comment-container">
-            <p>First of all, copy the path of the material design icons</p>
-          </div>
-          <div fxLayout="row" fxLayoutAlign="space-between">
+            <div class="comment-container">
+              <p>First, install the <a href="https://www.npmjs.com/package/material-design-icons"
+                                       mat-button color="primary">material design icons' npm module</a></p>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="space-between">
+              <pre><code highlight [code]="'$ npm i -s material-design-icons'"></code></pre>
+              <button mat-icon-button
+                      ngxClipboard
+                      [cbContent]="'npm i -s material-design-icons'"
+                      matTooltip="copy"
+                      (click)="showCopyMessage('npm i -s material-design-icons')">
+                <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+              </button>
+            </div>
+            <div class="comment-container">
+              <p>After that, you need to update you
+              <p>
+              <pre><code highlight [code]="'angular-cli.json'"></code></pre>
+              <p>files. Under the styles sections, add
+                the path of the material design icons in order to be imported to your distribution files
+                when you build your app. <i>See below</i></p>
+            </div>
+            <div class="comment-container">
+              <p>First of all, copy the path of the material design icons</p>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="space-between">
             <pre><code highlight
                        [code]="'../node_modules/material-design-icons/iconfont/material-icons.css'"></code></pre>
-            <button mat-icon-button
-                    ngxClipboard
-                    [cbContent]="'../node_modules/material-design-icons/iconfont/material-icons.css'"
-                    matTooltip="copy"
-                    (click)="showCopyMessage('../node_modules/material-design-icons/iconfont/material-icons.css')">
-              <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
-            </button>
-          </div>
-          <div class="comment-container">
-            <p>Adjust your angular-cli.json file</p>
-          </div>
-          <mat-card-subtitle>Before</mat-card-subtitle>
-          <div fxLayout="row" fxLayoutAlign="space-between">
+              <button mat-icon-button
+                      ngxClipboard
+                      [cbContent]="'../node_modules/material-design-icons/iconfont/material-icons.css'"
+                      matTooltip="copy"
+                      (click)="showCopyMessage('../node_modules/material-design-icons/iconfont/material-icons.css')">
+                <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+              </button>
+            </div>
+            <div class="comment-container">
+              <p>Adjust your angular-cli.json file</p>
+            </div>
+            <mat-card-subtitle>Before</mat-card-subtitle>
+            <div fxLayout="row" fxLayoutAlign="space-between">
             <pre><code highlight
                        [code]="stylesBeforeImportMDI"></code></pre>
-            <button mat-icon-button
-                    ngxClipboard
-                    [cbContent]="stylesBeforeImportMDI"
-                    matTooltip="copy"
-                    (click)="showCopyMessage(stylesBeforeImportMDI)">
-              <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
-            </button>
-          </div>
-          <mat-card-subtitle>After</mat-card-subtitle>
-          <div fxLayout="row" fxLayoutAlign="space-between">
+              <button mat-icon-button
+                      ngxClipboard
+                      [cbContent]="stylesBeforeImportMDI"
+                      matTooltip="copy"
+                      (click)="showCopyMessage(stylesBeforeImportMDI)">
+                <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+              </button>
+            </div>
+            <mat-card-subtitle>After</mat-card-subtitle>
+            <div fxLayout="row" fxLayoutAlign="space-between">
             <pre><code highlight
                        [code]="stylesAfterImportMDI"></code></pre>
-            <button mat-icon-button
-                    ngxClipboard
-                    [cbContent]="stylesAfterImportMDI"
-                    matTooltip="copy"
-                    (click)="showCopyMessage(stylesAfterImportMDI)">
-              <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
-            </button>
-          </div>
-          <div fxLayoutAlign="center">
-            <video *ngIf="true" autoplay loop aria-label="video of selfhosting material design icons">
-              <source
-                src="https://firebasestorage.googleapis.com/v0/b/ngx-auth-firebaseui.appspot.com/o/tutorials%2Fmaterial_design_icons_self_hosting.mp4?alt=media&token=8b444b0e-62b5-4fc4-b925-aa81cf2dff9e"
-                type="video/mp4">
-            </video>
-          </div>
-          <div class="comment-container">
-            <p>Great! You are done with the basics
-              <mat-icon color="accent">done</mat-icon>
-            </p>
-          </div>
+              <button mat-icon-button
+                      ngxClipboard
+                      [cbContent]="stylesAfterImportMDI"
+                      matTooltip="copy"
+                      (click)="showCopyMessage(stylesAfterImportMDI)">
+                <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+              </button>
+            </div>
+            <div fxLayoutAlign="center">
+              <video *ngIf="true" autoplay loop aria-label="video of selfhosting material design icons">
+                <source
+                  src="https://firebasestorage.googleapis.com/v0/b/ngx-auth-firebaseui.appspot.com/o/tutorials%2Fmaterial_design_icons_self_hosting.mp4?alt=media&token=8b444b0e-62b5-4fc4-b925-aa81cf2dff9e"
+                  type="video/mp4">
+              </video>
+            </div>
+            <div class="comment-container">
+              <p>Great! You are done with the basics
+                <mat-icon color="accent">done</mat-icon>
+              </p>
+            </div>
+          </mat-card-content>
+          <mat-card-footer fxLayoutAlign="center">
+            <a href="https://material.angular.io/guide/getting-started#step-6-optional-add-material-icons"
+               target="_blank"
+               mat-button
+               color="primary">
+              <mat-icon>link</mat-icon>
+              Learn more about angular material icons</a>
+          </mat-card-footer>
         </ngx-material-page-content>
       </ngx-material-page-loader>
 
@@ -733,8 +747,12 @@
         </ngx-material-page-content>
       </ngx-material-page-loader>
     </ngx-material-pages>
+
   </div>
+
+  <!--disqus-->
   <div style="margin: 4rem">
     <disqus [identifier]="'LoTGiMGTSZKq'"></disqus>
   </div>
+
 </section>
