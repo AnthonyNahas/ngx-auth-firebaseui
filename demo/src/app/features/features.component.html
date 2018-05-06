@@ -1,0 +1,142 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1>Features</h1>
+  </div>
+</div>
+
+<section>
+  <div class="container">
+
+    <!--features-->
+    <ngx-material-pages title="Features of ngx-auth-firebaseui">
+
+      <!--1-->
+      <ngx-material-page-loader>
+        <ngx-material-page-outlook title="Sign Up"></ngx-material-page-outlook>
+        <ngx-material-page-content>
+          <mat-card-title>New users are always welcome!</mat-card-title>
+          <mat-card-content fxLayoutAlign="center" mat-card-image>
+            <video *ngIf="true" controls autoplay loop aria-label="sign up with ngx-auth-firebaseui">
+              <source
+                src="assets/tutorials/demo_register.mp4"
+                type="video/mp4">
+            </video>
+          </mat-card-content>
+        </ngx-material-page-content>
+      </ngx-material-page-loader>
+
+      <!--2-->
+      <ngx-material-page-loader>
+        <ngx-material-page-outlook title="Form validation"></ngx-material-page-outlook>
+        <ngx-material-page-content>
+          <mat-card-title>
+            Display an appropriate error when validation fails!
+          </mat-card-title>
+          <mat-card-subtitle>
+            Every input form element will be validated!
+          </mat-card-subtitle>
+          <mat-card-content fxLayoutAlign="center" mat-card-image>
+            <video *ngIf="true" controls autoplay loop aria-label="sign up with ngx-auth-firebaseui">
+              <source
+                src="assets/tutorials/demo_form_validation.mp4"
+                type="video/mp4">
+            </video>
+          </mat-card-content>
+        </ngx-material-page-content>
+      </ngx-material-page-loader>
+
+      <!--3-->
+      <ngx-material-page-loader>
+        <ngx-material-page-outlook title="Password Strength Meter"></ngx-material-page-outlook>
+        <ngx-material-page-content>
+          <mat-card-title>Users should provide a strong password</mat-card-title>
+          <mat-card-subtitle>when creating/registering a new account</mat-card-subtitle>
+          <mat-card-content fxLayoutAlign="center" mat-card-image>
+            <video *ngIf="true" controls autoplay loop
+                   aria-label="ngx-material-password-strength with ngx-auth-firebaseui">
+              <source
+                src="assets/tutorials/demo_password_stength_mter.mp4"
+                type="video/mp4">
+            </video>
+          </mat-card-content>
+          <mat-card-footer>
+            <mat-card-title style="margin: 0 1.5rem 0 1.5rem">For this feature, we are using
+              <a href="https://www.npmjs.com/package/ngx-material-password-strength"
+                 target="_blank"
+                 mat-button
+                 color="primary">
+                ngx-material-password-strength</a>
+            </mat-card-title>
+
+            <video *ngIf="true" controls autoplay loop aria-label="sign up with ngx-auth-firebaseui">
+              <source
+                src="assets/tutorials/demo_ngx_material_password_strength.mp4"
+                type="video/mp4">
+            </video>
+          </mat-card-footer>
+          <mat-card-actions style="margin-top: 2rem" fxLayoutAlign="space-around">
+            <a href="https://github.com/anthonynahas/ngx-material-password-strength"
+               target="_blank"
+               mat-raised-button>
+              Github</a>
+            <a href="https://anthonynahas.github.io/ngx-material-password-strength"
+               target="_blank"
+               mat-raised-button
+               color="accent">
+              Demo</a>
+            <a href="https://anthonynahas.github.io/ngx-material-password-strength/doc/index.html"
+               target="_blank"
+               mat-raised-button
+               color="primary">
+              Documentation</a>
+          </mat-card-actions>
+        </ngx-material-page-content>
+      </ngx-material-page-loader>
+
+      <!--4-->
+      <ngx-material-page-loader>
+        <ngx-material-page-outlook title="Sign in/up with your favorite provider"></ngx-material-page-outlook>
+        <ngx-material-page-content>
+          <mat-card-title>Email/Password | Google | Facebook | Twitter | Github</mat-card-title>
+          <mat-card-subtitle>Authentication with phone number is on the road map!</mat-card-subtitle>
+          <mat-card-actions>
+            <span>Pick up your favorite authentication Provider!</span>
+            <a [routerLink]="['/examples']"
+               target="_blank"
+               mat-raised-button
+               color="primary">
+              Check out the examples!
+            </a>
+          </mat-card-actions>
+          <ngx-auth-firebaseui></ngx-auth-firebaseui>
+        </ngx-material-page-content>
+      </ngx-material-page-loader>
+
+      <!--5-->
+      <ngx-material-page-loader>
+        <ngx-material-page-outlook title="Responsive"></ngx-material-page-outlook>
+        <ngx-material-page-content>
+          <div style="margin: 1rem 0 2rem 0">
+            <mat-card-title>Mobile View Port</mat-card-title>
+            <img mat-card-image src="assets/tutorials/demo_mobile.png" alt="ngx-auth-firebaseui on mobile view">
+          </div>
+          <div style="margin: 1rem 0 2rem 0">
+            <mat-card-title>Tablet View Port</mat-card-title>
+            <img mat-card-image src="assets/tutorials/demo_tablet.png" alt="ngx-auth-firebaseui on tablet view">
+          </div>
+          <div style="margin: 1rem 0 2rem 0">
+            <mat-card-title>Desktop View Port</mat-card-title>
+            <img mat-card-image src="assets/tutorials/demo_desktop.png" alt="ngx-auth-firebaseui on desktop view">
+          </div>
+        </ngx-material-page-content>
+      </ngx-material-page-loader>
+
+    </ngx-material-pages>
+
+    <!--disqus-->
+    <section>
+      <disqus [identifier]="'ViMyxZcurIli'"></disqus>
+    </section>
+
+  </div>
+</section>
