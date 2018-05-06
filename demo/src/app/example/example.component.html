@@ -30,8 +30,8 @@
          fxFlex="100"
          fxLayout="row"
          fxlayout.xs="column"
-         fxLayoutAlign="center"
-         fxLayoutGap="20px">
+         fxLayoutAlign="space-between"
+         fxLayoutAlign.lt-lg="center">
       <!--all providers-->
       <mat-card class="card-sub-container">
         <mat-card-title>
@@ -39,7 +39,7 @@
         </mat-card-title>
         <mat-card-subtitle>
           all providers
-          <div fxLayout="row" fxLayoutAlign="space-between">
+          <div fxLayout="row">
             <pre><code highlight [code]="allProvidersHTML"></code></pre>
             <button mat-icon-button
                     ngxClipboard
@@ -229,5 +229,10 @@
       </mat-card>
 
     </div>
+
+    <!--disqus-->
+    <section>
+      <disqus [identifier]="'6Ds0k1DTXYcf'"></disqus>
+    </section>
   </div>
 </section>

@@ -20,7 +20,6 @@ import {ClipboardModule} from 'ngx-clipboard';
   imports: [
     CommonModule,
     GettingStartedRoutingModule,
-    NgxMaterialPagesModule,
     AppSharedModule,
     ClipboardModule,
     AppSharedModule,

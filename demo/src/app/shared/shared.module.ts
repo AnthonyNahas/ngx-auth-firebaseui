@@ -19,6 +19,7 @@ import {BadgesComponent} from './badges/badges.component';
 import {NgxAuthFirebaseUIModule} from 'ngx-auth-firebaseui';
 import {HighlightModule} from 'ngx-highlightjs';
 import {DisqusModule} from 'ngx-disqus';
+import {NgxMaterialPagesModule} from 'ngx-material-pages';
 
 @NgModule({
   imports: [
@@ -34,6 +35,7 @@ import {DisqusModule} from 'ngx-disqus';
       storageBucket: 'ngx-auth-firebaseui.appspot.com',
       messagingSenderId: '520699629648'
     }),
+    NgxMaterialPagesModule,
     FlexLayoutModule,
     MatToolbarModule,
     MatTabsModule,
@@ -51,6 +53,7 @@ import {DisqusModule} from 'ngx-disqus';
     HighlightModule,
     DisqusModule,
     NgxAuthFirebaseUIModule,
+    NgxMaterialPagesModule,
     BadgesComponent,
     FlexLayoutModule,
     MatToolbarModule,

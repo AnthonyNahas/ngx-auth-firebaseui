@@ -24,13 +24,14 @@
 <section class="home">
   <div class="container">
     <div fxLayout="column">
+
+      <!--toolbar-->
       <mat-toolbar [color]="color">
         <span>Demo App</span>
         <span class="demo-fill-remaining"></span>
       </mat-toolbar>
 
-
-      <div fxLayout="row" fxLayoutGap="40px">
+      <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="40px">
         <!--Overview-->
         <mat-card fxFlex="50" fxFlex.xs="80">
           <div fxLayoutAlign="center center">
@@ -71,12 +72,11 @@
 
       <div style="margin: 2rem 0 2rem 0"
            fxLayout="row"
-           fxLayout.lt-lg="column"
-           fxLayoutAlign.xs="center center"
+           fxLayout.lt-md="column"
            fxLayoutAlign="center"
-           fxLayoutGap.lt-lg="20px"
+           fxLayoutGap.lt-md="20px"
            fxLayoutGap="40px">
-        <mat-card fxFlex="50" fxFlexAlign.lt-lg="center">
+        <mat-card fxFlex="50">
           <mat-card-title>
             ngx-auth-firebaseui
           </mat-card-title>
@@ -87,7 +87,7 @@
           </mat-card-content>
         </mat-card>
 
-        <mat-card fxFlex="50" fxFlexAlign.lt-lg="center">
+        <mat-card fxFlex="50">
           <mat-card-content>
             <mat-tab-group [color]="color" [selectedIndex]="index">
               <!--tab 1-->
@@ -114,5 +114,8 @@
         </mat-card>
       </div>
     </div>
+    <section>
+      <disqus [identifier]="'wgSwpZG0RpW5'"></disqus>
+    </section>
   </div>
 </section>
