@@ -35,13 +35,28 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
               private _snackBar: MatSnackBar) {
   }
 
+  /**
+   * Reset the password of the user via email
+   *
+   * @param email - the email to reset
+   * @returns
+   */
   public resetPassword(email: string) {
-
     return this.auth.auth.sendPasswordResetEmail(email)
       .then(() => console.log('email sent'))
       .catch((error) => this.onErrorEmitter.next(error));
   }
 
+  /**
+   * General sign in mechanism to authenticate the users with a firebase project
+   * using a traditional way, via username and password or by using an authentication provider
+   * like google, facebook, twitter and github
+   *
+   * @param provider - the provider to authenticate with (google, facebook, twitter, github)
+   * @param email - (optional) the email of user - used only for a traditional sign in
+   * @param password - (optional) the password of user - used only for a traditional sign in
+   * @returns
+   */
   public async signInWith(provider: AuthProvider, email?: string, password?: string) {
     try {
       this.isLoading = true;
@@ -90,13 +105,18 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
   /**
    * Sign up new users via email and password.
    * After that the user should verify and confirm an email sent via the firebase
+   *
+   * @param name - the name if the new user
+   * @param email - the email if the new user
+   * @param password - the password if the new user
+   * @returns
    */
   public async signUp(name: string, email: string, password: string) {
     try {
       this.isLoading = true;
       console.log(`name: ${name} | email: ${email} --> ${password}`);
       const user: User = await this.auth.auth.createUserWithEmailAndPassword(email, password);
-      const res = await this._fireStoreService
+      await this._fireStoreService
         .getUserDocRefByUID(user.uid)
         .set({
           uid: user.uid,
@@ -105,10 +125,10 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
           photoURL: user.photoURL
         } as User);
       console.log('on sign up with user', user);
-      console.log('on sign up with res', res);
-      const sendEmailVerification = await user.sendEmailVerification();
+      await user.sendEmailVerification();
+      const updatedProfileResult = await this.updateProfile(name, user.photoURL);
+      console.log('on update profile result -> ', updatedProfileResult);
       this.emailConfirmationSent = true;
-      console.log('on sign up with sendEmailVerification', sendEmailVerification);
       this.emailToConfirm = email;
       this._snackBar.open(`Hallo ${name}!`, 'OK', {duration: 10000});
       this.onSuccessEmitter.next(user);
@@ -119,6 +139,18 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
     } finally {
       this.isLoading = false;
     }
+  }
+
+  /**
+   * Update the profile (name + photo url) of the authenticated user in the
+   * firebase authentication feature (not in firestore)
+   *
+   * @param name - the new name of the authenticated user
+   * @param photoURL - the new photo url of the authenticated user
+   * @returns
+   */
+  public async updateProfile(name: string, photoURL: string): Promise<any> {
+    return await this.auth.auth.currentUser.updateProfile({displayName: name, photoURL: photoURL});
   }
 
   public signInWithPhoneNumber() {
