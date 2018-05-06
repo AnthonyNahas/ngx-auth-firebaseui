@@ -158,7 +158,7 @@ export class GettingStartedComponent implements OnInit {
 
   copyAssetSnippet = `{
                       "glob": "**/*",
-                      "input": "../node_modules/ngx-auth-firebaseui/dist/assets/",
+                      "input": "../node_modules/ngx-auth-firebaseui/assets/",
                       "output": "./assets/"
                       }`;
 
@@ -167,7 +167,7 @@ export class GettingStartedComponent implements OnInit {
                                   "favicon.ico",
                                   {
                                     "glob": "**/*",
-                                    "input": "../node_modules/ngx-auth-firebaseui/dist/assets/",
+                                    "input": "../node_modules/ngx-auth-firebaseui/assets/",
                                     "output": "./assets/"
                                   }
                                 ]`;
