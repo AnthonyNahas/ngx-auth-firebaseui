@@ -4,7 +4,9 @@
 
 # ngx-auth-firebaseui - Open Source Library for Angular Web Apps to integrate a material user interface for firebase authentication.
 
-[![preview](ngx-auth-firebaseui-logo.png)](ngx-auth-firebaseui-logo.png)
+<p align="center">
+  <img alt="ngx-auth-firebaseui-logo.png" height="256px" width="256px" style="text-align: center;" src="ngx-auth-firebaseui-logo.png">
+</p>
 
 [![npm version](https://badge.fury.io/js/ngx-auth-firebaseui.svg)](https://badge.fury.io/js/ngx-auth-firebaseui)
 [![npm](https://img.shields.io/badge/demo-online-ed1c46.svg)](https://ngx-auth-firebaseui.firebaseapp.com)
@@ -155,8 +157,8 @@ This package is now under development. For further suggestions, please provide a
     "@angular/flex-layout": "^5.0.0-beta.13",
     "@angular/forms": "^5.x",
     "@angular/material": "^5.x",
-    "angularfire2": "^5.0.0-rc.6.0",
-    "firebase": ">= 4.8.0 <= 4.10.1",
+    "angularfire2": "5.0.0-rc.6.0",
+    "firebase": "4.13.1",
     "rxjs": "^5.5.8",
     "zone.js": "^0.8.4"
   }
@@ -164,14 +166,24 @@ This package is now under development. For further suggestions, please provide a
 
 e.g:
 
+Angular deps
 ```bash
-npm i -s @angular/material @angular/cdk @angular/flex-layout
+npm i -s @angular/material@5.2.5 @angular/cdk@5.2.5 @angular/flex-layout@5.0.0-beta.13 @angular/forms
 ```
+
+Firebase deps
+```bash
+npm i -s firebase@4.13.1 angularfire2@5.0.0-rc.6.0
+```
+
+NB: the library is not compatible with the latest release of
+ angularfire2 v5.0.0-rc.7 !!!! (there are some bugs found like zone alreay loaded... so waiting...)
+
 
 [help!](https://ngx-auth-firebaseui.firebaseapp.com/getting-started)
 
 ## Dependencies
-* [Angular](https://angular.io) (*requires* Angular 2 or higher, tested with 2.0.0)
+* [Angular](https://angular.io) (*requires* Angular 2 or higher, developed with 5.2.10)
 
 
 ## (1) [Installation](https://ngx-auth-firebaseui.firebaseapp.com/getting-started)
