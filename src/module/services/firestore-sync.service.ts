@@ -10,7 +10,8 @@ export const collections = {
 @Injectable()
 export class FirestoreSyncService {
 
-  constructor(private _afs: AngularFirestore) {
+  constructor(public afs: AngularFirestore) {
+    this.afs.firestore.settings({timestampsInSnapshots: true});
   }
 
   // get timestamp() {
@@ -18,12 +19,12 @@ export class FirestoreSyncService {
   // }
 
   public getUserDocRefByUID(uid: string): AngularFirestoreDocument<IUser> {
-    return this._afs.doc(`${collections.users}/${uid}`);
+    return this.afs.doc(`${collections.users}/${uid}`);
   }
 
 
   public getUsersCollectionRef(queryFn?: QueryFn): AngularFirestoreCollection<IUser> {
-    return this._afs.collection(`${collections.users}/`, queryFn);
+    return this.afs.collection(`${collections.users}/`, queryFn);
   }
 
   public updateUserData(user: IUser): Promise<any> {
