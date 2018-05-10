@@ -77,7 +77,7 @@ export {FirestoreSyncService} from './services/firestore-sync.service';
 })
 
 
-export class NgxAuthFirebaseUIModule extends AngularFireModule {
+export class NgxAuthFirebaseUIModule {
   static forRoot(configFactory: FirebaseAppConfig, appNameFactory?: () => string, config?: INgxAuthFirebaseUIConfig): ModuleWithProviders {
     return {
       ngModule: NgxAuthFirebaseUIModule,
