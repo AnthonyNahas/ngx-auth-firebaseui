@@ -56,7 +56,7 @@
     "@angular/material": "^5.2.4",
     "angularfire2": "5.0.0-rc.6.0",
     "firebase": "4.13.1",
-    "ngx-material-password-strength": "^1.0.5"
+    "ngx-material-password-strength": "^2.0.0"
   },
   "devDependencies": {
     "@angular/compiler": "^5.2.9",
