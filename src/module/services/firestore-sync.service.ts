@@ -11,7 +11,7 @@ export const collections = {
 export class FirestoreSyncService {
 
   constructor(public afs: AngularFirestore) {
-    this.afs.firestore.settings({timestampsInSnapshots: true});
+    // this.afs.firestore.settings({timestampsInSnapshots: true});
   }
 
   // get timestamp() {
