@@ -43,7 +43,7 @@
     "ngx-clipboard": "^10.0.0",
     "ngx-disqus": "^2.3.7",
     "ngx-highlightjs": "^1.4.1",
-    "ngx-material-pages": "^1.2.1",
+    "ngx-material-pages": "1.2.1",
     "rxjs": "^5.5.8",
     "zone.js": "^0.8.24"
   },
