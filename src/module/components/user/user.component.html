@@ -1,7 +1,27 @@
 <mat-card *ngIf="auth.authState| async as user">
-  <mat-card-header fxLayoutAlign="center center">
-    <img mat-card-avatar [src]="user.photoURL">
+
+  <mat-card-header fxLayout="column" fxLayoutAlign="center center">
+
+    <img mat-card-avatar [src]="authProcess.getUserPhotoUrl()">
+
+    <div *ngIf="user.emailVerified; then emailVerified else emailNotVerified"></div>
+    <ng-template #emailVerified>
+      <mat-icon color="primary"
+                matTooltip="email is verified"
+                matTooltipPosition="after">
+        verified_user
+      </mat-icon>
+    </ng-template>
+    <ng-template #emailNotVerified>
+      <mat-icon color="warn"
+                matTooltip="email is not verified"
+                matTooltipPosition="after">
+        warning
+      </mat-icon>
+    </ng-template>
+
   </mat-card-header>
+
   <mat-card-content>
     <div fxLayoutAlign="center">
       <button mat-raised-button [color]="editMode ? 'warn' : 'primary' " class="edit-button"
@@ -29,7 +49,7 @@
     </ng-template>
     <ng-template #defaultActions>
       <button mat-button color="primary" (click)="auth.auth.signOut()">Sign out</button>
-      <button mat-button color="warn" (click)="user.delete()">Delete account</button>
+      <button mat-button color="warn" (click)="deleteAccount()">Delete account</button>
     </ng-template>
   </mat-card-actions>
 </mat-card>
