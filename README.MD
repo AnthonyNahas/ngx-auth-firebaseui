@@ -108,8 +108,8 @@ If you need me to support [bootstrap](https://getbootstrap.com/) please let me k
 <a name="components"/>
 
 ## Library's components
-- <ngx-auth-firebaseui> used for the authentication process
-- <ngx-auth-firebaseui-user> used to diplasy/edit the data of the current authenticated user
+- `<ngx-auth-firebaseui>` used for the authentication process
+- `<ngx-auth-firebaseui-user>` used to diplasy/edit the data of the current authenticated user
 
 <a name="supported-providers"/>
 
