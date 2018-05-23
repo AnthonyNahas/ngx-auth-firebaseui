@@ -4,10 +4,6 @@
 
 # ngx-auth-firebaseui - Open Source Library for Angular Web Apps to integrate a material user interface for firebase authentication.
 
-<p align="center">
-  <img alt="ngx-auth-firebaseui-logo.png" height="256px" width="256px" style="text-align: center;" src="ngx-auth-firebaseui-logo.png">
-</p>
-
 [![npm version](https://badge.fury.io/js/ngx-auth-firebaseui.svg)](https://badge.fury.io/js/ngx-auth-firebaseui)
 [![npm](https://img.shields.io/badge/demo-online-ed1c46.svg)](https://ngx-auth-firebaseui.firebaseapp.com)
 [![CircleCI branch](https://img.shields.io/circleci/project/github/AnthonyNahas/ngx-auth-firebaseui/master.svg?label=circleci)](https://circleci.com/gh/AnthonyNahas/ngx-auth-firebaseui)
@@ -25,11 +21,42 @@
 [![Twitter URL](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/ngAnthonyy)
 [![Twitter Follow](https://img.shields.io/twitter/follow/ngAnthonyy.svg?style=social&label=Follow)](https://twitter.com/ngAnthonyy)
 
+<p align="center">
+  <img alt="ngx-auth-firebaseui-logo.png" width="256px" style="text-align: center;" 
+  src="ngx-auth-firebaseui-logo.png">
+</p>
+
 Angular UI component for [firebase](https://firebase.google.com/docs/auth/web/firebaseui) authentication.
 This library is an angular module (including angular components and services) that allows to authenticate
 your users with your firebase project. NgxAuthFirebseUI is compatible with
 [angular material](https://material.angular.io/) and [angular flexLayout](https://github.com/angular/flex-layout).
 If you need me to support [bootstrap](https://getbootstrap.com/) please let me know and i will do it.
+
+## Table of Contents
+- [ngx-auth-firebaseui vs firebaseui-web](#vs)
+- [Why to use ngx-auth-firebaseui ?](#why-to-use-ngx-auth-firebaseui)
+- [Library's components](#components)
+- [Supported Providers](#supported-procress-and-actions)
+- [Supported Processes and Actions](#supported-procress-and-actions)
+- [Requirements](#requirements)
+- [Demo](#demo)
+- [Screenshots](#screenshots)
+- [Peer Dependencies](#peerDependencies)
+- [Dependencies](#dependencies)
+- [Installation](#installation)
+- [Usage](#usage)
+- [API](#api)
+- [Additional Requirements - material (Include a theme)](#additional-requirements-material-theme)
+- [Additional Requirements - assets](#additional-requirements-assets)
+- [ Run Demo App Locally](#run-demo-app-locally)
+- [Development](#development)
+- [Other Angular Libraries](#other-angular-libraries)
+- [Support](#support)
+- [License](#license)
+
+<a name="vs"/>
+
+## ngx-auth-firebaseui vs firebaseui-web
 
 | Features                                       | ngx-auth-firebaseui       | firebaseui  |
 | -----------------------------------------------|:-------------:|         :-------------------:  |
@@ -49,7 +76,7 @@ If you need me to support [bootstrap](https://getbootstrap.com/) please let me k
 | User Profile                                   | :heavy_check_mark:    |  :x:                   |
 | Check whether user's email is verified         | :heavy_check_mark:    |  :x:                   |
 | Edit User (name, email)                        | :heavy_check_mark:    |  :x:                   |
-| Configure your favorite auth provider in runtime| :heavy_check_mark:    |  :x:                   |                          
+| Configure your favorite auth provider in runtime| :heavy_check_mark:    |  :x:                   |
 | Sync user'auth with Firestore                  | :heavy_check_mark:    |  :x:                   |
 | Angular v2-5 friendly                          | :heavy_check_mark:    |  :x:                   |
 | Real time form validation                      | :heavy_check_mark:    |  :x:                   |
@@ -58,24 +85,33 @@ If you need me to support [bootstrap](https://getbootstrap.com/) please let me k
 | Support SPA without further config             | :heavy_check_mark:    |  :x:                   |
 | Support Safari private browsing                | :heavy_check_mark:    |  :x:                   |
 
+
+<a name="why-to-use-ngx-auth-firebaseui"/>
+
 ## Why to use ngx-auth-firebaseui ?
 - it uses a responsive and accessible web design UX/UI from google material concepts and components (supporting desktop and mobile view).
 - pick up your own theme! change the primary, accent and warn colors whenever you need (e.g to support light and dark themes)
 - super easy to use with an angular based project (project that is created with [angular-cli](https://cli.angular.io/))
 - optional configuration
 - configure your authentication providers in runtime
-- reusable components for every project that need an authentication with a firebase project/app.
-- built in feedback mechanism in form of a [snackbar](https://material.angular.io/components/snack-bar/overview) when an error occurred.
-- ability to sign out or to event to delete totally the account
-- user profile component to display user's data
+- reusable components for every project that needs an authentication with a firebase project/app.
+- built in feedback mechanism in form of a [snackbar](https://material.angular.io/components/snack-bar/overview) when an error or any important event occurred.
+- ability to sign out or even to delete totally the account
+- your client does not want to create an account in your project? Let him to sign in anonymously!
+- user profile component to display user's data using <ngx-auth-firebaseui-user></ngx-auth-firebaseui-user>
 - update user profile as feature
-#### - Sync user's authentication with FIRESTORE (documentation coming soon)
-#### - Forgot Password as feature
-#### - Supports SSR - Server Side Rendering
+- Sync user's authentication with FIRESTORE (documentation coming soon)
+- Forgot Password as feature
+- Supports SSR - Server Side Rendering
+
+
+<a name="components"/>
 
 ## Library's components
 - <ngx-auth-firebaseui> used for the authentication process
 - <ngx-auth-firebaseui-user> used to diplasy/edit the data of the current authenticated user
+
+<a name="supported-providers"/>
 
 ## Supported Providers:
 - anonymously
@@ -86,25 +122,37 @@ If you need me to support [bootstrap](https://getbootstrap.com/) please let me k
 - github
 - phone number (todo)
 
+<a name="supported-procress-and-actions"/>
+
 ## Supported Processes and Actions:
 - sign up
 - sign in
-- sign in Anonymously
+- sign in Anonymously | with google, facebook, twitter, github
+- sign out
 - validation of password's strength while creating a new account using [ngx-material-password-strength](https://github.com/AnthonyNahas/ngx-material-password-strength)
 - forgot/reset password
 - sending email verifications
+- delete user's account
+- edit user's profile like email, name, profile picture and phone number
 
+
+<a name="requirements"/>
 
 ### Requirements:
-- [angular material ](https://www.npmjs.com/package/@angular/material)
+- [angular cdk - v5.2.4 ](https://www.npmjs.com/package/@angular/cdk)
+- [angular material - v5.2.4](https://www.npmjs.com/package/@angular/material)
 - [angular material theme](https://material.angular.io/guide/getting-started#step-4-include-a-theme)
 - [angular material icons](https://material.angular.io/guide/getting-started#step-6-optional-add-material-icons)
-- [angular cdk ](https://www.npmjs.com/package/@angular/cdk)
-- [angular forms ](https://www.npmjs.com/package/@angular/forms)
-- [angular flex-layout ](https://www.npmjs.com/package/@angular/flex-layout)
-- if you need a built in theme --> please let me know
+- [angular forms - v5.2.9](https://www.npmjs.com/package/@angular/forms)
+- [angular animations - v5.2.9](https://www.npmjs.com/package/@angular/animations)
+- [angular flex-layout v5.0.0-beta.14](https://www.npmjs.com/package/@angular/flex-layout)
+- [angularfire2 - v5.0.0-rc.6.0](https://www.npmjs.com/package/angularfire2)
+- [firebase - v4.12.1](https://www.npmjs.com/package/firebase)
 
 the full tutorial guide can be found [here](https://ngx-auth-firebaseui.firebaseapp.com/getting-started)
+
+
+<a name="demo"/>
 
 ## Demo [ngx-auth-firebaseui demo](https://ngx-auth-firebaseui.firebaseapp.com/)
 
@@ -117,41 +165,67 @@ if(issues || feedback || you_need_more_features){
 
 ## [Documentation](https://ngx-auth-firebaseui.firebaseapp.com/doc/index.html)
 
-### Note:
-This package is now under development. For further suggestions, please provide a PR or open an appropriate issue.
+<a name="sreenshots"/>
 
 ## Screenshots - Browser <ngx-auth-firebaseui></ngx-auth-firebaseui>
 - sign in
-![ngx-auth-firebaseui](https://firebasestorage.googleapis.com/v0/b/ngx-auth-firebaseui.appspot.com/o/0.3.3-alpha%2Fsignin.png?alt=media&token=027b5bf8-388e-4b08-a098-a5ab6e215bbd)
 
-- Sign up
-![ngx-auth-firebaseui](https://firebasestorage.googleapis.com/v0/b/ngx-auth-firebaseui.appspot.com/o/0.3.3-alpha%2Fregister.png?alt=media&token=ec45629a-b885-49a5-a931-1f4d007a7740)
+<p align="center">
+  <img alt="ngx-auth-firebaseui sign in" width="256px" style="text-align: center;" 
+  src="assets/v0.7.1/features/overview/overview.png">
+</p>
 
+- Sign up - registration
+
+<p align="center">
+  <img alt="ngx-auth-firebaseui sign up" width="256px" style="text-align: center;" 
+  src="assets/v0.7.1/features/registration/registration2.png">
+</p>
 
 ## Screenshots  <ngx-auth-firebaseui-user></ngx-auth-firebaseui-user>
 - user profile
-![ngx-auth-firebaseui](https://firebasestorage.googleapis.com/v0/b/ngx-auth-firebaseui.appspot.com/o/0.4.0-alpha%2Fuser.png?alt=media&token=9f99dbbe-b622-4ca7-8538-7cf1fd31562c)
+
+<p align="center">
+  <img alt="ngx-auth-firebaseui user profile component" width="256px" style="text-align: center;" 
+  src="assets/v0.7.1/features/user/user_verified_2.png">
+</p>
 
 - edit user
-![ngx-auth-firebaseui](https://firebasestorage.googleapis.com/v0/b/ngx-auth-firebaseui.appspot.com/o/0.4.0-alpha%2Fuser_edit.png?alt=media&token=771a8610-ac79-4f1e-8f67-24c61c8ce873)
 
+<p align="center">
+  <img alt="ngx-auth-firebaseui edit user component" width="256px" style="text-align: center;" 
+  src="assets/v0.7.1/features/user/edit/edit_user2.png">
+</p>
 
-## Screenshots - Mobile/Tablet Browser
+## Screenshots - Mobile Browser
 - Sign in - mobile
-![ngx-auth-firebaseui](https://firebasestorage.googleapis.com/v0/b/ngx-auth-firebaseui.appspot.com/o/0.3.3-alpha%2Fsignin_iphone.png?alt=media&token=5cd0974a-e359-4675-81fa-7f742033cf95)
-- sign in - tablet
-![ngx-auth-firebaseui](https://firebasestorage.googleapis.com/v0/b/ngx-auth-firebaseui.appspot.com/o/0.3.3-alpha%2Fsignin_tablet.png?alt=media&token=6bfc618e-b2dd-440c-ab5c-cf50f15de8e9)
+
+<p align="center">
+  <img alt="ngx-auth-firebaseui on mobile" width="256px" style="text-align: center;" 
+  src="assets/v0.7.1/features/overview/mobile/mobile.png">
+</p>
 
 ## Screenshots - Reset Password
 
 - Before
-![ngx-auth-firebaseui](https://firebasestorage.googleapis.com/v0/b/ngx-auth-firebaseui.appspot.com/o/0.3.3-alpha%2Freset_passowrd.png?alt=media&token=2b9a7361-1187-49e9-a241-4af33590637d)
+
+<p align="center">
+  <img alt="ngx-auth-firebaseui on mobile" width="256px" style="text-align: center;" 
+  src="assets/v0.7.1/features/reset-forgot-password/reset_before.png">
+</p>
 
 - After
-![ngx-auth-firebaseui](https://firebasestorage.googleapis.com/v0/b/ngx-auth-firebaseui.appspot.com/o/0.3.3-alpha%2Freset_password_check_instructions.png?alt=media&token=ac37b942-6922-463e-b765-a69adff9ae2a)
 
+<p align="center">
+  <img alt="ngx-auth-firebaseui on mobile" width="256px" style="text-align: center;" 
+  src="assets/v0.7.1/features/reset-forgot-password/reset_after.png">
+</p>
 
-## (0) Please make sure that peerDependencies are installed
+---
+
+<a name="peerDependencies"/>
+
+## Peer Dependencies - please make sure that peerDependencies are installed
 
 ```json
 "peerDependencies": {
@@ -172,7 +246,7 @@ e.g:
 
 Angular deps
 ```bash
-npm i -s @angular/material@5.2.5 @angular/cdk@5.2.5 @angular/flex-layout@5.0.0-beta.13 @angular/forms
+npm i -s @angular/material@5.2.4 @angular/cdk@5.2.4 @angular/flex-layout@5.0.0-beta.14 @angular/forms@5.2.9 @angular/animations@5.2.9
 ```
 
 Firebase deps
@@ -186,9 +260,24 @@ NB: the library is not compatible with the latest release of
 
 [help!](https://ngx-auth-firebaseui.firebaseapp.com/getting-started)
 
+
+---
+
+<a name="dependencies"/>
+
 ## Dependencies
 * [Angular](https://angular.io) (*requires* Angular 2 or higher, developed with 5.2.10)
+* [ngx-material-password-strength](https://www.npmjs.com/package/ngx-material-password-strength)
 
+the [ngx-material-password-strength](https://www.npmjs.com/package/ngx-material-password-strength) is used
+to indicate how secure is the provided password when registering a new firebase user e.g:
+
+<p align="center">
+  <img width="256px" style="text-align: center;"
+   src="assets/v0.7.1/features/password/ngx-material-password-strength.gif">
+</p>
+
+<a name="installation"/>
 
 ## (1) [Installation](https://ngx-auth-firebaseui.firebaseapp.com/getting-started)
 
@@ -265,17 +354,22 @@ map: {
   'ngx-auth-firebaseui': 'node_modules/ngx-auth-firebaseui/bundles/ngx-auth-firebaseui.umd.js',
 }
 ```
+
+<a name="usage"/>
+
 ---
 ## (2) [Usage](https://ngx-auth-firebaseui.firebaseapp.com/getting-started)
 
 Once the library is imported, you can use its components, directives and pipes in your Angular application:
 
+### <ngx-auth-firebaseui></ngx-auth-firebaseui>
+
 ```html
 <!-- You can now use the library component in app.component.html  -->
-<h1>
-  {{title}}
-</h1>
-<ngx-auth-firebaseui (onSuccess)="printUser($event)" (onError)="printError()"></ngx-auth-firebaseui>
+
+<ngx-auth-firebaseui (onSuccess)="printUser($event)"
+                     (onError)="printError()">
+</ngx-auth-firebaseui>
 ```
 or
 ```ts
@@ -296,11 +390,36 @@ class AppComponent {
     }
 }
 ```
+
+#### Result:
+
+<p align="center">
+  <img alt="ngx-auth-firebaseui-logo.png" height="256px" width="256px" style="text-align: center;" 
+  src="assets/v0.7.1/features/overview/overview.png">
+</p>
+
+### <ngx-auth-firebaseui-user></ngx-auth-firebaseui-user>
+
+```html
+<ngx-auth-firebaseui-user></ngx-auth-firebaseui-user>
+``
+
+#### Result:
+
+<p align="center">
+  <img alt="ngx-auth-firebaseui-logo.png" height="256px" width="256px" style="text-align: center;" 
+  src="assets/v0.7.1/features/user/user_verified_2.png">
+</p>
+
+<a name="api"/>
+
 ## API
 
+###  <ngx-auth-firebaseui></ngx-auth-firebaseui>
+
 | option | bind  |  type  |   default    | description  |
-|:---------------------|:------:|:------:|:------------:|:-------------------------------------------------------------------------------------------------|    
-| providers            | Input()  | string[] | ['all'] or [AuthProvider.All] | choose your favorite authentication provider: google | facebook | twitter | github 
+|:---------------------|:------:|:------:|:------------:|:-------------------------------------------------------------------------------------------------|
+| providers            | Input()  | string[] | ['all'] or [AuthProvider.All] | choose your favorite authentication provider: google | facebook | twitter | github
 | onSuccess            | Output() | any     | - | this will be fired when an authentication process was success. The authenticated user is emitted!
 | onError              | Output() | any     | - | this event will be fired when an error occurred during the authentication process! An error message is emitted!
 
@@ -313,19 +432,19 @@ in your component, import the AuthProvider enum to pick up your favorite provide
 import {AuthProvider} from 'ngx-auth-firebaseui';
 
 export class ExampleComponent implements OnInit {
-  
+
   providers = AuthProvider;
-  
+
   ngOnInit() {
     }
 
-  
+
 }
 ```
 
-in your template --> 
+in your template -->
 ```html
-  <ngx-auth-firebaseui 
+  <ngx-auth-firebaseui
   [providers]="[providers.Google, providers.Facebook, providers.Twitter]"
   (onSuccess)="printUser($event)"
    (onError)="printError()"></ngx-auth-firebaseui>
@@ -334,7 +453,7 @@ in your template -->
 or
 
 ```html
-  <ngx-auth-firebaseui 
+  <ngx-auth-firebaseui
   [providers]="['google', 'facebook', 'twitter']"
   (onSuccess)="printUser($event)"
    (onError)="printError()"></ngx-auth-firebaseui>
@@ -342,10 +461,26 @@ or
 
 take a look at the full documentation [here](https://ngx-auth-firebaseui.firebaseapp.com/doc/index.html)
 
+
+### <ngx-auth-firebaseui-user></ngx-auth-firebaseui-user>
+
+| option | bind  |  type  |   default    | description  |
+|:---------------------|:------:|:------:|:------------:|:-------------------------------------------------------------------------------------------------|
+| onAccountDeleted     | Output() | void     | - | this will be fired when the user deletes his account
+
+
+<a name="additional-requirements-material-theme"/>
+
 ## (3) Additional Requirements - material (Include a theme)
 #### With Angular CLI
 Please take a look of the official documentation of **angular material themes** [here](https://material.angular.io/guide/getting-started#step-4-include-a-theme)
 #### Without Angular CLI
+
+[see how it works](https://material.angular.io/guide/theming)
+
+----
+
+<a name="additional-requirements-assets"/>
 
 ## (4) Additional Requirements - assets
 #### With Angular CLI
@@ -379,6 +514,11 @@ This is an example of requesting an image from the library
 `Request URL:http://localhost:4200/assets/google.svg`.
 Please make sur that the images will be hosted in the right place
 
+
+---
+
+<a name="run-demo-app-locally"/>
+
 ## Run Demo App Locally
 
 ![ngx-auth-firebaseui](https://firebasestorage.googleapis.com/v0/b/ngx-auth-firebaseui.appspot.com/o/0.3.3-alpha%2Fdemo_app.png?alt=media&token=e8b000ce-bbe7-40be-b877-ea562d08ba96)
@@ -387,6 +527,27 @@ Please make sur that the images will be hosted in the right place
 ```bash
 $ git clone https://github.com/AnthonyNahas/ngx-auth-firebaseui.git
 ```
+
+- link the ngx-auth-firebaseui package
+use gulp globally
+```bash
+$ gulp link
+```
+
+use gulp locally
+```bash
+$ npx gulp link
+```
+for some mac os users, you may use the sudo command with gulp
+use gulp with sudo
+```bash
+$ sudo gulp link
+```
+or locally 
+```bash
+$ sudo npx gulp link
+```
+
 - navigate to the demo app directory
 ```bash
 $ cd demo
@@ -419,6 +580,7 @@ $ ng serve --open
 ```
 - the app is now hosted by `http://localhost:4200/`
 
+<a name="development"/>
 
 ## Development
 
@@ -433,6 +595,9 @@ To lint all `*.ts` files:
 ```bash
 $ npm run lint
 ```
+---
+
+<a name="other-angular-libraries"/>
 
 ## Other Angular Libraries
 - [ngx-material-pages](https://github.com/AnthonyNahas/ngx-material-pages)
@@ -441,9 +606,17 @@ $ npm run lint
 - [ngx-material-faq](https://github.com/AnthonyNahas/ngx-material-faq)
 - [ngx-combination-generator](https://github.com/AnthonyNahas/combination-generator)
 
+
+---
+
+<a name="support"/>
+
 ## Support
 Drop an email to: [Anthony Nahas](mailto:anthony.na@hotmail.de) and I will help you!
 
+---
+
+<a name="license"/>
 
 ## License
 
