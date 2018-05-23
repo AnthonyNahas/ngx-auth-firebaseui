@@ -31,6 +31,7 @@ export class AuthComponent implements OnInit, OnDestroy {
   @Output()
   onError: any;
 
+  authProvider = AuthProvider;
   passwordResetWished: any;
 
   public signInFormGroup: FormGroup;

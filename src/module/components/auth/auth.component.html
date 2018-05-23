@@ -5,7 +5,7 @@
         <mat-card-header fxLayoutAlign="end">
           <button mat-icon-button
                   [color]="color"
-                  matTooltip="schließen"
+                  matTooltip="close"
                   matTooltipPosition="above"
                   (click)="passwordResetWished = false">
             <mat-icon>close</mat-icon>
@@ -115,7 +115,7 @@
       <mat-card-title>Registration</mat-card-title>
       <div *ngIf="!authProcess.emailConfirmationSent; then register else confirm"></div>
       <ng-template #register>
-        <mat-card-content>
+        <mat-card-content fxLayout="column" fxLayoutAlign="center center">
           <form [formGroup]="signUpFormGroup" (ngSubmit)="signUpFormGroup.valid &&
                                authProcess.signUp
                                (signUpFormGroup.value.name,signUpFormGroup.value.email,signUpFormGroup.value.password)">
@@ -160,7 +160,9 @@
 
               <!--password-->
               <div>
+
                 <mat-form-field>
+
                   <input matInput
                          placeholder="Password"
                          type="password"
@@ -168,32 +170,49 @@
                          [formControl]="sigUpPasswordFormControl"
                          required>
                   <mat-icon matSuffix [color]="color">lock</mat-icon>
+
                   <mat-hint align="end" aria-live="polite">
                     {{signUpFormGroup.value.password.length}} / 25
                   </mat-hint>
+
                   <mat-error *ngIf="sigUpPasswordFormControl.hasError('required')" class="cut-text">
                     Please do not forget the password
                   </mat-error>
+
                   <mat-error *ngIf="sigUpPasswordFormControl.hasError('minlength')" class="cut-text">
                     The password must be at least 6 characters long.
                   </mat-error>
                   <mat-error *ngIf="sigUpPasswordFormControl.hasError('maxlength')" class="cut-text">
                     The password can not be longer than 25 characters.
                   </mat-error>
+
                 </mat-form-field>
+
                 <ngx-material-password-strength
                   [password]="signUpFormGroup.value.password"
                   [externalError]="sigUpPasswordFormControl.dirty">
                 </ngx-material-password-strength>
+
               </div>
+
               <button mat-raised-button
                       style="margin-top: 20px"
                       type="submit"
                       [color]="color">
                 Register
               </button>
+
             </div>
           </form>
+
+          <button mat-button
+                  style="margin-top: 20px"
+                  [color]="color"
+                  (click)="authProcess.signInWith(authProvider.ANONYMOUS)">
+            <mat-icon>fingerprint</mat-icon>
+            continue as guest
+          </button>
+
         </mat-card-content>
         <mat-card-footer *ngIf="authProcess.isLoading">
           <mat-progress-bar mode="indeterminate"></mat-progress-bar>
