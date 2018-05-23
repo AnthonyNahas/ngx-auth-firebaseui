@@ -85,7 +85,7 @@
     "gulp-conventional-changelog": "1.1.24",
     "gulp-coveralls": "0.1.4",
     "gulp-file": "0.3.0",
-    "gulp-git": "2.6.0",
+    "gulp-git": "2.7.0",
     "gulp-hub": "0.8.0",
     "gulp-imagemin": "^4.1.0",
     "gulp-inline-ng2-template": "4.0.0",
