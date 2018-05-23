@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {Title} from '@angular/platform-browser';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {AuthProvider} from 'ngx-auth-firebaseui';
@@ -6,7 +6,8 @@ import {AuthProvider} from 'ngx-auth-firebaseui';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class HomeComponent implements OnInit {
 
