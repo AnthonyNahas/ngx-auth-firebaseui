@@ -1,3 +1,24 @@
+<a name="0.8.0"></a>
+# [0.8.0](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v0.7.0...v0.8.0) (2018-05-23)
+
+
+### Bug Fixes
+
+* **ngx-auth-firebaseui:** setting timestampsInSnapshots to true for firebase settings ([15e191b](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/15e191b))
+* **package:** update ngx-material-password-strength to version 2.0.0 ([33a34d9](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/33a34d9))
+* **project:** downgrading firebase to v.4.10.1 due to some bugs ([5778f7f](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/5778f7f))
+
+
+### Features
+
+* **assets:** added additional users svg images ([ebb68f6](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/ebb68f6))
+* **assets:** added anonymous sign in and delete account functionality ([985fc1a](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/985fc1a))
+* **assets:** added sign in as guest feature ([f8f65cb](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/f8f65cb))
+* **assets:** added verification's email status and onAccountDeleted output event ([0f3b889](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/0f3b889))
+* **ngx-auth-firebaseui:** added accounts enum to parse svg images in the auth process ([2d78a6b](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/2d78a6b))
+
+
+
 <a name="0.7.0"></a>
 # [0.7.0](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v0.6.1...v0.7.0) (2018-04-29)
 
