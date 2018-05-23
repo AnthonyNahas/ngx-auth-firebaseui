@@ -158,7 +158,7 @@ This package is now under development. For further suggestions, please provide a
     "@angular/forms": "^5.x",
     "@angular/material": "^5.x",
     "angularfire2": "5.0.0-rc.6.0",
-    "firebase": "4.13.1",
+    "firebase": "4.12.1",
     "rxjs": "^5.5.8",
     "zone.js": "^0.8.4"
   }

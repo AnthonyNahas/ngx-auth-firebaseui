@@ -36,7 +36,7 @@
     "angularfire2": "5.0.0-rc.6.0",
     "bootstrap": "4.0.0",
     "core-js": "^2.4.1",
-    "firebase": "^4.12.1",
+    "firebase": "4.12.1",
     "font-awesome": "^4.7.0",
     "include-media": "^1.4.9",
     "material-design-icons": "^3.0.1",
