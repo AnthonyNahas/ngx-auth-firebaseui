@@ -40,6 +40,8 @@ If you need me to support [bootstrap](https://getbootstrap.com/) please let me k
 - [Supported Processes and Actions](#supported-procress-and-actions)
 - [Requirements](#requirements)
 - [Demo](#demo)
+- [Features](#features)
+- [Examples](#examples)
 - [Screenshots](#screenshots)
 - [Peer Dependencies](#peerDependencies)
 - [Dependencies](#dependencies)
@@ -162,6 +164,23 @@ if(issues || feedback || you_need_more_features){
     // send me an email -> to: anthony.na@hotmail.de
 }
 ```
+
+<a name="features"/>
+
+## Features [ngx-auth-firebaseui features](https://ngx-auth-firebaseui.firebaseapp.com/features)
+here are some features, the rest is coming soon
+
+
+---
+
+
+<a name="examples"/>
+
+## Examples [ngx-auth-firebaseui examples](https://ngx-auth-firebaseui.firebaseapp.com/examples)
+
+---
+
+<a name="documentation"/>
 
 ## [Documentation](https://ngx-auth-firebaseui.firebaseapp.com/doc/index.html)
 
