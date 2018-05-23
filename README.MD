@@ -35,6 +35,7 @@ If you need me to support [bootstrap](https://getbootstrap.com/) please let me k
 | -----------------------------------------------|:-------------:|         :-------------------:  |
 | Sign Up                                        | :heavy_check_mark:    |  :heavy_check_mark:    |
 | Sign In                                        | :heavy_check_mark:    |  :heavy_check_mark:    |
+| Sign In Anonymously                            | :heavy_check_mark:    |  :x:                   |
 | Sign In with Google                            | :heavy_check_mark:    |  :heavy_check_mark:    |
 | Sign In with Facebook                          | :heavy_check_mark:    |  :heavy_check_mark:    |
 | Sign In with Twitter                           | :heavy_check_mark:    |  :heavy_check_mark:    |
@@ -46,6 +47,7 @@ If you need me to support [bootstrap](https://getbootstrap.com/) please let me k
 | Forgot/Reset Password                          | :heavy_check_mark:    |  :x:                   |
 | Delete account                                 | :heavy_check_mark:    |  :x:                   |
 | User Profile                                   | :heavy_check_mark:    |  :x:                   |
+| Check whether user's email is verified         | :heavy_check_mark:    |  :x:                   |
 | Edit User (name, email)                        | :heavy_check_mark:    |  :x:                   |
 | Configure your favorite auth provider in runtime| :heavy_check_mark:    |  :x:                   |                          
 | Sync user'auth with Firestore                  | :heavy_check_mark:    |  :x:                   |
@@ -76,6 +78,7 @@ If you need me to support [bootstrap](https://getbootstrap.com/) please let me k
 - <ngx-auth-firebaseui-user> used to diplasy/edit the data of the current authenticated user
 
 ## Supported Providers:
+- anonymously
 - email and password (traditional)
 - google
 - facebook
@@ -86,6 +89,7 @@ If you need me to support [bootstrap](https://getbootstrap.com/) please let me k
 ## Supported Processes and Actions:
 - sign up
 - sign in
+- sign in Anonymously
 - validation of password's strength while creating a new account using [ngx-material-password-strength](https://github.com/AnthonyNahas/ngx-material-password-strength)
 - forgot/reset password
 - sending email verifications

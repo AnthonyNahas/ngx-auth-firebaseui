@@ -4,15 +4,17 @@ import {AngularFireAuth} from 'angularfire2/auth';
 import {ISignInProcess, ISignUpProcess} from '../interfaces/main.interface';
 import {FirestoreSyncService} from './firestore-sync.service';
 import * as firebase from 'firebase';
-import User = firebase.User;
+// import User = firebase.User;
 import GoogleAuthProvider = firebase.auth.GoogleAuthProvider;
 import FacebookAuthProvider = firebase.auth.FacebookAuthProvider;
 import TwitterAuthProvider = firebase.auth.TwitterAuthProvider;
 import UserCredential = firebase.auth.UserCredential;
 import GithubAuthProvider = firebase.auth.GithubAuthProvider;
+import {Accounts} from '../enums';
 
 export enum AuthProvider {
   ALL = 'all',
+  ANONYMOUS = 'anonymous',
   EmailAndPassword = 'firebase',
   Google = 'google',
   Facebook = 'facebook',
@@ -60,11 +62,16 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
   public async signInWith(provider: AuthProvider, email?: string, password?: string) {
     try {
       this.isLoading = true;
-      let signInResult: User | UserCredential;
+      let signInResult: firebase.User | UserCredential;
 
       switch (provider) {
+        case AuthProvider.ANONYMOUS:
+          signInResult = await this.auth.auth.signInAnonymously() as firebase.User;
+          await this._fireStoreService.updateUserData(signInResult);
+          this._snackBar.open(`Hallo ${signInResult.displayName ? signInResult.displayName : ''}!`, 'OK', {duration: 5000});
+          return this.onSuccessEmitter.next(signInResult);
         case AuthProvider.EmailAndPassword:
-          signInResult = await this.auth.auth.signInWithEmailAndPassword(email, password) as User;
+          signInResult = await this.auth.auth.signInWithEmailAndPassword(email, password) as firebase.User;
           await this._fireStoreService.updateUserData(signInResult);
           this._snackBar.open(`Hallo ${signInResult.displayName ? signInResult.displayName : ''}!`, 'OK', {duration: 5000});
           return this.onSuccessEmitter.next(signInResult);
@@ -115,7 +122,7 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
     try {
       this.isLoading = true;
       console.log(`name: ${name} | email: ${email} --> ${password}`);
-      const user: User = await this.auth.auth.createUserWithEmailAndPassword(email, password);
+      const user: firebase.User = await this.auth.auth.createUserWithEmailAndPassword(email, password);
       await this._fireStoreService
         .getUserDocRefByUID(user.uid)
         .set({
@@ -123,7 +130,7 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
           displayName: name,
           email: user.email,
           photoURL: user.photoURL
-        } as User);
+        } as firebase.User);
       console.log('on sign up with user', user);
       await user.sendEmailVerification();
       const updatedProfileResult = await this.updateProfile(name, user.photoURL);
@@ -151,6 +158,30 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
    */
   public async updateProfile(name: string, photoURL: string): Promise<any> {
     return await this.auth.auth.currentUser.updateProfile({displayName: name, photoURL: photoURL});
+  }
+
+  public async deleteAccount(): Promise<any> {
+    return await this.auth.auth.currentUser.delete();
+  }
+
+  public getUserPhotoUrl(): string {
+
+    const user: firebase.User | null = this.auth.auth.currentUser;
+
+    if (user.photoURL) {
+      console.log('user.photoURL = ', user.photoURL);
+      return user.photoURL;
+    } else if (user.emailVerified) {
+      return this.getPhotoPath(Accounts.CHECK);
+    } else if (user.isAnonymous) {
+      return this.getPhotoPath(Accounts.OFF);
+    } else {
+      return this.getPhotoPath(Accounts.NONE);
+    }
+  }
+
+  public getPhotoPath(image: string) {
+    return `assets/user/${image}.svg`;
   }
 
   public signInWithPhoneNumber() {
