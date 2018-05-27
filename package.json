@@ -100,7 +100,7 @@
     "istanbul-instrumenter-loader": "3.0.0",
     "jasmine-core": "2.8.0",
     "jest": "^22.4.3",
-    "jest-cli": "^22.4.3",
+    "jest-cli": "^23.0.1",
     "jest-preset-angular": "5.2.1",
     "karma": "2.0.2",
     "karma-chrome-launcher": "2.2.0",
