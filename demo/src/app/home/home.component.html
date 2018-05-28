@@ -91,12 +91,14 @@
           <mat-card-content>
             <mat-tab-group [color]="color" [selectedIndex]="index">
               <!--tab 1-->
-              <mat-tab label="TS">
-                <pre><code>{{code}}</code></pre>
+              <mat-tab>
+                <ng-template mat-tab-label>TS</ng-template>
+                <pre><code highlight [code]="code"></code></pre>
               </mat-tab>
               <!--tab 2-->
-              <mat-tab label="HTML">
-                <pre><code>{{html}}</code></pre>
+              <mat-tab>
+                <ng-template mat-tab-label>HTML</ng-template>
+                <pre><code highlight>{{html}}</code></pre>
               </mat-tab>
               <!--tab 3-->
               <mat-tab *ngIf="auth.authState | async" label="Current User">

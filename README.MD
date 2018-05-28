@@ -42,6 +42,7 @@ If you need me to support [bootstrap](https://getbootstrap.com/) please let me k
 - [Demo](#demo)
 - [Features](#features)
 - [Examples](#examples)
+- [Documentation](#documentation)
 - [Screenshots](#screenshots)
 - [Peer Dependencies](#peerDependencies)
 - [Dependencies](#dependencies)
@@ -50,7 +51,7 @@ If you need me to support [bootstrap](https://getbootstrap.com/) please let me k
 - [API](#api)
 - [Additional Requirements - material (Include a theme)](#additional-requirements-material-theme)
 - [Additional Requirements - assets](#additional-requirements-assets)
-- [ Run Demo App Locally](#run-demo-app-locally)
+- [Run Demo App Locally](#run-demo-app-locally)
 - [Development](#development)
 - [Other Angular Libraries](#other-angular-libraries)
 - [Support](#support)
@@ -111,7 +112,7 @@ If you need me to support [bootstrap](https://getbootstrap.com/) please let me k
 
 ## Library's components
 - `<ngx-auth-firebaseui>` used for the authentication process
-- `<ngx-auth-firebaseui-user>` used to diplasy/edit the data of the current authenticated user
+- `<ngx-auth-firebaseui-user>` used to display/edit the data of the current authenticated user
 
 <a name="supported-providers"/>
 
@@ -156,7 +157,7 @@ the full tutorial guide can be found [here](https://ngx-auth-firebaseui.firebase
 
 <a name="demo"/>
 
-## Demo [ngx-auth-firebaseui demo](https://ngx-auth-firebaseui.firebaseapp.com/)
+##  [Demo](https://ngx-auth-firebaseui.firebaseapp.com/)
 
 - Try it out
 ```js
@@ -167,7 +168,7 @@ if(issues || feedback || you_need_more_features){
 
 <a name="features"/>
 
-## Features [ngx-auth-firebaseui features](https://ngx-auth-firebaseui.firebaseapp.com/features)
+## [Features](https://ngx-auth-firebaseui.firebaseapp.com/features)
 here are some features, the rest is coming soon
 
 
@@ -176,7 +177,7 @@ here are some features, the rest is coming soon
 
 <a name="examples"/>
 
-## Examples [ngx-auth-firebaseui examples](https://ngx-auth-firebaseui.firebaseapp.com/examples)
+## [Examples](https://ngx-auth-firebaseui.firebaseapp.com/examples)
 
 ---
 
@@ -190,14 +191,14 @@ here are some features, the rest is coming soon
 - sign in
 
 <p align="center">
-  <img alt="ngx-auth-firebaseui sign in" width="256px" style="text-align: center;" 
+  <img alt="ngx-auth-firebaseui sign in" width="384px" style="text-align: center;" 
   src="assets/v0.7.1/features/overview/overview.png">
 </p>
 
 - Sign up - registration
 
 <p align="center">
-  <img alt="ngx-auth-firebaseui sign up" width="256px" style="text-align: center;" 
+  <img alt="ngx-auth-firebaseui sign up" width="384px" style="text-align: center;" 
   src="assets/v0.7.1/features/registration/registration2.png">
 </p>
 
@@ -205,14 +206,14 @@ here are some features, the rest is coming soon
 - user profile
 
 <p align="center">
-  <img alt="ngx-auth-firebaseui user profile component" width="256px" style="text-align: center;" 
+  <img alt="ngx-auth-firebaseui user profile component" width="384px" style="text-align: center;" 
   src="assets/v0.7.1/features/user/user_verified_2.png">
 </p>
 
 - edit user
 
 <p align="center">
-  <img alt="ngx-auth-firebaseui edit user component" width="256px" style="text-align: center;" 
+  <img alt="ngx-auth-firebaseui edit user component" width="384px" style="text-align: center;" 
   src="assets/v0.7.1/features/user/edit/edit_user2.png">
 </p>
 
@@ -220,7 +221,7 @@ here are some features, the rest is coming soon
 - Sign in - mobile
 
 <p align="center">
-  <img alt="ngx-auth-firebaseui on mobile" width="256px" style="text-align: center;" 
+  <img alt="ngx-auth-firebaseui on mobile" width="384px" style="text-align: center;" 
   src="assets/v0.7.1/features/overview/mobile/mobile.png">
 </p>
 
@@ -229,14 +230,14 @@ here are some features, the rest is coming soon
 - Before
 
 <p align="center">
-  <img alt="ngx-auth-firebaseui on mobile" width="256px" style="text-align: center;" 
+  <img alt="ngx-auth-firebaseui on mobile" width="384px" style="text-align: center;" 
   src="assets/v0.7.1/features/reset-forgot-password/reset_before.png">
 </p>
 
 - After
 
 <p align="center">
-  <img alt="ngx-auth-firebaseui on mobile" width="256px" style="text-align: center;" 
+  <img alt="ngx-auth-firebaseui on mobile" width="384px" style="text-align: center;" 
   src="assets/v0.7.1/features/reset-forgot-password/reset_after.png">
 </p>
 
@@ -292,7 +293,7 @@ the [ngx-material-password-strength](https://www.npmjs.com/package/ngx-material-
 to indicate how secure is the provided password when registering a new firebase user e.g:
 
 <p align="center">
-  <img width="256px" style="text-align: center;"
+  <img width="384px" style="text-align: center;"
    src="assets/v0.7.1/features/password/ngx-material-password-strength.gif">
 </p>
 
@@ -413,7 +414,7 @@ class AppComponent {
 #### Result:
 
 <p align="center">
-  <img alt="ngx-auth-firebaseui-logo.png" height="256px" width="256px" style="text-align: center;" 
+  <img alt="ngx-auth-firebaseui-logo.png" height="256px" width="384px" style="text-align: center;" 
   src="assets/v0.7.1/features/overview/overview.png">
 </p>
 
@@ -421,12 +422,12 @@ class AppComponent {
 
 ```html
 <ngx-auth-firebaseui-user></ngx-auth-firebaseui-user>
-``
+```
 
 #### Result:
 
 <p align="center">
-  <img alt="ngx-auth-firebaseui-logo.png" height="256px" width="256px" style="text-align: center;" 
+  <img alt="ngx-auth-firebaseui-logo.png" height="256px" width="384px" style="text-align: center;" 
   src="assets/v0.7.1/features/user/user_verified_2.png">
 </p>
 
@@ -587,8 +588,8 @@ export const YourFirebaseAppConfig = {
   storageBucket: 'your-firebase-storageBucket',
   messagingSenderId: 'your-firebase-messagingSenderId'
 };
-
 ```
+
 - run/start/serve the app
 ```bash
 $ npm run start
