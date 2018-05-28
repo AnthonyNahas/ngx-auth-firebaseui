@@ -1,55 +1,72 @@
-<mat-card *ngIf="auth.authState| async as user">
+<div *ngIf="auth.authState| async as user; then authenticated else none">
 
-  <mat-card-header fxLayout="column" fxLayoutAlign="center center">
+</div>
 
-    <img mat-card-avatar [src]="authProcess.getUserPhotoUrl()">
+<ng-template #authenticated>
+  <mat-card *ngIf="auth.auth.currentUser as user">
 
-    <div *ngIf="user.emailVerified; then emailVerified else emailNotVerified"></div>
-    <ng-template #emailVerified>
-      <mat-icon color="primary"
-                matTooltip="email is verified"
-                matTooltipPosition="after">
-        verified_user
-      </mat-icon>
-    </ng-template>
-    <ng-template #emailNotVerified>
-      <mat-icon color="warn"
-                matTooltip="email is not verified"
-                matTooltipPosition="after">
-        warning
-      </mat-icon>
-    </ng-template>
+    <mat-card-header fxLayout="column" fxLayoutAlign="center center">
 
-  </mat-card-header>
+      <img mat-card-avatar [src]="authProcess.getUserPhotoUrl()">
 
-  <mat-card-content>
-    <div fxLayoutAlign="center">
-      <button mat-raised-button [color]="editMode ? 'warn' : 'primary' " class="edit-button"
-              (click)="editMode = !editMode">
-        {{ editMode? "cancel" : "edit"}}
-      </button>
-    </div>
-    <mat-form-field class="full-width">
-      <input matInput placeholder="Name" [value]="user.displayName" [disabled]="!editMode">
-    </mat-form-field>
+      <div *ngIf="user.emailVerified; then emailVerified else emailNotVerified"></div>
+      <ng-template #emailVerified>
+        <mat-icon color="primary"
+                  matTooltip="email is verified"
+                  matTooltipPosition="after">
+          verified_user
+        </mat-icon>
+      </ng-template>
+      <ng-template #emailNotVerified>
+        <mat-icon color="warn"
+                  matTooltip="email is not verified"
+                  matTooltipPosition="after">
+          warning
+        </mat-icon>
+      </ng-template>
 
-    <mat-form-field class="full-width">
-      <input matInput placeholder="E-mail" [value]="user.email" [disabled]="!editMode">
-    </mat-form-field>
+    </mat-card-header>
 
-    <mat-form-field class="full-width">
-      <input matInput placeholder="Phone number" [value]="user.phoneNumber" [disabled]="!editMode">
-    </mat-form-field>
-  </mat-card-content>
-  <mat-card-actions fxLayout="column">
-    <div *ngIf="editMode; then editActions else defaultActions">
-    </div>
-    <ng-template #editActions>
-      <button mat-button color="primary" (click)="save()">Save changes</button>
-    </ng-template>
-    <ng-template #defaultActions>
-      <button mat-button color="primary" (click)="auth.auth.signOut()">Sign out</button>
-      <button mat-button color="warn" (click)="deleteAccount()">Delete account</button>
-    </ng-template>
-  </mat-card-actions>
-</mat-card>
+    <mat-card-content>
+      <div fxLayoutAlign="center">
+        <button mat-raised-button [color]="editMode ? 'warn' : 'primary' " class="edit-button"
+                (click)="editMode = !editMode">
+          {{ editMode? "cancel" : "edit"}}
+        </button>
+      </div>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Name" [value]="user.displayName" [disabled]="!editMode">
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <input matInput placeholder="E-mail" [value]="user.email" [disabled]="!editMode">
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Phone number" [value]="user.phoneNumber" [disabled]="!editMode">
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions fxLayout="column">
+      <div *ngIf="editMode; then editActions else defaultActions">
+      </div>
+      <ng-template #editActions>
+        <button mat-button color="primary" (click)="save()">Save changes</button>
+      </ng-template>
+      <ng-template #defaultActions>
+        <button mat-button color="primary" (click)="auth.auth.signOut()">Sign out</button>
+        <button mat-button color="warn" (click)="deleteAccount()">Delete account</button>
+      </ng-template>
+    </mat-card-actions>
+  </mat-card>
+
+</ng-template>
+
+
+<ng-template #none>
+  <mat-card class="none-card" fxLayout="row" fxLayoutAlign="center center">
+    <mat-card-content fxLayout="row" fxLayoutAlign="center center">
+      <mat-icon color="accent">warning</mat-icon>
+      <span>You are not logged in!</span>
+    </mat-card-content>
+  </mat-card>
+</ng-template>

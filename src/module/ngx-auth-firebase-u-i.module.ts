@@ -23,6 +23,7 @@ import {
   MatSnackBarModule,
   MatTabsModule,
   MatTooltipModule,
+  MatProgressSpinnerModule,
   MatProgressBarModule
 } from '@angular/material';
 import {AngularFirestoreModule} from 'angularfire2/firestore';
@@ -55,6 +56,7 @@ export {FirestoreSyncService} from './services/firestore-sync.service';
     MatChipsModule,
     MatTooltipModule,
     MatDialogModule,
+    MatProgressSpinnerModule,
     MatProgressBarModule,
     AngularFireAuthModule,
     AngularFirestoreModule,

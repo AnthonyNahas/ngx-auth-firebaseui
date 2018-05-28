@@ -6,7 +6,7 @@ import {AuthProcessService} from '../../services/auth-process.service';
 @Component({
   selector: 'ngx-auth-firebaseui-user',
   templateUrl: './user.component.html',
-  styleUrls: ['./user.component.css']
+  styleUrls: ['./user.component.scss']
 })
 export class UserComponent implements OnInit {
 
