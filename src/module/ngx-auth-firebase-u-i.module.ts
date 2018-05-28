@@ -9,7 +9,7 @@ import {EmailConfirmationComponent} from './components/email-confirmation/email-
 import {INgxAuthFirebaseUIConfig} from './interfaces/config.interface';
 import {FirestoreSyncService} from './services/firestore-sync.service';
 import {AuthProcessService} from './services/auth-process.service';
-import {AngularFireModule, FirebaseAppConfig, FirebaseAppConfigToken, FirebaseAppName} from 'angularfire2';
+import {FirebaseAppConfig, FirebaseOptionsToken, FirebaseNameOrConfigToken} from 'angularfire2';
 import {AngularFireAuthModule} from 'angularfire2/auth';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {
@@ -84,11 +84,11 @@ export class NgxAuthFirebaseUIModule {
       providers:
         [
           {
-            provide: FirebaseAppConfigToken,
+            provide: FirebaseOptionsToken,
             useValue: configFactory
           },
           {
-            provide: FirebaseAppName,
+            provide: FirebaseNameOrConfigToken,
             useFactory: appNameFactory
           },
           {
