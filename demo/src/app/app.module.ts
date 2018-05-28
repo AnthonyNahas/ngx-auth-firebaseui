@@ -12,6 +12,7 @@ import {environment} from '../environments/environment';
 import {ServiceWorkerModule} from '@angular/service-worker';
 import {NgxMaterialPagesModule} from 'ngx-material-pages';
 import {HttpClientModule} from '@angular/common/http';
+import {ClipboardModule} from 'ngx-clipboard';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import {HttpClientModule} from '@angular/common/http';
       messagingSenderId: '520699629648'
     }),
     NgxMaterialPagesModule.forRoot(),
+    ClipboardModule,
     BrowserAnimationsModule,
     FormsModule,
     HttpClientModule,

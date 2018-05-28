@@ -23,7 +23,7 @@
     "@angular/common": "^6.0.3",
     "@angular/compiler": "^6.0.3",
     "@angular/core": "^6.0.3",
-    "@angular/flex-layout": "^5.0.0-beta.14",
+    "@angular/flex-layout": "^6.0.0-beta.15",
     "@angular/forms": "^6.0.3",
     "@angular/http": "^6.0.3",
     "@angular/material": "^6.1.0",
@@ -73,7 +73,7 @@
     "ts-loader": "~4.3.0",
     "ts-node": "~6.0.5",
     "tslint": "~5.10.0",
-    "typescript": "~2.8.3",
+    "typescript": "~2.7.2",
     "webpack-node-externals": "~1.7.2",
     "@angular-devkit/build-angular": "~0.6.5"
   },
