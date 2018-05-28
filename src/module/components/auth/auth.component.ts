@@ -5,8 +5,8 @@ import {MatIconRegistry} from '@angular/material';
 import {AngularFireAuth} from 'angularfire2/auth';
 import * as firebase from 'firebase/app';
 import {AuthProcessService, AuthProvider} from '../../services/auth-process.service';
-import {Subscription} from 'rxjs/Subscription';
 import {isPlatformBrowser} from '@angular/common';
+import {Subscription} from 'rxjs/internal/Subscription';
 
 
 const EMAIL_REGEX = new RegExp(['^(([^<>()[\\]\\\.,;:\\s@\"]+(\\.[^<>()\\[\\]\\\.,;:\\s@\"]+)*)',
