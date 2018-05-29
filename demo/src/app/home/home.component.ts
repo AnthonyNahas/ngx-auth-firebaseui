@@ -38,6 +38,7 @@ export class HomeComponent implements OnInit {
              (onError)="printError($event)">
         </ngx-auth-firebaseui>`;
 
+  viewSource: boolean;
   public index: number;
   private _color: string;
 
