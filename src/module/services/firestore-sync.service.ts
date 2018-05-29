@@ -28,7 +28,7 @@ export class FirestoreSyncService {
   }
 
   public updateUserData(user: IUser): Promise<any> {
-    console.log('on updateUser Data for user: ', user);
+    console.log('on updateUserData for the user -> ', user);
     // Sets user$ data to firestore on login
     const userRef: AngularFirestoreDocument<IUser> = this.getUserDocRefByUID(user.uid);
     const data: IUser = {
@@ -39,6 +39,7 @@ export class FirestoreSyncService {
       phoneNumber: user.phoneNumber,
       providerId: user.providerId
     };
-    return userRef.set(data, {merge: true});
+    console.log('data', Object.assign({}, data));
+    return userRef.set(Object.assign({}, data), {merge: true});
   }
 }

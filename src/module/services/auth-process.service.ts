@@ -62,19 +62,17 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
   public async signInWith(provider: AuthProvider, email?: string, password?: string) {
     try {
       this.isLoading = true;
-      let signInResult: firebase.User | UserCredential;
+      let signInResult: UserCredential;
 
       switch (provider) {
         case AuthProvider.ANONYMOUS:
-          signInResult = await this.auth.auth.signInAnonymously() as firebase.User;
-          await this._fireStoreService.updateUserData(signInResult);
-          this._snackBar.open(`Hallo ${signInResult.displayName ? signInResult.displayName : ''}!`, 'OK', {duration: 5000});
-          return this.onSuccessEmitter.next(signInResult);
+          signInResult = await this.auth.auth.signInAnonymously() as UserCredential;
+          break;
+
         case AuthProvider.EmailAndPassword:
-          signInResult = await this.auth.auth.signInWithEmailAndPassword(email, password) as firebase.User;
-          await this._fireStoreService.updateUserData(signInResult);
-          this._snackBar.open(`Hallo ${signInResult.displayName ? signInResult.displayName : ''}!`, 'OK', {duration: 5000});
-          return this.onSuccessEmitter.next(signInResult);
+          signInResult = await this.auth.auth.signInWithEmailAndPassword(email, password) as UserCredential;
+          break;
+
         case AuthProvider.Google:
           signInResult = await this.auth.auth.signInWithPopup(new GoogleAuthProvider()) as UserCredential;
           break;
