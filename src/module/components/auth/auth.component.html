@@ -12,7 +12,7 @@
           </button>
         </mat-card-header>
         <mat-card-content>
-          <mat-form-field class="full-width">
+          <mat-form-field class="full-width" appearance="outline">
             <input matInput
                    [readonly]="passReset"
                    placeholder="Reset e-mail address to password"
@@ -52,7 +52,7 @@
                                authProcess.signInWith
                                (authProviders.EmailAndPassword,signInFormGroup.value.email,signInFormGroup.value.password)">
           <div fxLayout="column" fxLayoutAlign="center center">
-            <mat-form-field>
+            <mat-form-field appearance="outline">
               <input matInput
                      placeholder="E-mail address"
                      formControlName="email"
@@ -65,7 +65,7 @@
                 Please enter a valid e-mail address
               </mat-error>
             </mat-form-field>
-            <mat-form-field>
+            <mat-form-field appearance="outline">
               <input matInput
                      type="password"
                      placeholder="Password"
@@ -121,7 +121,7 @@
                                (signUpFormGroup.value.name,signUpFormGroup.value.email,signUpFormGroup.value.password)">
             <div fxLayout="column" fxLayoutAlign="center center">
               <!--name-->
-              <mat-form-field>
+              <mat-form-field appearance="outline">
                 <input matInput
                        placeholder="Name"
                        minlength="2"
@@ -144,7 +144,7 @@
               </mat-form-field>
 
               <!--email-->
-              <mat-form-field>
+              <mat-form-field appearance="outline">
                 <input matInput
                        type="email"
                        placeholder="E-mail address"
@@ -161,7 +161,7 @@
               <!--password-->
               <div>
 
-                <mat-form-field>
+                <mat-form-field appearance="outline">
 
                   <input matInput
                          placeholder="Password"

@@ -86,22 +86,22 @@
             <button mat-icon-button
                     color="primary"
                     matTooltip="view source"
-                    (click)="viewSource = !viewSource">
+                    (click)="viewSourceOfNgxAuthFirebaseuiComponent = !viewSourceOfNgxAuthFirebaseuiComponent">
               <mat-icon>code</mat-icon>
             </button>
           </mat-toolbar>
 
-          <mat-card-content>
+          <mat-card-content *ngIf="viewSourceOfNgxAuthFirebaseuiComponent">
             <mat-tab-group [color]="color" [selectedIndex]="index">
               <!--tab 1-->
               <mat-tab>
-                <ng-template mat-tab-label>TS</ng-template>
-                <pre><code highlight [code]="code"></code></pre>
+                  <ng-template mat-tab-label>HTML</ng-template>
+                <pre><code highlight [code]="html"></code></pre>
               </mat-tab>
               <!--tab 2-->
               <mat-tab>
-                <ng-template mat-tab-label>HTML</ng-template>
-                <pre><code highlight>{{html}}</code></pre>
+                <ng-template mat-tab-label>TS</ng-template>
+                <pre><code highlight [code]="code"></code></pre>
               </mat-tab>
             </mat-tab-group>
           </mat-card-content>
@@ -122,10 +122,25 @@
             <button mat-icon-button
                     color="primary"
                     matTooltip="view source"
-                    (click)="viewSource = !viewSource">
+                    (click)="viewSourceOfTheUserComponent = !viewSourceOfTheUserComponent">
               <mat-icon>code</mat-icon>
             </button>
           </mat-toolbar>
+
+          <mat-card-content *ngIf="viewSourceOfTheUserComponent">
+            <mat-tab-group [color]="color" [selectedIndex]="index">
+              <!--tab 1-->
+              <mat-tab>
+                <ng-template mat-tab-label>HTML</ng-template>
+                <pre><code highlight [code]="userComponent"></code></pre>
+              </mat-tab>
+              <!--tab 2-->
+              <mat-tab>
+                <ng-template mat-tab-label>TS</ng-template>
+                <pre><code highlight [code]="code"></code></pre>
+              </mat-tab>
+            </mat-tab-group>
+          </mat-card-content>
 
           <mat-card-content>
             <ngx-auth-firebaseui-user></ngx-auth-firebaseui-user>

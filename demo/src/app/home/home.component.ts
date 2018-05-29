@@ -13,6 +13,7 @@ export class HomeComponent implements OnInit {
 
   title = 'app';
   error: boolean;
+  userComponent = `<ngx-auth-firebaseui-user></ngx-auth-firebaseui-user>`;
   element = `<ngx-auth-firebaseui></ngx-auth-firebaseui>`;
   code = `
   import {Component} from '@angular/core';
@@ -38,11 +39,12 @@ export class HomeComponent implements OnInit {
              (onError)="printError($event)">
         </ngx-auth-firebaseui>`;
 
-  viewSource: boolean;
+  viewSourceOfNgxAuthFirebaseuiComponent: boolean;
+  viewSourceOfTheUserComponent: boolean;
   public index: number;
   private _color: string;
 
-  providers  = [AuthProvider.Facebook];
+  providers = [AuthProvider.Facebook];
 
 
   constructor(private titleService: Title,
