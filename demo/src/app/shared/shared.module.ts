@@ -11,7 +11,8 @@ import {
   MatCardModule,
   MatIconModule,
   MatToolbarModule,
-  MatTabsModule, MatTooltipModule
+  MatTabsModule,
+  MatTooltipModule, MatInputModule
 } from '@angular/material';
 import {AngularFireAuthModule} from 'angularfire2/auth';
 import {AngularFirestoreModule} from 'angularfire2/firestore';
@@ -43,6 +44,7 @@ import {NgxMaterialPagesModule} from 'ngx-material-pages';
     MatButtonModule,
     MatIconModule,
     MatTooltipModule,
+    MatInputModule,
     AngularFireAuthModule,
     AngularFirestoreModule,
   ],
@@ -61,7 +63,8 @@ import {NgxMaterialPagesModule} from 'ngx-material-pages';
     MatCardModule,
     MatButtonModule,
     MatIconModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatInputModule,
   ],
   declarations: [
     HeaderComponent,
