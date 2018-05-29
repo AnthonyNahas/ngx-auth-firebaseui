@@ -119,8 +119,9 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
   public async signUp(name: string, email: string, password: string) {
     try {
       this.isLoading = true;
-      console.log(`name: ${name} | email: ${email} --> ${password}`);
-      const user: firebase.User = await this.auth.auth.createUserWithEmailAndPassword(email, password);
+      const userCredential: UserCredential = await this.auth.auth.createUserWithEmailAndPassword(email, password);
+      const user = userCredential.user;
+      console.log('onsignUp the user = ', user);
       await this._fireStoreService
         .getUserDocRefByUID(user.uid)
         .set({
@@ -129,10 +130,10 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
           email: user.email,
           photoURL: user.photoURL
         } as firebase.User);
-      console.log('on sign up with user', user);
+
       await user.sendEmailVerification();
       const updatedProfileResult = await this.updateProfile(name, user.photoURL);
-      console.log('on update profile result -> ', updatedProfileResult);
+      // console.log('on update profile result -> ', updatedProfileResult);
       this.emailConfirmationSent = true;
       this.emailToConfirm = email;
       this._snackBar.open(`Hallo ${name}!`, 'OK', {duration: 10000});
