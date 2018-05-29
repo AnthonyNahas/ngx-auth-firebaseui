@@ -39,7 +39,6 @@ export class FirestoreSyncService {
       phoneNumber: user.phoneNumber,
       providerId: user.providerId
     };
-    console.log('data', Object.assign({}, data));
-    return userRef.set(Object.assign({}, data), {merge: true});
+    return userRef.set(data, {merge: true});
   }
 }
