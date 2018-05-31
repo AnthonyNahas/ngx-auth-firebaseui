@@ -14,6 +14,8 @@ export const EMAIL_REGEX = new RegExp(['^(([^<>()[\\]\\\.,;:\\s@\"]+(\\.[^<>()\\
   '[0-9]{1,3}\])|(([a-zA-Z\\-0-9]+\\.)+',
   '[a-zA-Z]{2,}))$'].join(''));
 
+export const PHONE_NUMBER_REGEX = new RegExp(/^\+(?:[0-9] ?){6,14}[0-9]$/);
+
 @Component({
   selector: 'ngx-auth-firebaseui',
   templateUrl: 'auth.component.html',
