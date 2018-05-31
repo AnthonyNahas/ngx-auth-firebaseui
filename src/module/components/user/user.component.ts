@@ -86,18 +86,18 @@ export class UserComponent implements OnInit {
       try {
         if (this.updateNameFormControl.dirty) {
           await user.updateProfile({displayName: this.updateNameFormControl.value, photoURL: null});
-          snackBarMsg.push(`user's name has been update to ${user.displayName}`);
+          snackBarMsg.push(`your name has been update to ${user.displayName}`);
         }
 
         if (this.updateEmailFormControl.dirty) {
           await user.updateEmail(this.updateEmailFormControl.value);
-          snackBarMsg.push(`user's email has been update to ${user.email}`);
+          snackBarMsg.push(`your email has been update to ${user.email}`);
         }
 
         if (this.updatePhoneNumberFormControl.dirty) {
           await user.updatePhoneNumber(this.updatePhoneNumberFormControl.value);
           console.log('phone number = ', this.updatePhoneNumberFormControl.value);
-          snackBarMsg.push(`user's phone number has been update to ${user.phoneNumber}`);
+          snackBarMsg.push(`your phone number has been update to ${user.phoneNumber}`);
         }
 
         await this._fireStoreService.updateUserData(user.uid, user.providerData[0]);
@@ -128,7 +128,10 @@ export class UserComponent implements OnInit {
    */
   async deleteAccount() {
     try {
+      const user = this.auth.auth.currentUser;
+
       await this.authProcess.deleteAccount();
+      await this._fireStoreService.deleteUserData(user.uid);
       this.onAccountDeleted.emit();
       this.editMode = false;
       this.snackBar.open('Your account has been successfully deleted!', 'OK', {
