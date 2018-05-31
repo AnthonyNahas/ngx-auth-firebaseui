@@ -168,7 +168,6 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
     const user: firebase.User | null = this.auth.auth.currentUser;
 
     if (user.photoURL) {
-      console.log('user.photoURL = ', user.photoURL);
       return user.photoURL;
     } else if (user.emailVerified) {
       return this.getPhotoPath(Accounts.CHECK);

@@ -9,7 +9,7 @@ import {isPlatformBrowser} from '@angular/common';
 import {Subscription} from 'rxjs/internal/Subscription';
 
 
-const EMAIL_REGEX = new RegExp(['^(([^<>()[\\]\\\.,;:\\s@\"]+(\\.[^<>()\\[\\]\\\.,;:\\s@\"]+)*)',
+export const EMAIL_REGEX = new RegExp(['^(([^<>()[\\]\\\.,;:\\s@\"]+(\\.[^<>()\\[\\]\\\.,;:\\s@\"]+)*)',
   '|(".+"))@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.',
   '[0-9]{1,3}\])|(([a-zA-Z\\-0-9]+\\.)+',
   '[a-zA-Z]{2,}))$'].join(''));
