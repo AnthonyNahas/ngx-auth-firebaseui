@@ -27,6 +27,12 @@ export class FirestoreSyncService {
     return this.afs.collection(`${collections.users}/`, queryFn);
   }
 
+  public deleteUserData(uid: string): Promise<any> {
+    const userRef: AngularFirestoreDocument<UserInfo> = this.getUserDocRefByUID(uid);
+    return userRef.delete();
+  }
+
+
   public updateUserData(uid: string, user: UserInfo): Promise<any> {
     // console.log('on updateUserData for the user -> ', user);
     // Sets user$ data to firestore on login
