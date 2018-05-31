@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from 'angularfire2/firestore';
 import {QueryFn} from 'angularfire2/firestore/interfaces';
-import {IUser} from '../interfaces/user.interface';
+import {UserInfo} from 'firebase';
 
 export const collections = {
   users: 'users',
@@ -18,21 +18,21 @@ export class FirestoreSyncService {
   //     return firebase.firestore.FieldValue.serverTimestamp();
   // }
 
-  public getUserDocRefByUID(uid: string): AngularFirestoreDocument<IUser> {
+  public getUserDocRefByUID(uid: string): AngularFirestoreDocument<UserInfo> {
     return this.afs.doc(`${collections.users}/${uid}`);
   }
 
 
-  public getUsersCollectionRef(queryFn?: QueryFn): AngularFirestoreCollection<IUser> {
+  public getUsersCollectionRef(queryFn?: QueryFn): AngularFirestoreCollection<UserInfo> {
     return this.afs.collection(`${collections.users}/`, queryFn);
   }
 
-  public updateUserData(user: IUser): Promise<any> {
-    console.log('on updateUserData for the user -> ', user);
+  public updateUserData(uid: string, user: UserInfo): Promise<any> {
+    // console.log('on updateUserData for the user -> ', user);
     // Sets user$ data to firestore on login
-    const userRef: AngularFirestoreDocument<IUser> = this.getUserDocRefByUID(user.uid);
-    const data: IUser = {
-      uid: user.uid,
+    const userRef: AngularFirestoreDocument<UserInfo> = this.getUserDocRefByUID(uid);
+    const data: UserInfo = {
+      uid: uid,
       email: user.email,
       displayName: user.displayName,
       photoURL: user.photoURL,

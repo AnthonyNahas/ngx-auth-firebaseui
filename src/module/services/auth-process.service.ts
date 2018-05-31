@@ -94,7 +94,7 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
 
       }
 
-      await this._fireStoreService.updateUserData(signInResult.user);
+      await this._fireStoreService.updateUserData(signInResult.user.uid, signInResult.user.providerData[0]);
       this._snackBar.open(`Hallo ${signInResult.user.displayName ? signInResult.user.displayName : ''}!`,
         'OK', {duration: 5000});
       this.onSuccessEmitter.next(signInResult.user);
