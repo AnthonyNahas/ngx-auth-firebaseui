@@ -1,10 +1,11 @@
-import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {MatSnackBar} from '@angular/material';
 import {AuthProcessService} from '../../services/auth-process.service';
 import {AbstractControl, FormControl, FormGroup, Validators} from '@angular/forms';
-import {EMAIL_REGEX} from '../auth/auth.component';
+import {EMAIL_REGEX, PHONE_NUMBER_REGEX} from '../auth/auth.component';
 import {User} from 'firebase';
+import {FirestoreSyncService} from '../../services/firestore-sync.service';
 
 @Component({
   selector: 'ngx-auth-firebaseui-user',
@@ -22,10 +23,12 @@ export class UserComponent implements OnInit {
   updateFormGroup: FormGroup;
   updateNameFormControl: AbstractControl;
   updateEmailFormControl: AbstractControl;
+  updatePhoneNumberFormControl: AbstractControl;
   updatePasswordFormControl: AbstractControl;
 
   constructor(public auth: AngularFireAuth,
               public authProcess: AuthProcessService,
+              private _fireStoreService: FirestoreSyncService,
               private snackBar: MatSnackBar) {
   }
 
@@ -40,7 +43,7 @@ export class UserComponent implements OnInit {
         [
           Validators.required,
           Validators.minLength(2),
-          Validators.maxLength(30),
+          Validators.maxLength(25),
         ]
       ),
 
@@ -50,6 +53,9 @@ export class UserComponent implements OnInit {
           Validators.required,
           Validators.pattern(EMAIL_REGEX)
         ]),
+
+      phoneNumber: this.updatePhoneNumberFormControl = new FormControl('',
+        [Validators.pattern(PHONE_NUMBER_REGEX)])
     });
 
     this.updateFormGroup.enable();
@@ -68,13 +74,49 @@ export class UserComponent implements OnInit {
   }
 
   // todo: 31.3.18
-  save() {
-    const user = this.auth.auth.currentUser;
-    // user.updateProfile()
-    // user.updateEmail()
-    console.log('form = ', this.updateFormGroup);
-    this.snackBar.open('Sorry! This feature is under development', 'Ok');
-    // this.updateFormGroup.reset();
+  async save() {
+    if (this.updateFormGroup.dirty) {
+      const user = this.auth.auth.currentUser;
+      // user.updateProfile()
+      // user.updateEmail()
+      console.log('form = ', this.updateFormGroup);
+
+      const snackBarMsg: string[] = [];
+
+      try {
+        if (this.updateNameFormControl.dirty) {
+          await user.updateProfile({displayName: this.updateNameFormControl.value, photoURL: null});
+          snackBarMsg.push(`user's name has been update to ${user.displayName}`);
+        }
+
+        if (this.updateEmailFormControl.dirty) {
+          await user.updateEmail(this.updateEmailFormControl.value);
+          snackBarMsg.push(`user's email has been update to ${user.email}`);
+        }
+
+        if (this.updatePhoneNumberFormControl.dirty) {
+          await user.updatePhoneNumber(this.updatePhoneNumberFormControl.value);
+          console.log('phone number = ', this.updatePhoneNumberFormControl.value);
+          snackBarMsg.push(`user's phone number has been update to ${user.phoneNumber}`);
+        }
+
+        await this._fireStoreService.updateUserData(user.uid, user.providerData[0]);
+
+      } catch (error) {
+        error.message ? this.snackBar.open(error.message, 'Ok') : this.snackBar.open(error, 'Ok');
+        console.error(error);
+        console.error(error.code);
+        console.error(error.message);
+      }
+
+
+      if (snackBarMsg.length > 0) {
+        this.snackBar.open(snackBarMsg.join('\\n'), 'Ok');
+      }
+      // this.updateFormGroup.reset();
+    }
+
+    this.editMode = false;
   }
 
   /**

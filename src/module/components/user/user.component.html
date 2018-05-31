@@ -3,7 +3,7 @@
 </div>
 
 <ng-template #authenticated>
-  <mat-card *ngIf="auth.user | async as user" fxLayout="column" fxLayoutAlign="center center">
+  <mat-card *ngIf="auth.user | async as user">
     <!--<form [formGroup]="updateFormGroup" >-->
     <!--card header-->
     <mat-card-header fxLayout="column" fxLayoutAlign="center center">
@@ -33,14 +33,16 @@
     </mat-card-content>
 
     <ng-template #edit>
-      <mat-card-content fxLayout="column" fxLayoutAlign="center center">
-        <div fxLayoutAlign="center">
-          <button mat-raised-button color="warn" class="edit-button"
-                  (click)="changeEditMode()">
-            cancel
-          </button>
-        </div>
-        <form [formGroup]="updateFormGroup" (submit)="save()">
+      <form [formGroup]="updateFormGroup" (submit)="save()">
+
+        <mat-card-content fxLayout="column" fxLayoutAlign="center center">
+          <div fxLayoutAlign="center">
+            <button mat-raised-button color="warn" class="edit-button"
+                    (click)="changeEditMode()">
+              cancel
+            </button>
+          </div>
+
           <!--name-->
           <mat-form-field class="full-width" appearance="outline">
             <mat-label>Name</mat-label>
@@ -48,6 +50,13 @@
                    placeholder="Name"
                    [formControl]="updateNameFormControl"
                    [value]="user.displayName">
+            <mat-icon matSuffix>person</mat-icon>
+            <mat-hint align="end" aria-live="polite">
+              {{updateNameFormControl.value.length}} / 25
+            </mat-hint>
+            <mat-error *ngIf="updateNameFormControl.hasError('required')">
+              Name is required
+            </mat-error>
           </mat-form-field>
 
           <!--email-->
@@ -70,11 +79,32 @@
           <mat-form-field class="full-width" appearance="outline">
             <mat-label>Phone number</mat-label>
             <input matInput
+                   type="number"
                    placeholder="Phone number"
+                   [formControl]="updatePhoneNumberFormControl"
                    [value]="user.phoneNumber">
+            <mat-icon matSuffix>phone</mat-icon>
+            <mat-hint align="end" aria-live="polite">
+              The phone number is international. Therefore, it should start with a + sign or 00,
+              followed by the country code, - and national number e.g: +49-12345678 or 0041-1234567890
+
+              NOTE : the phone number must be a valid phone credential !!
+            </mat-hint>
+            <mat-error *ngIf="updatePhoneNumberFormControl.hasError('pattern')">
+              Please enter a valid phone number
+            </mat-error>
           </mat-form-field>
-        </form>
-      </mat-card-content>
+
+        </mat-card-content>
+
+        <mat-card-actions fxLayout="column">
+          <button mat-button
+                  color="primary"
+                  type="submit">
+            Save changes
+          </button>
+        </mat-card-actions>
+      </form>
     </ng-template>
 
     <ng-template #readonly>
@@ -114,29 +144,13 @@
         <mat-icon matSuffix color="primary">phone</mat-icon>
       </mat-form-field>
 
-    </ng-template>
-
-    <!--actions-->
-    <mat-card-actions fxLayout="column">
-
-      <div *ngIf="editMode; then editActions else defaultActions">
-      </div>
-
-      <ng-template #editActions>
-        <button mat-button
-                color="primary"
-                type="submit">
-          Save changes
-        </button>
-      </ng-template>
-
-      <ng-template #defaultActions>
+      <mat-card-actions fxLayout="column">
         <button mat-button color="primary" (click)="auth.auth.signOut()">Sign out</button>
         <button mat-button color="warn" (click)="deleteAccount()">Delete account</button>
-      </ng-template>
+      </mat-card-actions>
 
-    </mat-card-actions>
-    <!--</form>-->
+    </ng-template>
+
   </mat-card>
 
 </ng-template>
