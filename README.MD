@@ -196,29 +196,72 @@ here are some features, the rest is coming :soon:
 
 <p align="center">
   <img alt="ngx-auth-firebaseui sign in" width="384px" style="text-align: center;" 
-  src="assets/v0.7.1/features/overview/overview.png">
+  src="assets/v1.0.0/png/signin.png">
 </p>
 
 - Sign up - registration
 
+#### before 
+
 <p align="center">
   <img alt="ngx-auth-firebaseui sign up" width="384px" style="text-align: center;" 
-  src="assets/v0.7.1/features/registration/registration2.png">
+  src="assets/v1.0.0/png/register_filled_2.png">
+</p>
+
+#### after 
+<p align="center">
+  <img alt="ngx-auth-firebaseui sign up" width="384px" style="text-align: center;" 
+  src="assets/v1.0.0/png/registered_confirm.png">
+</p>
+
+#### demo outlook
+<p align="center">
+  <img alt="ngx-auth-firebaseui sign up" width="384px" style="text-align: center;" 
+  src="assets/v1.0.0/png/registration_full.png">
+</p>
+
+## Screenshots - Client Side Validation <ngx-auth-firebaseui></ngx-auth-firebaseui>
+<p align="center">
+  <img alt="ngx-auth-firebaseui sign up" width="384px" style="text-align: center;" 
+  src="assets/v1.0.0/png/register_validation_errors.png">
+</p>
+
+## Screenshots  <ngx-auth-firebaseui-provider></ngx-auth-firebaseui-providers>
+
+#### row layout
+Please note: when the view port is getting too small, the layout will be 
+automatically change to `column`
+<p align="center">
+  <img alt="ngx-auth-firebaseui sign up" width="384px" style="text-align: center;" 
+  src="assets/v1.0.0/png/providers_column.png">
+</p>
+
+#### column layout
+<p align="center">
+  <img alt="ngx-auth-firebaseui sign up" width="384px" style="text-align: center;" 
+  src="assets/v1.0.0/png/providers_row.png">
 </p>
 
 ## Screenshots  <ngx-auth-firebaseui-user></ngx-auth-firebaseui-user>
 - user profile
 
+#### when logged out 
 <p align="center">
   <img alt="ngx-auth-firebaseui user profile component" width="384px" style="text-align: center;" 
-  src="assets/v0.7.1/features/user/user_verified_2.png">
+  src="assets/v1.0.0/png/user_logged_out.png">
 </p>
 
-- edit user
+#### when logged in
+<p align="center">
+  <img alt="ngx-auth-firebaseui user profile component" width="384px" style="text-align: center;" 
+  src="assets/v1.0.0/png/user.png">
+</p>
+
+#### in edit mode
 
 <p align="center">
   <img alt="ngx-auth-firebaseui edit user component" width="384px" style="text-align: center;" 
-  src="assets/v0.7.1/features/user/edit/edit_user2.png">
+  src="assets/v1.0.0/png/user_edit_mode.png">
 </p>
 
 ## Screenshots - Mobile Browser
@@ -226,7 +269,7 @@ here are some features, the rest is coming :soon:
 
 <p align="center">
   <img alt="ngx-auth-firebaseui on mobile" width="384px" style="text-align: center;" 
-  src="assets/v0.7.1/features/overview/mobile/mobile.png">
+  src="assets/v1.0.0/png/signin_mobile.png">
 </p>
 
 ## Screenshots - Reset Password
@@ -235,14 +278,14 @@ here are some features, the rest is coming :soon:
 
 <p align="center">
   <img alt="ngx-auth-firebaseui on mobile" width="384px" style="text-align: center;" 
-  src="assets/v0.7.1/features/reset-forgot-password/reset_before.png">
+  src="assets/v1.0.0/png/forgot_password0.png">
 </p>
 
 - After
 
 <p align="center">
   <img alt="ngx-auth-firebaseui on mobile" width="384px" style="text-align: center;" 
-  src="assets/v0.7.1/features/reset-forgot-password/reset_after.png">
+  src="assets/v1.0.0/png/forgot_password_sent.png">
 </p>
 
 ---
