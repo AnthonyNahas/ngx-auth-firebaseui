@@ -1,31 +1,32 @@
-<mat-dialog-actions fxLayout.xs="column"
-                    fxLayoutAlign="space-around center">
-  <button *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Google)"
-          mat-button
-          [ngClass.xs]="{'space-full-xs':true}"
-          (click)="authProcess.signInWith(authProvider.Google)">
-    <mat-icon svgIcon="google"></mat-icon>
-    Google
-  </button>
-  <button *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Facebook)"
-          mat-button
-          [ngClass.xs]="{'space-full-xs':true}"
-          (click)="authProcess.signInWith(authProvider.Facebook)">
-    <mat-icon svgIcon="facebook"></mat-icon>
-    Facebook
-  </button>
-  <button *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Twitter)"
-          mat-button
-          [ngClass.xs]="{'space-full-xs':true}"
-          (click)="authProcess.signInWith(authProvider.Twitter)">
-    <mat-icon svgIcon="twitter"></mat-icon>
-    Twitter
-  </button>
-  <button *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Github)"
-          mat-button
-          [ngClass.xs]="{'space-full-xs':true}"
-          (click)="authProcess.signInWith(authProvider.Github)">
-    <mat-icon svgIcon="github"></mat-icon>
-    GitHub
-  </button>
+<mat-dialog-actions [fxLayout]="layout"
+                    fxLayout.xs="column"
+                    [fxLayoutAlign]="layout == 'row' ? 'space-around center' : 'stretch'">
+<button *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Google)"
+        mat-button
+        [ngClass.xs]="{'space-full-xs':true}"
+        (click)="authProcess.signInWith(authProvider.Google)">
+  <mat-icon svgIcon="google"></mat-icon>
+  Google
+</button>
+<button *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Facebook)"
+        mat-button
+        [ngClass.xs]="{'space-full-xs':true}"
+        (click)="authProcess.signInWith(authProvider.Facebook)">
+  <mat-icon svgIcon="facebook"></mat-icon>
+  Facebook
+</button>
+<button *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Twitter)"
+        mat-button
+        [ngClass.xs]="{'space-full-xs':true}"
+        (click)="authProcess.signInWith(authProvider.Twitter)">
+  <mat-icon svgIcon="twitter"></mat-icon>
+  Twitter
+</button>
+<button *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Github)"
+        mat-button
+        [ngClass.xs]="{'space-full-xs':true}"
+        (click)="authProcess.signInWith(authProvider.Github)">
+  <mat-icon svgIcon="github"></mat-icon>
+  GitHub
+</button>
 </mat-dialog-actions>
