@@ -100,7 +100,7 @@ export class UserComponent implements OnInit {
           snackBarMsg.push(`your phone number has been update to ${user.phoneNumber}`);
         }
 
-        await this._fireStoreService.updateUserData(user.uid, user.providerData[0]);
+        await this._fireStoreService.updateUserData(this.authProcess.parseUserInfo(user));
 
       } catch (error) {
         error.message ? this.snackBar.open(error.message, 'Ok') : this.snackBar.open(error, 'Ok');

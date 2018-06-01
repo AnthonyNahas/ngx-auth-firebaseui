@@ -11,6 +11,7 @@ import TwitterAuthProvider = firebase.auth.TwitterAuthProvider;
 import UserCredential = firebase.auth.UserCredential;
 import GithubAuthProvider = firebase.auth.GithubAuthProvider;
 import {Accounts} from '../enums';
+import {User, UserInfo} from 'firebase';
 
 export enum AuthProvider {
   ALL = 'all',
@@ -93,8 +94,9 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
           throw new Error(`${AuthProvider[provider]} is not available as auth provider`);
 
       }
+      console.log('sign in result = ', signInResult);
 
-      await this._fireStoreService.updateUserData(signInResult.user.uid, signInResult.user.providerData[0]);
+      await this._fireStoreService.updateUserData(this.parseUserInfo(signInResult.user));
       this._snackBar.open(`Hallo ${signInResult.user.displayName ? signInResult.user.displayName : ''}!`,
         'OK', {duration: 5000});
       this.onSuccessEmitter.next(signInResult.user);
@@ -161,6 +163,17 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
 
   public async deleteAccount(): Promise<any> {
     return await this.auth.auth.currentUser.delete();
+  }
+
+  public parseUserInfo(user: User): UserInfo {
+    return {
+      uid: user.uid,
+      displayName: user.displayName,
+      email: user.email,
+      phoneNumber: user.phoneNumber,
+      photoURL: user.photoURL,
+      providerId: user.providerData.length > 0 ? user.providerData[0].providerId : null
+    };
   }
 
   public getUserPhotoUrl(): string {
