@@ -1,3 +1,28 @@
+<a name="1.0.0"></a>
+# [1.0.0](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v0.8.0...v1.0.0) (2018-06-01)
+
+
+### Bug Fixes
+
+* **ngx-auth-firebaseui:** at anonymously sign in ([8e3880b](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/8e3880b))
+* **package:** removed mat-label for the register tab due a bug with material2 ([c1969c7](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/c1969c7))
+* **package:** sign in results are all now UserCredential du to the update of firebase ([dd3f5a6](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/dd3f5a6))
+* **package:** sign u result is now UserCredential due to the update of firebase ([f0f425d](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/f0f425d))
+* **package:** update [@angular](https://github.com/angular)/cdk to version 6.2.0 ([59a39f9](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/59a39f9))
+* **package:** update [@angular](https://github.com/angular)/material to version 6.2.0 ([b2560c8](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/b2560c8))
+
+
+### Features
+
+* **ngx-auth-firebaseui:** sync firestore with firebase's authntication on user's delete ([ab5ca7e](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/ab5ca7e))
+* **package:** added a template for the user component when not authenticated ([c7c4cec](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/c7c4cec))
+* **phone_number:** added regex for phone number's form controller's validator ([c6bdf55](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/c6bdf55))
+* **provider:** by default all providers will be available with ngx-auth-firebaseui-providers ([276db04](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/276db04))
+* **providers:** added optional layout input | "row" or "column" ([78d92e9](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/78d92e9))
+* **user:** update and sync user with firestore when editing user's properties incl. phone number ([0c525a1](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/0c525a1))
+
+
+
 <a name="0.8.0"></a>
 # [0.8.0](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v0.7.0...v0.8.0) (2018-05-23)
 
