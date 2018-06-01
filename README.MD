@@ -428,7 +428,7 @@ map: {
 
 Once the library is imported, you can use its components, directives and pipes in your Angular application:
 
-### <ngx-auth-firebaseui></ngx-auth-firebaseui>
+### `<ngx-auth-firebaseui></ngx-auth-firebaseui>`
 
 ```html
 <!-- You can now use the library component in app.component.html  -->
@@ -464,7 +464,13 @@ class AppComponent {
   src="assets/v0.7.1/features/overview/overview.png">
 </p>
 
-### <ngx-auth-firebaseui-user></ngx-auth-firebaseui-user>
+### `<ngx-auth-firebaseui-providers></ngx-auth-firebaseui-providers>`
+```html
+<!-- You can now use the library component in app.component.html  -->
+<ngx-auth-firebaseui-providers layout="column"></ngx-auth-firebaseui-providers>
+```
+
+### `<ngx-auth-firebaseui-user></ngx-auth-firebaseui-user>`
 
 ```html
 <ngx-auth-firebaseui-user></ngx-auth-firebaseui-user>
@@ -481,7 +487,7 @@ class AppComponent {
 
 ## API
 
-###  <ngx-auth-firebaseui></ngx-auth-firebaseui>
+###  `<ngx-auth-firebaseui></ngx-auth-firebaseui>`
 
 | option | bind  |  type  |   default    | description  |
 |:---------------------|:------:|:------:|:------------:|:-------------------------------------------------------------------------------------------------|
@@ -527,8 +533,14 @@ or
 
 take a look at the full documentation [here](https://ngx-auth-firebaseui.firebaseapp.com/doc/index.html)
 
+### `<ngx-auth-firebaseui-providers></ngx-auth-firebaseui-providers>`
 
-### <ngx-auth-firebaseui-user></ngx-auth-firebaseui-user>
+| option | bind  |  type  |   default    | description  |
+|:---------------------|:------:|:------:|:------------:|:-------------------------------------------------------------------------------------------------|
+| layout     | Input() | string     | `row` | set the layout of the providers buttons
+
+
+### `<ngx-auth-firebaseui-user></ngx-auth-firebaseui-user>`
 
 | option | bind  |  type  |   default    | description  |
 |:---------------------|:------:|:------:|:------------:|:-------------------------------------------------------------------------------------------------|
