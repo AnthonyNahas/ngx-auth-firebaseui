@@ -15,6 +15,8 @@ export class HomeComponent implements OnInit {
   error: boolean;
   userComponent = `<ngx-auth-firebaseui-user></ngx-auth-firebaseui-user>`;
   element = `<ngx-auth-firebaseui></ngx-auth-firebaseui>`;
+  providersRow = `<ngx-auth-firebaseui-providers></ngx-auth-firebaseui-providers>`;
+  providersColumn = `<ngx-auth-firebaseui-providers layout="column"></ngx-auth-firebaseui-providers>`;
   code = `
   import {Component} from '@angular/core';
 
@@ -32,6 +34,18 @@ export class HomeComponent implements OnInit {
    printError(event) {
     console.error(event);
    }
+  }`;
+
+  appComponentTS = `
+  import {Component} from '@angular/core';
+
+  @Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+  })
+  export class AppComponent {
+
   }`;
 
   html = `<ngx-auth-firebaseui
