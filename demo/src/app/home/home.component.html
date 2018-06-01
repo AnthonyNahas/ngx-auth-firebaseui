@@ -95,7 +95,7 @@
             <mat-tab-group [color]="color" [selectedIndex]="index">
               <!--tab 1-->
               <mat-tab>
-                  <ng-template mat-tab-label>HTML</ng-template>
+                <ng-template mat-tab-label>HTML</ng-template>
                 <pre><code highlight [code]="html"></code></pre>
               </mat-tab>
               <!--tab 2-->
@@ -147,6 +147,83 @@
           </mat-card-content>
         </mat-card>
       </div>
+
+      <div style="margin: 2rem 0 2rem 0"
+           fxLayout="row"
+           fxLayout.lt-md="column"
+           fxLayoutAlign="center"
+           fxLayoutGap.lt-md="20px"
+           fxLayoutGap="40px">
+        <!--PROVIDER WITH ROW LAYOUT-->
+        <div>
+          <mat-toolbar>
+            ngx-auth-firebaseui
+            <span style="width: 100%"></span>
+
+            <button mat-icon-button
+                    color="primary"
+                    matTooltip="view source"
+                    (click)="viewSourceOfTheProvidersComponentRow = !viewSourceOfTheProvidersComponentRow">
+              <mat-icon>code</mat-icon>
+            </button>
+          </mat-toolbar>
+          <mat-card>
+            <mat-card-content *ngIf="viewSourceOfTheProvidersComponentRow">
+              <mat-tab-group [color]="color" [selectedIndex]="index">
+                <!--tab 1-->
+                <mat-tab>
+                  <ng-template mat-tab-label>HTML</ng-template>
+                  <pre><code highlight [code]="html"></code></pre>
+                </mat-tab>
+                <!--tab 2-->
+                <mat-tab>
+                  <ng-template mat-tab-label>TS</ng-template>
+                  <pre><code highlight [code]="code"></code></pre>
+                </mat-tab>
+              </mat-tab-group>
+            </mat-card-content>
+            <mat-card-content>
+              <ngx-auth-firebaseui-providers></ngx-auth-firebaseui-providers>
+            </mat-card-content>
+          </mat-card>
+        </div>
+
+        <!--PROVIDER WITH COLUMN LAYOUT e.g: to support mobile and/or table view-->
+        <div>
+          <mat-toolbar>
+            ngx-auth-firebaseui
+            <span style="width: 100%"></span>
+
+            <button mat-icon-button
+                    color="primary"
+                    matTooltip="view source"
+                    (click)="viewSourceOfTheProvidersComponentRow = !viewSourceOfTheProvidersComponentRow">
+              <mat-icon>code</mat-icon>
+            </button>
+          </mat-toolbar>
+          <mat-card>
+            <mat-card-content *ngIf="viewSourceOfTheProvidersComponentRow">
+              <mat-tab-group [color]="color" [selectedIndex]="index">
+                <!--tab 1-->
+                <mat-tab>
+                  <ng-template mat-tab-label>HTML</ng-template>
+                  <pre><code highlight [code]="html"></code></pre>
+                </mat-tab>
+                <!--tab 2-->
+                <mat-tab>
+                  <ng-template mat-tab-label>TS</ng-template>
+                  <pre><code highlight [code]="code"></code></pre>
+                </mat-tab>
+              </mat-tab-group>
+            </mat-card-content>
+            <mat-card-content>
+              <ngx-auth-firebaseui-providers></ngx-auth-firebaseui-providers>
+            </mat-card-content>
+          </mat-card>
+        </div>
+
+      </div>
+
     </div>
 
 

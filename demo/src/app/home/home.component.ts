@@ -41,6 +41,8 @@ export class HomeComponent implements OnInit {
 
   viewSourceOfNgxAuthFirebaseuiComponent: boolean;
   viewSourceOfTheUserComponent: boolean;
+  viewSourceOfTheProvidersComponentRow: boolean;
+  viewSourceOfTheProvidersComponentColumn: boolean;
   public index: number;
   private _color: string;
 
