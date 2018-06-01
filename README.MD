@@ -82,7 +82,7 @@ If you need me to support [bootstrap](https://getbootstrap.com/) please provide 
 | Edit user's email (incl. validation)           | :heavy_check_mark:    |  :x:                   |
 | Edit user's phone number (incl. validation)    | :heavy_check_mark:    |  :x:                   |
 | Configure your favorite auth provider in runtime| :heavy_check_mark:    |  :x:                   |
-| Sync user'auth with Firestore                  | :heavy_check_mark:    |  :x:                   |
+| Sync user'auth with Firestore  [read more](FIRESTORE_SYNC.md)   | :heavy_check_mark:    |  :x:                   |
 | Angular v2-6 friendly                          | :heavy_check_mark:    |  :x:                   |
 | Real time form validation                      | :heavy_check_mark:    |  :x:                   |
 | Easy to integrate                              | :heavy_check_mark:    |  :x:                   |
@@ -106,7 +106,7 @@ If you need me to support [bootstrap](https://getbootstrap.com/) please provide 
 - :ghost: your client does not want to create an account in your project? Let him to sign in anonymously!
 - :busts_in_silhouette: user profile component to display user's data using <ngx-auth-firebaseui-user></ngx-auth-firebaseui-user> via `ngx-auth-firebaseui-user`
 - :zap: update user profile as feature
-- :fire: Sync user's authentication with FIRESTORE **AUTOMATICALLY**
+- :fire: [Sync user's authentication with FIRESTORE](FIRESTORE_SYNC.md) **AUTOMATICALLY**
 - :muscle: Forgot Password feature! Go and let your users to recover their passwords easily 
 - :tada: Supports SSR - Server Side Rendering
 
@@ -175,6 +175,7 @@ if(issues || feedback || you_need_more_features){
 ## [Features](https://ngx-auth-firebaseui.firebaseapp.com/features)
 here are some features, the rest is coming :soon:
 
+take a look at live example with firestore's synchronization [here](FIRESTORE_SYNC.md) 
 
 ---
 
