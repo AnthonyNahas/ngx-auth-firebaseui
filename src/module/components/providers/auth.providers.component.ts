@@ -10,7 +10,7 @@ import {AuthProcessService, AuthProvider} from '../../services/auth-process.serv
 export class AuthProvidersComponent {
 
   @Input()
-  providers: string[] | string; //  google, facebook, twitter, github
+  providers: string[] | string = AuthProvider.ALL; //  google, facebook, twitter, github
 
   authProvider = AuthProvider;
 
