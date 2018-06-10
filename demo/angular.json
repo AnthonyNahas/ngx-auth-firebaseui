@@ -27,7 +27,6 @@
             ],
             "styles": [
               "src/styles.scss",
-              "src/ngx-auth-firebaseui_theme.scss",
               "node_modules/material-design-icons/iconfont/material-icons.css"
             ],
             "scripts": []
