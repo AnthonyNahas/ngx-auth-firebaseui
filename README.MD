@@ -300,7 +300,7 @@ automatically change to `column`
     "@angular/core": "^6.x",
     "@angular/animations": "^6.x",
     "@angular/cdk": "^6.x",
-    "@angular/flex-layout": "^6.0.0-beta.15",
+    "@angular/flex-layout": "^6.0.0-beta.16",
     "@angular/forms": "^5.x",
     "@angular/material": "^5.x",
     "angularfire2": "5.0.0-rc.10.0",
@@ -312,7 +312,7 @@ e.g:
 
 Angular deps
 ```bash
-npm i -s @angular/material@6.2.0 @angular/cdk@6.2.0 @angular/flex-layout@6.0.0-beta.15 @angular/forms@6.0.3 @angular/animations@6.0.3
+npm i -s @angular/material@6.2.1 @angular/cdk@6.2.1 @angular/flex-layout@6.0.0-beta.16 @angular/forms@6.0.4 @angular/animations@6.0.4
 ```
 
 Firebase deps
@@ -683,7 +683,7 @@ $ npm run lint
 - [ngx-material-password-strength](https://github.com/AnthonyNahas/ngx-material-password-strength)
 - [ngx-material-contacts](https://github.com/AnthonyNahas/ngx-material-contacts)
 - [ngx-material-faq](https://github.com/AnthonyNahas/ngx-material-faq)
-- [ngx-combination-generator](https://github.com/AnthonyNahas/combination-generator)
+- [@angular-material-extensions/combination-generator](https://github.com/angular-material-extensions/combination-generator)
 
 
 ---
