@@ -44,6 +44,7 @@
     "test": " gulp test",
     "test:watch": " gulp test:watch",
     "demo": " gulp build:demo",
+    "extract": "ng xi18n --output-path=locale",
     "check-travis": " travis-status --repo=anthonynahas/ngx-auth-firebaseui --branch=master --fail-pending || echo 'Not yet passing'"
   },
   "dependencies": {
@@ -51,7 +52,7 @@
     "@angular/cdk": "^6.2.1",
     "@angular/common": "^6.0.4",
     "@angular/core": "^6.0.4",
-    "@angular/flex-layout": "^6.0.0-beta.15",
+    "@angular/flex-layout": "^6.0.0-beta.16",
     "@angular/forms": "^6.0.4",
     "@angular/material": "^6.2.1",
     "angularfire2": "5.0.0-rc.10",
