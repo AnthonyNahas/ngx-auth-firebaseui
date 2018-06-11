@@ -33,7 +33,7 @@ import {NgxMaterialPasswordStrengthModule} from 'ngx-material-password-strength'
 // components
 export {AuthComponent} from './components/auth/auth.component';
 export {UserComponent} from './components/user/user.component';
-export {AuthProvidersComponent} from './components/providers/auth.providers.component';
+export {AuthProvidersComponent, Theme, Layout} from './components/providers/auth.providers.component';
 // services
 export {AuthProcessService, AuthProvider} from './services/auth-process.service';
 export {INgxAuthFirebaseUIConfig} from './interfaces/config.interface';

@@ -1,4 +1,77 @@
+$google: #db4437;
+$facebook: #385899;
+$twitter: #1da1f2;
+$github: #000000;
+
+:host {
+  display: block;
+}
+
 .space-full-xs {
   width: 100%;
   margin: .4rem;
 }
+
+.facebook-filled {
+  mat-icon {
+    fill: $facebook;
+  }
+}
+
+.twitter-filled {
+  mat-icon {
+    fill: $twitter;
+  }
+}
+
+.buttons-raised {
+
+  button {
+    color: white !important;
+  }
+
+  .google-raised {
+    background-color: $google;
+  }
+
+  .facebook-raised {
+    background-color: $facebook;
+  }
+
+  .twitter-raised {
+    background-color: $twitter;
+  }
+
+  .github-raised {
+    background-color: $github;
+  }
+}
+
+.buttons-classic {
+
+  //button {
+
+  button.google-classic {
+    color: $google !important;
+  }
+
+  .facebook-classic {
+    color: $facebook !important;
+  }
+
+  .twitter-classic {
+    color: $twitter !important;
+  }
+
+  .github-classic {
+    color: $github !important;
+  }
+}
+
+.icon-white {
+  color: white;
+  mat-icon {
+    fill: white;
+  }
+}
+

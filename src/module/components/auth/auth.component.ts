@@ -64,13 +64,15 @@ export class AuthComponent implements OnInit, OnDestroy {
               private _sanitizer: DomSanitizer) {
     _iconRegistry
       .addSvgIcon('google',
+        _sanitizer.bypassSecurityTrustResourceUrl('/assets/mdi/google.svg'))
+      .addSvgIcon('google-colored',
         _sanitizer.bypassSecurityTrustResourceUrl('/assets/google.svg'))
       .addSvgIcon('facebook',
-        _sanitizer.bypassSecurityTrustResourceUrl('/assets/facebook.svg'))
+        _sanitizer.bypassSecurityTrustResourceUrl('/assets/mdi/facebook.svg'))
       .addSvgIcon('twitter',
-        _sanitizer.bypassSecurityTrustResourceUrl('/assets/twitter.svg'))
+        _sanitizer.bypassSecurityTrustResourceUrl('/assets/mdi/twitter.svg'))
       .addSvgIcon('github',
-        _sanitizer.bypassSecurityTrustResourceUrl('/assets/github.svg'))
+        _sanitizer.bypassSecurityTrustResourceUrl('/assets/mdi/github-circle.svg'))
       .addSvgIcon('phone',
         _sanitizer.bypassSecurityTrustResourceUrl('/assets/phone.svg'));
 

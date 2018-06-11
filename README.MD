@@ -81,9 +81,11 @@ If you need me to support [bootstrap](https://getbootstrap.com/) please provide 
 | Edit user's display name (incl. validation)    | :heavy_check_mark:    |  :x:                   |
 | Edit user's email (incl. validation)           | :heavy_check_mark:    |  :x:                   |
 | Edit user's phone number (incl. validation)    | :heavy_check_mark:    |  :x:                   |
-| Configure your favorite auth provider in runtime| :heavy_check_mark:    |  :x:                   |
-| Sync user'auth with Firestore  [read more](FIRESTORE_SYNC.md)   | :heavy_check_mark:    |  :x:                   |
+| Configure your favorite auth provider in runtime| :heavy_check_mark:   |  :x:                   |
+| Sync user'auth with Firestore  [read more](FIRESTORE_SYNC.md)   | :heavy_check_mark:    |  :x:  |
 | Angular v2-6 friendly                          | :heavy_check_mark:    |  :x:                   |
+| Internationalization (i18n)                    | :soon:                |  :heavy_check_mark:    |
+| Ionic/cordova support                          | :soon:  @firebaseui/ionic-auth |  :x: |
 | Real time form validation                      | :heavy_check_mark:    |  :x:                   |
 | Easy to integrate                              | :heavy_check_mark:    |  :x:                   |
 | Support Server Side Rendering                  | :heavy_check_mark:    |  :x:                   |
@@ -538,8 +540,39 @@ take a look at the full documentation [here](https://ngx-auth-firebaseui.firebas
 
 | option | bind  |  type  |   default    | description  |
 |:---------------------|:------:|:------:|:------------:|:-------------------------------------------------------------------------------------------------|
-| layout     | Input() | string     | `row` | set the layout of the providers buttons
+| layout     | Input() | string     | `row` | set the layout of the providers buttons options: 'column' or 'row'
+| theme      | Input() | string     | `default` | set the theme of the providers buttons options: '', 'classic', 'stroked', 'fab', 'mini-fab', 'raised',
 
+e.g: in template:
+```html
+<ngx-auth-firebaseui-providers [theme]="themes.CLASSIC"></ngx-auth-firebaseui-providers>
+<ngx-auth-firebaseui-providers [theme]="themes.STROKED"></ngx-auth-firebaseui-providers>
+<ngx-auth-firebaseui-providers [theme]="themes.RAISED"></ngx-auth-firebaseui-providers>
+<ngx-auth-firebaseui-providers [theme]="themes.FAB"></ngx-auth-firebaseui-providers>
+<ngx-auth-firebaseui-providers [theme]="themes.MINI_FAB"></ngx-auth-firebaseui-providers>
+```
+
+in your component: 
+
+```typescript
+import {Component} from '@angular/core';
+import {AuthProvider, Theme} from 'ngx-auth-firebaseui';
+
+@Component({
+selector: 'app-root',
+templateUrl: './app.component.html',
+styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+
+  themes = Theme;
+}
+```
+
+<p align="center">
+  <img alt="auth providers themes for ngx-auth-firebaseui" width="384px" style="text-align: center;" 
+  src="assets/v1.1.0/provider_themes.png">
+</p>
 
 ### `<ngx-auth-firebaseui-user></ngx-auth-firebaseui-user>`
 
