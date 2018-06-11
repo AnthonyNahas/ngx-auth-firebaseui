@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 3,
+  "version": 4,
   "newProjectRoot": "projects",
   "projects": {
     "bsr": {

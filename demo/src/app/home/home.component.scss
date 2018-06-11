@@ -17,3 +17,12 @@ mat-toolbar {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+.stand-alone-providers {
+  ngx-auth-firebaseui-providers:not(:last-child) {
+    margin-bottom: 2rem !important;
+  }
+}
+
+
+

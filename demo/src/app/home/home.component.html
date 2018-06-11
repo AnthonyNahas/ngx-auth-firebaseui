@@ -108,7 +108,8 @@
 
           <mat-card-content>
             <ngx-auth-firebaseui (onSuccess)="printUser($event)"
-                                 (onError)="printError($event)">
+                                 (onError)="printError($event)"
+            >
             </ngx-auth-firebaseui>
           </mat-card-content>
         </mat-card>
@@ -221,7 +222,52 @@
             </mat-card-content>
           </mat-card>
         </div>
+      </div>
 
+
+      <div style="margin: 2rem 0 2rem 0"
+           fxLayout="row"
+           fxLayout.lt-md="column"
+           fxLayoutAlign="center"
+           fxLayoutGap.lt-md="20px"
+           fxLayoutGap="40px">
+
+        <div>
+          <mat-toolbar>
+            ngx-auth-firebaseui-providers - themes
+            <span style="width: 100%"></span>
+
+            <button mat-icon-button
+                    color="primary"
+                    matTooltip="view source"
+                    (click)="viewSourceOfTheProvidersComponentThemes = !viewSourceOfTheProvidersComponentThemes">
+              <mat-icon>code</mat-icon>
+            </button>
+          </mat-toolbar>
+          <mat-card>
+            <mat-card-content *ngIf="viewSourceOfTheProvidersComponentThemes">
+              <mat-tab-group [color]="color" [selectedIndex]="index">
+                <!--tab 1-->
+                <mat-tab>
+                  <ng-template mat-tab-label>HTML</ng-template>
+                  <pre><code highlight [code]="providersThemes"></code></pre>
+                </mat-tab>
+                <!--tab 2-->
+                <mat-tab>
+                  <ng-template mat-tab-label>TS</ng-template>
+                  <pre><code highlight [code]="appComponentTS"></code></pre>
+                </mat-tab>
+              </mat-tab-group>
+            </mat-card-content>
+            <mat-card-content class="stand-alone-providers">
+              <ngx-auth-firebaseui-providers [theme]="themes.CLASSIC"></ngx-auth-firebaseui-providers>
+              <ngx-auth-firebaseui-providers [theme]="themes.STROKED"></ngx-auth-firebaseui-providers>
+              <ngx-auth-firebaseui-providers [theme]="themes.RAISED"></ngx-auth-firebaseui-providers>
+              <ngx-auth-firebaseui-providers [theme]="themes.FAB"></ngx-auth-firebaseui-providers>
+              <ngx-auth-firebaseui-providers [theme]="themes.MINI_FAB"></ngx-auth-firebaseui-providers>
+            </mat-card-content>
+          </mat-card>
+        </div>
       </div>
 
     </div>
