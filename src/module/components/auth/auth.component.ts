@@ -27,6 +27,9 @@ export class AuthComponent implements OnInit, OnDestroy {
   @Input()
   providers: string[] | string = AuthProvider.ALL; //  google, facebook, twitter, github as array or all as one single string
 
+  @Input()
+  guestEnabled = true;
+
   @Output()
   onSuccess: any;
 

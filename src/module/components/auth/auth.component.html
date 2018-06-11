@@ -58,6 +58,7 @@
             <mat-form-field appearance="outline">
               <!--<mat-label>E-mail</mat-label>-->
               <input matInput
+                     placeholder="E-mail"
                      formControlName="email"
                      required>
               <mat-icon matSuffix [color]="color">email</mat-icon>
@@ -221,7 +222,8 @@
             </div>
           </form>
 
-          <button mat-button
+          <button *ngIf="guestEnabled"
+                  mat-button
                   style="margin-top: 20px"
                   [color]="color"
                   (click)="authProcess.signInWith(authProvider.ANONYMOUS)">

@@ -494,16 +494,34 @@ class AppComponent {
 
 | option | bind  |  type  |   default    | description  |
 |:---------------------|:------:|:------:|:------------:|:-------------------------------------------------------------------------------------------------|
+| guestEnabled         | Input()  | boolean | `true` | whether the user can sign in and continue as guest
 | providers            | Input()  | string[] | ['all'] or [AuthProvider.All] | choose your favorite authentication provider: google | facebook | twitter | github
 | onSuccess            | Output() | any     | - | this will be fired when an authentication process was success. The authenticated user is emitted!
 | onError              | Output() | any     | - | this event will be fired when an error occurred during the authentication process! An error message is emitted!
 
+
+### How to disable users to sign in and continue as guest, use the `guestEnabled` input
+
+```html
+<ngx-auth-firebaseui [guestEnabled]="false"
+                     (onSuccess)="printUser($event)"
+                     (onError)="printError($event)">
+</ngx-auth-firebaseui>
+```
+
+Result:
+
+<p align="center">
+  <img alt="disable guests option with ngx-auth-firebaseui" width="384px" style="text-align: center;" 
+  src="assets/v1.1.0/guest_disabled.png">
+</p>
 
 ### How to configure your input providers ? [see the examples](https://ngx-auth-firebaseui.firebaseapp.com/examples)
 e.g:
 in your component, import the AuthProvider enum to pick up your favorite provider:
 
 ```typescript
+import {OnInit} from '@angular/core';
 import {AuthProvider} from 'ngx-auth-firebaseui';
 
 export class ExampleComponent implements OnInit {
@@ -511,9 +529,7 @@ export class ExampleComponent implements OnInit {
   providers = AuthProvider;
 
   ngOnInit() {
-    }
-
-
+  }
 }
 ```
 
@@ -531,7 +547,8 @@ or
   <ngx-auth-firebaseui
   [providers]="['google', 'facebook', 'twitter']"
   (onSuccess)="printUser($event)"
-   (onError)="printError()"></ngx-auth-firebaseui>
+  (onError)="printError()">
+</ngx-auth-firebaseui>
 ```
 
 take a look at the full documentation [here](https://ngx-auth-firebaseui.firebaseapp.com/doc/index.html)
@@ -715,7 +732,7 @@ $ npm run lint
 - [ngx-material-pages](https://github.com/AnthonyNahas/ngx-material-pages)
 - [ngx-material-password-strength](https://github.com/AnthonyNahas/ngx-material-password-strength)
 - [ngx-material-contacts](https://github.com/AnthonyNahas/ngx-material-contacts)
-- [ngx-material-faq](https://github.com/AnthonyNahas/ngx-material-faq)
+- [@angular-material-extensions/faq](https://github.com/angular-material-extensions/faq)
 - [@angular-material-extensions/combination-generator](https://github.com/angular-material-extensions/combination-generator)
 
 
