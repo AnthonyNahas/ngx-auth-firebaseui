@@ -1,3 +1,15 @@
+<a name="1.1.0"></a>
+# [1.1.0](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v1.0.0...v1.1.0) (2018-06-11)
+
+
+### Features
+
+* **icons:** added new assets of material design icons ([5057e9e](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/5057e9e))
+* **ngx-auth-firebaseui:** added more themes for the auth providers buttons ([41477af](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/41477af))
+* **ngx-auth-firebaseui:** continue as guest button is now optional via `guestEnabled` input ([2f3dd9f](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/2f3dd9f))
+
+
+
 <a name="1.0.0"></a>
 # [1.0.0](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v0.8.0...v1.0.0) (2018-06-01)
 
