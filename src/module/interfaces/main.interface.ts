@@ -2,7 +2,7 @@ import {AuthProvider} from '../services/auth-process.service';
 
 export interface ISignUpProcess {
 
-  signUp(name: string, email: string, password: string): any;
+  signUp(name: string, email: string, password: string, dialogContent?: string): any;
 }
 
 export interface ISignInProcess {

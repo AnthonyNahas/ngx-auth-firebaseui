@@ -3,6 +3,7 @@ import {NgModule, ModuleWithProviders, InjectionToken} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {AuthComponent} from './components/auth/auth.component';
+import {BeforeRegisterComponent} from './components/auth/before-register.component';
 import {UserComponent} from './components/user/user.component';
 import {AuthProvidersComponent} from './components/providers/auth.providers.component';
 import {EmailConfirmationComponent} from './components/email-confirmation/email-confirmation.component';
@@ -72,9 +73,13 @@ export {FirestoreSyncService} from './services/firestore-sync.service';
   ],
   declarations: [
     AuthComponent,
+    BeforeRegisterComponent,
     UserComponent,
     AuthProvidersComponent,
     EmailConfirmationComponent,
+  ],
+  entryComponents: [
+    BeforeRegisterComponent,
   ]
 })
 

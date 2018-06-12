@@ -130,7 +130,7 @@
         <mat-card-content fxLayout="column" fxLayoutAlign="center center">
           <form [formGroup]="signUpFormGroup" (ngSubmit)="signUpFormGroup.valid &&
           authProcess.signUp
-          (signUpFormGroup.value.name,signUpFormGroup.value.email,signUpFormGroup.value.password)">
+          (signUpFormGroup.value.name,signUpFormGroup.value.email,signUpFormGroup.value.password,dialogContent)">
             <div fxLayout="column" fxLayoutAlign="center center">
               <!--name-->
               <mat-form-field appearance="outline" label="Name">
