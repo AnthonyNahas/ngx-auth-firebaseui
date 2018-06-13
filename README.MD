@@ -50,6 +50,7 @@ If you need me to support [bootstrap](https://getbootstrap.com/) please provide 
 - [Usage](#usage)
 - [API](#api)
 - [Additional Requirements - material (Include a theme)](#additional-requirements-material-theme)
+- [Additional Requirements - material icons](#additional-requirements-material-icons)
 - [Additional Requirements - assets](#additional-requirements-assets)
 - [Run Demo App Locally](#run-demo-app-locally)
 - [Development](#development)
@@ -609,9 +610,39 @@ Please take a look of the official documentation of **angular material themes** 
 
 ----
 
+<a name="additional-requirements-material-icons"/>
+
+## (4) Additional Requirements - Import the material design icons
+
+- The easiest way to import material design icons is to provide a link in your `index.html` file like below:
+
+```html
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+```
+
+- alternative solution:
+
+1. Install of the official npm module of the material design icons
+
+```bash
+npm i -s material-design-icons
+```
+
+2. Import them in your `angular.json` file
+
+```json
+"styles": [
+        "styles.css",
+        "../node_modules/material-design-icons/iconfont/material-icons.css"
+      ],
+```  
+
+
+----
+
 <a name="additional-requirements-assets"/>
 
-## (4) Additional Requirements - assets
+## (5) Additional Requirements - assets
 #### With Angular CLI
 - open the file `.angular-cli.json`
 - add the following into the `assets` section
