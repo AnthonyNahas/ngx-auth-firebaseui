@@ -692,7 +692,7 @@ gulp.task('create-new-tag', (cb) => {
 
 // Build and then Publish 'dist' folder to NPM
 gulp.task('npm-publish', ['build'], () => {
-  return execExternalCmd('npm', `publish ${config.outputDir}`)
+  return execExternalCmd('npm', `publish ${config.outputDir} --access public`)
 });
 
 // Perfom pre-release checks (no actual release)
