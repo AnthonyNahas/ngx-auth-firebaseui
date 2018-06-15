@@ -32,6 +32,13 @@ your users with your firebase project. NgxAuthFirebseUI is compatible with
 [angular material](https://material.angular.io/) and [angular flexLayout](https://github.com/angular/flex-layout).
 If you need me to support [bootstrap](https://getbootstrap.com/) please provide a PR.
 
+## Built by and for developers :heart:
+Do you have any question or suggestion ? Please do not hesitate to contact us!
+Alternatively, provide a PR | open an appropriate issue [here](https://github.com/angular-material-extensions/cards/issues)
+
+If did you like this project, support [ngx-auth-firebaseui](https://github.com/anthonynahas/ngx-auth-firebaseui) 
+by starring :star: and sharing it :loudspeaker:
+
 ## Table of Contents
 - [ngx-auth-firebaseui vs firebaseui-web](#vs)
 - [Why to use ngx-auth-firebaseui ?](#why-to-use-ngx-auth-firebaseui)
@@ -612,7 +619,7 @@ Please take a look of the official documentation of **angular material themes** 
 
 <a name="additional-requirements-material-icons"/>
 
-## (4) Additional Requirements - Import the material design icons
+## (4) Additional Requirements - Import the material design icons [learn more](https://material.angular.io/guide/getting-started#step-6-optional-add-material-icons)
 
 - The easiest way to import material design icons is to provide a link in your `index.html` file like below:
 
@@ -772,7 +779,11 @@ $ npm run lint
 <a name="support"/>
 
 ## Support
-Drop an email to: [Anthony Nahas](mailto:anthony.na@hotmail.de) and I will help you!
++ Drop an email to: [Anthony Nahas](mailto:anthony.na@hotmail.de)
++ or open an appropriate [issue](https://github.com/angular-material-extensions/ngx-auth-firebaseui/issues)
++ let us chat on [Gitter](https://gitter.im/ngx-auth-firebaseui/Lobby)
+ 
+ Built by and for developers :heart: we will help you :punch:
 
 ---
 
@@ -780,4 +791,4 @@ Drop an email to: [Anthony Nahas](mailto:anthony.na@hotmail.de) and I will help 
 
 ## License
 
-Copyright (c) 2018 [Anthony Nahas](mailto:anthony.na@hotmail.de). Licensed under the MIT License (MIT)
+Copyright (c) 2018 [Anthony Nahas](https://github.com/AnthonyNahas). Licensed under the MIT License (MIT)
