@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Theme} from 'ngx-auth-firebaseui';
 
 @Component({
   selector: 'app-faq',
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FaqComponent implements OnInit {
 
-  constructor() { }
+  themes = Theme;
+
+  constructor() {
+  }
 
   ngOnInit() {
   }

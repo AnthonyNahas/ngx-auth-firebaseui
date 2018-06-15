@@ -8,5 +8,5 @@ import {FaqComponent} from './faq.component';
   ])],
   exports: [RouterModule]
 })
-export class FeaturesRoutingModule {
+export class FaqRoutingModule {
 }

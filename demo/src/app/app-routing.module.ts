@@ -4,7 +4,7 @@ import {Routes, RouterModule} from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'faq',
     pathMatch: 'full'
   },
   {
@@ -18,6 +18,10 @@ const routes: Routes = [
   {
     path: 'examples',
     loadChildren: 'app/example/example.module#ExampleModule'
+  },
+  {
+    path: 'faq',
+    loadChildren: 'app/faq/faq.module#FaqModule'
   }
 ];
 
