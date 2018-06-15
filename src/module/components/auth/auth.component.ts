@@ -61,23 +61,7 @@ export class AuthComponent implements OnInit, OnDestroy {
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object,
               public auth: AngularFireAuth,
-              public authProcess: AuthProcessService,
-              private _formBuilder: FormBuilder,
-              private _iconRegistry: MatIconRegistry,
-              private _sanitizer: DomSanitizer) {
-    _iconRegistry
-      .addSvgIcon('google',
-        _sanitizer.bypassSecurityTrustResourceUrl('/assets/mdi/google.svg'))
-      .addSvgIcon('google-colored',
-        _sanitizer.bypassSecurityTrustResourceUrl('/assets/google.svg'))
-      .addSvgIcon('facebook',
-        _sanitizer.bypassSecurityTrustResourceUrl('/assets/mdi/facebook.svg'))
-      .addSvgIcon('twitter',
-        _sanitizer.bypassSecurityTrustResourceUrl('/assets/mdi/twitter.svg'))
-      .addSvgIcon('github',
-        _sanitizer.bypassSecurityTrustResourceUrl('/assets/mdi/github-circle.svg'))
-      .addSvgIcon('phone',
-        _sanitizer.bypassSecurityTrustResourceUrl('/assets/phone.svg'));
+              public authProcess: AuthProcessService) {
 
     this.onSuccess = authProcess.onSuccessEmitter;
     this.onError = authProcess.onErrorEmitter;

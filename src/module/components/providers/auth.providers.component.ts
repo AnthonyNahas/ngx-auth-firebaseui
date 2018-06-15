@@ -1,5 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {AuthProcessService, AuthProvider} from '../../services/auth-process.service';
+import {DomSanitizer} from '@angular/platform-browser';
+import {MatIconRegistry} from '@angular/material';
 
 export enum Theme {
   DEFAULT = 'default',
@@ -36,7 +38,22 @@ export class AuthProvidersComponent {
   themes = Theme;
   authProvider = AuthProvider;
 
-  constructor(public authProcess: AuthProcessService) {
+  constructor(public authProcess: AuthProcessService,
+              private _iconRegistry: MatIconRegistry,
+              private _sanitizer: DomSanitizer) {
+    _iconRegistry
+      .addSvgIcon('google',
+        _sanitizer.bypassSecurityTrustResourceUrl('/assets/mdi/google.svg'))
+      .addSvgIcon('google-colored',
+        _sanitizer.bypassSecurityTrustResourceUrl('/assets/google.svg'))
+      .addSvgIcon('facebook',
+        _sanitizer.bypassSecurityTrustResourceUrl('/assets/mdi/facebook.svg'))
+      .addSvgIcon('twitter',
+        _sanitizer.bypassSecurityTrustResourceUrl('/assets/mdi/twitter.svg'))
+      .addSvgIcon('github',
+        _sanitizer.bypassSecurityTrustResourceUrl('/assets/mdi/github-circle.svg'))
+      .addSvgIcon('phone',
+        _sanitizer.bypassSecurityTrustResourceUrl('/assets/phone.svg'));
   }
 
 }
