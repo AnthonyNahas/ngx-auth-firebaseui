@@ -1,8 +1,8 @@
 import {async, ComponentFixture, inject, TestBed} from '@angular/core/testing';
-import {By} from '@angular/platform-browser';
+import {By, DomSanitizer} from '@angular/platform-browser';
 import {DebugElement} from '@angular/core';
 
-import {MatButtonModule, MatIconModule, MatSnackBarModule} from '@angular/material';
+import {MatButtonModule, MatIconModule, MatIconRegistry, MatSnackBarModule} from '@angular/material';
 import {AuthProvidersComponent, Layout} from './auth.providers.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {AuthProcessService, FirestoreSyncService} from '../../..';
@@ -11,13 +11,14 @@ import {AngularFireAuth, AngularFireAuthModule} from 'angularfire2/auth';
 import {BehaviorSubject} from 'rxjs/internal/BehaviorSubject';
 import {AngularFirestore} from 'angularfire2/firestore';
 import {AuthProvider} from '../../services/auth-process.service';
+import {HttpClient} from '@angular/common/http';
+import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
+import * as http from 'http';
 
 describe('AuthProvidersComponent', function () {
   let de: DebugElement;
   let comp: AuthProvidersComponent;
   let fixture: ComponentFixture<AuthProvidersComponent>;
-
-  let authProcessService;
 
   const credentialsMock = {
     email: 'abc@123.com',
@@ -31,12 +32,12 @@ describe('AuthProvidersComponent', function () {
 
   const fakeAuthState = new BehaviorSubject(null); // <= Pay attention to this guy
 
-  const fakeSignInHandler = (email: any, password: any): Promise<any> => {
+  const mockSignInHandler = (email: any, password: any): Promise<any> => {
     fakeAuthState.next(userMock);
     return Promise.resolve(userMock);
   };
 
-  const fakeSignOutHandler = (): Promise<any> => {
+  const mockSignOutHandler = (): Promise<any> => {
     fakeAuthState.next(null);
     return Promise.resolve();
   };
@@ -47,15 +48,15 @@ describe('AuthProvidersComponent', function () {
       createUserWithEmailAndPassword: jasmine
         .createSpy('createUserWithEmailAndPassword')
         .and
-        .callFake(fakeSignInHandler),
+        .callFake(mockSignInHandler),
       signInWithEmailAndPassword: jasmine
         .createSpy('signInWithEmailAndPassword')
         .and
-        .callFake(fakeSignInHandler),
+        .callFake(mockSignInHandler),
       signOut: jasmine
         .createSpy('signOut')
         .and
-        .callFake(fakeSignOutHandler),
+        .callFake(mockSignOutHandler),
     },
   };
 
@@ -77,9 +78,10 @@ describe('AuthProvidersComponent', function () {
     });
 
     TestBed.configureTestingModule({
-      imports: [FlexLayoutModule, MatButtonModule, MatIconModule, MatSnackBarModule],
+      imports: [HttpClientTestingModule, FlexLayoutModule, MatButtonModule, MatIconModule, MatSnackBarModule],
       declarations: [AuthProvidersComponent],
       providers: [
+        HttpClientTestingModule,
         AuthProcessService,
         FirestoreSyncService,
         AngularFireModule,
@@ -128,10 +130,10 @@ describe('AuthProvidersComponent', function () {
 
       expect(matIcon).toBeTruthy();
 
-      const svg = matIcon.children[0];
+      const svg = matIcon.nativeElement;
 
-      expect(svg).toBeTruthy();
-      console.log('svg', svg.nativeElement);
+      // expect(svg).toBeTruthy();
+      console.log('svg', svg);
     }
   });
 
