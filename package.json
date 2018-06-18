@@ -72,7 +72,7 @@
     "@types/node": "10.3.3",
     "angular-cli-ghpages": "0.5.2",
     "angular2-template-loader": "0.6.2",
-    "autoprefixer": "8.6.2",
+    "autoprefixer": "8.6.3",
     "awesome-typescript-loader": "5.0.0",
     "codelyzer": "4.3.0",
     "commitplease": "3.2.0",
