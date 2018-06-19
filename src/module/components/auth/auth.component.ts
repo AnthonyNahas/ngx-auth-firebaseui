@@ -30,6 +30,9 @@ export class AuthComponent implements OnInit, OnDestroy {
   @Input()
   guestEnabled = true;
 
+  @Input()
+  dialogContent: string;
+
   @Output()
   onSuccess: any;
 

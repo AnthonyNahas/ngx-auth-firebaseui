@@ -13,7 +13,6 @@ import {Subscription} from 'rxjs/internal/Subscription';
   encapsulation: ViewEncapsulation.None,
 })
 export class HomeComponent implements OnInit, OnDestroy {
-
   title = 'app';
   error: boolean;
   userComponent = `<ngx-auth-firebaseui-user></ngx-auth-firebaseui-user>`;
@@ -63,6 +62,9 @@ export class HomeComponent implements OnInit, OnDestroy {
              (onSuccess)="printUser($event)"
              (onError)="printError($event)">
         </ngx-auth-firebaseui>`;
+  dialogContent = `<h1>Terms Of Service</h1>
+                    <p>Please read the following lines carefully. By accepting you recognize the following:</p>
+                    <p>ngx-auth-firebaseui is awesome.</p>`;
 
   viewSourceOfNgxAuthFirebaseuiComponent: boolean;
   viewSourceOfTheUserComponent: boolean;

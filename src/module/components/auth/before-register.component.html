@@ -1,0 +1,16 @@
+<mat-dialog-content>
+  <div [innerHtml]="dialogContent"></div>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-button
+          color="warn"
+          (click)="onCloseCancel()">
+    CANCEL
+  </button>
+  <button mat-button
+          color="primary"
+          (click)="onCloseConfirm()">
+    I ACCEPT
+  </button>
+</mat-dialog-actions>

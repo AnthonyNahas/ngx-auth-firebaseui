@@ -1,5 +1,6 @@
-import {EventEmitter, Injectable} from '@angular/core';
-import {MatSnackBar} from '@angular/material';
+import {EventEmitter, Injectable, SecurityContext} from '@angular/core';
+import {MatSnackBar, MatDialog} from '@angular/material';
+import {DomSanitizer} from '@angular/platform-browser';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {ISignInProcess, ISignUpProcess} from '../interfaces/main.interface';
 import {FirestoreSyncService} from './firestore-sync.service';
@@ -12,6 +13,7 @@ import UserCredential = firebase.auth.UserCredential;
 import GithubAuthProvider = firebase.auth.GithubAuthProvider;
 import {Accounts} from '../enums';
 import {User, UserInfo} from 'firebase';
+import {BeforeRegisterComponent} from '../components/auth/before-register.component';
 
 export enum AuthProvider {
   ALL = 'all',
@@ -35,7 +37,9 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
 
   constructor(public auth: AngularFireAuth,
               private _fireStoreService: FirestoreSyncService,
-              private _snackBar: MatSnackBar) {
+              private _snackBar: MatSnackBar,
+              private _dialog: MatDialog,
+              private _dom: DomSanitizer) {
   }
 
   /**
@@ -116,11 +120,23 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
    * @param name - the name if the new user
    * @param email - the email if the new user
    * @param password - the password if the new user
+   * @param dialogContent - String with HTML Code that can be included in the register
    * @returns
    */
-  public async signUp(name: string, email: string, password: string) {
+  public async signUp(name: string, email: string, password: string, dialogContent?: string) {
     try {
       this.isLoading = true;
+
+      if (dialogContent) {
+        const dialogRef = this._dialog.open(BeforeRegisterComponent);
+        dialogRef.componentInstance.dialogContent = this._dom.sanitize(SecurityContext.HTML, dialogContent);
+        await dialogRef.afterClosed().toPromise().then((accepts) => {
+          if (!accepts) {
+            throw new Error('Aborted registration.');
+          };
+        })
+      }
+
       const userCredential: UserCredential = await this.auth.auth.createUserWithEmailAndPassword(email, password);
       const user = userCredential.user;
       console.log('onsignUp the user = ', user);
