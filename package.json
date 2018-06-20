@@ -55,7 +55,7 @@
     "@angular/flex-layout": "^6.0.0-beta.16",
     "@angular/forms": "^6.0.5",
     "@angular/material": "^6.2.1",
-    "angularfire2": "5.0.0-rc.10",
+    "angularfire2": "5.0.0-rc.11",
     "firebase": "^5.0.4",
     "ngx-material-password-strength": "^2.1.0"
   },
