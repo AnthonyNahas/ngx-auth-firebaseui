@@ -103,7 +103,7 @@
     "jest": "^23.1.0",
     "jest-cli": "^23.1.0",
     "jest-preset-angular": "5.2.2",
-    "karma": "2.0.3",
+    "karma": "2.0.4",
     "karma-chrome-launcher": "2.2.0",
     "karma-coverage": "1.1.2",
     "karma-jasmine": "1.1.2",
