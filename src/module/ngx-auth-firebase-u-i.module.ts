@@ -6,7 +6,7 @@ import {AuthComponent} from './components/auth/auth.component';
 import {UserComponent} from './components/user/user.component';
 import {AuthProvidersComponent} from './components/providers/auth.providers.component';
 import {EmailConfirmationComponent} from './components/email-confirmation/email-confirmation.component';
-import {INgxAuthFirebaseUIConfig} from './interfaces/config.interface';
+import {defaultAuthFirebaseUIConfig, NgxAuthFirebaseUIConfig} from './interfaces/config.interface';
 import {FirestoreSyncService} from './services/firestore-sync.service';
 import {AuthProcessService} from './services/auth-process.service';
 import {FirebaseAppConfig, FirebaseOptionsToken, FirebaseNameOrConfigToken} from 'angularfire2';
@@ -36,8 +36,10 @@ export {UserComponent} from './components/user/user.component';
 export {AuthProvidersComponent, Theme, Layout} from './components/providers/auth.providers.component';
 // services
 export {AuthProcessService, AuthProvider} from './services/auth-process.service';
-export {INgxAuthFirebaseUIConfig} from './interfaces/config.interface';
+export {NgxAuthFirebaseUIConfig} from './interfaces/config.interface';
 export {FirestoreSyncService} from './services/firestore-sync.service';
+
+export const NgxAuthFirebaseUIConfigToken = new InjectionToken<NgxAuthFirebaseUIConfig>('NgxAuthFirebaseUIConfig');
 
 @NgModule({
   imports: [
@@ -80,7 +82,9 @@ export {FirestoreSyncService} from './services/firestore-sync.service';
 
 
 export class NgxAuthFirebaseUIModule {
-  static forRoot(configFactory: FirebaseAppConfig, appNameFactory?: () => string, config?: INgxAuthFirebaseUIConfig): ModuleWithProviders {
+  static forRoot(configFactory: FirebaseAppConfig,
+                 appNameFactory?: () => string,
+                 config: NgxAuthFirebaseUIConfig = defaultAuthFirebaseUIConfig): ModuleWithProviders {
     return {
       ngModule: NgxAuthFirebaseUIModule,
       providers:
@@ -94,7 +98,7 @@ export class NgxAuthFirebaseUIModule {
             useFactory: appNameFactory
           },
           {
-            provide: new InjectionToken<INgxAuthFirebaseUIConfig>('IAuthFirebaseUIConfig - main config'),
+            provide: NgxAuthFirebaseUIConfigToken,
             useValue: config
           },
           AuthProcessService,

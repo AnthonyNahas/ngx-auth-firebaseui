@@ -5,27 +5,21 @@ import TwitterAuthProvider = firebase.auth.TwitterAuthProvider;
 import GithubAuthProvider = firebase.auth.GithubAuthProvider;
 import AuthProvider = firebase.auth.AuthProvider;
 
-export interface INgxAuthFirebaseUIConfig {
+export interface NgxAuthFirebaseUIConfig {
   authNextURL?: string,
   authMethod?: string, // popup or redirect
   authProviders?: Array<AuthProvider>,
   languageCode?: string, // todo: 28.3.18
   onlyEmailPasswordAuth?: boolean,
-  onlyProvidersAuth?: boolean,
   toastMessageOnAuthSuccess?: boolean,
-  toastMessageOnAuthError?: boolean,
-  toastMessageThenEmitSuccessEvent?: boolean,
-  toastMessageThenEmitErrorEvent?: boolean,
+  toastMessageOnAuthError?: boolean
 }
 
-export const defaultAuthFirebaseUIConfig: INgxAuthFirebaseUIConfig = {
-  authMethod: 'redirect',
-  authProviders: [new GoogleAuthProvider(), new FacebookAuthProvider(), new TwitterAuthProvider(), new GithubAuthProvider()],
-  onlyEmailPasswordAuth: false,
-  onlyProvidersAuth: false,
+export const defaultAuthFirebaseUIConfig: NgxAuthFirebaseUIConfig = {
+  // authMethod: 'redirect',
+  // authProviders: [new GoogleAuthProvider(), new FacebookAuthProvider(), new TwitterAuthProvider(), new GithubAuthProvider()],
+  // onlyEmailPasswordAuth: false,
   toastMessageOnAuthSuccess: true,
-  toastMessageOnAuthError: true,
-  toastMessageThenEmitSuccessEvent: true,
-  toastMessageThenEmitErrorEvent: false,
+  toastMessageOnAuthError: true
 };
 
