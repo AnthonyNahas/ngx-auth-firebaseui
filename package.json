@@ -48,6 +48,7 @@
     "check-travis": " travis-status --repo=anthonynahas/ngx-auth-firebaseui --branch=master --fail-pending || echo 'Not yet passing'"
   },
   "dependencies": {
+    "@angular-material-extensions/password-strength": "^3.0.0",
     "@angular/animations": "^6.0.6",
     "@angular/cdk": "^6.3.1",
     "@angular/common": "^6.0.6",
@@ -56,8 +57,7 @@
     "@angular/forms": "^6.0.6",
     "@angular/material": "^6.3.1",
     "angularfire2": "5.0.0-rc.11",
-    "firebase": "^5.1.0",
-    "ngx-material-password-strength": "^2.1.1"
+    "firebase": "^5.1.0"
   },
   "devDependencies": {
     "@angular/compiler": "^6.0.6",

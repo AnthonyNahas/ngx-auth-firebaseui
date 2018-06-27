@@ -229,24 +229,6 @@
           <!--type="video/mp4">-->
           <!--</video>-->
           <!--</div>-->
-          <div class="comment-container">
-            <p>Flexy Plexy --> FLEX LAYOUT MODULE is wanted!</p>
-          </div>
-          <div fxLayout="row" fxLayoutAlign="space-between">
-            <pre><code highlight [code]="'$ npm i -s @angular/flex-layout'"></code></pre>
-            <button mat-icon-button
-                    ngxClipboard
-                    [cbContent]="'npm i -s @angular/flex-layout'"
-                    matTooltip="copy"
-                    (click)="showCopyMessage('npm i -s @angular/flex-layout')">
-              <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
-            </button>
-          </div>
-          <mat-card>
-            <mat-card-content>
-              <pre><code highlight [code]="importFlexLayoutModule"></code></pre>
-            </mat-card-content>
-          </mat-card>
 
           <div class="comment-container">
             <p>Fire Fire Firebase!</p>
@@ -383,7 +365,7 @@
             <div class="comment-container">
               <p>After that, you need to update you
               <p>
-              <pre><code highlight [code]="'angular-cli.json'"></code></pre>
+              <pre><code highlight [code]="'angular.json'"></code></pre>
               <p>files. Under the styles sections, add
                 the path of the material design icons in order to be imported to your distribution files
                 when you build your app. <i>See below</i></p>
@@ -393,17 +375,17 @@
             </div>
             <div fxLayout="row" fxLayoutAlign="space-between">
             <pre><code highlight
-                       [code]="'../node_modules/material-design-icons/iconfont/material-icons.css'"></code></pre>
+                       [code]="'node_modules/material-design-icons/iconfont/material-icons.css'"></code></pre>
               <button mat-icon-button
                       ngxClipboard
-                      [cbContent]="'../node_modules/material-design-icons/iconfont/material-icons.css'"
+                      [cbContent]="'node_modules/material-design-icons/iconfont/material-icons.css'"
                       matTooltip="copy"
-                      (click)="showCopyMessage('../node_modules/material-design-icons/iconfont/material-icons.css')">
+                      (click)="showCopyMessage('node_modules/material-design-icons/iconfont/material-icons.css')">
                 <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
               </button>
             </div>
             <div class="comment-container">
-              <p>Adjust your angular-cli.json file</p>
+              <p>Adjust your angular.json file</p>
             </div>
             <mat-card-subtitle>Before</mat-card-subtitle>
             <div fxLayout="row" fxLayoutAlign="space-between">
@@ -581,7 +563,7 @@
 
       <!--7-->
       <ngx-material-page-loader>
-        <ngx-material-page-outlook title="Copy Asset to .angular-cli.json"></ngx-material-page-outlook>
+        <ngx-material-page-outlook title="Copy Asset to angular.json"></ngx-material-page-outlook>
         <ngx-material-page-content>
           <mat-card-title>We need ngx-auth-firebaseui's assets</mat-card-title>
 
@@ -591,7 +573,7 @@
               <div class="comment-container">
                 <p>First of all, open the following file</p>
                 <pre><code highlight
-                           [code]="'.angular-cli.json'"></code></pre>
+                           [code]="'angular.json'"></code></pre>
                 <p>after that, add the following snippet under the <strong>assets</strong> section</p>
                 <div fxLayout="row" fxLayoutAlign="space-between">
                  <pre><code highlight
@@ -700,6 +682,34 @@
                     [cbContent]="'git clone https://github.com/AnthonyNahas/ngx-auth-firebaseui.git'"
                     matTooltip="copy"
                     (click)="showCopyMessage('git clone https://github.com/AnthonyNahas/ngx-auth-firebaseui.git')">
+              <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+            </button>
+          </div>
+          <div class="comment-container">
+            <p>install the dependencies</p>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="space-between">
+                 <pre><code highlight
+                            [code]="'$ npm i'"></code></pre>
+            <button mat-icon-button
+                    ngxClipboard
+                    [cbContent]="'npm i'"
+                    matTooltip="copy"
+                    (click)="showCopyMessage('npm i')">
+              <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+            </button>
+          </div>
+          <div class="comment-container">
+            <p>Link ngx-auth-firebaseui</p>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="space-between">
+                 <pre><code highlight
+                            [code]="'$ gulp link'"></code></pre>
+            <button mat-icon-button
+                    ngxClipboard
+                    [cbContent]="'gulp link'"
+                    matTooltip="copy"
+                    (click)="showCopyMessage('gulp link')">
               <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
             </button>
           </div>

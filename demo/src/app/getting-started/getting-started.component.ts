@@ -38,17 +38,18 @@ export class GettingStartedComponent implements OnInit {
     return this.fixed && this.showFooter && !this.coverHeader ? 64 : 0;
   }
 
-  ngVersion = `    _                      _                 ____ _     ___
-                 / \\   _ __   __ _ _   _| | __ _ _ __     / ___| |   |_ _|
-                / △ \\ | '_ \\ / _\` | | | | |/ _\` | '__|   | |   | |    | |
-               / ___ \\| | | | (_| | |_| | | (_| | |      | |___| |___ | |
-              /_/   \\_\\_| |_|\\__, |\\__,_|_|\\__,_|_|       \\____|_____|___|
-                             |___/
+  ngVersion = `      _                      _                 ____ _     ___
+                  / \\   _ __   __ _ _   _| | __ _ _ __     / ___| |   |_ _|
+                 / △ \\ | '_ \\ / _\` | | | | |/ _\` | '__|   | |   | |    | |
+                / ___ \\| | | | (_| | |_| | | (_| | |      | |___| |___ | |
+               /_/   \\_\\_| |_|\\__, |\\__,_|_|\\__,_|_|       \\____|_____|___|
+                              |___/
 
-              Angular CLI: 1.7.3
-              Node: 8.11.1
+
+              Angular CLI: 6.0.0
+              Node: 8.11.3
               OS: darwin x64
-              Angular:`;
+              Angular: 6.0.6`;
 
   importBrowserAnimationsModule = `import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
@@ -59,14 +60,6 @@ export class GettingStartedComponent implements OnInit {
                                     })
                                     export class YourAppModule { }`;
 
-  importFlexLayoutModule = `import {FlexLayoutModule} from '@angular/flex-layout';
-
-                                    @NgModule({
-                                      ...
-                                      imports: [FlexLayoutModule],
-                                      ...
-                                    })
-                                    export class YourAppModule { }`;
 
   importNoopAnimationsModule = `import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 
@@ -107,7 +100,7 @@ export class GettingStartedComponent implements OnInit {
 
   stylesAfterImportMDI = `"styles": [
         "styles.css",
-        "../node_modules/material-design-icons/iconfont/material-icons.css"
+        "node_modules/material-design-icons/iconfont/material-icons.css"
       ],`;
 
   materialIconsLink = `<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">`;
@@ -158,7 +151,7 @@ export class GettingStartedComponent implements OnInit {
 
   copyAssetSnippet = `{
                       "glob": "**/*",
-                      "input": "../node_modules/ngx-auth-firebaseui/assets/",
+                      "input": "node_modules/ngx-auth-firebaseui/assets/",
                       "output": "./assets/"
                       }`;
 
@@ -167,7 +160,7 @@ export class GettingStartedComponent implements OnInit {
                                   "favicon.ico",
                                   {
                                     "glob": "**/*",
-                                    "input": "../node_modules/ngx-auth-firebaseui/assets/",
+                                    "input": "node_modules/ngx-auth-firebaseui/assets/",
                                     "output": "./assets/"
                                   }
                                 ]`;

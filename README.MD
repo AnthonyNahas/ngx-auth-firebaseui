@@ -640,7 +640,7 @@ npm i -s material-design-icons
 ```json
 "styles": [
         "styles.css",
-        "../node_modules/material-design-icons/iconfont/material-icons.css"
+        "node_modules/material-design-icons/iconfont/material-icons.css"
       ],
 ```  
 
@@ -651,7 +651,7 @@ npm i -s material-design-icons
 
 ## (5) Additional Requirements - assets
 #### With Angular CLI
-- open the file `.angular-cli.json`
+- open the file `.angular.json`
 - add the following into the `assets` section
 ```ts
 {

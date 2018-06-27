@@ -28,7 +28,7 @@ import {
   MatCheckboxModule
 } from '@angular/material';
 import {AngularFirestoreModule} from 'angularfire2/firestore';
-import {NgxMaterialPasswordStrengthModule} from 'ngx-material-password-strength';
+import {MatPasswordStrengthModule} from '@angular-material-extensions/password-strength';
 
 // Export module's public API
 // components
@@ -62,9 +62,9 @@ export const NgxAuthFirebaseUIConfigToken = new InjectionToken<NgxAuthFirebaseUI
     MatCheckboxModule,
     MatProgressSpinnerModule,
     MatProgressBarModule,
+    MatPasswordStrengthModule,
     AngularFireAuthModule,
     AngularFirestoreModule,
-    NgxMaterialPasswordStrengthModule,
   ],
   exports: [
     AuthComponent,

@@ -10,7 +10,7 @@ const imagemin = require('gulp-imagemin'),
   png = require('imagemin-optipng'),
   svg = require('imagemin-svgo');
 
-const dependencies = ['ngx-material-password-strength'];
+const dependencies = ['@angular-material-extensions/password-strength'];
 
 /** TSLint checker */
 const tslint = require('tslint');
@@ -407,7 +407,7 @@ gulp.task('rollup-bundle', (cb) => {
         // Add any other dependency or peer dependency of your library here
         // This is required for UMD bundle users.
         // See https://github.com/tinesoft/generator-ngx-library/TROUBLESHOUTING.md if trouble
-        'ngx-material-password-strength': _.camelCase('ngx-material-password-strength'.replace('/', '.')),
+        '@angular-material-extensions/password-strength"': _.camelCase('@angular-material-extensions/password-strength"'.replace('/', '.')),
         'angularfire2': _.camelCase('angularfire2'.replace('/', '.')),
         'firebase': _.camelCase('firebase'.replace('/', '.'))
 

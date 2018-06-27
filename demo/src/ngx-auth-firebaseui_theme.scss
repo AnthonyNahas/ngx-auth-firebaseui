@@ -10,10 +10,10 @@
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue.
 $candy-app-primary: mat-palette($mat-indigo);
-$candy-app-accent:  mat-palette($mat-pink, A200, A100, A400);
+$candy-app-accent: mat-palette($mat-pink, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
-$candy-app-warn:    mat-palette($mat-red);
+$candy-app-warn: mat-palette($mat-red);
 
 // Create the theme object (a Sass map containing all of the palettes).
 $candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent, $candy-app-warn);
