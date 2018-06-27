@@ -1,4 +1,4 @@
-import {EventEmitter, Injectable} from '@angular/core';
+import {EventEmitter, Inject, Injectable, InjectionToken} from '@angular/core';
 import {MatSnackBar} from '@angular/material';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {ISignInProcess, ISignUpProcess} from '../interfaces/main.interface';
@@ -12,6 +12,7 @@ import UserCredential = firebase.auth.UserCredential;
 import GithubAuthProvider = firebase.auth.GithubAuthProvider;
 import {Accounts} from '../enums';
 import {User, UserInfo} from 'firebase';
+import {NgxAuthFirebaseUIConfig, NgxAuthFirebaseUIConfigToken} from '../..';
 
 export enum AuthProvider {
   ALL = 'all',
@@ -34,8 +35,9 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
   emailToConfirm: string;
 
   constructor(public auth: AngularFireAuth,
-              private _fireStoreService: FirestoreSyncService,
-              private _snackBar: MatSnackBar) {
+              @Inject(NgxAuthFirebaseUIConfigToken) private config: NgxAuthFirebaseUIConfig,
+              public _snackBar: MatSnackBar,
+              private _fireStoreService: FirestoreSyncService) {
   }
 
   /**
@@ -94,15 +96,11 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
           throw new Error(`${AuthProvider[provider]} is not available as auth provider`);
 
       }
-      console.log('sign in result = ', signInResult);
-
-      await this._fireStoreService.updateUserData(this.parseUserInfo(signInResult.user));
-      this._snackBar.open(`Hallo ${signInResult.user.displayName ? signInResult.user.displayName : ''}!`,
-        'OK', {duration: 5000});
-      this.onSuccessEmitter.next(signInResult.user);
+      await this.handleSuccess(signInResult);
     } catch (err) {
+      this.handleError(err);
       console.error(err);
-      this._snackBar.open(err.message, 'OK', {duration: 5000});
+      // this._snackBar.open(err.message, 'OK', {duration: 5000});
       this.onErrorEmitter.next(err);
     } finally {
       this.isLoading = false;
@@ -134,16 +132,13 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
         } as firebase.User);
 
       await user.sendEmailVerification();
-      const updatedProfileResult = await this.updateProfile(name, user.photoURL);
-      // console.log('on update profile result -> ', updatedProfileResult);
+      await this.updateProfile(name, user.photoURL);
       this.emailConfirmationSent = true;
       this.emailToConfirm = email;
-      this._snackBar.open(`Hallo ${name}!`, 'OK', {duration: 10000});
-      this.onSuccessEmitter.next(user);
+
+      await this.handleSuccess(userCredential);
     } catch (err) {
-      console.error(err);
-      this._snackBar.open(err.message, 'OK', {duration: 5000});
-      this.onErrorEmitter.next(err);
+      this.handleError(err);
     } finally {
       this.isLoading = false;
     }
@@ -197,6 +192,26 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
 
   public signInWithPhoneNumber() {
     // todo: 3.1.18
+  }
+
+  async handleSuccess(userCredential: UserCredential) {
+    console.log('sign in result = ', userCredential);
+
+    await this._fireStoreService.updateUserData(this.parseUserInfo(userCredential.user));
+
+    if (this.config.toastMessageOnAuthSuccess) {
+      this._snackBar.open(`Hallo ${userCredential.user.displayName ? userCredential.user.displayName : ''}!`,
+        'OK', {duration: 5000});
+    }
+    this.onSuccessEmitter.next(userCredential.user);
+  }
+
+  handleError(error: any) {
+    if (this.config.toastMessageOnAuthError) {
+      this._snackBar.open(error.message, 'OK', {duration: 5000});
+    }
+    console.error(error);
+    this.onErrorEmitter.next(error);
   }
 
 }
