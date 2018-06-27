@@ -24,7 +24,8 @@ import {
   MatTabsModule,
   MatTooltipModule,
   MatProgressSpinnerModule,
-  MatProgressBarModule
+  MatProgressBarModule,
+  MatCheckboxModule
 } from '@angular/material';
 import {AngularFirestoreModule} from 'angularfire2/firestore';
 import {NgxMaterialPasswordStrengthModule} from 'ngx-material-password-strength';
@@ -58,6 +59,7 @@ export const NgxAuthFirebaseUIConfigToken = new InjectionToken<NgxAuthFirebaseUI
     MatChipsModule,
     MatTooltipModule,
     MatDialogModule,
+    MatCheckboxModule,
     MatProgressSpinnerModule,
     MatProgressBarModule,
     AngularFireAuthModule,

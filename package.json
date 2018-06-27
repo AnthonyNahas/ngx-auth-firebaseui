@@ -49,12 +49,12 @@
   },
   "dependencies": {
     "@angular/animations": "^6.0.6",
-    "@angular/cdk": "^6.3.0",
+    "@angular/cdk": "^6.3.1",
     "@angular/common": "^6.0.6",
     "@angular/core": "^6.0.6",
     "@angular/flex-layout": "^6.0.0-beta.16",
     "@angular/forms": "^6.0.6",
-    "@angular/material": "^6.3.0",
+    "@angular/material": "^6.3.1",
     "angularfire2": "5.0.0-rc.11",
     "firebase": "^5.1.0",
     "ngx-material-password-strength": "^2.1.1"
@@ -174,7 +174,8 @@
       "awesome-typescript-loader",
       "codelyzer",
       "@angular/animations",
-      "@types/jasmine"
+      "@types/jasmine",
+      "gulp-inline-ng2-template"
     ]
   },
   "commitplease": {

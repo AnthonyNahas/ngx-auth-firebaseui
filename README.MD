@@ -771,6 +771,8 @@ $ npm run lint
 - [ngx-material-password-strength](https://github.com/AnthonyNahas/ngx-material-password-strength)
 - [ngx-material-contacts](https://github.com/AnthonyNahas/ngx-material-contacts)
 - [@angular-material-extensions/faq](https://github.com/angular-material-extensions/faq)
+- [@angular-material-extensions/jumbotron](https://github.com/angular-material-extensions/jumbotron)
+- [@angular-material-extensions/google-maps-autocomplete](https://github.com/angular-material-extensions/google-maps-autocomplete)
 - [@angular-material-extensions/combination-generator](https://github.com/angular-material-extensions/combination-generator)
 
 

@@ -29,13 +29,17 @@ import {NgxMaterialPagesModule} from 'ngx-material-pages';
     HighlightModule.forRoot(),
     DisqusModule.forRoot('ngx-auth-firebaseui'),
     NgxAuthFirebaseUIModule.forRoot({
-      apiKey: 'AIzaSyASG7KxDO2z5AH9r0jlUmwiw68Ap8kG20c',
-      authDomain: 'ngx-auth-firebaseui.firebaseapp.com',
-      databaseURL: 'https://ngx-auth-firebaseui.firebaseio.com',
-      projectId: 'ngx-auth-firebaseui',
-      storageBucket: 'ngx-auth-firebaseui.appspot.com',
-      messagingSenderId: '520699629648'
-    }),
+        apiKey: 'AIzaSyASG7KxDO2z5AH9r0jlUmwiw68Ap8kG20c',
+        authDomain: 'ngx-auth-firebaseui.firebaseapp.com',
+        databaseURL: 'https://ngx-auth-firebaseui.firebaseio.com',
+        projectId: 'ngx-auth-firebaseui',
+        storageBucket: 'ngx-auth-firebaseui.appspot.com',
+        messagingSenderId: '520699629648'
+      }, null,
+      {
+        toastMessageOnAuthSuccess: false,
+        toastMessageOnAuthError: false
+      }),
     NgxMaterialPagesModule,
     FlexLayoutModule,
     MatToolbarModule,
