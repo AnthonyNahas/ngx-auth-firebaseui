@@ -78,7 +78,6 @@ export class HomeComponent implements OnInit, OnDestroy {
   providers = [AuthProvider.Facebook];
   themes = Theme;
 
-
   constructor(private titleService: Title,
               public auth: AngularFireAuth,
               public router: Router,
@@ -97,11 +96,16 @@ export class HomeComponent implements OnInit, OnDestroy {
     console.log(event);
     this.error = false;
     this.index = 2;
+
+    // this.snackbar.open(`Hallo ${event.displayName ? event.displayName : ''}!`,
+    //   'OK', {duration: 5000});
   }
 
   printError(event) {
     console.error(event);
     this.error = true;
+
+    // this.snackbar.open(event.message, 'OK', {duration: 5000});
   }
 
   showMessage() {
