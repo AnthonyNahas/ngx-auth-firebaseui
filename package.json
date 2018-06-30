@@ -128,7 +128,7 @@
     "sass-loader": "7.0.3",
     "source-map-loader": "0.2.3",
     "to-string-loader": "1.1.5",
-    "travis-status": "2.0.0",
+    "travis-status": "3.0.0",
     "tslint": "5.10.0",
     "typescript": "2.7.2",
     "webpack": "^4.12.1",
