@@ -30,7 +30,8 @@ Angular UI component for [firebase](https://firebase.google.com/docs/auth/web/fi
 This library is an angular module (including angular components and services) that allows to authenticate
 your users with your firebase project. NgxAuthFirebseUI is compatible with
 [angular material](https://material.angular.io/) and [angular flexLayout](https://github.com/angular/flex-layout).
-If you need me to support [bootstrap](https://getbootstrap.com/) please provide a PR.
+
+If you prefer to develop with bootstrap rather than with material design, please check this project [@firebaseui/ng-bootstrap](https://github.com/firebaseui/ng-bootstrap)
 
 ## Built by and for developers :heart:
 Do you have any question or suggestion ? Please do not hesitate to contact us!
@@ -449,7 +450,7 @@ Once the library is imported, you can use its components, directives and pipes i
 </ngx-auth-firebaseui>
 ```
 or
-```ts
+```typescript
 <!-- or simply in the app.component.ts -->
 @Component({
     selector: 'app',
@@ -725,18 +726,6 @@ $ cd demo
 $ npm i
 ```
 
-- use your own firebase config use for the NgxAuthFirebaseUIModule
-```ts
-export const YourFirebaseAppConfig = {
-  apiKey: 'your-firebase-apiKey',
-  authDomain: 'your-firebase-authDomain',
-  databaseURL: 'your-firebase-databaseURL',
-  projectId: 'your-firebase-projectId',
-  storageBucket: 'your-firebase-storageBucket',
-  messagingSenderId: 'your-firebase-messagingSenderId'
-};
-```
-
 - run/start/serve the app
 ```bash
 $ npm run start
@@ -767,9 +756,10 @@ $ npm run lint
 <a name="other-angular-libraries"/>
 
 ## Other Angular Libraries
-- [ngx-material-pages](https://github.com/AnthonyNahas/ngx-material-pages)
-- [ngx-material-password-strength](https://github.com/AnthonyNahas/ngx-material-password-strength)
-- [ngx-material-contacts](https://github.com/AnthonyNahas/ngx-material-contacts)
+- [@firebaseui/ng-bootstrap](https://github.com/firebaseui/ng-bootstrap)
+- [@angular-material-extensions/password-strength](https://github.com/angular-material-extensions/password-strength)
+- [@angular-material-extensions/pages](https://github.com/angular-material-extensions/pages)
+- [@angular-material-extensions/contacts](https://github.com/angular-material-extensions/contacts)
 - [@angular-material-extensions/faq](https://github.com/angular-material-extensions/faq)
 - [@angular-material-extensions/jumbotron](https://github.com/angular-material-extensions/jumbotron)
 - [@angular-material-extensions/google-maps-autocomplete](https://github.com/angular-material-extensions/google-maps-autocomplete)
