@@ -20,7 +20,7 @@ const routes: Routes = [
     loadChildren: 'app/example/example.module#ExampleModule'
   },
   {
-    path: 'faq',
+    path: 'providers',
     loadChildren: 'app/faq/faq.module#FaqModule'
   }
 ];
