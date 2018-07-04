@@ -2,6 +2,7 @@ import {EventEmitter, Inject, Injectable, InjectionToken} from '@angular/core';
 import {MatSnackBar} from '@angular/material';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {ISignInProcess, ISignUpProcess} from '../interfaces/main.interface';
+import {NgxAuthFirebaseUIConfig} from '../interfaces/config.interface';
 import {FirestoreSyncService} from './firestore-sync.service';
 import * as firebase from 'firebase';
 // import User = firebase.User;
@@ -12,7 +13,7 @@ import UserCredential = firebase.auth.UserCredential;
 import GithubAuthProvider = firebase.auth.GithubAuthProvider;
 import {Accounts} from '../enums';
 import {User, UserInfo} from 'firebase';
-import {NgxAuthFirebaseUIConfig, NgxAuthFirebaseUIConfigToken} from '../..';
+import {NgxAuthFirebaseUIConfigToken} from '../ngx-auth-firebase-u-i.module';
 
 export enum AuthProvider {
   ALL = 'all',
@@ -34,8 +35,9 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
   emailConfirmationSent: boolean;
   emailToConfirm: string;
 
-  constructor(public auth: AngularFireAuth,
-              @Inject(NgxAuthFirebaseUIConfigToken) private config: NgxAuthFirebaseUIConfig,
+  constructor(@Inject(NgxAuthFirebaseUIConfigToken)
+              public config: NgxAuthFirebaseUIConfig,
+              public auth: AngularFireAuth,
               public _snackBar: MatSnackBar,
               private _fireStoreService: FirestoreSyncService) {
   }

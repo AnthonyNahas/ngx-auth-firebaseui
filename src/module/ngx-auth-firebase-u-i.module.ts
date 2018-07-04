@@ -37,8 +37,10 @@ export {UserComponent} from './components/user/user.component';
 export {AuthProvidersComponent, Theme, Layout} from './components/providers/auth.providers.component';
 // services
 export {AuthProcessService, AuthProvider} from './services/auth-process.service';
-export {NgxAuthFirebaseUIConfig} from './interfaces/config.interface';
 export {FirestoreSyncService} from './services/firestore-sync.service';
+
+// interfaces
+export {NgxAuthFirebaseUIConfig} from './interfaces/config.interface';
 
 export const NgxAuthFirebaseUIConfigToken = new InjectionToken<NgxAuthFirebaseUIConfig>('NgxAuthFirebaseUIConfig');
 

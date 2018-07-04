@@ -1,4 +1,5 @@
 <mat-tab-group [color]="color">
+  <!--Reset password tab-->
   <mat-tab *ngIf="passwordResetWished" label="Reset Password">
     <form [formGroup]="resetPasswordFormGroup" (ngSubmit)="resetPasswordFormGroup.valid && resetPassword()">
 
@@ -47,14 +48,17 @@
       </mat-card>
     </form>
   </mat-tab>
+
+  <!--Sign in tab-->
   <mat-tab label="Sign in">
     <mat-card>
+      <mat-card-title>Signing in</mat-card-title>
       <mat-card-content>
         <form [formGroup]="signInFormGroup"
               (ngSubmit)="signInFormGroup.valid &&
               authProcess.signInWith
               (authProviders.EmailAndPassword,signInFormGroup.value.email,signInFormGroup.value.password)">
-          <div fxLayout="column" fxLayoutAlign="center center">
+          <div fxLayout="column" fxLayoutAlign="center">
             <mat-form-field appearance="outline">
               <!--<mat-label>E-mail</mat-label>-->
               <input matInput
@@ -127,11 +131,11 @@
       <mat-card-title>Registration</mat-card-title>
       <div *ngIf="!authProcess.emailConfirmationSent;then register else confirm"></div>
       <ng-template #register>
-        <mat-card-content fxLayout="column" fxLayoutAlign="center center">
+        <mat-card-content fxLayout="column" fxLayoutAlign="center">
           <form [formGroup]="signUpFormGroup" (ngSubmit)="signUpFormGroup.valid &&
           authProcess.signUp
           (signUpFormGroup.value.name,signUpFormGroup.value.email,signUpFormGroup.value.password)">
-            <div fxLayout="column" fxLayoutAlign="center center">
+            <div fxLayout="column" fxLayoutAlign="center">
               <!--name-->
               <mat-form-field appearance="outline" label="Name">
                 <!--labels will work only with @angular/material@6.2.0 -->
@@ -176,7 +180,7 @@
               </mat-form-field>
 
               <!--password-->
-              <div>
+              <div fxLayout="column">
 
                 <mat-form-field appearance="outline">
                   <!--<mat-label>Password</mat-label>-->
@@ -209,6 +213,11 @@
                   [password]="signUpFormGroup.value.password"
                   [externalError]="sigUpPasswordFormControl.dirty">
                 </mat-password-strength>
+
+                <!--<div fxLayout="column" fxLayoutAlign="start" style="margin-top: 0.5rem">-->
+                  <!--<mat-checkbox>I agree to the Terms of Service and Conditions</mat-checkbox>-->
+                  <!--<mat-checkbox>I have read and agree to the Privacy Policy</mat-checkbox>-->
+                <!--</div>-->
 
               </div>
 

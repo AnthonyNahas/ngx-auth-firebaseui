@@ -6,8 +6,9 @@ import GithubAuthProvider = firebase.auth.GithubAuthProvider;
 import AuthProvider = firebase.auth.AuthProvider;
 
 export interface NgxAuthFirebaseUIConfig {
-  authNextURL?: string,
-  authMethod?: string, // popup or redirect
+  authNextURL?: string, // popup or redirect
+  tosUrl?: string, // term of services url
+  ppUrl?: string, // privacy policy url
   authProviders?: Array<AuthProvider>,
   languageCode?: string, // todo: 28.3.18
   onlyEmailPasswordAuth?: boolean,
