@@ -50,12 +50,12 @@
   "dependencies": {
     "@angular-material-extensions/password-strength": "^3.0.0",
     "@angular/animations": "^6.0.9",
-    "@angular/cdk": "^6.4.0",
+    "@angular/cdk": "^6.4.1",
     "@angular/common": "^6.0.9",
     "@angular/core": "^6.0.9",
     "@angular/flex-layout": "^6.0.0-beta.16",
     "@angular/forms": "^6.0.9",
-    "@angular/material": "^6.4.0",
+    "@angular/material": "^6.4.1",
     "angularfire2": "5.0.0-rc.11",
     "firebase": "^5.3.0"
   },
@@ -68,7 +68,7 @@
     "@compodoc/gulp-compodoc": "0.0.9",
     "@types/jasmine": "2.8.8",
     "@types/jest": "^23.3.0",
-    "@types/lodash": "^4.14.112",
+    "@types/lodash": "^4.14.113",
     "@types/node": "^10.5.2",
     "angular-cli-ghpages": "0.5.2",
     "angular2-template-loader": "0.6.2",
