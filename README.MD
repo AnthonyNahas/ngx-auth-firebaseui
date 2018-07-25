@@ -35,9 +35,9 @@ If you prefer to develop with bootstrap rather than with material design, please
 
 ## Built by and for developers :heart:
 Do you have any question or suggestion ? Please do not hesitate to contact us!
-Alternatively, provide a PR | open an appropriate issue [here](https://github.com/angular-material-extensions/cards/issues)
+Alternatively, provide a PR | open an appropriate issue [here](https://github.com/anthonynahas/ngx-auth-firebaseui/issues)
 
-If did you like this project, support [ngx-auth-firebaseui](https://github.com/anthonynahas/ngx-auth-firebaseui) 
+If you like this project, support [ngx-auth-firebaseui](https://github.com/anthonynahas/ngx-auth-firebaseui) 
 by starring :star: and sharing it :loudspeaker:
 
 ## Table of Contents
@@ -757,6 +757,7 @@ $ npm run lint
 
 ## Other Angular Libraries
 - [@firebaseui/ng-bootstrap](https://github.com/firebaseui/ng-bootstrap)
+- [ngx-linkifyjs](https://github.com/anthonynahas/ngx-linkifyjs)
 - [@angular-material-extensions/password-strength](https://github.com/angular-material-extensions/password-strength)
 - [@angular-material-extensions/pages](https://github.com/angular-material-extensions/pages)
 - [@angular-material-extensions/contacts](https://github.com/angular-material-extensions/contacts)
@@ -772,7 +773,7 @@ $ npm run lint
 
 ## Support
 + Drop an email to: [Anthony Nahas](mailto:anthony.na@hotmail.de)
-+ or open an appropriate [issue](https://github.com/angular-material-extensions/ngx-auth-firebaseui/issues)
++ or open an appropriate [issue](https://github.com/anthonynahas/ngx-auth-firebaseui/issues)
 + let us chat on [Gitter](https://gitter.im/ngx-auth-firebaseui/Lobby)
  
  Built by and for developers :heart: we will help you :punch:
