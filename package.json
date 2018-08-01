@@ -125,7 +125,7 @@
     "rollup-plugin-uglify": "3.0.0",
     "run-sequence": "2.2.1",
     "rxjs": "^6.2.2",
-    "sass-loader": "7.0.3",
+    "sass-loader": "7.1.0",
     "source-map-loader": "0.2.3",
     "to-string-loader": "1.1.5",
     "travis-status": "^3.0.0",
