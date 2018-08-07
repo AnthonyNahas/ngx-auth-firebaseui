@@ -730,7 +730,7 @@ gulp.task('release', (cb) => {
       'create-new-tag',
       'github-release',
       'npm-publish',
-      'deploy:demo',
+      // 'deploy:demo',
       (error) => {
         if (error) {
           gulpUtil.log(gulpUtil.colors.red(error.message));

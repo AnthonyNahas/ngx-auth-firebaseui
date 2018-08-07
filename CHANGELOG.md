@@ -1,3 +1,21 @@
+<a name="1.2.0"></a>
+# [1.2.0](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v1.1.1...v1.2.0) (2018-08-07)
+
+
+### Bug Fixes
+
+* **package:** adjusted the import statements of the firebase module [#112](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/112) ([b4aa7f2](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/b4aa7f2))
+* **package:** path of config interface to support aot `@Inject(NgxAuthFirebaseUIConfigToken)` ([61d1efa](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/61d1efa))
+
+
+### Features
+
+* **ngx-auth-firebaseui-providers:** dded NgxAuthFirebaseUIConfig to the module ([6e2f0d6](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/6e2f0d6))
+* **project:** integration of [@angular-material-extensions](https://github.com/angular-material-extensions)/password-strength ([37f1631](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/37f1631))
+* **project:** snackbar message is now optional via NgxAuthFirebaseUIConfig [#83](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/83) ([631fed5](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/631fed5))
+
+
+
 <a name="1.1.1"></a>
 ## [1.1.1](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v1.1.0...v1.1.1) (2018-06-15)
 
