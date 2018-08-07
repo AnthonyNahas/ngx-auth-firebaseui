@@ -1,19 +1,15 @@
-import {async, ComponentFixture, inject, TestBed} from '@angular/core/testing';
-import {By, DomSanitizer} from '@angular/platform-browser';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import {By} from '@angular/platform-browser';
 import {DebugElement} from '@angular/core';
 
-import {MatButtonModule, MatIconModule, MatIconRegistry, MatSnackBarModule} from '@angular/material';
+import {HttpClientTestingModule} from '@angular/common/http/testing';
+import {MatButtonModule, MatIconModule, MatSnackBarModule} from '@angular/material';
 import {AuthProvidersComponent, Layout} from './auth.providers.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {AuthProcessService, FirestoreSyncService} from '../../..';
 import {AngularFireModule} from 'angularfire2';
-import {AngularFireAuth, AngularFireAuthModule} from 'angularfire2/auth';
 import {BehaviorSubject} from 'rxjs/internal/BehaviorSubject';
-import {AngularFirestore} from 'angularfire2/firestore';
 import {AuthProvider} from '../../services/auth-process.service';
-import {HttpClient} from '@angular/common/http';
-import {HttpClientTestingModule, HttpTestingController} from '@angular/common/http/testing';
-import * as http from 'http';
 
 describe('AuthProvidersComponent', function () {
   let de: DebugElement;
@@ -85,8 +81,9 @@ describe('AuthProvidersComponent', function () {
         AuthProcessService,
         FirestoreSyncService,
         AngularFireModule,
-        {provide: AngularFirestore, useValue: FirestoreStub},
-        {provide: AngularFireAuth, useValue: angularFireAuthStub}]
+        // {provide: AngularFirestore, useValue: FirestoreStub},
+        // {provide: AngularFireAuth, useValue: angularFireAuthStub}
+      ]
     });
 
   }));

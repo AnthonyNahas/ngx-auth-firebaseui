@@ -1,19 +1,19 @@
-import {EventEmitter, Inject, Injectable, InjectionToken} from '@angular/core';
+import {EventEmitter, Inject, Injectable} from '@angular/core';
 import {MatSnackBar} from '@angular/material';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {ISignInProcess, ISignUpProcess} from '../interfaces/main.interface';
 import {NgxAuthFirebaseUIConfig} from '../interfaces/config.interface';
 import {FirestoreSyncService} from './firestore-sync.service';
-import * as firebase from 'firebase';
+import * as firebase from 'firebase/app';
+import {Accounts} from '../enums';
+import {User, UserInfo} from 'firebase';
+import {NgxAuthFirebaseUIConfigToken} from '../ngx-auth-firebase-u-i.module';
 // import User = firebase.User;
 import GoogleAuthProvider = firebase.auth.GoogleAuthProvider;
 import FacebookAuthProvider = firebase.auth.FacebookAuthProvider;
 import TwitterAuthProvider = firebase.auth.TwitterAuthProvider;
 import UserCredential = firebase.auth.UserCredential;
 import GithubAuthProvider = firebase.auth.GithubAuthProvider;
-import {Accounts} from '../enums';
-import {User, UserInfo} from 'firebase';
-import {NgxAuthFirebaseUIConfigToken} from '../ngx-auth-firebase-u-i.module';
 
 export enum AuthProvider {
   ALL = 'all',

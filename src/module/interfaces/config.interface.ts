@@ -1,8 +1,8 @@
-import * as firebase from 'firebase';
-import GoogleAuthProvider = firebase.auth.GoogleAuthProvider;
-import FacebookAuthProvider = firebase.auth.FacebookAuthProvider;
-import TwitterAuthProvider = firebase.auth.TwitterAuthProvider;
-import GithubAuthProvider = firebase.auth.GithubAuthProvider;
+// import * as firebase from 'firebase';
+// import GoogleAuthProvider = firebase.auth.GoogleAuthProvider;
+// import FacebookAuthProvider = firebase.auth.FacebookAuthProvider;
+// import TwitterAuthProvider = firebase.auth.TwitterAuthProvider;
+// import GithubAuthProvider = firebase.auth.GithubAuthProvider;
 import AuthProvider = firebase.auth.AuthProvider;
 
 export interface NgxAuthFirebaseUIConfig {
