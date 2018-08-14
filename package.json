@@ -127,7 +127,7 @@
     "run-sequence": "2.2.1",
     "rxjs": "^6.2.2",
     "sass-loader": "7.0.3",
-    "source-map-loader": "0.2.3",
+    "source-map-loader": "0.2.4",
     "to-string-loader": "1.1.5",
     "travis-status": "^3.0.0",
     "tslint": "~5.11.0",
