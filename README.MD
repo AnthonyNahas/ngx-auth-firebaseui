@@ -695,23 +695,8 @@ $ git clone https://github.com/AnthonyNahas/ngx-auth-firebaseui.git
 ```
 
 - link the ngx-auth-firebaseui package
-use gulp globally
 ```bash
 $ gulp link
-```
-
-use gulp locally
-```bash
-$ npx gulp link
-```
-for some mac os users, you may use the sudo command with gulp
-use gulp with sudo
-```bash
-$ sudo gulp link
-```
-or locally 
-```bash
-$ sudo npx gulp link
 ```
 
 - navigate to the demo app directory
@@ -744,11 +729,7 @@ To generate all `*.js`, `*.d.ts` and `*.metadata.json` files:
 $ npm run build
 ```
 
-To lint all `*.ts` files:
 
-```bash
-$ npm run lint
-```
 ---
 
 <a name="other-angular-libraries"/>
