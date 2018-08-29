@@ -20,6 +20,10 @@ const routes: Routes = [
     loadChildren: 'app/example/example.module#ExampleModule'
   },
   {
+    path: 'legal',
+    loadChildren: 'app/legal/legal.module#LegalModule'
+  },
+  {
     path: 'providers',
     loadChildren: 'app/faq/faq.module#FaqModule'
   }
