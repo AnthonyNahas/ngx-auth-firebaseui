@@ -13,6 +13,8 @@ import {ServiceWorkerModule} from '@angular/service-worker';
 import {NgxMaterialPagesModule} from 'ngx-material-pages';
 import {HttpClientModule} from '@angular/common/http';
 import {ClipboardModule} from 'ngx-clipboard';
+import {Angulartics2GoogleAnalytics} from 'angulartics2/ga';
+import {Angulartics2Module} from 'angulartics2';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,7 @@ import {ClipboardModule} from 'ngx-clipboard';
     // The application ID can be any identifier which is unique on
     // the page.
     BrowserModule.withServerTransition({appId: 'ngx-auth-firebaseui-demo-id'}),
+    Angulartics2Module.forRoot([Angulartics2GoogleAnalytics]),
     ServiceWorkerModule.register('/ngsw-worker.js', {enabled: environment.production}),
     AngularFireModule.initializeApp({
       apiKey: 'AIzaSyASG7KxDO2z5AH9r0jlUmwiw68Ap8kG20c',

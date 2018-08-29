@@ -34,6 +34,7 @@
     "@angular/service-worker": "^6.1.4",
     "@ng-bootstrap/ng-bootstrap": "^2.2.2",
     "angularfire2": "5.0.0-rc.12",
+    "angulartics2": "^6.2.0",
     "bootstrap": "^4.1.3",
     "core-js": "^2.5.7",
     "firebase": "^5.4.1",
