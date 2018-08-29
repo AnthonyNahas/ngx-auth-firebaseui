@@ -29,12 +29,14 @@ import {
 } from '@angular/material';
 import {AngularFirestoreModule} from 'angularfire2/firestore';
 import {MatPasswordStrengthModule} from '@angular-material-extensions/password-strength';
+import {LegalityDialogComponent} from './components/legality-dialog/legality-dialog.component';
 
 // Export module's public API
 // components
 export {AuthComponent} from './components/auth/auth.component';
 export {UserComponent} from './components/user/user.component';
 export {AuthProvidersComponent, Theme, Layout} from './components/providers/auth.providers.component';
+export {LegalityDialogComponent} from './components/legality-dialog/legality-dialog.component';
 // services
 export {AuthProcessService, AuthProvider} from './services/auth-process.service';
 export {FirestoreSyncService} from './services/firestore-sync.service';
@@ -64,6 +66,7 @@ export const NgxAuthFirebaseUIConfigToken = new InjectionToken<NgxAuthFirebaseUI
     MatCheckboxModule,
     MatProgressSpinnerModule,
     MatProgressBarModule,
+    MatDialogModule,
     MatPasswordStrengthModule,
     AngularFireAuthModule,
     AngularFirestoreModule,
@@ -81,6 +84,10 @@ export const NgxAuthFirebaseUIConfigToken = new InjectionToken<NgxAuthFirebaseUI
     UserComponent,
     AuthProvidersComponent,
     EmailConfirmationComponent,
+    LegalityDialogComponent
+  ],
+  entryComponents: [
+    LegalityDialogComponent
   ]
 })
 

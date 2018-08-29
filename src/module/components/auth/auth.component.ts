@@ -1,9 +1,13 @@
-import {Component, Inject, Input, OnDestroy, OnInit, Output, PLATFORM_ID} from '@angular/core';
+import {Component, Inject, Input, OnDestroy, OnInit, Output, PLATFORM_ID, ViewChild} from '@angular/core';
 import {AbstractControl, FormControl, FormGroup, Validators} from '@angular/forms';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {AuthProcessService, AuthProvider} from '../../services/auth-process.service';
 import {isPlatformBrowser} from '@angular/common';
 import {Subscription} from 'rxjs/internal/Subscription';
+import {MatCheckbox, MatDialog, MatDialogRef} from '@angular/material';
+import {LegalityDialogComponent} from '../../..';
+import {LegalityDialogParams, LegalityDialogResult} from '../../interfaces/legality.dialog.intreface';
+import {p} from '@angular/core/src/render3';
 
 
 export const EMAIL_REGEX = new RegExp(['^(([^<>()[\\]\\\.,;:\\s@\"]+(\\.[^<>()\\[\\]\\\.,;:\\s@\"]+)*)',
@@ -27,6 +31,12 @@ export class AuthComponent implements OnInit, OnDestroy {
   @Input()
   guestEnabled = true;
 
+  @Input()
+  tosUrl: string;
+
+  @Input()
+  privacyPolicyUrl: string;
+
   @Output()
   onSuccess: any;
 
@@ -44,6 +54,7 @@ export class AuthComponent implements OnInit, OnDestroy {
   authenticationError = false;
 
   passReset = false;
+  dialogRef: MatDialogRef<LegalityDialogComponent>;
 
   authProviders = AuthProvider;
 
@@ -58,7 +69,8 @@ export class AuthComponent implements OnInit, OnDestroy {
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object,
               public auth: AngularFireAuth,
-              public authProcess: AuthProcessService) {
+              public authProcess: AuthProcessService,
+              public dialog: MatDialog) {
 
     this.onSuccess = authProcess.onSuccessEmitter;
     this.onError = authProcess.onErrorEmitter;
@@ -79,10 +91,43 @@ export class AuthComponent implements OnInit, OnDestroy {
     }
   }
 
-
   get color(): string {
     return this.authenticationError ? 'warn' : 'primary';
   }
+
+  public openLegalityDialog(authProvider?: AuthProvider) {
+    if (this.tosUrl || this.privacyPolicyUrl) {
+      const params: LegalityDialogParams = {
+        tosUrl: this.tosUrl,
+        privacyPolicyUrl: this.privacyPolicyUrl = 'test',
+        authProvider: authProvider
+      };
+
+      this.dialogRef = this.dialog.open(LegalityDialogComponent, {data: params});
+      this.dialogRef.afterClosed().subscribe((result: LegalityDialogResult) => {
+        console.log('this.dialogRef.afterClosed(): ', result);
+        this._afterSignUpMiddleware(result.authProvider);
+        // this.lastAfterClosedResult = result;
+        this.dialogRef = null;
+      });
+    } else {
+      this._afterSignUpMiddleware(authProvider);
+    }
+  }
+
+  public async signUp() {
+    return await this.authProcess.signUp
+    (
+      this.signUpFormGroup.value.name,
+      this.signUpFormGroup.value.email,
+      this.signUpFormGroup.value.password
+    );
+  }
+
+  public async signUpAnonymously() {
+    return await this.authProcess.signInWith(this.authProvider.ANONYMOUS);
+  }
+
 
   public resetPassword() {
     console.log('PasswordResetEmail sent');
@@ -135,5 +180,12 @@ export class AuthComponent implements OnInit, OnDestroy {
           Validators.pattern(EMAIL_REGEX)
         ])
     });
+  }
+
+  private _afterSignUpMiddleware(authProvider?: AuthProvider) {
+    if (authProvider === this.authProvider.ANONYMOUS) {
+      return this.signUpAnonymously();
+    }
+    return this.signUp();
   }
 }
