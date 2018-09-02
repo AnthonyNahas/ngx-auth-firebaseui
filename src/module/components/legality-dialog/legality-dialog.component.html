@@ -24,8 +24,12 @@
 </mat-dialog-content>
 
 <mat-dialog-actions>
-  <button mat-raised-button matDialogClose color="warn">Decline</button>
-  <button mat-raised-button
+  <button id="decline-action"
+          mat-raised-button
+          matDialogClose
+          color="warn">Decline</button>
+  <button id="confirm-action"
+          mat-raised-button
           color="primary"
           [disabled]="disableConfirmActionButton"
           (click)="closeDialog()">Confirm

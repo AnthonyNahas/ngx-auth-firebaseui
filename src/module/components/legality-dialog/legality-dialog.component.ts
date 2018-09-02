@@ -11,7 +11,7 @@ export class LegalityDialogComponent {
 
   checkTOS: boolean;
   checkPrivacyPolicy: boolean;
-  private _disableConfirmActionButton: boolean;
+  private _disableConfirmActionButton = false;
 
   constructor(public dialogRef: MatDialogRef<LegalityDialogComponent>,
               @Inject(MAT_DIALOG_DATA) public data: LegalityDialogParams) {

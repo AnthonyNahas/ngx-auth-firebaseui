@@ -6,10 +6,13 @@ import {HttpClientTestingModule} from '@angular/common/http/testing';
 import {MatButtonModule, MatIconModule, MatSnackBarModule} from '@angular/material';
 import {AuthProvidersComponent, Layout} from './auth.providers.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
-import {AuthProcessService, FirestoreSyncService} from '../../..';
+import {AuthProvider, AuthProcessService} from '../../services/auth-process.service';
+import {FirestoreSyncService} from '../../services/firestore-sync.service';
 import {AngularFireModule} from 'angularfire2';
 import {BehaviorSubject} from 'rxjs/internal/BehaviorSubject';
-import {AuthProvider} from '../../services/auth-process.service';
+import {AngularFirestore} from 'angularfire2/firestore';
+import {AngularFireAuth} from 'angularfire2/auth';
+import {NgxAuthFirebaseUIConfigToken} from '../../ngx-auth-firebase-u-i.module';
 
 describe('AuthProvidersComponent', function () {
   let de: DebugElement;
@@ -81,8 +84,9 @@ describe('AuthProvidersComponent', function () {
         AuthProcessService,
         FirestoreSyncService,
         AngularFireModule,
-        // {provide: AngularFirestore, useValue: FirestoreStub},
-        // {provide: AngularFireAuth, useValue: angularFireAuthStub}
+        {provide: AngularFirestore, useValue: FirestoreStub},
+        {provide: AngularFireAuth, useValue: angularFireAuthStub},
+        {provide: NgxAuthFirebaseUIConfigToken, useValue: NgxAuthFirebaseUIConfigToken}
       ]
     });
 
