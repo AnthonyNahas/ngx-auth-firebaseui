@@ -20,6 +20,7 @@
             <input matInput
                    [readonly]="passReset"
                    formControlName="email"
+                   title="Reset e-mail address to password"
                    required>
             <mat-icon matSuffix [color]="color">email</mat-icon>
             <mat-error *ngIf="resetPasswordEmailFormControl.hasError('required')">
@@ -136,13 +137,11 @@
           (signUpFormGroup.value.name,signUpFormGroup.value.email,signUpFormGroup.value.password)">
             <div fxLayout="column" fxLayoutAlign="center">
               <!--name-->
-              <mat-form-field appearance="outline" label="Name">
+              <mat-form-field appearance="outline">
                 <!--labels will work only with @angular/material@6.2.0 -->
                 <mat-label>Name</mat-label>
                 <input matInput
-                       label="Name"
                        placeholder="Name"
-                       title="Name"
                        minlength="2"
                        maxlength="30"
                        [formControl]="sigUpNameFormControl"

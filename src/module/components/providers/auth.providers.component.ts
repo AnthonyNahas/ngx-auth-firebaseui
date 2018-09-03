@@ -1,7 +1,7 @@
 import {Component, Input} from '@angular/core';
-import {AuthProcessService, AuthProvider} from '../../services/auth-process.service';
 import {DomSanitizer} from '@angular/platform-browser';
 import {MatIconRegistry} from '@angular/material';
+import {AuthProcessService, AuthProvider} from '../../..';
 
 export enum Theme {
   DEFAULT = 'default',
@@ -22,7 +22,6 @@ export enum Layout {
   templateUrl: 'auth.providers.component.html',
   styleUrls: ['auth.providers.component.scss']
 })
-
 export class AuthProvidersComponent {
 
   @Input()
