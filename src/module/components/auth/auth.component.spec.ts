@@ -26,7 +26,6 @@ import {AuthComponent} from './auth.component';
 import {AuthProcessService} from '../../services/auth-process.service';
 import {FirestoreSyncService} from '../../services/firestore-sync.service';
 import {NgxAuthFirebaseUIConfigToken} from '../../../module/ngx-auth-firebase-u-i.module';
-import {AuthProvidersComponent} from '../providers/auth.providers.component';
 import {EmailConfirmationComponent} from '../email-confirmation/email-confirmation.component';
 
 describe('MatCardTeamMemberComponent', function () {
