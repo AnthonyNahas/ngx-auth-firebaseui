@@ -5,22 +5,25 @@ dist: trusty
 addons:
   apt:
     sources:
-      - google-chrome
+    - google-chrome
     packages:
-      - google-chrome-stable
+    - google-chrome-stable
 
 language: node_js
 node_js:
-  - "8"
+- "8"
 
 before_script:
-  - export DISPLAY=:99.0
-  - sh -e /etc/init.d/xvfb start
-  - npm install --quiet -g gulp-cli
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
+- npm install --quiet -g gulp-cli
+- npm install codecov -g
 
 script: gulp test:ci
 
-after_success: gulp coveralls
+after_success:
+- gulp coveralls
+- codecov
 
 cache:
   yarn: true
