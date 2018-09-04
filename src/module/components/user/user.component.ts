@@ -6,6 +6,7 @@ import {AbstractControl, FormControl, FormGroup, Validators} from '@angular/form
 import {EMAIL_REGEX, PHONE_NUMBER_REGEX} from '../auth/auth.component';
 import {User} from 'firebase';
 import {FirestoreSyncService} from '../../services/firestore-sync.service';
+import {Appearance} from '../../enums/appearance.enum';
 
 @Component({
   selector: 'ngx-auth-firebaseui-user',
@@ -16,6 +17,9 @@ export class UserComponent implements OnInit {
 
   @Input()
   editMode: boolean;
+
+  @Input()
+  appearance: string | Appearance;
 
   @Output()
   onAccountDeleted: EventEmitter<void> = new EventEmitter();

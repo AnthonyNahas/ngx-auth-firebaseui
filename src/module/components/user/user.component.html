@@ -44,7 +44,7 @@
           </div>
 
           <!--name-->
-          <mat-form-field class="full-width" appearance="outline">
+          <mat-form-field class="full-width" [appearance]="appearance">
             <mat-label>Name</mat-label>
             <input matInput
                    placeholder="Name"
@@ -60,7 +60,7 @@
           </mat-form-field>
 
           <!--email-->
-          <mat-form-field class="full-width" appearance="outline">
+          <mat-form-field class="full-width" [appearance]="appearance">
             <mat-label>E-mail</mat-label>
             <input matInput
                    placeholder="E-mail"
@@ -76,7 +76,7 @@
           </mat-form-field>
 
           <!--phone number-->
-          <mat-form-field class="full-width" appearance="outline">
+          <mat-form-field class="full-width" [appearance]="appearance">
             <mat-label>Phone number</mat-label>
             <input matInput
                    type="number"
@@ -116,7 +116,7 @@
       </div>
 
       <!--name-->
-      <mat-form-field class="full-width" appearance="outline">
+      <mat-form-field class="full-width" [appearance]="appearance">
         <mat-label>Name</mat-label>
         <input matInput
                placeholder="Name"
@@ -126,7 +126,7 @@
       </mat-form-field>
 
       <!--email-->
-      <mat-form-field class="full-width" appearance="outline">
+      <mat-form-field class="full-width" [appearance]="appearance">
         <mat-label>E-mail</mat-label>
         <input matInput
                placeholder="E-mail" [value]="user.email"
@@ -135,7 +135,7 @@
       </mat-form-field>
 
       <!--phone number-->
-      <mat-form-field class="full-width" appearance="outline">
+      <mat-form-field class="full-width" [appearance]="appearance">
         <mat-label>Phone number</mat-label>
         <input matInput
                placeholder="Phone number"

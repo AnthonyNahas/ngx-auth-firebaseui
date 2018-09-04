@@ -15,7 +15,7 @@
         </mat-card-header>
 
         <mat-card-content>
-          <mat-form-field class="full-width" appearance="outline">
+          <mat-form-field class="full-width" [appearance]="appearance">
             <mat-label>Reset e-mail address to password</mat-label>
             <input matInput
                    [readonly]="passReset"
@@ -59,7 +59,7 @@
               authProcess.signInWith
               (authProviders.EmailAndPassword,signInFormGroup.value.email,signInFormGroup.value.password)">
           <div fxLayout="column" fxLayoutAlign="center">
-            <mat-form-field appearance="outline">
+            <mat-form-field [appearance]="appearance">
               <mat-label>E-mail</mat-label>
               <input matInput
                      placeholder="E-mail"
@@ -74,7 +74,7 @@
               </mat-error>
             </mat-form-field>
 
-            <mat-form-field appearance="outline">
+            <mat-form-field [appearance]="appearance">
               <mat-label>Password</mat-label>
               <input matInput
                      type="password"
@@ -137,7 +137,7 @@
           (signUpFormGroup.value.name,signUpFormGroup.value.email,signUpFormGroup.value.password)">
             <div fxLayout="column" fxLayoutAlign="center">
               <!--name-->
-              <mat-form-field appearance="outline">
+              <mat-form-field [appearance]="appearance">
                 <!--labels will work only with @angular/material@6.2.0 -->
                 <mat-label>Name</mat-label>
                 <input matInput
@@ -162,7 +162,7 @@
               </mat-form-field>
 
               <!--email-->
-              <mat-form-field appearance="outline">
+              <mat-form-field [appearance]="appearance">
                 <mat-label>E-mail</mat-label>
                 <input matInput
                        placeholder="E-mail"
@@ -180,7 +180,7 @@
               <!--password-->
               <div fxLayout="column">
 
-                <mat-form-field appearance="outline">
+                <mat-form-field [appearance]="appearance">
                   <mat-label>Password</mat-label>
                   <input matInput
                          type="password"

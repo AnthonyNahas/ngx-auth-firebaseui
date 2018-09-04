@@ -1,13 +1,14 @@
-import {Component, Inject, Input, OnDestroy, OnInit, Output, PLATFORM_ID, ViewChild} from '@angular/core';
+import {Component, Inject, Input, OnDestroy, OnInit, Output, PLATFORM_ID} from '@angular/core';
 import {AbstractControl, FormControl, FormGroup, Validators} from '@angular/forms';
+import {MatDialog, MatDialogRef} from '@angular/material';
 import {AngularFireAuth} from 'angularfire2/auth';
-import {AuthProcessService, AuthProvider} from '../../services/auth-process.service';
 import {isPlatformBrowser} from '@angular/common';
 import {Subscription} from 'rxjs/internal/Subscription';
-import {MatCheckbox, MatDialog, MatDialogRef} from '@angular/material';
-import {LegalityDialogComponent} from '../../..';
+
+import {Appearance} from '../../enums/appearance.enum';
+import {AuthProcessService, AuthProvider} from '../../services/auth-process.service';
+import {LegalityDialogComponent} from '../../components/legality-dialog/legality-dialog.component';
 import {LegalityDialogParams, LegalityDialogResult} from '../../interfaces/legality.dialog.intreface';
-import {p} from '@angular/core/src/render3';
 
 
 export const EMAIL_REGEX = new RegExp(['^(([^<>()[\\]\\\.,;:\\s@\"]+(\\.[^<>()\\[\\]\\\.,;:\\s@\"]+)*)',
@@ -27,6 +28,9 @@ export class AuthComponent implements OnInit, OnDestroy {
 
   @Input()
   providers: string[] | string = AuthProvider.ALL; //  google, facebook, twitter, github as array or all as one single string
+
+  @Input()
+  appearance: string | Appearance = Appearance.STANDARD;
 
   @Input()
   guestEnabled = true;
