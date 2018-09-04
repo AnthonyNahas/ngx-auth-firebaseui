@@ -5,6 +5,9 @@ $github: #000000;
 
 :host {
   display: block;
+  .mat-icon {
+    vertical-align: inherit;
+  }
 }
 
 .space-full-xs {
