@@ -8,7 +8,7 @@
     <!--card header-->
     <mat-card-header fxLayout="column" fxLayoutAlign="center center">
 
-      <img mat-card-avatar [src]="authProcess.getUserPhotoUrl()">
+      <img mat-card-avatar [src]="authProcess?.getUserPhotoUrl()">
 
       <div *ngIf="user.emailVerified; then emailVerified else emailNotVerified"></div>
       <ng-template #emailVerified>

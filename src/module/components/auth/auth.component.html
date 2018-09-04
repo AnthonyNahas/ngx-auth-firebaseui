@@ -148,7 +148,7 @@
                        required>
                 <mat-icon matSuffix [color]="color">person</mat-icon>
                 <mat-hint align="end" aria-live="polite">
-                  {{signUpFormGroup.value.name.length}} / 25
+                  {{signUpFormGroup.value.name?.length}} / 25
                 </mat-hint>
                 <mat-error *ngIf="sigUpNameFormControl.hasError('required')">
                   Name is required
@@ -191,7 +191,7 @@
                   <mat-icon matSuffix [color]="color">lock</mat-icon>
 
                   <mat-hint align="end" aria-live="polite">
-                    {{signUpFormGroup.value.password.length}} / 25
+                    {{signUpFormGroup.value.password?.length}} / 25
                   </mat-hint>
 
                   <mat-error *ngIf="sigUpPasswordFormControl.hasError('required')" class="cut-text">

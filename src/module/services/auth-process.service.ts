@@ -177,7 +177,9 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
 
     const user: firebase.User | null = this.auth.auth.currentUser;
 
-    if (user.photoURL) {
+    if (!user) {
+      return;
+    } else if (user.photoURL) {
       return user.photoURL;
     } else if (user.emailVerified) {
       return this.getPhotoPath(Accounts.CHECK);
@@ -197,8 +199,6 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
   }
 
   async handleSuccess(userCredential: UserCredential) {
-    console.log('sign in result = ', userCredential);
-
     await this._fireStoreService.updateUserData(this.parseUserInfo(userCredential.user));
 
     if (this.config.toastMessageOnAuthSuccess) {

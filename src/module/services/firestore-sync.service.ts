@@ -34,7 +34,6 @@ export class FirestoreSyncService {
 
 
   public updateUserData(user: UserInfo): Promise<any> {
-    console.log('on updateUserData for the user -> ', user);
     // Sets user$ data to firestore on login
     const userRef: AngularFirestoreDocument<UserInfo> = this.getUserDocRefByUID(user.uid);
     const data: UserInfo = {
