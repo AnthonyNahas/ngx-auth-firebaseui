@@ -243,7 +243,8 @@
 
       <!--confirm template-->
       <ng-template #confirm>
-        <ngx-auth-firebaseui-email-confirmation [email]="authProcess.emailToConfirm">
+        <ngx-auth-firebaseui-email-confirmation [email]="authProcess.emailToConfirm"
+                                                [goBackURL]="goBackURL">
         </ngx-auth-firebaseui-email-confirmation>
       </ng-template>
 

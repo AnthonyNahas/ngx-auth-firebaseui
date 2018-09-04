@@ -10,10 +10,12 @@
                    "Confirm my e-mail" to confirm your e-mail address.</p>
   </div>
 </mat-card-content>
-<mat-card-actions fxLayoutAlign="center center">
-  <button mat-button
-          color="primary"
-          routerLink="/">
+
+<mat-card-actions *ngIf="goBackURL"
+                  fxLayoutAlign="center center">
+  <a mat-button
+     color="primary"
+     [href]="goBackURL">
     Go back to the sign up page
-  </button>
+  </a>
 </mat-card-actions>

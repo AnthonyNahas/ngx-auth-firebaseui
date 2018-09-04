@@ -41,6 +41,9 @@ export class AuthComponent implements OnInit, OnDestroy {
   @Input()
   privacyPolicyUrl: string;
 
+  @Input()
+  goBackURL: string;
+
   @Output()
   onSuccess: any;
 
