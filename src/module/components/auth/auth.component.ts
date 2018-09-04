@@ -110,12 +110,12 @@ export class AuthComponent implements OnInit, OnDestroy {
       this.dialogRef = this.dialog.open(LegalityDialogComponent, {data: params});
       this.dialogRef.afterClosed().subscribe((result: LegalityDialogResult) => {
         console.log('this.dialogRef.afterClosed(): ', result);
-        this._afterSignUpMiddleware(result.authProvider);
+        this._afterSignUpMiddleware(result.authProvider).then(() => this.signUpFormGroup.reset());
         // this.lastAfterClosedResult = result;
         this.dialogRef = null;
       });
     } else {
-      this._afterSignUpMiddleware(authProvider);
+      this._afterSignUpMiddleware(authProvider).then(() => this.signUpFormGroup.reset());
     }
   }
 
