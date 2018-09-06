@@ -4,7 +4,15 @@
     "outDir": "../out-tsc/app",
     "baseUrl": "./",
     "module": "commonjs",
-    "types": []
+    "types": [],
+    "paths": {
+      "@angular/*": [
+        "../node_modules/@angular/*"
+      ],
+      "@angular-material-extensions/*": [
+        "../node_modules/@angular-material-extensions/*"
+      ]
+    }
   },
   "exclude": [
     "testing/*",
