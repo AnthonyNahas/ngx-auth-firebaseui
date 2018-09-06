@@ -1,12 +1,11 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {AngularFireAuth} from 'angularfire2/auth';
-import {MatSnackBar} from '@angular/material';
+import {MatFormFieldAppearance, MatSnackBar} from '@angular/material';
 import {AuthProcessService} from '../../services/auth-process.service';
 import {AbstractControl, FormControl, FormGroup, Validators} from '@angular/forms';
 import {EMAIL_REGEX, PHONE_NUMBER_REGEX} from '../auth/auth.component';
 import {User} from 'firebase';
 import {FirestoreSyncService} from '../../services/firestore-sync.service';
-import {Appearance} from '../../enums/appearance.enum';
 
 @Component({
   selector: 'ngx-auth-firebaseui-user',
@@ -19,7 +18,7 @@ export class UserComponent implements OnInit {
   editMode: boolean;
 
   @Input()
-  appearance: string | Appearance;
+  appearance: MatFormFieldAppearance;
 
   @Output()
   onAccountDeleted: EventEmitter<void> = new EventEmitter();

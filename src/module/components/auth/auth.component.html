@@ -1,4 +1,4 @@
-<mat-tab-group [color]="color">
+<mat-tab-group [color]="color" [selectedIndex]="tabIndex">
   <!--Reset password tab-->
   <mat-tab *ngIf="passwordResetWished" label="Reset Password">
     <form [formGroup]="resetPasswordFormGroup" (ngSubmit)="resetPasswordFormGroup.valid && resetPassword()">

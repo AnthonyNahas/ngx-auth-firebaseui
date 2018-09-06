@@ -1,11 +1,10 @@
 import {Component, Inject, Input, OnDestroy, OnInit, Output, PLATFORM_ID} from '@angular/core';
 import {AbstractControl, FormControl, FormGroup, Validators} from '@angular/forms';
-import {MatDialog, MatDialogRef} from '@angular/material';
+import {MatDialog, MatDialogRef, MatFormFieldAppearance} from '@angular/material';
 import {AngularFireAuth} from 'angularfire2/auth';
 import {isPlatformBrowser} from '@angular/common';
 import {Subscription} from 'rxjs/internal/Subscription';
 
-import {Appearance} from '../../enums/appearance.enum';
 import {AuthProcessService, AuthProvider} from '../../services/auth-process.service';
 import {LegalityDialogComponent} from '../../components/legality-dialog/legality-dialog.component';
 import {LegalityDialogParams, LegalityDialogResult} from '../../interfaces/legality.dialog.intreface';
@@ -30,7 +29,10 @@ export class AuthComponent implements OnInit, OnDestroy {
   providers: string[] | string = AuthProvider.ALL; //  google, facebook, twitter, github as array or all as one single string
 
   @Input()
-  appearance: string | Appearance = Appearance.STANDARD;
+  appearance: MatFormFieldAppearance;
+
+  @Input()
+  tabIndex: number | null;
 
   @Input()
   guestEnabled = true;
@@ -106,15 +108,16 @@ export class AuthComponent implements OnInit, OnDestroy {
     if (this.tosUrl || this.privacyPolicyUrl) {
       const params: LegalityDialogParams = {
         tosUrl: this.tosUrl,
-        privacyPolicyUrl: this.privacyPolicyUrl = 'test',
+        privacyPolicyUrl: this.privacyPolicyUrl,
         authProvider: authProvider
       };
 
       this.dialogRef = this.dialog.open(LegalityDialogComponent, {data: params});
       this.dialogRef.afterClosed().subscribe((result: LegalityDialogResult) => {
         console.log('this.dialogRef.afterClosed(): ', result);
-        this._afterSignUpMiddleware(result.authProvider).then(() => this.signUpFormGroup.reset());
-        // this.lastAfterClosedResult = result;
+        if (result && result.checked) {
+          this._afterSignUpMiddleware(result.authProvider).then(() => this.signUpFormGroup.reset());
+        }
         this.dialogRef = null;
       });
     } else {
