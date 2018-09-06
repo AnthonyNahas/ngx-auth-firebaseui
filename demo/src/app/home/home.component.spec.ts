@@ -1,8 +1,7 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { DebugElement } from '@angular/core';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { HomeComponent } from './home.component';
-import {  LibModule  } from 'ngx-auth-firebaseui';
+import {HomeComponent} from './home.component';
+import {NgxAuthFirebaseUIModule} from 'ngx-auth-firebaseui';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -11,7 +10,7 @@ describe('HomeComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
-        LibModule.forRoot(),],
+        NgxAuthFirebaseUIModule.forRoot(null)],
       declarations: [HomeComponent]
     })
       .compileComponents()

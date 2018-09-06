@@ -1,19 +1,20 @@
 /* tslint:disable:no-unused-variable */
-import { Router } from '@angular/router';
-import { Component } from '@angular/core';
-import { TestBed, async } from '@angular/core/testing';
-import { AppComponent } from './app.component';
-import { FooterComponent } from './shared/footer/footer.component';
+import {Router} from '@angular/router';
+import {Component} from '@angular/core';
+import {async, TestBed} from '@angular/core/testing';
+import {AppComponent} from './app.component';
+import {FooterComponent} from './shared/footer/footer.component';
 
-import { RouterOutletStubComponent, RouterLinkStubDirective } from '../testing/router-stubs';
-import { Observable } from 'rxjs/Observable';
+import {RouterOutletStubComponent} from '../testing/router-stubs';
 import 'rxjs/add/observable/of';
+import {Observable, of} from 'rxjs';
 
-@Component({ selector: 'app-header', template: '' })
-class HeaderStubComponent { }
+@Component({selector: 'app-header', template: ''})
+class HeaderStubComponent {
+}
 
 class RouterStub {
-  events: Observable<Event> = Observable.of<Event>();
+  events: Observable<Event> = of<Event>();
 }
 
 describe('AppComponent', () => {
@@ -26,7 +27,7 @@ describe('AppComponent', () => {
         RouterOutletStubComponent
       ],
       providers: [
-        { provide: Router, useClass: RouterStub }
+        {provide: Router, useClass: RouterStub}
       ]
     });
   }));
