@@ -4,11 +4,11 @@ import {MatSnackBar} from '@angular/material';
 
 @Component({
   selector: 'app-example',
-  templateUrl: './example.component.html',
-  styleUrls: ['./example.component.scss'],
+  templateUrl: './examples.component.html',
+  styleUrls: ['./examples.component.scss'],
   encapsulation: ViewEncapsulation.None,
 })
-export class ExampleComponent implements OnInit {
+export class ExamplesComponent implements OnInit {
 
   providers = AuthProvider;
 
