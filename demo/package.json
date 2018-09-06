@@ -21,7 +21,7 @@
     "start": "ng serve",
     "serve:prod": "ng serve --prod",
     "serve:prerender": "cd dist/browser && http-server",
-    "serve:ssr": "node dist/server/main",
+    "serve:ssr": "node dist/server",
     "webpack:server": "webpack --config webpack.server.config.js --progress --colors"
   },
   "private": true,
