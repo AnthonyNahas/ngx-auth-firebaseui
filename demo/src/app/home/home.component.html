@@ -31,12 +31,12 @@
         <span class="demo-fill-remaining"></span>
       </mat-toolbar>
 
-      <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="40px">
+      <div fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="center">
         <!--Overview-->
-        <mat-card fxFlex="50" fxFlex.xs="80">
+        <mat-card fxFlexAlign.gt-xs="center">
           <div fxLayoutAlign="center center">
             <img alt="Ngx-auth-firebaseui Logo" mat-card-md-image style="height: auto"
-                 src="../assets/images/logo/ngx-auth-firebaseui-logo.png">
+                 src="assets/images/logo/ngx-auth-firebaseui-logo.png">
           </div>
           <mat-card-title>
             <mat-icon [color]="color">
@@ -47,12 +47,6 @@
           <mat-card-subtitle>
             <app-badges></app-badges>
           </mat-card-subtitle>
-          <mat-card-content>
-            <pre><code>{{element}}</code></pre>
-          </mat-card-content>
-        </mat-card>
-        <!--Attention-->
-        <mat-card fxFlex="50" fxFlex.xs="80">
           <mat-card-title>
             <mat-icon [color]="color">
               warning
@@ -80,7 +74,7 @@
         <mat-card fxFlex="50">
 
           <mat-toolbar>
-            ngx-auth-firebaseui v1.1.1
+            ngx-auth-firebaseui
             <span style="width: 100%"></span>
 
             <button mat-icon-button
@@ -268,14 +262,7 @@
           </mat-card>
         </div>
       </div>
-
     </div>
-
-
-    <section>
-      <disqus [identifier]="'wgSwpZG0RpW5'"></disqus>
-    </section>
-
 
   </div>
 </section>

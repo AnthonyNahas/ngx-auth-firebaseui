@@ -7,13 +7,12 @@ import {
   MatDividerModule,
   MatIconModule,
   MatInputModule,
-  MatSidenavModule, MatSnackBarModule,
-  MatStepperModule, MatTooltipModule
+  MatSidenavModule,
+  MatSnackBarModule,
+  MatStepperModule,
+  MatTooltipModule
 } from '@angular/material';
 import {AppSharedModule} from '../shared';
-import {DisqusModule} from 'ngx-disqus';
-import {NgxMaterialPagesModule} from 'ngx-material-pages';
-import {HighlightModule} from 'ngx-highlightjs';
 import {ClipboardModule} from 'ngx-clipboard';
 
 @NgModule({
