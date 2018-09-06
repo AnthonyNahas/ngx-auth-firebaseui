@@ -44,9 +44,6 @@ export {FirestoreSyncService} from './services/firestore-sync.service';
 // interfaces
 export {NgxAuthFirebaseUIConfig} from './interfaces/config.interface';
 
-// enum
-export {Appearance} from './enums/appearance.enum';
-
 export const NgxAuthFirebaseUIConfigToken = new InjectionToken<NgxAuthFirebaseUIConfig>('NgxAuthFirebaseUIConfig');
 
 @NgModule({
