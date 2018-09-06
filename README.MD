@@ -59,7 +59,6 @@ by starring :star: and sharing it :loudspeaker:
 - [Additional Requirements - material icons](#additional-requirements-material-icons)
 - [Additional Requirements - assets](#additional-requirements-assets)
 - [Run Demo App Locally](#run-demo-app-locally)
-- [Development](#development)
 - [Other Angular Libraries](#other-angular-libraries)
 - [Support](#support)
 - [License](#license)
@@ -161,8 +160,8 @@ by starring :star: and sharing it :loudspeaker:
 - [angular material - v6.x](https://www.npmjs.com/package/@angular/material)
 - [angular forms - v6.x](https://www.npmjs.com/package/@angular/forms)
 - [angular animations - v6.x](https://www.npmjs.com/package/@angular/animations)
-- [angular flex-layout v6.0.0-beta.15](https://www.npmjs.com/package/@angular/flex-layout)
-- [angularfire2 - v5.0.0-rc.10.0](https://www.npmjs.com/package/angularfire2)
+- [angular flex-layout v6.0.0-beta.18](https://www.npmjs.com/package/@angular/flex-layout)
+- [angularfire2 - v5.0.0-rc.12](https://www.npmjs.com/package/angularfire2)
 - [firebase - v5.x](https://www.npmjs.com/package/firebase)
 
 the full tutorial guide can be found [here](https://ngx-auth-firebaseui.firebaseapp.com/getting-started)
@@ -170,14 +169,8 @@ the full tutorial guide can be found [here](https://ngx-auth-firebaseui.firebase
 
 <a name="demo"/>
 
-##  [Demo](https://ngx-auth-firebaseui.firebaseapp.com/)
+##  [Demo](https://ngx-auth-firebaseui.firebaseapp.com/) | 
 
-- Try it out
-```js
-if(issues || feedback || you_need_more_features){
-    // send me an email -> to: anthony.na@hotmail.de
-}
-```
 
 <a name="features"/>
 
@@ -187,7 +180,6 @@ here are some features, the rest is coming :soon:
 take a look at live example with firestore's synchronization [here](FIRESTORE_SYNC.md) 
 
 ---
-
 
 <a name="examples"/>
 
@@ -501,11 +493,17 @@ class AppComponent {
 
 | option | bind  |  type  |   default    | description  |
 |:---------------------|:------:|:------:|:------------:|:-------------------------------------------------------------------------------------------------|
-| guestEnabled         | Input()  | boolean | `true` | whether the user can sign in and continue as guest
 | providers            | Input()  | string[] | ['all'] or [AuthProvider.All] | choose your favorite authentication provider: google | facebook | twitter | github
+| appearance           | Input()  | MatFormFieldAppearance | `standard` | the appearance of the mat-form-field #'legacy' | 'standard' | 'fill' | 'outline' 
+| tabIndex             | Input()  | number  | null; | `0` | the selected tab - either sign in or register
+| guestEnabled         | Input()  | boolean | `true` | whether the user can sign in and continue as guest
+| tosUrl               | Input()  | string  | - | the url of term of services
+| privacyPolicyUrl     | Input()  | string  | - | the url of the private privacy
 | onSuccess            | Output() | any     | - | this will be fired when an authentication process was success. The authenticated user is emitted!
 | onError              | Output() | any     | - | this event will be fired when an error occurred during the authentication process! An error message is emitted!
 
+
+PS: if either `tosUrl or `privacyPolicyUrl` are provided, the user will be asked to check and accepts tos and pp before registering a new account or sign in in anonymously
 
 ### How to disable users to sign in and continue as guest, use the `guestEnabled` input
 
@@ -687,8 +685,6 @@ Please make sur that the images will be hosted in the right place
 
 ## Run Demo App Locally
 
-![ngx-auth-firebaseui](https://firebasestorage.googleapis.com/v0/b/ngx-auth-firebaseui.appspot.com/o/0.3.3-alpha%2Fdemo_app.png?alt=media&token=e8b000ce-bbe7-40be-b877-ea562d08ba96)
-
 - [clone this repo](https://github.com/AnthonyNahas/ngx-auth-firebaseui.git) by running
 ```bash
 $ git clone https://github.com/AnthonyNahas/ngx-auth-firebaseui.git
@@ -718,16 +714,6 @@ or
 $ ng serve --open
 ```
 - the app is now hosted by `http://localhost:4200/`
-
-<a name="development"/>
-
-## Development
-
-To generate all `*.js`, `*.d.ts` and `*.metadata.json` files:
-
-```bash
-$ npm run build
-```
 
 
 ---
