@@ -53,7 +53,7 @@ export class AuthComponent implements OnInit, OnDestroy {
   onError: any;
 
   authProvider = AuthProvider;
-  passwordResetWished: any;
+  passwordResetWished: boolean;
 
   public signInFormGroup: FormGroup;
   public signUpFormGroup: FormGroup;
@@ -104,6 +104,11 @@ export class AuthComponent implements OnInit, OnDestroy {
     return this.authenticationError ? 'warn' : 'primary';
   }
 
+  public createForgotPasswordTab() {
+    this.passwordResetWished = true;
+    setTimeout(() => this.tabIndex = 0, 100);
+  }
+
   public openLegalityDialog(authProvider?: AuthProvider) {
     if (this.tosUrl || this.privacyPolicyUrl) {
       const params: LegalityDialogParams = {
@@ -140,7 +145,6 @@ export class AuthComponent implements OnInit, OnDestroy {
 
 
   public resetPassword() {
-    console.log('PasswordResetEmail sent');
     this.authProcess.resetPassword(this.resetPasswordEmailFormControl.value)
       .then(() => this.passReset = true);
   }
