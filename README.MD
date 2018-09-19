@@ -6,7 +6,9 @@
 
 [![npm version](https://badge.fury.io/js/ngx-auth-firebaseui.svg)](https://badge.fury.io/js/ngx-auth-firebaseui)
 [![npm](https://img.shields.io/badge/demo-online-ed1c46.svg)](https://ngx-auth-firebaseui.firebaseapp.com)
+[![codecov](https://codecov.io/gh/anthonynahas/ngx-auth-firebaseui/branch/master/graph/badge.svg)](https://codecov.io/gh/anthonynahas/ngx-auth-firebaseui)
 [![CircleCI branch](https://img.shields.io/circleci/project/github/AnthonyNahas/ngx-auth-firebaseui/master.svg?label=circleci)](https://circleci.com/gh/AnthonyNahas/ngx-auth-firebaseui)
+[![Build Status](https://travis-ci.org/AnthonyNahas/ngx-auth-firebaseui.svg?branch=master)](https://travis-ci.org/AnthonyNahas/ngx-auth-firebaseui)
 [![Join the chat at https://gitter.im/ngx-auth-firebaseui/Lobby](https://badges.gitter.im/ngx-auth-firebaseui/Lobby.svg)](https://gitter.im/ngx-auth-firebaseui/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![dependency Status](https://david-dm.org/anthonynahas/ngx-auth-firebaseui/status.svg)](https://david-dm.org/anthonynahas/ngx-auth-firebaseui)
 [![devDependency Status](https://david-dm.org/anthonynahas/ngx-auth-firebaseui/dev-status.svg?branch=master)](https://david-dm.org/anthonynahas/ngx-auth-firebaseui#info=devDependencies)
@@ -71,7 +73,7 @@ by starring :star: and sharing it :loudspeaker:
 | -----------------------------------------------|:-------------:|         :-------------------:  |
 | Sign Up                                        | :heavy_check_mark:    |  :heavy_check_mark:    |
 | Sign In                                        | :heavy_check_mark:    |  :heavy_check_mark:    |
-| Sign In Anonymously                            | :heavy_check_mark:    |  :x:                   |
+| Sign In Anonymously                            | :heavy_check_mark:    |  :heavy_check_mark:    |
 | Sign In with Google                            | :heavy_check_mark:    |  :heavy_check_mark:    |
 | Sign In with Facebook                          | :heavy_check_mark:    |  :heavy_check_mark:    |
 | Sign In with Twitter                           | :heavy_check_mark:    |  :heavy_check_mark:    |
@@ -96,8 +98,8 @@ by starring :star: and sharing it :loudspeaker:
 | Easy to integrate                              | :heavy_check_mark:    |  :x:                   |
 | Support Server Side Rendering                  | :heavy_check_mark:    |  :x:                   |
 | Support SPA without further config             | :heavy_check_mark:    |  :x:                   |
-| Support Safari private browsing                | :heavy_check_mark:    |  :x:                   |
-| AWESOME                                        | :heavy_check_mark:    |  :interrobang:                   |
+| Support Safari private browsing                | :heavy_check_mark:    |  :interrobang:         |
+| AWESOME                                        | :heavy_check_mark:    |  :interrobang:         |
 
 
 <a name="why-to-use-ngx-auth-firebaseui"/>
@@ -149,7 +151,8 @@ by starring :star: and sharing it :loudspeaker:
 - sending email verifications
 - delete user's account
 - edit user's profile like email, name, (profile picture :soon:) and phone number
-- firestore auto sync :fire:
+- firestore auto sync :fire:  
+- do not allow users to create new accounts before checking the terms of services and private policy - for mor info check this [here]()
 
 <a name="requirements"/>
 
@@ -175,7 +178,6 @@ the full tutorial guide can be found [here](https://ngx-auth-firebaseui.firebase
 <a name="features"/>
 
 ## [Features](https://ngx-auth-firebaseui.firebaseapp.com/features)
-here are some features, the rest is coming :soon:
 
 take a look at live example with firestore's synchronization [here](FIRESTORE_SYNC.md) 
 

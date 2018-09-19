@@ -567,6 +567,10 @@ gulp.task('build:demo', () => {
   return execDemoCmd(`build --preserve-symlinks --prod --aot --build-optimizer`, {cwd: `${config.demoDir}`});
 });
 
+gulp.task('build:demo:firebase', () => {
+  return execDemoCmd(`build --prod`, {cwd: `${config.demoDir}`});
+});
+
 gulp.task('serve:demo-ssr', ['build:demo'], () => {
   return execDemoCmd(`build --preserve-symlinks --prod --aot --build-optimizer --app ssr --output-hashing=none`, {cwd: `${config.demoDir}`})
     .then(exitCode => {
@@ -597,8 +601,16 @@ gulp.task('push:demo', () => {
   return execCmd('ngh', `--dir ${config.outputDemoDir} --message="chore(demo): :rocket: deploy new version"`);
 });
 
+gulp.task('push:demo:firebase', () => {
+  return execCmd('firebase', `deploy`, {cwd: `${config.demoDir}`}, `/${config.demoDir}`);
+});
+
 gulp.task('deploy:demo', (cb) => {
   runSequence('build:demo', 'push:demo', cb);
+});
+
+gulp.task('deploy:demo:firebase', (cb) => {
+  runSequence('build:demo:firebase', 'build:doc', 'push:demo:firebase', cb);
 });
 
 
@@ -730,7 +742,7 @@ gulp.task('release', (cb) => {
       'create-new-tag',
       'github-release',
       'npm-publish',
-      // 'deploy:demo',
+      'deploy:demo:firebase',
       (error) => {
         if (error) {
           gulpUtil.log(gulpUtil.colors.red(error.message));
