@@ -5,7 +5,9 @@
     "target": "es2015",
     "rootDir": "./",
     "baseUrl": "",
-    "types": [ "node"]
+    "types": [
+      "node"
+    ]
   },
   "files": [
     "./index.ts"
@@ -13,6 +15,8 @@
   "angularCompilerOptions": {
     "strictMetadataEmit": true,
     "skipTemplateCodegen": true,
+    "fullTemplateTypeCheck": false,
+    "strictInjectionParameters": false,
     "genDir": "../tmp/lib-gen-dir/",
     "flatModuleOutFile": "ngx-auth-firebaseui.js",
     "flatModuleId": "ngx-auth-firebaseui",

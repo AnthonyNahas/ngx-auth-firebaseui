@@ -12,6 +12,8 @@
   "angularCompilerOptions": {
     "strictMetadataEmit": true,
     "skipTemplateCodegen": true,
+    "fullTemplateTypeCheck": false,
+    "strictInjectionParameters": false,
     "genDir": "../tmp/lib-gen-dir/",
     "flatModuleOutFile": "ngx-auth-firebaseui.js",
     "flatModuleId": "ngx-auth-firebaseui",
