@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {AngularFireAuth} from 'angularfire2/auth';
+import {AngularFireAuth} from '@angular/fire/auth';
 import {MatFormFieldAppearance, MatSnackBar} from '@angular/material';
 import {AuthProcessService} from '../../services/auth-process.service';
 import {AbstractControl, FormControl, FormGroup, Validators} from '@angular/forms';

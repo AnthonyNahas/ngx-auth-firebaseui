@@ -377,11 +377,17 @@ gulp.task('rollup-bundle', (cb) => {
         // Angular dependencies
         '@angular/core': 'ng.core',
         '@angular/common': 'ng.common',
+        '@angular/common/http': 'ng.common,http',
+        '@angular/platform-browser': 'ng.platformBrowser',
+        '@angular/fire': 'ng.fire',
+        '@angular/fire/firestore': 'ng.fire.firestore',
+        '@angular/fire/auth': 'ng.fire.auth',
         '@angular/forms': 'ng.forms',
         '@angular/animations': 'ng.animations',
         '@angular/cdk': 'ng.cdk',
         '@angular/material': 'ng.material',
-        '@angular/flex-layout': 'ng.flex-layout',
+        '@angular/flex-layout': 'ng.flexLayout',
+        '@angular-material-extensions/password-strength"': 'angularMaterialExtensions.passwordStrength',
 
         // Rxjs dependencies
         'rxjs/Subject': 'Rx',
@@ -408,9 +414,8 @@ gulp.task('rollup-bundle', (cb) => {
         // Add any other dependency or peer dependency of your library here
         // This is required for UMD bundle users.
         // See https://github.com/tinesoft/generator-ngx-library/TROUBLESHOUTING.md if trouble
-        '@angular-material-extensions/password-strength"': _.camelCase('@angular-material-extensions/password-strength"'.replace('/', '.')),
-        'angularfire2': _.camelCase('angularfire2'.replace('/', '.')),
-        'firebase': _.camelCase('firebase'.replace('/', '.'))
+        'firebase': _.camelCase('firebase'.replace('/', '.')),
+        'firebase/app': _.camelCase('firebase/app'.replace('/', '.'))
 
 
       };

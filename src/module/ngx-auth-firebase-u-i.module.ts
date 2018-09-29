@@ -9,8 +9,8 @@ import {EmailConfirmationComponent} from './components/email-confirmation/email-
 import {defaultAuthFirebaseUIConfig, NgxAuthFirebaseUIConfig} from './interfaces/config.interface';
 import {FirestoreSyncService} from './services/firestore-sync.service';
 import {AuthProcessService} from './services/auth-process.service';
-import {FirebaseAppConfig, FirebaseOptionsToken, FirebaseNameOrConfigToken} from 'angularfire2';
-import {AngularFireAuthModule} from 'angularfire2/auth';
+import {FirebaseAppConfig, FirebaseOptionsToken, FirebaseNameOrConfigToken} from '@angular/fire';
+import {AngularFireAuthModule} from '@angular/fire/auth';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {
   MatButtonModule,
@@ -27,7 +27,7 @@ import {
   MatProgressBarModule,
   MatCheckboxModule
 } from '@angular/material';
-import {AngularFirestoreModule} from 'angularfire2/firestore';
+import {AngularFirestoreModule} from '@angular/fire/firestore';
 import {MatPasswordStrengthModule} from '@angular-material-extensions/password-strength';
 import {LegalityDialogComponent} from './components/legality-dialog/legality-dialog.component';
 

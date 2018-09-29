@@ -16,7 +16,7 @@
     "ng",
     "library",
     "angular",
-    "angularfire2",
+    "@angular/fire",
     "firebase",
     "firebaseui",
     "firebase auth",
@@ -54,10 +54,10 @@
     "@angular/cdk": "^6.4.7",
     "@angular/common": "^6.1.8",
     "@angular/core": "^6.1.8",
+    "@angular/fire": "^5.0.2",
     "@angular/flex-layout": "6.0.0-beta.18",
     "@angular/forms": "^6.1.8",
     "@angular/material": "^6.4.7",
-    "angularfire2": "5.0.0-rc.12",
     "firebase": "^5.5.1"
   },
   "devDependencies": {

@@ -14,8 +14,8 @@ import {
   MatTabsModule,
   MatTooltipModule, MatInputModule, MatRippleModule
 } from '@angular/material';
-import {AngularFireAuthModule} from 'angularfire2/auth';
-import {AngularFirestoreModule} from 'angularfire2/firestore';
+import {AngularFireAuthModule} from '@angular/fire/auth';
+import {AngularFirestoreModule} from '@angular/fire/firestore';
 import {BadgesComponent} from './badges/badges.component';
 import {NgxAuthFirebaseUIModule} from 'ngx-auth-firebaseui';
 import {HighlightModule} from 'ngx-highlightjs';

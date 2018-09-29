@@ -8,10 +8,10 @@ import {AuthProvidersComponent, Layout} from './auth.providers.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {AuthProvider, AuthProcessService} from '../../services/auth-process.service';
 import {FirestoreSyncService} from '../../services/firestore-sync.service';
-import {AngularFireModule} from 'angularfire2';
+import {AngularFireModule} from '@angular/fire';
 import {BehaviorSubject} from 'rxjs/internal/BehaviorSubject';
-import {AngularFirestore} from 'angularfire2/firestore';
-import {AngularFireAuth} from 'angularfire2/auth';
+import {AngularFirestore} from '@angular/fire/firestore';
+import {AngularFireAuth} from '@angular/fire/auth';
 import {NgxAuthFirebaseUIConfigToken} from '../../ngx-auth-firebase-u-i.module';
 
 describe('AuthProvidersComponent', function () {

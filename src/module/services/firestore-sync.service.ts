@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
-import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from 'angularfire2/firestore';
-import {QueryFn} from 'angularfire2/firestore/interfaces';
+import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from '@angular/fire/firestore';
+import {QueryFn} from '@angular/fire/firestore/interfaces';
 import {UserInfo} from 'firebase';
 
 export const collections = {

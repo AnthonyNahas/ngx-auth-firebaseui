@@ -152,7 +152,7 @@ by starring :star: and sharing it :loudspeaker:
 - delete user's account
 - edit user's profile like email, name, (profile picture :soon:) and phone number
 - firestore auto sync :fire:  
-- do not allow users to create new accounts before checking the terms of services and private policy - for mor info check this [here]()
+- do not allow users to create new accounts before checking the terms of services and private policy - for mor info check this [here](https://ngx-auth-firebaseui.firebaseapp.com/examples/tos)
 
 <a name="requirements"/>
 
@@ -164,7 +164,7 @@ by starring :star: and sharing it :loudspeaker:
 - [angular forms - v6.x](https://www.npmjs.com/package/@angular/forms)
 - [angular animations - v6.x](https://www.npmjs.com/package/@angular/animations)
 - [angular flex-layout v6.0.0-beta.18](https://www.npmjs.com/package/@angular/flex-layout)
-- [angularfire2 - v5.0.0-rc.12](https://www.npmjs.com/package/angularfire2)
+- [@angular/fire - v5.0.2](https://www.npmjs.com/package/@angular/fire)
 - [firebase - v5.x](https://www.npmjs.com/package/firebase)
 
 the full tutorial guide can be found [here](https://ngx-auth-firebaseui.firebaseapp.com/getting-started)
@@ -306,7 +306,7 @@ automatically change to `column`
     "@angular/flex-layout": "^6.0.0-beta.16",
     "@angular/forms": "^5.x",
     "@angular/material": "^5.x",
-    "angularfire2": "5.0.0-rc.10.0",
+    "@angular/fire": "5.0.0-rc.10.0",
     "firebase": "5.x",
   }
 ```
@@ -320,7 +320,7 @@ npm i -s @angular/material@6.2.1 @angular/cdk@6.2.1 @angular/flex-layout@6.0.0-b
 
 Firebase deps
 ```bash
-npm i -s firebase@5.0.4 angularfire2@5.0.0-rc.10.0
+npm i -s firebase@5.0.4 @angular/fire@5.0.0-rc.10.0
 ```
 
 #### NOTE:

@@ -1,6 +1,6 @@
 import {EventEmitter, Inject, Injectable} from '@angular/core';
 import {MatSnackBar} from '@angular/material';
-import {AngularFireAuth} from 'angularfire2/auth';
+import {AngularFireAuth} from '@angular/fire/auth';
 import {ISignInProcess, ISignUpProcess} from '../interfaces/main.interface';
 import {NgxAuthFirebaseUIConfig} from '../interfaces/config.interface';
 import {FirestoreSyncService} from './firestore-sync.service';

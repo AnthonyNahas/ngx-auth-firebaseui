@@ -14,7 +14,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {ClipboardModule} from 'ngx-clipboard';
 import {Angulartics2GoogleAnalytics} from 'angulartics2/ga';
 import {Angulartics2Module} from 'angulartics2';
-import {AngularFireModule} from 'angularfire2';
+import {AngularFireModule} from '@angular/fire';
 import {HighlightModule} from 'ngx-highlightjs';
 import {NgxAuthFirebaseUIModule} from 'ngx-auth-firebaseui';
 
