@@ -1,3 +1,13 @@
+<a name="2.0.1"></a>
+## [2.0.1](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v2.0.0...v2.0.1) (2018-09-29)
+
+
+### Bug Fixes
+
+* **package:** import of 'firebase/auth' has been added to create auth providers ([cdbe00a](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/cdbe00a))
+
+
+
 <a name="2.0.0"></a>
 # [2.0.0](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v1.2.0...v2.0.0) (2018-09-29)
 
