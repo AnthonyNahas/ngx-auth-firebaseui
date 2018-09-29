@@ -13,10 +13,10 @@ import {NgxAuthFirebaseUIConfigToken} from '../ngx-auth-firebase-u-i.module';
 
 import UserCredential = firebase.auth.UserCredential;
 
-export const facebookAuthProvider = new firebase.auth.FacebookAuthProvider;
+export const facebookAuthProvider = new firebase.auth.FacebookAuthProvider();
 export const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
-export const twitterAuthProvider = new firebase.auth.TwitterAuthProvider;
-export const githubAuthProvider = new firebase.auth.GithubAuthProvider;
+export const twitterAuthProvider = new firebase.auth.TwitterAuthProvider();
+export const githubAuthProvider = new firebase.auth.GithubAuthProvider();
 
 export enum AuthProvider {
   ALL = 'all',
