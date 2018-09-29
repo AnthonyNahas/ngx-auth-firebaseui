@@ -6,7 +6,7 @@ import {NgxAuthFirebaseUIConfig} from '../interfaces/config.interface';
 import {FirestoreSyncService} from './firestore-sync.service';
 import {Accounts} from '../enums';
 import * as firebase from 'firebase/app';
-// import 'firebase/auth';
+import 'firebase/auth';
 import {User, UserInfo} from 'firebase/app';
 import {NgxAuthFirebaseUIConfigToken} from '../ngx-auth-firebase-u-i.module';
 // import User = firebase.User;
