@@ -1,3 +1,25 @@
+<a name="2.0.0"></a>
+# [2.0.0](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v1.2.0...v2.0.0) (2018-09-29)
+
+
+### Bug Fixes
+
+* **package:** defining the auth providers in the authentication service ([11ae0b3](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/11ae0b3))
+* **package:** fixed the import of firebase and firebase/auth ([f151188](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/f151188))
+* **package:** fixed typeError: Cannot read property 'photoURL' of null [#116](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/116) ([d4cf1b0](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/d4cf1b0))
+* **package:** reset signup form group after signing up successfully [#118](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/118) ([6d25754](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/6d25754))
+* **package:** select the appropriate tab when forgot password action is requested [#121](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/121) ([f998cc4](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/f998cc4))
+* **package:** vertical alignment of the icon button of the providers fixed [#117](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/117) ([bb83b46](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/bb83b46))
+
+
+### Features
+
+* **package:** added new optional input to customize the appearance of the `mat-form-field` [#119](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/119) ([a83530c](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/a83530c))
+* **package:** added optional `goBackURL` input for `ngx-auth-firebaseui` ([74b504c](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/74b504c))
+* **package:** added tos and pp middleware as dialog for registration [#80](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/80) ([6768351](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/6768351))
+
+
+
 <a name="1.2.0"></a>
 # [1.2.0](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v1.1.1...v1.2.0) (2018-08-07)
 
