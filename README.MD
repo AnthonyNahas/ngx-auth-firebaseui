@@ -33,6 +33,16 @@ your users with your firebase project. NgxAuthFirebseUI is compatible with
 
 If you prefer to develop with bootstrap rather than with material design, please check this project [@firebaseui/ng-bootstrap](https://github.com/firebaseui/ng-bootstrap)
 
+## Migration from V1 to V2
+Since the first stable release of `angularfire2` has been published within the angular 
+organization, we replaced that module with `@angular/fire`
+
+Before updating `ngx-auth-firebaseui` to V2, please make sure that `angularifre2` has been replaced with `@angular/fire`
+--> 
+```bash
+npm un angularfire2 && npm i @angular/fire 
+```
+
 ## Built by and for developers :heart:
 Do you have any question or suggestion ? Please do not hesitate to contact us!
 Alternatively, provide a PR | open an appropriate issue [here](https://github.com/anthonynahas/ngx-auth-firebaseui/issues)
