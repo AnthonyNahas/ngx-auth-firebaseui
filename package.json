@@ -57,7 +57,7 @@
     "@angular/fire": "^5.0.2",
     "@angular/flex-layout": "6.0.0-beta.18",
     "@angular/forms": "^6.1.10",
-    "@angular/material": "^6.4.7",
+    "@angular/material": "^7.0.0",
     "firebase": "^5.5.4"
   },
   "devDependencies": {
