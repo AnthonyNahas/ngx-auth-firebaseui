@@ -27,7 +27,7 @@ import {NgxAuthFirebaseUIModule} from 'ngx-auth-firebaseui';
     // The application ID can be any identifier which is unique on
     // the page.
     BrowserModule.withServerTransition({appId: 'ngx-auth-firebaseui'}),
-    Angulartics2Module.forRoot([Angulartics2GoogleAnalytics]),
+    Angulartics2Module.forRoot(),
     ServiceWorkerModule.register('/ngsw-worker.js', {enabled: environment.production}),
     AngularFireModule.initializeApp({
       apiKey: 'AIzaSyASG7KxDO2z5AH9r0jlUmwiw68Ap8kG20c',
