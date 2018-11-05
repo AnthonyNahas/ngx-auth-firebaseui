@@ -19,5 +19,6 @@ export class MessagesComponent {
     this.snackBar.open(`${content} copied`, 'OK', {
       duration: 3000
     });
-
   }
+
+}
