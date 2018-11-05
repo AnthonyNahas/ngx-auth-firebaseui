@@ -1,4 +1,14 @@
-<a name="2.0.1"></a>
+# [2.1.0](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v2.0.1...v2.1.0) (2018-11-05)
+
+
+### Features
+
+* **demo:** updated dependencies of the demo app - angular v7 ([3f7f4e3](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/3f7f4e3))
+* **package:** added the ability to modify the snackbar messages in runtime ([d748ca8](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/d748ca8))
+* **package:** upgraded angular to v7 and ts v3.1.3 ([d0475a0](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/d0475a0))
+
+
+
 ## [2.0.1](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v2.0.0...v2.0.1) (2018-09-29)
 
 
@@ -8,7 +18,6 @@
 
 
 
-<a name="2.0.0"></a>
 # [2.0.0](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v1.2.0...v2.0.0) (2018-09-29)
 
 
@@ -30,7 +39,6 @@
 
 
 
-<a name="1.2.0"></a>
 # [1.2.0](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v1.1.1...v1.2.0) (2018-08-07)
 
 
@@ -48,7 +56,6 @@
 
 
 
-<a name="1.1.1"></a>
 ## [1.1.1](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v1.1.0...v1.1.1) (2018-06-15)
 
 
@@ -58,7 +65,6 @@
 
 
 
-<a name="1.1.0"></a>
 # [1.1.0](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v1.0.0...v1.1.0) (2018-06-11)
 
 
@@ -70,7 +76,6 @@
 
 
 
-<a name="1.0.0"></a>
 # [1.0.0](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v0.8.0...v1.0.0) (2018-06-01)
 
 
@@ -95,7 +100,6 @@
 
 
 
-<a name="0.8.0"></a>
 # [0.8.0](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v0.7.0...v0.8.0) (2018-05-23)
 
 
@@ -116,7 +120,6 @@
 
 
 
-<a name="0.7.0"></a>
 # [0.7.0](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v0.6.1...v0.7.0) (2018-04-29)
 
 
@@ -127,7 +130,6 @@
 
 
 
-<a name="0.6.1"></a>
 ## [0.6.1](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v0.6.0...v0.6.1) (2018-04-24)
 
 
@@ -137,12 +139,10 @@
 
 
 
-<a name="0.6.0"></a>
 # [0.6.0](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v0.5.7...v0.6.0) (2018-04-23)
 
 
 
-<a name="0.5.7"></a>
 ## [0.5.7](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v0.5.6...v0.5.7) (2018-04-22)
 
 
@@ -152,12 +152,10 @@
 
 
 
-<a name="0.5.6"></a>
 ## [0.5.6](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v0.5.5...v0.5.6) (2018-04-16)
 
 
 
-<a name="0.5.5"></a>
 ## [0.5.5](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v0.5.4...v0.5.5) (2018-04-15)
 
 
@@ -168,17 +166,14 @@
 
 
 
-<a name="0.5.4"></a>
 ## [0.5.4](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v0.5.3...v0.5.4) (2018-04-12)
 
 
 
-<a name="0.5.3"></a>
 ## [0.5.3](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v0.5.2...v0.5.3) (2018-04-11)
 
 
 
-<a name="0.5.2"></a>
 ## [0.5.2](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v0.5.1...v0.5.2) (2018-04-06)
 
 
@@ -188,7 +183,6 @@
 
 
 
-<a name="0.5.1"></a>
 ## [0.5.1](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v0.5.0...v0.5.1) (2018-04-04)
 
 
@@ -199,7 +193,6 @@
 
 
 
-<a name="0.5.0"></a>
 # [0.5.0](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/0.4.1-alpha...v0.5.0) (2018-04-03)
 
 
@@ -218,57 +211,46 @@
 
 
 
-<a name="0.4.1-alpha"></a>
 ## [0.4.1-alpha](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/0.4.0-alpha...0.4.1-alpha) (2018-04-02)
 
 
 
-<a name="0.4.0-alpha"></a>
 # [0.4.0-alpha](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/0.3.3-alpha...0.4.0-alpha) (2018-03-31)
 
 
 
-<a name="0.3.3-alpha"></a>
 ## [0.3.3-alpha](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/0.3.1-alpha...0.3.3-alpha) (2018-03-29)
 
 
 
-<a name="0.3.1-alpha"></a>
 ## [0.3.1-alpha](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/0.3.0-alpha...0.3.1-alpha) (2018-03-29)
 
 
 
-<a name="0.2.2-alpha"></a>
 ## [0.2.2-alpha](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/0.2.1-alpha...0.2.2-alpha) (2018-03-27)
 
 
 
-<a name="0.2.1-alpha"></a>
 ## [0.2.1-alpha](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v0.2.0-alpha...0.2.1-alpha) (2018-02-06)
 
 
 
-<a name="0.2.0-alpha"></a>
 # [0.2.0-alpha](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v0.1.3-alpha...v0.2.0-alpha) (2018-01-03)
 
 
 
-<a name="0.1.3-alpha"></a>
 ## [0.1.3-alpha](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v0.1.2...v0.1.3-alpha) (2018-01-01)
 
 
 
-<a name="0.1.2"></a>
 ## [0.1.2](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v0.1.1...v0.1.2) (2017-12-31)
 
 
 
-<a name="0.1.1"></a>
 ## [0.1.1](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/0.1.0...v0.1.1) (2017-12-31)
 
 
 
-<a name="0.1.0"></a>
 # 0.1.0 (2017-12-29)
 
 
