@@ -1,6 +1,6 @@
 import 'core-js/es7/reflect'; // needed for unit testing
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-import {CUSTOM_ELEMENTS_SCHEMA, DebugElement} from '@angular/core';
+import {CUSTOM_ELEMENTS_SCHEMA, DebugElement, SimpleChange} from '@angular/core';
 
 import {
   MatButtonModule,
@@ -28,10 +28,12 @@ import {FirestoreSyncService} from '../../services/firestore-sync.service';
 import {NgxAuthFirebaseUIConfigToken} from '../../../module/ngx-auth-firebase-u-i.module';
 import {EmailConfirmationComponent} from '../email-confirmation/email-confirmation.component';
 
-describe('MatCardTeamMemberComponent', function () {
+describe('AuthComponent', function () {
   let de: DebugElement;
-  let comp: AuthComponent;
+  let component: AuthComponent;
   let fixture: ComponentFixture<AuthComponent>;
+  let testBedService: AuthProcessService;
+  let componentService: AuthProcessService;
 
   const credentialsMock = {
     email: 'abc@123.com',
@@ -125,11 +127,62 @@ describe('MatCardTeamMemberComponent', function () {
       schemas: [CUSTOM_ELEMENTS_SCHEMA]
     }).compileComponents().then(() => {
       fixture = TestBed.createComponent(AuthComponent);
-      comp = fixture.componentInstance;
+      component = fixture.componentInstance;
+      testBedService = TestBed.get(AuthProcessService);
+
+      // AuthService provided to the TestBed
+      testBedService = TestBed.get(AuthProcessService);
+
+      // AuthService provided by Component, (should return MockAuthService)
+      componentService = fixture.debugElement.injector.get(AuthProcessService);
       fixture.detectChanges();
     });
   }));
 
-  it('should create components', () => expect(comp).toBeDefined());
+  it('should create components', () => expect(component).toBeDefined());
 
+  it('should not call updateAuthSnackbarMessages when the messages input not changed', () => {
+
+    console.log('component.authProcess', testBedService.messageOnAuthSuccess);
+
+    const updateAuthSnackbarMessagesSpy = jest.spyOn(component, 'updateAuthSnackbarMessages');
+
+    expect(component.messageOnAuthSuccess).toBeUndefined();
+    expect(component.messageOnAuthError).toBeUndefined();
+    expect(component.authProcess.messageOnAuthSuccess).toBeUndefined();
+    expect(component.authProcess.messageOnAuthError).toBeUndefined();
+
+    component.ngOnChanges({
+      appearance: new SimpleChange(null, 'outline', true),
+    });
+
+    expect(updateAuthSnackbarMessagesSpy).not.toHaveBeenCalled();
+    expect(component.authProcess.messageOnAuthSuccess).toBeUndefined();
+    expect(component.authProcess.messageOnAuthError).toBeUndefined();
+  });
+
+  it('should update the snackbar messages on component changes', () => {
+    const updateAuthSnackbarMessagesSpy = jest.spyOn(component, 'updateAuthSnackbarMessages');
+
+    expect(component.messageOnAuthSuccess).toBeUndefined();
+    expect(component.messageOnAuthError).toBeUndefined();
+    expect(component.authProcess.messageOnAuthSuccess).toBeUndefined();
+    expect(component.authProcess.messageOnAuthError).toBeUndefined();
+
+    expect(updateAuthSnackbarMessagesSpy).not.toHaveBeenCalled();
+
+    component.messageOnAuthSuccess = 'Here we go! The authentication was successful!';
+    component.messageOnAuthError = 'Oop! Something went wrong! Please retry again!';
+
+    component.ngOnChanges({
+      messageOnAuthSuccess: new SimpleChange(null, component.messageOnAuthSuccess, true),
+      messageOnAuthError: new SimpleChange(null, component.messageOnAuthError, true)
+    });
+
+    expect(updateAuthSnackbarMessagesSpy).toHaveBeenCalledTimes(1);
+    expect(component.authProcess.messageOnAuthSuccess).toBeDefined();
+    expect(component.authProcess.messageOnAuthSuccess).toEqual(component.messageOnAuthSuccess);
+    expect(component.authProcess.messageOnAuthError).toBeDefined();
+    expect(component.authProcess.messageOnAuthError).toEqual(component.messageOnAuthError);
+  });
 });
