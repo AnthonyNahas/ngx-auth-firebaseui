@@ -4,10 +4,40 @@
   </div>
 </div>
 
-<div class="container" fxLayoutAlign="center">
-  <ngx-auth-firebaseui
-    messageOnAuthSuccess="Here we go! The authentication was successful! "
-    messageOnAuthError="Oop! Something went wrong! Please retry again!">
-  </ngx-auth-firebaseui>
+
+<div class="container">
+
+  <div fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="center">
+
+    <mat-card fxFlexAlign.gt-xs="center">
+      <!--<mat-card-title>-->
+      <!--add a tos url-->
+      <!--</mat-card-title>-->
+      <mat-card-subtitle>
+        <div fxLayout="row" fxLayoutAlign="space-between">
+          <pre><code highlight [code]="example"></code></pre>
+          <button mat-icon-button
+                  ngxClipboard
+                  [cbContent]="example"
+                  matTooltip="copy"
+                  (click)="showCopyMessage(example)">
+            <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+          </button>
+        </div>
+      </mat-card-subtitle>
+      <mat-card-content>
+        <ngx-auth-firebaseui
+          messageOnAuthSuccess="Here we go! The authentication was successful! "
+          messageOnAuthError="Oop! Something went wrong! Please retry again!">
+        </ngx-auth-firebaseui>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
 </div>
+
+
+
+
+
 
