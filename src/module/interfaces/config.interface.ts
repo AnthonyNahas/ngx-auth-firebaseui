@@ -6,11 +6,11 @@
 import AuthProvider = firebase.auth.AuthProvider;
 
 export interface NgxAuthFirebaseUIConfig {
-  authNextURL?: string, // popup or redirect
-  tosUrl?: string, // term of services url
-  ppUrl?: string, // privacy policy url
-  authProviders?: Array<AuthProvider>,
-  languageCode?: string, // todo: 28.3.18
+  // authNextURL?: string, // popup or redirect
+  // tosUrl?: string, // term of services url
+  // ppUrl?: string, // privacy policy url
+  // authProviders?: Array<AuthProvider>,
+  // languageCode?: string, // todo: 28.3.18
   onlyEmailPasswordAuth?: boolean,
   toastMessageOnAuthSuccess?: boolean,
   toastMessageOnAuthError?: boolean
@@ -19,7 +19,7 @@ export interface NgxAuthFirebaseUIConfig {
 export const defaultAuthFirebaseUIConfig: NgxAuthFirebaseUIConfig = {
   // authMethod: 'redirect',
   // authProviders: [new GoogleAuthProvider(), new FacebookAuthProvider(), new TwitterAuthProvider(), new GithubAuthProvider()],
-  // onlyEmailPasswordAuth: false,
+  onlyEmailPasswordAuth: false,
   toastMessageOnAuthSuccess: true,
   toastMessageOnAuthError: true
 };

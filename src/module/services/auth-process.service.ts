@@ -34,9 +34,13 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
 
   onSuccessEmitter: EventEmitter<any> = new EventEmitter<any>();
   onErrorEmitter: EventEmitter<any> = new EventEmitter<any>();
+
   isLoading: boolean;
   emailConfirmationSent: boolean;
+
   emailToConfirm: string;
+  messageOnAuthSuccess: string;
+  messageOnAuthError: string;
 
   constructor(@Inject(NgxAuthFirebaseUIConfigToken)
               public config: NgxAuthFirebaseUIConfig,
@@ -205,7 +209,8 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
     await this._fireStoreService.updateUserData(this.parseUserInfo(userCredential.user));
 
     if (this.config.toastMessageOnAuthSuccess) {
-      this._snackBar.open(`Hallo ${userCredential.user.displayName ? userCredential.user.displayName : ''}!`,
+      this._snackBar.open(this.messageOnAuthSuccess ? this.messageOnAuthSuccess :
+        `Hallo ${userCredential.user.displayName ? userCredential.user.displayName : ''}!`,
         'OK', {duration: 5000});
     }
     this.onSuccessEmitter.next(userCredential.user);
@@ -213,7 +218,8 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
 
   handleError(error: any) {
     if (this.config.toastMessageOnAuthError) {
-      this._snackBar.open(error.message, 'OK', {duration: 5000});
+      this._snackBar.open(this.messageOnAuthError ? this.messageOnAuthError :
+        error.message, 'OK', {duration: 5000});
     }
     console.error(error);
     this.onErrorEmitter.next(error);

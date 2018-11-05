@@ -1,4 +1,4 @@
-import {Component, Inject, Input, OnDestroy, OnInit, Output, PLATFORM_ID} from '@angular/core';
+import {Component, Inject, Input, OnChanges, OnDestroy, OnInit, Output, PLATFORM_ID, SimpleChanges} from '@angular/core';
 import {AbstractControl, FormControl, FormGroup, Validators} from '@angular/forms';
 import {MatDialog, MatDialogRef, MatFormFieldAppearance} from '@angular/material';
 import {AngularFireAuth} from '@angular/fire/auth';
@@ -23,7 +23,7 @@ export const PHONE_NUMBER_REGEX = new RegExp(/^\+(?:[0-9] ?){6,14}[0-9]$/);
   styleUrls: ['auth.component.scss']
 })
 
-export class AuthComponent implements OnInit, OnDestroy {
+export class AuthComponent implements OnInit, OnChanges, OnDestroy {
 
   @Input()
   providers: string[] | string = AuthProvider.ALL; //  google, facebook, twitter, github as array or all as one single string
@@ -45,6 +45,12 @@ export class AuthComponent implements OnInit, OnDestroy {
 
   @Input()
   goBackURL: string;
+
+  @Input()
+  messageOnAuthSuccess: string;
+
+  @Input()
+  messageOnAuthError: string;
 
   @Output()
   onSuccess: any;
@@ -89,9 +95,17 @@ export class AuthComponent implements OnInit, OnDestroy {
     if (isPlatformBrowser(this.platformId)) {
       this.onErrorSubscription = this.onError.subscribe(() => this.authenticationError = true);
     }
+    this.updateAuthSnackbarMessages();
+    // auth form's initialization
     this._initSignInFormGroupBuilder();
     this._initSignUpFormGroupBuilder();
     this._initResetPasswordFormGroupBuilder();
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes.messageOnAuthSuccess || changes.messageOnAuthError) {
+      this.updateAuthSnackbarMessages();
+    }
   }
 
   public ngOnDestroy(): void {
@@ -102,6 +116,11 @@ export class AuthComponent implements OnInit, OnDestroy {
 
   get color(): string {
     return this.authenticationError ? 'warn' : 'primary';
+  }
+
+  public updateAuthSnackbarMessages(): void {
+    this.authProcess.messageOnAuthSuccess = this.messageOnAuthSuccess;
+    this.authProcess.messageOnAuthError = this.messageOnAuthError;
   }
 
   public createForgotPasswordTab() {
@@ -202,4 +221,5 @@ export class AuthComponent implements OnInit, OnDestroy {
     }
     return this.signUp();
   }
+
 }
