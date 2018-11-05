@@ -6,10 +6,12 @@ import {GuestComponent} from './guest/guest.component';
 import {AppearanceComponent} from './appearance/appearance.component';
 import {TosComponent} from './tos/tos.component';
 import {TabIndexComponent} from './tab-index/tab-index.component';
+import {MessagesComponent} from './messages/messages.component';
 
 @NgModule({
   imports: [RouterModule.forChild([
     {path: '', component: ExamplesComponent},
+    {path: 'messages', component: MessagesComponent},
     {path: 'providers', component: ProvidersComponent},
     {path: 'guest', component: GuestComponent},
     {path: 'appearance', component: AppearanceComponent},

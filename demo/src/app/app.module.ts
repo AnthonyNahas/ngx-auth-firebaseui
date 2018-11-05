@@ -46,8 +46,8 @@ import {NgxAuthFirebaseUIModule} from 'ngx-auth-firebaseui';
         messagingSenderId: '520699629648'
       }, null,
       {
-        toastMessageOnAuthSuccess: false,
-        toastMessageOnAuthError: false
+        toastMessageOnAuthSuccess: true,
+        toastMessageOnAuthError: true
       }),
     HighlightModule.forRoot(),
     NgxMaterialPagesModule.forRoot(),
