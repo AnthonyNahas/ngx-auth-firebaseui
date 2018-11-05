@@ -65,6 +65,7 @@ by starring :star: and sharing it :loudspeaker:
 - [Peer Dependencies](#peerDependencies)
 - [Dependencies](#dependencies)
 - [Installation](#installation)
+- [Configuration](#configuration)
 - [Usage](#usage)
 - [API](#api)
 - [Additional Requirements - material (Include a theme)](#additional-requirements-material-theme)
@@ -101,7 +102,7 @@ by starring :star: and sharing it :loudspeaker:
 | Edit user's phone number (incl. validation)    | :heavy_check_mark:    |  :x:                   |
 | Configure your favorite auth provider in runtime| :heavy_check_mark:   |  :x:                   |
 | Sync user'auth with Firestore  [read more](FIRESTORE_SYNC.md)   | :heavy_check_mark:    |  :x:  |
-| Angular v2-6 friendly                          | :heavy_check_mark:    |  :x:                   |
+| Angular v2-7 friendly                          | :heavy_check_mark:    |  :x:                   |
 | Internationalization (i18n)                    | :soon:                |  :heavy_check_mark:    |
 | Ionic/cordova support                          | :soon:  @firebaseui/ionic-auth |  :x: |
 | Real time form validation                      | :heavy_check_mark:    |  :x:                   |
@@ -169,12 +170,12 @@ by starring :star: and sharing it :loudspeaker:
 ### Requirements:
 - [angular material theme](https://material.angular.io/guide/getting-started#step-4-include-a-theme)
 - [angular material icons](https://material.angular.io/guide/getting-started#step-6-optional-add-material-icons)
-- [angular cdk - v6.x ](https://www.npmjs.com/package/@angular/cdk)
-- [angular material - v6.x](https://www.npmjs.com/package/@angular/material)
-- [angular forms - v6.x](https://www.npmjs.com/package/@angular/forms)
-- [angular animations - v6.x](https://www.npmjs.com/package/@angular/animations)
-- [angular flex-layout v6.0.0-beta.18](https://www.npmjs.com/package/@angular/flex-layout)
-- [@angular/fire - v5.0.2](https://www.npmjs.com/package/@angular/fire)
+- [angular cdk - v7.x](https://www.npmjs.com/package/@angular/cdk)
+- [angular material - v7.x](https://www.npmjs.com/package/@angular/material)
+- [angular forms - v7.x](https://www.npmjs.com/package/@angular/forms)
+- [angular animations - v7.x](https://www.npmjs.com/package/@angular/animations)
+- [angular flex-layout v7.0.0-beta.19](https://www.npmjs.com/package/@angular/flex-layout)
+- [@angular/fire - v5.x](https://www.npmjs.com/package/@angular/fire)
 - [firebase - v5.x](https://www.npmjs.com/package/firebase)
 
 the full tutorial guide can be found [here](https://ngx-auth-firebaseui.firebaseapp.com/getting-started)
@@ -336,7 +337,7 @@ npm i -s firebase@5.0.4 @angular/fire@5.0.0-rc.10.0
 #### NOTE:
 If you are still running angular v5, please consider to user `ngx-auth-firebaseui` v0.x
 
-v1.x should be used with angular v6 projects
+v1.x should be used with angular v7 projects
 
 [help!](https://ngx-auth-firebaseui.firebaseapp.com/getting-started)
 
@@ -435,10 +436,57 @@ map: {
 }
 ```
 
+<a name="configuration"/>
+
+## (2) [Configuration](https://ngx-auth-firebaseui.firebaseapp.com/examples)
+
+```typescript
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+
+import { AppComponent } from './app.component';
+
+// Import your library
+import { NgxAuthFirebaseUIModule } from 'ngx-auth-firebaseui';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+
+    // Specify the ngx-auth-firebaseui library as an import
+    NgxAuthFirebaseUIModule.forRoot({
+                    apiKey: 'your-firebase-apiKey',
+                    authDomain: 'your-firebase-authDomain',
+                    databaseURL: 'your-firebase-databaseURL',
+                    projectId: 'your-firebase-projectId',
+                    storageBucket: 'your-firebase-storageBucket',
+                    messagingSenderId: 'your-firebase-messagingSenderId'
+                }, 'your_app_name_factory',
+                {
+                  onlyEmailPasswordAuth : true, // enable/disable signin/up with auth providers like google, facebook, twitter - default: false
+                  toastMessageOnAuthSuccess: false, // whether to open/show a snackbar message on auth success - default : true
+                  toastMessageOnAuthError: false // whether to open/show a snackbar message on auth error - default : true
+                }),
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+
+```
+
+----
+
+
 <a name="usage"/>
 
 ---
-## (2) [Usage](https://ngx-auth-firebaseui.firebaseapp.com/getting-started)
+## (3) [Usage](https://ngx-auth-firebaseui.firebaseapp.com/getting-started)
 
 Once the library is imported, you can use its components, directives and pipes in your Angular application:
 
@@ -511,6 +559,9 @@ class AppComponent {
 | guestEnabled         | Input()  | boolean | `true` | whether the user can sign in and continue as guest
 | tosUrl               | Input()  | string  | - | the url of term of services
 | privacyPolicyUrl     | Input()  | string  | - | the url of the private privacy
+| goBackURL            | Input()  | string  | - | the url to use for the router after the  authentication
+| messageOnAuthSuccess | Input()  | string  | see the code -> | the message of the snackbar when the authentication process was succussful
+| messageOnAuthError   | Input()  | string  | see the code -> | the message of the snackbar when the authentication process has failed
 | onSuccess            | Output() | any     | - | this will be fired when an authentication process was success. The authenticated user is emitted!
 | onError              | Output() | any     | - | this event will be fired when an error occurred during the authentication process! An error message is emitted!
 
@@ -617,7 +668,7 @@ export class AppComponent {
 
 <a name="additional-requirements-material-theme"/>
 
-## (3) Additional Requirements - material (Include a theme)
+## (4) Additional Requirements - material (Include a theme)
 #### With Angular CLI
 Please take a look of the official documentation of **angular material themes** [here](https://material.angular.io/guide/getting-started#step-4-include-a-theme)
 #### Without Angular CLI
@@ -628,7 +679,7 @@ Please take a look of the official documentation of **angular material themes** 
 
 <a name="additional-requirements-material-icons"/>
 
-## (4) Additional Requirements - Import the material design icons [learn more](https://material.angular.io/guide/getting-started#step-6-optional-add-material-icons)
+## (5) Additional Requirements - Import the material design icons [learn more](https://material.angular.io/guide/getting-started#step-6-optional-add-material-icons)
 
 - The easiest way to import material design icons is to provide a link in your `index.html` file like below:
 
@@ -658,7 +709,7 @@ npm i -s material-design-icons
 
 <a name="additional-requirements-assets"/>
 
-## (5) Additional Requirements - assets
+## (6) Additional Requirements - assets
 #### With Angular CLI
 - open the file `.angular.json`
 - add the following into the `assets` section
