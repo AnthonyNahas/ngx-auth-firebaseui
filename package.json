@@ -79,7 +79,7 @@
     "commitplease": "3.2.0",
     "conventional-github-releaser": "2.0.2",
     "core-js": "2.5.7",
-    "css-loader": "^1.0.1",
+    "css-loader": "^2.0.0",
     "cssnano": "^4.1.7",
     "del": "3.0.0",
     "gulp": "3.9.1",
