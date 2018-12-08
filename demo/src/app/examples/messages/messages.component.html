@@ -15,12 +15,12 @@
       <!--</mat-card-title>-->
       <mat-card-subtitle>
         <div fxLayout="row" fxLayoutAlign="space-between">
-          <pre><code [code]="example"></code></pre>
+          <pre><code [highlight]="example"></code></pre>
           <button mat-icon-button
                   ngxClipboard
                   [cbContent]="example"
                   matTooltip="copy"
-                  (click)="[highlight]=(example)">
+                  (click)="showCopyMessage(example)">
             <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
           </button>
         </div>
