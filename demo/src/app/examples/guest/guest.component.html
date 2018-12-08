@@ -14,7 +14,7 @@
       </mat-card-title>
       <mat-card-subtitle>
         <div fxLayout="row" fxLayoutAlign="space-between">
-          <pre><code highlight [code]="firstTabHtml"></code></pre>
+          <pre><code [highlight]="firstTabHtml"></code></pre>
           <button mat-icon-button
                   ngxClipboard
                   [cbContent]="firstTabHtml"
@@ -35,7 +35,7 @@
       </mat-card-title>
       <mat-card-subtitle>
         <div fxLayout="row" fxLayoutAlign="space-between">
-          <pre><code highlight [code]="secondTabHtml"></code></pre>
+          <pre><code [highlight]="secondTabHtml"></code></pre>
           <button mat-icon-button
                   ngxClipboard
                   [cbContent]="secondTabHtml"

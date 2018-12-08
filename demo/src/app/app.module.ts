@@ -12,11 +12,22 @@ import {ServiceWorkerModule} from '@angular/service-worker';
 import {NgxMaterialPagesModule} from 'ngx-material-pages';
 import {HttpClientModule} from '@angular/common/http';
 import {ClipboardModule} from 'ngx-clipboard';
-import {Angulartics2GoogleAnalytics} from 'angulartics2/ga';
 import {Angulartics2Module} from 'angulartics2';
 import {AngularFireModule} from '@angular/fire';
 import {HighlightModule} from 'ngx-highlightjs';
 import {NgxAuthFirebaseUIModule} from 'ngx-auth-firebaseui';
+
+import typescript from 'highlight.js/lib/languages/typescript';
+import scss from 'highlight.js/lib/languages/scss';
+import xml from 'highlight.js/lib/languages/xml';
+
+export function hljsLanguages() {
+  return [
+    {name: 'typescript', func: typescript},
+    {name: 'scss', func: scss},
+    {name: 'xml', func: xml}
+  ];
+}
 
 @NgModule({
   declarations: [
@@ -49,7 +60,9 @@ import {NgxAuthFirebaseUIModule} from 'ngx-auth-firebaseui';
         toastMessageOnAuthSuccess: true,
         toastMessageOnAuthError: true
       }),
-    HighlightModule.forRoot(),
+    HighlightModule.forRoot({
+      languages: hljsLanguages
+    }),
     NgxMaterialPagesModule.forRoot(),
     ClipboardModule,
     BrowserAnimationsModule,
