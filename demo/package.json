@@ -48,6 +48,8 @@
     "core-js": "^2.6.0",
     "firebase": "^5.7.0",
     "font-awesome": "^4.7.0",
+    "hammerjs": "^2.0.8",
+    "highlight.js": "^9.13.1",
     "include-media": "^1.4.9",
     "material-design-icons": "^3.0.1",
     "ngx-clipboard": "^11.1.9",
@@ -85,7 +87,7 @@
     "ts-loader": "^5.3.1",
     "ts-node": "^7.0.1",
     "tslint": "^5.7.0",
-    "typescript": "^3.2.2",
+    "typescript": "~3.1.6",
     "webpack-cli": "^3.1.2",
     "webpack-node-externals": "~1.7.2"
   },
