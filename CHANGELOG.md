@@ -1,3 +1,19 @@
+# [2.2.0](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v2.1.0...v2.2.0) (2018-12-11)
+
+
+### Bug Fixes
+
+* **demo:** changed the base href in the index.html for lazyloading modules ([9b4727d](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/9b4727d))
+* **demo:** replaced code input with highlight ([0963b25](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/0963b25))
+* **demo:** upgraded ngx-highlightjs to v3 ([cc8af62](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/cc8af62))
+
+
+### Features
+
+* **package:** preventing automatic write to firestore [#149](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/149) - now optional ([7747792](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/7747792))
+
+
+
 # [2.1.0](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v2.0.1...v2.1.0) (2018-11-05)
 
 
