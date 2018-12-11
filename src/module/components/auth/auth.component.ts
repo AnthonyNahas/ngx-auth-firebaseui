@@ -138,7 +138,7 @@ export class AuthComponent implements OnInit, OnChanges, OnDestroy {
 
       this.dialogRef = this.dialog.open(LegalityDialogComponent, {data: params});
       this.dialogRef.afterClosed().subscribe((result: LegalityDialogResult) => {
-        console.log('this.dialogRef.afterClosed(): ', result);
+        // console.log('this.dialogRef.afterClosed(): ', result);
         if (result && result.checked) {
           this._afterSignUpMiddleware(result.authProvider).then(() => this.signUpFormGroup.reset());
         }

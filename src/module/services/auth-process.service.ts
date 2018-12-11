@@ -45,7 +45,7 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
   constructor(@Inject(NgxAuthFirebaseUIConfigToken)
               public config: NgxAuthFirebaseUIConfig,
               public afa: AngularFireAuth,
-              public _snackBar: MatSnackBar,
+              private _snackBar: MatSnackBar,
               private _fireStoreService: FirestoreSyncService) {
   }
 
@@ -130,18 +130,21 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
       this.isLoading = true;
       const userCredential: UserCredential = await this.afa.auth.createUserWithEmailAndPassword(email, password);
       const user = userCredential.user;
-      console.log('onsignUp the user = ', user);
-      await this._fireStoreService
-        .getUserDocRefByUID(user.uid)
-        .set({
-          uid: user.uid,
-          displayName: name,
-          email: user.email,
-          photoURL: user.photoURL
-        } as User);
+
+      if (this.config.enableFirestoreSync) {
+        await this._fireStoreService
+          .getUserDocRefByUID(user.uid)
+          .set({
+            uid: user.uid,
+            displayName: name,
+            email: user.email,
+            photoURL: user.photoURL
+          } as User);
+
+        await this.updateProfile(name, user.photoURL);
+      }
 
       await user.sendEmailVerification();
-      await this.updateProfile(name, user.photoURL);
       this.emailConfirmationSent = true;
       this.emailToConfirm = email;
 
@@ -206,7 +209,9 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
   }
 
   async handleSuccess(userCredential: UserCredential) {
-    await this._fireStoreService.updateUserData(this.parseUserInfo(userCredential.user));
+    if (this.config.enableFirestoreSync) {
+      await this._fireStoreService.updateUserData(this.parseUserInfo(userCredential.user));
+    }
 
     if (this.config.toastMessageOnAuthSuccess) {
       this._snackBar.open(this.messageOnAuthSuccess ? this.messageOnAuthSuccess :

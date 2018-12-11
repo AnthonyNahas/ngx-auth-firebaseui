@@ -11,6 +11,7 @@ export interface NgxAuthFirebaseUIConfig {
   // ppUrl?: string, // privacy policy url
   // authProviders?: Array<AuthProvider>,
   // languageCode?: string, // todo: 28.3.18
+  enableFirestoreSync?: boolean,
   onlyEmailPasswordAuth?: boolean,
   toastMessageOnAuthSuccess?: boolean,
   toastMessageOnAuthError?: boolean
@@ -19,6 +20,7 @@ export interface NgxAuthFirebaseUIConfig {
 export const defaultAuthFirebaseUIConfig: NgxAuthFirebaseUIConfig = {
   // authMethod: 'redirect',
   // authProviders: [new GoogleAuthProvider(), new FacebookAuthProvider(), new TwitterAuthProvider(), new GithubAuthProvider()],
+  enableFirestoreSync: true,
   onlyEmailPasswordAuth: false,
   toastMessageOnAuthSuccess: true,
   toastMessageOnAuthError: true

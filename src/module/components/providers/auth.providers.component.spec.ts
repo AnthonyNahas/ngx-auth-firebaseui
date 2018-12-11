@@ -134,7 +134,7 @@ describe('AuthProvidersComponent', function () {
       const svg = matIcon.nativeElement;
 
       // expect(svg).toBeTruthy();
-      console.log('svg', svg);
+      // console.log('svg', svg);
     }
   });
 

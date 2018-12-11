@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Inject, Input, OnInit, Output} from '@angular/core';
 import {AngularFireAuth} from '@angular/fire/auth';
 import {MatFormFieldAppearance, MatSnackBar} from '@angular/material';
 import {AuthProcessService} from '../../services/auth-process.service';
@@ -6,6 +6,7 @@ import {AbstractControl, FormControl, FormGroup, Validators} from '@angular/form
 import {EMAIL_REGEX, PHONE_NUMBER_REGEX} from '../auth/auth.component';
 import {User} from 'firebase';
 import {FirestoreSyncService} from '../../services/firestore-sync.service';
+import {NgxAuthFirebaseUIConfig, NgxAuthFirebaseUIConfigToken} from '../../ngx-auth-firebase-u-i.module';
 
 @Component({
   selector: 'ngx-auth-firebaseui-user',
@@ -29,7 +30,9 @@ export class UserComponent implements OnInit {
   updatePhoneNumberFormControl: AbstractControl;
   updatePasswordFormControl: AbstractControl;
 
-  constructor(public auth: AngularFireAuth,
+  constructor(@Inject(NgxAuthFirebaseUIConfigToken)
+              public config: NgxAuthFirebaseUIConfig,
+              public auth: AngularFireAuth,
               public authProcess: AuthProcessService,
               private _fireStoreService: FirestoreSyncService,
               private snackBar: MatSnackBar) {
@@ -82,7 +85,7 @@ export class UserComponent implements OnInit {
       const user = this.auth.auth.currentUser;
       // user.updateProfile()
       // user.updateEmail()
-      console.log('form = ', this.updateFormGroup);
+      // console.log('form = ', this.updateFormGroup);
 
       const snackBarMsg: string[] = [];
 
@@ -103,7 +106,9 @@ export class UserComponent implements OnInit {
           snackBarMsg.push(`your phone number has been update to ${user.phoneNumber}`);
         }
 
-        await this._fireStoreService.updateUserData(this.authProcess.parseUserInfo(user));
+        if (this.config.enableFirestoreSync) {
+          await this._fireStoreService.updateUserData(this.authProcess.parseUserInfo(user));
+        }
 
       } catch (error) {
         error.message ? this.snackBar.open(error.message, 'Ok') : this.snackBar.open(error, 'Ok');
@@ -134,7 +139,9 @@ export class UserComponent implements OnInit {
       const user = this.auth.auth.currentUser;
 
       await this.authProcess.deleteAccount();
-      await this._fireStoreService.deleteUserData(user.uid);
+      if (this.config.enableFirestoreSync) {
+        await this._fireStoreService.deleteUserData(user.uid);
+      }
       this.onAccountDeleted.emit();
       this.editMode = false;
       this.snackBar.open('Your account has been successfully deleted!', 'OK', {
