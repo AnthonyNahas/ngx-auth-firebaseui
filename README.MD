@@ -460,15 +460,18 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     BrowserAnimationsModule,
 
     // Specify the ngx-auth-firebaseui library as an import
-    NgxAuthFirebaseUIModule.forRoot({
-                    apiKey: 'your-firebase-apiKey',
-                    authDomain: 'your-firebase-authDomain',
-                    databaseURL: 'your-firebase-databaseURL',
-                    projectId: 'your-firebase-projectId',
-                    storageBucket: 'your-firebase-storageBucket',
-                    messagingSenderId: 'your-firebase-messagingSenderId'
-                }, 'your_app_name_factory',
+    NgxAuthFirebaseUIModule.forRoot(
                 {
+                  apiKey: 'your-firebase-apiKey',
+                  authDomain: 'your-firebase-authDomain',
+                  databaseURL: 'your-firebase-databaseURL',
+                  projectId: 'your-firebase-projectId',
+                  storageBucket: 'your-firebase-storageBucket',
+                  messagingSenderId: 'your-firebase-messagingSenderId'
+                },
+                 'your_app_name_factory',
+                {
+                  enableFirestoreSync: true, // enable/disable autosync users with firestore
                   onlyEmailPasswordAuth : true, // enable/disable signin/up with auth providers like google, facebook, twitter - default: false
                   toastMessageOnAuthSuccess: false, // whether to open/show a snackbar message on auth success - default : true
                   toastMessageOnAuthError: false // whether to open/show a snackbar message on auth error - default : true
