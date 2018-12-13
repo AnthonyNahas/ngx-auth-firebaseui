@@ -39,7 +39,7 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
   emailConfirmationSent: boolean;
 
   emailToConfirm: string;
-  messageOnAuthSuccess = 'asf';
+  messageOnAuthSuccess: string;
   messageOnAuthError: string;
 
   constructor(@Inject(NgxAuthFirebaseUIConfigToken)
