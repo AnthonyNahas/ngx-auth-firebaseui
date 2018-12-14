@@ -57,7 +57,7 @@ export function hljsLanguages() {
         messagingSenderId: '520699629648'
       }, null,
       {
-        enableFirestoreSync: false,
+        enableFirestoreSync: true,
         toastMessageOnAuthSuccess: true,
         toastMessageOnAuthError: true
       }),
