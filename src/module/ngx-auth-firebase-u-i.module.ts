@@ -41,6 +41,8 @@ export {LegalityDialogComponent} from './components/legality-dialog/legality-dia
 export {AuthProcessService, AuthProvider} from './services/auth-process.service';
 export {FirestoreSyncService} from './services/firestore-sync.service';
 
+// guards
+export {LoggedInGuard} from './guards/logged-in.guard';
 // interfaces
 export {NgxAuthFirebaseUIConfig} from './interfaces/config.interface';
 
