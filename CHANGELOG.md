@@ -1,3 +1,12 @@
+## [2.2.1](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v2.2.0...v2.2.1) (2018-12-15)
+
+
+### Bug Fixes
+
+* **package:** make sure messageOnAuthSuccess is undefined by default ([b0ed27f](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/b0ed27f))
+
+
+
 # [2.2.0](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v2.1.0...v2.2.0) (2018-12-11)
 
 
