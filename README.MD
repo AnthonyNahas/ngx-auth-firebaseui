@@ -563,7 +563,7 @@ class AppComponent {
 | guestEnabled         | Input()  | boolean | `true` | whether the user can sign in and continue as guest
 | tosUrl               | Input()  | string  | - | the url of term of services
 | privacyPolicyUrl     | Input()  | string  | - | the url of the private privacy
-| goBackURL            | Input()  | string  | - | the url to redirect to after creating a new user and clicking the `go back` button 
+| goBackURL            | Input()  | string  | - | the url to redirect to after creating a new user and clicking the `go back` button - the button is only available when the input is provided 
 | messageOnAuthSuccess | Input()  | string  | see the code -> | the message of the snackbar when the authentication process was succussful
 | messageOnAuthError   | Input()  | string  | see the code -> | the message of the snackbar when the authentication process has failed
 | onSuccess            | Output() | any     | - | this will be fired when an authentication process was success. The authenticated user is emitted!
