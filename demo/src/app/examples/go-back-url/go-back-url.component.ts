@@ -8,7 +8,7 @@ import {MatSnackBar} from '@angular/material';
 })
 export class GoBackURLComponent {
 
-  example = `<ngx-auth-firebaseui goBackURL="/"></ngx-auth-firebaseui>`;
+  example = `<ngx-auth-firebaseui tabIndex="1" goBackURL="/"></ngx-auth-firebaseui>`;
 
   constructor(public snackBar: MatSnackBar) {
   }
