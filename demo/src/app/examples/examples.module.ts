@@ -10,6 +10,7 @@ import {TosComponent} from './tos/tos.component';
 import {AppearanceComponent} from './appearance/appearance.component';
 import {TabIndexComponent} from './tab-index/tab-index.component';
 import {MessagesComponent} from './messages/messages.component';
+import { GoBackURLComponent } from './go-back-url/go-back-url.component';
 
 @NgModule({
   imports: [
@@ -26,7 +27,8 @@ import {MessagesComponent} from './messages/messages.component';
       TosComponent,
       AppearanceComponent,
       TabIndexComponent,
-      MessagesComponent
+      MessagesComponent,
+      GoBackURLComponent
     ]
 })
 export class ExamplesModule {

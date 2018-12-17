@@ -96,9 +96,6 @@ export class HomeComponent implements OnInit, OnDestroy {
     console.log(event);
     this.error = false;
     this.index = 2;
-
-    // this.snackbar.open(`Hallo ${event.displayName ? event.displayName : ''}!`,
-    //   'OK', {duration: 5000});
   }
 
   printError(event) {

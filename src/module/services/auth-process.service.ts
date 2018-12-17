@@ -215,7 +215,7 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
 
     if (this.config.toastMessageOnAuthSuccess) {
       this._snackBar.open(this.messageOnAuthSuccess ? this.messageOnAuthSuccess :
-        `Hallo ${userCredential.user.displayName ? userCredential.user.displayName : ''}!`,
+        `Hello ${userCredential.user.displayName ? userCredential.user.displayName : ''}!`,
         'OK', {duration: 5000});
     }
     this.onSuccessEmitter.next(userCredential.user);
