@@ -757,9 +757,9 @@ Please make sur that the images will be hosted in the right place
 $ git clone https://github.com/AnthonyNahas/ngx-auth-firebaseui.git
 ```
 
-- link the ngx-auth-firebaseui package
+- setup the ngx-auth-firebaseui package
 ```bash
-$ gulp link
+$ gulp setup
 ```
 
 - navigate to the demo app directory
@@ -767,19 +767,11 @@ $ gulp link
 $ cd demo
 ```
 
-- install the dependencies
+- install the dependencies and run the app
 ```bash
-$ npm i
+$ npm i && npm start
 ```
 
-- run/start/serve the app
-```bash
-$ npm run start
-```
-or
-```bash
-$ ng serve --open
-```
 - the app is now hosted by `http://localhost:4200/`
 
 

@@ -765,6 +765,16 @@ gulp.task('release', (cb) => {
 // Utility Tasks
 /////////////////////////////////////////////////////////////////////////////
 
+// setup the project by installing first the dependencies,
+// building the library and finally linking it
+gulp.task('setup', (cb) => {
+  return runSequence('install', 'build', 'link', cb);
+});
+
+gulp.task('install', () => {
+  return execExternalCmd('npm', 'i');
+});
+
 // Link 'dist' folder (create a local 'ng-scrollreveal' package that symlinks to it)
 // This way, we can have the demo project declare a dependency on 'ng-scrollreveal' (as it should)
 // and, thanks to 'npm link ng-scrollreveal' on demo project, be sure to always use the latest built
