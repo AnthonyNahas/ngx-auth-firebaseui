@@ -32,6 +32,32 @@
         </ngx-auth-firebaseui>
       </mat-card-content>
     </mat-card>
+
+    <mat-card fxFlexAlign.gt-xs="center">
+      <!--<mat-card-title>-->
+      <!--add a tos url-->
+      <!--</mat-card-title>-->
+      <mat-card-subtitle>
+        <div fxLayout="row" fxLayoutAlign="space-between">
+          <pre><code [highlight]="example2"></code></pre>
+          <button mat-icon-button
+                  ngxClipboard
+                  [cbContent]="example2"
+                  matTooltip="copy"
+                  (click)="showCopyMessage(example2)">
+            <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+          </button>
+        </div>
+      </mat-card-subtitle>
+      <mat-card-content>
+        <ngx-auth-firebaseui
+          (onSuccess)="saveUser($event)"
+          (onError)="handleError($event)"
+          [messageOnAuthSuccess]="message"
+          [messageOnAuthError]="errorMessage">
+        </ngx-auth-firebaseui>
+      </mat-card-content>
+    </mat-card>
   </div>
 
 </div>

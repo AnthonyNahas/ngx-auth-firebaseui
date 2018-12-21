@@ -209,6 +209,7 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
   }
 
   async handleSuccess(userCredential: UserCredential) {
+    this.onSuccessEmitter.next(userCredential.user);
     if (this.config.enableFirestoreSync) {
       try {
         await this._fireStoreService.updateUserData(this.parseUserInfo(userCredential.user));
@@ -222,16 +223,15 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
         `Hello ${userCredential.user.displayName ? userCredential.user.displayName : ''}!`,
         'OK', {duration: 5000});
     }
-    this.onSuccessEmitter.next(userCredential.user);
   }
 
   handleError(error: any) {
+    this.onErrorEmitter.next(error);
     if (this.config.toastMessageOnAuthError) {
       this._snackBar.open(this.messageOnAuthError ? this.messageOnAuthError :
         error.message, 'OK', {duration: 5000});
     }
     console.error(error);
-    this.onErrorEmitter.next(error);
   }
 
 }
