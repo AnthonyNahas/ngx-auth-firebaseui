@@ -74,7 +74,7 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
   public async signInWith(provider: AuthProvider, email?: string, password?: string) {
     try {
       this.isLoading = true;
-      let signInResult: UserCredential;
+      let signInResult: UserCredential | any;
 
       switch (provider) {
         case AuthProvider.ANONYMOUS:
@@ -210,7 +210,11 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
 
   async handleSuccess(userCredential: UserCredential) {
     if (this.config.enableFirestoreSync) {
-      await this._fireStoreService.updateUserData(this.parseUserInfo(userCredential.user));
+      try {
+        await this._fireStoreService.updateUserData(this.parseUserInfo(userCredential.user));
+      } catch (e) {
+        console.error(`Error occurred while updating user data with firestore: ${e}`);
+      }
     }
 
     if (this.config.toastMessageOnAuthSuccess) {
