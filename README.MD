@@ -137,7 +137,7 @@ by starring :star: and sharing it :loudspeaker:
 
 ## Library's components
 - `<ngx-auth-firebaseui>` used for the authentication process
-- `<ngx-auth-firebaseui-providers>` used to display only buttons for providers like googe, facebook, twitter and github
+- `<ngx-auth-firebaseui-providers>` used to display only buttons for providers like google, facebook, twitter and github
 - `<ngx-auth-firebaseui-user>` used to display/edit the data of the current authenticated user
 
 <a name="supported-providers"/>
