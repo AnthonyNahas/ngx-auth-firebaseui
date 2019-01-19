@@ -16,6 +16,7 @@ import {Angulartics2Module} from 'angulartics2';
 import {AngularFireModule} from '@angular/fire';
 import {HighlightModule} from 'ngx-highlightjs';
 import {NgxAuthFirebaseUIModule} from 'ngx-auth-firebaseui';
+import {firebaseKey} from './firebase.config';
 
 import typescript from 'highlight.js/lib/languages/typescript';
 import scss from 'highlight.js/lib/languages/scss';
@@ -40,22 +41,8 @@ export function hljsLanguages() {
     BrowserModule.withServerTransition({appId: 'ngx-auth-firebaseui'}),
     Angulartics2Module.forRoot(),
     ServiceWorkerModule.register('/ngsw-worker.js', {enabled: environment.production}),
-    AngularFireModule.initializeApp({
-      apiKey: 'AIzaSyASG7KxDO2z5AH9r0jlUmwiw68Ap8kG20c',
-      authDomain: 'ngx-auth-firebaseui.firebaseapp.com',
-      databaseURL: 'https://ngx-auth-firebaseui.firebaseio.com',
-      projectId: 'ngx-auth-firebaseui',
-      storageBucket: 'ngx-auth-firebaseui.appspot.com',
-      messagingSenderId: '520699629648'
-    }),
-    NgxAuthFirebaseUIModule.forRoot({
-        apiKey: 'AIzaSyASG7KxDO2z5AH9r0jlUmwiw68Ap8kG20c',
-        authDomain: 'ngx-auth-firebaseui.firebaseapp.com',
-        databaseURL: 'https://ngx-auth-firebaseui.firebaseio.com',
-        projectId: 'ngx-auth-firebaseui',
-        storageBucket: 'ngx-auth-firebaseui.appspot.com',
-        messagingSenderId: '520699629648'
-      }, null,
+    AngularFireModule.initializeApp(firebaseKey),
+    NgxAuthFirebaseUIModule.forRoot(firebaseKey, null,
       {
         enableFirestoreSync: true,
         toastMessageOnAuthSuccess: true,

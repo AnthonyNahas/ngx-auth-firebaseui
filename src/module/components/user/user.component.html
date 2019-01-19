@@ -145,8 +145,8 @@
       </mat-form-field>
 
       <mat-card-actions fxLayout="column">
-        <button mat-button color="primary" (click)="auth.auth.signOut()">Sign out</button>
-        <button mat-button color="warn" (click)="deleteAccount()">Delete account</button>
+        <button *ngIf="canLogout" mat-button color="primary" (click)="auth.auth.signOut()">Sign out</button>
+        <button *ngIf="canDeleteAccount" mat-button color="warn" (click)="deleteAccount()">Delete account</button>
       </mat-card-actions>
 
     </ng-template>
