@@ -470,7 +470,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
                   storageBucket: 'your-firebase-storageBucket',
                   messagingSenderId: 'your-firebase-messagingSenderId'
                 },
-                 'your_app_name_factory',
+                 () => 'your_app_name_factory',
                 {
                   enableFirestoreSync: true, // enable/disable autosync users with firestore
                   onlyEmailPasswordAuth : true, // enable/disable signin/up with auth providers like google, facebook, twitter - default: false
@@ -721,7 +721,7 @@ npm i -s material-design-icons
 ```ts
 {
           "glob": "**/*",
-          "input": "../node_modules/ngx-auth-firebaseui/dist/assets/",
+          "input": "node_modules/ngx-auth-firebaseui/assets/",
           "output": "./assets/"
 }
 ```
@@ -733,7 +733,7 @@ npm i -s material-design-icons
         "favicon.ico",
         {
           "glob": "**/*",
-          "input": "../node_modules/ngx-auth-firebaseui/dist/assets/",
+          "input": "node_modules/ngx-auth-firebaseui/assets/",
           "output": "./assets/"
         }
       ]
