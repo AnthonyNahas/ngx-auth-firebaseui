@@ -1,8 +1,13 @@
 import {AuthProvider} from '../services/auth-process.service';
 
+export interface ICredentials {
+  email: string,
+  password: string
+}
+
 export interface ISignUpProcess {
 
-  signUp(name: string, email: string, password: string): any;
+  signUp(name: string, credentials: ICredentials): any;
 }
 
 export interface ISignInProcess {
@@ -10,7 +15,7 @@ export interface ISignInProcess {
   onSuccessEmitter: any;
   onErrorEmitter: any;
 
-  signInWith(provider: AuthProvider, email?: string, password?: string): any;
+  signInWith(provider: AuthProvider, credentials?: ICredentials): any;
 
   resetPassword(email: string): any;
 }
