@@ -26,7 +26,7 @@ export class LoggedInGuard implements CanActivate {
         if (res) {
           return true
         }
-        this.router.navigate([`/${this.config.authGuardFallbackURL}`])
+        this.router.navigate([`/${this.config.authGuardFallbackURL}`]);
         return false
       }),
     )
