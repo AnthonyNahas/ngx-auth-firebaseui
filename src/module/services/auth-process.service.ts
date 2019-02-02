@@ -1,7 +1,7 @@
 import {EventEmitter, Inject, Injectable} from '@angular/core';
 import {MatSnackBar} from '@angular/material';
 import {AngularFireAuth} from '@angular/fire/auth';
-import {ISignInProcess, ISignUpProcess} from '../interfaces/main.interface';
+import {ICredentials, ISignInProcess, ISignUpProcess} from '../interfaces/main.interface';
 import {NgxAuthFirebaseUIConfig} from '../interfaces/config.interface';
 import {FirestoreSyncService} from './firestore-sync.service';
 import {Accounts} from '../enums';
@@ -67,11 +67,10 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
    * like google, facebook, twitter and github
    *
    * @param provider - the provider to authenticate with (google, facebook, twitter, github)
-   * @param email - (optional) the email of user - used only for a traditional sign in
-   * @param password - (optional) the password of user - used only for a traditional sign in
+   * @param credentials
    * @returns
    */
-  public async signInWith(provider: AuthProvider, email?: string, password?: string) {
+  public async signInWith(provider: AuthProvider, credentials?: ICredentials) {
     try {
       this.isLoading = true;
       let signInResult: UserCredential | any;
@@ -82,7 +81,7 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
           break;
 
         case AuthProvider.EmailAndPassword:
-          signInResult = await this.afa.auth.signInWithEmailAndPassword(email, password) as UserCredential;
+          signInResult = await this.afa.auth.signInWithEmailAndPassword(credentials.email, credentials.password) as UserCredential;
           break;
 
         case AuthProvider.Google:
@@ -121,14 +120,13 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
    * After that the user should verify and confirm an email sent via the firebase
    *
    * @param name - the name if the new user
-   * @param email - the email if the new user
-   * @param password - the password if the new user
+   * @param credentials
    * @returns
    */
-  public async signUp(name: string, email: string, password: string) {
+  public async signUp(name: string, credentials: ICredentials) {
     try {
       this.isLoading = true;
-      const userCredential: UserCredential = await this.afa.auth.createUserWithEmailAndPassword(email, password);
+      const userCredential: UserCredential = await this.afa.auth.createUserWithEmailAndPassword(credentials.email, credentials.password);
       const user = userCredential.user;
 
       if (this.config.enableFirestoreSync) {
@@ -146,7 +144,7 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
 
       await user.sendEmailVerification();
       this.emailConfirmationSent = true;
-      this.emailToConfirm = email;
+      this.emailToConfirm = credentials.email;
 
       await this.handleSuccess(userCredential);
     } catch (err) {

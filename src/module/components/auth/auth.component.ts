@@ -153,8 +153,10 @@ export class AuthComponent implements OnInit, OnChanges, OnDestroy {
     return await this.authProcess.signUp
     (
       this.signUpFormGroup.value.name,
-      this.signUpFormGroup.value.email,
-      this.signUpFormGroup.value.password
+      {
+        email: this.signUpFormGroup.value.email,
+        password: this.signUpFormGroup.value.password
+      }
     );
   }
 
