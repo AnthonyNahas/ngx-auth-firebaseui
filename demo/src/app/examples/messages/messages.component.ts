@@ -7,10 +7,23 @@ import {MatSnackBar} from '@angular/material';
   styleUrls: ['./messages.component.scss']
 })
 export class MessagesComponent {
+
+  user;
+
+  message: string;
+  errorMessage: string;
+
   example = `<ngx-auth-firebaseui
-  messageOnAuthSuccess="Here we go! The authentication was successful! "
-  messageOnAuthError="Oop! Something went wrong! Please retry again!">
-</ngx-auth-firebaseui>`;
+             messageOnAuthSuccess="Here we go! The authentication was successful! "
+             messageOnAuthError="Oop! Something went wrong! Please retry again!">
+             </ngx-auth-firebaseui>`;
+
+  example2 = `<ngx-auth-firebaseui
+             (onSuccess)="saveUser($event)"
+             (onError)="handleError($event)"
+             [messageOnAuthSuccess]="message"
+             [messageOnAuthError]="errorMessage">
+             </ngx-auth-firebaseui>`;
 
   constructor(public snackBar: MatSnackBar) {
   }
@@ -21,4 +34,13 @@ export class MessagesComponent {
     });
   }
 
+  saveUser($event) {
+    this.user = $event;
+    this.message = `${this.user.displayName} here we go!`;
+    console.log('Auth success - user = ', this.user, this.user.displayName);
+  }
+
+  handleError($event) {
+    this.errorMessage = `Oops! ${$event}`;
+  }
 }

@@ -57,7 +57,8 @@
         <form [formGroup]="signInFormGroup"
               (ngSubmit)="signInFormGroup.valid &&
               authProcess.signInWith
-              (authProviders.EmailAndPassword,signInFormGroup.value.email,signInFormGroup.value.password)">
+              (authProviders.EmailAndPassword,
+              {email:signInFormGroup.value.email, password: signInFormGroup.value.password})">
           <div fxLayout="column" fxLayoutAlign="center">
             <mat-form-field [appearance]="appearance">
               <mat-label>E-mail</mat-label>
@@ -133,8 +134,7 @@
       <ng-template #register>
         <mat-card-content fxLayout="column" fxLayoutAlign="center">
           <form [formGroup]="signUpFormGroup" (ngSubmit)="signUpFormGroup.valid &&
-          authProcess.signUp
-          (signUpFormGroup.value.name,signUpFormGroup.value.email,signUpFormGroup.value.password)">
+          processLegalSignUP(authProvider.EmailAndPassword)">
             <div fxLayout="column" fxLayoutAlign="center">
               <!--name-->
               <mat-form-field [appearance]="appearance">
@@ -228,7 +228,7 @@
                   mat-button
                   style="margin-top: 20px"
                   [color]="color"
-                  (click)="openLegalityDialog(authProvider.ANONYMOUS)">
+                  (click)="processLegalSignUP(authProvider.ANONYMOUS)">
             <mat-icon>fingerprint</mat-icon>
             continue as guest
           </button>

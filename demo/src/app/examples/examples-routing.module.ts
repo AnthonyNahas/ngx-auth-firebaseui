@@ -7,6 +7,7 @@ import {AppearanceComponent} from './appearance/appearance.component';
 import {TosComponent} from './tos/tos.component';
 import {TabIndexComponent} from './tab-index/tab-index.component';
 import {MessagesComponent} from './messages/messages.component';
+import {GoBackURLComponent} from './go-back-url/go-back-url.component';
 
 @NgModule({
   imports: [RouterModule.forChild([
@@ -17,6 +18,7 @@ import {MessagesComponent} from './messages/messages.component';
     {path: 'appearance', component: AppearanceComponent},
     {path: 'tos', component: TosComponent},
     {path: 'tabIndex', component: TabIndexComponent},
+    {path: 'gobackurl', component: GoBackURLComponent},
   ])],
   exports: [RouterModule]
 })

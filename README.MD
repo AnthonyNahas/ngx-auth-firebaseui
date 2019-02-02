@@ -1,11 +1,12 @@
 <p align="center">
-  <img height="256px" width="256px" style="text-align: center;" src="https://cdn.rawgit.com/anthonynahas/ngx-auth-firebaseui/master/demo/src/assets/logo.svg">
+  <img height="256px" width="256px" style="text-align: center;" 
+  src="https://cdn.jsdelivr.net/gh/anthonynahas/ngx-auth-firebaseui@master/demo/src/assets/logo.svg">
 </p>
 
 # ngx-auth-firebaseui - Open Source Library for Angular Web Apps to integrate a material user interface for firebase authentication.
 
 [![npm version](https://badge.fury.io/js/ngx-auth-firebaseui.svg)](https://badge.fury.io/js/ngx-auth-firebaseui)
-[![npm](https://img.shields.io/badge/demo-online-ed1c46.svg)](https://ngx-auth-firebaseui.firebaseapp.com)
+[![demo](https://img.shields.io/badge/demo-online-ed1c46.svg)](https://ngx-auth-firebaseui.firebaseapp.com)
 [![codecov](https://codecov.io/gh/anthonynahas/ngx-auth-firebaseui/branch/master/graph/badge.svg)](https://codecov.io/gh/anthonynahas/ngx-auth-firebaseui)
 [![CircleCI branch](https://img.shields.io/circleci/project/github/AnthonyNahas/ngx-auth-firebaseui/master.svg?label=circleci)](https://circleci.com/gh/AnthonyNahas/ngx-auth-firebaseui)
 [![Build Status](https://travis-ci.org/AnthonyNahas/ngx-auth-firebaseui.svg?branch=master)](https://travis-ci.org/AnthonyNahas/ngx-auth-firebaseui)
@@ -137,7 +138,7 @@ by starring :star: and sharing it :loudspeaker:
 
 ## Library's components
 - `<ngx-auth-firebaseui>` used for the authentication process
-- `<ngx-auth-firebaseui-providers>` used to display only buttons for providers like googe, facebook, twitter and github
+- `<ngx-auth-firebaseui-providers>` used to display only buttons for providers like google, facebook, twitter and github
 - `<ngx-auth-firebaseui-user>` used to display/edit the data of the current authenticated user
 
 <a name="supported-providers"/>
@@ -379,7 +380,7 @@ different for the root (top-level) module for which you should end up with the c
 
 and then from your Angular `AppModule`:
 
-```js
+```typescript
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -469,7 +470,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
                   storageBucket: 'your-firebase-storageBucket',
                   messagingSenderId: 'your-firebase-messagingSenderId'
                 },
-                 'your_app_name_factory',
+                 () => 'your_app_name_factory',
                 {
                   enableFirestoreSync: true, // enable/disable autosync users with firestore
                   onlyEmailPasswordAuth : true, // enable/disable signin/up with auth providers like google, facebook, twitter - default: false
@@ -563,8 +564,8 @@ class AppComponent {
 | guestEnabled         | Input()  | boolean | `true` | whether the user can sign in and continue as guest
 | tosUrl               | Input()  | string  | - | the url of term of services
 | privacyPolicyUrl     | Input()  | string  | - | the url of the private privacy
-| goBackURL            | Input()  | string  | - | the url to use for the router after the  authentication
-| messageOnAuthSuccess | Input()  | string  | see the code -> | the message of the snackbar when the authentication process was succussful
+| goBackURL            | Input()  | string  | - | the url to redirect to after creating a new user and clicking the `go back` button - the button is only available when the input is provided 
+| messageOnAuthSuccess | Input()  | string  | see the code -> | the message of the snackbar when the authentication process was successful
 | messageOnAuthError   | Input()  | string  | see the code -> | the message of the snackbar when the authentication process has failed
 | onSuccess            | Output() | any     | - | this will be fired when an authentication process was success. The authenticated user is emitted!
 | onError              | Output() | any     | - | this event will be fired when an error occurred during the authentication process! An error message is emitted!
@@ -720,7 +721,7 @@ npm i -s material-design-icons
 ```ts
 {
           "glob": "**/*",
-          "input": "../node_modules/ngx-auth-firebaseui/dist/assets/",
+          "input": "node_modules/ngx-auth-firebaseui/assets/",
           "output": "./assets/"
 }
 ```
@@ -732,7 +733,7 @@ npm i -s material-design-icons
         "favicon.ico",
         {
           "glob": "**/*",
-          "input": "../node_modules/ngx-auth-firebaseui/dist/assets/",
+          "input": "node_modules/ngx-auth-firebaseui/assets/",
           "output": "./assets/"
         }
       ]
@@ -757,9 +758,9 @@ Please make sur that the images will be hosted in the right place
 $ git clone https://github.com/AnthonyNahas/ngx-auth-firebaseui.git
 ```
 
-- link the ngx-auth-firebaseui package
+- setup the ngx-auth-firebaseui package
 ```bash
-$ gulp link
+$ gulp setup
 ```
 
 - navigate to the demo app directory
@@ -767,19 +768,11 @@ $ gulp link
 $ cd demo
 ```
 
-- install the dependencies
+- install the dependencies and run the app
 ```bash
-$ npm i
+$ npm i && npm start
 ```
 
-- run/start/serve the app
-```bash
-$ npm run start
-```
-or
-```bash
-$ ng serve --open
-```
 - the app is now hosted by `http://localhost:4200/`
 
 

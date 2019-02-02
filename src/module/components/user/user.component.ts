@@ -19,6 +19,12 @@ export class UserComponent implements OnInit {
   editMode: boolean;
 
   @Input()
+  canLogout: boolean;
+
+  @Input()
+  canDeleteAccount: boolean;
+
+  @Input()
   appearance: MatFormFieldAppearance;
 
   @Output()

@@ -1,0 +1,36 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1>Go Back URL</h1>
+  </div>
+</div>
+
+
+<div class="container">
+
+  <div fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="center">
+
+    <mat-card fxFlexAlign.gt-xs="center">
+      <mat-card-subtitle>
+        <div fxLayout="row" fxLayoutAlign="space-between">
+          <pre><code [highlight]="example"></code></pre>
+          <button mat-icon-button
+                  ngxClipboard
+                  [cbContent]="example"
+                  matTooltip="copy"
+                  (click)="showCopyMessage(example)">
+            <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+          </button>
+        </div>
+      </mat-card-subtitle>
+      <mat-card-content>
+        <ngx-auth-firebaseui tabIndex="1" goBackURL="/"></ngx-auth-firebaseui>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
+
+
+
+
+

@@ -93,16 +93,13 @@ export class HomeComponent implements OnInit, OnDestroy {
   }
 
   printUser(event) {
-    console.log(event);
+    console.log('onSuccess event ->', event);
     this.error = false;
     this.index = 2;
-
-    // this.snackbar.open(`Hallo ${event.displayName ? event.displayName : ''}!`,
-    //   'OK', {duration: 5000});
   }
 
   printError(event) {
-    console.error(event);
+    console.error('onError event --> ', event);
     this.error = true;
 
     // this.snackbar.open(event.message, 'OK', {duration: 5000});
