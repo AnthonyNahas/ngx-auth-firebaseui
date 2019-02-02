@@ -128,7 +128,7 @@ export class AuthComponent implements OnInit, OnChanges, OnDestroy {
     setTimeout(() => this.tabIndex = 0, 100);
   }
 
-  public openLegalityDialog(authProvider?: AuthProvider) {
+  public processLegalSignUP(authProvider?: AuthProvider) {
     if (this.tosUrl || this.privacyPolicyUrl) {
       const params: LegalityDialogParams = {
         tosUrl: this.tosUrl,

@@ -42,7 +42,7 @@ export function hljsLanguages() {
     Angulartics2Module.forRoot(),
     ServiceWorkerModule.register('/ngsw-worker.js', {enabled: environment.production}),
     AngularFireModule.initializeApp(firebaseKey),
-    NgxAuthFirebaseUIModule.forRoot(firebaseKey, null,
+    NgxAuthFirebaseUIModule.forRoot(firebaseKey, () => 'null',
       {
         enableFirestoreSync: true,
         toastMessageOnAuthSuccess: true,
