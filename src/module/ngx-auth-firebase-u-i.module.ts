@@ -30,6 +30,7 @@ import {
 import {AngularFirestoreModule} from '@angular/fire/firestore';
 import {MatPasswordStrengthModule} from '@angular-material-extensions/password-strength';
 import {LegalityDialogComponent} from './components/legality-dialog/legality-dialog.component';
+import {LoggedInGuard} from './guards/logged-in.guard';
 
 // Export module's public API
 // components
@@ -78,6 +79,7 @@ export const NgxAuthFirebaseUIConfigToken = new InjectionToken<NgxAuthFirebaseUI
     UserComponent,
     AuthProvidersComponent,
     EmailConfirmationComponent,
+    LoggedInGuard,
     AngularFireAuthModule,
     AngularFirestoreModule
   ],

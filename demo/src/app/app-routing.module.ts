@@ -1,6 +1,8 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 
+import {LoggedInGuard} from 'ngx-auth-firebaseui';
+
 const routes: Routes = [
   {
     path: '',
@@ -26,6 +28,11 @@ const routes: Routes = [
   {
     path: 'providers',
     loadChildren: 'app/faq/faq.module#FaqModule'
+  },
+  {
+    path: 'secured',
+    loadChildren: 'app/faq/faq.module#FaqModule',
+    canActivate: [LoggedInGuard]
   }
 ];
 

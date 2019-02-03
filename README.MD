@@ -97,6 +97,7 @@ by starring :star: and sharing it :loudspeaker:
 | Password Strength indicator                    | :heavy_check_mark:    |  :x:                   |
 | Forgot/Reset Password                          | :heavy_check_mark:    |  :x:                   |
 | Delete account                                 | :heavy_check_mark:    |  :x:                   |
+| Login Authentication Guard                     | :heavy_check_mark:    |  :x:                   |
 | User Profile                                   | :heavy_check_mark:    |  :x:                   |
 | Check whether user's email is verified         | :heavy_check_mark:    |  :x:                   |
 | Edit user's display name (incl. validation)    | :heavy_check_mark:    |  :x:                   |
@@ -670,6 +671,42 @@ export class AppComponent {
 |:---------------------|:------:|:------:|:------------:|:-------------------------------------------------------------------------------------------------|
 | onAccountDeleted     | Output() | void     | - | this will be fired when the user deletes his account
 
+
+### EXTRA TIP: Login Authentication Guard
+
+If you want to prevent a route to be accessed from non authorized users, you can
+use a built in `LoggedInGuard` angular router guard.
+
+1. enter the fallback url in the `NgxAuthFirebaseUIConfig` under `authGuardFallbackURL`
+2. import the `LoggedInGuard` in your router module
+
+```ts
+import {NgModule} from '@angular/core';
+import {Routes, RouterModule} from '@angular/router';
+
+import {LoggedInGuard} from 'ngx-auth-firebaseui';
+
+const routes: Routes = [
+  {
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
+  },
+  {
+    path: 'secured',
+    loadChildren: 'app/secured/secured.module#SecuredModule',
+    canActivate: [LoggedInGuard]
+  }
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule {
+}
+
+```
 
 <a name="additional-requirements-material-theme"/>
 
