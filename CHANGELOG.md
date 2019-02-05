@@ -1,3 +1,30 @@
+# [2.3.0](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v2.2.1...v2.3.0) (2019-02-05)
+
+
+### Bug Fixes
+
+* **demo:** updated the package-lock.json ([746b20b](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/746b20b))
+* **package:** add signup middleware to the registration process too - [@bailejl](https://github.com/bailejl) 100 Thanks [#172](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/172) ([c0f2eb6](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/c0f2eb6))
+* **package:** added angular router as dependency ([677925e](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/677925e))
+* **package:** added try and catch block for the handling success async method ([2bc3ed9](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/2bc3ed9))
+* **package:** merge default config without overriding the forwarded values from user [#155](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/155) ([46ec424](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/46ec424))
+* **package:** removed `onlyEmailPasswordAuth` from config and docs - deprecated ([5447e31](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/5447e31))
+* **package:** updated angular material and csk to v7.3.1 ([da1c95c](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/da1c95c))
+* **package:** updated angular to v7.1.4 and firebase to v5.7.1 ([8539db6](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/8539db6))
+* **package:** updated angular to v7.2.3 and other deps ([92e5b0e](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/92e5b0e))
+* **package:** updated firebase and other dependencies ([076ca43](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/076ca43))
+* **package:** upgraded angular to v7.2.2 ([5f90dfc](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/5f90dfc))
+* **package:** upgraded rollup to v1 ([3e5529d](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/3e5529d))
+
+
+### Features
+
+* **app:** added separate firebase config and two new options 'canLogout' and 'canDeleteAccount' ([3157c8f](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/3157c8f))
+* **package:** ability to interpolate the input `messageOnAuthSuccess` [#163](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/163) ([9eb7094](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/9eb7094))
+* **package:** add LoggedInGuard ([7f3b17f](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/7f3b17f))
+
+
+
 ## [2.2.1](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v2.2.0...v2.2.1) (2018-12-15)
 
 
