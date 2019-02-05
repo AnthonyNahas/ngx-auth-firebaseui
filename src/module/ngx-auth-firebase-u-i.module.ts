@@ -79,7 +79,7 @@ export const NgxAuthFirebaseUIConfigToken = new InjectionToken<NgxAuthFirebaseUI
     UserComponent,
     AuthProvidersComponent,
     EmailConfirmationComponent,
-    LoggedInGuard,
+    // LoggedInGuard,
     AngularFireAuthModule,
     AngularFirestoreModule
   ],
@@ -117,7 +117,8 @@ export class NgxAuthFirebaseUIModule {
             useValue: config
           },
           AuthProcessService,
-          FirestoreSyncService
+          FirestoreSyncService,
+          LoggedInGuard
         ],
     };
   }

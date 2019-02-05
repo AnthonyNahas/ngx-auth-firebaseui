@@ -314,13 +314,13 @@ automatically change to `column`
 
 ```json
 "peerDependencies": {
-    "@angular/core": "^6.x",
-    "@angular/animations": "^6.x",
-    "@angular/cdk": "^6.x",
-    "@angular/flex-layout": "^6.0.0-beta.16",
+    "@angular/core": "^7.x",
+    "@angular/animations": "^7.x",
+    "@angular/cdk": "^7.x",
+    "@angular/flex-layout": "^7.0.0-beta.22",
     "@angular/forms": "^5.x",
     "@angular/material": "^5.x",
-    "@angular/fire": "5.0.0-rc.10.0",
+    "@angular/fire": "5.x",
     "firebase": "5.x",
   }
 ```
@@ -350,7 +350,7 @@ v1.x should be used with angular v7 projects
 <a name="dependencies"/>
 
 ## Dependencies
-* [Angular](https://angular.io) (*requires* Angular 2 or higher, developed with 6.0.3) - obviously
+* [Angular](https://angular.io) (*requires* Angular 2 or higher, developed with 7.x) - obviously
 * [@angular-material-extensions/password-strength](https://www.npmjs.com/package/@angular-material-extensions/password-strength)
 
 the [@angular-material-extensions/password-strength](https://www.npmjs.com/package/@angular-material-extensions/password-strength) is used
@@ -474,7 +474,6 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
                  () => 'your_app_name_factory',
                 {
                   enableFirestoreSync: true, // enable/disable autosync users with firestore
-                  onlyEmailPasswordAuth : true, // enable/disable signin/up with auth providers like google, facebook, twitter - default: false
                   toastMessageOnAuthSuccess: false, // whether to open/show a snackbar message on auth success - default : true
                   toastMessageOnAuthError: false // whether to open/show a snackbar message on auth error - default : true
                 }),
