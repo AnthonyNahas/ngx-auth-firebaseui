@@ -1,5 +1,5 @@
 import {CommonModule} from '@angular/common';
-import {NgModule, ModuleWithProviders, InjectionToken} from '@angular/core';
+import {NgModule, ModuleWithProviders, InjectionToken, Inject} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {AuthComponent} from './components/auth/auth.component';
@@ -99,7 +99,7 @@ export const NgxAuthFirebaseUIConfigToken = new InjectionToken<NgxAuthFirebaseUI
 export class NgxAuthFirebaseUIModule {
   static forRoot(configFactory: FirebaseAppConfig,
                  appNameFactory?: () => string,
-                 config: NgxAuthFirebaseUIConfig = defaultAuthFirebaseUIConfig): ModuleWithProviders {
+                 config?: NgxAuthFirebaseUIConfig): ModuleWithProviders {
     return {
       ngModule: NgxAuthFirebaseUIModule,
       providers:
@@ -121,5 +121,10 @@ export class NgxAuthFirebaseUIModule {
           LoggedInGuard
         ],
     };
+  }
+
+  constructor(@Inject(NgxAuthFirebaseUIConfigToken)
+              public config: NgxAuthFirebaseUIConfig) {
+    this.config = Object.assign(defaultAuthFirebaseUIConfig, this.config);
   }
 }
