@@ -1,3 +1,12 @@
+## [2.3.1](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v2.3.0...v2.3.1) (2019-02-08)
+
+
+### Bug Fixes
+
+* **package:** set `canLogout` and `canDeleteAccount` to true as default values [#180](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/180) ([96ea8c2](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/96ea8c2))
+
+
+
 # [2.3.0](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v2.2.1...v2.3.0) (2019-02-05)
 
 
