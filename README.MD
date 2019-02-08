@@ -668,7 +668,11 @@ export class AppComponent {
 
 | option | bind  |  type  |   default    | description  |
 |:---------------------|:------:|:------:|:------------:|:-------------------------------------------------------------------------------------------------|
-| onAccountDeleted     | Output() | void     | - | this will be fired when the user deletes his account
+| editMode           | Input() | boolean     | false | whether the use is in edit mode
+| canLogout          | Input() | boolean     | true | whether to render the logout button
+| canDeleteAccount   | Input() | boolean     | true | whether to render the delete account button
+| appearance         | Input() | MatFormFieldAppearance     | - | the style of the mat-input-form
+| onAccountDeleted   | Output()| void     | - | this will be fired when the user deletes his account
 
 
 ### EXTRA TIP: Login Authentication Guard
