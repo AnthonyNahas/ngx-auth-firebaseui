@@ -8,7 +8,7 @@
     "build": "ng build",
     "build:doc": "cd ../ && gulp build:doc",
     "build:prod": "ng build --prod ",
-    "build:client-and-server-bundles": "ng build --prod &&  ng run ngx-auth-firebaseui:server:production",
+    "build:client-and-server-bundles": "ng build --prod --preserve-symlinks &&  ng run ngx-auth-firebaseui:server:production",
     "build:prerender": "npm run build:client-and-server-bundles && npm run webpack:server && npm run generate:prerender",
     "build:ssr": "npm run build:client-and-server-bundles && npm run webpack:server",
     "compile:server": "tsc -p server.tsconfig.json",
