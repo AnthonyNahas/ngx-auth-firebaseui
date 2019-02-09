@@ -30,6 +30,10 @@ export function hljsLanguages() {
   ];
 }
 
+export function firebaseAppNameFactory() {
+  return `you_app_name`;
+}
+
 @NgModule({
   declarations: [
     AppComponent
@@ -42,7 +46,7 @@ export function hljsLanguages() {
     Angulartics2Module.forRoot(),
     ServiceWorkerModule.register('/ngsw-worker.js', {enabled: environment.production}),
     AngularFireModule.initializeApp(firebaseKey),
-    NgxAuthFirebaseUIModule.forRoot(firebaseKey, () => 'null',
+    NgxAuthFirebaseUIModule.forRoot(firebaseKey, firebaseAppNameFactory,
       {
         enableFirestoreSync: true,
         toastMessageOnAuthSuccess: true,
