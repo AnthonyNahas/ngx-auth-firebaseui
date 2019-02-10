@@ -1,3 +1,14 @@
+## [2.3.2](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v2.3.1...v2.3.2) (2019-02-10)
+
+
+### Bug Fixes
+
+* **demo:** export function of firebase app name factory to support aot ([c0647e2](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/c0647e2))
+* **package:** fixed export bug with ES5 at auth providers [#179](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/179) ([73ca9b9](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/73ca9b9))
+* **package:** updated minor packages ([1412b2d](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/1412b2d))
+
+
+
 ## [2.3.1](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v2.3.0...v2.3.1) (2019-02-08)
 
 
