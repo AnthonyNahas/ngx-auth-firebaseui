@@ -74,7 +74,7 @@
     "@babel/preset-es2015": "^7.0.0-beta.53",
     "@compodoc/gulp-compodoc": "^0.0.10",
     "@types/jasmine": "^3.3.8",
-    "@types/jest": "^23.3.14",
+    "@types/jest": "^24.0.1",
     "@types/lodash": "^4.14.119",
     "@types/node": "^10.12.24",
     "angular-cli-ghpages": "^0.5.3",
