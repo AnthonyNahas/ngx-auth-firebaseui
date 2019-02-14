@@ -121,4 +121,12 @@ export class HomeComponent implements OnInit, OnDestroy {
     }
   }
 
+  onSignOut() {
+    console.log('Sign-out successful!');
+  }
+
+  onAccountDeleted() {
+    console.log('Account Delete successful!');
+  }
+
 }

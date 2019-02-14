@@ -13,7 +13,7 @@ import {NgxAuthFirebaseUIConfig, NgxAuthFirebaseUIConfigToken} from '../../ngx-a
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.scss']
 })
-export class UserComponent implements OnInit {
+export class UserComponent {
 
   @Input()
   editMode: boolean;
@@ -26,6 +26,9 @@ export class UserComponent implements OnInit {
 
   @Input()
   appearance: MatFormFieldAppearance;
+
+  @Output()
+  onSignOut: EventEmitter<void> = new EventEmitter();
 
   @Output()
   onAccountDeleted: EventEmitter<void> = new EventEmitter();
@@ -42,9 +45,6 @@ export class UserComponent implements OnInit {
               public authProcess: AuthProcessService,
               private _fireStoreService: FirestoreSyncService,
               private snackBar: MatSnackBar) {
-  }
-
-  ngOnInit() {
   }
 
   protected initUpdateFormGroup() {
@@ -133,6 +133,17 @@ export class UserComponent implements OnInit {
     this.editMode = false;
   }
 
+  async signOut() {
+    try {
+      await this.auth.auth.signOut();
+      // Sign-out successful.
+      this.onSignOut.emit();
+    } catch (e) {
+      // An error happened.
+      console.error('An error happened while signing out!', e);
+    }
+  }
+
   /**
    * Delete the account of the current firebase user
    *
@@ -145,6 +156,7 @@ export class UserComponent implements OnInit {
       const user = this.auth.auth.currentUser;
 
       await this.authProcess.deleteAccount();
+      // TODO(13.02.19) @anthoynahas: error while delete user data by user id
       if (this.config.enableFirestoreSync) {
         await this._fireStoreService.deleteUserData(user.uid);
       }
