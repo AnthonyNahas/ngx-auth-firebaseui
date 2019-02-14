@@ -157,9 +157,9 @@ export class UserComponent {
 
       await this.authProcess.deleteAccount();
       // TODO(13.02.19) @anthoynahas: error while delete user data by user id
-      if (this.config.enableFirestoreSync) {
-        await this._fireStoreService.deleteUserData(user.uid);
-      }
+      // if (this.config.enableFirestoreSync) {
+      //   await this._fireStoreService.deleteUserData(user.uid);
+      // }
       this.onAccountDeleted.emit();
       this.editMode = false;
       this.snackBar.open('Your account has been successfully deleted!', 'OK', {
