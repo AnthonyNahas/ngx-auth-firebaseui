@@ -60,7 +60,7 @@
     "@angular/forms": "^7.2.4",
     "@angular/material": "^7.3.2",
     "@angular/router": "^7.2.4",
-    "firebase": "^5.8.2"
+    "firebase": "^5.8.3"
   },
   "devDependencies": {
     "@angular/compiler": "^7.2.4",
