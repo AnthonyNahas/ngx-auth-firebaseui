@@ -35,6 +35,13 @@
       <mat-icon svgIcon="github"></mat-icon>
       GitHub
     </button>
+    <button *ngIf="providers === authProvider.ALL || providers.includes(authProvider.PhoneNumber)"
+            mat-button
+            [ngClass.xs]="{'space-full-xs':true}"
+            (click)="authProcess.signInWith(authProvider.PhoneNumber)">
+      <mat-icon svgIcon="phone"></mat-icon>
+      SMS
+    </button>
   </div>
 
   <!--classic-->
@@ -70,6 +77,13 @@
             [ngClass.xs]="{'space-full-xs':true}"
             (click)="authProcess.signInWith(authProvider.Github)">
       GitHub
+    </button>
+    <button *ngIf="providers === authProvider.ALL || providers.includes(authProvider.PhoneNumber)"
+            mat-button
+            class="github-classic"
+            [ngClass.xs]="{'space-full-xs':true}"
+            (click)="authProcess.signInWith(authProvider.PhoneNumber)">
+      SMS
     </button>
   </div>
 
@@ -107,6 +121,13 @@
             (click)="authProcess.signInWith(authProvider.Github)">
       GitHub
     </button>
+    <button *ngIf="providers === authProvider.ALL || providers.includes(authProvider.PhoneNumber)"
+            mat-stroked-button
+            class="github-classic"
+            [ngClass.xs]="{'space-full-xs':true}"
+            (click)="authProcess.signInWith(authProvider.PhoneNumber)">
+      SMS
+    </button>
   </div>
 
   <!--raised-->
@@ -143,6 +164,13 @@
             (click)="authProcess.signInWith(authProvider.Github)">
       GitHub
     </button>
+    <button *ngIf="providers === authProvider.ALL || providers.includes(authProvider.PhoneNumber)"
+            mat-raised-button
+            class="github-raised"
+            [ngClass.xs]="{'space-full-xs':true}"
+            (click)="authProcess.signInWith(authProvider.PhoneNumber)">
+      SMS
+    </button>
   </div>
 
   <!--fab-->
@@ -173,6 +201,12 @@
             class="github-raised"
             (click)="authProcess.signInWith(authProvider.Github)">
       <mat-icon svgIcon="github"></mat-icon>
+    </button>
+    <button *ngIf="providers === authProvider.ALL || providers.includes(authProvider.PhoneNumber)"
+            mat-fab
+            class="github-raised"
+            (click)="authProcess.signInWith(authProvider.PhoneNumber)">
+      <mat-icon svgIcon="phone"></mat-icon>
     </button>
   </div>
 
@@ -206,6 +240,12 @@
             class="github-raised"
             (click)="authProcess.signInWith(authProvider.Github)">
       <mat-icon svgIcon="github"></mat-icon>
+    </button>
+    <button *ngIf="providers === authProvider.ALL || providers.includes(authProvider.PhoneNumber)"
+            mat-mini-fab
+            class="github-raised"
+            (click)="authProcess.signInWith(authProvider.PhoneNumber)">
+      <mat-icon svgIcon="phone"></mat-icon>
     </button>
   </div>
 </div>

@@ -18,6 +18,13 @@ export const facebookAuthProvider = new firebase.auth.FacebookAuthProvider();
 export const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
 export const twitterAuthProvider = new firebase.auth.TwitterAuthProvider();
 export const githubAuthProvider = new firebase.auth.GithubAuthProvider();
+export const recaptchaVerifier = new firebase.auth.RecaptchaVerifier('sign-in-button', {
+  'size': 'invisible',
+  'callback': function (response: any) {
+    // reCAPTCHA solved, allow signInWithPhoneNumber.
+    // onSignInSubmit();
+  }
+});
 
 export enum AuthProvider {
   ALL = 'all',
@@ -48,6 +55,9 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
               public afa: AngularFireAuth,
               private _snackBar: MatSnackBar,
               private _fireStoreService: FirestoreSyncService) {
+
+    // To apply the default browser preference instead of explicitly setting it.
+    firebase.auth().useDeviceLanguage();
   }
 
   /**
@@ -99,6 +109,10 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
 
         case AuthProvider.Github:
           signInResult = await this.afa.auth.signInWithPopup(githubAuthProvider) as UserCredential;
+          break;
+
+        case AuthProvider.PhoneNumber:
+
           break;
 
         default:
