@@ -18,6 +18,10 @@ mat-toolbar {
   text-overflow: ellipsis;
 }
 
+.fill-remaining {
+  flex: 1 1 auto;
+}
+
 .stand-alone-providers {
   ngx-auth-firebaseui-providers:not(:last-child) {
     margin-bottom: 2rem !important;

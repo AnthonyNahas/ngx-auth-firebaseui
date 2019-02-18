@@ -3,7 +3,7 @@
   <mat-tab *ngIf="passwordResetWished" label="Reset Password">
     <form [formGroup]="resetPasswordFormGroup" (ngSubmit)="resetPasswordFormGroup.valid && resetPassword()">
 
-      <mat-card>
+      <mat-card [ngClass]="{ 'mat-card': asMatCard}">
         <mat-card-header fxLayoutAlign="end">
           <button mat-icon-button
                   [color]="color"
@@ -51,7 +51,7 @@
 
   <!--Sign in tab-->
   <mat-tab label="Sign in">
-    <mat-card>
+    <mat-card [ngClass]="{ 'mat-card': asMatCard}">
       <mat-card-title>Signing in</mat-card-title>
       <mat-card-content>
         <form [formGroup]="signInFormGroup"
@@ -128,7 +128,7 @@
 
   <!--tab register-->
   <mat-tab label="Register">
-    <mat-card>
+    <mat-card [ngClass]="{ 'mat-card': asMatCard}">
       <mat-card-title>Registration</mat-card-title>
       <div *ngIf="!authProcess.emailConfirmationSent;then register else confirm"></div>
       <ng-template #register>

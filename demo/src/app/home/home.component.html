@@ -28,7 +28,13 @@
       <!--toolbar-->
       <mat-toolbar [color]="color">
         <span>Demo App</span>
-        <span class="demo-fill-remaining"></span>
+        <span class="fill-remaining"></span>
+        <button mat-raised-button color="accent" (click)="openLoginDialog()">
+          OPEN LOGIN
+        </button>
+        <button mat-raised-button color="accent" (click)="openUserDialog()" style="margin-left: 1rem">
+          OPEN USER
+        </button>
       </mat-toolbar>
 
       <div fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="center">
@@ -101,7 +107,7 @@
           </mat-card-content>
 
           <mat-card-content>
-            <ngx-auth-firebaseui (onSuccess)="printUser($event)"
+            <ngx-auth-firebaseui (onSuccess)="printUser($event)" [asMatCard]="true"
                                  (onError)="printError($event)">
             </ngx-auth-firebaseui>
           </mat-card-content>

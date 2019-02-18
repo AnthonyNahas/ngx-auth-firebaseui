@@ -19,6 +19,9 @@ export class UserComponent {
   editMode: boolean;
 
   @Input()
+  asMatCard = true;
+
+  @Input()
   canLogout = true;
 
   @Input()

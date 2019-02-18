@@ -91,6 +91,8 @@ export const NgxAuthFirebaseUIConfigToken = new InjectionToken<NgxAuthFirebaseUI
     LegalityDialogComponent
   ],
   entryComponents: [
+    AuthComponent,
+    UserComponent,
     LegalityDialogComponent
   ]
 })

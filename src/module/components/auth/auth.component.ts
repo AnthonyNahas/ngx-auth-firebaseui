@@ -32,6 +32,9 @@ export class AuthComponent implements OnInit, OnChanges, OnDestroy {
   appearance: MatFormFieldAppearance;
 
   @Input()
+  asMatCard = true;
+
+  @Input()
   tabIndex: number | null;
 
   @Input()

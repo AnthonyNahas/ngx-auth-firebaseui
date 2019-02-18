@@ -1,8 +1,8 @@
 import {Component, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
 import {Title} from '@angular/platform-browser';
 import {AngularFireAuth} from '@angular/fire/auth';
-import {AuthProvider, Theme} from 'ngx-auth-firebaseui';
-import {MatSnackBar} from '@angular/material';
+import {AuthProvider, Theme, AuthComponent, UserComponent} from 'ngx-auth-firebaseui';
+import {MatDialog, MatSnackBar} from '@angular/material';
 import {Router} from '@angular/router';
 import {Subscription} from 'rxjs/internal/Subscription';
 
@@ -81,7 +81,8 @@ export class HomeComponent implements OnInit, OnDestroy {
   constructor(private titleService: Title,
               public auth: AngularFireAuth,
               public router: Router,
-              public snackbar: MatSnackBar) {
+              public snackbar: MatSnackBar,
+              public dialog: MatDialog) {
   }
 
   ngOnInit() {
@@ -119,6 +120,14 @@ export class HomeComponent implements OnInit, OnDestroy {
     if (this.snackbarSubscription) {
       this.snackbarSubscription.unsubscribe();
     }
+  }
+
+  openLoginDialog() {
+    this.dialog.open(AuthComponent);
+  }
+
+  openUserDialog() {
+    this.dialog.open(UserComponent);
   }
 
   onSignOut() {
