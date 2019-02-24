@@ -18,13 +18,6 @@ export const facebookAuthProvider = new firebase.auth.FacebookAuthProvider();
 export const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
 export const twitterAuthProvider = new firebase.auth.TwitterAuthProvider();
 export const githubAuthProvider = new firebase.auth.GithubAuthProvider();
-export const recaptchaVerifier = new firebase.auth.RecaptchaVerifier('sign-in-button', {
-  'size': 'invisible',
-  'callback': function (response: any) {
-    // reCAPTCHA solved, allow signInWithPhoneNumber.
-    // onSignInSubmit();
-  }
-});
 
 export enum AuthProvider {
   ALL = 'all',
