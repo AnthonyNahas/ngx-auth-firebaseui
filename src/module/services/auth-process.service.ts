@@ -48,9 +48,6 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
               public afa: AngularFireAuth,
               private _snackBar: MatSnackBar,
               private _fireStoreService: FirestoreSyncService) {
-
-    // To apply the default browser preference instead of explicitly setting it.
-    firebase.auth().useDeviceLanguage();
   }
 
   /**
