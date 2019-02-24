@@ -18,7 +18,8 @@ export class LoggedInGuard implements CanActivate {
     private config: NgxAuthFirebaseUIConfig,
     private router: Router,
     private auth: AuthProcessService,
-  ) {}
+  ) {
+  }
 
   canActivate(): Observable<boolean> {
     return this.auth.afa.user.pipe(

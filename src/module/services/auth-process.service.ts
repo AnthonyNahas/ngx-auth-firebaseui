@@ -72,6 +72,7 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
    * @returns
    */
   public async signInWith(provider: AuthProvider, credentials?: ICredentials) {
+    // console.log('this.config on signInWith', this.config);
     try {
       this.isLoading = true;
       let signInResult: UserCredential | any;
@@ -102,7 +103,7 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
           break;
 
         case AuthProvider.PhoneNumber:
-
+          // coming soon - see feature/sms branch
           break;
 
         default:

@@ -8,6 +8,8 @@ import {Subscription} from 'rxjs/internal/Subscription';
 import {AuthProcessService, AuthProvider} from '../../services/auth-process.service';
 import {LegalityDialogComponent} from '../../components/legality-dialog/legality-dialog.component';
 import {LegalityDialogParams, LegalityDialogResult} from '../../interfaces/legality.dialog.intreface';
+import {NgxAuthFirebaseUIConfig, NgxAuthFirebaseUIConfigToken} from '../../ngx-auth-firebase-u-i.module';
+import {defaultAuthFirebaseUIConfig} from '../../interfaces/config.interface';
 
 
 export const EMAIL_REGEX = new RegExp(['^(([^<>()[\\]\\\.,;:\\s@\"]+(\\.[^<>()\\[\\]\\\.,;:\\s@\"]+)*)',
@@ -83,6 +85,7 @@ export class AuthComponent implements OnInit, OnChanges, OnDestroy {
   resetPasswordEmailFormControl: AbstractControl;
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object,
+              @Inject(NgxAuthFirebaseUIConfigToken) private config: NgxAuthFirebaseUIConfig,
               public auth: AngularFireAuth,
               public authProcess: AuthProcessService,
               public dialog: MatDialog) {
@@ -92,6 +95,8 @@ export class AuthComponent implements OnInit, OnChanges, OnDestroy {
   }
 
   public ngOnInit(): void {
+    this.config = Object.assign(defaultAuthFirebaseUIConfig, this.config);
+
     if (isPlatformBrowser(this.platformId)) {
       this.onErrorSubscription = this.onError.subscribe(() => this.authenticationError = true);
     }
