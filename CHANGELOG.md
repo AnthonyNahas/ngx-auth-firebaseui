@@ -1,3 +1,23 @@
+## [2.3.3](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v2.3.2...v2.3.3) (2019-02-24)
+
+
+### Bug Fixes
+
+* **demo:** updated angular to v7.2.4 and material to v7.3.2 and other deps ([4add7a1](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/4add7a1))
+* **demo:** updated angular to v7.2.6 ([204d72b](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/204d72b))
+* **package:** assign default config after initializing the main component # 190 ([5684afd](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/5684afd))
+* **package:** updated angular to v7.2.6, firebase and other deps ([55063d5](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/55063d5))
+* **package:** updated angular to v7.3.2 ([3d1e7fc](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/3d1e7fc))
+* **package:** updated firebase to v5.8.3 ([3bcf0d0](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/3bcf0d0))
+
+
+### Features
+
+* **package:** added `onSignOut` output event to the user component ([d7950fc](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/d7950fc))
+* **package:** added phone number as auth provider (beta) ([ff8b86e](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/ff8b86e))
+
+
+
 ## [2.3.2](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v2.3.1...v2.3.2) (2019-02-10)
 
 
