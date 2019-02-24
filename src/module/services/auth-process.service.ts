@@ -6,7 +6,6 @@ import {NgxAuthFirebaseUIConfig} from '../interfaces/config.interface';
 import {FirestoreSyncService} from './firestore-sync.service';
 import {Accounts} from '../enums';
 import {firebase} from '@firebase/app';
-
 import '@firebase/auth';
 import {User, UserInfo} from 'firebase/app';
 import {NgxAuthFirebaseUIConfigToken} from '../ngx-auth-firebase-u-i.module';
@@ -18,13 +17,6 @@ export const facebookAuthProvider = new firebase.auth.FacebookAuthProvider();
 export const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
 export const twitterAuthProvider = new firebase.auth.TwitterAuthProvider();
 export const githubAuthProvider = new firebase.auth.GithubAuthProvider();
-export const recaptchaVerifier = new firebase.auth.RecaptchaVerifier('sign-in-button', {
-  'size': 'invisible',
-  'callback': function (response: any) {
-    // reCAPTCHA solved, allow signInWithPhoneNumber.
-    // onSignInSubmit();
-  }
-});
 
 export enum AuthProvider {
   ALL = 'all',
@@ -57,7 +49,7 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
               private _fireStoreService: FirestoreSyncService) {
 
     // To apply the default browser preference instead of explicitly setting it.
-    firebase.auth().useDeviceLanguage();
+    // firebase.auth().useDeviceLanguage();
   }
 
   /**
@@ -112,7 +104,7 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
           break;
 
         case AuthProvider.PhoneNumber:
-
+          console.error('Please use the authentication in the auth providers component');
           break;
 
         default:

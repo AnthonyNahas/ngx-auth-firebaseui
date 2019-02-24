@@ -116,7 +116,7 @@ describe('AuthProvidersComponent', function () {
     const div = fixture.debugElement.query(By.all());
     expect(div.name).toEqual('div');
     // should create the 4 buttons
-    expect(div.children[0].children.length).toBe(4);
+    expect(div.children[0].children.length).toBe(5);
     // console.log('div.children.length', div.children[0].children.length);
 
     for (const child of div.children[0].children) {

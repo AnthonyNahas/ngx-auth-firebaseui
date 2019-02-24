@@ -1,7 +1,8 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {DomSanitizer} from '@angular/platform-browser';
 import {MatIconRegistry} from '@angular/material';
 import {AuthProcessService, AuthProvider} from '../../services/auth-process.service';
+import {firebase} from '@firebase/app';
 
 export enum Theme {
   DEFAULT = 'default',
@@ -17,12 +18,14 @@ export enum Layout {
   COLUMN = 'column'
 }
 
+export let recaptchaVerifier: any;
+
 @Component({
   selector: 'ngx-auth-firebaseui-providers',
   templateUrl: 'auth.providers.component.html',
   styleUrls: ['auth.providers.component.scss']
 })
-export class AuthProvidersComponent {
+export class AuthProvidersComponent implements OnInit {
 
   @Input()
   theme: string;
@@ -36,6 +39,8 @@ export class AuthProvidersComponent {
 
   themes = Theme;
   authProvider = AuthProvider;
+  confirmationResult: any;
+  verificationCode: string;
 
   constructor(public authProcess: AuthProcessService,
               private _iconRegistry: MatIconRegistry,
@@ -54,5 +59,40 @@ export class AuthProvidersComponent {
       .addSvgIcon('phone',
         _sanitizer.bypassSecurityTrustResourceUrl('/assets/phone.svg'));
   }
+
+  ngOnInit(): void {
+    // TODO(19.02.19) only for client side
+    this.renderRecaptcher();
+  }
+
+  renderRecaptcher() {
+    // TODO(19.02.19) only for client side
+    recaptchaVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container');
+    recaptchaVerifier.render();
+  }
+
+  sendLoginCode() {
+    const appVerifier = recaptchaVerifier;
+
+    const num = '+4915120555552';
+
+    firebase.auth().signInWithPhoneNumber(num, appVerifier)
+      .then(result => {
+        this.confirmationResult = result;
+      })
+      .catch(error => console.error(error));
+  }
+
+  verifyLoginCode() {
+    this.confirmationResult
+      .confirm(this.verificationCode)
+      .then((result: any) => {
+        console.log('result -> ', result);
+        // this.user = result.user;
+
+      })
+      .catch((error: any) => console.log(error, 'Incorrect code entered?'));
+  }
+
 
 }

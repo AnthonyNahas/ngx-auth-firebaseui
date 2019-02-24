@@ -1,3 +1,4 @@
+<div id="recaptcha-container"></div>
 <div [ngSwitch]="theme">
 
   <!--default icon buttons-->
@@ -38,7 +39,7 @@
     <button *ngIf="providers === authProvider.ALL || providers.includes(authProvider.PhoneNumber)"
             mat-button
             [ngClass.xs]="{'space-full-xs':true}"
-            (click)="authProcess.signInWith(authProvider.PhoneNumber)">
+            (click)="sendLoginCode()">
       <mat-icon svgIcon="phone"></mat-icon>
       SMS
     </button>
@@ -82,7 +83,7 @@
             mat-button
             class="github-classic"
             [ngClass.xs]="{'space-full-xs':true}"
-            (click)="authProcess.signInWith(authProvider.PhoneNumber)">
+            (click)="sendLoginCode()">
       SMS
     </button>
   </div>
@@ -125,7 +126,7 @@
             mat-stroked-button
             class="github-classic"
             [ngClass.xs]="{'space-full-xs':true}"
-            (click)="authProcess.signInWith(authProvider.PhoneNumber)">
+            (click)="sendLoginCode()">
       SMS
     </button>
   </div>
@@ -168,7 +169,7 @@
             mat-raised-button
             class="github-raised"
             [ngClass.xs]="{'space-full-xs':true}"
-            (click)="authProcess.signInWith(authProvider.PhoneNumber)">
+            (click)="sendLoginCode()">
       SMS
     </button>
   </div>
@@ -205,7 +206,7 @@
     <button *ngIf="providers === authProvider.ALL || providers.includes(authProvider.PhoneNumber)"
             mat-fab
             class="github-raised"
-            (click)="authProcess.signInWith(authProvider.PhoneNumber)">
+            (click)="sendLoginCode()">
       <mat-icon svgIcon="phone"></mat-icon>
     </button>
   </div>
@@ -244,7 +245,7 @@
     <button *ngIf="providers === authProvider.ALL || providers.includes(authProvider.PhoneNumber)"
             mat-mini-fab
             class="github-raised"
-            (click)="authProcess.signInWith(authProvider.PhoneNumber)">
+            (click)="sendLoginCode()">
       <mat-icon svgIcon="phone"></mat-icon>
     </button>
   </div>
