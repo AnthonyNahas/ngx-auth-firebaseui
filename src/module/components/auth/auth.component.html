@@ -111,7 +111,8 @@
         </form>
 
         <div fxLayoutAlign="center">
-          <button mat-button
+          <button *ngIf="resetPasswordEnabled"
+                  mat-button
                   class="space-top"
                   [color]="color"
                   (click)="createForgotPasswordTab()">

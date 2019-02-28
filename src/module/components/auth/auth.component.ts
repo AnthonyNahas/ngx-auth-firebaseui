@@ -40,6 +40,9 @@ export class AuthComponent implements OnInit, OnChanges, OnDestroy {
   registrationEnabled = true;
 
   @Input()
+  resetPasswordEnabled = true;
+
+  @Input()
   guestEnabled = true;
 
   @Input()
