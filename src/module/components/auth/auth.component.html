@@ -127,7 +127,7 @@
   </mat-tab>
 
   <!--tab register-->
-  <mat-tab label="Register">
+  <mat-tab label="Register" *ngIf="registrationEnabled">
     <mat-card>
       <mat-card-title>Registration</mat-card-title>
       <div *ngIf="!authProcess.emailConfirmationSent;then register else confirm"></div>

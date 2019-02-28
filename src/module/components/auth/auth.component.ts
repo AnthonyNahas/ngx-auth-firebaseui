@@ -37,6 +37,9 @@ export class AuthComponent implements OnInit, OnChanges, OnDestroy {
   tabIndex: number | null;
 
   @Input()
+  registrationEnabled = true;
+
+  @Input()
   guestEnabled = true;
 
   @Input()
