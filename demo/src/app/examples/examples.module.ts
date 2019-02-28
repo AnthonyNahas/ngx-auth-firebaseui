@@ -12,6 +12,7 @@ import {TabIndexComponent} from './tab-index/tab-index.component';
 import {MessagesComponent} from './messages/messages.component';
 import { GoBackURLComponent } from './go-back-url/go-back-url.component';
 import { RegistrationComponent } from './registration/registration.component';
+import { ResetPasswordComponent } from './reset-psasword/reset-password.component';
 
 @NgModule({
   imports: [
@@ -30,7 +31,8 @@ import { RegistrationComponent } from './registration/registration.component';
       TabIndexComponent,
       MessagesComponent,
       GoBackURLComponent,
-      RegistrationComponent
+      RegistrationComponent,
+      ResetPasswordComponent
     ]
 })
 export class ExamplesModule {
