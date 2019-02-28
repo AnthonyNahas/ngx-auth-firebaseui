@@ -11,6 +11,7 @@ import {AppearanceComponent} from './appearance/appearance.component';
 import {TabIndexComponent} from './tab-index/tab-index.component';
 import {MessagesComponent} from './messages/messages.component';
 import { GoBackURLComponent } from './go-back-url/go-back-url.component';
+import { RegistrationComponent } from './registration/registration.component';
 
 @NgModule({
   imports: [
@@ -28,7 +29,8 @@ import { GoBackURLComponent } from './go-back-url/go-back-url.component';
       AppearanceComponent,
       TabIndexComponent,
       MessagesComponent,
-      GoBackURLComponent
+      GoBackURLComponent,
+      RegistrationComponent
     ]
 })
 export class ExamplesModule {

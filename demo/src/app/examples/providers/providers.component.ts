@@ -1,13 +1,14 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {MatSnackBar} from '@angular/material';
 import {AuthProvider} from 'ngx-auth-firebaseui';
+import {ExampleBaseComponent} from '../example.abstract';
 
 @Component({
   selector: 'app-providers',
   templateUrl: './providers.component.html',
   styleUrls: ['./providers.component.scss']
 })
-export class ProvidersComponent implements OnInit {
+export class ProvidersComponent extends ExampleBaseComponent {
 
   providers = AuthProvider;
 
@@ -53,14 +54,6 @@ export class ExampleComponent implements OnInit {
           </ngx-auth-firebaseui>`;
 
   constructor(public snackBar: MatSnackBar) {
-  }
-
-  ngOnInit() {
-  }
-
-  showCopyMessage(content: string) {
-    this.snackBar.open(`${content} copied`, 'OK', {
-      duration: 3000
-    });
+    super(snackBar);
   }
 }

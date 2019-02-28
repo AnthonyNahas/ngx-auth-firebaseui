@@ -1,12 +1,13 @@
 import {Component} from '@angular/core';
 import {MatSnackBar} from '@angular/material';
+import {ExampleBaseComponent} from '../example.abstract';
 
 @Component({
   selector: 'app-messages',
   templateUrl: './messages.component.html',
   styleUrls: ['./messages.component.scss']
 })
-export class MessagesComponent {
+export class MessagesComponent extends ExampleBaseComponent{
 
   user;
 
@@ -25,13 +26,9 @@ export class MessagesComponent {
              [messageOnAuthError]="errorMessage">
              </ngx-auth-firebaseui>`;
 
-  constructor(public snackBar: MatSnackBar) {
-  }
 
-  showCopyMessage(content: string) {
-    this.snackBar.open(`${content} copied`, 'OK', {
-      duration: 3000
-    });
+  constructor(public snackBar: MatSnackBar) {
+    super(snackBar);
   }
 
   saveUser($event) {

@@ -561,6 +561,7 @@ class AppComponent {
 | providers            | Input()  | string[] | ['all'] or [AuthProvider.All] | choose your favorite authentication provider: google | facebook | twitter | github
 | appearance           | Input()  | MatFormFieldAppearance | `standard` | the appearance of the mat-form-field #'legacy' | 'standard' | 'fill' | 'outline' 
 | tabIndex             | Input()  | number  | null; | `0` | the selected tab - either sign in or register
+| registrationEnabled  | Input()  | boolean | `true` | whether the user is able to register a new account
 | guestEnabled         | Input()  | boolean | `true` | whether the user can sign in and continue as guest
 | tosUrl               | Input()  | string  | - | the url of term of services
 | privacyPolicyUrl     | Input()  | string  | - | the url of the private privacy
