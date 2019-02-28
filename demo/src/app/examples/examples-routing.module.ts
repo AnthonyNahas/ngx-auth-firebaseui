@@ -1,5 +1,5 @@
-import {RouterModule} from '@angular/router';
 import {NgModule} from '@angular/core';
+import {RouterModule} from '@angular/router';
 import {ExamplesComponent} from './examples.component';
 import {ProvidersComponent} from './providers/providers.component';
 import {GuestComponent} from './guest/guest.component';
@@ -9,6 +9,7 @@ import {TabIndexComponent} from './tab-index/tab-index.component';
 import {MessagesComponent} from './messages/messages.component';
 import {GoBackURLComponent} from './go-back-url/go-back-url.component';
 import {RegistrationComponent} from './registration/registration.component';
+import {ResetPasswordComponent} from './reset-psasword/reset-password.component';
 
 @NgModule({
   imports: [RouterModule.forChild([
@@ -16,6 +17,7 @@ import {RegistrationComponent} from './registration/registration.component';
     {path: 'messages', component: MessagesComponent},
     {path: 'providers', component: ProvidersComponent},
     {path: 'registration', component: RegistrationComponent},
+    {path: 'reset-password', component: ResetPasswordComponent},
     {path: 'guest', component: GuestComponent},
     {path: 'appearance', component: AppearanceComponent},
     {path: 'tos', component: TosComponent},
