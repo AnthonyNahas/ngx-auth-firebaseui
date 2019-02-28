@@ -1,3 +1,27 @@
+# [2.4.0](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v2.3.3...v2.4.0) (2019-02-28)
+
+
+### Bug Fixes
+
+* **demo:** updated angular material to v7.3.3 ([9c09a8c](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/9c09a8c))
+* **demo:** updated angular to v7.2.7 ([63fc337](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/63fc337))
+* **demo:** updated deps ([a194478](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/a194478))
+* **demo:** updated package-lock.json ([4d97044](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/4d97044))
+* **demo:** updated ts-node and ts-lint ([c52f6be](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/c52f6be))
+* **package:** updated jest and gulp deps ([21e634c](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/21e634c))
+* **package:** updated ts to v3.2.4 and removed karma dependencies ([5a85d91](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/5a85d91))
+
+
+### Features
+
+* **demo:** added a registration component as example for new input [#202](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/202) ([0d648c7](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/0d648c7))
+* **demo:** added reset password component as example in the demo app [#202](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/202) ([ec33493](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/ec33493))
+* **demo:** added the route for the demo reset password component ([e3753ff](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/e3753ff))
+* **package:** ability to disable `reset password` [#202](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/202) ([265408f](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/265408f))
+* **package:** added `registrationEnabled` as input for `ngx-auth-firebaseui` ([d7a42b4](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/d7a42b4))
+
+
+
 ## [2.3.3](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v2.3.2...v2.3.3) (2019-02-24)
 
 
@@ -143,7 +167,7 @@
 ### Features
 
 * **ngx-auth-firebaseui-providers:** dded NgxAuthFirebaseUIConfig to the module ([6e2f0d6](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/6e2f0d6))
-* **project:** integration of [@angular-material-extensions](https://github.com/angular-material-extensions)/password-strength ([37f1631](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/37f1631))
+* **project:** integration of @angular-material-extensions/password-strength ([37f1631](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/37f1631))
 * **project:** snackbar message is now optional via NgxAuthFirebaseUIConfig [#83](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/83) ([631fed5](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/631fed5))
 
 
@@ -177,8 +201,8 @@
 * **package:** removed mat-label for the register tab due a bug with material2 ([c1969c7](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/c1969c7))
 * **package:** sign in results are all now UserCredential du to the update of firebase ([dd3f5a6](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/dd3f5a6))
 * **package:** sign u result is now UserCredential due to the update of firebase ([f0f425d](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/f0f425d))
-* **package:** update [@angular](https://github.com/angular)/cdk to version 6.2.0 ([59a39f9](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/59a39f9))
-* **package:** update [@angular](https://github.com/angular)/material to version 6.2.0 ([b2560c8](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/b2560c8))
+* **package:** update @angular/cdk to version 6.2.0 ([59a39f9](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/59a39f9))
+* **package:** update @angular/material to version 6.2.0 ([b2560c8](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/b2560c8))
 
 
 ### Features
