@@ -293,6 +293,17 @@ gulp.task('build', ['clean'], (cb) => {
   runSequence('compile', 'test', 'npm-package', 'rollup-bundle', cb);
 });
 
+gulp.task('build:schematics', () => {
+  // return execDemoCmd(`build --preserve-symlinks --prod --aot --build-optimizer`, {cwd: `${config.demoDir}`});
+  return execCmd('tsc', '-p src/schematics/tsconfig.json').then(exitCode => {
+    if (exitCode === 0) {
+      return execCmd('webpack', '--config src/schematics/webpack.config.js --progress --colors');
+    } else {
+      Promise.reject(1);
+    }
+  });
+});
+
 // Same as 'build' but without cleaning temp folders (to avoid breaking demo app, if currently being served)
 gulp.task('build-watch', (cb) => {
   runSequence('compile', 'test', 'npm-package', 'rollup-bundle', cb);
@@ -319,10 +330,10 @@ gulp.task('build:watch-fast', ['build-watch-no-tests'], () => {
 /////////////////////////////////////////////////////////////////////////////
 
 // Prepare 'dist' folder for publication to NPM
-gulp.task('npm-package', ['copy:assets'], (cb) => {
+gulp.task('npm-package', ['build:schematics', 'copy:assets'], (cb) => {
   let pkgJson = JSON.parse(fs.readFileSync('./package.json', 'utf8'));
   let targetPkgJson = {};
-  let fieldsToCopy = ['version', 'description', 'keywords', 'author', 'repository', 'license', 'bugs', 'homepage'];
+  let fieldsToCopy = ['version', 'description', 'keywords', 'author', 'repository', 'license', 'bugs', 'homepage', 'schematics'];
 
   targetPkgJson['name'] = config.libraryName;
 
@@ -544,8 +555,7 @@ gulp.task('serve:doc', ['clean:doc'], (cb) => {
 const execDemoCmd = (args, opts) => {
   if (fs.existsSync(`${config.demoDir}/node_modules`)) {
     return execCmd('ng', args, opts, `/${config.demoDir}`);
-  }
-  else {
+  } else {
     gulpUtil.log(gulpUtil.colors.yellow(`No 'node_modules' found in '${config.demoDir}'. Installing dependencies for you...`));
     return helpers.installDependencies({cwd: `${config.demoDir}`})
       .then(exitCode => exitCode === 0 ? execCmd('ng', args, opts, `/${config.demoDir}`) : Promise.reject())
@@ -737,8 +747,7 @@ gulp.task('release', (cb) => {
   if (!readyToRelease()) {
     gulpUtil.log(gulpUtil.colors.red('# Pre-Release Checks have failed. Please fix them and try again. Aborting...'));
     cb();
-  }
-  else {
+  } else {
     gulpUtil.log(gulpUtil.colors.green('# Pre-Release Checks have succeeded. Continuing...'));
     runSequence(
       'bump-version',
