@@ -174,7 +174,7 @@ by starring :star: and sharing it :loudspeaker:
 - [angular material - v7.x](https://www.npmjs.com/package/@angular/material)
 - [angular forms - v7.x](https://www.npmjs.com/package/@angular/forms)
 - [angular animations - v7.x](https://www.npmjs.com/package/@angular/animations)
-- [angular flex-layout v7.0.0-beta.19](https://www.npmjs.com/package/@angular/flex-layout)
+- [angular flex-layout v7.0.0-beta.23](https://www.npmjs.com/package/@angular/flex-layout)
 - [@angular/fire - v5.x](https://www.npmjs.com/package/@angular/fire)
 - [firebase - v5.x](https://www.npmjs.com/package/firebase)
 
@@ -293,14 +293,14 @@ automatically change to `column`
 
 <a name="peerDependencies"/>
 
-## Peer Dependencies - please make sure that peerDependencies are installed
+## Peer Dependencies - please make sure that peerDependencies are installed if you are not using the schematics
 
 ```json
 "peerDependencies": {
     "@angular/core": "^7.x",
     "@angular/animations": "^7.x",
     "@angular/cdk": "^7.x",
-    "@angular/flex-layout": "^7.0.0-beta.22",
+    "@angular/flex-layout": "^7.0.0-beta.23",
     "@angular/forms": "^5.x",
     "@angular/material": "^5.x",
     "@angular/fire": "5.x",
@@ -345,6 +345,10 @@ Now add the library via the `angular schematics`
 ng add ngx-auth-firebaseui
 ```
 
+- peer dependencies will be automatically added the package.json and installed
+- `ngx-auth-firebaseui` 's module will be automatically imported to the root module (just replace `PUT_YOUR_FIREBASE_API_KEY_HERE` with your firebase api key)
+- `ngx-auth-firebaseui` 's assets will be automatically added the `angular.json` file
+
 ## 2. Install via *npm*. (Alternative) 
 
 Install above dependencies via *npm*.
@@ -355,12 +359,12 @@ npm install --save ngx-auth-firebaseui
 ```
 
 ```bash
-npm i -s @angular/material@6.2.1 @angular/cdk@6.2.1 @angular/flex-layout@6.0.0-beta.16 @angular/forms@6.0.4 @angular/animations@6.0.4
+npm i -s @angular/material @angular/cdk @angular/flex-layout @angular/forms @angular/animations
 ```
 
 Firebase deps
 ```bash
-npm i -s firebase@5.0.4 @angular/fire@5.0.0-rc.10.0
+npm i -s firebase @angular/fire
 ```
 
 ` -> continue by following the instructions ` [here](https://github.com/anthonynahas/ngx-auth-firebaseui/tree/master/docs/INSTRUCTIONS.md) 
