@@ -7,6 +7,7 @@
 
 [![npm version](https://badge.fury.io/js/ngx-auth-firebaseui.svg)](https://badge.fury.io/js/ngx-auth-firebaseui)
 [![demo](https://img.shields.io/badge/demo-online-ed1c46.svg)](https://ngx-auth-firebaseui.firebaseapp.com)
+[![docs: typedoc](https://img.shields.io/badge/docs-typedoc-4D0080.svg)](https://ngx-auth-firebaseui.firebaseapp.com/doc/index.html)
 [![codecov](https://codecov.io/gh/anthonynahas/ngx-auth-firebaseui/branch/master/graph/badge.svg)](https://codecov.io/gh/anthonynahas/ngx-auth-firebaseui)
 [![CircleCI branch](https://img.shields.io/circleci/project/github/AnthonyNahas/ngx-auth-firebaseui/master.svg?label=circleci)](https://circleci.com/gh/AnthonyNahas/ngx-auth-firebaseui)
 [![Build Status](https://travis-ci.org/AnthonyNahas/ngx-auth-firebaseui.svg?branch=master)](https://travis-ci.org/AnthonyNahas/ngx-auth-firebaseui)
@@ -62,7 +63,6 @@ by starring :star: and sharing it :loudspeaker:
 - [Demo](#demo)
 - [Features](#features)
 - [Examples](#examples)
-- [Documentation](#documentation)
 - [Screenshots](#screenshots)
 - [Peer Dependencies](#peerDependencies)
 - [Dependencies](#dependencies)
@@ -201,12 +201,7 @@ take a look at live example with firestore's synchronization [here](FIRESTORE_SY
 
 ## [Examples](https://ngx-auth-firebaseui.firebaseapp.com/examples)
 
----
-
-<a name="documentation"/>
-
-## [Documentation](https://ngx-auth-firebaseui.firebaseapp.com/doc/index.html)
-
+--
 <a name="sreenshots"/>
 
 ## Screenshots - Browser <ngx-auth-firebaseui></ngx-auth-firebaseui>
