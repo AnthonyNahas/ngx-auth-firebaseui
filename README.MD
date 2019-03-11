@@ -34,6 +34,8 @@ This library is an angular module (including angular components and services) th
 your users with your firebase project. NgxAuthFirebseUI is compatible with
 [angular material](https://material.angular.io/) and [angular flexLayout](https://github.com/angular/flex-layout).
 
+** Angular Schematics is supported starting with v2.5.0 **
+
 If you prefer to develop with bootstrap rather than with material design, please check this project [@firebaseui/ng-bootstrap](https://github.com/firebaseui/ng-bootstrap)
 
 ## Migration from V1 to V2
@@ -61,8 +63,6 @@ by starring :star: and sharing it :loudspeaker:
 - [Supported Processes and Actions](#supported-procress-and-actions)
 - [Requirements](#requirements)
 - [Demo](#demo)
-- [Features](#features)
-- [Examples](#examples)
 - [Screenshots](#screenshots)
 - [Peer Dependencies](#peerDependencies)
 - [Dependencies](#dependencies)
@@ -70,9 +70,6 @@ by starring :star: and sharing it :loudspeaker:
 - [Configuration](#configuration)
 - [Usage](#usage)
 - [API](#api)
-- [Additional Requirements - material (Include a theme)](#additional-requirements-material-theme)
-- [Additional Requirements - material icons](#additional-requirements-material-icons)
-- [Additional Requirements - assets](#additional-requirements-assets)
 - [Run Demo App Locally](#run-demo-app-locally)
 - [Other Angular Libraries](#other-angular-libraries)
 - [Support](#support)
@@ -186,22 +183,13 @@ the full tutorial guide can be found [here](https://ngx-auth-firebaseui.firebase
 
 <a name="demo"/>
 
-##  [Demo](https://ngx-auth-firebaseui.firebaseapp.com/) | 
-
-
-<a name="features"/>
-
-## [Features](https://ngx-auth-firebaseui.firebaseapp.com/features)
+##  [Demo](https://ngx-auth-firebaseui.firebaseapp.com/) |  [Features](https://ngx-auth-firebaseui.firebaseapp.com/features) | [Examples](https://ngx-auth-firebaseui.firebaseapp.com/examples)
 
 take a look at live example with firestore's synchronization [here](FIRESTORE_SYNC.md) 
 
 ---
 
-<a name="examples"/>
 
-## [Examples](https://ngx-auth-firebaseui.firebaseapp.com/examples)
-
---
 <a name="sreenshots"/>
 
 ## Screenshots - Browser <ngx-auth-firebaseui></ngx-auth-firebaseui>
@@ -320,18 +308,6 @@ automatically change to `column`
   }
 ```
 
-e.g:
-
-Angular deps
-```bash
-npm i -s @angular/material@6.2.1 @angular/cdk@6.2.1 @angular/flex-layout@6.0.0-beta.16 @angular/forms@6.0.4 @angular/animations@6.0.4
-```
-
-Firebase deps
-```bash
-npm i -s firebase@5.0.4 @angular/fire@5.0.0-rc.10.0
-```
-
 #### NOTE:
 If you are still running angular v5, please consider to user `ngx-auth-firebaseui` v0.x
 
@@ -360,12 +336,35 @@ to indicate how secure is the provided password when registering a new firebase 
 
 ## (1) [Installation](https://ngx-auth-firebaseui.firebaseapp.com/getting-started)
 
+## 1. Install via *ng add*. (Recommended)
+
+If Angular Material Design is not setup, just run `ng add @angular/material` [learn more](https://material.angular.io/guide/getting-started)
+
+Now add the library via the `angular schematics`
+```shell
+ng add ngx-auth-firebaseui
+```
+
+## 2. Install via *npm*. (Alternative) 
+
 Install above dependencies via *npm*.
 
 Now install `ngx-auth-firebaseui` via:
 ```shell
 npm install --save ngx-auth-firebaseui
 ```
+
+```bash
+npm i -s @angular/material@6.2.1 @angular/cdk@6.2.1 @angular/flex-layout@6.0.0-beta.16 @angular/forms@6.0.4 @angular/animations@6.0.4
+```
+
+Firebase deps
+```bash
+npm i -s firebase@5.0.4 @angular/fire@5.0.0-rc.10.0
+```
+
+` -> continue by following the instructions ` [here](https://github.com/anthonynahas/ngx-auth-firebaseui/tree/master/docs/INSTRUCTIONS.md) 
+
 Once installed you need to import the main module:
 ```js
 import { NgxAuthFirebaseUIModule } from 'ngx-auth-firebaseui';
@@ -707,113 +706,6 @@ export class AppRoutingModule {
 }
 
 ```
-
-<a name="additional-requirements-material-theme"/>
-
-## (4) Additional Requirements - material (Include a theme)
-#### With Angular CLI
-Please take a look of the official documentation of **angular material themes** [here](https://material.angular.io/guide/getting-started#step-4-include-a-theme)
-#### Without Angular CLI
-
-[see how it works](https://material.angular.io/guide/theming)
-
-----
-
-<a name="additional-requirements-material-icons"/>
-
-## (5) Additional Requirements - Import the material design icons [learn more](https://material.angular.io/guide/getting-started#step-6-optional-add-material-icons)
-
-- The easiest way to import material design icons is to provide a link in your `index.html` file like below:
-
-```html
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-```
-
-- alternative solution:
-
-1. Install of the official npm module of the material design icons
-
-```bash
-npm i -s material-design-icons
-```
-
-2. Import them in your `angular.json` file
-
-```json
-"styles": [
-        "styles.css",
-        "node_modules/material-design-icons/iconfont/material-icons.css"
-      ],
-```  
-
-
-----
-
-<a name="additional-requirements-assets"/>
-
-## (6) Additional Requirements - assets
-#### With Angular CLI
-- open the file `.angular.json`
-- add the following into the `assets` section
-```ts
-{
-          "glob": "**/*",
-          "input": "node_modules/ngx-auth-firebaseui/assets/",
-          "output": "./assets/"
-}
-```
-- after that the required images will be copied to the assets dir and will be available for the app.
-- finally the `assets` section should be in a way similar to that -->
-```ts
-"assets": [
-        "assets",
-        "favicon.ico",
-        {
-          "glob": "**/*",
-          "input": "node_modules/ngx-auth-firebaseui/assets/",
-          "output": "./assets/"
-        }
-      ]
-```
-
-
-#### Without Angular CLI
-copy the assets directory into the root of your project, so that your app can get the required images for the UI.
-This is an example of requesting an image from the library
-`Request URL:http://localhost:4200/assets/google.svg`.
-Please make sur that the images will be hosted in the right place
-
-
----
-
-<a name="run-demo-app-locally"/>
-
-## Run Demo App Locally
-
-- [clone this repo](https://github.com/AnthonyNahas/ngx-auth-firebaseui.git) by running
-```bash
-$ git clone https://github.com/AnthonyNahas/ngx-auth-firebaseui.git
-```
-
-- setup the ngx-auth-firebaseui package
-```bash
-$ gulp setup
-```
-
-- navigate to the demo app directory
-```bash
-$ cd demo
-```
-
-- install the dependencies and run the app
-```bash
-$ npm i && npm start
-```
-
-- the app is now hosted by `http://localhost:4200/`
-
-
----
 
 <a name="other-angular-libraries"/>
 
