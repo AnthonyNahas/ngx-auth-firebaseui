@@ -345,9 +345,9 @@ Now add the library via the `angular schematics`
 ng add ngx-auth-firebaseui
 ```
 
-- peer dependencies will be automatically added the package.json and installed
-- `ngx-auth-firebaseui` 's module will be automatically imported to the root module (just replace `PUT_YOUR_FIREBASE_API_KEY_HERE` with your firebase api key)
-- `ngx-auth-firebaseui` 's assets will be automatically added the `angular.json` file
+- :heavy_check_mark: peer dependencies will be automatically added the package.json and installed
+- :heavy_check_mark:  `ngx-auth-firebaseui` 's module will be automatically imported to the root module (just replace `PUT_YOUR_FIREBASE_API_KEY_HERE` with your firebase api key)
+- :heavy_check_mark: `ngx-auth-firebaseui` 's assets will be automatically added the `angular.json` file
 
 ## 2. Install via *npm*. (Alternative) 
 

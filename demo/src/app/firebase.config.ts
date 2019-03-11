@@ -5,4 +5,4 @@ export const firebaseKey = {
   projectId: 'ngx-auth-firebaseui',
   storageBucket: 'ngx-auth-firebaseui.appspot.com',
   messagingSenderId: '520699629648'
-}
+};
