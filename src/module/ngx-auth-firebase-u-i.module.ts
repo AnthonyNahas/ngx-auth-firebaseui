@@ -52,10 +52,14 @@ export const NgxAuthFirebaseUIConfigToken = new InjectionToken<NgxAuthFirebaseUI
 @NgModule({
   imports: [
     CommonModule,
+    // HTTP
     HttpClientModule,
+    // FLEX_LAYOUT
     FlexLayoutModule,
+    // FORMS
     FormsModule,
     ReactiveFormsModule,
+    // MATERIAL2
     MatTabsModule,
     MatCardModule,
     MatInputModule,
@@ -70,7 +74,9 @@ export const NgxAuthFirebaseUIConfigToken = new InjectionToken<NgxAuthFirebaseUI
     MatProgressSpinnerModule,
     MatProgressBarModule,
     MatDialogModule,
+    // ANGULAR MATERIAL EXTENSIONS
     MatPasswordStrengthModule,
+    // ANGULARFIRE2
     AngularFireAuthModule,
     AngularFirestoreModule,
   ],
