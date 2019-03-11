@@ -1,3 +1,20 @@
+# [2.5.0](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v2.4.0...v2.5.0) (2019-03-11)
+
+
+### Bug Fixes
+
+* **demo:** updated angular and other dependencies ([921f65c](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/921f65c))
+* **package:** updated the dependencies ([4bc71a1](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/4bc71a1))
+
+
+### Features
+
+* **package:** added the first version of `ngx-auth-firebaseui`'s schematics [#204](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/204) ([3c37c6d](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/3c37c6d))
+* **package:** minor - schematics  [#204](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/204) ([36e1cd2](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/36e1cd2))
+* **package:** schematics improved [#204](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/204) ([e58d5db](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/e58d5db))
+
+
+
 # [2.4.0](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v2.3.3...v2.4.0) (2019-02-28)
 
 
