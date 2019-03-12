@@ -1,3 +1,12 @@
+## [2.5.1](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v2.5.0...v2.5.1) (2019-03-12)
+
+
+### Bug Fixes
+
+* **package:** fixed the package path in the schematics file ([634b0fb](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/634b0fb))
+
+
+
 # [2.5.0](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v2.4.0...v2.5.0) (2019-03-11)
 
 
