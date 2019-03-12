@@ -8,15 +8,16 @@ import {
   NodeDependency,
   NodeDependencyType
 } from 'schematics-utilities';
-import * as fs from 'fs';
 
-const getPackageJsonVersion = () => {
-  // We parse the json file instead of using require because require caches
-  // multiple calls so the version number won't be updated
-  const version = JSON.parse(fs.readFileSync('./../package.json', 'utf8')).version;
-  console.log(`library version used within the schematics ${version}`);
-  return version;
-};
+/** Loads the full version from the given Angular package gracefully. */
+function loadPackageVersionGracefully(): string | null {
+  try {
+    console.log('ngx-auth-firebaseui version = ', require(`../../package.json`).version);
+    return require(`../../package.json`).version;
+  } catch {
+    return null;
+  }
+}
 
 // You don't have to export the function as default. You can also have more than one rule factory
 // per file.
@@ -26,7 +27,7 @@ export function addPackageJsonDependencies(): Rule {
     const ngCoreVersionTag = getPackageVersionFromPackageJson(host, '@angular/core');
 
     const dependencies: NodeDependency[] = [
-      {type: NodeDependencyType.Default, version: getPackageJsonVersion(), name: 'ngx-auth-firebaseui'},
+      {type: NodeDependencyType.Default, version: loadPackageVersionGracefully() || '2.5.0', name: 'ngx-auth-firebaseui'},
       {type: NodeDependencyType.Default, version: ngCoreVersionTag || '7.2.7', name: '@angular/animations'},
       {type: NodeDependencyType.Default, version: ngCoreVersionTag || '7.2.7', name: '@angular/forms'},
       {type: NodeDependencyType.Default, version: ngCoreVersionTag || '7.2.7', name: '@angular/router'},
