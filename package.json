@@ -58,7 +58,7 @@
     "@angular/cdk": "^7.3.4",
     "@angular/common": "^7.2.8",
     "@angular/core": "^7.2.8",
-    "@angular/fire": "^5.1.1",
+    "@angular/fire": "^5.1.2",
     "@angular/flex-layout": "^7.0.0-beta.23",
     "@angular/forms": "^7.2.8",
     "@angular/material": "^7.3.4",
