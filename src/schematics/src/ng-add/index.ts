@@ -95,7 +95,7 @@ export function getPackageVersionFromPackageJson(tree: Tree, name: string): stri
   return null;
 }
 
-function addPolyfillToScripts(options: any) {
+function addLibAssetsToAssets(options: any) {
   return (host: Tree, context: SchematicContext) => {
     const ngxAuthFirebaseui = 'ngx-auth-firebaseui';
     const assetPath = 'node_modules/ngx-auth-firebaseui/assets/';
@@ -132,6 +132,6 @@ export default function (options: any): Rule {
     options && options.skipPackageJson ? noop() : addPackageJsonDependencies(),
     options && options.skipPackageJson ? noop() : installPackageJsonDependencies(),
     options && options.skipModuleImport ? noop() : addModuleToImports(options),
-    options && options.skipPolyfill ? noop() : addPolyfillToScripts(options)
+    options && options.skipPolyfill ? noop() : addLibAssetsToAssets(options)
   ]);
 }
