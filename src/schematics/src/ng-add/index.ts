@@ -28,12 +28,12 @@ export function addPackageJsonDependencies(): Rule {
 
     const dependencies: NodeDependency[] = [
       {type: NodeDependencyType.Default, version: loadPackageVersionGracefully() || '2.5.0', name: 'ngx-auth-firebaseui'},
-      {type: NodeDependencyType.Default, version: ngCoreVersionTag || '7.2.7', name: '@angular/animations'},
-      {type: NodeDependencyType.Default, version: ngCoreVersionTag || '7.2.7', name: '@angular/forms'},
-      {type: NodeDependencyType.Default, version: ngCoreVersionTag || '7.2.7', name: '@angular/router'},
+      {type: NodeDependencyType.Default, version: ngCoreVersionTag || '7.2.8', name: '@angular/animations'},
+      {type: NodeDependencyType.Default, version: ngCoreVersionTag || '7.2.8', name: '@angular/forms'},
+      {type: NodeDependencyType.Default, version: ngCoreVersionTag || '7.2.8', name: '@angular/router'},
       {type: NodeDependencyType.Default, version: '^7.0.0-beta.23', name: '@angular/flex-layout'},
-      {type: NodeDependencyType.Default, version: '5.1.1', name: '@angular/fire'},
-      {type: NodeDependencyType.Default, version: '^5.8.5', name: 'firebase'}
+      {type: NodeDependencyType.Default, version: '^5.1.2', name: '@angular/fire'},
+      {type: NodeDependencyType.Default, version: '^5.8.6', name: 'firebase'}
     ];
 
     dependencies.forEach(dependency => {
