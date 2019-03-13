@@ -89,8 +89,8 @@ export class UserComponent {
   async save() {
     if (this.updateFormGroup.dirty) {
       const user = this.auth.auth.currentUser;
-      // user.updateProfile()
-      // user.updateEmail()
+      // ngx-auth-firebaseui-user.updateProfile()
+      // ngx-auth-firebaseui-user.updateEmail()
       // console.log('form = ', this.updateFormGroup);
 
       const snackBarMsg: string[] = [];
@@ -145,7 +145,7 @@ export class UserComponent {
   }
 
   /**
-   * Delete the account of the current firebase user
+   * Delete the account of the current firebase ngx-auth-firebaseui-user
    *
    * On Success, emit the <onAccountDeleted> event and toast a msg!#
    * Otherwise, log the and toast and error msg!
@@ -156,9 +156,9 @@ export class UserComponent {
       const user = this.auth.auth.currentUser;
 
       await this.authProcess.deleteAccount();
-      // TODO(13.02.19) @anthoynahas: error while delete user data by user id
+      // TODO(13.02.19) @anthoynahas: error while delete ngx-auth-firebaseui-user data by ngx-auth-firebaseui-user id
       // if (this.config.enableFirestoreSync) {
-      //   await this._fireStoreService.deleteUserData(user.uid);
+      //   await this._fireStoreService.deleteUserData(ngx-auth-firebaseui-user.uid);
       // }
       this.onAccountDeleted.emit();
       this.editMode = false;
@@ -166,7 +166,7 @@ export class UserComponent {
         duration: 5000
       })
     } catch (error) {
-      console.log('Error while delete user\'s account', error);
+      console.log('Error while delete ngx-auth-firebaseui-user\'s account', error);
       this.snackBar.open('Error occurred while deleting your account!', 'OK', {
         duration: 5000
       })

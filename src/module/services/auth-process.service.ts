@@ -52,7 +52,7 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
   }
 
   /**
-   * Reset the password of the user via email
+   * Reset the password of the ngx-auth-firebaseui-user via email
    *
    * @param email - the email to reset
    * @returns
@@ -124,9 +124,9 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
 
   /**
    * Sign up new users via email and password.
-   * After that the user should verify and confirm an email sent via the firebase
+   * After that the ngx-auth-firebaseui-user should verify and confirm an email sent via the firebase
    *
-   * @param name - the name if the new user
+   * @param name - the name if the new ngx-auth-firebaseui-user
    * @param credentials
    * @returns
    */
@@ -162,11 +162,11 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
   }
 
   /**
-   * Update the profile (name + photo url) of the authenticated user in the
+   * Update the profile (name + photo url) of the authenticated ngx-auth-firebaseui-user in the
    * firebase authentication feature (not in firestore)
    *
-   * @param name - the new name of the authenticated user
-   * @param photoURL - the new photo url of the authenticated user
+   * @param name - the new name of the authenticated ngx-auth-firebaseui-user
+   * @param photoURL - the new photo url of the authenticated ngx-auth-firebaseui-user
    * @returns
    */
   public async updateProfile(name: string, photoURL: string): Promise<any> {
