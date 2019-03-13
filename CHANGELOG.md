@@ -1,3 +1,13 @@
+## [2.5.2](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v2.5.1...v2.5.2) (2019-03-13)
+
+
+### Bug Fixes
+
+* **package:** merge config when the auth process service is injected ([61632b0](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/61632b0))
+* **package:** updated angular fire to v5.1.2 ([01473a4](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/01473a4))
+
+
+
 ## [2.5.1](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v2.5.0...v2.5.1) (2019-03-12)
 
 
