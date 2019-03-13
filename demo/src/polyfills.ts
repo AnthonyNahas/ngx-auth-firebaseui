@@ -54,7 +54,7 @@
 
 /**
  * By default, zone.js will patch all possible macroTask and DomEvents
- * user can disable parts of macroTask/DomEvents patch by setting following flags
+ * ngx-auth-firebaseui-user can disable parts of macroTask/DomEvents patch by setting following flags
  */
 
  // (window as any).__Zone_disable_requestAnimationFrame = true; // disable patch requestAnimationFrame

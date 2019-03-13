@@ -34,7 +34,7 @@ export class MessagesComponent extends ExampleBaseComponent{
   saveUser($event) {
     this.user = $event;
     this.message = `${this.user.displayName} here we go!`;
-    console.log('Auth success - user = ', this.user, this.user.displayName);
+    console.log('Auth success - ngx-auth-firebaseui-user = ', this.user, this.user.displayName);
   }
 
   handleError($event) {

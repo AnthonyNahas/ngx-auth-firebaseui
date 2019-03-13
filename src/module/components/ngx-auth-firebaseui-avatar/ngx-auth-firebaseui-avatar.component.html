@@ -1,0 +1,30 @@
+<button *ngIf="user"
+        mat-mini-fab
+        [matMenuTriggerFor]="posXMenu"
+        aria-label="Open x-positioned menu"
+        [style.background-image]="'url(' + user?.photoURL + ')'"
+        style="background-size: cover"
+        [matTooltip]="user?.displayName">
+  {{displayNameInitials}}
+</button>
+
+<mat-menu xPosition="before" #posXMenu="matMenu" class="before">
+  <div fxLayout="row" fxLayout.xs="column" style="padding-left: 10px; padding-right: 10px">
+    <button mat-fab
+            [style.background-image]="'url(' + user?.photoURL + ')'"
+            style="background-size: cover">
+      {{displayNameInitials}}
+    </button>
+    <div fxLayout="column" style="padding-left: 10px; padding-right: 10px">
+      <strong mat-card-title>{{user?.displayName}}</strong>
+      <em mat-card-subtitle style="font-style: italic">{{user?.email}}</em>
+
+      <button mat-raised-button color="primary" (click)="openProfile()">Profile</button>
+      <!--<a [routerLink]="['/profile']" [queryParams]="{id:user?._id}" mat-raised-button color="primary">Profile</a>-->
+    </div>
+  </div>
+  <!--<button fxLayoutAlign="center center" mat-menu-item (click)="onPower()">-->
+  <!--<mat-icon>power_settings_new</mat-icon>-->
+  <!--{{isLoggedIn? ('APP.UI.BUTTON.LOGOUT' | translate) : ('APP.UI.BUTTON.LOGIN' | translate) }}-->
+  <!--</button>-->
+</mat-menu>

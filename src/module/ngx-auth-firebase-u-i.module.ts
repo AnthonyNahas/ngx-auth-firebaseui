@@ -25,17 +25,20 @@ import {
   MatTooltipModule,
   MatProgressSpinnerModule,
   MatProgressBarModule,
-  MatCheckboxModule
+  MatCheckboxModule, MatMenuModule
 } from '@angular/material';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
 import {MatPasswordStrengthModule} from '@angular-material-extensions/password-strength';
 import {LegalityDialogComponent} from './components/legality-dialog/legality-dialog.component';
 import {LoggedInGuard} from './guards/logged-in.guard';
+import {NgxAuthFirebaseuiAvatarComponent} from './components/ngx-auth-firebaseui-avatar/ngx-auth-firebaseui-avatar.component';
+import {RouterModule} from '@angular/router';
 
 // Export module's public API
 // components
 export {AuthComponent} from './components/ngx-auth-firebaseui/auth.component';
 export {UserComponent} from './components/ngx-auth-firebaseui-user/user.component';
+export {NgxAuthFirebaseuiAvatarComponent} from './components/ngx-auth-firebaseui-avatar/ngx-auth-firebaseui-avatar.component';
 export {AuthProvidersComponent, Theme, Layout} from './components/providers/auth.providers.component';
 export {LegalityDialogComponent} from './components/legality-dialog/legality-dialog.component';
 // services
@@ -53,6 +56,7 @@ export const NgxAuthFirebaseUIConfigToken = new InjectionToken<NgxAuthFirebaseUI
   imports: [
     CommonModule,
     // HTTP
+    RouterModule,
     HttpClientModule,
     // FLEX_LAYOUT
     FlexLayoutModule,
@@ -74,6 +78,7 @@ export const NgxAuthFirebaseUIConfigToken = new InjectionToken<NgxAuthFirebaseUI
     MatProgressSpinnerModule,
     MatProgressBarModule,
     MatDialogModule,
+    MatMenuModule,
     // ANGULAR MATERIAL EXTENSIONS
     MatPasswordStrengthModule,
     // ANGULARFIRE2
@@ -83,6 +88,7 @@ export const NgxAuthFirebaseUIConfigToken = new InjectionToken<NgxAuthFirebaseUI
   exports: [
     AuthComponent,
     UserComponent,
+    NgxAuthFirebaseuiAvatarComponent,
     AuthProvidersComponent,
     EmailConfirmationComponent,
     // LoggedInGuard,
@@ -92,11 +98,13 @@ export const NgxAuthFirebaseUIConfigToken = new InjectionToken<NgxAuthFirebaseUI
   declarations: [
     AuthComponent,
     UserComponent,
+    NgxAuthFirebaseuiAvatarComponent,
     AuthProvidersComponent,
     EmailConfirmationComponent,
     LegalityDialogComponent
   ],
   entryComponents: [
+    UserComponent,
     LegalityDialogComponent
   ]
 })

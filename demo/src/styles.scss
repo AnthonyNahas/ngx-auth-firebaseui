@@ -12,10 +12,12 @@ $breakpoints: $grid-breakpoints;
   .jumbotron {
     //margin-top: 3.4rem;
     margin-bottom: 0rem;
+
     h1 {
       font-size: 2.5rem;
       margin-bottom: 1.4rem;
     }
+
     p {
       font-size: 1.2rem;
     }
@@ -31,12 +33,18 @@ $breakpoints: $grid-breakpoints;
   .jumbotron {
     // margin-top: 3.4rem;
     margin-bottom: 0rem;
+
     h1 {
       font-size: 3.6rem;
       margin-bottom: 1.8rem;
     }
+
     p {
       font-size: 1.4rem;
     }
   }
+}
+
+.fill-remaining {
+  flex: 1 1 auto;
 }
