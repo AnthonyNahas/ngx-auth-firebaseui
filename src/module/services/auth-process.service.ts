@@ -2,7 +2,7 @@ import {EventEmitter, Inject, Injectable} from '@angular/core';
 import {MatSnackBar} from '@angular/material';
 import {AngularFireAuth} from '@angular/fire/auth';
 import {ICredentials, ISignInProcess, ISignUpProcess} from '../interfaces/main.interface';
-import {NgxAuthFirebaseUIConfig} from '../interfaces/config.interface';
+import {defaultAuthFirebaseUIConfig, NgxAuthFirebaseUIConfig} from '../interfaces/config.interface';
 import {FirestoreSyncService} from './firestore-sync.service';
 import {Accounts} from '../enums';
 import {firebase} from '@firebase/app';
@@ -48,6 +48,7 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
               public afa: AngularFireAuth,
               private _snackBar: MatSnackBar,
               private _fireStoreService: FirestoreSyncService) {
+    this.config = Object.assign(defaultAuthFirebaseUIConfig, this.config);
   }
 
   /**
@@ -72,7 +73,7 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
    * @returns
    */
   public async signInWith(provider: AuthProvider, credentials?: ICredentials) {
-    // console.log('this.config on signInWith', this.config);
+    console.log('this.config on signInWith', this.config);
     try {
       this.isLoading = true;
       let signInResult: UserCredential | any;
