@@ -1,7 +1,7 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {NgxAuthFirebaseuiAvatarComponent} from './ngx-auth-firebaseui-avatar.component';
-import {MatButtonModule, MatMenuModule, MatTooltipModule} from '@angular/material';
+import {MAT_DIALOG_DATA, MatButtonModule, MatDialogModule, MatDialogRef, MatMenuModule, MatTooltipModule} from '@angular/material';
 import {AngularFireAuth} from '@angular/fire/auth';
 import {AngularFireModule} from '@angular/fire';
 import {AngularFireAuthStub} from '../../tests/helper';
@@ -14,8 +14,19 @@ describe('NgxAuthFirebaseuiAvatarComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [NgxAuthFirebaseuiAvatarComponent],
-      imports: [AngularFireModule, RouterTestingModule, MatMenuModule, MatButtonModule, MatTooltipModule],
-      providers: [{provide: AngularFireAuth, useValue: AngularFireAuthStub}]
+      imports: [
+        AngularFireModule,
+        RouterTestingModule,
+        MatMenuModule,
+        MatButtonModule,
+        MatTooltipModule,
+        MatDialogModule
+      ],
+      providers: [
+        {provide: AngularFireAuth, useValue: AngularFireAuthStub},
+        {provide: MAT_DIALOG_DATA, useValue: {}},
+        {provide: MatDialogRef, useValue: {}}
+      ]
     })
       .compileComponents();
   }));
