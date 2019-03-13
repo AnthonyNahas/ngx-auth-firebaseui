@@ -2,7 +2,7 @@ import {CommonModule} from '@angular/common';
 import {NgModule, ModuleWithProviders, InjectionToken, Inject} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
-import {AuthComponent} from './components/auth/auth.component';
+import {AuthComponent} from './components/ngx-auth-firebaseui/auth.component';
 import {UserComponent} from './components/user/user.component';
 import {AuthProvidersComponent} from './components/providers/auth.providers.component';
 import {EmailConfirmationComponent} from './components/email-confirmation/email-confirmation.component';
@@ -34,7 +34,7 @@ import {LoggedInGuard} from './guards/logged-in.guard';
 
 // Export module's public API
 // components
-export {AuthComponent} from './components/auth/auth.component';
+export {AuthComponent} from './components/ngx-auth-firebaseui/auth.component';
 export {UserComponent} from './components/user/user.component';
 export {AuthProvidersComponent, Theme, Layout} from './components/providers/auth.providers.component';
 export {LegalityDialogComponent} from './components/legality-dialog/legality-dialog.component';

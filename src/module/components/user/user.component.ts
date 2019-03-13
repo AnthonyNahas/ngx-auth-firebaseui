@@ -3,7 +3,7 @@ import {AngularFireAuth} from '@angular/fire/auth';
 import {MatFormFieldAppearance, MatSnackBar} from '@angular/material';
 import {AuthProcessService} from '../../services/auth-process.service';
 import {AbstractControl, FormControl, FormGroup, Validators} from '@angular/forms';
-import {EMAIL_REGEX, PHONE_NUMBER_REGEX} from '../auth/auth.component';
+import {EMAIL_REGEX, PHONE_NUMBER_REGEX} from '../ngx-auth-firebaseui/auth.component';
 import {User} from 'firebase';
 import {FirestoreSyncService} from '../../services/firestore-sync.service';
 import {NgxAuthFirebaseUIConfig, NgxAuthFirebaseUIConfigToken} from '../../ngx-auth-firebase-u-i.module';
