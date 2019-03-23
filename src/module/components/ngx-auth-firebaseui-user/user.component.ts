@@ -22,6 +22,9 @@ export class UserComponent {
   canLogout = true;
 
   @Input()
+  canEditAccount = true;
+
+  @Input()
   canDeleteAccount = true;
 
   @Input()
@@ -29,6 +32,9 @@ export class UserComponent {
 
   @Output()
   onSignOut: EventEmitter<void> = new EventEmitter();
+
+  @Output()
+  onAccountEdited: EventEmitter<void> = new EventEmitter();
 
   @Output()
   onAccountDeleted: EventEmitter<void> = new EventEmitter();
