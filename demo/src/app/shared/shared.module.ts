@@ -19,7 +19,7 @@ import {AngularFirestoreModule} from '@angular/fire/firestore';
 import {BadgesComponent} from './badges/badges.component';
 import {NgxAuthFirebaseUIModule} from 'ngx-auth-firebaseui';
 import {HighlightModule} from 'ngx-highlightjs';
-import {NgxMaterialPagesModule} from 'ngx-material-pages';
+import {MatPagesModule} from '@angular-material-extensions/pages';
 
 @NgModule({
   imports: [
@@ -27,7 +27,7 @@ import {NgxMaterialPagesModule} from 'ngx-material-pages';
     NgbCollapseModule.forRoot(),
     HighlightModule,
     NgxAuthFirebaseUIModule,
-    NgxMaterialPagesModule,
+    MatPagesModule,
     FlexLayoutModule,
     MatToolbarModule,
     MatTabsModule,
@@ -45,7 +45,7 @@ import {NgxMaterialPagesModule} from 'ngx-material-pages';
     ContentWrapperComponent,
     HighlightModule,
     NgxAuthFirebaseUIModule,
-    NgxMaterialPagesModule,
+    MatPagesModule,
     BadgesComponent,
     FlexLayoutModule,
     MatToolbarModule,

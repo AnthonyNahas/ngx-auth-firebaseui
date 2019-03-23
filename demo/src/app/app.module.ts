@@ -9,7 +9,6 @@ import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {environment} from '../environments/environment';
 import {ServiceWorkerModule} from '@angular/service-worker';
-import {NgxMaterialPagesModule} from 'ngx-material-pages';
 import {HttpClientModule} from '@angular/common/http';
 import {ClipboardModule} from 'ngx-clipboard';
 import {Angulartics2Module} from 'angulartics2';
@@ -21,6 +20,7 @@ import {firebaseKey} from './firebase.config';
 import typescript from 'highlight.js/lib/languages/typescript';
 import scss from 'highlight.js/lib/languages/scss';
 import xml from 'highlight.js/lib/languages/xml';
+import {MatPagesModule} from '@angular-material-extensions/pages';
 
 export function hljsLanguages() {
   return [
@@ -55,7 +55,7 @@ export function firebaseAppNameFactory() {
     HighlightModule.forRoot({
       languages: hljsLanguages
     }),
-    NgxMaterialPagesModule.forRoot(),
+    MatPagesModule.forRoot(),
     ClipboardModule,
     BrowserAnimationsModule,
     FormsModule,
