@@ -1,9 +1,15 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {AngularFireAuth} from '@angular/fire/auth';
 import {User} from 'firebase';
 import {Observable} from 'rxjs';
 import {MatDialog} from '@angular/material';
 import {UserComponent} from '../../..';
+
+export interface LinkMenuItem {
+  text: string;
+  icon?: string;
+  callback?: Function;
+}
 
 @Component({
   selector: 'ngx-auth-firebaseui-avatar',
@@ -11,6 +17,15 @@ import {UserComponent} from '../../..';
   styleUrls: ['./ngx-auth-firebaseui-avatar.component.scss']
 })
 export class NgxAuthFirebaseuiAvatarComponent implements OnInit {
+
+  @Input()
+  canLogout = true;
+
+  @Input()
+  links: LinkMenuItem[];
+
+  @Output()
+  onSignOut: EventEmitter<void> = new EventEmitter();
 
   user: User;
   user$: Observable<User | null>;
@@ -40,5 +55,16 @@ export class NgxAuthFirebaseuiAvatarComponent implements OnInit {
 
   openProfile() {
     this.dialog.open(UserComponent);
+  }
+
+  async signOut() {
+    try {
+      await this.afa.auth.signOut();
+      // Sign-out successful.
+      this.onSignOut.emit();
+    } catch (e) {
+      // An error happened.
+      console.error('An error happened while signing out!', e);
+    }
   }
 }

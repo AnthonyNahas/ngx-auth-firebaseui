@@ -18,13 +18,16 @@
     <div fxLayout="column" style="padding-left: 10px; padding-right: 10px">
       <strong mat-card-title>{{user?.displayName}}</strong>
       <em mat-card-subtitle style="font-style: italic">{{user?.email}}</em>
-
-      <button mat-raised-button color="primary" (click)="openProfile()">Profile</button>
-      <!--<a [routerLink]="['/profile']" [queryParams]="{id:user?._id}" mat-raised-button color="primary">Profile</a>-->
     </div>
   </div>
-  <!--<button fxLayoutAlign="center center" mat-menu-item (click)="onPower()">-->
-  <!--<mat-icon>power_settings_new</mat-icon>-->
-  <!--{{isLoggedIn? ('APP.UI.BUTTON.LOGOUT' | translate) : ('APP.UI.BUTTON.LOGIN' | translate) }}-->
-  <!--</button>-->
+
+  <div fxLayout="column" fxFlex="100">
+    <div *ngFor="let menuItem of links">
+      <button mat-menu-item (click)="menuItem.callback">{{menuItem.text}}</button>
+    </div>
+    <button mat-raised-button fxLayoutAlign="center" color="primary" (click)="openProfile()">Profile
+    </button>
+    <button *ngIf="canLogout" mat-raised-button fxLayoutAlign="center" color="warn" (click)="signOut()">Sign Out
+    </button>
+  </div>
 </mat-menu>
