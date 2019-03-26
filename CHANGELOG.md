@@ -1,3 +1,24 @@
+# [2.6.0](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v2.5.2...v2.6.0) (2019-03-26)
+
+
+### Bug Fixes
+
+* **demo:** migrate `ngx-material-pages` to `@angular-material-extensions/pages` ([7df9e2e](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/7df9e2e))
+* **demo:** updated angular to v7.2.10 ([efec90c](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/efec90c))
+* **package:** bind sigUpNameFormControl for name input errors ([f810cca](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/f810cca))
+* **package:** updated @angular-material-extensions/password-strength to v3.6.0 + rollup ([4cbebb8](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/4cbebb8))
+* **package:** updated angular to v7.2.10 and material password strength ([22d9beb](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/22d9beb))
+
+
+### Features
+
+* **package:** added `ngx-auth-firebaseui-avatar` component ([f328f22](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/f328f22))
+* **package:** added new component `ngx-auth-firebaseui-avatar` ([69ba656](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/69ba656))
+* **package:** added the ability disable editing the account in the user component ([2098d3e](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/2098d3e))
+* **package:** integration of `mat-pass-toggle-visibility` for the pass strength ([0b7a77d](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/0b7a77d))
+
+
+
 ## [2.5.2](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v2.5.1...v2.5.2) (2019-03-13)
 
 
