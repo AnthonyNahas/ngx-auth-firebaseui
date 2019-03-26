@@ -154,10 +154,10 @@
                 <mat-error *ngIf="sigUpNameFormControl.hasError('required')">
                   Name is required
                 </mat-error>
-                <mat-error *ngIf="sigUpPasswordFormControl.hasError('minlength')">
+                <mat-error *ngIf="sigUpNameFormControl.hasError('minlength')">
                   The name is too short!
                 </mat-error>
-                <mat-error *ngIf="sigUpPasswordFormControl.hasError('maxlength')">
+                <mat-error *ngIf="sigUpNameFormControl.hasError('maxlength')">
                   The name is too long!
                 </mat-error>
               </mat-form-field>
