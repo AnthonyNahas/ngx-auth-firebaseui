@@ -53,7 +53,7 @@
     "check-travis": " travis-status --repo=anthonynahas/ngx-auth-firebaseui --branch=master --fail-pending || echo 'Not yet passing'"
   },
   "dependencies": {
-    "@angular-material-extensions/password-strength": "^3.6.0",
+    "@angular-material-extensions/password-strength": "^3.7.0",
     "@angular/animations": "^7.2.10",
     "@angular/cdk": "^7.3.5",
     "@angular/common": "^7.2.10",
@@ -84,7 +84,7 @@
     "@types/node": "^10.14.4",
     "angular-cli-ghpages": "^0.5.3",
     "angular2-template-loader": "0.6.2",
-    "autoprefixer": "^9.5.0",
+    "autoprefixer": "^9.5.1",
     "awesome-typescript-loader": "^5.2.1",
     "codelyzer": "^4.5.0",
     "commitplease": "3.2.0",
@@ -124,7 +124,7 @@
     "raw-loader": "^1.0.0",
     "rollup": "^1.7.3",
     "rollup-plugin-commonjs": "^9.2.2",
-    "rollup-plugin-node-resolve": "^4.0.1",
+    "rollup-plugin-node-resolve": "^4.2.1",
     "rollup-plugin-sourcemaps": "0.4.2",
     "rollup-plugin-uglify": "3.0.0",
     "run-sequence": "2.2.1",
@@ -140,7 +140,7 @@
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0",
     "webpack-dev-middleware": "^3.6.1",
-    "webpack-dev-server": "^3.2.1",
+    "webpack-dev-server": "^3.3.0",
     "webpack-node-externals": "^1.7.2",
     "yargs": "^12.0.5",
     "zone.js": "^0.8.29"
