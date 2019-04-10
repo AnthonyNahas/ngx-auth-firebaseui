@@ -1,0 +1,256 @@
+<mat-tab-group [color]="color" [selectedIndex]="tabIndex">
+  <!--Reset password tab-->
+  <mat-tab *ngIf="passwordResetWished" label="Reset Password">
+    <form [formGroup]="resetPasswordFormGroup" (ngSubmit)="resetPasswordFormGroup.valid && resetPassword()">
+
+      <mat-card>
+        <mat-card-header fxLayoutAlign="end">
+          <button mat-icon-button
+                  [color]="color"
+                  matTooltip="close"
+                  matTooltipPosition="above"
+                  (click)="passwordResetWished = false">
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-card-header>
+
+        <mat-card-content>
+          <mat-form-field class="full-width" [appearance]="appearance">
+            <mat-label>Reset e-mail address to password</mat-label>
+            <input matInput
+                   [readonly]="passReset"
+                   formControlName="email"
+                   title="Reset e-mail address to password"
+                   required>
+            <mat-icon matSuffix [color]="color">email</mat-icon>
+            <mat-error *ngIf="resetPasswordEmailFormControl.hasError('required')">
+              E-mail is required to reset the password!
+            </mat-error>
+            <mat-error *ngIf="resetPasswordEmailFormControl.hasError('pattern')">
+              Please enter a valid e-mail address
+            </mat-error>
+          </mat-form-field>
+        </mat-card-content>
+        <mat-card-actions fxLayoutAlign="center">
+          <button mat-raised-button
+                  type="submit"
+                  [color]="color"
+                  [disabled]="passReset">
+            Reset
+          </button>
+        </mat-card-actions>
+        <mat-card-footer *ngIf="passReset" fxLayoutAlign="center">
+          <p>Reset requested. Check your e-mail instructions.</p>
+        </mat-card-footer>
+        <mat-card-footer>
+          <mat-progress-bar *ngIf="authProcess.isLoading" mode="indeterminate"></mat-progress-bar>
+        </mat-card-footer>
+      </mat-card>
+    </form>
+  </mat-tab>
+
+  <!--Sign in tab-->
+  <mat-tab label="Sign in">
+    <mat-card>
+      <mat-card-title>Signing in</mat-card-title>
+      <mat-card-content>
+        <form [formGroup]="signInFormGroup"
+              (ngSubmit)="signInFormGroup.valid &&
+              authProcess.signInWith
+              (authProviders.EmailAndPassword,
+              {email:signInFormGroup.value.email, password: signInFormGroup.value.password})">
+          <div fxLayout="column" fxLayoutAlign="center">
+            <mat-form-field [appearance]="appearance">
+              <mat-label>E-mail</mat-label>
+              <input matInput
+                     placeholder="E-mail"
+                     formControlName="email"
+                     required>
+              <mat-icon matSuffix [color]="color">email</mat-icon>
+              <mat-error *ngIf="signInEmailFormControl.hasError('required')">
+                E-mail is required
+              </mat-error>
+              <mat-error *ngIf="signInEmailFormControl.hasError('pattern')">
+                Please enter a valid e-mail address
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field [appearance]="appearance">
+              <mat-label>Password</mat-label>
+              <input matInput
+                     type="password"
+                     placeholder="Password"
+                     minlength="6"
+                     maxlength="25"
+                     formControlName="password"
+                     required>
+              <mat-icon matSuffix [color]="color">lock</mat-icon>
+              <mat-hint align="end" aria-live="polite">
+                {{signInFormGroup.value.password.length}} / 25
+              </mat-hint>
+              <mat-error *ngIf="sigInPasswordFormControl.hasError('required')">
+                Please do not forget the password
+              </mat-error>
+              <mat-error *ngIf="sigInPasswordFormControl.hasError('minlength')">
+                The password must be at least 6 characters long.
+              </mat-error>
+              <mat-error *ngIf="sigInPasswordFormControl.hasError('maxlength')">
+                The password must not exceed 25 characters
+              </mat-error>
+            </mat-form-field>
+
+            <button mat-raised-button
+                    style="margin-top: 20px"
+                    type="submit"
+                    class="space-top"
+                    [color]="color">
+              Log In
+            </button>
+
+          </div>
+        </form>
+
+        <div fxLayoutAlign="center">
+          <button *ngIf="resetPasswordEnabled"
+                  mat-button
+                  class="space-top"
+                  [color]="color"
+                  (click)="createForgotPasswordTab()">
+            Forgot Password?
+          </button>
+        </div>
+
+      </mat-card-content>
+      <mat-card-footer *ngIf="authProcess.isLoading">
+        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+      </mat-card-footer>
+    </mat-card>
+  </mat-tab>
+
+  <!--tab register-->
+  <mat-tab label="Register" *ngIf="registrationEnabled">
+    <mat-card>
+      <mat-card-title>Registration</mat-card-title>
+      <div *ngIf="!authProcess.emailConfirmationSent;then register else confirm"></div>
+      <ng-template #register>
+        <mat-card-content fxLayout="column" fxLayoutAlign="center">
+          <form [formGroup]="signUpFormGroup" (ngSubmit)="signUpFormGroup.valid &&
+          processLegalSignUP(authProvider.EmailAndPassword)">
+            <div fxLayout="column" fxLayoutAlign="center">
+              <!--name-->
+              <mat-form-field [appearance]="appearance">
+                <!--labels will work only with @angular/material@6.2.0 -->
+                <mat-label>Name</mat-label>
+                <input matInput
+                       placeholder="Name"
+                       minlength="2"
+                       maxlength="30"
+                       [formControl]="sigUpNameFormControl"
+                       required>
+                <mat-icon matSuffix [color]="color">person</mat-icon>
+                <mat-hint align="end" aria-live="polite">
+                  {{signUpFormGroup.value.name?.length}} / 25
+                </mat-hint>
+                <mat-error *ngIf="sigUpNameFormControl.hasError('required')">
+                  Name is required
+                </mat-error>
+                <mat-error *ngIf="sigUpPasswordFormControl.hasError('minlength')">
+                  The name is too short!
+                </mat-error>
+                <mat-error *ngIf="sigUpPasswordFormControl.hasError('maxlength')">
+                  The name is too long!
+                </mat-error>
+              </mat-form-field>
+
+              <!--email-->
+              <mat-form-field [appearance]="appearance">
+                <mat-label>E-mail</mat-label>
+                <input matInput
+                       placeholder="E-mail"
+                       type="email"
+                       [formControl]="sigUpEmailFormControl">
+                <mat-icon matSuffix [color]="color">email</mat-icon>
+                <mat-error *ngIf="sigUpEmailFormControl.hasError('required')">
+                  E-mail is required
+                </mat-error>
+                <mat-error *ngIf="sigUpEmailFormControl.hasError('pattern')">
+                  Please enter a valid e-mail address
+                </mat-error>
+              </mat-form-field>
+
+              <!--password-->
+              <div fxLayout="column">
+
+                <mat-form-field [appearance]="appearance">
+                  <mat-label>Password</mat-label>
+                  <input matInput
+                         type="password"
+                         placeholder="password"
+                         name="password"
+                         [formControl]="sigUpPasswordFormControl"
+                         required>
+                  <mat-icon matSuffix [color]="color">lock</mat-icon>
+
+                  <mat-hint align="end" aria-live="polite">
+                    {{signUpFormGroup.value.password?.length}} / 25
+                  </mat-hint>
+
+                  <mat-error *ngIf="sigUpPasswordFormControl.hasError('required')" class="cut-text">
+                    Please do not forget the password
+                  </mat-error>
+
+                  <mat-error *ngIf="sigUpPasswordFormControl.hasError('minlength')" class="cut-text">
+                    The password must be at least 6 characters long.
+                  </mat-error>
+                  <mat-error *ngIf="sigUpPasswordFormControl.hasError('maxlength')" class="cut-text">
+                    The password can not be longer than 25 characters.
+                  </mat-error>
+
+                </mat-form-field>
+
+                <mat-password-strength
+                  [password]="signUpFormGroup.value.password"
+                  [externalError]="sigUpPasswordFormControl.dirty">
+                </mat-password-strength>
+
+              </div>
+
+              <button mat-raised-button
+                      style="margin-top: 20px"
+                      type="submit"
+                      [color]="color">
+                Register
+              </button>
+
+            </div>
+          </form>
+
+          <button *ngIf="guestEnabled"
+                  mat-button
+                  style="margin-top: 20px"
+                  [color]="color"
+                  (click)="processLegalSignUP(authProvider.ANONYMOUS)">
+            <mat-icon>fingerprint</mat-icon>
+            continue as guest
+          </button>
+
+        </mat-card-content>
+
+        <mat-card-footer *ngIf="authProcess.isLoading">
+          <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+        </mat-card-footer>
+
+      </ng-template>
+
+      <!--confirm template-->
+      <ng-template #confirm>
+        <ngx-auth-firebaseui-email-confirmation [email]="authProcess.emailToConfirm"
+                                                [goBackURL]="goBackURL">
+        </ngx-auth-firebaseui-email-confirmation>
+      </ng-template>
+
+    </mat-card>
+  </mat-tab>
+</mat-tab-group>
+<mat-divider></mat-divider>
+<ngx-auth-firebaseui-providers [providers]="providers"></ngx-auth-firebaseui-providers>
