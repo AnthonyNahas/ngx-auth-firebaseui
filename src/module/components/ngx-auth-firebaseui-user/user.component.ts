@@ -40,10 +40,10 @@ export class UserComponent {
   onAccountDeleted: EventEmitter<void> = new EventEmitter();
 
   updateFormGroup: FormGroup;
-  updateNameFormControl: AbstractControl;
-  updateEmailFormControl: AbstractControl;
-  updatePhoneNumberFormControl: AbstractControl;
-  updatePasswordFormControl: AbstractControl;
+  updateNameFormControl: FormControl;
+  updateEmailFormControl: FormControl;
+  updatePhoneNumberFormControl: FormControl;
+  updatePasswordFormControl: FormControl;
 
   constructor(@Inject(NgxAuthFirebaseUIConfigToken)
               public config: NgxAuthFirebaseUIConfig,
@@ -57,7 +57,7 @@ export class UserComponent {
     const currentUser: User = this.auth.auth.currentUser;
     this.updateFormGroup = new FormGroup({
       name: this.updateNameFormControl = new FormControl(
-        {value: currentUser.displayName, disabled: true},
+        {value: currentUser.displayName, disabled: this.editMode},
         [
           Validators.required,
           Validators.minLength(2),
@@ -66,13 +66,14 @@ export class UserComponent {
       ),
 
       email: this.updateEmailFormControl = new FormControl(
-        {value: currentUser.email, disabled: true},
+        {value: currentUser.email, disabled: this.editMode},
         [
           Validators.required,
           Validators.pattern(EMAIL_REGEX)
         ]),
 
-      phoneNumber: this.updatePhoneNumberFormControl = new FormControl('',
+      phoneNumber: this.updatePhoneNumberFormControl = new FormControl(
+        {value: currentUser.phoneNumber, disabled: this.editMode},
         [Validators.pattern(PHONE_NUMBER_REGEX)])
     });
 
@@ -91,7 +92,6 @@ export class UserComponent {
     this.updateFormGroup = null;
   }
 
-  // todo: 31.3.18
   async save() {
     if (this.updateFormGroup.dirty) {
       const user = this.auth.auth.currentUser;
@@ -125,8 +125,6 @@ export class UserComponent {
       } catch (error) {
         error.message ? this.snackBar.open(error.message, 'Ok') : this.snackBar.open(error, 'Ok');
         console.error(error);
-        console.error(error.code);
-        console.error(error.message);
       }
 
 
@@ -162,10 +160,9 @@ export class UserComponent {
       const user = this.auth.auth.currentUser;
 
       await this.authProcess.deleteAccount();
-      // TODO(13.02.19) @anthoynahas: error while delete ngx-auth-firebaseui-user data by ngx-auth-firebaseui-user id
-      // if (this.config.enableFirestoreSync) {
-      //   await this._fireStoreService.deleteUserData(ngx-auth-firebaseui-user.uid);
-      // }
+      if (this.config.enableFirestoreSync) {
+        await this._fireStoreService.deleteUserData(user.uid);
+      }
       this.onAccountDeleted.emit();
       this.editMode = false;
       this.snackBar.open('Your account has been successfully deleted!', 'OK', {
@@ -178,5 +175,4 @@ export class UserComponent {
       })
     }
   }
-
 }

@@ -22,11 +22,6 @@ export class FirestoreSyncService {
     return this.afs.doc(`${collections.users}/${uid}`);
   }
 
-
-  public getUsersCollectionRef(queryFn?: QueryFn): AngularFirestoreCollection<UserInfo> {
-    return this.afs.collection(`${collections.users}/`, queryFn);
-  }
-
   public deleteUserData(uid: string): Promise<any> {
     const userRef: AngularFirestoreDocument<UserInfo> = this.getUserDocRefByUID(uid);
     return userRef.delete();
