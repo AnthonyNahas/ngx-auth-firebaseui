@@ -1,8 +1,8 @@
-import {Component, EventEmitter, Inject, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Inject, Input, Output} from '@angular/core';
 import {AngularFireAuth} from '@angular/fire/auth';
 import {MatFormFieldAppearance, MatSnackBar} from '@angular/material';
 import {AuthProcessService} from '../../services/auth-process.service';
-import {AbstractControl, FormControl, FormGroup, Validators} from '@angular/forms';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {EMAIL_REGEX, PHONE_NUMBER_REGEX} from '../ngx-auth-firebaseui/auth.component';
 import {User} from 'firebase';
 import {FirestoreSyncService} from '../../services/firestore-sync.service';
@@ -160,12 +160,13 @@ export class UserComponent {
       }
       this.onAccountDeleted.emit();
       this.editMode = false;
+      console.log('Your account has been successfully deleted!');
       this.snackBar.open('Your account has been successfully deleted!', 'OK', {
         duration: 5000
       })
     } catch (error) {
-      console.log('Error while delete ngx-auth-firebaseui-user\'s account', error);
-      this.snackBar.open('Error occurred while deleting your account!', 'OK', {
+      console.log('Error while delete user account', error);
+      this.snackBar.open(`Error occurred while deleting your account: ${error.message}`, 'OK', {
         duration: 5000
       })
     }
