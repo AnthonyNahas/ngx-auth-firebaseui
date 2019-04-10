@@ -137,15 +137,10 @@ export class UserComponent {
     this.editMode = false;
   }
 
-  async signOut() {
-    try {
-      await this.auth.auth.signOut();
-      // Sign-out successful.
-      this.onSignOut.emit();
-    } catch (e) {
-      // An error happened.
-      console.error('An error happened while signing out!', e);
-    }
+  signOut() {
+    this.auth.auth.signOut()
+      .then(() => this.onSignOut.emit())
+      .catch(e => console.error('An error happened while signing out!', e));
   }
 
   /**

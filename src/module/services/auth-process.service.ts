@@ -126,27 +126,26 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
    * Sign up new users via email and password.
    * After that the ngx-auth-firebaseui-user should verify and confirm an email sent via the firebase
    *
-   * @param name - the name if the new ngx-auth-firebaseui-user
+   * @param displayName - the displayName if the new ngx-auth-firebaseui-user
    * @param credentials
    * @returns
    */
-  public async signUp(name: string, credentials: ICredentials) {
+  public async signUp(displayName: string, credentials: ICredentials) {
     try {
       this.isLoading = true;
       const userCredential: UserCredential = await this.afa.auth.createUserWithEmailAndPassword(credentials.email, credentials.password);
       const user = userCredential.user;
+      await this.updateProfile(displayName, user.photoURL);
 
       if (this.config.enableFirestoreSync) {
         await this._fireStoreService
           .getUserDocRefByUID(user.uid)
           .set({
             uid: user.uid,
-            displayName: name,
+            displayName: displayName,
             email: user.email,
             photoURL: user.photoURL
           } as User);
-
-        await this.updateProfile(name, user.photoURL);
       }
 
       await user.sendEmailVerification();
@@ -169,12 +168,12 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
    * @param photoURL - the new photo url of the authenticated ngx-auth-firebaseui-user
    * @returns
    */
-  public async updateProfile(name: string, photoURL: string): Promise<any> {
-    return await this.afa.auth.currentUser.updateProfile({displayName: name, photoURL: photoURL});
+  public updateProfile(name: string, photoURL: string): Promise<any> {
+    return this.afa.auth.currentUser.updateProfile({displayName: name, photoURL: photoURL});
   }
 
-  public async deleteAccount(): Promise<any> {
-    return await this.afa.auth.currentUser.delete();
+  public deleteAccount(): Promise<any> {
+    return this.afa.auth.currentUser.delete();
   }
 
   public parseUserInfo(user: User): UserInfo {
