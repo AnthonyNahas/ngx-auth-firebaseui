@@ -110,7 +110,7 @@
     "imagemin-jpegoptim": "^5.2.0",
     "imagemin-optipng": "^5.2.1",
     "imagemin-svgo": "^6.0.0",
-    "is-docker": "1.1.0",
+    "is-docker": "2.0.0",
     "istanbul-instrumenter-loader": "^3.0.1",
     "jasmine-core": "^3.3.0",
     "jest": "^24.5.0",
