@@ -154,10 +154,11 @@ export class UserComponent {
     try {
       const user = this.auth.auth.currentUser;
 
-      await this.authProcess.deleteAccount();
-      if (this.config.enableFirestoreSync) {
-        await this._fireStoreService.deleteUserData(user.uid);
-      }
+      // await this.authProcess.deleteAccount();
+      await this.auth.auth.currentUser.delete();
+      // if (this.config.enableFirestoreSync) {
+      await this._fireStoreService.deleteUserData(user.uid);
+      // }
       this.onAccountDeleted.emit();
       this.editMode = false;
       console.log('Your account has been successfully deleted!');
