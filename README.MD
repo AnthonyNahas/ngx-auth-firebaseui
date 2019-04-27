@@ -70,7 +70,7 @@ by starring :star: and sharing it :loudspeaker:
 - [Configuration](#configuration)
 - [Usage](#usage)
 - [API](#api)
-- [Run Demo App Locally](#run-demo-app-locally)
+- [Run Demo App Locally](docs/INSTRUCTIONS_DEMO.md)
 - [Other Angular Libraries](#other-angular-libraries)
 - [Support](#support)
 - [License](#license)
