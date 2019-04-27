@@ -60,6 +60,21 @@ export class AuthComponent implements OnInit, OnChanges, OnDestroy {
   @Input()
   messageOnAuthError: string;
 
+  // Customize the text
+  // Reset Password Tab
+  @Input() restPasswordTabText = 'Reset e-mail address to password';
+  @Input() restPasswordInputText = 'Reset e-mail address to password';
+  @Input() resetPasswordErrorRequiredText = 'E-mail is required to reset the password!';
+  @Input() resetPasswordErrorPatternText = 'Please enter a valid e-mail address';
+  @Input() resetPasswordActionButtonText = 'Reset';
+  @Input() resetPasswordInstructionsText = 'Reset requested. Check your e-mail instructions.';
+
+  // SignIn Tab
+  @Input()
+  signInTabText = '';
+
+  // Register Tab
+
   @Output()
   onSuccess: any;
 
