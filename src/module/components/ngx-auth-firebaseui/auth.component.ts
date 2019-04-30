@@ -68,7 +68,7 @@ export class AuthComponent implements OnInit, OnChanges, OnDestroy {
   @Input() passwordErrorRequiredText = 'Password is required';
 
   // Register Tab
-  @Input() registerTabText = 'Regsiter';
+  @Input() registerTabText = 'Register';
   @Input() registerCardTitleText = 'Registration';
   @Input() registerButtonText = 'Register';
   @Input() guestButtonText = 'continue as guest';
