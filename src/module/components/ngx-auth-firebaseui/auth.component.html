@@ -164,7 +164,8 @@
                 <mat-label>{{emailText}}</mat-label>
                 <input matInput
                        type="email"
-                       [formControl]="sigUpEmailFormControl">
+                       [formControl]="sigUpEmailFormControl"
+                       required>
                 <mat-icon matSuffix [color]="color">email</mat-icon>
                 <mat-error *ngIf="sigUpEmailFormControl.hasError('required')">
                   {{emailErrorRequiredText}}
