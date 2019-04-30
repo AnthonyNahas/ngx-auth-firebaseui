@@ -50,9 +50,9 @@
   </mat-tab>
 
   <!--Sign in tab-->
-  <mat-tab label="Sign in">
+  <mat-tab [label]="signInTabText">
     <mat-card>
-      <mat-card-title>Signing in</mat-card-title>
+      <mat-card-title>{{signInCardTitleText}}</mat-card-title>
       <mat-card-content>
         <form [formGroup]="signInFormGroup"
               (ngSubmit)="signInFormGroup.valid &&
@@ -61,25 +61,25 @@
               {email:signInFormGroup.value.email, password: signInFormGroup.value.password})">
           <div fxLayout="column" fxLayoutAlign="center">
             <mat-form-field [appearance]="appearance">
-              <mat-label>E-mail</mat-label>
+              <mat-label>{{emailText}}</mat-label>
               <input matInput
-                     placeholder="E-mail"
+                     [placeholder]="emailText"
                      formControlName="email"
                      required>
               <mat-icon matSuffix [color]="color">email</mat-icon>
               <mat-error *ngIf="signInEmailFormControl.hasError('required')">
-                E-mail is required
+                {{emailErrorRequiredText}}
               </mat-error>
               <mat-error *ngIf="signInEmailFormControl.hasError('pattern')">
-                Please enter a valid e-mail address
+                {{emailErrorPatternText}}
               </mat-error>
             </mat-form-field>
 
             <mat-form-field [appearance]="appearance">
-              <mat-label>Password</mat-label>
+              <mat-label>{{passwordText}}</mat-label>
               <input matInput
                      type="password"
-                     placeholder="Password"
+                     [placeholder]="passwordText"
                      minlength="6"
                      maxlength="25"
                      formControlName="password"
@@ -89,7 +89,7 @@
                 {{signInFormGroup.value.password.length}} / 25
               </mat-hint>
               <mat-error *ngIf="sigInPasswordFormControl.hasError('required')">
-                Please do not forget the password
+                {{passwordErrorRequiredText}}
               </mat-error>
               <mat-error *ngIf="sigInPasswordFormControl.hasError('minlength')">
                 The password must be at least 6 characters long.
@@ -104,7 +104,7 @@
                     type="submit"
                     class="space-top"
                     [color]="color">
-              Log In
+              {{loginButtonText}}
             </button>
 
           </div>
@@ -116,7 +116,7 @@
                   class="space-top"
                   [color]="color"
                   (click)="createForgotPasswordTab()">
-            Forgot Password?
+            {{forgotPasswordButtonText}}
           </button>
         </div>
 
@@ -128,9 +128,9 @@
   </mat-tab>
 
   <!--tab register-->
-  <mat-tab label="Register" *ngIf="registrationEnabled">
+  <mat-tab [label]="registerTabText" *ngIf="registrationEnabled">
     <mat-card>
-      <mat-card-title>Registration</mat-card-title>
+      <mat-card-title>{{registerCardTitleText}}</mat-card-title>
       <div *ngIf="!authProcess.emailConfirmationSent;then register else confirm"></div>
       <ng-template #register>
         <mat-card-content fxLayout="column" fxLayoutAlign="center">
@@ -140,9 +140,9 @@
               <!--name-->
               <mat-form-field [appearance]="appearance">
                 <!--labels will work only with @angular/material@6.2.0 -->
-                <mat-label>Name</mat-label>
+                <mat-label>{{nameText}}</mat-label>
                 <input matInput
-                       placeholder="Name"
+                       [placeholder]="Name"
                        minlength="2"
                        maxlength="30"
                        [formControl]="sigUpNameFormControl"
@@ -152,40 +152,39 @@
                   {{signUpFormGroup.value.name?.length}} / 25
                 </mat-hint>
                 <mat-error *ngIf="sigUpNameFormControl.hasError('required')">
-                  Name is required
+                  {{nameErrorRequiredText}}
                 </mat-error>
                 <mat-error *ngIf="sigUpNameFormControl.hasError('minlength')">
-                  The name is too short!
+                  {{nameErrorMinLengthText}}
                 </mat-error>
                 <mat-error *ngIf="sigUpNameFormControl.hasError('maxlength')">
-                  The name is too long!
+                  {{nameErrorMaxLengthText}}
                 </mat-error>
               </mat-form-field>
 
               <!--email-->
               <mat-form-field [appearance]="appearance">
-                <mat-label>E-mail</mat-label>
+                <mat-label>{{emailText}}</mat-label>
                 <input matInput
-                       placeholder="E-mail"
+                       [placeholder]="emailText"
                        type="email"
                        [formControl]="sigUpEmailFormControl">
                 <mat-icon matSuffix [color]="color">email</mat-icon>
                 <mat-error *ngIf="sigUpEmailFormControl.hasError('required')">
-                  E-mail is required
+                  {{emailErrorRequiredText}}
                 </mat-error>
                 <mat-error *ngIf="sigUpEmailFormControl.hasError('pattern')">
-                  Please enter a valid e-mail address
+                  {{emailErrorPatternText}}
                 </mat-error>
               </mat-form-field>
 
               <!--password-->
               <div fxLayout="column">
-
                 <mat-form-field [appearance]="appearance">
-                  <mat-label>Password</mat-label>
+                  <mat-label>{{passwordText}}</mat-label>
                   <input matInput
                          [type]="toggle.type"
-                         placeholder="password"
+                         [placeholder]="passwordText"
                          name="password"
                          [formControl]="sigUpPasswordFormControl"
                          required>
@@ -198,7 +197,7 @@
                   </mat-hint>
 
                   <mat-error *ngIf="sigUpPasswordFormControl.hasError('required')" class="cut-text">
-                    Please do not forget the password
+                    {{passwordErrorRequiredText}}
                   </mat-error>
 
                   <mat-error *ngIf="sigUpPasswordFormControl.hasError('minlength')" class="cut-text">
@@ -221,7 +220,7 @@
                       style="margin-top: 20px"
                       type="submit"
                       [color]="color">
-                Register
+                {{registerButtonText}}
               </button>
 
             </div>
@@ -233,7 +232,7 @@
                   [color]="color"
                   (click)="processLegalSignUP(authProvider.ANONYMOUS)">
             <mat-icon>fingerprint</mat-icon>
-            continue as guest
+            {{guestButtonText}}
           </button>
 
         </mat-card-content>

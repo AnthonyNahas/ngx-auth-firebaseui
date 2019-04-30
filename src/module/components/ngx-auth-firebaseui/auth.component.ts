@@ -27,38 +27,17 @@ export const PHONE_NUMBER_REGEX = new RegExp(/^\+(?:[0-9] ?){6,14}[0-9]$/);
 
 export class AuthComponent implements OnInit, OnChanges, OnDestroy {
 
-  @Input()
-  providers: string[] | string = AuthProvider.ALL; //  google, facebook, twitter, github as array or all as one single string
-
-  @Input()
-  appearance: MatFormFieldAppearance;
-
-  @Input()
-  tabIndex: number | null;
-
-  @Input()
-  registrationEnabled = true;
-
-  @Input()
-  resetPasswordEnabled = true;
-
-  @Input()
-  guestEnabled = true;
-
-  @Input()
-  tosUrl: string;
-
-  @Input()
-  privacyPolicyUrl: string;
-
-  @Input()
-  goBackURL: string;
-
-  @Input()
-  messageOnAuthSuccess: string;
-
-  @Input()
-  messageOnAuthError: string;
+  @Input() providers: string[] | string = AuthProvider.ALL; //  google, facebook, twitter, github as array or all as one single string
+  @Input() appearance: MatFormFieldAppearance;
+  @Input() tabIndex: number | null;
+  @Input() registrationEnabled = true;
+  @Input() resetPasswordEnabled = true;
+  @Input() guestEnabled = true;
+  @Input() tosUrl: string;
+  @Input() privacyPolicyUrl: string;
+  @Input() goBackURL: string;
+  @Input() messageOnAuthSuccess: string;
+  @Input() messageOnAuthError: string;
 
   // Customize the text
   // Reset Password Tab
@@ -70,16 +49,33 @@ export class AuthComponent implements OnInit, OnChanges, OnDestroy {
   @Input() resetPasswordInstructionsText = 'Reset requested. Check your e-mail instructions.';
 
   // SignIn Tab
-  @Input()
-  signInTabText = '';
+  @Input() signInTabText = 'Sign in';
+  @Input() signInCardTitleText = 'Signing in';
+  @Input() loginButtonText = 'Log In';
+  @Input() forgotPasswordButtonText = 'Forgot Password?';
+
+  // Common
+  @Input() nameText = 'Name';
+  @Input() nameErrorRequiredText = 'Name is required';
+  @Input() nameErrorMinLengthText = 'The name is too short!';
+  @Input() nameErrorMaxLengthText = 'The name is too long!';
+
+  @Input() emailText = 'E-mail';
+  @Input() emailErrorRequiredText = 'E-mail is required';
+  @Input() emailErrorPatternText = 'Please enter a valid e-mail address';
+
+  @Input() passwordText = 'Password';
+  @Input() passwordErrorRequiredText = 'Password is required';
 
   // Register Tab
+  @Input() registerTabText = 'Regsiter';
+  @Input() registerCardTitleText = 'Registration';
+  @Input() registerButtonText = 'Register';
+  @Input() guestButtonText = 'continue as guest';
 
-  @Output()
-  onSuccess: any;
+  @Output() onSuccess: any;
 
-  @Output()
-  onError: any;
+  @Output() onError: any;
 
   authProvider = AuthProvider;
   passwordResetWished: boolean;
