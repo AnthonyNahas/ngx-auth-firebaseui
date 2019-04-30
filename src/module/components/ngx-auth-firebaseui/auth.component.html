@@ -63,7 +63,6 @@
             <mat-form-field [appearance]="appearance">
               <mat-label>{{emailText}}</mat-label>
               <input matInput
-                     [placeholder]="emailText"
                      formControlName="email"
                      required>
               <mat-icon matSuffix [color]="color">email</mat-icon>
@@ -79,7 +78,6 @@
               <mat-label>{{passwordText}}</mat-label>
               <input matInput
                      type="password"
-                     [placeholder]="passwordText"
                      minlength="6"
                      maxlength="25"
                      formControlName="password"
@@ -142,7 +140,6 @@
                 <!--labels will work only with @angular/material@6.2.0 -->
                 <mat-label>{{nameText}}</mat-label>
                 <input matInput
-                       [placeholder]="Name"
                        minlength="2"
                        maxlength="30"
                        [formControl]="sigUpNameFormControl"
@@ -166,7 +163,6 @@
               <mat-form-field [appearance]="appearance">
                 <mat-label>{{emailText}}</mat-label>
                 <input matInput
-                       [placeholder]="emailText"
                        type="email"
                        [formControl]="sigUpEmailFormControl">
                 <mat-icon matSuffix [color]="color">email</mat-icon>
@@ -184,7 +180,6 @@
                   <mat-label>{{passwordText}}</mat-label>
                   <input matInput
                          [type]="toggle.type"
-                         [placeholder]="passwordText"
                          name="password"
                          [formControl]="sigUpPasswordFormControl"
                          required>
