@@ -52,7 +52,7 @@ export class AuthComponent implements OnInit, OnChanges, OnDestroy {
   @Input() signInTabText = 'Sign in';
   @Input() signInCardTitleText = 'Signing in';
   @Input() loginButtonText = 'Log In';
-  @Input() forgotPasswordButtonText = 'Forgot Password?';
+  @Input() forgotPasswordButtonText = 'Forgot Password ?';
 
   // Common
   @Input() nameText = 'Name';

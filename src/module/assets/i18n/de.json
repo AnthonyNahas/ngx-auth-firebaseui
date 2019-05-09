@@ -1,0 +1,27 @@
+{
+  "ngxauthfirebaseui": {
+    "signInTabText": "Einloggen",
+    "signInCardTitleText": "Anmelden",
+    "loginButtonText": "Einloggen",
+    "forgotPasswordButtonText": "Passwort vergessen ?",
+    "nameText": "Name",
+    "nameErrorRequiredText": "Name ist erforderlich",
+    "nameErrorMinLengthText": "Der Name ist zu kurz!",
+    "nameErrorMaxLengthText": "Der Name ist zu lang!",
+    "emailText": "Email",
+    "emailErrorRequiredText": "E-Mail ist erforderlich",
+    "emailErrorPatternText": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+    "passwordText": "Passwort",
+    "passwordErrorRequiredText": "Passwort wird benötigt",
+    "registerTabText": "Registrieren",
+    "registerCardTitleText": "Anmeldung",
+    "registerButtonText": "Registrieren",
+    "guestButtonText": "als Gast fortfahren",
+    "restPasswordTabText": "E-Mail-Adresse auf Passwort zurücksetzen",
+    "restPasswordInputText": "E-Mail-Adresse auf Passwort zurücksetzen",
+    "resetPasswordErrorRequiredText": "Zum Zurücksetzen des Passworts ist eine E-Mail erforderlich!",
+    "resetPasswordErrorPatternText": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+    "resetPasswordActionButtonText": "Zurücksetzen",
+    "resetPasswordInstructionsText": "Zurücksetzen angefordert. Überprüfen Sie Ihre E-Mail-Anweisungen."
+  }
+}

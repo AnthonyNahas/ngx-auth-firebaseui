@@ -1,0 +1,27 @@
+{
+  "ngxauthfirebaseui": {
+    "signInTabText": "se connecter",
+    "signInCardTitleText": "Connectez-vous",
+    "loginButtonText": "S'identifier",
+    "forgotPasswordButtonText": "Mot de passe oublié ?",
+    "nameText": "Nom",
+    "nameErrorRequiredText": "Le nom est requis",
+    "nameErrorMinLengthText": "Le nom est trop court!",
+    "nameErrorMaxLengthText": "Le nom est trop long!",
+    "emailText": "Email",
+    "emailErrorRequiredText": "E-mail est requis",
+    "emailErrorPatternText": "S'il vous plaît, mettez une adresse email valide",
+    "passwordText": "Mot de passe",
+    "passwordErrorRequiredText": "Mot de passe requis",
+    "registerTabText": "Registre",
+    "registerCardTitleText": "Enregistrement",
+    "registerButtonText": "Registre",
+    "guestButtonText": "continuer en tant qu'invité",
+    "restPasswordTabText": "Réinitialiser l'adresse email en mot de passe",
+    "restPasswordInputText": "Réinitialiser l'adresse email en mot de passe",
+    "resetPasswordErrorRequiredText": "Un email est requis pour réinitialiser le mot de passe!",
+    "resetPasswordErrorPatternText": "S'il vous plaît, mettez une adresse email valide",
+    "resetPasswordActionButtonText": "Réinitialiser",
+    "resetPasswordInstructionsText": "Réinitialisation demandée. Vérifiez vos instructions de courrier électronique."
+  }
+}
