@@ -8,7 +8,7 @@
     "nameErrorRequiredText": "Name is required",
     "nameErrorMinLengthText": "The name is too short!",
     "nameErrorMaxLengthText": "The name is too long!",
-    "emailText": "The name is too long!",
+    "emailText": "E-mail",
     "emailErrorRequiredText": "E-mail is required",
     "emailErrorPatternText": "Please enter a valid e-mail address",
     "passwordText": "Password",
