@@ -44,6 +44,8 @@
     "@angular/router": "^7.2.15",
     "@angular/service-worker": "^7.2.15",
     "@ng-bootstrap/ng-bootstrap": "^4.1.2",
+    "@ngx-translate/core": "^11.0.1",
+    "@ngx-translate/http-loader": "^4.0.0",
     "angulartics2": "^7.5.2",
     "bootstrap": "^4.3.1",
     "core-js": "^2.6.5",
@@ -56,6 +58,7 @@
     "ngx-clipboard": "^11.1.9",
     "ngx-highlightjs": "^3.0.3",
     "rxjs": "^6.5.2",
+    "svg-country-flags": "^1.2.6",
     "tslib": "^1.9.3",
     "zone.js": "^0.8.29"
   },

@@ -8,5 +8,5 @@ import {I18nComponent} from './i18n.component';
   ])],
   exports: [RouterModule]
 })
-export class HomeRoutingModule {
+export class I18nRoutingModule {
 }

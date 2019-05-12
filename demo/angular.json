@@ -23,6 +23,11 @@
                 "glob": "**/*",
                 "input": "node_modules/ngx-auth-firebaseui/assets",
                 "output": "/assets"
+              },
+              {
+                "glob": "**/*",
+                "input": "node_modules/svg-country-flags/png100px",
+                "output": "/assets/images/flags"
               }
             ],
             "styles": [

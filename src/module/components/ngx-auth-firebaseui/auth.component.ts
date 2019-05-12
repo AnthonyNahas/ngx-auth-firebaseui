@@ -41,8 +41,8 @@ export class AuthComponent implements OnInit, OnChanges, OnDestroy {
 
   // Customize the text
   // Reset Password Tab
-  @Input() restPasswordTabText = 'Reset e-mail address to password';
-  @Input() restPasswordInputText = 'Reset e-mail address to password';
+  @Input() resetPasswordTabText = 'Reset e-mail address to password';
+  @Input() resetPasswordInputText = 'Reset e-mail address to password';
   @Input() resetPasswordErrorRequiredText = 'E-mail is required to reset the password!';
   @Input() resetPasswordErrorPatternText = 'Please enter a valid e-mail address';
   @Input() resetPasswordActionButtonText = 'Reset';

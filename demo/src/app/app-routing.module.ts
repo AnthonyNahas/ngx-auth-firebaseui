@@ -22,6 +22,10 @@ const routes: Routes = [
     loadChildren: 'app/examples/examples.module#ExamplesModule'
   },
   {
+    path: 'i18n',
+    loadChildren: 'app/i18n/i18n.module#I18nModule'
+  },
+  {
     path: 'legal',
     loadChildren: 'app/legal/legal.module#LegalModule'
   },

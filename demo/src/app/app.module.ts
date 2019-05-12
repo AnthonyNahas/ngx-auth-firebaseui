@@ -9,7 +9,7 @@ import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {environment} from '../environments/environment';
 import {ServiceWorkerModule} from '@angular/service-worker';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {ClipboardModule} from 'ngx-clipboard';
 import {Angulartics2Module} from 'angulartics2';
 import {AngularFireModule} from '@angular/fire';
@@ -21,6 +21,8 @@ import typescript from 'highlight.js/lib/languages/typescript';
 import scss from 'highlight.js/lib/languages/scss';
 import xml from 'highlight.js/lib/languages/xml';
 import {MatPagesModule} from '@angular-material-extensions/pages';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 
 export function hljsLanguages() {
   return [
@@ -32,6 +34,10 @@ export function hljsLanguages() {
 
 export function firebaseAppNameFactory() {
   return `you_app_name`;
+}
+
+export function createTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
 @NgModule({
@@ -52,6 +58,13 @@ export function firebaseAppNameFactory() {
         toastMessageOnAuthSuccess: true,
         toastMessageOnAuthError: true
       }),
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: (createTranslateLoader),
+        deps: [HttpClient]
+      }
+    }),
     HighlightModule.forRoot({
       languages: hljsLanguages
     }),
