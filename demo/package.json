@@ -55,7 +55,7 @@
     "material-design-icons": "^3.0.1",
     "ngx-clipboard": "^11.1.9",
     "ngx-highlightjs": "^3.0.3",
-    "rxjs": "^6.5.1",
+    "rxjs": "^6.5.2",
     "tslib": "^1.9.3",
     "zone.js": "^0.8.29"
   },
@@ -72,7 +72,7 @@
     "@types/node": "^10.14.6",
     "codelyzer": "^4.5.0",
     "express": "^4.16.4",
-    "firebase-tools": "^6.9.1",
+    "firebase-tools": "^6.9.2",
     "http-server": "^0.11.1",
     "jasmine-core": "~3.3.0",
     "jasmine-spec-reporter": "~4.2.1",
