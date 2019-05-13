@@ -32,9 +32,15 @@
             ],
             "styles": [
               "src/styles.scss",
-              "node_modules/material-design-icons/iconfont/material-icons.css"
+              "node_modules/material-design-icons/iconfont/material-icons.css",
+              "node_modules/prismjs/themes/prism-okaidia.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/marked/lib/marked.js",
+              "node_modules/prismjs/prism.js",
+              "node_modules/prismjs/components/prism-typescript.min.js",
+              "node_modules/prismjs/components/prism-css.min.js"
+            ]
           },
           "configurations": {
             "hmr": {

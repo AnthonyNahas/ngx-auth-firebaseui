@@ -57,6 +57,7 @@
     "material-design-icons": "^3.0.1",
     "ngx-clipboard": "^11.1.9",
     "ngx-highlightjs": "^3.0.3",
+    "ngx-markdown": "^7.1.5",
     "rxjs": "^6.5.2",
     "svg-country-flags": "^1.2.6",
     "tslib": "^1.9.3",

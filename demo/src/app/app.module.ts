@@ -23,6 +23,7 @@ import xml from 'highlight.js/lib/languages/xml';
 import {MatPagesModule} from '@angular-material-extensions/pages';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
+import {MarkdownModule} from 'ngx-markdown';
 
 export function hljsLanguages() {
   return [
@@ -68,6 +69,7 @@ export function createTranslateLoader(http: HttpClient) {
     HighlightModule.forRoot({
       languages: hljsLanguages
     }),
+    MarkdownModule.forRoot({loader: HttpClient}),
     MatPagesModule.forRoot(),
     ClipboardModule,
     BrowserAnimationsModule,

@@ -1,40 +1,5 @@
-<div class="jumbotron jumbotron-fluid">
-  <div class="container">
-    <h1>Languages and i18n</h1>
-  </div>
-</div>
-
-<div class="container">
-
-  <div fxLayout.xs="column" fxLayoutAlign="center center">
-    <mat-card class="my-3 mx-3">
-      <mat-card-title>Pick your favorite language</mat-card-title>
-      <mat-card-content fxLayoutAlign="center center">
-        <button mat-button fxHide fxShow.gt-xs
-                class="language-button"
-                [matMenuTriggerFor]="languageMenu">
-          <div fxLayout="row" fxLayoutAlign="center center">
-            <img class="flag mr-8" [src]="'assets/images/flags/'+selectedLanguage.flag+'.png'">
-            <span class="iso text-uppercase">{{selectedLanguage.id}}</span>
-          </div>
-        </button>
-
-        <mat-menu #languageMenu="matMenu" [overlapTrigger]="false">
-
-          <button mat-menu-item *ngFor="let lang of languages" (click)="setLanguage(lang)">
-                    <span fxLayout="row" fxLayoutAlign="start center">
-                        <img class="flag mr-16" [src]="'assets/images/flags/'+lang.flag+'.png'">
-                        <span class="iso">{{lang.title}}</span>
-                    </span>
-          </button>
-
-        </mat-menu>
-      </mat-card-content>
-    </mat-card>
-
-    <mat-card>
-      <mat-card-title>{{'ngxauthfirebaseui.signInTabText' | translate}}</mat-card-title>
-      <ngx-auth-firebaseui
+```html
+<ngx-auth-firebaseui
         [signInTabText]="'ngxauthfirebaseui.signInTabText' | translate"
         [signInCardTitleText]="'ngxauthfirebaseui.signInCardTitleText' | translate"
         [loginButtonText]="'ngxauthfirebaseui.loginButtonText' | translate"
@@ -60,13 +25,4 @@
         [resetPasswordInstructionsText]="'ngxauthfirebaseui.resetPasswordInstructionsText' | translate"
       >
       </ngx-auth-firebaseui>
-    </mat-card>
-  </div>
-
-  <mat-card class="my-3">
-    <mat-card-content>
-      <markdown src="assets/md/i18n/html.md"></markdown>
-    </mat-card-content>
-  </mat-card>
-
-</div>
+```

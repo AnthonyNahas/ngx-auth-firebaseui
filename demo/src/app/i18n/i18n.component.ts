@@ -39,6 +39,11 @@ export class I18nComponent implements OnInit {
         id: 'fr',
         title: 'French',
         flag: 'fr'
+      },
+      {
+        id: 'es',
+        title: 'Española',
+        flag: 'es'
       }
     ];
 
