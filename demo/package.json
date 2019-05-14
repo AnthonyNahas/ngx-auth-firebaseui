@@ -19,7 +19,7 @@
     "test": "ng test",
     "postinstall": "npm run link",
     "link": "npm link ngx-auth-firebaseui",
-    "start": "ng serve",
+    "start": "ng serve --port 4004",
     "serve:prod": "ng serve --prod",
     "serve:prerender": "cd dist/browser && http-server",
     "serve:ssr": "node dist/server",
