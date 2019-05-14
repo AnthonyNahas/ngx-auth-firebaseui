@@ -1,53 +1,4 @@
 <mat-tab-group [color]="color" [selectedIndex]="tabIndex">
-  <!--Reset password tab-->
-  <mat-tab *ngIf="passwordResetWished" label="Reset Password">
-    <form [formGroup]="resetPasswordFormGroup" (ngSubmit)="resetPasswordFormGroup.valid && resetPassword()">
-
-      <mat-card>
-        <mat-card-header fxLayoutAlign="end">
-          <button mat-icon-button
-                  [color]="color"
-                  matTooltip="close"
-                  matTooltipPosition="above"
-                  (click)="passwordResetWished = false">
-            <mat-icon>close</mat-icon>
-          </button>
-        </mat-card-header>
-
-        <mat-card-content>
-          <mat-form-field class="full-width" [appearance]="appearance">
-            <mat-label> {{ resetPasswordTabText }} </mat-label>
-            <input matInput
-                   [readonly]="passReset"
-                   [title]="resetPasswordInputText"
-                   formControlName="email"
-                   required>
-            <mat-icon matSuffix [color]="color">email</mat-icon>
-            <mat-error *ngIf="resetPasswordEmailFormControl.hasError('required')">
-              {{resetPasswordErrorRequiredText}}
-            </mat-error>
-            <mat-error *ngIf="resetPasswordEmailFormControl.hasError('pattern')">
-              {{resetPasswordErrorPatternText}}
-            </mat-error>
-          </mat-form-field>
-        </mat-card-content>
-        <mat-card-actions fxLayoutAlign="center">
-          <button mat-raised-button
-                  type="submit"
-                  [color]="color"
-                  [disabled]="passReset">
-            {{resetPasswordActionButtonText}}
-          </button>
-        </mat-card-actions>
-        <mat-card-footer *ngIf="passReset" fxLayoutAlign="center">
-          <p>{{resetPasswordInstructionsText}}</p>
-        </mat-card-footer>
-        <mat-card-footer>
-          <mat-progress-bar *ngIf="authProcess.isLoading" mode="indeterminate"></mat-progress-bar>
-        </mat-card-footer>
-      </mat-card>
-    </form>
-  </mat-tab>
 
   <!--Sign in tab-->
   <mat-tab [label]="signInTabText">
@@ -248,6 +199,57 @@
 
     </mat-card>
   </mat-tab>
+
+  <!--Reset password tab-->
+  <mat-tab *ngIf="passwordResetWished" label="Reset Password">
+    <form [formGroup]="resetPasswordFormGroup" (ngSubmit)="resetPasswordFormGroup.valid && resetPassword()">
+
+      <mat-card>
+        <mat-card-header fxLayoutAlign="end">
+          <button mat-icon-button
+                  [color]="color"
+                  matTooltip="close"
+                  matTooltipPosition="above"
+                  (click)="passwordResetWished = false">
+            <mat-icon>close</mat-icon>
+          </button>
+        </mat-card-header>
+
+        <mat-card-content>
+          <mat-form-field class="full-width" [appearance]="appearance">
+            <mat-label> {{ resetPasswordTabText }} </mat-label>
+            <input matInput
+                   [readonly]="passReset"
+                   [title]="resetPasswordInputText"
+                   formControlName="email"
+                   required>
+            <mat-icon matSuffix [color]="color">email</mat-icon>
+            <mat-error *ngIf="resetPasswordEmailFormControl.hasError('required')">
+              {{resetPasswordErrorRequiredText}}
+            </mat-error>
+            <mat-error *ngIf="resetPasswordEmailFormControl.hasError('pattern')">
+              {{resetPasswordErrorPatternText}}
+            </mat-error>
+          </mat-form-field>
+        </mat-card-content>
+        <mat-card-actions fxLayoutAlign="center">
+          <button mat-raised-button
+                  type="submit"
+                  [color]="color"
+                  [disabled]="passReset">
+            {{resetPasswordActionButtonText}}
+          </button>
+        </mat-card-actions>
+        <mat-card-footer *ngIf="passReset" fxLayoutAlign="center">
+          <p>{{resetPasswordInstructionsText}}</p>
+        </mat-card-footer>
+        <mat-card-footer>
+          <mat-progress-bar *ngIf="authProcess.isLoading" mode="indeterminate"></mat-progress-bar>
+        </mat-card-footer>
+      </mat-card>
+    </form>
+  </mat-tab>
+
 </mat-tab-group>
 <mat-divider></mat-divider>
 <ngx-auth-firebaseui-providers [providers]="providers"></ngx-auth-firebaseui-providers>

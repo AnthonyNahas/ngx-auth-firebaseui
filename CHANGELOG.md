@@ -1,3 +1,44 @@
+# [2.7.0](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v2.6.0...v2.7.0) (2019-05-14)
+
+
+### Bug Fixes
+
+* **demo:** integration of the page material extension in the features component ([e9a57f4](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/e9a57f4))
+* **demo:** updated deps ([77e8e7e](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/77e8e7e))
+* **demo:** updated rxjs to v6.5.2 and firebase-tools to 6.9.2 ([5cba55f](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/5cba55f))
+* **package:** adjusted the snackbar msg on deleting the user ([d7d1b92](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/d7d1b92))
+* **package:** deleted the old user component files ([51900c1](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/51900c1))
+* **package:** deleting the old auth comp. files ([4407136](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/4407136))
+* **package:** deleting user fixed + minor update at [#217](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/217) ([913cf7a](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/913cf7a))
+* **package:** minor ([f309cae](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/f309cae))
+* **package:** minor in user component ([38c6669](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/38c6669))
+* **package:** unknown changes fixed ([988bc1a](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/988bc1a))
+* **package:** updated @angular-material-extensions/password-strength to v3.8.1 [#239](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/239) ([0b5300e](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/0b5300e))
+* **package:** updated angular and other dependencies ([82bb7ae](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/82bb7ae))
+* **package:** updated angular and other dependencies ([414e605](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/414e605))
+* **package:** updated angular and password strength's lib ([1011dac](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/1011dac))
+* **package:** updated dependencies ([ed4bc8b](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/ed4bc8b))
+* **package:** updated rxjs to v6.5.2 ([994a6e7](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/994a6e7))
+* **package:** updated types jest ([a4e95f1](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/a4e95f1))
+* **package:** updating the display name in firestore fixed on registration [#216](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/216) ([ec129d8](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/ec129d8))
+
+
+### Features
+
+* **demo:** added new angular material demo app from scratch ([2a3efc8](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/2a3efc8))
+* **demo:** added translations [#226](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/226) [#76](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/76) ([470a154](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/470a154))
+* **demo:** added translations [#226](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/226) [#76](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/76) ([aaaea74](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/aaaea74))
+* **demo:** added translations [#226](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/226) [#76](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/76) ([f5c01ac](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/f5c01ac))
+* **demo-schematics:** minor update npm scripts ([484eddf](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/484eddf))
+* **package:** added required attribute to the email input [#226](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/226) [#76](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/76) ([4c15900](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/4c15900))
+* **package:** enhanced the translations [#226](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/226) [#76](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/76) ([ab1a562](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/ab1a562))
+* **package:** removed the input placeholder (since we use labels) in main component [#226](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/226) [#76](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/76) ([0b1ce2e](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/0b1ce2e))
+* **package:** support custom text (i18n) for the main component [#226](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/226) [#76](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/76) ([0ac7c13](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/0ac7c13))
+* **package:** support custom text (i18n) for the reset pass tab [#226](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/226) [#76](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/76) ([c2a23aa](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/c2a23aa))
+* **package:** typo [#226](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/226) [#76](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/76) ([d076958](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/d076958))
+
+
+
 # [2.6.0](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v2.5.2...v2.6.0) (2019-03-26)
 
 
