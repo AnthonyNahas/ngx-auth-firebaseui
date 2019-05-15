@@ -93,6 +93,7 @@ by starring :star: and sharing it :loudspeaker:
 | Sign in/up progress indicator                  | :heavy_check_mark:    |  :x:                   |
 | Password Strength indicator                    | :heavy_check_mark:    |  :x:                   |
 | Forgot/Reset Password                          | :heavy_check_mark:    |  :x:                   |
+| [Password Strength Meter ](https://github.com/angular-material-extensions/password-strength)  | :heavy_check_mark:    |  :x:                   |
 | Delete account                                 | :heavy_check_mark:    |  :x:                   |
 | Login Authentication Guard                     | :heavy_check_mark:    |  :x:                   |
 | User Profile                                   | :heavy_check_mark:    |  :x:                   |
@@ -103,7 +104,7 @@ by starring :star: and sharing it :loudspeaker:
 | Configure your favorite auth provider in runtime| :heavy_check_mark:   |  :x:                   |
 | Sync user'auth with Firestore  [read more](FIRESTORE_SYNC.md)   | :heavy_check_mark:    |  :x:  |
 | Angular v2-7 friendly                          | :heavy_check_mark:    |  :x:                   |
-| Internationalization (i18n)                    | :soon:                |  :heavy_check_mark:    |
+| Internationalization (i18n)                    | :heavy_check_mark:    |  :heavy_check_mark:    |
 | Ionic/cordova support                          | :soon:  @firebaseui/ionic-auth |  :x: |
 | Real time form validation                      | :heavy_check_mark:    |  :x:                   |
 | Easy to integrate                              | :heavy_check_mark:    |  :x:                   |
@@ -265,7 +266,7 @@ automatically change to `column`
   src="assets/v1.0.0/png/user_edit_mode.png">
 </p>
 
-## Screenshots - Mobile Browser
+## Screenshot - Mobile Browser
 - Sign in - mobile
 
 <p align="center">
@@ -287,6 +288,14 @@ automatically change to `column`
 <p align="center">
   <img alt="ngx-auth-firebaseui on mobile" width="384px" style="text-align: center;" 
   src="assets/v1.0.0/png/forgot_password_sent.png">
+</p>
+
+
+## Screenshot - [i18n - multiple languages](https://ngx-auth-firebaseui.firebaseapp.com/i18n)
+
+<p align="center">
+  <img alt="ngx-auth-firebaseui on mobile" width="384px" style="text-align: center;" 
+  src="assets/v2.7.0/2.gif">
 </p>
 
 ---
@@ -570,6 +579,7 @@ class AppComponent {
 | onSuccess            | Output() | any     | - | this will be fired when an authentication process was success. The authenticated user is emitted!
 | onError              | Output() | any     | - | this event will be fired when an error occurred during the authentication process! An error message is emitted!
 
+if you prefer to customize the text of this component, check these inputs [here](https://ngx-auth-firebaseui.firebaseapp.com/i18n) that have been used for translations
 
 PS: if either `tosUrl or `privacyPolicyUrl` are provided, the user will be asked to check and accepts tos and pp before registering a new account or sign in in anonymously
 

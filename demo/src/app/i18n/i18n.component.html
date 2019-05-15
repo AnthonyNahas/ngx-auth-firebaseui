@@ -9,8 +9,9 @@
   <div fxLayout.xs="column" fxLayoutAlign="center center">
     <mat-card class="my-3 mx-3">
       <mat-card-title>Pick your favorite language</mat-card-title>
-      <mat-card-content fxLayoutAlign="center center">
-        <button mat-button fxHide fxShow.gt-xs
+      <mat-card-content fxLayout.xs="column" fxLayoutAlign="center center">
+<!--        <button mat-button fxHide fxShow.gt-xs-->
+        <button mat-button
                 class="language-button"
                 [matMenuTriggerFor]="languageMenu">
           <div fxLayout="row" fxLayoutAlign="center center">
