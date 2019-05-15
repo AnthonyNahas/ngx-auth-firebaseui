@@ -1,3 +1,7 @@
+## [2.7.1](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v2.7.0...v2.7.1) (2019-05-15)
+
+
+
 # [2.7.0](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v2.6.0...v2.7.0) (2019-05-14)
 
 

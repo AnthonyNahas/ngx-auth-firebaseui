@@ -578,6 +578,7 @@ class AppComponent {
 | messageOnAuthError   | Input()  | string  | see the code -> | the message of the snackbar when the authentication process has failed
 | onSuccess            | Output() | any     | - | this will be fired when an authentication process was success. The authenticated user is emitted!
 | onError              | Output() | any     | - | this event will be fired when an error occurred during the authentication process! An error message is emitted!
+| onError              | Output() | MatTabChangeEvent | - |  output event is emitted when the active tab changes (signin, register and reset password tab)
 
 if you prefer to customize the text of this component, check these inputs [here](https://ngx-auth-firebaseui.firebaseapp.com/i18n) that have been used for translations
 

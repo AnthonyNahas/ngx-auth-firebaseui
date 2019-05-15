@@ -1,4 +1,4 @@
-<mat-tab-group [color]="color" [selectedIndex]="tabIndex">
+<mat-tab-group [color]="color" [selectedIndex]="tabIndex" (selectedTabChange)="onTabChange($event)">
 
   <!--Sign in tab-->
   <mat-tab [label]="signInTabText">
@@ -140,7 +140,7 @@
                   <mat-icon matSuffix [color]="color">lock</mat-icon>
 
                   <mat-hint align="end" aria-live="polite">
-                    {{signUpFormGroup.value.password?.length}} / 25
+                    {{signUpFormGroup.value.password?.length}} / {{ passwordStrength.max }}
                   </mat-hint>
 
                   <mat-error *ngIf="sigUpPasswordFormControl.hasError('required')" class="cut-text">
@@ -156,9 +156,9 @@
 
                 </mat-form-field>
 
-                <mat-password-strength
-                  [password]="signUpFormGroup.value.password"
-                  [externalError]="sigUpPasswordFormControl.dirty">
+                <mat-password-strength #passwordStrength
+                                       [password]="signUpFormGroup.value.password"
+                                       [externalError]="sigUpPasswordFormControl.dirty">
                 </mat-password-strength>
 
               </div>
@@ -201,7 +201,7 @@
   </mat-tab>
 
   <!--Reset password tab-->
-  <mat-tab *ngIf="passwordResetWished" label="Reset Password">
+  <mat-tab fxShow="passwordResetWished" label="Reset Password">
     <form [formGroup]="resetPasswordFormGroup" (ngSubmit)="resetPasswordFormGroup.valid && resetPassword()">
 
       <mat-card>

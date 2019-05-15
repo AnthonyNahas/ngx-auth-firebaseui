@@ -2,7 +2,7 @@ import {Component, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
 import {Title} from '@angular/platform-browser';
 import {AngularFireAuth} from '@angular/fire/auth';
 import {AuthProvider, Theme} from 'ngx-auth-firebaseui';
-import {MatSnackBar} from '@angular/material';
+import {MatSnackBar, MatTabChangeEvent} from '@angular/material';
 import {Router} from '@angular/router';
 import {Subscription} from 'rxjs/internal/Subscription';
 
@@ -103,6 +103,10 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.error = true;
 
     // this.snackbar.open(event.message, 'OK', {duration: 5000});
+  }
+
+  onTabChange(event: MatTabChangeEvent) {
+    console.log('on tab change: ', event);
   }
 
   showMessage() {

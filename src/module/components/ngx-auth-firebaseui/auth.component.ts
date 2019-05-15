@@ -1,6 +1,18 @@
-import {Component, Inject, Input, OnChanges, OnDestroy, OnInit, Output, PLATFORM_ID, SimpleChanges} from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Inject,
+  Input,
+  OnChanges,
+  OnDestroy,
+  OnInit,
+  Output,
+  PLATFORM_ID,
+  SimpleChanges,
+  ViewChild
+} from '@angular/core';
 import {AbstractControl, FormControl, FormGroup, Validators} from '@angular/forms';
-import {MatDialog, MatDialogRef, MatFormFieldAppearance} from '@angular/material';
+import {MatDialog, MatDialogRef, MatFormFieldAppearance, MatTabChangeEvent, MatTabGroup} from '@angular/material';
 import {AngularFireAuth} from '@angular/fire/auth';
 import {isPlatformBrowser} from '@angular/common';
 import {Subscription} from 'rxjs/internal/Subscription';
@@ -26,6 +38,8 @@ export const PHONE_NUMBER_REGEX = new RegExp(/^\+(?:[0-9] ?){6,14}[0-9]$/);
 })
 
 export class AuthComponent implements OnInit, OnChanges, OnDestroy {
+
+  @ViewChild(MatTabGroup) matTabGroup: MatTabGroup;
 
   @Input() providers: string[] | string = AuthProvider.ALL; //  google, facebook, twitter, github as array or all as one single string
   @Input() appearance: MatFormFieldAppearance;
@@ -74,8 +88,8 @@ export class AuthComponent implements OnInit, OnChanges, OnDestroy {
   @Input() guestButtonText = 'continue as guest';
 
   @Output() onSuccess: any;
-
   @Output() onError: any;
+  @Output() selectedTabChange: EventEmitter<MatTabChangeEvent> = new EventEmitter();
 
   authProvider = AuthProvider;
   passwordResetWished: boolean;
@@ -130,10 +144,14 @@ export class AuthComponent implements OnInit, OnChanges, OnDestroy {
     }
   }
 
-  public ngOnDestroy(): void {
+  ngOnDestroy(): void {
     if (this.onErrorSubscription) {
       this.onErrorSubscription.unsubscribe();
     }
+  }
+
+  onTabChange(event: MatTabChangeEvent) {
+    this.selectedTabChange.emit(event);
   }
 
   get color(): string {
@@ -189,7 +207,10 @@ export class AuthComponent implements OnInit, OnChanges, OnDestroy {
 
   public resetPassword() {
     this.authProcess.resetPassword(this.resetPasswordEmailFormControl.value)
-      .then(() => this.passReset = true);
+      .then(() => {
+        this.passReset = true;
+        setTimeout(() => this.tabIndex = 2, 10);
+      });
   }
 
   private _initSignInFormGroupBuilder() {
