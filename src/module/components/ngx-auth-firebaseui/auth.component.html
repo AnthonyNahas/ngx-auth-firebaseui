@@ -201,7 +201,7 @@
   </mat-tab>
 
   <!--Reset password tab-->
-  <mat-tab fxShow="passwordResetWished" label="Reset Password">
+  <mat-tab *ngIf="passwordResetWished" label="Reset Password">
     <form [formGroup]="resetPasswordFormGroup" (ngSubmit)="resetPasswordFormGroup.valid && resetPassword()">
 
       <mat-card>
