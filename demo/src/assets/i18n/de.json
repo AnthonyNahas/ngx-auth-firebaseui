@@ -17,7 +17,7 @@
     "registerCardTitleText": "Anmeldung",
     "registerButtonText": "Registrieren",
     "guestButtonText": "als Gast fortfahren",
-    "resetPasswordTabText": "E-Mail-Adresse auf Passwort zurücksetzen",
+    "resetPasswordTabText": "Passwort zurücksetzen",
     "resetPasswordInputText": "E-Mail-Adresse auf Passwort zurücksetzen",
     "resetPasswordErrorRequiredText": "Zum Zurücksetzen des Passworts ist eine E-Mail erforderlich!",
     "resetPasswordErrorPatternText": "Bitte geben Sie eine gültige E-Mail-Adresse ein",

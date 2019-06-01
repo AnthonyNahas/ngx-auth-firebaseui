@@ -17,7 +17,7 @@
     "registerCardTitleText": "Registration",
     "registerButtonText": "Register",
     "guestButtonText": "continue as guest",
-    "restPasswordTabText": "Reset e-mail address to password",
+    "restPasswordTabText": "Reset password",
     "restPasswordInputText": "Reset e-mail address to password",
     "resetPasswordErrorRequiredText": "E-mail is required to reset the password!",
     "resetPasswordErrorPatternText": "Please enter a valid e-mail address",

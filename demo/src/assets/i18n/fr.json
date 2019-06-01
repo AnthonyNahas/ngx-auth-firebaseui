@@ -17,7 +17,7 @@
     "registerCardTitleText": "Enregistrement",
     "registerButtonText": "Registre",
     "guestButtonText": "continuer en tant qu'invité",
-    "restPasswordTabText": "Réinitialiser l'adresse email en mot de passe",
+    "restPasswordTabText": "Réinitialiser le mot de passe",
     "restPasswordInputText": "Réinitialiser l'adresse email en mot de passe",
     "resetPasswordErrorRequiredText": "Un email est requis pour réinitialiser le mot de passe!",
     "resetPasswordErrorPatternText": "S'il vous plaît, mettez une adresse email valide",
