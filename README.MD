@@ -88,6 +88,8 @@ by starring :star: and sharing it :loudspeaker:
 | Sign In with Facebook                          | :heavy_check_mark:    |  :heavy_check_mark:    |
 | Sign In with Twitter                           | :heavy_check_mark:    |  :heavy_check_mark:    |
 | Sign In with Github                            | :heavy_check_mark:    |  :heavy_check_mark:    |
+| Sign In with Microsoft                         | :heavy_check_mark:    |  :heavy_check_mark:    |
+| Sign In with Yahoo                             | :heavy_check_mark:    |  :heavy_check_mark:    |
 | Sign In with PhoneNumber                       | :x:                   |  :heavy_check_mark:    |
 | Sign out                                       | :heavy_check_mark:    |  :x:                   |
 | Sign in/up progress indicator                  | :heavy_check_mark:    |  :x:                   |
@@ -103,7 +105,7 @@ by starring :star: and sharing it :loudspeaker:
 | Edit user's phone number (incl. validation)    | :heavy_check_mark:    |  :x:                   |
 | Configure your favorite auth provider in runtime| :heavy_check_mark:   |  :x:                   |
 | Sync user'auth with Firestore  [read more](FIRESTORE_SYNC.md)   | :heavy_check_mark:    |  :x:  |
-| Angular v2-7 friendly                          | :heavy_check_mark:    |  :x:                   |
+| Angular v2-8 friendly                          | :heavy_check_mark:    |  :x:                   |
 | Internationalization (i18n)                    | :heavy_check_mark:    |  :heavy_check_mark:    |
 | Ionic/cordova support                          | :soon:  @firebaseui/ionic-auth |  :x: |
 | Real time form validation                      | :heavy_check_mark:    |  :x:                   |
@@ -149,6 +151,8 @@ by starring :star: and sharing it :loudspeaker:
 - facebook
 - twitter
 - github
+- Microsoft
+- Yahoo
 - phone number :soon:
 
 <a name="supported-procress-and-actions"/>
@@ -156,7 +160,7 @@ by starring :star: and sharing it :loudspeaker:
 ## Supported Processes and Actions:
 - sign up
 - sign in
-- sign in Anonymously | with google, facebook, twitter, github
+- sign in Anonymously | with google, facebook, twitter, github, microsoft, yahoo
 - sign out
 - validation of password's strength while creating a new account using [@angular-material-extensions/password-strength](https://github.com/AnthonyNahas/@angular-material-extensions/password-strength)
 - forgot/reset password
@@ -168,7 +172,6 @@ by starring :star: and sharing it :loudspeaker:
 
 <a name="requirements"/>
 
-### Requirements:
 - [angular material theme](https://material.angular.io/guide/getting-started#step-4-include-a-theme)
 - [angular material icons](https://material.angular.io/guide/getting-started#step-6-optional-add-material-icons)
 - [angular cdk - v7.x](https://www.npmjs.com/package/@angular/cdk)
@@ -672,7 +675,7 @@ export class AppComponent {
 
 <p align="center">
   <img alt="auth providers themes for ngx-auth-firebaseui" width="384px" style="text-align: center;" 
-  src="assets/v1.1.0/provider_themes.png">
+  src="assets/v3.0.0/providers.png">
 </p>
 
 ### `<ngx-auth-firebaseui-user></ngx-auth-firebaseui-user>`
@@ -729,12 +732,13 @@ export class AppRoutingModule {
 - [@firebaseui/ng-bootstrap](https://github.com/firebaseui/ng-bootstrap)
 - [ngx-linkifyjs](https://github.com/anthonynahas/ngx-linkifyjs)
 - [@angular-material-extensions/password-strength](https://github.com/angular-material-extensions/password-strength)
-- [@angular-material-extensions/link-preview](https://github.com/angular-material-extensions/link-preview)
+- [@angular-material-extensions/google-maps-autocomplete](https://github.com/angular-material-extensions/google-maps-autocomplete)
 - [@angular-material-extensions/pages](https://github.com/angular-material-extensions/pages)
+- [@angular-material-extensions/link-preview](https://github.com/angular-material-extensions/link-preview)
 - [@angular-material-extensions/contacts](https://github.com/angular-material-extensions/contacts)
 - [@angular-material-extensions/faq](https://github.com/angular-material-extensions/faq)
 - [@angular-material-extensions/jumbotron](https://github.com/angular-material-extensions/jumbotron)
-- [@angular-material-extensions/google-maps-autocomplete](https://github.com/angular-material-extensions/google-maps-autocomplete)
+- [angular-material-extensions/freelancer-theme](https://github.com/angular-material-extensions/freelancer-theme)
 - [@angular-material-extensions/combination-generator](https://github.com/angular-material-extensions/combination-generator)
 
 ---
