@@ -115,8 +115,8 @@ describe('AuthProvidersComponent', function () {
   it('should create by default all available providers button', () => {
     const div = fixture.debugElement.query(By.all());
     expect(div.name).toEqual('div');
-    // should create the 4 buttons
-    expect(div.children[0].children.length).toBe(4);
+    // should create the 6 buttons
+    expect(div.children[0].children.length).toBe(6);
     // console.log('div.children.length', div.children[0].children.length);
 
     for (const child of div.children[0].children) {

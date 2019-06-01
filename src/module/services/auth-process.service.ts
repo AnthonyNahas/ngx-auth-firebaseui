@@ -18,6 +18,8 @@ export const facebookAuthProvider = new firebase.auth.FacebookAuthProvider();
 export const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
 export const twitterAuthProvider = new firebase.auth.TwitterAuthProvider();
 export const githubAuthProvider = new firebase.auth.GithubAuthProvider();
+export const microsoftAuthProvider = new firebase.auth.OAuthProvider('microsoft.com');
+export const yahooAuthProvider = new firebase.auth.OAuthProvider('yahoo.com');
 
 export enum AuthProvider {
   ALL = 'all',
@@ -27,6 +29,8 @@ export enum AuthProvider {
   Facebook = 'facebook',
   Twitter = 'twitter',
   Github = 'github',
+  Microsoft = 'microsoft',
+  Yahoo = 'yahoo',
   PhoneNumber = 'phoneNumber'
 }
 
@@ -101,6 +105,14 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
 
         case AuthProvider.Github:
           signInResult = await this.afa.auth.signInWithPopup(githubAuthProvider) as UserCredential;
+          break;
+
+        case AuthProvider.Microsoft:
+          signInResult = await this.afa.auth.signInWithPopup(microsoftAuthProvider) as UserCredential;
+          break;
+
+        case AuthProvider.Yahoo:
+          signInResult = await this.afa.auth.signInWithPopup(yahooAuthProvider) as UserCredential;
           break;
 
         case AuthProvider.PhoneNumber:

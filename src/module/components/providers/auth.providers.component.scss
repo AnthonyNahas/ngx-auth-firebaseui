@@ -3,6 +3,9 @@ $facebook: #385899;
 $twitter: #1da1f2;
 $github: #000000;
 $phone: #02bd7e;
+$microsoft: #00A4EF;
+$microsoft_fab: #f8f9fa;
+$yahoo: #720e9e;
 
 :host {
   display: block;
@@ -51,6 +54,14 @@ $phone: #02bd7e;
     background-color: $github;
   }
 
+  .microsoft-raised {
+    background-color: $microsoft;
+  }
+
+  .yahoo-raised {
+    background-color: $yahoo;
+  }
+
   .phone-raised {
     background-color: $phone;
   }
@@ -74,6 +85,14 @@ $phone: #02bd7e;
     color: $github !important;
   }
 
+  .microsoft-classic {
+    color: $microsoft !important;
+  }
+
+  .yahoo-classic {
+    color: $yahoo !important;
+  }
+
   .phone-classic {
     color: $phone;
   }
@@ -87,3 +106,6 @@ $phone: #02bd7e;
   }
 }
 
+button.microsoft {
+  background: $microsoft_fab;
+}

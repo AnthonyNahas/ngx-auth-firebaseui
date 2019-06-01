@@ -32,7 +32,7 @@ export class AuthProvidersComponent {
   layout: string = Layout.ROW;
 
   @Input()
-  providers: string[] | string = AuthProvider.ALL; //  google, facebook, twitter, github
+  providers: string[] | string = AuthProvider.ALL; //  google, facebook, twitter, github, mirosoft, yahoo
 
   themes = Theme;
   authProvider = AuthProvider;
@@ -51,6 +51,10 @@ export class AuthProvidersComponent {
         _sanitizer.bypassSecurityTrustResourceUrl('/assets/mdi/twitter.svg'))
       .addSvgIcon('github',
         _sanitizer.bypassSecurityTrustResourceUrl('/assets/mdi/github-circle.svg'))
+      .addSvgIcon('microsoft',
+        _sanitizer.bypassSecurityTrustResourceUrl('/assets/mdi/microsoft.svg'))
+      .addSvgIcon('yahoo',
+        _sanitizer.bypassSecurityTrustResourceUrl('/assets/mdi/yahoo.svg'))
       .addSvgIcon('phone',
         _sanitizer.bypassSecurityTrustResourceUrl('/assets/phone.svg'));
   }

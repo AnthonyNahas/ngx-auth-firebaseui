@@ -35,6 +35,20 @@
       <mat-icon svgIcon="github"></mat-icon>
       GitHub
     </button>
+    <button *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Microsoft)"
+            mat-button
+            [ngClass.xs]="{'space-full-xs':true}"
+            (click)="authProcess.signInWith(authProvider.Microsoft)">
+      <mat-icon svgIcon="microsoft"></mat-icon>
+      Microsoft
+    </button>
+    <button *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Yahoo)"
+            mat-button
+            [ngClass.xs]="{'space-full-xs':true}"
+            (click)="authProcess.signInWith(authProvider.Yahoo)">
+      <mat-icon svgIcon="yahoo"></mat-icon>
+      Yahoo
+    </button>
   </div>
 
   <!--classic-->
@@ -70,6 +84,20 @@
             [ngClass.xs]="{'space-full-xs':true}"
             (click)="authProcess.signInWith(authProvider.Github)">
       GitHub
+    </button>
+    <button *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Microsoft)"
+            mat-button
+            class="microsoft-classic"
+            [ngClass.xs]="{'space-full-xs':true}"
+            (click)="authProcess.signInWith(authProvider.Microsoft)">
+      Microsoft
+    </button>
+    <button *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Yahoo)"
+            mat-button
+            class="yahoo-classic"
+            [ngClass.xs]="{'space-full-xs':true}"
+            (click)="authProcess.signInWith(authProvider.Yahoo)">
+      Yahoo
     </button>
   </div>
 
@@ -107,6 +135,20 @@
             (click)="authProcess.signInWith(authProvider.Github)">
       GitHub
     </button>
+    <button *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Microsoft)"
+            mat-stroked-button
+            class="microsoft-classic"
+            [ngClass.xs]="{'space-full-xs':true}"
+            (click)="authProcess.signInWith(authProvider.Microsoft)">
+      Microsoft
+    </button>
+    <button *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Yahoo)"
+            mat-stroked-button
+            class="yahoo-classic"
+            [ngClass.xs]="{'space-full-xs':true}"
+            (click)="authProcess.signInWith(authProvider.Yahoo)">
+      Yahoo
+    </button>
   </div>
 
   <!--raised-->
@@ -143,6 +185,20 @@
             (click)="authProcess.signInWith(authProvider.Github)">
       GitHub
     </button>
+    <button *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Microsoft)"
+            mat-raised-button
+            class="microsoft-raised"
+            [ngClass.xs]="{'space-full-xs':true}"
+            (click)="authProcess.signInWith(authProvider.Microsoft)">
+      Microsoft
+    </button>
+    <button *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Yahoo)"
+            mat-raised-button
+            class="yahoo-raised"
+            [ngClass.xs]="{'space-full-xs':true}"
+            (click)="authProcess.signInWith(authProvider.Yahoo)">
+      Yahoo
+    </button>
   </div>
 
   <!--fab-->
@@ -173,6 +229,18 @@
             class="github-raised"
             (click)="authProcess.signInWith(authProvider.Github)">
       <mat-icon svgIcon="github"></mat-icon>
+    </button>
+    <button *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Microsoft)"
+            mat-fab
+            class="microsoft"
+            (click)="authProcess.signInWith(authProvider.Microsoft)">
+      <mat-icon svgIcon="microsoft"></mat-icon>
+    </button>
+    <button *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Yahoo)"
+            mat-fab
+            class="yahoo-raised"
+            (click)="authProcess.signInWith(authProvider.Yahoo)">
+      <mat-icon svgIcon="yahoo"></mat-icon>
     </button>
   </div>
 
@@ -206,6 +274,18 @@
             class="github-raised"
             (click)="authProcess.signInWith(authProvider.Github)">
       <mat-icon svgIcon="github"></mat-icon>
+    </button>
+    <button *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Microsoft)"
+            mat-mini-fab
+            class="microsoft"
+            (click)="authProcess.signInWith(authProvider.Microsoft)">
+      <mat-icon svgIcon="microsoft"></mat-icon>
+    </button>
+    <button *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Yahoo)"
+            mat-mini-fab
+            class="yahoo-raised"
+            (click)="authProcess.signInWith(authProvider.Yahoo)">
+      <mat-icon svgIcon="yahoo"></mat-icon>
     </button>
   </div>
 </div>
