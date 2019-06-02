@@ -11,31 +11,31 @@ const routes: Routes = [
   },
   {
     path: 'getting-started',
-    loadChildren: 'app/getting-started/getting-started.module#GettingStartedModule'
+    loadChildren: () => import('app/getting-started/getting-started.module').then(m => m.GettingStartedModule)
   },
   {
     path: 'features',
-    loadChildren: 'app/features/features.module#FeaturesModule'
+    loadChildren: () => import('app/features/features.module').then(m => m.FeaturesModule)
   },
   {
     path: 'examples',
-    loadChildren: 'app/examples/examples.module#ExamplesModule'
+    loadChildren: () => import('app/examples/examples.module').then(m => m.ExamplesModule)
   },
   {
     path: 'i18n',
-    loadChildren: 'app/i18n/i18n.module#I18nModule'
+    loadChildren: () => import('app/i18n/i18n.module').then(m => m.I18nModule)
   },
   {
     path: 'legal',
-    loadChildren: 'app/legal/legal.module#LegalModule'
+    loadChildren: () => import('app/legal/legal.module').then(m => m.LegalModule)
   },
   {
     path: 'providers',
-    loadChildren: 'app/faq/faq.module#FaqModule'
+    loadChildren: () => import('app/faq/faq.module').then(m => m.FaqModule)
   },
   {
     path: 'secured',
-    loadChildren: 'app/faq/faq.module#FaqModule',
+    loadChildren: () => import('app/faq/faq.module').then(m => m.FaqModule),
     canActivate: [LoggedInGuard]
   }
 ];
