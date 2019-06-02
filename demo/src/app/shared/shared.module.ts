@@ -6,14 +6,14 @@ import {HeaderComponent} from './header/header.component';
 import {FooterComponent} from './footer/footer.component';
 import {ContentWrapperComponent} from './content-wrapper/content-wrapper.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
-import {
-  MatButtonModule,
-  MatCardModule,
-  MatIconModule,
-  MatToolbarModule,
-  MatTabsModule,
-  MatTooltipModule, MatInputModule, MatRippleModule
-} from '@angular/material';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatRippleModule } from '@angular/material/core';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import {AngularFireAuthModule} from '@angular/fire/auth';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
 import {BadgesComponent} from './badges/badges.component';

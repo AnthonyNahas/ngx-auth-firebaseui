@@ -1,6 +1,6 @@
 import {Component, ViewEncapsulation} from '@angular/core';
 import {AuthProvider} from 'ngx-auth-firebaseui';
-import {MatSnackBar} from '@angular/material';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import {ExampleBaseComponent} from './example.abstract';
 
 @Component({
