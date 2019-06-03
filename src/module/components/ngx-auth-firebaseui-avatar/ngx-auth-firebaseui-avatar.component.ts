@@ -39,7 +39,7 @@ export class NgxAuthFirebaseuiAvatarComponent implements OnInit {
     this.user$ = this.afa.user;
     this.user$.subscribe((user: User) => {
       this.user = user;
-      this.displayNameInitials = this.getDisplayNameInitials(user.displayName);
+      this.displayNameInitials = user ? this.getDisplayNameInitials(user.displayName) : null;
     });
   }
 
