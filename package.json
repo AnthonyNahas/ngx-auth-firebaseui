@@ -65,7 +65,7 @@
     "@angular/router": "^7.2.15",
     "@ngx-translate/core": "^11.0.1",
     "@ngx-translate/http-loader": "^4.0.0",
-    "firebase": "^5.11.1"
+    "firebase": "^6.1.1"
   },
   "devDependencies": {
     "@angular-devkit/core": "^7.3.9",
