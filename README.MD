@@ -34,19 +34,9 @@ This library is an angular module (including angular components and services) th
 your users with your firebase project. NgxAuthFirebseUI is compatible with
 [angular material](https://material.angular.io/) and [angular flexLayout](https://github.com/angular/flex-layout).
 
-** Angular Schematics is supported starting with v2.5.0 **
 
 If you prefer to develop with bootstrap rather than with material design, please check this project [@firebaseui/ng-bootstrap](https://github.com/firebaseui/ng-bootstrap)
 
-## Migration from V1 to V2
-Since the first stable release of `angularfire2` has been published within the angular 
-organization, we replaced that module with `@angular/fire`
-
-Before updating `ngx-auth-firebaseui` to V2, please make sure that `angularifre2` has been replaced with `@angular/fire`
---> 
-```bash
-npm un angularfire2 && npm i @angular/fire 
-```
 
 ## Built by and for developers :heart:
 Do you have any question or suggestion ? Please do not hesitate to contact us!
@@ -139,8 +129,9 @@ by starring :star: and sharing it :loudspeaker:
 
 ## Library's components
 - `<ngx-auth-firebaseui>` used for the authentication process
-- `<ngx-auth-firebaseui-providers>` used to display only buttons for providers like google, facebook, twitter and github
-- `<ngx-auth-firebaseui-user>` used to display/edit the data of the current authenticated user
+- `<ngx-auth-firebaseui-providers>` used to display only buttons for providers like google, facebook, twitter, github, microsoft and yahoo
+- `<ngx-auth-firebaseui-user>` used to display/edit the data of the current authenticated user in form of a material card
+- `<ngx-auth-firebaseui-avatar>` used to display/edit the data of the current authenticated user in the toolbar
 
 <a name="supported-providers"/>
 
@@ -174,13 +165,13 @@ by starring :star: and sharing it :loudspeaker:
 
 - [angular material theme](https://material.angular.io/guide/getting-started#step-4-include-a-theme)
 - [angular material icons](https://material.angular.io/guide/getting-started#step-6-optional-add-material-icons)
-- [angular cdk - v7.x](https://www.npmjs.com/package/@angular/cdk)
-- [angular material - v7.x](https://www.npmjs.com/package/@angular/material)
-- [angular forms - v7.x](https://www.npmjs.com/package/@angular/forms)
-- [angular animations - v7.x](https://www.npmjs.com/package/@angular/animations)
-- [angular flex-layout v7.0.0-beta.23](https://www.npmjs.com/package/@angular/flex-layout)
-- [@angular/fire - v5.x](https://www.npmjs.com/package/@angular/fire)
-- [firebase - v5.x](https://www.npmjs.com/package/firebase)
+- [angular cdk - v8.x](https://www.npmjs.com/package/@angular/cdk)
+- [angular material - v8.x](https://www.npmjs.com/package/@angular/material)
+- [angular forms - v8.x](https://www.npmjs.com/package/@angular/forms)
+- [angular animations - v8.x](https://www.npmjs.com/package/@angular/animations)
+- [angular flex-layout v8.0.0-beta.26](https://www.npmjs.com/package/@angular/flex-layout)
+- [@angular/fire - v5.2.x](https://www.npmjs.com/package/@angular/fire)
+- [firebase - v6.x](https://www.npmjs.com/package/firebase)
 
 the full tutorial guide can be found [here](https://ngx-auth-firebaseui.firebaseapp.com/getting-started)
 
@@ -198,6 +189,22 @@ take a look at live example with firestore's synchronization [here](FIRESTORE_SY
 
 ## Screenshots - Browser <ngx-auth-firebaseui></ngx-auth-firebaseui>
 - sign in
+
+v8
+
+<p align="center">
+  <img alt="ngx-auth-firebaseui sign in" width="384px" style="text-align: center;" 
+  src="assets/v3.0.0/demo.png">
+</p>
+
+in combination with `ngx-auth-firebaseui-user`
+
+<p align="center">
+  <img alt="ngx-auth-firebaseui sign in" width="384px" style="text-align: center;" 
+  src="assets/v3.0.0/demo_full.png">
+</p>
+
+v7
 
 <p align="center">
   <img alt="ngx-auth-firebaseui sign in" width="384px" style="text-align: center;" 
@@ -238,13 +245,13 @@ Please note: when the view port is getting too small, the layout will be
 automatically change to `column`
 <p align="center">
   <img alt="ngx-auth-firebaseui sign up" width="384px" style="text-align: center;" 
-  src="assets/v1.0.0/png/providers_column.png">
+  src="assets/v3.0.0/providers_column.png">
 </p>
 
 #### column layout
 <p align="center">
   <img alt="ngx-auth-firebaseui sign up" width="384px" style="text-align: center;" 
-  src="assets/v1.0.0/png/providers_row.png">
+  src="assets/v3.0.0/providers_rows.png">
 </p>
 
 ## Screenshots  <ngx-auth-firebaseui-user></ngx-auth-firebaseui-user>
@@ -309,14 +316,14 @@ automatically change to `column`
 
 ```json
 "peerDependencies": {
-    "@angular/core": "^7.x",
-    "@angular/animations": "^7.x",
-    "@angular/cdk": "^7.x",
-    "@angular/flex-layout": "^7.0.0-beta.23",
-    "@angular/forms": "^5.x",
-    "@angular/material": "^5.x",
-    "@angular/fire": "5.x",
-    "firebase": "5.x",
+    "@angular/core": "^8.x",
+    "@angular/animations": "^8.x",
+    "@angular/cdk": "^8.x",
+    "@angular/flex-layout": "^8.0.0-beta.26",
+    "@angular/forms": "^8.x",
+    "@angular/material": "^8.x",
+    "@angular/fire": "5.2.x",
+    "firebase": "6.x",
   }
 ```
 
@@ -324,6 +331,7 @@ automatically change to `column`
 If you are still running angular v5, please consider to user `ngx-auth-firebaseui` v0.x
 
 v1.x should be used with angular v7 projects
+v3.x should be used with angular v8 projects
 
 [help!](https://ngx-auth-firebaseui.firebaseapp.com/getting-started)
 
@@ -333,7 +341,7 @@ v1.x should be used with angular v7 projects
 <a name="dependencies"/>
 
 ## Dependencies
-* [Angular](https://angular.io) (*requires* Angular 2 or higher, developed with 7.x) - obviously
+* [Angular](https://angular.io) (*requires* Angular 2 or higher, developed with 8.x) - obviously
 * [@angular-material-extensions/password-strength](https://www.npmjs.com/package/@angular-material-extensions/password-strength)
 
 the [@angular-material-extensions/password-strength](https://www.npmjs.com/package/@angular-material-extensions/password-strength) is used
@@ -560,6 +568,17 @@ class AppComponent {
   src="assets/v0.7.1/features/user/user_verified_2.png">
 </p>
 
+### `<ngx-auth-firebaseui-avatar></ngx-auth-firebaseui-avatar>`
+
+```html
+<ngx-auth-firebaseui-avatar></ngx-auth-firebaseui-avatar>
+```
+
+<p align="center">
+  <img alt="ngx-auth-firebaseui-logo.png" width="384px" style="text-align: center;" 
+  src="assets/v3.0.0/avatar.png">
+</p>
+
 <a name="api"/>
 
 ## API
@@ -689,6 +708,13 @@ export class AppComponent {
 | onSignOut          | Output()| void        | - | this will be fired when the user signs out
 | onAccountDeleted   | Output()| void        | - | this will be fired when the user deletes his account
 
+### `<ngx-auth-firebaseui-avatar></ngx-auth-firebaseui-avatar>`
+
+| option | bind  |  type  |   default    | description  |
+|:---------------------|:------:|:------:|:------------:|:-------------------------------------------------------------------------------------------------|
+| canLogout          | Input() | boolean     | true | whether to render the logout button
+| links              | Input() | `LinkMenuItem[]`    | - | additional routes and links to add to the component
+| onSignOut          | Output()| void        | - | this will be fired when the user signs out
 
 ### EXTRA TIP: Login Authentication Guard
 
