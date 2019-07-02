@@ -55,7 +55,7 @@
   "dependencies": {
     "@angular-material-extensions/password-strength": "^4.0.0-beta",
     "@angular/animations": "^8.0.3",
-    "@angular/cdk": "^8.0.1",
+    "@angular/cdk": "^8.0.2",
     "@angular/common": "^8.0.3",
     "@angular/core": "^8.0.3",
     "@angular/fire": "^5.2.1",
