@@ -1,3 +1,31 @@
+# [3.0.0](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v2.7.2...v3.0.0) (2019-07-02)
+
+
+### Bug Fixes
+
+* **demo:** updated firebase to v6 ([9032860](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/9032860))
+* **demo:** updated the dependencies ([018f8f4](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/018f8f4))
+* **demo:** upgraded angular material to v8 ([98773ef](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/98773ef))
+* **demo:** upgraded angular material to v8.0.1 [#277](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/277) ([4a94994](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/4a94994))
+* **demo:** upgraded angular to v8 [#277](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/277) ([2c062ef](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/2c062ef))
+* **demo:** upgraded the demo app to v8 ([a0338e8](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/a0338e8))
+* **package:** error in ngx-auth-firebaseui-avatar ([e9128f5](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/e9128f5))
+* **package:** minor ([a5dfaad](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/a5dfaad))
+* **package:** remove debug print ([fcc8b91](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/fcc8b91))
+* **package:** solved `resetPasswordTabText` is now dynamic [#254](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/254) ([24d00b2](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/24d00b2))
+* **package:** updated the dependencies ([fbdcd2c](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/fbdcd2c))
+* **package:** updated the dependencies ([2287e70](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/2287e70))
+* **package:** updated the dependencies ([a72f20d](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/a72f20d))
+* **package:** updated the package-lock.json files ([2686376](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/2686376))
+* **package:** upgraded angular and material to v8 [#277](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/277) ([c9e173b](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/c9e173b))
+
+
+### Features
+
+* **package:** added microsoft and yahoo as auth providers [#232](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/232) ([832d81a](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/832d81a))
+
+
+
 ## [2.7.2](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v2.7.1...v2.7.2) (2019-05-16)
 
 
