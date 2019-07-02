@@ -39,7 +39,7 @@ export const PHONE_NUMBER_REGEX = new RegExp(/^\+(?:[0-9] ?){6,14}[0-9]$/);
 
 export class AuthComponent implements OnInit, OnChanges, OnDestroy {
 
-  @ViewChild(MatTabGroup) matTabGroup: MatTabGroup;
+  @ViewChild(MatTabGroup, {static: false}) matTabGroup: MatTabGroup;
 
   @Input() providers: string[] | string = AuthProvider.ALL; //  google, facebook, twitter, github as array or all as one single string
   @Input() appearance: MatFormFieldAppearance;
