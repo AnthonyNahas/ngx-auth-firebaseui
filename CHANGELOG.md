@@ -1,3 +1,12 @@
+## [3.0.1](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v3.0.0...v3.0.1) (2019-07-03)
+
+
+### Bug Fixes
+
+* **project:** updated the deps ([cb3d160](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/cb3d160))
+
+
+
 # [3.0.0](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v2.7.2...v3.0.0) (2019-07-02)
 
 
