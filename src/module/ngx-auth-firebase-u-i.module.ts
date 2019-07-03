@@ -1,5 +1,5 @@
 import {CommonModule} from '@angular/common';
-import {NgModule, ModuleWithProviders, InjectionToken, Inject} from '@angular/core';
+import {Inject, InjectionToken, ModuleWithProviders, NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {AuthComponent} from './components/ngx-auth-firebaseui/auth.component';
@@ -9,24 +9,23 @@ import {EmailConfirmationComponent} from './components/email-confirmation/email-
 import {defaultAuthFirebaseUIConfig, NgxAuthFirebaseUIConfig} from './interfaces/config.interface';
 import {FirestoreSyncService} from './services/firestore-sync.service';
 import {AuthProcessService} from './services/auth-process.service';
-import {FirebaseAppConfig, FirebaseOptionsToken, FirebaseNameOrConfigToken} from '@angular/fire';
+import {FirebaseAppConfig, FirebaseNameOrConfigToken, FirebaseOptionsToken} from '@angular/fire';
 import {AngularFireAuthModule} from '@angular/fire/auth';
 import {FlexLayoutModule} from '@angular/flex-layout';
-import {
-  MatButtonModule,
-  MatCardModule,
-  MatChipsModule,
-  MatDialogModule,
-  MatDividerModule,
-  MatIconModule,
-  MatInputModule,
-  MatSnackBarModule,
-  MatTabsModule,
-  MatTooltipModule,
-  MatProgressSpinnerModule,
-  MatProgressBarModule,
-  MatCheckboxModule, MatMenuModule
-} from '@angular/material';
+import {MatButtonModule} from '@angular/material/button';
+import {MatCardModule} from '@angular/material/card';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatChipsModule} from '@angular/material/chips';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatIconModule} from '@angular/material/icon';
+import {MatInputModule} from '@angular/material/input';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatTooltipModule} from '@angular/material/tooltip';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
 import {MatPasswordStrengthModule} from '@angular-material-extensions/password-strength';
 import {LegalityDialogComponent} from './components/legality-dialog/legality-dialog.component';

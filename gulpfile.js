@@ -394,11 +394,25 @@ gulp.task('rollup-bundle', (cb) => {
         '@angular/fire/firestore': 'ng.fire.firestore',
         '@angular/fire/auth': 'ng.fire.auth',
         '@angular/forms': 'ng.forms',
+        '@angular/router': 'ng.router',
         '@angular/animations': 'ng.animations',
         '@angular/cdk': 'ng.cdk',
         '@angular/material': 'ng.material',
+        '@angular/material/button': 'ng.material.button',
+        '@angular/material/card': 'ng.material.card',
+        '@angular/material/checkbox': 'ng.material.checkbox',
+        '@angular/material/chips': 'ng.material.chips',
+        '@angular/material/dialog': 'ng.material.dialog',
+        '@angular/material/divider': 'ng.material.divider',
+        '@angular/material/icon': 'ng.material.icon',
+        '@angular/material/input': 'ng.material.input',
+        '@angular/material/menu': 'ng.material.menu',
+        '@angular/material/progress-bar': 'ng.material.progress-bar',
+        '@angular/material/progress-spinner': 'ng.material.progress-spinner',
+        '@angular/material/snack-bar': 'ng.material.snack-bar',
+        '@angular/material/tabs': 'ng.material.tabs',
+        '@angular/material/tooltip': 'ng.material.tooltip',
         '@angular/flex-layout': 'ng.flexLayout',
-        '@angular-material-extensions/password-strength"': 'angularMaterialExtensions.passwordStrength',
 
         // Rxjs dependencies
         'rxjs/Subject': 'Rx',
@@ -426,7 +440,9 @@ gulp.task('rollup-bundle', (cb) => {
         // This is required for UMD bundle users.
         // See https://github.com/tinesoft/generator-ngx-library/TROUBLESHOUTING.md if trouble
         'firebase': _.camelCase('firebase'.replace('/', '.')),
-        'firebase/app': _.camelCase('firebase/app'.replace('/', '.'))
+        '@firebase/app': _.camelCase('firebase/app'.replace('/', '.')),
+        'rxjs/operators': _.camelCase('rxjs/operators'.replace('/', '.')),
+        '@angular-material-extensions/password-strength"': _.camelCase('angular-material-extensions/password-strength'.replace('/', '.')),
 
 
       };
