@@ -39,7 +39,7 @@ If you prefer to develop with bootstrap rather than with material design, please
 
 
 ## Built by and for developers :heart:
-Do you have any question or suggestion ? Please do not hesitate to contact us!
+Do you have `any` question or suggestion ? Please do not hesitate to contact us!
 Alternatively, provide a PR | open an appropriate issue [here](https://github.com/anthonynahas/ngx-auth-firebaseui/issues)
 
 If you like this project, support [ngx-auth-firebaseui](https://github.com/anthonynahas/ngx-auth-firebaseui) 
@@ -80,7 +80,7 @@ by starring :star: and sharing it :loudspeaker:
 | Sign In with Github                            | :heavy_check_mark:    |  :heavy_check_mark:    |
 | Sign In with Microsoft                         | :heavy_check_mark:    |  :heavy_check_mark:    |
 | Sign In with Yahoo                             | :heavy_check_mark:    |  :heavy_check_mark:    |
-| Sign In with PhoneNumber                       | :x:                   |  :heavy_check_mark:    |
+| Sign In with Phone`number`                       | :x:                   |  :heavy_check_mark:    |
 | Sign out                                       | :heavy_check_mark:    |  :x:                   |
 | Sign in/up progress indicator                  | :heavy_check_mark:    |  :x:                   |
 | Password Strength indicator                    | :heavy_check_mark:    |  :x:                   |
@@ -92,7 +92,7 @@ by starring :star: and sharing it :loudspeaker:
 | Check whether user's email is verified         | :heavy_check_mark:    |  :x:                   |
 | Edit user's display name (incl. validation)    | :heavy_check_mark:    |  :x:                   |
 | Edit user's email (incl. validation)           | :heavy_check_mark:    |  :x:                   |
-| Edit user's phone number (incl. validation)    | :heavy_check_mark:    |  :x:                   |
+| Edit user's phone `number` (incl. validation)    | :heavy_check_mark:    |  :x:                   |
 | Configure your favorite auth provider in runtime| :heavy_check_mark:   |  :x:                   |
 | Sync user'auth with Firestore  [read more](FIRESTORE_SYNC.md)   | :heavy_check_mark:    |  :x:  |
 | Angular v2-8 friendly                          | :heavy_check_mark:    |  :x:                   |
@@ -115,7 +115,7 @@ by starring :star: and sharing it :loudspeaker:
 - :soon: optional configuration
 - :recycle: configure your authentication providers in runtime
 - :recycle: reusable components for every project that needs an authentication with a firebase project/app.
-- :customs: built in feedback mechanism in form of a [snackbar](https://material.angular.io/components/snack-bar/overview) when an error or any important event occurred.
+- :customs: built in feedback mechanism in form of a [snackbar](https://material.angular.io/components/snack-bar/overview) when an error or `any` important event occurred.
 - :sos: ability to sign out or even to delete totally the account
 - :ghost: your client does not want to create an account in your project? Let him to sign in anonymously!
 - :busts_in_silhouette: user profile component to display user's data using <ngx-auth-firebaseui-user></ngx-auth-firebaseui-user> via `ngx-auth-firebaseui-user`
@@ -144,7 +144,7 @@ by starring :star: and sharing it :loudspeaker:
 - github
 - Microsoft
 - Yahoo
-- phone number :soon:
+- phone `number` :soon:
 
 <a name="supported-procress-and-actions"/>
 
@@ -157,7 +157,7 @@ by starring :star: and sharing it :loudspeaker:
 - forgot/reset password
 - sending email verifications
 - delete user's account
-- edit user's profile like email, name, (profile picture :soon:) and phone number
+- edit user's profile like email, name, (profile picture :soon:) and phone `number`
 - firestore auto sync :fire:  
 - do not allow users to create new accounts before checking the terms of services and private policy - for mor info check this [here](https://ngx-auth-firebaseui.firebaseapp.com/examples/tos)
 
@@ -587,20 +587,28 @@ class AppComponent {
 
 | option | bind  |  type  |   default    | description  |
 |:---------------------|:------:|:------:|:------------:|:-------------------------------------------------------------------------------------------------|
-| providers            | Input()  | string[] | ['all'] or [AuthProvider.All] | choose your favorite authentication provider: google | facebook | twitter | github
-| appearance           | Input()  | MatFormFieldAppearance | `standard` | the appearance of the mat-form-field #'legacy' | 'standard' | 'fill' | 'outline' 
-| tabIndex             | Input()  | number  | null; | `0` | the selected tab - either sign in or register
-| registrationEnabled  | Input()  | boolean | `true` | whether the user is able to register a new account
-| resetPasswordEnabled | Input()  | boolean | `true` | whether the user is able to reset his account password
-| guestEnabled         | Input()  | boolean | `true` | whether the user can sign in and continue as guest
-| tosUrl               | Input()  | string  | - | the url of term of services
-| privacyPolicyUrl     | Input()  | string  | - | the url of the private privacy
-| goBackURL            | Input()  | string  | - | the url to redirect to after creating a new user and clicking the `go back` button - the button is only available when the input is provided 
-| messageOnAuthSuccess | Input()  | string  | see the code -> | the message of the snackbar when the authentication process was successful
-| messageOnAuthError   | Input()  | string  | see the code -> | the message of the snackbar when the authentication process has failed
-| onSuccess            | Output() | any     | - | this will be fired when an authentication process was success. The authenticated user is emitted!
-| onError              | Output() | any     | - | this event will be fired when an error occurred during the authentication process! An error message is emitted!
-| onError              | Output() | MatTabChangeEvent | - |  output event is emitted when the active tab changes (signin, register and reset password tab)
+| providers            | `Input()`  | ``string`[]` | ['all'] or [AuthProvider.All] | choose your favorite authentication provider: google | facebook | twitter | github
+| appearance           | `Input()`  | `MatFormFieldAppearance` | `standard` | the appearance of the mat-form-field #'legacy' | 'standard' | 'fill' | 'outline' 
+| tabIndex             | `Input()`  | `number`  | null; | `0` | the selected tab - either sign in or register
+| registrationEnabled  | `Input()`  | `boolean` | `true` | whether the user is able to register a new account
+| resetPasswordEnabled | `Input()`  | `boolean` | `true` | whether the user is able to reset his account password
+| guestEnabled         | `Input()`  | `boolean` | `true` | whether the user can sign in and continue as guest
+| tosUrl               | `Input()`  | `string`  | - | the url of term of services
+| privacyPolicyUrl     | `Input()`  | `string`  | - | the url of the private privacy
+| goBackURL            | `Input()`  | `string`  | - | the url to redirect to after creating a new user and clicking the `go back` button - the button is only available when the input is provided 
+| messageOnAuthSuccess | `Input()`  | `string`  | see the code -> | the message of the snackbar when the authentication process was successful
+| messageOnAuthError   | `Input()`  | `string`  | see the code -> | the message of the snackbar when the authentication process has failed
+| onSuccess            | `Output()` | `any`     | - | this will be fired when an authentication process was success. The authenticated user is emitted!
+| onError              | `Output()` | `any`     | - | this event will be fired when an error occurred during the authentication process! An error message is emitted!
+| selectedTabChange    | `Output()` | MatTabChangeEvent | - |  output event is emitted when the active tab changes (signin, register and reset password tab)
+| enableLengthRule     | `Input()`  | `boolean`  | `true` | whether to validate the length of the password
+| enableLowerCaseLetterRule      | `Input()`  | `boolean`  | `true` | whether a lowercase letter is optional
+| enableUpperCaseLetterRule      | `Input()`  | `boolean`  | `true` | whether a uppercase letter is optional
+| enableDigitRule      | `Input()`  | `boolean`  | `true` | whether a digit char is optional
+| enableSpecialCharRule      | `Input()`  | `boolean`  | true | whether a special char is optional
+| min      | `Input()`  | ``number``   | 8 | the minimum length of the password
+| max      | `Input()`  | ``number``   | 30 | the maximum length of the password
+| onStrengthChanged  | `Output()` | ``number``    | - | emits the strength of the provided password in % e.g: 20%, 40%, 60%, 80% or 100%
 
 if you prefer to customize the text of this component, check these inputs [here](https://ngx-auth-firebaseui.firebaseapp.com/i18n) that have been used for translations
 
@@ -663,8 +671,8 @@ take a look at the full documentation [here](https://ngx-auth-firebaseui.firebas
 
 | option | bind  |  type  |   default    | description  |
 |:---------------------|:------:|:------:|:------------:|:-------------------------------------------------------------------------------------------------|
-| layout     | Input() | string     | `row` | set the layout of the providers buttons options: 'column' or 'row'
-| theme      | Input() | string     | `default` | set the theme of the providers buttons options: '', 'classic', 'stroked', 'fab', 'mini-fab', 'raised',
+| layout     | `Input()` | `string`     | `row` | set the layout of the providers buttons options: 'column' or 'row'
+| theme      | `Input()` | `string`     | `default` | set the theme of the providers buttons options: '', 'classic', 'stroked', 'fab', 'mini-fab', 'raised',
 
 e.g: in template:
 ```html
@@ -701,20 +709,20 @@ export class AppComponent {
 
 | option | bind  |  type  |   default    | description  |
 |:---------------------|:------:|:------:|:------------:|:-------------------------------------------------------------------------------------------------|
-| editMode           | Input() | boolean     | false | whether the use is in edit mode
-| canLogout          | Input() | boolean     | true | whether to render the logout button
-| canDeleteAccount   | Input() | boolean     | true | whether to render the delete account button
-| appearance         | Input() | MatFormFieldAppearance     | - | the style of the mat-input-form
-| onSignOut          | Output()| void        | - | this will be fired when the user signs out
-| onAccountDeleted   | Output()| void        | - | this will be fired when the user deletes his account
+| editMode           | `Input()` | `boolean`     | false | whether the use is in edit mode
+| canLogout          | `Input()` | `boolean`     | true | whether to render the logout button
+| canDeleteAccount   | `Input()` | `boolean`     | true | whether to render the delete account button
+| appearance         | `Input()` | `MatFormFieldAppearance`     | - | the style of the mat-input-form
+| onSignOut          | `Output()`| void        | - | this will be fired when the user signs out
+| onAccountDeleted   | `Output()`| void        | - | this will be fired when the user deletes his account
 
 ### `<ngx-auth-firebaseui-avatar></ngx-auth-firebaseui-avatar>`
 
 | option | bind  |  type  |   default    | description  |
 |:---------------------|:------:|:------:|:------------:|:-------------------------------------------------------------------------------------------------|
-| canLogout          | Input() | boolean     | true | whether to render the logout button
-| links              | Input() | `LinkMenuItem[]`    | - | additional routes and links to add to the component
-| onSignOut          | Output()| void        | - | this will be fired when the user signs out
+| canLogout          | `Input()` | `boolean`     | true | whether to render the logout button
+| links              | `Input()` | `LinkMenuItem[]`    | - | additional routes and links to add to the component
+| onSignOut          | `Output()`| void        | - | this will be fired when the user signs out
 
 ### EXTRA TIP: Login Authentication Guard
 
