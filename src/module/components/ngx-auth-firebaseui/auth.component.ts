@@ -12,7 +12,7 @@ import {
   ViewChild
 } from '@angular/core';
 import {AbstractControl, FormControl, FormGroup, Validators} from '@angular/forms';
-import {MatDialog, MatDialogRef, MatFormFieldAppearance, MatTabChangeEvent, MatTabGroup} from '@angular/material';
+import {MatDialog, MatDialogRef, MatFormFieldAppearance, MatTabChangeEvent, MatTabGroup, ThemePalette} from '@angular/material';
 import {AngularFireAuth} from '@angular/fire/auth';
 import {isPlatformBrowser} from '@angular/common';
 import {Subscription} from 'rxjs/internal/Subscription';
@@ -22,6 +22,7 @@ import {LegalityDialogComponent} from '../../components/legality-dialog/legality
 import {LegalityDialogParams, LegalityDialogResult} from '../../interfaces/legality.dialog.intreface';
 import {NgxAuthFirebaseUIConfig, NgxAuthFirebaseUIConfigToken} from '../../ngx-auth-firebase-u-i.module';
 import {defaultAuthFirebaseUIConfig} from '../../interfaces/config.interface';
+import {MatPasswordStrengthComponent} from '@angular-material-extensions/password-strength';
 
 
 export const EMAIL_REGEX = new RegExp(['^(([^<>()[\\]\\\.,;:\\s@\"]+(\\.[^<>()\\[\\]\\\.,;:\\s@\"]+)*)',
@@ -40,6 +41,7 @@ export const PHONE_NUMBER_REGEX = new RegExp(/^\+(?:[0-9] ?){6,14}[0-9]$/);
 export class AuthComponent implements OnInit, OnChanges, OnDestroy {
 
   @ViewChild(MatTabGroup, {static: false}) matTabGroup: MatTabGroup;
+  @ViewChild(MatPasswordStrengthComponent, {static: false}) passwordStrength: MatPasswordStrengthComponent;
 
   @Input() providers: string[] | string = AuthProvider.ALL; //  google, facebook, twitter, github as array or all as one single string
   @Input() appearance: MatFormFieldAppearance;
@@ -52,6 +54,17 @@ export class AuthComponent implements OnInit, OnChanges, OnDestroy {
   @Input() goBackURL: string;
   @Input() messageOnAuthSuccess: string;
   @Input() messageOnAuthError: string;
+
+  // Password strength api
+  @Input() enableLengthRule = true;
+  @Input() enableLowerCaseLetterRule = true;
+  @Input() enableUpperCaseLetterRule = true;
+  @Input() enableDigitRule = true;
+  @Input() enableSpecialCharRule = true;
+  @Input() min = 8;
+  @Input() max = 30;
+  @Input() customValidator: RegExp;
+  @Output() onStrengthChanged: EventEmitter<number> = new EventEmitter();
 
   // Customize the text
   // Reset Password Tab
@@ -127,6 +140,7 @@ export class AuthComponent implements OnInit, OnChanges, OnDestroy {
 
   public ngOnInit(): void {
     this.config = Object.assign(defaultAuthFirebaseUIConfig, this.config);
+    this.onStrengthChanged = this.passwordStrength.onStrengthChanged;
 
     if (isPlatformBrowser(this.platformId)) {
       this.onErrorSubscription = this.onError.subscribe(() => this.authenticationError = true);
@@ -154,7 +168,7 @@ export class AuthComponent implements OnInit, OnChanges, OnDestroy {
     this.selectedTabChange.emit(event);
   }
 
-  get color(): string {
+  get color(): string | ThemePalette {
     return this.authenticationError ? 'warn' : 'primary';
   }
 

@@ -91,13 +91,13 @@
                 <!--labels will work only with @angular/material@6.2.0 -->
                 <mat-label>{{nameText}}</mat-label>
                 <input matInput
-                       minlength="2"
-                       maxlength="30"
+                       [minlength]="passwordStrength.min.toString()"
+                       [maxlength]="passwordStrength.max.toString()"
                        [formControl]="sigUpNameFormControl"
                        required>
                 <mat-icon matSuffix [color]="color">person</mat-icon>
                 <mat-hint align="end" aria-live="polite">
-                  {{signUpFormGroup.value.name?.length}} / 25
+                  {{signUpFormGroup.value.name?.length}} / {{passwordStrength.max}}
                 </mat-hint>
                 <mat-error *ngIf="sigUpNameFormControl.hasError('required')">
                   {{nameErrorRequiredText}}
@@ -157,6 +157,14 @@
                 </mat-form-field>
 
                 <mat-password-strength #passwordStrength
+                                       [min]="min"
+                                       [max]="max"
+                                       [customValidator]="customValidator"
+                                       [enableLengthRule]="enableLengthRule"
+                                       [enableLowerCaseLetterRule]="enableLowerCaseLetterRule"
+                                       [enableUpperCaseLetterRule]="enableUpperCaseLetterRule"
+                                       [enableDigitRule]="enableDigitRule"
+                                       [enableSpecialCharRule]="enableSpecialCharRule"
                                        [password]="signUpFormGroup.value.password"
                                        [externalError]="sigUpPasswordFormControl.dirty">
                 </mat-password-strength>
@@ -201,7 +209,7 @@
   </mat-tab>
 
   <!--Reset password tab-->
-  <mat-tab *ngIf="passwordResetWished" [label]="resetPasswordTabText" >
+  <mat-tab *ngIf="passwordResetWished" [label]="resetPasswordTabText">
     <form [formGroup]="resetPasswordFormGroup" (ngSubmit)="resetPasswordFormGroup.valid && resetPassword()">
 
       <mat-card>
