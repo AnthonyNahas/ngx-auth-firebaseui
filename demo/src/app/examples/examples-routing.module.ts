@@ -10,6 +10,7 @@ import {MessagesComponent} from './messages/messages.component';
 import {GoBackURLComponent} from './go-back-url/go-back-url.component';
 import {RegistrationComponent} from './registration/registration.component';
 import {ResetPasswordComponent} from './reset-psasword/reset-password.component';
+import {PasswordStrengthComponent} from './password-strength/password-strength.component';
 
 @NgModule({
   imports: [RouterModule.forChild([
@@ -23,6 +24,7 @@ import {ResetPasswordComponent} from './reset-psasword/reset-password.component'
     {path: 'tos', component: TosComponent},
     {path: 'tabIndex', component: TabIndexComponent},
     {path: 'gobackurl', component: GoBackURLComponent},
+    {path: 'password-strength', component: PasswordStrengthComponent},
   ])],
   exports: [RouterModule]
 })

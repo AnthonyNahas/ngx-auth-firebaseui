@@ -21,7 +21,7 @@ import {HttpClientTestingModule} from '@angular/common/http/testing';
 import {AngularFireModule} from '@angular/fire';
 import {AngularFirestore} from '@angular/fire/firestore';
 import {AngularFireAuth} from '@angular/fire/auth';
-import {MatPasswordStrengthModule} from '@angular-material-extensions/password-strength';
+import {MatPasswordStrengthComponent, MatPasswordStrengthModule} from '@angular-material-extensions/password-strength';
 import {AuthComponent} from './auth.component';
 import {AuthProcessService} from '../../services/auth-process.service';
 import {FirestoreSyncService} from '../../services/firestore-sync.service';
@@ -81,6 +81,9 @@ describe('AuthComponent', function () {
     }).compileComponents().then(() => {
       fixture = TestBed.createComponent(AuthComponent);
       component = fixture.componentInstance;
+      component.passwordStrength =
+        TestBed.createComponent(MatPasswordStrengthComponent).componentInstance;
+
       testBedService = TestBed.get(AuthProcessService);
 
       // AuthService provided to the TestBed

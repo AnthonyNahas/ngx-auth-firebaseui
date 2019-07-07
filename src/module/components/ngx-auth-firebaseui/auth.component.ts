@@ -1,4 +1,5 @@
 import {
+  AfterViewInit,
   Component,
   EventEmitter,
   Inject,
@@ -37,8 +38,7 @@ export const PHONE_NUMBER_REGEX = new RegExp(/^\+(?:[0-9] ?){6,14}[0-9]$/);
   templateUrl: 'auth.component.html',
   styleUrls: ['auth.component.scss']
 })
-
-export class AuthComponent implements OnInit, OnChanges, OnDestroy {
+export class AuthComponent implements OnInit, AfterViewInit, OnChanges, OnDestroy {
 
   @ViewChild(MatTabGroup, {static: false}) matTabGroup: MatTabGroup;
   @ViewChild(MatPasswordStrengthComponent, {static: false}) passwordStrength: MatPasswordStrengthComponent;
@@ -54,6 +54,10 @@ export class AuthComponent implements OnInit, OnChanges, OnDestroy {
   @Input() goBackURL: string;
   @Input() messageOnAuthSuccess: string;
   @Input() messageOnAuthError: string;
+
+  @Output() onSuccess: any;
+  @Output() onError: any;
+  @Output() selectedTabChange: EventEmitter<MatTabChangeEvent> = new EventEmitter();
 
   // Password strength api
   @Input() enableLengthRule = true;
@@ -100,10 +104,6 @@ export class AuthComponent implements OnInit, OnChanges, OnDestroy {
   @Input() registerButtonText = 'Register';
   @Input() guestButtonText = 'continue as guest';
 
-  @Output() onSuccess: any;
-  @Output() onError: any;
-  @Output() selectedTabChange: EventEmitter<MatTabChangeEvent> = new EventEmitter();
-
   authProvider = AuthProvider;
   passwordResetWished: boolean;
 
@@ -140,7 +140,6 @@ export class AuthComponent implements OnInit, OnChanges, OnDestroy {
 
   public ngOnInit(): void {
     this.config = Object.assign(defaultAuthFirebaseUIConfig, this.config);
-    this.onStrengthChanged = this.passwordStrength.onStrengthChanged;
 
     if (isPlatformBrowser(this.platformId)) {
       this.onErrorSubscription = this.onError.subscribe(() => this.authenticationError = true);
@@ -150,6 +149,12 @@ export class AuthComponent implements OnInit, OnChanges, OnDestroy {
     this._initSignInFormGroupBuilder();
     this._initSignUpFormGroupBuilder();
     this._initResetPasswordFormGroupBuilder();
+  }
+
+  ngAfterViewInit(): void {
+    this.passwordStrength.onStrengthChanged.subscribe((strength: number) => {
+      this.onStrengthChanged.emit(strength);
+    });
   }
 
   ngOnChanges(changes: SimpleChanges): void {
@@ -258,8 +263,8 @@ export class AuthComponent implements OnInit, OnChanges, OnDestroy {
       password: this.sigUpPasswordFormControl = new FormControl('',
         [
           Validators.required,
-          Validators.minLength(6),
-          Validators.maxLength(25),
+          Validators.minLength(this.min),
+          Validators.maxLength(this.max),
         ])
     });
   }

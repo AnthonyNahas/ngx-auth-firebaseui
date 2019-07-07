@@ -13,6 +13,7 @@ import {MessagesComponent} from './messages/messages.component';
 import { GoBackURLComponent } from './go-back-url/go-back-url.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { ResetPasswordComponent } from './reset-psasword/reset-password.component';
+import {PasswordStrengthComponent} from './password-strength/password-strength.component';
 
 @NgModule({
   imports: [
@@ -32,7 +33,8 @@ import { ResetPasswordComponent } from './reset-psasword/reset-password.componen
       MessagesComponent,
       GoBackURLComponent,
       RegistrationComponent,
-      ResetPasswordComponent
+      ResetPasswordComponent,
+      PasswordStrengthComponent
     ]
 })
 export class ExamplesModule {

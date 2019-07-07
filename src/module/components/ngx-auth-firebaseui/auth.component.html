@@ -91,8 +91,8 @@
                 <!--labels will work only with @angular/material@6.2.0 -->
                 <mat-label>{{nameText}}</mat-label>
                 <input matInput
-                       [minlength]="passwordStrength.min.toString()"
-                       [maxlength]="passwordStrength.max.toString()"
+                       [minlength]="2"
+                       [maxlength]="20"
                        [formControl]="sigUpNameFormControl"
                        required>
                 <mat-icon matSuffix [color]="color">person</mat-icon>
@@ -140,7 +140,7 @@
                   <mat-icon matSuffix [color]="color">lock</mat-icon>
 
                   <mat-hint align="end" aria-live="polite">
-                    {{signUpFormGroup.value.password?.length}} / {{ passwordStrength.max }}
+                    {{signUpFormGroup.value.password?.length}} / {{ max }}
                   </mat-hint>
 
                   <mat-error *ngIf="sigUpPasswordFormControl.hasError('required')" class="cut-text">
@@ -148,10 +148,10 @@
                   </mat-error>
 
                   <mat-error *ngIf="sigUpPasswordFormControl.hasError('minlength')" class="cut-text">
-                    The password must be at least 6 characters long.
+                    The password must be at least {{min}} characters long.
                   </mat-error>
                   <mat-error *ngIf="sigUpPasswordFormControl.hasError('maxlength')" class="cut-text">
-                    The password can not be longer than 25 characters.
+                    The password can not be longer than {{max}} characters.
                   </mat-error>
 
                 </mat-form-field>
