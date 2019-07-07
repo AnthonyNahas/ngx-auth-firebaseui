@@ -1,3 +1,22 @@
+# [3.1.0](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v3.0.1...v3.1.0) (2019-07-07)
+
+
+### Bug Fixes
+
+* **demo:** updated @nguniversal/express-engine ([bad1a31](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/bad1a31))
+* **demo:** updated angular v8.1 ([e8c3c66](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/e8c3c66))
+* **demo:** updated firebase tools ([0d7b09d](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/0d7b09d))
+* **package:** updated @angular-material-extensions/password-strength to v4 [#191](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/191) ([c1493fb](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/c1493fb))
+* **package:** updated the dependencies ([e5d328e](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/e5d328e))
+
+
+### Features
+
+* **package:** implemented the password strength api [#191](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/191) ([f31efc9](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/f31efc9))
+* **package:** implemented the password strength api [#191](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/191) ([3968d12](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/3968d12))
+
+
+
 ## [3.0.1](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v3.0.0...v3.0.1) (2019-07-03)
 
 
