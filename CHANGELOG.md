@@ -1,3 +1,17 @@
+# [3.2.0](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v3.1.0...v3.2.0) (2019-07-08)
+
+
+### Bug Fixes
+
+* **demo2:** removed deprecated demo2 app ([17a6b0e](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/17a6b0e))
+
+
+### Features
+
+* **package:** added authGuardLoggedInURL to the config [#263](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/263) ([0abbcdb](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/0abbcdb))
+
+
+
 # [3.1.0](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v3.0.1...v3.1.0) (2019-07-07)
 
 
