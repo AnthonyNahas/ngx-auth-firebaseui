@@ -12,6 +12,7 @@ export interface NgxAuthFirebaseUIConfig {
   // authProviders?: Array<AuthProvider>,
   // languageCode?: string, // todo: 28.3.18
   authGuardFallbackURL?: string,
+  authGuardLoggedInURL?: string,
   enableFirestoreSync?: boolean,
   toastMessageOnAuthSuccess?: boolean,
   toastMessageOnAuthError?: boolean
@@ -21,6 +22,7 @@ export const defaultAuthFirebaseUIConfig: NgxAuthFirebaseUIConfig = {
   // authMethod: 'redirect',
   // authProviders: [new GoogleAuthProvider(), new FacebookAuthProvider(), new TwitterAuthProvider(), new GithubAuthProvider()],
   authGuardFallbackURL: '/',
+  authGuardLoggedInURL: '/',
   enableFirestoreSync: true,
   toastMessageOnAuthSuccess: true,
   toastMessageOnAuthError: true

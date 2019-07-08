@@ -14,6 +14,9 @@ import { GoBackURLComponent } from './go-back-url/go-back-url.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { ResetPasswordComponent } from './reset-psasword/reset-password.component';
 import {PasswordStrengthComponent} from './password-strength/password-strength.component';
+import {GuardsExampleComponent} from './guards-example/guards-example.component';
+import {LoggedInComponent} from './guards-example/logged-in/logged-in.component';
+import {LoggedOutComponent} from './guards-example/logged-out/logged-out.component';
 
 @NgModule({
   imports: [
@@ -34,7 +37,10 @@ import {PasswordStrengthComponent} from './password-strength/password-strength.c
       GoBackURLComponent,
       RegistrationComponent,
       ResetPasswordComponent,
-      PasswordStrengthComponent
+      PasswordStrengthComponent,
+      GuardsExampleComponent,
+      LoggedInComponent,
+      LoggedOutComponent
     ]
 })
 export class ExamplesModule {

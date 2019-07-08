@@ -57,7 +57,9 @@ export function createTranslateLoader(http: HttpClient) {
       {
         enableFirestoreSync: true,
         toastMessageOnAuthSuccess: true,
-        toastMessageOnAuthError: true
+        toastMessageOnAuthError: true,
+        authGuardFallbackURL: 'examples/logged-out',
+        authGuardLoggedInURL: 'examples/logged-in',
       }),
     TranslateModule.forRoot({
       loader: {
