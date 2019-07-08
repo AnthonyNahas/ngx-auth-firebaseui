@@ -493,7 +493,9 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
                 {
                   enableFirestoreSync: true, // enable/disable autosync users with firestore
                   toastMessageOnAuthSuccess: false, // whether to open/show a snackbar message on auth success - default : true
-                  toastMessageOnAuthError: false // whether to open/show a snackbar message on auth error - default : true
+                  toastMessageOnAuthError: false, // whether to open/show a snackbar message on auth error - default : true
+                  authGuardFallbackURL: '/loggedout', // url for unauthenticated users - to use in combination with canActivate feature on a route
+                  authGuardLoggedInURL: '/loggedin', // url for authenticated users - to use in combination with canActivate feature on a route
                 }),
   ],
   providers: [],
@@ -730,7 +732,23 @@ If you want to prevent a route to be accessed from non authorized users, you can
 use a built in `LoggedInGuard` angular router guard.
 
 1. enter the fallback url in the `NgxAuthFirebaseUIConfig` under `authGuardFallbackURL`
-2. import the `LoggedInGuard` in your router module
+2. enter the logged in url in the `NgxAuthFirebaseUIConfig` under `authGuardLoggedInURL`
+
+```ts
+import {NgxAuthFirebaseUIModule} from 'ngx-auth-firebaseui';
+
+
+NgxAuthFirebaseUIModule.forRoot(firebaseKey, firebaseAppNameFactory,
+    {
+      authGuardFallbackURL: 'examples/logged-out',
+      authGuardLoggedInURL: 'examples/logged-in',
+    }),
+```
+
+if the user is logged in, he will be redirected to `examples/logged-in` route (per example), 
+otherwise he will be redirected to the `examples/logged-out` route 
+
+3. import the `LoggedInGuard` in your router module
 
 ```ts
 import {NgModule} from '@angular/core';
