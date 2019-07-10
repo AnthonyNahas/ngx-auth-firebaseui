@@ -1,3 +1,15 @@
+## [3.2.1](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v3.2.0...v3.2.1) (2019-07-10)
+
+
+### Bug Fixes
+
+* **demo:** remove for root at `NgbCollapseModule` ([d8218b4](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/d8218b4))
+* **demo:** updated angular and other deps [#284](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/284) ([070feee](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/070feee))
+* **package:** updated the dependencies (angular and rollup) [#284](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/284) ([4e65767](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/4e65767))
+* **package:** updated the schematics of the lib [#284](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/284) ([cbc1cbd](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/cbc1cbd))
+
+
+
 # [3.2.0](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v3.1.0...v3.2.0) (2019-07-08)
 
 
