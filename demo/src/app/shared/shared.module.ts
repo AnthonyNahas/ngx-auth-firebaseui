@@ -24,7 +24,7 @@ import {MatPagesModule} from '@angular-material-extensions/pages';
 @NgModule({
   imports: [
     RouterModule,
-    NgbCollapseModule.forRoot(),
+    NgbCollapseModule,
     HighlightModule,
     NgxAuthFirebaseUIModule,
     MatPagesModule,
