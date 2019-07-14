@@ -152,9 +152,11 @@ export class AuthComponent implements OnInit, AfterViewInit, OnChanges, OnDestro
   }
 
   ngAfterViewInit(): void {
-    this.passwordStrength.onStrengthChanged.subscribe((strength: number) => {
-      this.onStrengthChanged.emit(strength);
-    });
+    if (this.passwordStrength) {
+      this.passwordStrength.onStrengthChanged.subscribe((strength: number) => {
+        this.onStrengthChanged.emit(strength);
+      });
+    }
   }
 
   ngOnChanges(changes: SimpleChanges): void {
