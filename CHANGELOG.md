@@ -1,3 +1,12 @@
+## [3.2.2](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v3.2.1...v3.2.2) (2019-07-14)
+
+
+### Bug Fixes
+
+* **package:** typeError: "this.passwordStrength is undefined" when disabling registration tab [#286](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/286) ([345ddba](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/345ddba))
+
+
+
 ## [3.2.1](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v3.2.0...v3.2.1) (2019-07-10)
 
 
