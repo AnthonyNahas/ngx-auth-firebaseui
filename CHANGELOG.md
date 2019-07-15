@@ -1,3 +1,14 @@
+## [3.2.3](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v3.2.2...v3.2.3) (2019-07-15)
+
+
+### Bug Fixes
+
+* **package:** added the onSuccess and the onError events to the providers comp. [#257](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/257) ([7e806b4](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/7e806b4))
+* **package:** updated the schematics ([94f893b](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/94f893b))
+* **package:** updated the versions in schematics module ([7a2b78d](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/7a2b78d))
+
+
+
 ## [3.2.2](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v3.2.1...v3.2.2) (2019-07-14)
 
 
