@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, Output} from '@angular/core';
 import {DomSanitizer} from '@angular/platform-browser';
 import {MatIconRegistry} from '@angular/material';
 import {AuthProcessService, AuthProvider} from '../../services/auth-process.service';
@@ -24,15 +24,12 @@ export enum Layout {
 })
 export class AuthProvidersComponent {
 
-  @Input()
-  theme: string;
-  // theme: string = Theme.DEFAULT;
+  @Input() theme: string; // theme: string = Theme.DEFAULT;
+  @Input() layout: string = Layout.ROW;
+  @Input() providers: string[] | string = AuthProvider.ALL; //  google, facebook, twitter, github, microsoft, yahoo
 
-  @Input()
-  layout: string = Layout.ROW;
-
-  @Input()
-  providers: string[] | string = AuthProvider.ALL; //  google, facebook, twitter, github, mirosoft, yahoo
+  @Output() onSuccess: any;
+  @Output() onError: any;
 
   themes = Theme;
   authProvider = AuthProvider;
@@ -57,6 +54,9 @@ export class AuthProvidersComponent {
         _sanitizer.bypassSecurityTrustResourceUrl('/assets/mdi/yahoo.svg'))
       .addSvgIcon('phone',
         _sanitizer.bypassSecurityTrustResourceUrl('/assets/phone.svg'));
+
+    this.onSuccess = authProcess.onSuccessEmitter;
+    this.onError = authProcess.onErrorEmitter;
   }
 
 }

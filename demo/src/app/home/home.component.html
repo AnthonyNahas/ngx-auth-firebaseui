@@ -215,7 +215,10 @@
               </mat-tab-group>
             </mat-card-content>
             <mat-card-content>
-              <ngx-auth-firebaseui-providers layout="column"></ngx-auth-firebaseui-providers>
+              <ngx-auth-firebaseui-providers (onSuccess)="printUser($event)"
+                                             (onError)="printError($event)"
+                                             layout="column">
+              </ngx-auth-firebaseui-providers>
             </mat-card-content>
           </mat-card>
         </div>

@@ -63,7 +63,7 @@
     "@angular/forms": "^8.1.1",
     "@angular/material": "^8.0.2",
     "@angular/router": "^8.1.1",
-    "firebase": "^6.2.4"
+    "firebase": "^6.3.0"
   },
   "devDependencies": {
     "@angular-devkit/core": "^8.1.1",
@@ -119,7 +119,7 @@
     "postcss-strip-inline-comments": "0.1.5",
     "pump": "^3.0.0",
     "raw-loader": "^1.0.0",
-    "rollup": "^1.16.7",
+    "rollup": "^1.17.0",
     "rollup-plugin-commonjs": "^9.2.2",
     "rollup-plugin-node-resolve": "^4.2.4",
     "rollup-plugin-sourcemaps": "0.4.2",
@@ -135,7 +135,7 @@
     "tslint": "^5.18.0",
     "typescript": "~3.4.5",
     "webpack": "^4.35.3",
-    "webpack-cli": "^3.3.5",
+    "webpack-cli": "^3.3.6",
     "webpack-dev-middleware": "^3.7.0",
     "webpack-dev-server": "^3.7.2",
     "webpack-node-externals": "^1.7.2",

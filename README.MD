@@ -675,6 +675,8 @@ take a look at the full documentation [here](https://ngx-auth-firebaseui.firebas
 |:---------------------|:------:|:------:|:------------:|:-------------------------------------------------------------------------------------------------|
 | layout     | `Input()` | `string`     | `row` | set the layout of the providers buttons options: 'column' or 'row'
 | theme      | `Input()` | `string`     | `default` | set the theme of the providers buttons options: '', 'classic', 'stroked', 'fab', 'mini-fab', 'raised',
+| onSuccess  | `Output()`| `any`     | - | this will be fired when an authentication process was success. The authenticated user is emitted!
+| onError    | `Output()`| `any`     | - | this event will be fired when an error occurred during the authentication process! An error message is emitted!
 
 e.g: in template:
 ```html
