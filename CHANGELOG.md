@@ -1,3 +1,13 @@
+## [3.2.4](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v3.2.3...v3.2.4) (2019-07-17)
+
+
+### Bug Fixes
+
+* **package:** select the right tab when forgot password action is requested [#121](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/121) ([a87b2df](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/a87b2df))
+* **package:** updated angular material to v8.1.1 ([bdebe63](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/bdebe63))
+
+
+
 ## [3.2.3](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v3.2.2...v3.2.3) (2019-07-15)
 
 
