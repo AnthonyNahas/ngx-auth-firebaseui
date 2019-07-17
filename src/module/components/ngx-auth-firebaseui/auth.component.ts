@@ -186,7 +186,7 @@ export class AuthComponent implements OnInit, AfterViewInit, OnChanges, OnDestro
 
   public createForgotPasswordTab() {
     this.passwordResetWished = true;
-    setTimeout(() => this.tabIndex = 0, 100);
+    this.tabIndex = 2;
   }
 
   public processLegalSignUP(authProvider?: AuthProvider) {
