@@ -118,7 +118,7 @@
     "postcss": "^7.0.17",
     "postcss-strip-inline-comments": "0.1.5",
     "pump": "^3.0.0",
-    "raw-loader": "^1.0.0",
+    "raw-loader": "^3.1.0",
     "rollup": "^1.17.0",
     "rollup-plugin-commonjs": "^9.2.2",
     "rollup-plugin-node-resolve": "^4.2.4",
