@@ -1,3 +1,16 @@
+## [3.2.5](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v3.2.4...v3.2.5) (2019-07-25)
+
+
+### Bug Fixes
+
+* **demo:** updated angular to v8.1.2 ([e8c052c](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/e8c052c))
+* **demo:** updated firebase, bootstrap and other deps ([15bf59c](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/15bf59c))
+* **demo:** updated the demo app ([a628df4](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/a628df4))
+* **demo:** updated the demo app [#298](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/298) ([1d3a4fa](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/1d3a4fa))
+* **package:** updated angular, password strength lib and firebase ([132f5b5](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/132f5b5))
+
+
+
 ## [3.2.4](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v3.2.3...v3.2.4) (2019-07-17)
 
 
