@@ -15,6 +15,7 @@ import {GuardsExampleComponent} from './guards-example/guards-example.component'
 import {LoggedInGuard} from 'ngx-auth-firebaseui';
 import {LoggedInComponent} from './guards-example/logged-in/logged-in.component';
 import {LoggedOutComponent} from './guards-example/logged-out/logged-out.component';
+import {AvatarComponent} from './avatar/avatar.component';
 
 @NgModule({
   imports: [RouterModule.forChild([
@@ -32,6 +33,7 @@ import {LoggedOutComponent} from './guards-example/logged-out/logged-out.compone
     {path: 'logged-in', component: LoggedInComponent},
     {path: 'logged-out', component: LoggedOutComponent},
     {path: 'guards', component: GuardsExampleComponent, canActivate : [LoggedInGuard]},
+    {path: 'avatar', component: AvatarComponent},
   ])],
   exports: [RouterModule]
 })

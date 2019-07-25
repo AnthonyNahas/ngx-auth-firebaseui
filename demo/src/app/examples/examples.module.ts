@@ -17,13 +17,16 @@ import {PasswordStrengthComponent} from './password-strength/password-strength.c
 import {GuardsExampleComponent} from './guards-example/guards-example.component';
 import {LoggedInComponent} from './guards-example/logged-in/logged-in.component';
 import {LoggedOutComponent} from './guards-example/logged-out/logged-out.component';
+import {AvatarComponent} from './avatar/avatar.component';
+import {NgxAuthFirebaseUIModule} from '../../../../src';
 
 @NgModule({
   imports: [
     CommonModule,
     ExamplesRoutingModule,
     AppSharedModule,
-    ClipboardModule
+    ClipboardModule,
+    NgxAuthFirebaseUIModule
   ],
   declarations:
     [
@@ -40,7 +43,8 @@ import {LoggedOutComponent} from './guards-example/logged-out/logged-out.compone
       PasswordStrengthComponent,
       GuardsExampleComponent,
       LoggedInComponent,
-      LoggedOutComponent
+      LoggedOutComponent,
+      AvatarComponent
     ]
 })
 export class ExamplesModule {
