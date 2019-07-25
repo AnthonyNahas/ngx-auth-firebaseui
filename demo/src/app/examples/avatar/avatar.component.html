@@ -8,7 +8,7 @@
 <div class="container">
   <mat-toolbar color="primary">
     <span fxFlex></span>
-<!--    <ngx-auth-firebaseui-avatar [links]="links"></ngx-auth-firebaseui-avatar>-->
+    <ngx-auth-firebaseui-avatar [links]="links"></ngx-auth-firebaseui-avatar>
   </mat-toolbar>
 
   <div fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="center">
@@ -16,7 +16,10 @@
     <mat-card fxFlexAlign.gt-xs="center">
       <mat-card-subtitle>
         <div fxLayout="row" fxLayoutAlign="space-between">
-          <pre><code [highlight]="example"></code></pre>
+          <div>
+            <pre><code [highlight]="exampleTS"></code></pre>
+            <pre><code [highlight]="example"></code></pre>
+          </div>
           <button mat-icon-button
                   ngxClipboard
                   [cbContent]="example"
@@ -26,15 +29,14 @@
           </button>
         </div>
       </mat-card-subtitle>
-      <mat-card-content>
-        <ngx-auth-firebaseui-avatar></ngx-auth-firebaseui-avatar>
+      <mat-card-content fxLayoutAlign="center center">
+        <ngx-auth-firebaseui-avatar [links]="links"></ngx-auth-firebaseui-avatar>
       </mat-card-content>
     </mat-card>
 
     <mat-card fxFlexAlign.gt-xs="center">
       <mat-card-subtitle>
         <div fxLayout="row" fxLayoutAlign="space-between">
-          <pre><code [highlight]="example"></code></pre>
           <button mat-icon-button
                   ngxClipboard
                   [cbContent]="example"

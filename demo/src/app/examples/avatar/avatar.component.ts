@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import {ExampleBaseComponent} from '../example.abstract';
-// import {LinkMenuItem} from 'ngx-auth-firebaseui';
+import {LinkMenuItem} from 'ngx-auth-firebaseui';
 
 @Component({
   selector: 'app-example-avatar',
@@ -10,19 +10,21 @@ import {ExampleBaseComponent} from '../example.abstract';
 })
 export class AvatarComponent extends ExampleBaseComponent implements OnInit {
 
-  links: any[];
+  links: LinkMenuItem[];
 
 
-  example = `<ngx-auth-firebaseui tabIndex="1"
-                             [min]="8"
-                             [max]="15"
-                             [enableLengthRule]="true"
-                             [enableLowerCaseLetterRule]="true"
-                             [enableUpperCaseLetterRule]="true"
-                             [enableDigitRule]="true"
-                             [enableSpecialCharRule]="true"
-                             (onStrengthChanged)="onStrengthChanged($event)">
-        </ngx-auth-firebaseui>`;
+  example = `<ngx-auth-firebaseui-avatar [links]="links"></ngx-auth-firebaseui-avatar>`;
+
+  exampleTS = `
+  links: LinkMenuItem[];
+
+   ngOnInit(): void {
+    this.links = [
+      {icon: 'home', text: 'Home', callback: this.printLog},
+      {icon: 'favorite', text: 'Favorite', callback: this.printLog},
+      {icon: 'add', text: 'Add', callback: this.printLog},
+    ];
+  }`;
 
   constructor(public snackBar: MatSnackBar) {
     super(snackBar);
@@ -34,7 +36,9 @@ export class AvatarComponent extends ExampleBaseComponent implements OnInit {
 
   ngOnInit(): void {
     this.links = [
-      {icon: 'home', text: 'Home', callback: this.printLog}
+      {icon: 'home', text: 'Home', callback: this.printLog},
+      {icon: 'favorite', text: 'Favorite', callback: this.printLog},
+      {icon: 'add', text: 'Add', callback: this.printLog},
     ];
   }
 

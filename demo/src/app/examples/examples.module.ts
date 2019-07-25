@@ -18,7 +18,7 @@ import {GuardsExampleComponent} from './guards-example/guards-example.component'
 import {LoggedInComponent} from './guards-example/logged-in/logged-in.component';
 import {LoggedOutComponent} from './guards-example/logged-out/logged-out.component';
 import {AvatarComponent} from './avatar/avatar.component';
-import {NgxAuthFirebaseUIModule} from '../../../../src';
+import {NgxAuthFirebaseUIModule} from 'ngx-auth-firebaseui';
 
 @NgModule({
   imports: [

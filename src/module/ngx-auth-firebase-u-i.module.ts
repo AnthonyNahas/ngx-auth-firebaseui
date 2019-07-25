@@ -37,7 +37,7 @@ import {RouterModule} from '@angular/router';
 // components
 export {AuthComponent} from './components/ngx-auth-firebaseui/auth.component';
 export {UserComponent} from './components/ngx-auth-firebaseui-user/user.component';
-export {NgxAuthFirebaseuiAvatarComponent} from './components/ngx-auth-firebaseui-avatar/ngx-auth-firebaseui-avatar.component';
+export {NgxAuthFirebaseuiAvatarComponent, LinkMenuItem} from './components/ngx-auth-firebaseui-avatar/ngx-auth-firebaseui-avatar.component';
 export {AuthProvidersComponent, Theme, Layout} from './components/providers/auth.providers.component';
 export {LegalityDialogComponent} from './components/legality-dialog/legality-dialog.component';
 // services

@@ -22,8 +22,9 @@
   </div>
 
   <div fxLayout="column" fxFlex="100">
-    <div *ngFor="let menuItem of links">
-      <button mat-menu-item (click)="menuItem.callback">{{menuItem.text}}</button>
+    <div class="links-menu" *ngFor="let menuItem of links">
+      <button mat-menu-item (click)="menuItem?.callback()">
+        <mat-icon>{{menuItem?.icon}}</mat-icon>{{menuItem?.text}}</button>
     </div>
     <button mat-raised-button fxLayoutAlign="center" color="primary" (click)="openProfile()">Profile
     </button>
