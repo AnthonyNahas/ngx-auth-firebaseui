@@ -728,6 +728,27 @@ export class AppComponent {
 | links              | `Input()` | `LinkMenuItem[]`    | - | additional routes and links to add to the component
 | onSignOut          | `Output()`| void        | - | this will be fired when the user signs out
 
+
+```ts
+
+import {LinkMenuItem} from 'ngx-auth-firebaseui';
+
+links: LinkMenuItem[];
+
+ ngOnInit(): void {
+    this.links = [
+      {icon: 'home', text: 'Home', callback: this.printLog},
+      {icon: 'favorite', text: 'Favorite', callback: this.printLog},
+      {icon: 'add', text: 'Add', callback: this.printLog},
+    ];
+  }
+
+```
+
+```html
+<ngx-auth-firebaseui-avatar [links]="links"></ngx-auth-firebaseui-avatar>
+```
+
 ### EXTRA TIP: Login Authentication Guard
 
 If you want to prevent a route to be accessed from non authorized users, you can
