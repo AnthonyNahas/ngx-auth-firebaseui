@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Inject, Input, Output} from '@angular/core';
+import {Component, EventEmitter, Inject, Input, Output, forwardRef} from '@angular/core';
 import {AngularFireAuth} from '@angular/fire/auth';
 import {MatFormFieldAppearance, MatSnackBar} from '@angular/material';
 import {AuthProcessService} from '../../services/auth-process.service';
@@ -45,23 +45,23 @@ export class UserComponent {
   updatePhoneNumberFormControl: FormControl;
   updatePasswordFormControl: FormControl;
 
-  constructor(@Inject(NgxAuthFirebaseUIConfigToken)
-              public config: NgxAuthFirebaseUIConfig,
-              public auth: AngularFireAuth,
-              public authProcess: AuthProcessService,
-              private _fireStoreService: FirestoreSyncService,
-              private snackBar: MatSnackBar) {
-  }
+  constructor(
+    public auth: AngularFireAuth,
+    public authProcess: AuthProcessService,
+    private _fireStoreService: FirestoreSyncService,
+    private snackBar: MatSnackBar,
+    @Inject(forwardRef(() => NgxAuthFirebaseUIConfigToken)) public config: NgxAuthFirebaseUIConfig
+  ) { }
 
   protected initUpdateFormGroup() {
     const currentUser: User = this.auth.auth.currentUser;
     this.updateFormGroup = new FormGroup({
       name: this.updateNameFormControl = new FormControl(
-        {value: currentUser.displayName, disabled: this.editMode},
+        { value: currentUser.displayName, disabled: this.editMode },
         [
           Validators.required,
-          Validators.minLength(2),
-          Validators.maxLength(25),
+          Validators.minLength(this.config.nameMinLength),
+          Validators.maxLength(this.config.nameMaxLength)
         ]
       ),
 
@@ -104,18 +104,18 @@ export class UserComponent {
       try {
         if (this.updateNameFormControl.dirty) {
           await user.updateProfile({displayName: this.updateNameFormControl.value, photoURL: null});
-          snackBarMsg.push(`your name has been update to ${user.displayName}`);
+          snackBarMsg.push(`your name has been updated to ${user.displayName}`);
         }
 
         if (this.updateEmailFormControl.dirty) {
           await user.updateEmail(this.updateEmailFormControl.value);
-          snackBarMsg.push(`your email has been update to ${user.email}`);
+          snackBarMsg.push(`your email has been updated to ${user.email}`);
         }
 
         if (this.updatePhoneNumberFormControl.dirty) {
           await user.updatePhoneNumber(this.updatePhoneNumberFormControl.value);
           console.log('phone number = ', this.updatePhoneNumberFormControl.value);
-          snackBarMsg.push(`your phone number has been update to ${user.phoneNumber}`);
+          snackBarMsg.push(`your phone number has been updated to ${user.phoneNumber}`);
         }
 
         if (this.config.enableFirestoreSync) {

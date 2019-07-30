@@ -10,7 +10,8 @@ import {
   Output,
   PLATFORM_ID,
   SimpleChanges,
-  ViewChild
+  ViewChild,
+  forwardRef
 } from '@angular/core';
 import {AbstractControl, FormControl, FormGroup, Validators} from '@angular/forms';
 import {MatDialog, MatDialogRef, MatFormFieldAppearance, MatTabChangeEvent, MatTabGroup, ThemePalette} from '@angular/material';
@@ -65,8 +66,8 @@ export class AuthComponent implements OnInit, AfterViewInit, OnChanges, OnDestro
   @Input() enableUpperCaseLetterRule = true;
   @Input() enableDigitRule = true;
   @Input() enableSpecialCharRule = true;
-  @Input() min = 8;
-  @Input() max = 30;
+  @Input() min: number;
+  @Input() max: number;
   @Input() customValidator: RegExp;
   @Output() onStrengthChanged: EventEmitter<number> = new EventEmitter();
 
@@ -128,19 +129,18 @@ export class AuthComponent implements OnInit, AfterViewInit, OnChanges, OnDestro
   sigUpPasswordConfirmationFormControl: AbstractControl;
   resetPasswordEmailFormControl: AbstractControl;
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object,
-              @Inject(NgxAuthFirebaseUIConfigToken) private config: NgxAuthFirebaseUIConfig,
-              public auth: AngularFireAuth,
-              public authProcess: AuthProcessService,
-              public dialog: MatDialog) {
-
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: Object,
+    public auth: AngularFireAuth,
+    public authProcess: AuthProcessService,
+    public dialog: MatDialog,
+    @Inject(forwardRef(() => NgxAuthFirebaseUIConfigToken)) public config: NgxAuthFirebaseUIConfig
+  ) {
     this.onSuccess = authProcess.onSuccessEmitter;
     this.onError = authProcess.onErrorEmitter;
   }
 
   public ngOnInit(): void {
-    this.config = Object.assign(defaultAuthFirebaseUIConfig, this.config);
-
     if (isPlatformBrowser(this.platformId)) {
       this.onErrorSubscription = this.onError.subscribe(() => this.authenticationError = true);
     }
@@ -162,6 +162,12 @@ export class AuthComponent implements OnInit, AfterViewInit, OnChanges, OnDestro
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.messageOnAuthSuccess || changes.messageOnAuthError) {
       this.updateAuthSnackbarMessages();
+    }
+    if (changes.min) {
+      this.min = this.min != null ? Math.max(this.min, this.config.passwordMinLength) : this.config.passwordMinLength;
+    }
+    if (changes.max) {
+      this.max = this.max != null ? Math.min(this.max, this.config.passwordMaxLength) : this.config.passwordMaxLength;
     }
   }
 
@@ -244,8 +250,8 @@ export class AuthComponent implements OnInit, AfterViewInit, OnChanges, OnDestro
     this.signInFormGroup.registerControl('password', this.sigInPasswordFormControl = new FormControl('',
       [
         Validators.required,
-        Validators.minLength(6),
-        Validators.maxLength(25),
+        Validators.minLength(this.min),
+        Validators.maxLength(this.max)
       ]));
   }
 
@@ -254,8 +260,8 @@ export class AuthComponent implements OnInit, AfterViewInit, OnChanges, OnDestro
       name: this.sigUpNameFormControl = new FormControl('',
         [
           Validators.required,
-          Validators.minLength(2),
-          Validators.maxLength(30),
+          Validators.minLength(this.config.nameMinLength),
+          Validators.maxLength(this.config.nameMaxLength)
         ]),
       email: this.sigUpEmailFormControl = new FormControl('',
         [

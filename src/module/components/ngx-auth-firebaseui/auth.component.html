@@ -27,24 +27,17 @@
 
             <mat-form-field [appearance]="appearance">
               <mat-label>{{passwordText}}</mat-label>
-              <input matInput
-                     type="password"
-                     minlength="6"
-                     maxlength="25"
-                     formControlName="password"
-                     required>
+              <input matInput type="password" [minlength]="min" [maxlength]="max" formControlName="password" required />
               <mat-icon matSuffix [color]="color">lock</mat-icon>
-              <mat-hint align="end" aria-live="polite">
-                {{signInFormGroup.value.password.length}} / 25
-              </mat-hint>
+              <mat-hint align="end" aria-live="polite"> {{ signInFormGroup.value.password.length }} / {{ max }} </mat-hint>
               <mat-error *ngIf="sigInPasswordFormControl.hasError('required')">
                 {{passwordErrorRequiredText}}
               </mat-error>
               <mat-error *ngIf="sigInPasswordFormControl.hasError('minlength')">
-                The password must be at least 6 characters long.
+                The password must be at least {{ min }} characters long.
               </mat-error>
               <mat-error *ngIf="sigInPasswordFormControl.hasError('maxlength')">
-                The password must not exceed 25 characters
+                The password must not exceed {{ max }} characters
               </mat-error>
             </mat-form-field>
 
@@ -90,15 +83,15 @@
               <mat-form-field [appearance]="appearance">
                 <!--labels will work only with @angular/material@6.2.0 -->
                 <mat-label>{{nameText}}</mat-label>
-                <input matInput
-                       [minlength]="2"
-                       [maxlength]="20"
-                       [formControl]="sigUpNameFormControl"
-                       required>
+                <input
+                  matInput
+                  [minlength]="config.nameMinLength"
+                  [maxlength]="config.nameMaxLength"
+                  [formControl]="sigUpNameFormControl"
+                  required
+                />
                 <mat-icon matSuffix [color]="color">person</mat-icon>
-                <mat-hint align="end" aria-live="polite">
-                  {{signUpFormGroup.value.name?.length}} / {{passwordStrength.max}}
-                </mat-hint>
+                <mat-hint align="end" aria-live="polite"> {{ signUpFormGroup.value.name?.length }} / {{ config.nameMaxLength }} </mat-hint>
                 <mat-error *ngIf="sigUpNameFormControl.hasError('required')">
                   {{nameErrorRequiredText}}
                 </mat-error>
@@ -130,11 +123,15 @@
               <div fxLayout="column">
                 <mat-form-field [appearance]="appearance">
                   <mat-label>{{passwordText}}</mat-label>
-                  <input matInput
-                         [type]="toggle.type"
-                         name="password"
-                         [formControl]="sigUpPasswordFormControl"
-                         required>
+                  <input
+                    matInput
+                    [type]="toggle.type"
+                    name="password"
+                    [formControl]="sigUpPasswordFormControl"
+                    required
+                    [minlength]="min"
+                    [maxlength]="max"
+                  />
                   <mat-pass-toggle-visibility #toggle matSuffix></mat-pass-toggle-visibility>
 
                   <mat-icon matSuffix [color]="color">lock</mat-icon>
