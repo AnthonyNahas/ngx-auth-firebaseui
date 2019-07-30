@@ -1,8 +1,8 @@
-import {EventEmitter, Inject, Injectable} from '@angular/core';
+import {EventEmitter, Inject, Injectable, forwardRef} from '@angular/core';
 import {MatSnackBar} from '@angular/material';
 import {AngularFireAuth} from '@angular/fire/auth';
 import {ICredentials, ISignInProcess, ISignUpProcess} from '../interfaces/main.interface';
-import {defaultAuthFirebaseUIConfig, NgxAuthFirebaseUIConfig} from '../interfaces/config.interface';
+import {NgxAuthFirebaseUIConfig} from '../interfaces/config.interface';
 import {FirestoreSyncService} from './firestore-sync.service';
 import {Accounts} from '../enums';
 import {firebase} from '@firebase/app';
@@ -36,7 +36,6 @@ export enum AuthProvider {
 
 @Injectable()
 export class AuthProcessService implements ISignInProcess, ISignUpProcess {
-
   onSuccessEmitter: EventEmitter<any> = new EventEmitter<any>();
   onErrorEmitter: EventEmitter<any> = new EventEmitter<any>();
 
@@ -47,13 +46,12 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
   messageOnAuthSuccess: string;
   messageOnAuthError: string;
 
-  constructor(@Inject(NgxAuthFirebaseUIConfigToken)
-              public config: NgxAuthFirebaseUIConfig,
-              public afa: AngularFireAuth,
-              private _snackBar: MatSnackBar,
-              private _fireStoreService: FirestoreSyncService) {
-    this.config = Object.assign(defaultAuthFirebaseUIConfig, this.config);
-  }
+  constructor(
+    public afa: AngularFireAuth,
+    private _snackBar: MatSnackBar,
+    private _fireStoreService: FirestoreSyncService,
+    @Inject(forwardRef(() => NgxAuthFirebaseUIConfigToken)) public config: NgxAuthFirebaseUIConfig
+  ) {}
 
   /**
    * Reset the password of the ngx-auth-firebaseui-user via email

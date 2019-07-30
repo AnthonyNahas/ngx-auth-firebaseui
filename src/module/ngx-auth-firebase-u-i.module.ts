@@ -1,12 +1,12 @@
 import {CommonModule} from '@angular/common';
-import {Inject, InjectionToken, ModuleWithProviders, NgModule} from '@angular/core';
+import {InjectionToken, ModuleWithProviders, NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {AuthComponent} from './components/ngx-auth-firebaseui/auth.component';
 import {UserComponent} from './components/ngx-auth-firebaseui-user/user.component';
 import {AuthProvidersComponent} from './components/providers/auth.providers.component';
 import {EmailConfirmationComponent} from './components/email-confirmation/email-confirmation.component';
-import {defaultAuthFirebaseUIConfig, NgxAuthFirebaseUIConfig} from './interfaces/config.interface';
+import {NgxAuthFirebaseUIConfig} from './interfaces/config.interface';
 import {FirestoreSyncService} from './services/firestore-sync.service';
 import {AuthProcessService} from './services/auth-process.service';
 import {FirebaseAppConfig, FirebaseNameOrConfigToken, FirebaseOptionsToken} from '@angular/fire';
@@ -32,6 +32,7 @@ import {LegalityDialogComponent} from './components/legality-dialog/legality-dia
 import {LoggedInGuard} from './guards/logged-in.guard';
 import {NgxAuthFirebaseuiAvatarComponent} from './components/ngx-auth-firebaseui-avatar/ngx-auth-firebaseui-avatar.component';
 import {RouterModule} from '@angular/router';
+import {ngxAuthFirebaseUIConfigFactory} from './interfaces/config.interface';
 
 // Export module's public API
 // components
@@ -49,7 +50,12 @@ export {LoggedInGuard} from './guards/logged-in.guard';
 // interfaces
 export {NgxAuthFirebaseUIConfig} from './interfaces/config.interface';
 
-export const NgxAuthFirebaseUIConfigToken = new InjectionToken<NgxAuthFirebaseUIConfig>('NgxAuthFirebaseUIConfig');
+
+
+// This token is the official token containing the final configuration; ie. the merge between default and user provided configurations
+export const NgxAuthFirebaseUIConfigToken = new InjectionToken<NgxAuthFirebaseUIConfig>('NgxAuthFirebaseUIConfigToken');
+// This is an intermediate token containing only user-provided configuration
+export const UserProvidedConfigToken = new InjectionToken<NgxAuthFirebaseUIConfig>('UserProvidedConfigToken');
 
 @NgModule({
   imports: [
@@ -107,12 +113,12 @@ export const NgxAuthFirebaseUIConfigToken = new InjectionToken<NgxAuthFirebaseUI
     LegalityDialogComponent
   ]
 })
-
-
 export class NgxAuthFirebaseUIModule {
-  static forRoot(configFactory: FirebaseAppConfig,
-                 appNameFactory?: () => string,
-                 config: NgxAuthFirebaseUIConfig = defaultAuthFirebaseUIConfig): ModuleWithProviders {
+  static forRoot(
+    configFactory: FirebaseAppConfig,
+    appNameFactory?: () => string,
+    config: NgxAuthFirebaseUIConfig = {}
+  ): ModuleWithProviders {
     return {
       ngModule: NgxAuthFirebaseUIModule,
       providers:
@@ -125,19 +131,16 @@ export class NgxAuthFirebaseUIModule {
             provide: FirebaseNameOrConfigToken,
             useFactory: appNameFactory
           },
+          { provide: UserProvidedConfigToken, useValue: config },
           {
             provide: NgxAuthFirebaseUIConfigToken,
-            useValue: config
+            useFactory: ngxAuthFirebaseUIConfigFactory,
+            deps: [UserProvidedConfigToken]
           },
           AuthProcessService,
           FirestoreSyncService,
           LoggedInGuard
-        ],
+        ]
     };
-  }
-
-  constructor(@Inject(NgxAuthFirebaseUIConfigToken)
-              public config: NgxAuthFirebaseUIConfig) {
-    this.config = Object.assign(defaultAuthFirebaseUIConfig, this.config);
   }
 }

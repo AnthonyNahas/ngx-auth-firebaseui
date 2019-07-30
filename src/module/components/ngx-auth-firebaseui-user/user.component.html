@@ -50,9 +50,7 @@
                    placeholder="Name"
                    [formControl]="updateNameFormControl">
             <mat-icon matSuffix>person</mat-icon>
-            <mat-hint align="end" aria-live="polite">
-              {{updateNameFormControl.value?.length}} / 25
-            </mat-hint>
+            <mat-hint align="end" aria-live="polite"> {{ updateNameFormControl.value?.length }} / {{ config.nameMaxLength }} </mat-hint>
             <mat-error *ngIf="updateNameFormControl.hasError('required')">
               Name is required
             </mat-error>

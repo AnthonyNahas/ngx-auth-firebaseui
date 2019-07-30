@@ -11,11 +11,22 @@ export interface NgxAuthFirebaseUIConfig {
   // ppUrl?: string, // privacy policy url
   // authProviders?: Array<AuthProvider>,
   // languageCode?: string, // todo: 28.3.18
-  authGuardFallbackURL?: string,
-  authGuardLoggedInURL?: string,
-  enableFirestoreSync?: boolean,
-  toastMessageOnAuthSuccess?: boolean,
-  toastMessageOnAuthError?: boolean
+  authGuardFallbackURL?: string;
+  authGuardLoggedInURL?: string;
+  enableFirestoreSync?: boolean;
+
+  // Toasts
+  toastMessageOnAuthSuccess?: boolean;
+  toastMessageOnAuthError?: boolean;
+
+  // Password length min/max in forms independently of each componenet min/max.
+  // `min/max` input parameters in components should be within this range.
+  passwordMaxLength?: number;
+  passwordMinLength?: number;
+
+  // Same as password but for the name
+  nameMaxLength?: number;
+  nameMinLength?: number;
 }
 
 export const defaultAuthFirebaseUIConfig: NgxAuthFirebaseUIConfig = {
@@ -25,6 +36,17 @@ export const defaultAuthFirebaseUIConfig: NgxAuthFirebaseUIConfig = {
   authGuardLoggedInURL: '/',
   enableFirestoreSync: true,
   toastMessageOnAuthSuccess: true,
-  toastMessageOnAuthError: true
+  toastMessageOnAuthError: true,
+  // Password length min/max in forms independently of each componenet min/max.
+  // `min/max` input parameters in components should be within this range.
+  passwordMaxLength: 60,
+  passwordMinLength: 8,
+  // Same as password but for the name
+  nameMaxLength: 50,
+  nameMinLength: 2
 };
 
+// Merge default config with user provided config.
+export function ngxAuthFirebaseUIConfigFactory(userProvidedConfig: NgxAuthFirebaseUIConfig): NgxAuthFirebaseUIConfig {
+  return Object.assign({}, defaultAuthFirebaseUIConfig, userProvidedConfig);
+}

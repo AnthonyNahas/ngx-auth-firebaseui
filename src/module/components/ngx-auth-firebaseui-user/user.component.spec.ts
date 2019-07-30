@@ -10,7 +10,8 @@ import {AngularFirestore} from '@angular/fire/firestore';
 import {AngularFireAuthStub, FirestoreStub} from '../../tests/helper';
 import {AngularFireAuth} from '@angular/fire/auth';
 import {UserComponent} from './user.component';
-import {NgxAuthFirebaseUIConfigToken} from '../../ngx-auth-firebase-u-i.module';
+import {NgxAuthFirebaseUIConfigToken, UserProvidedConfigToken} from '../../ngx-auth-firebase-u-i.module';
+import {ngxAuthFirebaseUIConfigFactory} from '../../interfaces/config.interface';
 import {AuthProcessService} from '../../services/auth-process.service';
 import {FirestoreSyncService} from '../../services/firestore-sync.service';
 
@@ -33,12 +34,13 @@ describe('UserComponent', () => {
       ],
       providers: [
         HttpClientTestingModule,
-        AuthProcessService,
         FirestoreSyncService,
         AngularFireModule,
         {provide: AngularFirestore, useValue: FirestoreStub},
         {provide: AngularFireAuth, useValue: AngularFireAuthStub},
-        {provide: NgxAuthFirebaseUIConfigToken, useValue: NgxAuthFirebaseUIConfigToken}
+        {provide: UserProvidedConfigToken, useValue: {}},
+        {provide: NgxAuthFirebaseUIConfigToken, useFactory: ngxAuthFirebaseUIConfigFactory, deps: [UserProvidedConfigToken]},
+        AuthProcessService
       ],
       schemas: [CUSTOM_ELEMENTS_SCHEMA]
     })
