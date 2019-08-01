@@ -1,0 +1,7 @@
+{
+  "search.useGlobalIgnoreFiles": true,
+  "search.exclude": {
+    "dist": true,
+    "tmp": true
+  }
+}
