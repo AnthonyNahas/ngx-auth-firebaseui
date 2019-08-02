@@ -496,6 +496,11 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
                   toastMessageOnAuthError: false, // whether to open/show a snackbar message on auth error - default : true
                   authGuardFallbackURL: '/loggedout', // url for unauthenticated users - to use in combination with canActivate feature on a route
                   authGuardLoggedInURL: '/loggedin', // url for authenticated users - to use in combination with canActivate feature on a route
+                  passwordMaxLength: 60, // `min/max` input parameters in components should be within this range.
+                  passwordMinLength: 8, // Password length min/max in forms independently of each componenet min/max.
+                  // Same as password but for the name
+                  nameMaxLength: 50,
+                  nameMinLength: 2
                 }),
   ],
   providers: [],
@@ -840,4 +845,4 @@ This project is supported by [jetbrains](https://www.jetbrains.com/) with 1 ALL 
 
 ## License
 
-Copyright (c) 2018 [Anthony Nahas](https://github.com/AnthonyNahas). Licensed under the MIT License (MIT)
+Copyright (c) 2019 [Anthony Nahas](https://github.com/AnthonyNahas). Licensed under the MIT License (MIT)

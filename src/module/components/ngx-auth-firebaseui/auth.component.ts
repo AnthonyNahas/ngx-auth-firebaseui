@@ -2,6 +2,7 @@ import {
   AfterViewInit,
   Component,
   EventEmitter,
+  forwardRef,
   Inject,
   Input,
   OnChanges,
@@ -10,8 +11,7 @@ import {
   Output,
   PLATFORM_ID,
   SimpleChanges,
-  ViewChild,
-  forwardRef
+  ViewChild
 } from '@angular/core';
 import {AbstractControl, FormControl, FormGroup, Validators} from '@angular/forms';
 import {MatDialog, MatDialogRef, MatFormFieldAppearance, MatTabChangeEvent, MatTabGroup, ThemePalette} from '@angular/material';
@@ -23,7 +23,6 @@ import {AuthProcessService, AuthProvider} from '../../services/auth-process.serv
 import {LegalityDialogComponent} from '../../components/legality-dialog/legality-dialog.component';
 import {LegalityDialogParams, LegalityDialogResult} from '../../interfaces/legality.dialog.intreface';
 import {NgxAuthFirebaseUIConfig, NgxAuthFirebaseUIConfigToken} from '../../ngx-auth-firebase-u-i.module';
-import {defaultAuthFirebaseUIConfig} from '../../interfaces/config.interface';
 import {MatPasswordStrengthComponent} from '@angular-material-extensions/password-strength';
 
 
@@ -144,6 +143,8 @@ export class AuthComponent implements OnInit, AfterViewInit, OnChanges, OnDestro
     if (isPlatformBrowser(this.platformId)) {
       this.onErrorSubscription = this.onError.subscribe(() => this.authenticationError = true);
     }
+    this.min = this.min != null ? Math.max(this.min, this.config.passwordMinLength) : this.config.passwordMinLength;
+    this.max = this.max != null ? Math.min(this.max, this.config.passwordMaxLength) : this.config.passwordMaxLength;
     this.updateAuthSnackbarMessages();
     // auth form's initialization
     this._initSignInFormGroupBuilder();
