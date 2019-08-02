@@ -1,3 +1,13 @@
+# [3.3.0](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v3.2.6...v3.3.0) (2019-08-02)
+
+
+### Bug Fixes
+
+* **package:** initialize the min max on comp. init ([7d4704b](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/7d4704b))
+* **password:** make sure min-max input parameters are respected [#297](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/297) ([4ff8f5e](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/4ff8f5e))
+
+
+
 ## [3.2.6](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v3.2.5...v3.2.6) (2019-07-25)
 
 
