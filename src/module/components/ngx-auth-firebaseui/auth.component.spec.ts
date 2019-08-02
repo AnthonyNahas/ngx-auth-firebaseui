@@ -25,7 +25,8 @@ import {MatPasswordStrengthComponent, MatPasswordStrengthModule} from '@angular-
 import {AuthComponent} from './auth.component';
 import {AuthProcessService} from '../../services/auth-process.service';
 import {FirestoreSyncService} from '../../services/firestore-sync.service';
-import {NgxAuthFirebaseUIConfigToken} from '../../../module/ngx-auth-firebase-u-i.module';
+import {NgxAuthFirebaseUIConfigToken, UserProvidedConfigToken} from '../../../module/ngx-auth-firebase-u-i.module';
+import {ngxAuthFirebaseUIConfigFactory} from '../../interfaces/config.interface';
 import {EmailConfirmationComponent} from '../email-confirmation/email-confirmation.component';
 import {AngularFireAuthStub, FirestoreStub} from '../../tests/helper';
 
@@ -66,12 +67,13 @@ describe('AuthComponent', function () {
       ],
       providers: [
         HttpClientTestingModule,
-        AuthProcessService,
         FirestoreSyncService,
         AngularFireModule,
         {provide: AngularFirestore, useValue: FirestoreStub},
         {provide: AngularFireAuth, useValue: AngularFireAuthStub},
-        {provide: NgxAuthFirebaseUIConfigToken, useValue: NgxAuthFirebaseUIConfigToken}
+        {provide: UserProvidedConfigToken, useValue: {}},
+        {provide: NgxAuthFirebaseUIConfigToken, useFactory: ngxAuthFirebaseUIConfigFactory, deps: [UserProvidedConfigToken]},
+        AuthProcessService
       ],
       declarations: [
         EmailConfirmationComponent,
