@@ -143,7 +143,7 @@
     "zone.js": "^0.8.29"
   },
   "engines": {
-    "node": ">=10.0.0"
+    "node": ">=10.0.0 <12"
   },
   "jest": {
     "preset": "jest-preset-angular",
