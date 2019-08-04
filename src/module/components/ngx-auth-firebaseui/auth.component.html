@@ -27,9 +27,12 @@
 
             <mat-form-field [appearance]="appearance">
               <mat-label>{{passwordText}}</mat-label>
-              <input matInput type="password" [minlength]="min" [maxlength]="max" formControlName="password" required />
+              <input matInput [type]="togglePass.type" [minlength]="min" [maxlength]="max" formControlName="password"
+                     required/>
+              <mat-pass-toggle-visibility #togglePass matSuffix></mat-pass-toggle-visibility>
               <mat-icon matSuffix [color]="color">lock</mat-icon>
-              <mat-hint align="end" aria-live="polite"> {{ signInFormGroup.value.password.length }} / {{ max }} </mat-hint>
+              <mat-hint align="end" aria-live="polite"> {{ signInFormGroup.value.password.length }}
+                / {{ max }} </mat-hint>
               <mat-error *ngIf="sigInPasswordFormControl.hasError('required')">
                 {{passwordErrorRequiredText}}
               </mat-error>
@@ -91,7 +94,8 @@
                   required
                 />
                 <mat-icon matSuffix [color]="color">person</mat-icon>
-                <mat-hint align="end" aria-live="polite"> {{ signUpFormGroup.value.name?.length }} / {{ config.nameMaxLength }} </mat-hint>
+                <mat-hint align="end" aria-live="polite"> {{ signUpFormGroup.value.name?.length }}
+                  / {{ config.nameMaxLength }} </mat-hint>
                 <mat-error *ngIf="sigUpNameFormControl.hasError('required')">
                   {{nameErrorRequiredText}}
                 </mat-error>
