@@ -1,5 +1,8 @@
 {
   "search.useGlobalIgnoreFiles": true,
+  "editor.formatOnPaste": false,
+  "editor.formatOnSave": false,
+  "editor.formatOnType": false,
   "search.exclude": {
     "dist": true,
     "tmp": true
