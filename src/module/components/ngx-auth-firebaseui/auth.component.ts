@@ -9,7 +9,7 @@ import {
   OnDestroy,
   OnInit,
   Output,
-  PLATFORM_ID,
+import { Theme } from '../providers/auth.providers.component';
   SimpleChanges,
   ViewChild
 } from '@angular/core';
@@ -44,6 +44,9 @@ export class AuthComponent implements OnInit, AfterViewInit, OnChanges, OnDestro
   @ViewChild(MatPasswordStrengthComponent, {static: false}) passwordStrength: MatPasswordStrengthComponent;
 
   @Input() providers: string[] | string = AuthProvider.ALL; //  google, facebook, twitter, github as array or all as one single string
+  @Input() providers: AuthProvider[] | AuthProvider; //  google, facebook, twitter, github as array or all as one single string
+  @Input() providersTheme: Theme; // Classic, Stroked, etc.
+
   @Input() appearance: MatFormFieldAppearance;
   @Input() tabIndex: number | null;
   @Input() registrationEnabled = true;
