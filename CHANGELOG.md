@@ -1,3 +1,12 @@
+## [3.3.2](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v3.3.1...v3.3.2) (2019-08-09)
+
+
+### Bug Fixes
+
+* **package:** support i18n for email confirmation component [#308](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/308) ([fa95935](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/fa95935))
+
+
+
 ## [3.3.1](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v3.3.0...v3.3.1) (2019-08-08)
 
 
