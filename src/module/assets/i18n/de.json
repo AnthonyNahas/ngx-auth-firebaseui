@@ -22,6 +22,8 @@
     "resetPasswordErrorRequiredText": "Zum Zurücksetzen des Passworts ist eine E-Mail erforderlich!",
     "resetPasswordErrorPatternText": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
     "resetPasswordActionButtonText": "Zurücksetzen",
-    "resetPasswordInstructionsText": "Zurücksetzen angefordert. Überprüfen Sie Ihre E-Mail-Anweisungen."
+    "resetPasswordInstructionsText": "Zurücksetzen angefordert. Überprüfen Sie Ihre E-Mail-Anweisungen.",
+    "emailConfirmationTitle": "Bestätigen Sie Ihre E-Mail-Adresse!",
+    "emailConfirmationText": "Eine Bestätigungs-E-Mail wurde an Sie gesendet.\n   Überprüfen Sie Ihren Posteingang und klicken Sie auf den Link \"Bestätigen Sie meine E-Mail\", um Ihre E-Mail-Adresse zu bestätigen."
   }
 }

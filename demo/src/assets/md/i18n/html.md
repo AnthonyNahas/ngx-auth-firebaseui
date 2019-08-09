@@ -23,6 +23,8 @@
         [resetPasswordErrorPatternText]="'ngxauthfirebaseui.resetPasswordErrorPatternText' | translate"
         [resetPasswordActionButtonText]="'ngxauthfirebaseui.resetPasswordActionButtonText' | translate"
         [resetPasswordInstructionsText]="'ngxauthfirebaseui.resetPasswordInstructionsText' | translate"
+        [emailConfirmationTitle]="'ngxauthfirebaseui.emailConfirmationTitle' | translate"
+        [emailConfirmationText]="'ngxauthfirebaseui.emailConfirmationText' | translate"
       >
       </ngx-auth-firebaseui>
 ```

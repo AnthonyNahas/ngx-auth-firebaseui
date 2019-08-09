@@ -13,4 +13,10 @@ export class EmailConfirmationComponent {
   @Input()
   goBackURL: string;
 
+  @Input()
+  title: string;
+
+  @Input()
+  text: string;
+
 }

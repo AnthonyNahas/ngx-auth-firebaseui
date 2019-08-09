@@ -22,6 +22,8 @@
     "resetPasswordErrorRequiredText": "E-mail is required to reset the password!",
     "resetPasswordErrorPatternText": "Please enter a valid e-mail address",
     "resetPasswordActionButtonText": "Reset",
-    "resetPasswordInstructionsText": "Reset requested. Check your e-mail instructions."
+    "resetPasswordInstructionsText": "Reset requested. Check your e-mail instructions.",
+    "emailConfirmationTitle": "Confirm your e-mail address!",
+    "emailConfirmationText": "A confirmation e-mail has been sent to you.\n  Check your inbox and click on the link \"Confirm my e-mail\" to confirm your e-mail address."
   }
 }

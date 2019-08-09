@@ -17,11 +17,13 @@
     "registerCardTitleText": "Enregistrement",
     "registerButtonText": "Registre",
     "guestButtonText": "continuer en tant qu'invité",
-    "restPasswordTabText": "Réinitialiser le mot de passe",
-    "restPasswordInputText": "Réinitialiser l'adresse email en mot de passe",
+    "resetPasswordTabText": "Réinitialiser l'adresse email en mot de passe",
+    "resetPasswordInputText": "Réinitialiser l'adresse email en mot de passe",
     "resetPasswordErrorRequiredText": "Un email est requis pour réinitialiser le mot de passe!",
     "resetPasswordErrorPatternText": "S'il vous plaît, mettez une adresse email valide",
     "resetPasswordActionButtonText": "Réinitialiser",
-    "resetPasswordInstructionsText": "Réinitialisation demandée. Vérifiez vos instructions de courrier électronique."
+    "resetPasswordInstructionsText": "Réinitialisation demandée. Vérifiez vos instructions de courrier électronique.",
+    "emailConfirmationTitle": "Confirmez votre adresse email!",
+    "emailConfirmationText": "Un email de confirmation vous a été envoyé.\n   Vérifiez votre boîte de réception et cliquez sur le lien \"Confirmer mon adresse e-mail\" pour confirmer votre adresse e-mail."
   }
 }
