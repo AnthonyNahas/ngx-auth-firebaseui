@@ -10,7 +10,7 @@
     <mat-card class="my-3 mx-3">
       <mat-card-title>Pick your favorite language</mat-card-title>
       <mat-card-content fxLayout.xs="column" fxLayoutAlign="center center">
-<!--        <button mat-button fxHide fxShow.gt-xs-->
+        <!--        <button mat-button fxHide fxShow.gt-xs-->
         <button mat-button
                 class="language-button"
                 [matMenuTriggerFor]="languageMenu">
@@ -60,6 +60,9 @@
         [resetPasswordErrorPatternText]="'ngxauthfirebaseui.resetPasswordErrorPatternText' | translate"
         [resetPasswordActionButtonText]="'ngxauthfirebaseui.resetPasswordActionButtonText' | translate"
         [resetPasswordInstructionsText]="'ngxauthfirebaseui.resetPasswordInstructionsText' | translate"
+        [resetPasswordInstructionsText]="'ngxauthfirebaseui.resetPasswordInstructionsText' | translate"
+        [emailConfirmationTitle]="'ngxauthfirebaseui.emailConfirmationTitle' | translate"
+        [emailConfirmationText]="'ngxauthfirebaseui.emailConfirmationText' | translate"
       >
       </ngx-auth-firebaseui>
     </mat-card>

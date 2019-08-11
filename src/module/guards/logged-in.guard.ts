@@ -3,11 +3,7 @@ import {CanActivate, Router} from '@angular/router'
 import {map} from 'rxjs/operators'
 import {Observable} from 'rxjs'
 
-import {
-  AuthProcessService,
-  NgxAuthFirebaseUIConfig,
-  NgxAuthFirebaseUIConfigToken,
-} from '../ngx-auth-firebase-u-i.module'
+import {AuthProcessService, NgxAuthFirebaseUIConfig, NgxAuthFirebaseUIConfigToken} from '../ngx-auth-firebase-u-i.module'
 
 @Injectable({
   providedIn: 'root',
@@ -25,13 +21,13 @@ export class LoggedInGuard implements CanActivate {
     return this.auth.afa.user.pipe(
       map(res => {
         if (res) {
-          if (this.config.authGuardLoggedInURL) {
-            this.router.navigate([`/${this.config.authGuardLoggedInURL}`]);
+          if (this.config.authGuardLoggedInURL && this.config.authGuardLoggedInURL !== '/') {
+            this.router.navigate([`${this.config.authGuardLoggedInURL}`]);
           }
           return true
         }
-        if (this.config.authGuardFallbackURL) {
-          this.router.navigate([`/${this.config.authGuardFallbackURL}`]);
+        if (this.config.authGuardFallbackURL && this.config.authGuardFallbackURL !== '/') {
+          this.router.navigate([`${this.config.authGuardFallbackURL}`]);
         }
         return false
       }),

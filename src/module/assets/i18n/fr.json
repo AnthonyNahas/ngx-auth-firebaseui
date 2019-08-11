@@ -22,6 +22,8 @@
     "resetPasswordErrorRequiredText": "Un email est requis pour réinitialiser le mot de passe!",
     "resetPasswordErrorPatternText": "S'il vous plaît, mettez une adresse email valide",
     "resetPasswordActionButtonText": "Réinitialiser",
-    "resetPasswordInstructionsText": "Réinitialisation demandée. Vérifiez vos instructions de courrier électronique."
+    "resetPasswordInstructionsText": "Réinitialisation demandée. Vérifiez vos instructions de courrier électronique.",
+    "emailConfirmationTitle": "Confirmez votre adresse email!",
+    "emailConfirmationText": "Un email de confirmation vous a été envoyé.\n   Vérifiez votre boîte de réception et cliquez sur le lien \"Confirmer mon adresse e-mail\" pour confirmer votre adresse e-mail."
   }
 }

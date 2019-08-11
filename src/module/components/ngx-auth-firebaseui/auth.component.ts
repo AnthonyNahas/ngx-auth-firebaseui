@@ -104,6 +104,12 @@ export class AuthComponent implements OnInit, AfterViewInit, OnChanges, OnDestro
   @Input() registerButtonText = 'Register';
   @Input() guestButtonText = 'continue as guest';
 
+  // email confirmation component
+  @Input() emailConfirmationTitle = 'Confirm your e-mail address!';
+  @Input() emailConfirmationText = `
+  A confirmation e-mail has been sent to you.
+  Check your inbox and click on the link "Confirm my e-mail" to confirm your e-mail address.`;
+
   authProvider = AuthProvider;
   passwordResetWished: boolean;
 
@@ -145,6 +151,7 @@ export class AuthComponent implements OnInit, AfterViewInit, OnChanges, OnDestro
     }
     this.min = this.min != null ? Math.max(this.min, this.config.passwordMinLength) : this.config.passwordMinLength;
     this.max = this.max != null ? Math.min(this.max, this.config.passwordMaxLength) : this.config.passwordMaxLength;
+
     this.updateAuthSnackbarMessages();
     // auth form's initialization
     this._initSignInFormGroupBuilder();

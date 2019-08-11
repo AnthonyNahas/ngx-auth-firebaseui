@@ -1,3 +1,30 @@
+## [3.3.2](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v3.3.1...v3.3.2) (2019-08-09)
+
+
+### Bug Fixes
+
+* **package:** support i18n for email confirmation component [#308](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/308) ([fa95935](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/fa95935))
+
+
+
+## [3.3.1](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v3.3.0...v3.3.1) (2019-08-08)
+
+
+### Bug Fixes
+
+* **demo:** revert angular version to v8.1.2 ([90f268b](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/90f268b))
+* **demo:** updated angular and other dependencies ([7904958](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/7904958))
+* **package:** do not break the route of authGuardLoggedInURL is not provided [#309](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/309) ([c3296bd](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/c3296bd))
+* **package:** updated angular and other dependencies ([4eb7e01](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/4eb7e01))
+* **package:** updated angular material and firebase to the latest version ([e2ed829](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/e2ed829))
+
+
+### Features
+
+* **package:** added toggle visibility for the pass in sign in tab [#296](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/296) ([3b486c9](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/3b486c9))
+
+
+
 # [3.3.0](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v3.2.6...v3.3.0) (2019-08-02)
 
 
