@@ -27,6 +27,15 @@ export class NgxAuthFirebaseuiLoginComponent implements OnInit {
   @Input() dontHaveAnAccountText = 'Don\'t have an account?';
   @Input() createAccountButtonText = 'Create an account';
 
+  // i18n email
+  @Input() emailText = 'Email';
+  @Input() emailErrorRequiredText = 'Email is required';
+  @Input() emailErrorPatternText = 'Please enter a valid email address';
+
+  // i18n password
+  @Input() passwordText = 'Password';
+  @Input() passwordErrorRequiredText = 'Password is required';
+
   // Events
   @Output() onSuccess: any;
   @Output() onError: any;

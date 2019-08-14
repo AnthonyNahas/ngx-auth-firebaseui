@@ -14,23 +14,23 @@
       <form name="loginForm" [formGroup]="loginForm" novalidate>
 
         <mat-form-field [appearance]="appearance">
-          <input matInput placeholder="Email" formControlName="email">
+          <input matInput [placeholder]="emailText" formControlName="email">
           <mat-icon matSuffix color="primary">email</mat-icon>
           <mat-error *ngIf="loginForm.get('email').hasError('required')">
-            Email is required
+            {{emailErrorRequiredText}}
           </mat-error>
           <mat-error
             *ngIf="!loginForm.get('email').hasError('required') &&
                                 loginForm.get('email').hasError('email')">
-            Please enter a valid email address
+            {{emailErrorPatternText}}
           </mat-error>
         </mat-form-field>
 
         <mat-form-field [appearance]="appearance">
-          <input matInput type="password" placeholder="Password" formControlName="password">
+          <input matInput type="password" [placeholder]="passwordText" formControlName="password">
           <mat-icon matSuffix color="primary">lock</mat-icon>
           <mat-error>
-            Password is required
+            {{passwordErrorRequiredText}}
           </mat-error>
         </mat-form-field>
 
@@ -59,6 +59,10 @@
       <div class="separator">
         <span class="text">{{orLabelText}}</span>
       </div>
+
+      <!--      <ngx-auth-firebaseui-providers layout="column"-->
+      <!--                                     theme="raised"-->
+      <!--                                     [providers]="providers"></ngx-auth-firebaseui-providers>-->
 
       <button mat-raised-button class="google">
         Google
