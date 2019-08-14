@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 4,
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "ngx-auth-firebaseui": {
