@@ -55,6 +55,7 @@ export class AuthComponent implements OnInit, AfterViewInit, OnChanges, OnDestro
   @Input() messageOnAuthSuccess: string;
   @Input() messageOnAuthError: string;
 
+  // Events
   @Output() onSuccess: any;
   @Output() onError: any;
   @Output() selectedTabChange: EventEmitter<MatTabChangeEvent> = new EventEmitter();

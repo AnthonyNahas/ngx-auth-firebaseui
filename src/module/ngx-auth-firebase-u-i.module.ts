@@ -100,7 +100,8 @@ export const UserProvidedConfigToken = new InjectionToken<NgxAuthFirebaseUIConfi
     EmailConfirmationComponent,
     // LoggedInGuard,
     AngularFireAuthModule,
-    AngularFirestoreModule
+    AngularFirestoreModule,
+    NgxAuthFirebaseuiLoginComponent
   ],
   declarations: [
     AuthComponent,
