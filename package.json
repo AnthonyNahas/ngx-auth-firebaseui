@@ -63,7 +63,8 @@
     "@angular/forms": "^8.2.0",
     "@angular/material": "^8.1.2",
     "@angular/router": "^8.2.0",
-    "firebase": "^6.3.4"
+    "firebase": "^6.3.4",
+    "lodash": "^4.17.15"
   },
   "devDependencies": {
     "@angular-devkit/core": "^8.2.0",
@@ -113,7 +114,6 @@
     "jest": "^24.8.0",
     "jest-cli": "^24.8.0",
     "jest-preset-angular": "^6.0.2",
-    "lodash": "^4.17.15",
     "node-sass": "^4.12.0",
     "postcss": "^7.0.17",
     "postcss-strip-inline-comments": "0.1.5",

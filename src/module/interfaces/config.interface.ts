@@ -27,9 +27,14 @@ export interface NgxAuthFirebaseUIConfig {
   // Same as password but for the name
   nameMaxLength?: number;
   nameMinLength?: number;
+
+  // If set, sign-in/up form is not available until email has been verified.
+  // Plus protected routes are still protected even though user is connected.
+  guardProtectedRoutesUntilEmailIsVerified?: boolean;
 }
 
 export const defaultAuthFirebaseUIConfig: NgxAuthFirebaseUIConfig = {
+
   // authMethod: 'redirect',
   // authProviders: [new GoogleAuthProvider(), new FacebookAuthProvider(), new TwitterAuthProvider(), new GithubAuthProvider()],
   authGuardFallbackURL: '/',
@@ -37,13 +42,19 @@ export const defaultAuthFirebaseUIConfig: NgxAuthFirebaseUIConfig = {
   enableFirestoreSync: true,
   toastMessageOnAuthSuccess: true,
   toastMessageOnAuthError: true,
+
   // Password length min/max in forms independently of each componenet min/max.
   // `min/max` input parameters in components should be within this range.
   passwordMaxLength: 60,
   passwordMinLength: 8,
+
   // Same as password but for the name
   nameMaxLength: 50,
-  nameMinLength: 2
+  nameMinLength: 2,
+
+  // If set, sign-in/up form is not available until email has been verified.
+  // Plus protected routes are still protected even though user is connected.
+  guardProtectedRoutesUntilEmailIsVerified: true
 };
 
 // Merge default config with user provided config.
