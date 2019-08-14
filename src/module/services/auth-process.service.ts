@@ -1,7 +1,6 @@
 import { EventEmitter, forwardRef, Inject, Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { MatSnackBar } from '@angular/material';
-import { Router } from '@angular/router';
 import { firebase } from '@firebase/app';
 import '@firebase/auth';
 import { User, UserInfo } from 'firebase/app';
@@ -65,8 +64,7 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
     public afa: AngularFireAuth,
     @Inject(forwardRef(() => NgxAuthFirebaseUIConfigToken)) public config: NgxAuthFirebaseUIConfig,
     private _snackBar: MatSnackBar,
-    private _fireStoreService: FirestoreSyncService,
-    private _router: Router
+    private _fireStoreService: FirestoreSyncService
   ) {}
 
   listenToUserEvents() {
@@ -207,9 +205,6 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
       this.isLoading = true;
       await this.afa.auth.signOut();
       this.isLoading = false;
-      // if (this.config.authGuardFallbackURL) {
-      //   await this._router.navigate([this.config.authGuardFallbackURL]);
-      // }
     } catch (error) {
       this.isLoading = false;
       this.notifyError(error);
