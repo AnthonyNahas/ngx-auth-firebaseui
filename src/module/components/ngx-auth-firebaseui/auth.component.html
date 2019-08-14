@@ -71,10 +71,10 @@
                   {{passwordErrorRequiredText}}
                 </mat-error>
                 <mat-error *ngIf="sigInPasswordFormControl.hasError('minlength')">
-                  The password must be at least {{ min }} characters long.
+                  {{ passwordErrorMinLengthText }}
                 </mat-error>
                 <mat-error *ngIf="sigInPasswordFormControl.hasError('maxlength')">
-                  The password must not exceed {{ max }} characters
+                  {{ passwordErrorMaxLengthText }}
                 </mat-error>
               </mat-form-field>
 
@@ -182,10 +182,10 @@
                     </mat-error>
 
                     <mat-error *ngIf="sigUpPasswordFormControl.hasError('minlength')" class="cut-text">
-                      The password must be at least {{min}} characters long.
+                      {{ passwordErrorMinLengthText }}
                     </mat-error>
                     <mat-error *ngIf="sigUpPasswordFormControl.hasError('maxlength')" class="cut-text">
-                      The password can not be longer than {{max}} characters.
+                      {{ passwordErrorMaxLengthText }}
                     </mat-error>
 
                   </mat-form-field>

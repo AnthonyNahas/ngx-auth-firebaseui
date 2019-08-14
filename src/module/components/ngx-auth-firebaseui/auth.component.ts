@@ -101,6 +101,8 @@ export class AuthComponent implements OnInit, AfterViewInit, OnChanges, OnDestro
 
   @Input() passwordText = 'Password';
   @Input() passwordErrorRequiredText = 'Password is required';
+  @Input() passwordErrorMinLengthText = 'The password is too short!';
+  @Input() passwordErrorMaxLengthText = 'The password is too long!';
 
   // Register Tab
   @Input() registerTabText = 'Register';
