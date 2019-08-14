@@ -33,6 +33,7 @@ import {LoggedInGuard} from './guards/logged-in.guard';
 import {NgxAuthFirebaseuiAvatarComponent} from './components/ngx-auth-firebaseui-avatar/ngx-auth-firebaseui-avatar.component';
 import {RouterModule} from '@angular/router';
 import {ngxAuthFirebaseUIConfigFactory} from './interfaces/config.interface';
+import {NgxAuthFirebaseuiLoginComponent} from './components/ngx-auth-firebaseui-login/ngx-auth-firebaseui-login.component';
 
 // Export module's public API
 // components
@@ -41,6 +42,7 @@ export {UserComponent} from './components/ngx-auth-firebaseui-user/user.componen
 export {NgxAuthFirebaseuiAvatarComponent, LinkMenuItem} from './components/ngx-auth-firebaseui-avatar/ngx-auth-firebaseui-avatar.component';
 export {AuthProvidersComponent, Theme, Layout} from './components/providers/auth.providers.component';
 export {LegalityDialogComponent} from './components/legality-dialog/legality-dialog.component';
+export {NgxAuthFirebaseuiLoginComponent} from './components/ngx-auth-firebaseui-login/ngx-auth-firebaseui-login.component';
 // services
 export {AuthProcessService, AuthProvider} from './services/auth-process.service';
 export {FirestoreSyncService} from './services/firestore-sync.service';
@@ -106,7 +108,8 @@ export const UserProvidedConfigToken = new InjectionToken<NgxAuthFirebaseUIConfi
     NgxAuthFirebaseuiAvatarComponent,
     AuthProvidersComponent,
     EmailConfirmationComponent,
-    LegalityDialogComponent
+    LegalityDialogComponent,
+    NgxAuthFirebaseuiLoginComponent
   ],
   entryComponents: [
     UserComponent,

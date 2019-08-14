@@ -20,6 +20,7 @@ import {BadgesComponent} from './badges/badges.component';
 import {NgxAuthFirebaseUIModule} from 'ngx-auth-firebaseui';
 import {HighlightModule} from 'ngx-highlightjs';
 import {MatPagesModule} from '@angular-material-extensions/pages';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 @NgModule({
   imports: [
@@ -55,7 +56,8 @@ import {MatPagesModule} from '@angular-material-extensions/pages';
     MatIconModule,
     MatTooltipModule,
     MatInputModule,
-    MatRippleModule
+    MatRippleModule,
+    MatCheckboxModule
   ],
   declarations: [
     HeaderComponent,

@@ -1,0 +1,35 @@
+@mixin login-theme($theme) {
+
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+  $is-dark: map-get($theme, is-dark);
+
+  ngx-auth-firebaseui-login {
+
+    #login {
+
+      #login-form-wrapper {
+
+        #login-form {
+          @if ($is-dark) {
+            background: mat-color($mat-indigo, 600);
+          } @else {
+            background: map-get($background, card);
+          }
+
+          .separator {
+            color: map-get($foreground, divider);
+
+            .text {
+
+              &:before,
+              &:after {
+                border-top-color: map-get($foreground, divider);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

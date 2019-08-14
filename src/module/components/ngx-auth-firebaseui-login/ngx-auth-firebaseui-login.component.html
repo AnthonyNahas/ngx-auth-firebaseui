@@ -1,0 +1,76 @@
+<div id="login" fxLayout="column">
+
+  <div id="login-form-wrapper" fxLayout="column" fxLayoutAlign="center center">
+
+    <!--    <div id="login-form" [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}">-->
+    <div id="login-form">
+
+      <div class="logo">
+        <img src="assets/images/logos/fuse.svg">
+      </div>
+
+      <div class="title">LOGIN TO YOUR ACCOUNT</div>
+
+      <form name="loginForm" [formGroup]="loginForm" novalidate>
+
+        <mat-form-field>
+          <input matInput placeholder="Email" formControlName="email">
+          <mat-icon matSuffix color="primary">email</mat-icon>
+          <mat-error *ngIf="loginForm.get('email').hasError('required')">
+            Email is required
+          </mat-error>
+          <mat-error
+            *ngIf="!loginForm.get('email').hasError('required') &&
+                                loginForm.get('email').hasError('email')">
+            Please enter a valid email address
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput type="password" placeholder="Password" formControlName="password">
+          <mat-icon matSuffix color="primary">lock</mat-icon>
+          <mat-error>
+            Password is required
+          </mat-error>
+        </mat-form-field>
+
+        <div class="remember-forgot-password" fxLayout="row" fxLayout.xs="column"
+             fxLayoutAlign="space-between center">
+          <mat-checkbox class="remember-me" aria-label="Remember Me">
+            Remember Me
+          </mat-checkbox>
+
+          <button mat-button class="forgot-password" color="primary" type="button">
+            Forgot Password?
+          </button>
+        </div>
+
+        <button mat-raised-button color="accent" class="submit-button" aria-label="LOG IN"
+                [disabled]="loginForm.invalid">
+          LOGIN
+        </button>
+
+      </form>
+
+      <div class="separator">
+        <span class="text">OR</span>
+      </div>
+
+      <button mat-raised-button class="google">
+        Log in with Google
+      </button>
+
+      <button mat-raised-button class="facebook">
+        Log in with Facebook
+      </button>
+
+      <div class="register" fxLayout="column" fxLayoutAlign="center center">
+        <span class="text">Don't have an account?</span>
+        <button mat-button color="primary" type="button">Create an account</button>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

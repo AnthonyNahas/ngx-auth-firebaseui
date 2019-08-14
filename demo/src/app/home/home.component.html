@@ -23,252 +23,253 @@
 
 <section class="home">
   <div class="container">
-    <div fxLayout="column">
+    <ngx-auth-firebaseui-login></ngx-auth-firebaseui-login>
+<!--    <div fxLayout="column">-->
 
-      <!--toolbar-->
-      <mat-toolbar [color]="color">
-        <span>Demo App</span>
-        <span class="fill-remaining"></span>
-        <ngx-auth-firebaseui-avatar></ngx-auth-firebaseui-avatar>
-      </mat-toolbar>
+<!--      &lt;!&ndash;toolbar&ndash;&gt;-->
+<!--      <mat-toolbar [color]="color">-->
+<!--        <span>Demo App</span>-->
+<!--        <span class="fill-remaining"></span>-->
+<!--        <ngx-auth-firebaseui-avatar></ngx-auth-firebaseui-avatar>-->
+<!--      </mat-toolbar>-->
 
-      <div fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="center">
-        <!--Overview-->
-        <mat-card fxFlexAlign.gt-xs="center">
-          <div fxLayoutAlign="center center">
-            <img alt="Ngx-auth-firebaseui Logo" mat-card-md-image style="height: auto"
-                 src="assets/images/logo/ngx-auth-firebaseui-logo.png">
-          </div>
-          <mat-card-title>
-            <mat-icon [color]="color">
-              Overview
-            </mat-icon>
-            Overview
-          </mat-card-title>
-          <mat-card-subtitle>
-            <app-badges></app-badges>
-          </mat-card-subtitle>
-          <mat-card-title>
-            <mat-icon [color]="color">
-              warning
-            </mat-icon>
-            Attention!
-          </mat-card-title>
-          <mat-card-content>
-            <p>This demo app uses a real connection of firebase. That means if you enable firestore's synchronisation,
-              your account will be saved in the db. If you are just experimenting the demo app, please make sure to
-              delete
-              you account before to quit. That will remove your document from firestore (if it was enabled) and your
-              account
-              from the firebase authentication system.</p>
-          </mat-card-content>
-        </mat-card>
-      </div>
+<!--      <div fxLayout="row wrap" fxLayout.xs="column" fxLayoutAlign="center">-->
+<!--        &lt;!&ndash;Overview&ndash;&gt;-->
+<!--        <mat-card fxFlexAlign.gt-xs="center">-->
+<!--          <div fxLayoutAlign="center center">-->
+<!--            <img alt="Ngx-auth-firebaseui Logo" mat-card-md-image style="height: auto"-->
+<!--                 src="assets/images/logo/ngx-auth-firebaseui-logo.png">-->
+<!--          </div>-->
+<!--          <mat-card-title>-->
+<!--            <mat-icon [color]="color">-->
+<!--              Overview-->
+<!--            </mat-icon>-->
+<!--            Overview-->
+<!--          </mat-card-title>-->
+<!--          <mat-card-subtitle>-->
+<!--            <app-badges></app-badges>-->
+<!--          </mat-card-subtitle>-->
+<!--          <mat-card-title>-->
+<!--            <mat-icon [color]="color">-->
+<!--              warning-->
+<!--            </mat-icon>-->
+<!--            Attention!-->
+<!--          </mat-card-title>-->
+<!--          <mat-card-content>-->
+<!--            <p>This demo app uses a real connection of firebase. That means if you enable firestore's synchronisation,-->
+<!--              your account will be saved in the db. If you are just experimenting the demo app, please make sure to-->
+<!--              delete-->
+<!--              you account before to quit. That will remove your document from firestore (if it was enabled) and your-->
+<!--              account-->
+<!--              from the firebase authentication system.</p>-->
+<!--          </mat-card-content>-->
+<!--        </mat-card>-->
+<!--      </div>-->
 
-      <div style="margin: 2rem 0 2rem 0"
-           fxLayout="row"
-           fxLayout.lt-md="column"
-           fxLayoutAlign="center"
-           fxLayoutGap.lt-md="20px"
-           fxLayoutGap="40px">
+<!--      <div style="margin: 2rem 0 2rem 0"-->
+<!--           fxLayout="row"-->
+<!--           fxLayout.lt-md="column"-->
+<!--           fxLayoutAlign="center"-->
+<!--           fxLayoutGap.lt-md="20px"-->
+<!--           fxLayoutGap="40px">-->
 
-        <mat-card fxFlex="70">
+<!--        <mat-card fxFlex="70">-->
 
-          <mat-toolbar>
-            ngx-auth-firebaseui
-            <span style="width: 100%"></span>
+<!--          <mat-toolbar>-->
+<!--            ngx-auth-firebaseui-->
+<!--            <span style="width: 100%"></span>-->
 
-            <button mat-icon-button
-                    color="primary"
-                    matTooltip="view source"
-                    (click)="viewSourceOfNgxAuthFirebaseuiComponent = !viewSourceOfNgxAuthFirebaseuiComponent">
-              <mat-icon>code</mat-icon>
-            </button>
-          </mat-toolbar>
+<!--            <button mat-icon-button-->
+<!--                    color="primary"-->
+<!--                    matTooltip="view source"-->
+<!--                    (click)="viewSourceOfNgxAuthFirebaseuiComponent = !viewSourceOfNgxAuthFirebaseuiComponent">-->
+<!--              <mat-icon>code</mat-icon>-->
+<!--            </button>-->
+<!--          </mat-toolbar>-->
 
-          <mat-card-content *ngIf="viewSourceOfNgxAuthFirebaseuiComponent">
-            <mat-tab-group [color]="color" [selectedIndex]="index">
-              <!--tab 1-->
-              <mat-tab>
-                <ng-template mat-tab-label>HTML</ng-template>
-                <pre><code [highlight]="html"></code></pre>
-              </mat-tab>
-              <!--tab 2-->
-              <mat-tab>
-                <ng-template mat-tab-label>TS</ng-template>
-                <pre><code [highlight]="code"></code></pre>
-              </mat-tab>
-            </mat-tab-group>
-          </mat-card-content>
+<!--          <mat-card-content *ngIf="viewSourceOfNgxAuthFirebaseuiComponent">-->
+<!--            <mat-tab-group [color]="color" [selectedIndex]="index">-->
+<!--              &lt;!&ndash;tab 1&ndash;&gt;-->
+<!--              <mat-tab>-->
+<!--                <ng-template mat-tab-label>HTML</ng-template>-->
+<!--                <pre><code [highlight]="html"></code></pre>-->
+<!--              </mat-tab>-->
+<!--              &lt;!&ndash;tab 2&ndash;&gt;-->
+<!--              <mat-tab>-->
+<!--                <ng-template mat-tab-label>TS</ng-template>-->
+<!--                <pre><code [highlight]="code"></code></pre>-->
+<!--              </mat-tab>-->
+<!--            </mat-tab-group>-->
+<!--          </mat-card-content>-->
 
-          <mat-card-content>
-            <ngx-auth-firebaseui (onSuccess)="printUser($event)"
-                                 (onError)="printError($event)"
-                                 (selectedTabChange)="onTabChange($event)">
-            </ngx-auth-firebaseui>
-          </mat-card-content>
-        </mat-card>
+<!--          <mat-card-content>-->
+<!--            <ngx-auth-firebaseui (onSuccess)="printUser($event)"-->
+<!--                                 (onError)="printError($event)"-->
+<!--                                 (selectedTabChange)="onTabChange($event)">-->
+<!--            </ngx-auth-firebaseui>-->
+<!--          </mat-card-content>-->
+<!--        </mat-card>-->
 
-        <mat-card fxFlex="50">
+<!--        <mat-card fxFlex="50">-->
 
-          <mat-toolbar>
-            ngx-auth-firebaseui-user
-            <span style="width: 100%"></span>
+<!--          <mat-toolbar>-->
+<!--            ngx-auth-firebaseui-user-->
+<!--            <span style="width: 100%"></span>-->
 
-            <button mat-icon-button
-                    color="primary"
-                    matTooltip="view source"
-                    (click)="viewSourceOfTheUserComponent = !viewSourceOfTheUserComponent">
-              <mat-icon>code</mat-icon>
-            </button>
-          </mat-toolbar>
+<!--            <button mat-icon-button-->
+<!--                    color="primary"-->
+<!--                    matTooltip="view source"-->
+<!--                    (click)="viewSourceOfTheUserComponent = !viewSourceOfTheUserComponent">-->
+<!--              <mat-icon>code</mat-icon>-->
+<!--            </button>-->
+<!--          </mat-toolbar>-->
 
-          <mat-card-content *ngIf="viewSourceOfTheUserComponent">
-            <mat-tab-group [color]="color" [selectedIndex]="index">
-              <!--tab 1-->
-              <mat-tab>
-                <ng-template mat-tab-label>HTML</ng-template>
-                <pre><code [highlight]="userComponent"></code></pre>
-              </mat-tab>
-              <!--tab 2-->
-              <mat-tab>
-                <ng-template mat-tab-label>TS</ng-template>
-                <pre><code [highlight]="code"></code></pre>
-              </mat-tab>
-            </mat-tab-group>
-          </mat-card-content>
+<!--          <mat-card-content *ngIf="viewSourceOfTheUserComponent">-->
+<!--            <mat-tab-group [color]="color" [selectedIndex]="index">-->
+<!--              &lt;!&ndash;tab 1&ndash;&gt;-->
+<!--              <mat-tab>-->
+<!--                <ng-template mat-tab-label>HTML</ng-template>-->
+<!--                <pre><code [highlight]="userComponent"></code></pre>-->
+<!--              </mat-tab>-->
+<!--              &lt;!&ndash;tab 2&ndash;&gt;-->
+<!--              <mat-tab>-->
+<!--                <ng-template mat-tab-label>TS</ng-template>-->
+<!--                <pre><code [highlight]="code"></code></pre>-->
+<!--              </mat-tab>-->
+<!--            </mat-tab-group>-->
+<!--          </mat-card-content>-->
 
-          <mat-card-content>
-            <ngx-auth-firebaseui-user (onSignOut)="onSignOut()"
-                                      (onAccountDeleted)="onAccountDeleted()">
-            </ngx-auth-firebaseui-user>
-          </mat-card-content>
-        </mat-card>
-      </div>
+<!--          <mat-card-content>-->
+<!--            <ngx-auth-firebaseui-user (onSignOut)="onSignOut()"-->
+<!--                                      (onAccountDeleted)="onAccountDeleted()">-->
+<!--            </ngx-auth-firebaseui-user>-->
+<!--          </mat-card-content>-->
+<!--        </mat-card>-->
+<!--      </div>-->
 
-      <div style="margin: 2rem 0 2rem 0"
-           fxLayout="row"
-           fxLayout.lt-md="column"
-           fxLayoutAlign="center"
-           fxLayoutGap.lt-md="20px"
-           fxLayoutGap="40px">
-        <!--PROVIDER WITH ROW LAYOUT-->
-        <div>
-          <mat-toolbar>
-            ngx-auth-firebaseui-providers - row
-            <span style="width: 100%"></span>
+<!--      <div style="margin: 2rem 0 2rem 0"-->
+<!--           fxLayout="row"-->
+<!--           fxLayout.lt-md="column"-->
+<!--           fxLayoutAlign="center"-->
+<!--           fxLayoutGap.lt-md="20px"-->
+<!--           fxLayoutGap="40px">-->
+<!--        &lt;!&ndash;PROVIDER WITH ROW LAYOUT&ndash;&gt;-->
+<!--        <div>-->
+<!--          <mat-toolbar>-->
+<!--            ngx-auth-firebaseui-providers - row-->
+<!--            <span style="width: 100%"></span>-->
 
-            <button mat-icon-button
-                    color="primary"
-                    matTooltip="view source"
-                    (click)="viewSourceOfTheProvidersComponentRow = !viewSourceOfTheProvidersComponentRow">
-              <mat-icon>code</mat-icon>
-            </button>
-          </mat-toolbar>
-          <mat-card>
-            <mat-card-content *ngIf="viewSourceOfTheProvidersComponentRow">
-              <mat-tab-group [color]="color" [selectedIndex]="index">
-                <!--tab 1-->
-                <mat-tab>
-                  <ng-template mat-tab-label>HTML</ng-template>
-                  <pre><code [highlight]="providersRow"></code></pre>
-                </mat-tab>
-                <!--tab 2-->
-                <mat-tab>
-                  <ng-template mat-tab-label>TS</ng-template>
-                  <pre><code [highlight]="appComponentTS"></code></pre>
-                </mat-tab>
-              </mat-tab-group>
-            </mat-card-content>
-            <mat-card-content>
-              <ngx-auth-firebaseui-providers></ngx-auth-firebaseui-providers>
-            </mat-card-content>
-          </mat-card>
-        </div>
+<!--            <button mat-icon-button-->
+<!--                    color="primary"-->
+<!--                    matTooltip="view source"-->
+<!--                    (click)="viewSourceOfTheProvidersComponentRow = !viewSourceOfTheProvidersComponentRow">-->
+<!--              <mat-icon>code</mat-icon>-->
+<!--            </button>-->
+<!--          </mat-toolbar>-->
+<!--          <mat-card>-->
+<!--            <mat-card-content *ngIf="viewSourceOfTheProvidersComponentRow">-->
+<!--              <mat-tab-group [color]="color" [selectedIndex]="index">-->
+<!--                &lt;!&ndash;tab 1&ndash;&gt;-->
+<!--                <mat-tab>-->
+<!--                  <ng-template mat-tab-label>HTML</ng-template>-->
+<!--                  <pre><code [highlight]="providersRow"></code></pre>-->
+<!--                </mat-tab>-->
+<!--                &lt;!&ndash;tab 2&ndash;&gt;-->
+<!--                <mat-tab>-->
+<!--                  <ng-template mat-tab-label>TS</ng-template>-->
+<!--                  <pre><code [highlight]="appComponentTS"></code></pre>-->
+<!--                </mat-tab>-->
+<!--              </mat-tab-group>-->
+<!--            </mat-card-content>-->
+<!--            <mat-card-content>-->
+<!--              <ngx-auth-firebaseui-providers></ngx-auth-firebaseui-providers>-->
+<!--            </mat-card-content>-->
+<!--          </mat-card>-->
+<!--        </div>-->
 
-        <!--PROVIDER WITH COLUMN LAYOUT e.g: to support mobile and/or table view-->
-        <div>
-          <mat-toolbar>
-            ngx-auth-firebaseui-providers - column
-            <span style="width: 100%"></span>
+<!--        &lt;!&ndash;PROVIDER WITH COLUMN LAYOUT e.g: to support mobile and/or table view&ndash;&gt;-->
+<!--        <div>-->
+<!--          <mat-toolbar>-->
+<!--            ngx-auth-firebaseui-providers - column-->
+<!--            <span style="width: 100%"></span>-->
 
-            <button mat-icon-button
-                    color="primary"
-                    matTooltip="view source"
-                    (click)="viewSourceOfTheProvidersComponentColumn = !viewSourceOfTheProvidersComponentColumn">
-              <mat-icon>code</mat-icon>
-            </button>
-          </mat-toolbar>
-          <mat-card>
-            <mat-card-content *ngIf="viewSourceOfTheProvidersComponentColumn">
-              <mat-tab-group [color]="color" [selectedIndex]="index">
-                <!--tab 1-->
-                <mat-tab>
-                  <ng-template mat-tab-label>HTML</ng-template>
-                  <pre><code [highlight]="providersColumn"></code></pre>
-                </mat-tab>
-                <!--tab 2-->
-                <mat-tab>
-                  <ng-template mat-tab-label>TS</ng-template>
-                  <pre><code [highlight]="appComponentTS"></code></pre>
-                </mat-tab>
-              </mat-tab-group>
-            </mat-card-content>
-            <mat-card-content>
-              <ngx-auth-firebaseui-providers (onSuccess)="printUser($event)"
-                                             (onError)="printError($event)"
-                                             layout="column">
-              </ngx-auth-firebaseui-providers>
-            </mat-card-content>
-          </mat-card>
-        </div>
-      </div>
+<!--            <button mat-icon-button-->
+<!--                    color="primary"-->
+<!--                    matTooltip="view source"-->
+<!--                    (click)="viewSourceOfTheProvidersComponentColumn = !viewSourceOfTheProvidersComponentColumn">-->
+<!--              <mat-icon>code</mat-icon>-->
+<!--            </button>-->
+<!--          </mat-toolbar>-->
+<!--          <mat-card>-->
+<!--            <mat-card-content *ngIf="viewSourceOfTheProvidersComponentColumn">-->
+<!--              <mat-tab-group [color]="color" [selectedIndex]="index">-->
+<!--                &lt;!&ndash;tab 1&ndash;&gt;-->
+<!--                <mat-tab>-->
+<!--                  <ng-template mat-tab-label>HTML</ng-template>-->
+<!--                  <pre><code [highlight]="providersColumn"></code></pre>-->
+<!--                </mat-tab>-->
+<!--                &lt;!&ndash;tab 2&ndash;&gt;-->
+<!--                <mat-tab>-->
+<!--                  <ng-template mat-tab-label>TS</ng-template>-->
+<!--                  <pre><code [highlight]="appComponentTS"></code></pre>-->
+<!--                </mat-tab>-->
+<!--              </mat-tab-group>-->
+<!--            </mat-card-content>-->
+<!--            <mat-card-content>-->
+<!--              <ngx-auth-firebaseui-providers (onSuccess)="printUser($event)"-->
+<!--                                             (onError)="printError($event)"-->
+<!--                                             layout="column">-->
+<!--              </ngx-auth-firebaseui-providers>-->
+<!--            </mat-card-content>-->
+<!--          </mat-card>-->
+<!--        </div>-->
+<!--      </div>-->
 
 
-      <div style="margin: 2rem 0 2rem 0"
-           fxLayout="column"
-           fxLayoutAlign="center"
-           fxLayoutGap.lt-md="20px"
-           fxLayoutGap="40px">
+<!--      <div style="margin: 2rem 0 2rem 0"-->
+<!--           fxLayout="column"-->
+<!--           fxLayoutAlign="center"-->
+<!--           fxLayoutGap.lt-md="20px"-->
+<!--           fxLayoutGap="40px">-->
 
-        <div>
-          <mat-toolbar>
-            ngx-auth-firebaseui-providers - themes
-            <span style="width: 100%"></span>
+<!--        <div>-->
+<!--          <mat-toolbar>-->
+<!--            ngx-auth-firebaseui-providers - themes-->
+<!--            <span style="width: 100%"></span>-->
 
-            <button mat-icon-button
-                    color="primary"
-                    matTooltip="view source"
-                    (click)="viewSourceOfTheProvidersComponentThemes = !viewSourceOfTheProvidersComponentThemes">
-              <mat-icon>code</mat-icon>
-            </button>
-          </mat-toolbar>
-          <mat-card>
-            <mat-card-content *ngIf="viewSourceOfTheProvidersComponentThemes">
-              <mat-tab-group [color]="color" [selectedIndex]="index">
-                <!--tab 1-->
-                <mat-tab>
-                  <ng-template mat-tab-label>HTML</ng-template>
-                  <pre><code [highlight]="providersThemes"></code></pre>
-                </mat-tab>
-                <!--tab 2-->
-                <mat-tab>
-                  <ng-template mat-tab-label>TS</ng-template>
-                  <pre><code [highlight]="appComponentTS"></code></pre>
-                </mat-tab>
-              </mat-tab-group>
-            </mat-card-content>
-            <mat-card-content class="stand-alone-providers">
-              <ngx-auth-firebaseui-providers [theme]="themes.CLASSIC"></ngx-auth-firebaseui-providers>
-              <ngx-auth-firebaseui-providers [theme]="themes.STROKED"></ngx-auth-firebaseui-providers>
-              <ngx-auth-firebaseui-providers [theme]="themes.RAISED"></ngx-auth-firebaseui-providers>
-              <ngx-auth-firebaseui-providers [theme]="themes.FAB"></ngx-auth-firebaseui-providers>
-              <ngx-auth-firebaseui-providers [theme]="themes.MINI_FAB"></ngx-auth-firebaseui-providers>
-            </mat-card-content>
-          </mat-card>
-        </div>
-      </div>
-    </div>
+<!--            <button mat-icon-button-->
+<!--                    color="primary"-->
+<!--                    matTooltip="view source"-->
+<!--                    (click)="viewSourceOfTheProvidersComponentThemes = !viewSourceOfTheProvidersComponentThemes">-->
+<!--              <mat-icon>code</mat-icon>-->
+<!--            </button>-->
+<!--          </mat-toolbar>-->
+<!--          <mat-card>-->
+<!--            <mat-card-content *ngIf="viewSourceOfTheProvidersComponentThemes">-->
+<!--              <mat-tab-group [color]="color" [selectedIndex]="index">-->
+<!--                &lt;!&ndash;tab 1&ndash;&gt;-->
+<!--                <mat-tab>-->
+<!--                  <ng-template mat-tab-label>HTML</ng-template>-->
+<!--                  <pre><code [highlight]="providersThemes"></code></pre>-->
+<!--                </mat-tab>-->
+<!--                &lt;!&ndash;tab 2&ndash;&gt;-->
+<!--                <mat-tab>-->
+<!--                  <ng-template mat-tab-label>TS</ng-template>-->
+<!--                  <pre><code [highlight]="appComponentTS"></code></pre>-->
+<!--                </mat-tab>-->
+<!--              </mat-tab-group>-->
+<!--            </mat-card-content>-->
+<!--            <mat-card-content class="stand-alone-providers">-->
+<!--              <ngx-auth-firebaseui-providers [theme]="themes.CLASSIC"></ngx-auth-firebaseui-providers>-->
+<!--              <ngx-auth-firebaseui-providers [theme]="themes.STROKED"></ngx-auth-firebaseui-providers>-->
+<!--              <ngx-auth-firebaseui-providers [theme]="themes.RAISED"></ngx-auth-firebaseui-providers>-->
+<!--              <ngx-auth-firebaseui-providers [theme]="themes.FAB"></ngx-auth-firebaseui-providers>-->
+<!--              <ngx-auth-firebaseui-providers [theme]="themes.MINI_FAB"></ngx-auth-firebaseui-providers>-->
+<!--            </mat-card-content>-->
+<!--          </mat-card>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
 
   </div>
 </section>
