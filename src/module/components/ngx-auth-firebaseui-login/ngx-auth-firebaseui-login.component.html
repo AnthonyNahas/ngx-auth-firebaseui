@@ -49,8 +49,12 @@
           </button>
         </div>
 
-        <button mat-raised-button color="accent" class="submit-button" aria-label="LOG IN"
-                [disabled]="loginForm.invalid">
+        <button mat-raised-button
+                color="accent"
+                class="submit-button"
+                aria-label="LOG IN"
+                [disabled]="loginForm.invalid"
+        (click)="login()">
           {{loginButtonText}}
         </button>
 
