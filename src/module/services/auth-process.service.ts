@@ -1,6 +1,6 @@
 import { EventEmitter, forwardRef, Inject, Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { MatSnackBar } from '@angular/material';
+import { MatSnackBar, MatSnackBarConfig, MAT_SNACK_BAR_DEFAULT_OPTIONS } from '@angular/material';
 import { firebase } from '@firebase/app';
 import '@firebase/auth';
 import { User, UserInfo } from 'firebase/app';
@@ -45,8 +45,6 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
   onSuccessEmitter: EventEmitter<any> = new EventEmitter<any>();
   onErrorEmitter: EventEmitter<any> = new EventEmitter<any>();
 
-  isLoading: boolean;
-
   // Useful to know aubout auth state even between reloads.
   // Replace emailConfirmationSent and emailToConfirm.
   user$: Observable<User>;
@@ -64,7 +62,8 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
     public afa: AngularFireAuth,
     @Inject(forwardRef(() => NgxAuthFirebaseUIConfigToken)) public config: NgxAuthFirebaseUIConfig,
     private _snackBar: MatSnackBar,
-    private _fireStoreService: FirestoreSyncService
+    private _fireStoreService: FirestoreSyncService,
+    @Inject(MAT_SNACK_BAR_DEFAULT_OPTIONS) private _matSnackBarConfig: MatSnackBarConfig
   ) {}
 
   listenToUserEvents() {
@@ -98,7 +97,6 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
    */
   public async signInWith(provider: AuthProvider, credentials?: ICredentials) {
     try {
-      this.isLoading = true;
       let signInResult: UserCredential | any;
 
       switch (provider) {
@@ -144,8 +142,6 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
       await this.handleSuccess(signInResult);
     } catch (err) {
       this.handleError(err);
-    } finally {
-      this.isLoading = false;
     }
   }
 
@@ -159,7 +155,6 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
    */
   public async signUp(displayName: string, credentials: ICredentials) {
     try {
-      this.isLoading = true;
       const userCredential: UserCredential = await this.afa.auth.createUserWithEmailAndPassword(credentials.email, credentials.password);
       const user = userCredential.user;
       await this.updateProfile(displayName, user.photoURL);
@@ -176,6 +171,7 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
       }
 
       await user.sendEmailVerification();
+
       // Legacy fields
       this.emailConfirmationSent = true;
       this.emailToConfirm = credentials.email;
@@ -183,8 +179,6 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
       await this.handleSuccess(userCredential);
     } catch (err) {
       this.handleError(err);
-    } finally {
-      this.isLoading = false;
     }
   }
 
@@ -192,21 +186,13 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
     if (!this.user) {
       return Promise.reject(new Error('No signed in user'));
     }
-    try {
-      this.isLoading = true;
-      return this.user.sendEmailVerification();
-    } finally {
-      this.isLoading = false;
-    }
+    return this.user.sendEmailVerification();
   }
 
   async signOut() {
     try {
-      this.isLoading = true;
       await this.afa.auth.signOut();
-      this.isLoading = false;
     } catch (error) {
-      this.isLoading = false;
       this.notifyError(error);
     }
   }
@@ -302,9 +288,11 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
   }
 
   // Show a toast using current snackbar config. If message is empty, no toast is displayed allowing to opt-out when needed.
+  // Default MatSnackBarConfig has no duration, meaning it stays visible forever.
+  // If that's the case, an action button is added to allow the end-user to dismiss the toast.
   showToast(message: string) {
     if (message) {
-      this._snackBar.open(message);
+      this._snackBar.open(message, this._matSnackBarConfig.duration ? null : 'OK');
     }
   }
 

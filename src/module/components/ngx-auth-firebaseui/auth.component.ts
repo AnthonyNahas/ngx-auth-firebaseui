@@ -1,10 +1,10 @@
 import { MatPasswordStrengthComponent } from '@angular-material-extensions/password-strength';
 import { isPlatformBrowser } from '@angular/common';
-import { AfterViewInit, ChangeDetectorRef, Component, EventEmitter, forwardRef, Inject, Input, OnChanges, OnDestroy, OnInit, Output, PLATFORM_ID, SimpleChanges, TemplateRef, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, forwardRef, Inject, Input, OnChanges, OnDestroy, OnInit, Output, PLATFORM_ID, SimpleChanges, TemplateRef, ViewChild } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog, MatDialogRef, MatFormFieldAppearance, MatTabChangeEvent, MatTabGroup, ThemePalette } from '@angular/material';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs/internal/Subscription';
 import { LegalityDialogComponent } from '../../components/legality-dialog/legality-dialog.component';
 import { LegalityDialogParams, LegalityDialogResult } from '../../interfaces/legality.dialog.intreface';
@@ -24,12 +24,15 @@ export const PHONE_NUMBER_REGEX = new RegExp(/^\+(?:[0-9] ?){6,14}[0-9]$/);
 @Component({
   selector: 'ngx-auth-firebaseui',
   templateUrl: 'auth.component.html',
-  styleUrls: ['auth.component.scss']
+  styleUrls: ['auth.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AuthComponent implements OnInit, AfterViewInit, OnChanges, OnDestroy {
 
   @ViewChild(MatTabGroup, {static: false}) matTabGroup: MatTabGroup;
   @ViewChild(MatPasswordStrengthComponent, {static: false}) passwordStrength: MatPasswordStrengthComponent;
+
+  isLoading: boolean;
 
   // Verify email template to use in place of default template.
   // See email-confirmation component
@@ -56,7 +59,6 @@ export class AuthComponent implements OnInit, AfterViewInit, OnChanges, OnDestro
   @Input() goBackURL: string;
   @Input() messageOnAuthSuccess: string;
   @Input() messageOnAuthError: messageOnAuthErrorType;
-  @Input() messageOnSignOutError = 'Sorry, sign out failed.';
   @Input() messageOnEmailConfirmationSuccess: string;
 
   @Output() onSuccess: any;
@@ -112,9 +114,7 @@ export class AuthComponent implements OnInit, AfterViewInit, OnChanges, OnDestro
 
   // email confirmation component
   @Input() emailConfirmationTitle = 'Confirm your e-mail address!';
-  @Input() emailConfirmationText = `
-  A confirmation e-mail has been sent to you.
-  Check your inbox and click on the link "Confirm my e-mail" to confirm your e-mail address.`;
+  @Input() emailConfirmationText = `A confirmation e-mail has been sent to you. Check your inbox and click on the link "Confirm my e-mail" to confirm your e-mail address.`;
 
   authProvider = AuthProvider;
   passwordResetWished: boolean;
@@ -146,7 +146,6 @@ export class AuthComponent implements OnInit, AfterViewInit, OnChanges, OnDestro
     public authProcess: AuthProcessService,
     public dialog: MatDialog,
     @Inject(forwardRef(() => NgxAuthFirebaseUIConfigToken)) public config: NgxAuthFirebaseUIConfig,
-    private _router: Router,
     private _activatedRoute: ActivatedRoute,
     private _cdr: ChangeDetectorRef
   ) {
@@ -203,19 +202,32 @@ export class AuthComponent implements OnInit, AfterViewInit, OnChanges, OnDestro
     this.selectedTabChange.emit(event);
   }
 
-  signOut() {
-    this.authProcess.signOut();
+  async signOut() {
+    try {
+      this.isLoading = true;
+      this._cdr.markForCheck();
+      await this.authProcess.signOut();
+    } finally {
+      this.isLoading = false;
+      this._cdr.markForCheck();
+    }
   }
 
   async signIn() {
     if (!this.signInFormGroup.valid) {
       return;
     }
-    await this.authProcess.signInWith(this.authProviders.EmailAndPassword, {
-      email: this.signInFormGroup.value.email,
-      password: this.signInFormGroup.value.password
-    });
-    this._cdr.markForCheck();
+    try {
+      this.isLoading = true;
+      this._cdr.markForCheck();
+      await this.authProcess.signInWith(this.authProviders.EmailAndPassword, {
+        email: this.signInFormGroup.value.email,
+        password: this.signInFormGroup.value.password
+      });
+    } finally {
+      this.isLoading = false;
+      this._cdr.markForCheck();
+    }
   }
 
   get color(): string | ThemePalette {
@@ -230,6 +242,7 @@ export class AuthComponent implements OnInit, AfterViewInit, OnChanges, OnDestro
   createForgotPasswordTab() {
     this.passwordResetWished = true;
     this.tabIndex = 2;
+    this._cdr.markForCheck();
   }
 
   processLegalSignUP(authProvider?: AuthProvider) {
@@ -253,17 +266,31 @@ export class AuthComponent implements OnInit, AfterViewInit, OnChanges, OnDestro
   }
 
   async signUp() {
-    return await this.authProcess.signUp(
-      this.signUpFormGroup.value.name,
-      {
-        email: this.signUpFormGroup.value.email,
-        password: this.signUpFormGroup.value.password
-      }
-    );
+    try {
+      this.isLoading = true;
+      this._cdr.markForCheck();
+      return await this.authProcess.signUp(
+        this.signUpFormGroup.value.name,
+        {
+          email: this.signUpFormGroup.value.email,
+          password: this.signUpFormGroup.value.password
+        }
+        );
+    } finally {
+      this.isLoading = false;
+      this._cdr.markForCheck();
+    }
   }
 
   async signUpAnonymously() {
-    return await this.authProcess.signInWith(this.authProvider.ANONYMOUS);
+    try {
+      this.isLoading = true;
+      this._cdr.markForCheck();
+      await this.authProcess.signInWith(this.authProvider.ANONYMOUS);
+    } finally {
+      this.isLoading = false;
+      this._cdr.markForCheck();
+    }
   }
 
 
@@ -271,7 +298,8 @@ export class AuthComponent implements OnInit, AfterViewInit, OnChanges, OnDestro
     this.authProcess.resetPassword(this.resetPasswordEmailFormControl.value)
       .then(() => {
         this.passReset = true;
-        setTimeout(() => this.tabIndex = 2, 10);
+        // this.tabIndex = 2;
+        this._cdr.markForCheck();
       });
   }
 

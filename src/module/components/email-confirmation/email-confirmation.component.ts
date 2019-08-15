@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges, TemplateRef, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges, TemplateRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthProcessService } from './../../services/auth-process.service';
 
@@ -8,7 +8,6 @@ interface VerifyEmailContext {
   verifyEmailTitleText: string;
   verifyEmailConfirmationText: string;
   verifyEmailGoBackText: string;
-  messageOnSignOutError: string;
   messageOnEmailConfirmationSuccess: string;
   messageOnError: string;
 }
@@ -25,7 +24,8 @@ const defaultTranslations = {
 @Component({
   selector: 'ngx-auth-firebaseui-email-confirmation',
   templateUrl: './email-confirmation.component.html',
-  styleUrls: ['./email-confirmation.component.scss']
+  styleUrls: ['./email-confirmation.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class EmailConfirmationComponent implements OnInit, OnChanges {
 
@@ -49,9 +49,11 @@ export class EmailConfirmationComponent implements OnInit, OnChanges {
   // Context hash to use for verifyEmailTemplate.
   verifyEmailContext: VerifyEmailContext;
 
+  isLoading: boolean;
+
   @ViewChild('defaultVerifyEmail', {static: true}) defaultTemplate: TemplateRef<any>;
 
-  constructor(public authProcess: AuthProcessService, private _router: Router) {}
+  constructor(public authProcess: AuthProcessService, private _router: Router, private _cdr: ChangeDetectorRef) {}
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.verifyEmailTemplate && changes.verifyEmailTemplate.currentValue == null) {
@@ -82,10 +84,15 @@ export class EmailConfirmationComponent implements OnInit, OnChanges {
 
   async sendNewVerificationEmail() {
     try {
+      this.isLoading = true;
+      this._cdr.markForCheck();
       await this.authProcess.sendNewVerificationEmail();
       this.authProcess.showToast(this.verifyEmailContext.messageOnEmailConfirmationSuccess);
     } catch (error) {
       this.authProcess.notifyError(error);
+    } finally {
+      this.isLoading = false;
+      this._cdr.markForCheck();
     }
   }
 

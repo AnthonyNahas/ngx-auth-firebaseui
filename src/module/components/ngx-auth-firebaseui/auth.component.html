@@ -26,7 +26,7 @@
         <div class="user-display-name mat-title">{{ user.displayName }}</div>
         <div class="user-email mat-body-2">{{ user.email }}</div>
         <div class="actions">
-          <mat-progress-bar *ngIf="authProcess.isLoading" mode="indeterminate"></mat-progress-bar>
+          <mat-progress-bar *ngIf="isLoading" mode="indeterminate"></mat-progress-bar>
           <a mat-stroked-button class="go-back-button action-button" color="primary" [routerLink]="goBackURL">{{ verifyEmailGoBackText }}</a>
           <button mat-stroked-button class="sign-out-button action-button" color="warn" (click)="signOut()">{{ signOutText }}</button>
         </div>
@@ -101,7 +101,7 @@
           </div>
 
         </mat-card-content>
-        <mat-card-footer *ngIf="authProcess.isLoading">
+        <mat-card-footer *ngIf="isLoading">
           <mat-progress-bar mode="indeterminate"></mat-progress-bar>
         </mat-card-footer>
       </mat-card>
@@ -227,7 +227,7 @@
 
           </mat-card-content>
 
-          <mat-card-footer *ngIf="authProcess.isLoading">
+          <mat-card-footer *ngIf="isLoading">
             <mat-progress-bar mode="indeterminate"></mat-progress-bar>
           </mat-card-footer>
 
@@ -235,25 +235,19 @@
     </mat-tab>
 
     <!--Reset password tab-->
-    <mat-tab *ngIf="passwordResetWished" [label]="resetPasswordTabText">
+    <mat-tab *ngIf="passwordResetWished" class="reset-password-tab">
+      <ng-template mat-tab-label>
+        <button mat-icon-button class="reset-password-tab__close-button" (click)="passwordResetWished = false">
+          {{ resetPasswordTabText }}
+          <mat-icon>close</mat-icon>
+        </button>
+      </ng-template>
       <form [formGroup]="resetPasswordFormGroup" (ngSubmit)="resetPasswordFormGroup.valid && resetPassword()">
-
-        <mat-card>
-          <mat-card-header fxLayoutAlign="end">
-            <button mat-icon-button
-                    [color]="color"
-                    matTooltip="close"
-                    matTooltipPosition="above"
-                    (click)="passwordResetWished = false">
-              <mat-icon>close</mat-icon>
-            </button>
-          </mat-card-header>
-
+        <mat-card class="reset-password-card">
           <mat-card-content>
             <mat-form-field class="full-width" [appearance]="appearance">
               <mat-label> {{ resetPasswordTabText }} </mat-label>
               <input matInput
-                    [readonly]="passReset"
                     [title]="resetPasswordInputText"
                     formControlName="email"
                     required>
@@ -265,21 +259,16 @@
                 {{resetPasswordErrorPatternText}}
               </mat-error>
             </mat-form-field>
+            <p *ngIf="passReset">{{resetPasswordInstructionsText}}</p>
           </mat-card-content>
           <mat-card-actions fxLayoutAlign="center">
+            <mat-progress-bar *ngIf="isLoading" mode="indeterminate"></mat-progress-bar>
             <button mat-raised-button
                     type="submit"
-                    [color]="color"
-                    [disabled]="passReset">
+                    [color]="color">
               {{resetPasswordActionButtonText}}
             </button>
           </mat-card-actions>
-          <mat-card-footer *ngIf="passReset" fxLayoutAlign="center">
-            <p>{{resetPasswordInstructionsText}}</p>
-          </mat-card-footer>
-          <mat-card-footer>
-            <mat-progress-bar *ngIf="authProcess.isLoading" mode="indeterminate"></mat-progress-bar>
-          </mat-card-footer>
         </mat-card>
       </form>
     </mat-tab>

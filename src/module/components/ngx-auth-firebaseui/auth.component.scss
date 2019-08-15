@@ -45,3 +45,20 @@
     }
   }
 }
+
+.reset-password-tab {
+  mat-progress-bar {
+    margin-bottom: 1rem;
+  }
+  &__close-button {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    mat-icon {
+      font-size: 18px;
+      position: relative;
+      top: -1px;
+    }
+  }
+}
