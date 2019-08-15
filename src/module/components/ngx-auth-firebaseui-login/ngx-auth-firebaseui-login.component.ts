@@ -1,4 +1,4 @@
-import {Component, Input, OnInit, Output, ViewEncapsulation} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output, ViewEncapsulation} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {MatFormFieldAppearance} from '@angular/material';
 import {AuthProvider} from '../../..';
@@ -39,6 +39,7 @@ export class NgxAuthFirebaseuiLoginComponent implements OnInit {
   // Events
   @Output() onSuccess: any;
   @Output() onError: any;
+  @Output() onCreateAccountRequested: EventEmitter<void> = new EventEmitter<void>();
 
   constructor(private _formBuilder: FormBuilder) {
   }

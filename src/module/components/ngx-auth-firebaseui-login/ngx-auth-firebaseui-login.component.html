@@ -74,7 +74,10 @@
 
       <div class="register" fxLayout="column" fxLayoutAlign="center center">
         <span class="text">{{dontHaveAnAccountText}}</span>
-        <button mat-button color="primary" type="button">{{createAccountButtonText}}</button>
+        <button mat-button
+                color="primary"
+                type="button"
+                (click)="onCreateAccountRequested.emit()">{{createAccountButtonText}}</button>
       </div>
 
     </div>

@@ -2,8 +2,8 @@ import {Component, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
 import {Title} from '@angular/platform-browser';
 import {AngularFireAuth} from '@angular/fire/auth';
 import {AuthProvider, Theme} from 'ngx-auth-firebaseui';
-import { MatSnackBar } from '@angular/material/snack-bar';
-import { MatTabChangeEvent } from '@angular/material/tabs';
+import {MatSnackBar} from '@angular/material/snack-bar';
+import {MatTabChangeEvent} from '@angular/material/tabs';
 import {Router} from '@angular/router';
 import {Subscription} from 'rxjs/internal/Subscription';
 
@@ -134,4 +134,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     console.log('Account Delete successful!');
   }
 
+  createAccount() {
+    console.log('create account has beeen requested');
+  }
 }
