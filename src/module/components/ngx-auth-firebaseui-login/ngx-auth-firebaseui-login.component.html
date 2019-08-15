@@ -50,11 +50,12 @@
         </div>
 
         <button mat-raised-button
+                id="loginButton"
                 color="accent"
                 class="submit-button"
                 aria-label="LOG IN"
                 [disabled]="loginForm.invalid"
-        (click)="login()">
+                (click)="login()">
           {{loginButtonText}}
         </button>
 
