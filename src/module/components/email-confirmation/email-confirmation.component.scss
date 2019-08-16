@@ -2,23 +2,27 @@
   font-size: 4rem;
 }
 
-.mat-icon {
-  height: 4rem;
-  width: 4rem;
-  color: rgba(0, 0, 0, .54);
-}
+.verify-email {
 
-.title {
-  font-size: 20px;
-  margin-top: 16px;
-}
+  width: 360px;
 
-.subtitle{
-  margin: 16px auto;
-  max-width: 300px;
-  color: rgba(0,0,0,.54);
-  font-size: 15px;
-  text-align: center;
+  .mat-icon {
+    height: 4rem;
+    width: 4rem;
+    color: #444;
+  }
+
+  .title {
+    margin-top: 16px;
+    .mat-subheading-2 {
+      margin-bottom: 0;
+    }
+  }
+
+  .subtitle {
+    margin: 16px auto;
+    text-align: justify;
+  }
 
   p {
     display: block;
@@ -28,4 +32,15 @@
     -webkit-margin-end: 0px;
   }
 
+  mat-card-actions {
+    text-align: center;
+    margin-top: 1rem;
+    .action-button {
+      width: 100%;
+    }
+    .action-button + .action-button {
+      margin-top: 1rem;
+    }
+  }
 }
+

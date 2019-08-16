@@ -1,34 +1,24 @@
+import { MatPasswordStrengthComponent, MatPasswordStrengthModule } from '@angular-material-extensions/password-strength';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { CUSTOM_ELEMENTS_SCHEMA, DebugElement, SimpleChange } from '@angular/core';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule, MatCardModule, MatDialogModule, MatDividerModule, MatIconModule, MatInputModule, MatProgressBarModule, MatSnackBarModule, MatTabsModule } from '@angular/material';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterTestingModule } from '@angular/router/testing';
 import 'core-js/es7/reflect'; // needed for unit testing
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-import {CUSTOM_ELEMENTS_SCHEMA, DebugElement, SimpleChange} from '@angular/core';
+import { NgxAuthFirebaseUIConfigToken, UserProvidedConfigToken } from '../../../module/ngx-auth-firebase-u-i.module';
+import { ngxAuthFirebaseUIConfigFactory } from '../../interfaces/config.interface';
+import { AuthProcessService } from '../../services/auth-process.service';
+import { FirestoreSyncService } from '../../services/firestore-sync.service';
+import { AngularFireAuthStub, FirestoreStub } from '../../tests/helper';
+import { EmailConfirmationComponent } from '../email-confirmation/email-confirmation.component';
+import { AuthComponent } from './auth.component';
 
-import {
-  MatButtonModule,
-  MatCardModule,
-  MatDialogModule,
-  MatDividerModule,
-  MatIconModule,
-  MatInputModule,
-  MatProgressBarModule,
-  MatSnackBarModule,
-  MatTabsModule
-} from '@angular/material';
-import {NoopAnimationsModule} from '@angular/platform-browser/animations';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {BehaviorSubject} from 'rxjs/internal/BehaviorSubject';
-import {FlexLayoutModule} from '@angular/flex-layout';
-import {HttpClientTestingModule} from '@angular/common/http/testing';
-import {AngularFireModule} from '@angular/fire';
-import {AngularFirestore} from '@angular/fire/firestore';
-import {AngularFireAuth} from '@angular/fire/auth';
-import {MatPasswordStrengthComponent, MatPasswordStrengthModule} from '@angular-material-extensions/password-strength';
-import {AuthComponent} from './auth.component';
-import {AuthProcessService} from '../../services/auth-process.service';
-import {FirestoreSyncService} from '../../services/firestore-sync.service';
-import {NgxAuthFirebaseUIConfigToken, UserProvidedConfigToken} from '../../../module/ngx-auth-firebase-u-i.module';
-import {ngxAuthFirebaseUIConfigFactory} from '../../interfaces/config.interface';
-import {EmailConfirmationComponent} from '../email-confirmation/email-confirmation.component';
-import {AngularFireAuthStub, FirestoreStub} from '../../tests/helper';
 
 describe('AuthComponent', function () {
   let de: DebugElement;
@@ -64,6 +54,7 @@ describe('AuthComponent', function () {
         MatProgressBarModule,
         MatPasswordStrengthModule,
         MatDividerModule,
+        RouterTestingModule
       ],
       providers: [
         HttpClientTestingModule,

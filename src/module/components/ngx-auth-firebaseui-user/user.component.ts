@@ -1,12 +1,12 @@
-import {Component, EventEmitter, Inject, Input, Output, forwardRef} from '@angular/core';
-import {AngularFireAuth} from '@angular/fire/auth';
-import {MatFormFieldAppearance, MatSnackBar} from '@angular/material';
-import {AuthProcessService} from '../../services/auth-process.service';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {EMAIL_REGEX, PHONE_NUMBER_REGEX} from '../ngx-auth-firebaseui/auth.component';
-import {User} from 'firebase';
-import {FirestoreSyncService} from '../../services/firestore-sync.service';
-import {NgxAuthFirebaseUIConfig, NgxAuthFirebaseUIConfigToken} from '../../ngx-auth-firebase-u-i.module';
+import { Component, EventEmitter, forwardRef, Inject, Input, Output } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatFormFieldAppearance, MatSnackBar } from '@angular/material';
+import { User } from 'firebase';
+import { NgxAuthFirebaseUIConfig, NgxAuthFirebaseUIConfigToken } from '../../ngx-auth-firebase-u-i.module';
+import { AuthProcessService } from '../../services/auth-process.service';
+import { FirestoreSyncService } from '../../services/firestore-sync.service';
+import { EMAIL_REGEX, PHONE_NUMBER_REGEX } from '../ngx-auth-firebaseui/auth.component';
 
 @Component({
   selector: 'ngx-auth-firebaseui-user',
@@ -123,13 +123,13 @@ export class UserComponent {
         }
 
       } catch (error) {
-        error.message ? this.snackBar.open(error.message, 'Ok') : this.snackBar.open(error, 'Ok');
+        this.authProcess.showToast(error && error.message ? error.message : error);
         console.error(error);
       }
 
 
       if (snackBarMsg.length > 0) {
-        this.snackBar.open(snackBarMsg.join('\\n'), 'Ok');
+        this.authProcess.showToast(snackBarMsg.join('\\n'));
       }
       // this.updateFormGroup.reset();
     }
@@ -162,14 +162,10 @@ export class UserComponent {
       this.onAccountDeleted.emit();
       this.editMode = false;
       console.log('Your account has been successfully deleted!');
-      this.snackBar.open('Your account has been successfully deleted!', 'OK', {
-        duration: 5000
-      })
+      this.authProcess.showToast('Your account has been successfully deleted!');
     } catch (error) {
       console.log('Error while delete user account', error);
-      this.snackBar.open(`Error occurred while deleting your account: ${error.message}`, 'OK', {
-        duration: 5000
-      })
+      this.authProcess.showToast(`Error occurred while deleting your account: ${error.message}`);
     }
   }
 }
