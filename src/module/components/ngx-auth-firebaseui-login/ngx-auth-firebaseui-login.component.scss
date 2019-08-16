@@ -112,9 +112,12 @@ ngx-auth-firebaseui-login {
       }
 
       button {
-
-        &.google,
-        &.facebook {
+        &.google-raised,
+        &.facebook-raised,
+        &.twitter-raised,
+        &.github-raised,
+        &.microsoft-raised,
+        &.yahoo-raised {
           width: 192px;
           text-transform: none;
           color: #FFFFFF;
@@ -124,14 +127,6 @@ ngx-auth-firebaseui-login {
 
         @media screen and (max-width: 599px) {
           width: 80%;
-        }
-
-        &.google {
-          background-color: #D73D32;
-        }
-
-        &.facebook {
-          background-color: rgb(63, 92, 154);
         }
       }
     }
