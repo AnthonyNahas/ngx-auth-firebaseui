@@ -1,7 +1,7 @@
 import {Component, EventEmitter, Inject, Input, OnInit, Output, PLATFORM_ID, ViewEncapsulation} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {MatFormFieldAppearance} from '@angular/material';
-import {AuthProcessService, AuthProvider} from '../../..';
+import {AuthProcessService, AuthProvider} from '../../services/auth-process.service';
 import {Subscription} from 'rxjs';
 
 @Component({
