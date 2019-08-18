@@ -1,4 +1,4 @@
-<div [ngSwitch]="theme">
+<div [ngSwitch]="theme" [@animateStagger]="{ value: '50' }">
 
   <!--default icon buttons-->
   <div *ngSwitchDefault
@@ -6,6 +6,7 @@
        fxLayout.xs="column"
        [fxLayoutAlign]="layout == 'row' ? 'space-around center' : 'stretch'">
     <button *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Google)"
+            [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}"
             mat-button
             [ngClass.xs]="{'space-full-xs':true}"
             (click)="authProcess.signInWith(authProvider.Google)">
@@ -13,6 +14,7 @@
       Google
     </button>
     <button *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Facebook)"
+            [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}"
             mat-button
             class="facebook-filled"
             [ngClass.xs]="{'space-full-xs':true}"
@@ -21,6 +23,7 @@
       Facebook
     </button>
     <button *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Twitter)"
+            [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}"
             mat-button
             class="twitter-filled"
             [ngClass.xs]="{'space-full-xs':true}"
@@ -29,6 +32,7 @@
       Twitter
     </button>
     <button *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Github)"
+            [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}"
             mat-button
             [ngClass.xs]="{'space-full-xs':true}"
             (click)="authProcess.signInWith(authProvider.Github)">
@@ -36,6 +40,7 @@
       GitHub
     </button>
     <button *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Microsoft)"
+            [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}"
             mat-button
             [ngClass.xs]="{'space-full-xs':true}"
             (click)="authProcess.signInWith(authProvider.Microsoft)">
@@ -58,6 +63,7 @@
        fxLayout.xs="column"
        [fxLayoutAlign]="layout == 'row' ? 'space-around center' : 'stretch'">
     <button *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Google)"
+            [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}"
             mat-button
             class="google-classic"
             [ngClass.xs]="{'space-full-xs':true}"
@@ -65,6 +71,7 @@
       Google
     </button>
     <button *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Facebook)"
+            [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}"
             mat-button
             class="facebook-classic"
             [ngClass.xs]="{'space-full-xs':true}"
@@ -72,6 +79,7 @@
       Facebook
     </button>
     <button *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Twitter)"
+            [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}"
             mat-button
             class="twitter-classic"
             [ngClass.xs]="{'space-full-xs':true}"
@@ -79,6 +87,7 @@
       Twitter
     </button>
     <button *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Github)"
+            [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}"
             mat-button
             class="github-classic"
             [ngClass.xs]="{'space-full-xs':true}"
@@ -86,6 +95,7 @@
       GitHub
     </button>
     <button *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Microsoft)"
+            [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}"
             mat-button
             class="microsoft-classic"
             [ngClass.xs]="{'space-full-xs':true}"
@@ -93,6 +103,7 @@
       Microsoft
     </button>
     <button *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Yahoo)"
+            [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}"
             mat-button
             class="yahoo-classic"
             [ngClass.xs]="{'space-full-xs':true}"
@@ -108,6 +119,7 @@
        fxLayout.xs="column"
        [fxLayoutAlign]="layout == 'row' ? 'space-around center' : 'stretch'">
     <button *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Google)"
+            [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}"
             mat-stroked-button
             class="google-classic"
             [ngClass.xs]="{'space-full-xs':true}"
@@ -115,6 +127,7 @@
       Google
     </button>
     <button *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Facebook)"
+            [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}"
             mat-stroked-button
             class="facebook-classic"
             [ngClass.xs]="{'space-full-xs':true}"
@@ -122,6 +135,7 @@
       Facebook
     </button>
     <button *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Twitter)"
+            [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}"
             mat-stroked-button
             class="twitter-classic"
             [ngClass.xs]="{'space-full-xs':true}"
@@ -129,6 +143,7 @@
       Twitter
     </button>
     <button *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Github)"
+            [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}"
             mat-stroked-button
             class="github-classic"
             [ngClass.xs]="{'space-full-xs':true}"
@@ -136,6 +151,7 @@
       GitHub
     </button>
     <button *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Microsoft)"
+            [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}"
             mat-stroked-button
             class="microsoft-classic"
             [ngClass.xs]="{'space-full-xs':true}"
@@ -143,6 +159,7 @@
       Microsoft
     </button>
     <button *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Yahoo)"
+            [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}"
             mat-stroked-button
             class="yahoo-classic"
             [ngClass.xs]="{'space-full-xs':true}"
@@ -158,6 +175,7 @@
        fxLayout.xs="column"
        [fxLayoutAlign]="layout == 'row' ? 'space-around center' : 'stretch'">
     <button *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Google)"
+            [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}"
             mat-raised-button
             class="google-raised"
             [ngClass.xs]="{'space-full-xs':true}"
@@ -165,6 +183,7 @@
       Google
     </button>
     <button *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Facebook)"
+            [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}"
             mat-raised-button
             class="facebook-raised"
             [ngClass.xs]="{'space-full-xs':true}"
@@ -172,6 +191,7 @@
       Facebook
     </button>
     <button *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Twitter)"
+            [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}"
             mat-raised-button
             class="twitter-raised"
             [ngClass.xs]="{'space-full-xs':true}"
@@ -179,6 +199,7 @@
       Twitter
     </button>
     <button *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Github)"
+            [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}"
             mat-raised-button
             class="github-raised"
             [ngClass.xs]="{'space-full-xs':true}"
@@ -186,6 +207,7 @@
       GitHub
     </button>
     <button *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Microsoft)"
+            [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}"
             mat-raised-button
             class="microsoft-raised"
             [ngClass.xs]="{'space-full-xs':true}"
@@ -193,6 +215,7 @@
       Microsoft
     </button>
     <button *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Yahoo)"
+            [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}"
             mat-raised-button
             class="yahoo-raised"
             [ngClass.xs]="{'space-full-xs':true}"

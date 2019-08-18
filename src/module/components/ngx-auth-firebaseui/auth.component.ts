@@ -24,6 +24,7 @@ import {LegalityDialogComponent} from '../../components/legality-dialog/legality
 import {LegalityDialogParams, LegalityDialogResult} from '../../interfaces/legality.dialog.intreface';
 import {NgxAuthFirebaseUIConfig, NgxAuthFirebaseUIConfigToken} from '../../ngx-auth-firebase-u-i.module';
 import {MatPasswordStrengthComponent} from '@angular-material-extensions/password-strength';
+import {NgxAuthFirebaseuiAnimations} from '../../animations';
 
 
 export const EMAIL_REGEX = new RegExp(['^(([^<>()[\\]\\\.,;:\\s@\"]+(\\.[^<>()\\[\\]\\\.,;:\\s@\"]+)*)',
@@ -36,7 +37,8 @@ export const PHONE_NUMBER_REGEX = new RegExp(/^\+(?:[0-9] ?){6,14}[0-9]$/);
 @Component({
   selector: 'ngx-auth-firebaseui',
   templateUrl: 'auth.component.html',
-  styleUrls: ['auth.component.scss']
+  styleUrls: ['auth.component.scss'],
+  animations: NgxAuthFirebaseuiAnimations
 })
 export class AuthComponent implements OnInit, AfterViewInit, OnChanges, OnDestroy {
 

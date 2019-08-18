@@ -3,12 +3,14 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {MatFormFieldAppearance} from '@angular/material';
 import {AuthProcessService, AuthProvider} from '../../services/auth-process.service';
 import {Subscription} from 'rxjs';
+import {NgxAuthFirebaseuiAnimations} from '../../animations';
 
 @Component({
   selector: 'ngx-auth-firebaseui-login',
   templateUrl: './ngx-auth-firebaseui-login.component.html',
   styleUrls: ['./ngx-auth-firebaseui-login.component.scss'],
   encapsulation: ViewEncapsulation.None,
+  animations: NgxAuthFirebaseuiAnimations
 })
 export class NgxAuthFirebaseuiLoginComponent implements OnInit {
 

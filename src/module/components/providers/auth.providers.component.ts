@@ -2,6 +2,7 @@ import {Component, Input, Output} from '@angular/core';
 import {DomSanitizer} from '@angular/platform-browser';
 import {MatIconRegistry} from '@angular/material';
 import {AuthProcessService, AuthProvider} from '../../services/auth-process.service';
+import {NgxAuthFirebaseuiAnimations} from '../../animations';
 
 export enum Theme {
   DEFAULT = 'default',
@@ -20,7 +21,8 @@ export enum Layout {
 @Component({
   selector: 'ngx-auth-firebaseui-providers',
   templateUrl: 'auth.providers.component.html',
-  styleUrls: ['auth.providers.component.scss']
+  styleUrls: ['auth.providers.component.scss'],
+  animations: NgxAuthFirebaseuiAnimations
 })
 export class AuthProvidersComponent {
 
