@@ -48,6 +48,7 @@
       Microsoft
     </button>
     <button *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Yahoo)"
+            [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}"
             mat-button
             [ngClass.xs]="{'space-full-xs':true}"
             (click)="authProcess.signInWith(authProvider.Yahoo)">
@@ -230,36 +231,42 @@
        [fxLayout]="layout"
        [fxLayoutAlign]="layout == 'row' ? 'space-around center' : 'stretch'">
     <button *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Google)"
+            [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}"
             mat-fab
             class="google-raised"
             (click)="authProcess.signInWith(authProvider.Google)">
       <mat-icon svgIcon="google"></mat-icon>
     </button>
     <button *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Facebook)"
+            [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}"
             mat-fab
             class="facebook-raised"
             (click)="authProcess.signInWith(authProvider.Facebook)">
       <mat-icon svgIcon="facebook"></mat-icon>
     </button>
     <button *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Twitter)"
+            [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}"
             mat-fab
             class="twitter-raised"
             (click)="authProcess.signInWith(authProvider.Twitter)">
       <mat-icon svgIcon="twitter"></mat-icon>
     </button>
     <button *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Github)"
+            [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}"
             mat-fab
             class="github-raised"
             (click)="authProcess.signInWith(authProvider.Github)">
       <mat-icon svgIcon="github"></mat-icon>
     </button>
     <button *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Microsoft)"
+            [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}"
             mat-fab
             class="microsoft"
             (click)="authProcess.signInWith(authProvider.Microsoft)">
       <mat-icon svgIcon="microsoft"></mat-icon>
     </button>
     <button *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Yahoo)"
+            [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}"
             mat-fab
             class="yahoo-raised"
             (click)="authProcess.signInWith(authProvider.Yahoo)">
@@ -274,6 +281,7 @@
        fxLayoutAlign.xs="center center"
        [fxLayoutAlign]="layout == 'row' ? 'space-around center' : 'stretch'">
     <button *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Google)"
+            [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}"
             mat-mini-fab
             class="google-raised"
             fxFlexAlign="center"
@@ -281,30 +289,35 @@
       <mat-icon svgIcon="google"></mat-icon>
     </button>
     <button *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Facebook)"
+            [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}"
             mat-mini-fab
             class="facebook-raised"
             (click)="authProcess.signInWith(authProvider.Facebook)">
       <mat-icon svgIcon="facebook"></mat-icon>
     </button>
     <button *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Twitter)"
+            [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}"
             mat-mini-fab
             class="twitter-raised"
             (click)="authProcess.signInWith(authProvider.Twitter)">
       <mat-icon svgIcon="twitter" class="icon-white"></mat-icon>
     </button>
     <button *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Github)"
+            [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}"
             mat-mini-fab
             class="github-raised"
             (click)="authProcess.signInWith(authProvider.Github)">
       <mat-icon svgIcon="github"></mat-icon>
     </button>
     <button *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Microsoft)"
+            [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}"
             mat-mini-fab
             class="microsoft"
             (click)="authProcess.signInWith(authProvider.Microsoft)">
       <mat-icon svgIcon="microsoft"></mat-icon>
     </button>
     <button *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Yahoo)"
+            [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}"
             mat-mini-fab
             class="yahoo-raised"
             (click)="authProcess.signInWith(authProvider.Yahoo)">
