@@ -98,7 +98,7 @@
     "gulp-file": "0.4.0",
     "gulp-git": "^2.9.0",
     "gulp-hub": "0.8.0",
-    "gulp-imagemin": "^4.1.0",
+    "gulp-imagemin": "^6.1.0",
     "gulp-inline-ng2-template": "^5.0.1",
     "gulp-tslint": "^8.1.4",
     "gulp-util": "3.0.8",
