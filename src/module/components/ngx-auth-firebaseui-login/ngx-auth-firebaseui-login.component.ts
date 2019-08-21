@@ -1,9 +1,10 @@
 import {Component, EventEmitter, Inject, Input, OnInit, Output, PLATFORM_ID, ViewEncapsulation} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {MatFormFieldAppearance} from '@angular/material';
+import {MatFormFieldAppearance, ThemePalette} from '@angular/material';
 import {AuthProcessService, AuthProvider} from '../../services/auth-process.service';
 import {Subscription} from 'rxjs';
 import {NgxAuthFirebaseuiAnimations} from '../../animations';
+import {isPlatformBrowser} from '@angular/common';
 
 @Component({
   selector: 'ngx-auth-firebaseui-login',
@@ -47,6 +48,7 @@ export class NgxAuthFirebaseuiLoginComponent implements OnInit {
   loginForm: FormGroup;
   authProviders = AuthProvider;
   onErrorSubscription: Subscription;
+  authenticationError = false;
 
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object,
@@ -56,7 +58,19 @@ export class NgxAuthFirebaseuiLoginComponent implements OnInit {
     this.onError = authProcess.onErrorEmitter;
   }
 
+  get color(): string | ThemePalette {
+    return this.authenticationError ? 'warn' : 'primary';
+  }
+
+  get colorAccent(): string | ThemePalette {
+    return this.authenticationError ? 'warn' : 'accent';
+  }
+
   ngOnInit() {
+
+    if (isPlatformBrowser(this.platformId)) {
+      this.onErrorSubscription = this.onError.subscribe(() => this.authenticationError = true);
+    }
 
     this.updateAuthSnackbarMessages();
 

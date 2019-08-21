@@ -15,7 +15,7 @@
 
         <mat-form-field [appearance]="appearance" [@animate]="{ value: '*', params: { x: '50px' } }">
           <input matInput [placeholder]="emailText" formControlName="email">
-          <mat-icon matSuffix color="primary">email</mat-icon>
+          <mat-icon matSuffix [color]="color">email</mat-icon>
           <mat-error *ngIf="loginForm.get('email').hasError('required')">
             {{emailErrorRequiredText}}
           </mat-error>
@@ -28,7 +28,7 @@
 
         <mat-form-field [appearance]="appearance" [@animate]="{ value: '*', params: { x: '50px' } }">
           <input matInput type="password" [placeholder]="passwordText" formControlName="password">
-          <mat-icon matSuffix color="primary">lock</mat-icon>
+          <mat-icon matSuffix [color]="color">lock</mat-icon>
           <mat-error>
             {{passwordErrorRequiredText}}
           </mat-error>
@@ -46,7 +46,7 @@
                   [@animate]="{ value: '*', params: { x: '-50px' } }"
                   mat-button
                   class="forgot-password"
-                  color="primary"
+                  [color]="color"
                   type="button">
             {{forgotPasswordText}}
           </button>
@@ -54,7 +54,7 @@
 
         <button mat-raised-button
                 id="loginButton"
-                color="accent"
+                [color]="colorAccent"
                 class="submit-button"
                 aria-label="LOG IN"
                 [disabled]="loginForm.invalid"
@@ -82,7 +82,7 @@
         <button [@animate]="{ value: '*', params: { x: '-100px' } }"
                 mat-button
                 id="createAccountButton"
-                color="primary"
+                [color]="color"
                 type="button"
                 (click)="onCreateAccountRequested.emit()">{{createAccountButtonText}}</button>
       </div>
