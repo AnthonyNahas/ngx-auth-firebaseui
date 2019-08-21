@@ -129,4 +129,14 @@ export class NgxAuthFirebaseuiRegisterComponent implements OnInit, OnDestroy {
     this._unsubscribeAll.next();
     this._unsubscribeAll.complete();
   }
+
+  async createAccount() {
+    return await this.authProcess.signUp(
+      this.registerForm.get('name').value,
+      {
+        email: this.registerForm.get('email').value,
+        password: this.registerForm.get('password').value
+      }
+    )
+  }
 }
