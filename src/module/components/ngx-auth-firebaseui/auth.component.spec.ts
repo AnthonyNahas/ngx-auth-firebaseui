@@ -15,7 +15,6 @@ import {
 } from '@angular/material';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {BehaviorSubject} from 'rxjs/internal/BehaviorSubject';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {HttpClientTestingModule} from '@angular/common/http/testing';
 import {AngularFireModule} from '@angular/fire';
@@ -34,7 +33,6 @@ describe('AuthComponent', function () {
   let de: DebugElement;
   let component: AuthComponent;
   let fixture: ComponentFixture<AuthComponent>;
-  let testBedService: AuthProcessService;
   let componentService: AuthProcessService;
 
 
@@ -86,11 +84,6 @@ describe('AuthComponent', function () {
       component.passwordStrength =
         TestBed.createComponent(MatPasswordStrengthComponent).componentInstance;
 
-      testBedService = TestBed.get(AuthProcessService);
-
-      // AuthService provided to the TestBed
-      testBedService = TestBed.get(AuthProcessService);
-
       // AuthService provided by Component, (should return MockAuthService)
       componentService = fixture.debugElement.injector.get(AuthProcessService);
       fixture.detectChanges();
@@ -100,8 +93,6 @@ describe('AuthComponent', function () {
   it('should create components', () => expect(component).toBeDefined());
 
   it('should not call updateAuthSnackbarMessages when the messages input not changed', () => {
-
-    console.log('component.authProcess', testBedService.messageOnAuthSuccess);
 
     const updateAuthSnackbarMessagesSpy = jest.spyOn(component, 'updateAuthSnackbarMessages');
 
