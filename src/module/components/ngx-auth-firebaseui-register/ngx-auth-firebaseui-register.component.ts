@@ -1,8 +1,9 @@
-import {Component, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
+import {Component, Input, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
 import {AbstractControl, FormBuilder, FormGroup, ValidationErrors, ValidatorFn, Validators} from '@angular/forms';
 import {Subject} from 'rxjs';
 import {takeUntil} from 'rxjs/internal/operators';
 import {NgxAuthFirebaseuiAnimations} from '../../animations';
+import {MatFormFieldAppearance} from '@angular/material';
 
 export const confirmPasswordValidator: ValidatorFn = (control: AbstractControl): ValidationErrors | null => {
   if (!control.parent || !control) {
@@ -35,6 +36,10 @@ export const confirmPasswordValidator: ValidatorFn = (control: AbstractControl):
   animations: NgxAuthFirebaseuiAnimations
 })
 export class NgxAuthFirebaseuiRegisterComponent implements OnInit, OnDestroy {
+
+  @Input() logoUrl: string;
+  @Input() appearance: MatFormFieldAppearance;
+
   registerForm: FormGroup;
 
   // Private
