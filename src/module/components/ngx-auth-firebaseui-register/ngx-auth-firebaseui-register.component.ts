@@ -41,6 +41,8 @@ export class NgxAuthFirebaseuiRegisterComponent implements OnInit, OnDestroy {
 
   @Input() logoUrl: string;
   @Input() appearance: MatFormFieldAppearance;
+  @Input() tosUrl: string;
+  @Input() privacyPolicyUrl: string;
 
   // i18n common
   @Input() titleText = 'CREATE AN ACCOUNT';
@@ -49,6 +51,10 @@ export class NgxAuthFirebaseuiRegisterComponent implements OnInit, OnDestroy {
   @Input() createAccountButtonText = 'CREATE AN ACCOUNT';
   @Input() alreadyHaveAccountText = 'Already have an account?';
   @Input() loginButtonText = 'LOGIN';
+
+  // i18n emnameail
+  @Input() nameText = 'Name';
+  @Input() nameErrorRequiredText = 'Name is required';
 
   // i18n email
   @Input() emailText = 'Email';

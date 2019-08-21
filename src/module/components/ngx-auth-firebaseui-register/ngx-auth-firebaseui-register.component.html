@@ -1,5 +1,7 @@
-<div fxLayout="column" id="register">
-  <div fxLayout="column" fxLayoutAlign="center center" id="register-form-wrapper">
+<div id="register" fxLayout="column">
+
+  <div id="register-form-wrapper" fxLayout="column" fxLayoutAlign="center center">
+
     <div id="register-form" [@animateStagger]="{ value: '50' }">
 
       <div *ngIf="logoUrl" class="logo">
@@ -8,12 +10,14 @@
 
       <div class="title" [@animate]="{ value: '*', params: { x: '-50px' } }">{{titleText}}</div>
 
-      <form [formGroup]="registerForm" name="registerForm" novalidate>
+      <form [formGroup]="registerForm" name="registerForm" novalidate
+            [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}">
+
         <mat-form-field [appearance]="appearance" [@animate]="{ value: '*', params: { x: '50px' } }">
-          <input formControlName="name" matInput placeholder="Name"/>
+          <input formControlName="name" matInput [placeholder]="nameText"/>
           <mat-icon matSuffix [color]="color">person</mat-icon>
           <mat-error>
-            Name is required
+            {{nameErrorRequiredText}}
           </mat-error>
         </mat-form-field>
 
@@ -51,7 +55,9 @@
           </mat-error>
         </mat-form-field>
 
-        <div class="terms" fxLayout="row" fxLayoutAlign="center center">
+        <div *ngIf="this.tosUrl || this.privacyPolicyUrl"
+             class="terms"
+             fxLayout="row" fxLayoutAlign="center center">
           <mat-checkbox aria-label="I read and accept" name="terms" required>
             <span>{{readAncAcceptText}}</span>
           </mat-checkbox>
@@ -72,6 +78,7 @@
         <span class="text">{{alreadyHaveAccountText}}</span>
         <button mat-button [color]="colorAccent">{{loginButtonText}}</button>
       </div>
+
     </div>
   </div>
 </div>
