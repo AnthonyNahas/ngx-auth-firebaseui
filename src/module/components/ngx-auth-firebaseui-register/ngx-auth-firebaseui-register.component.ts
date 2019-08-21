@@ -40,6 +40,26 @@ export class NgxAuthFirebaseuiRegisterComponent implements OnInit, OnDestroy {
   @Input() logoUrl: string;
   @Input() appearance: MatFormFieldAppearance;
 
+  // i18n common
+  @Input() titleText = 'CREATE AN ACCOUNT';
+  @Input() readAncAcceptText = 'I read and accept';
+  @Input() termsAndConditionsText = 'terms and conditions';
+  @Input() createAccountButtonText = 'CREATE AN ACCOUNT';
+  @Input() alreadyHaveAccountText = 'Already have an account?';
+  @Input() loginButtonText = 'LOGIN';
+
+  // i18n email
+  @Input() emailText = 'Email';
+  @Input() emailErrorRequiredText = 'Email is required';
+  @Input() emailErrorPatternText = 'Please enter a valid email address';
+
+  // i18n password
+  @Input() passwordText = 'Password';
+  @Input() passwordErrorRequiredText = 'Password is required';
+  @Input() passwordConfirmationText = 'Password Confirmation';
+  @Input() passwordConfirmationErrorRequiredText = 'Password confirmation is required';
+  @Input() passwordErrorMatchText = 'Password must match';
+
   registerForm: FormGroup;
 
   // Private
