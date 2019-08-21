@@ -135,4 +135,8 @@ ngx-auth-firebaseui-register {
       }
     }
   }
+  ::ng-deep .mat-checkbox-label {
+    display: flex;
+    flex-wrap: wrap;
+  }
 }

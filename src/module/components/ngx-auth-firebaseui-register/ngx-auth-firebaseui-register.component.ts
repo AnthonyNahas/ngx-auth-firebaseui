@@ -1,4 +1,4 @@
-import {Component, Inject, Input, OnDestroy, OnInit, Output, PLATFORM_ID, ViewEncapsulation} from '@angular/core';
+import {Component, EventEmitter, Inject, Input, OnDestroy, OnInit, Output, PLATFORM_ID, ViewEncapsulation} from '@angular/core';
 import {AbstractControl, FormBuilder, FormGroup, ValidationErrors, ValidatorFn, Validators} from '@angular/forms';
 import {MatFormFieldAppearance, ThemePalette} from '@angular/material';
 import {Subject, Subscription} from 'rxjs';
@@ -72,6 +72,7 @@ export class NgxAuthFirebaseuiRegisterComponent implements OnInit, OnDestroy {
   // Events
   @Output() onSuccess: any;
   @Output() onError: any;
+  @Output() onLoginRequested: EventEmitter<void> = new EventEmitter<void>();
 
   registerForm: FormGroup;
   onErrorSubscription: Subscription;
