@@ -1,4 +1,4 @@
-import {Component, Inject, Input, OnDestroy, OnInit, Output, PLATFORM_ID} from '@angular/core';
+import {Component, Inject, Input, OnDestroy, OnInit, Output, PLATFORM_ID, ViewEncapsulation} from '@angular/core';
 import {AbstractControl, FormBuilder, FormGroup, ValidationErrors, ValidatorFn, Validators} from '@angular/forms';
 import {MatFormFieldAppearance, ThemePalette} from '@angular/material';
 import {Subject, Subscription} from 'rxjs';
@@ -35,6 +35,7 @@ export const confirmPasswordValidator: ValidatorFn = (control: AbstractControl):
   selector: 'ngx-auth-firebaseui-register',
   templateUrl: './ngx-auth-firebaseui-register.component.html',
   styleUrls: ['./ngx-auth-firebaseui-register.component.scss'],
+  encapsulation: ViewEncapsulation.None,
   animations: NgxAuthFirebaseuiAnimations
 })
 export class NgxAuthFirebaseuiRegisterComponent implements OnInit, OnDestroy {

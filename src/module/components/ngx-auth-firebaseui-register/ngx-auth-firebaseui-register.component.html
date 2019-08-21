@@ -74,9 +74,16 @@
         </button>
       </form>
 
-      <div class="register" fxLayout="column" fxLayoutAlign="center center">
-        <span class="text">{{alreadyHaveAccountText}}</span>
-        <button mat-button [color]="colorAccent">{{loginButtonText}}</button>
+      <div class="register" fxLayout="column" fxLayoutAlign="center center"
+           [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}">
+        <span class="text" [@animate]="{ value: '*', params: { x: '100px' } }">
+          {{alreadyHaveAccountText}}
+        </span>
+        <button mat-button
+                [color]="colorAccent"
+                [@animate]="{ value: '*', params: { x: '-100px' } }">
+          {{loginButtonText}}
+        </button>
       </div>
 
     </div>
