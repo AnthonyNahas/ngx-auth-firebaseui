@@ -6,13 +6,14 @@ import {HttpClientTestingModule} from '@angular/common/http/testing';
 import {MatButtonModule, MatIconModule, MatSnackBarModule} from '@angular/material';
 import {AuthProvidersComponent, Layout} from './auth.providers.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
-import {AuthProvider, AuthProcessService} from '../../services/auth-process.service';
+import {AuthProcessService, AuthProvider} from '../../services/auth-process.service';
 import {FirestoreSyncService} from '../../services/firestore-sync.service';
 import {AngularFireModule} from '@angular/fire';
 import {BehaviorSubject} from 'rxjs/internal/BehaviorSubject';
 import {AngularFirestore} from '@angular/fire/firestore';
 import {AngularFireAuth} from '@angular/fire/auth';
 import {NgxAuthFirebaseUIConfigToken} from '../../ngx-auth-firebase-u-i.module';
+import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 
 describe('AuthProvidersComponent', function () {
   let de: DebugElement;
@@ -77,7 +78,14 @@ describe('AuthProvidersComponent', function () {
     });
 
     TestBed.configureTestingModule({
-      imports: [HttpClientTestingModule, FlexLayoutModule, MatButtonModule, MatIconModule, MatSnackBarModule],
+      imports: [
+        NoopAnimationsModule,
+        HttpClientTestingModule,
+        FlexLayoutModule,
+        MatButtonModule,
+        MatIconModule,
+        MatSnackBarModule
+      ],
       declarations: [AuthProvidersComponent],
       providers: [
         HttpClientTestingModule,

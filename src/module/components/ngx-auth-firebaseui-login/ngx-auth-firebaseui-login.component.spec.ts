@@ -1,26 +1,25 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-
-import {NgxAuthFirebaseuiLoginComponent} from './ngx-auth-firebaseui-login.component';
+import {HttpClientTestingModule} from '@angular/common/http/testing';
+import {By} from '@angular/platform-browser';
+import {CUSTOM_ELEMENTS_SCHEMA, DebugElement} from '@angular/core';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {ReactiveFormsModule} from '@angular/forms';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {MatButtonModule, MatCheckboxModule, MatDialogModule, MatIconModule, MatInputModule, MatSnackBarModule} from '@angular/material';
-import {HttpClientTestingModule} from '@angular/common/http/testing';
+import {AngularFireModule} from '@angular/fire';
+import {AngularFirestore} from '@angular/fire/firestore';
+import {AngularFireAuth} from '@angular/fire/auth';
+
+import {NgxAuthFirebaseuiLoginComponent} from './ngx-auth-firebaseui-login.component';
 import {AuthProcessService} from '../../services/auth-process.service';
 import {FirestoreSyncService} from '../../services/firestore-sync.service';
 import {NgxAuthFirebaseUIConfigToken, UserProvidedConfigToken} from '../../../module/ngx-auth-firebase-u-i.module';
-import {AngularFireModule} from '@angular/fire';
-import {AngularFirestore} from '@angular/fire/firestore';
 import {AngularFireAuthStub, FirestoreStub} from '../../tests/helper';
-import {AngularFireAuth} from '@angular/fire/auth';
 import {ngxAuthFirebaseUIConfigFactory} from '../../interfaces/config.interface';
-import {By} from '@angular/platform-browser';
-import {DebugElement} from '@angular/core';
 
 describe('NgxAuthFirebaseuiLoginComponent', () => {
   let component: NgxAuthFirebaseuiLoginComponent;
   let fixture: ComponentFixture<NgxAuthFirebaseuiLoginComponent>;
-  let testBedService: AuthProcessService;
   let componentService: AuthProcessService;
 
   beforeEach(async(() => {
@@ -35,6 +34,7 @@ describe('NgxAuthFirebaseuiLoginComponent', () => {
     TestBed.configureTestingModule({
       imports: [
         NoopAnimationsModule,
+        HttpClientTestingModule,
         ReactiveFormsModule,
         FlexLayoutModule,
         MatDialogModule,
@@ -44,19 +44,23 @@ describe('NgxAuthFirebaseuiLoginComponent', () => {
         MatCheckboxModule,
         MatSnackBarModule,
       ],
+      declarations: [
+        NgxAuthFirebaseuiLoginComponent,
+      ],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
       providers: [
         HttpClientTestingModule,
+        AuthProcessService,
         FirestoreSyncService,
         AngularFireModule,
         {provide: AngularFirestore, useValue: FirestoreStub},
         {provide: AngularFireAuth, useValue: AngularFireAuthStub},
         {provide: UserProvidedConfigToken, useValue: {}},
         {provide: NgxAuthFirebaseUIConfigToken, useFactory: ngxAuthFirebaseUIConfigFactory, deps: [UserProvidedConfigToken]},
-        AuthProcessService
-      ],
-      declarations: [NgxAuthFirebaseuiLoginComponent]
+      ]
     })
       .compileComponents().then(() => {
+
       fixture = TestBed.createComponent(NgxAuthFirebaseuiLoginComponent);
       component = fixture.componentInstance;
 
