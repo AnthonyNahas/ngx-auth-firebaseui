@@ -56,19 +56,19 @@
         </mat-form-field>
 
         <!--        <div *ngIf="this.tosUrl || this.privacyPolicyUrl"-->
-        <div
-          class="terms"
-          fxLayout="row" fxLayoutAlign="center center"
-          [@animate]="{value:'*',params:{duration:'250ms',y:'100px'}}">
-          <mat-checkbox aria-label="I read and accept" name="terms" required>
-            <span>{{readAncAcceptText}}</span>
-            <span>&nbsp;</span>
-            <a target="_blank"
-               [href]="this.tosUrl">
-              Terms of Service and Conditions
-            </a>
-          </mat-checkbox>
-        </div>
+<!--        <div-->
+<!--          class="terms"-->
+<!--          fxLayout="row" fxLayoutAlign="center center"-->
+<!--          [@animate]="{value:'*',params:{duration:'250ms',y:'100px'}}">-->
+<!--          <mat-checkbox aria-label="I read and accept" name="terms" required>-->
+<!--            <span>{{readAncAcceptText}}</span>-->
+<!--            <span>&nbsp;</span>-->
+<!--            <a target="_blank"-->
+<!--               [href]="this.tosUrl">-->
+<!--              Terms of Service and Conditions-->
+<!--            </a>-->
+<!--          </mat-checkbox>-->
+<!--        </div>-->
 
         <button
           [disabled]="registerForm.invalid"
