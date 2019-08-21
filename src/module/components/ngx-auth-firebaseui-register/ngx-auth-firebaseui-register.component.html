@@ -11,7 +11,7 @@
       <form [formGroup]="registerForm" name="registerForm" novalidate>
         <mat-form-field [appearance]="appearance" [@animate]="{ value: '*', params: { x: '50px' } }">
           <input formControlName="name" matInput placeholder="Name"/>
-          <mat-icon matSuffix color="primary">person</mat-icon>
+          <mat-icon matSuffix [color]="color">person</mat-icon>
           <mat-error>
             Name is required
           </mat-error>
@@ -19,7 +19,7 @@
 
         <mat-form-field [appearance]="appearance" [@animate]="{ value: '*', params: { x: '50px' } }">
           <input formControlName="email" matInput [placeholder]="emailText"/>
-          <mat-icon matSuffix color="primary">email</mat-icon>
+          <mat-icon matSuffix [color]="color">email</mat-icon>
           <mat-error *ngIf="registerForm.get('email').hasError('required')">
             {{emailErrorRequiredText}}
           </mat-error>
@@ -30,7 +30,7 @@
 
         <mat-form-field [appearance]="appearance" [@animate]="{ value: '*', params: { x: '50px' } }">
           <input formControlName="password" matInput [placeholder]="passwordText" type="password"/>
-          <mat-icon matSuffix color="primary">lock</mat-icon>
+          <mat-icon matSuffix [color]="color">lock</mat-icon>
           <mat-error>
             {{passwordErrorRequiredText}}
           </mat-error>
@@ -38,7 +38,7 @@
 
         <mat-form-field [appearance]="appearance" [@animate]="{ value: '*', params: { x: '50px' } }">
           <input formControlName="passwordConfirm" matInput [placeholder]="passwordConfirmationText" type="password"/>
-          <mat-icon matSuffix color="primary">lock</mat-icon>
+          <mat-icon matSuffix [color]="color">lock</mat-icon>
           <mat-error *ngIf="registerForm.get('passwordConfirm').hasError('required')">
             {{passwordConfirmationErrorRequiredText}}
           </mat-error>
@@ -55,14 +55,14 @@
           <mat-checkbox aria-label="I read and accept" name="terms" required>
             <span>{{readAncAcceptText}}</span>
           </mat-checkbox>
-          <button mat-button color="primary">{{termsAndConditionsText}}</button>
+          <button mat-button [color]="color">{{termsAndConditionsText}}</button>
         </div>
 
         <button
           [disabled]="registerForm.invalid"
           aria-label="CREATE AN ACCOUNT"
           class="submit-button"
-          color="accent"
+          [color]="colorAccent"
           mat-raised-button>
           {{createAccountButtonText}}
         </button>
@@ -70,7 +70,7 @@
 
       <div class="register" fxLayout="column" fxLayoutAlign="center center">
         <span class="text">{{alreadyHaveAccountText}}</span>
-        <button mat-button color="accent">{{loginButtonText}}</button>
+        <button mat-button [color]="colorAccent">{{loginButtonText}}</button>
       </div>
     </div>
   </div>

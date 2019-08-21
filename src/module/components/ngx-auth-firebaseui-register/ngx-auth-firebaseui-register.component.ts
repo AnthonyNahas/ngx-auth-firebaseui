@@ -1,9 +1,12 @@
-import {Component, Input, OnDestroy, OnInit, ViewEncapsulation} from '@angular/core';
+import {Component, Inject, Input, OnDestroy, OnInit, Output, PLATFORM_ID} from '@angular/core';
 import {AbstractControl, FormBuilder, FormGroup, ValidationErrors, ValidatorFn, Validators} from '@angular/forms';
-import {Subject} from 'rxjs';
+import {MatFormFieldAppearance, ThemePalette} from '@angular/material';
+import {Subject, Subscription} from 'rxjs';
 import {takeUntil} from 'rxjs/internal/operators';
+
 import {NgxAuthFirebaseuiAnimations} from '../../animations';
-import {MatFormFieldAppearance} from '@angular/material';
+import {AuthProcessService} from '../../services/auth-process.service';
+import {isPlatformBrowser} from '@angular/common';
 
 export const confirmPasswordValidator: ValidatorFn = (control: AbstractControl): ValidationErrors | null => {
   if (!control.parent || !control) {
@@ -32,7 +35,6 @@ export const confirmPasswordValidator: ValidatorFn = (control: AbstractControl):
   selector: 'ngx-auth-firebaseui-register',
   templateUrl: './ngx-auth-firebaseui-register.component.html',
   styleUrls: ['./ngx-auth-firebaseui-register.component.scss'],
-  encapsulation: ViewEncapsulation.None,
   animations: NgxAuthFirebaseuiAnimations
 })
 export class NgxAuthFirebaseuiRegisterComponent implements OnInit, OnDestroy {
@@ -60,19 +62,40 @@ export class NgxAuthFirebaseuiRegisterComponent implements OnInit, OnDestroy {
   @Input() passwordConfirmationErrorRequiredText = 'Password confirmation is required';
   @Input() passwordErrorMatchText = 'Password must match';
 
+  // Events
+  @Output() onSuccess: any;
+  @Output() onError: any;
+
   registerForm: FormGroup;
+  onErrorSubscription: Subscription;
+  authenticationError = false;
 
   // Private
   private _unsubscribeAll: Subject<any>;
 
-  constructor(private _formBuilder: FormBuilder) {
+  constructor(@Inject(PLATFORM_ID) private platformId: Object,
+              private _formBuilder: FormBuilder,
+              public authProcess: AuthProcessService) {
     // Configure the layout
 
     // Set the private defaults
     this._unsubscribeAll = new Subject();
+    this.onSuccess = authProcess.onSuccessEmitter;
+    this.onError = authProcess.onErrorEmitter;
+  }
+
+  get color(): string | ThemePalette {
+    return this.authenticationError ? 'warn' : 'primary';
+  }
+
+  get colorAccent(): string | ThemePalette {
+    return this.authenticationError ? 'warn' : 'accent';
   }
 
   ngOnInit(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      this.onErrorSubscription = this.onError.subscribe(() => this.authenticationError = true);
+    }
     this.registerForm = this._formBuilder.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
