@@ -71,8 +71,9 @@
         <!--        </div>-->
 
         <button mat-raised-button
-                aria-label="CREATE AN ACCOUNT"
+                id="createAccountButton"
                 class="submit-button"
+                aria-label="CREATE AN ACCOUNT"
                 [color]="colorAccent"
                 [disabled]="registerForm.invalid"
                 (click)="createAccount()">

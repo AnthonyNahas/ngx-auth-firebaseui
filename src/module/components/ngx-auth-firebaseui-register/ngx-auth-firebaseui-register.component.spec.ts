@@ -106,25 +106,28 @@ describe('NgxAuthFirebaseuiRegisterComponent', () => {
     expect(errors['required']).toBeFalsy();
   });
 
-  it('login form validity', () => {
+  it('register form validity', () => {
     expect(component.registerForm.valid).toBeFalsy();
+    component.registerForm.controls['name'].setValue('Test XYZ');
     component.registerForm.controls['email'].setValue('test@test.com');
     component.registerForm.controls['password'].setValue('123456789');
+    component.registerForm.controls['passwordConfirm'].setValue('123456789');
     expect(component.registerForm.valid).toBeTruthy();
   });
 
-  it('should login button be disabled if the login form is invalid', () => {
-    const loginButton: DebugElement = fixture.debugElement.query(By.css('#loginButton'));
-    expect(loginButton.nativeElement.disabled).toBeTruthy();
-    console.log('loginButton', loginButton);
+  it('should create account button be disabled if the register form is invalid', () => {
+    const createAccountButton: DebugElement = fixture.debugElement.query(By.css('#createAccountButton'));
+    expect(createAccountButton.nativeElement.disabled).toBeTruthy();
   });
 
   it('should create button be enabled if the register form is valid', () => {
-    const loginButton: DebugElement = fixture.debugElement.query(By.css('#loginButton'));
+    const createAccountButton: DebugElement = fixture.debugElement.query(By.css('#createAccountButton'));
+    component.registerForm.controls['name'].setValue('Test XYZ');
     component.registerForm.controls['email'].setValue('test@test.com');
     component.registerForm.controls['password'].setValue('123456789');
+    component.registerForm.controls['passwordConfirm'].setValue('123456789');
     fixture.detectChanges();
-    expect(loginButton.nativeElement.disabled).toBeFalsy();
+    expect(createAccountButton.nativeElement.disabled).toBeFalsy();
   });
 
 });
