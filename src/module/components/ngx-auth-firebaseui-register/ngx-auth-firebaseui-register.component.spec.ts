@@ -1,29 +1,29 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
-
+import {CUSTOM_ELEMENTS_SCHEMA, DebugElement} from '@angular/core';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing'
+import {HttpClientTestingModule} from '@angular/common/http/testing';
+import {By} from '@angular/platform-browser';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {ReactiveFormsModule} from '@angular/forms';
 import {FlexLayoutModule} from '@angular/flex-layout';
+
 import {MatButtonModule, MatCheckboxModule, MatDialogModule, MatIconModule, MatInputModule, MatSnackBarModule} from '@angular/material';
-import {HttpClientTestingModule} from '@angular/common/http/testing';
-import {
-  AuthProcessService,
-  FirestoreSyncService,
-  NgxAuthFirebaseUIConfigToken,
-  NgxAuthFirebaseuiRegisterComponent,
-  UserProvidedConfigToken
-} from '../../..';
+
 import {AngularFireModule} from '@angular/fire';
 import {AngularFirestore} from '@angular/fire/firestore';
-import {AngularFireAuthStub, FirestoreStub} from '../../tests/helper';
 import {AngularFireAuth} from '@angular/fire/auth';
+
+import {NgxAuthFirebaseuiRegisterComponent} from './ngx-auth-firebaseui-register.component';
+import {AuthProcessService} from '../../services/auth-process.service';
+import {FirestoreSyncService} from '../../services/firestore-sync.service';
+import {NgxAuthFirebaseUIConfigToken, UserProvidedConfigToken} from '../../../module/ngx-auth-firebase-u-i.module';
+
+import {AngularFireAuthStub, FirestoreStub} from '../../tests/helper';
 import {ngxAuthFirebaseUIConfigFactory} from '../../interfaces/config.interface';
-import {By} from '@angular/platform-browser';
-import {DebugElement} from '@angular/core';
+
 
 describe('NgxAuthFirebaseuiRegisterComponent', () => {
   let component: NgxAuthFirebaseuiRegisterComponent;
   let fixture: ComponentFixture<NgxAuthFirebaseuiRegisterComponent>;
-  let testBedService: AuthProcessService;
   let componentService: AuthProcessService;
 
   beforeEach(async(() => {
@@ -57,6 +57,7 @@ describe('NgxAuthFirebaseuiRegisterComponent', () => {
         {provide: NgxAuthFirebaseUIConfigToken, useFactory: ngxAuthFirebaseUIConfigFactory, deps: [UserProvidedConfigToken]},
         AuthProcessService
       ],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA],
       declarations: [NgxAuthFirebaseuiRegisterComponent]
     })
       .compileComponents().then(() => {
@@ -76,12 +77,12 @@ describe('NgxAuthFirebaseuiRegisterComponent', () => {
   });
 
   it('login form invalid when empty', () => {
-    expect(component.loginForm.valid).toBeFalsy();
+    expect(component.registerForm.valid).toBeFalsy();
   });
 
   it('email field validity', () => {
     let errors = {};
-    const email = component.loginForm.controls['email'];
+    const email = component.registerForm.controls['email'];
     errors = email.errors || {};
     expect(errors['required']).toBeTruthy();
     expect(email.valid).toBeFalsy();
@@ -94,7 +95,7 @@ describe('NgxAuthFirebaseuiRegisterComponent', () => {
 
   it('password field validity', () => {
     let errors = {};
-    const password = component.loginForm.controls['password'];
+    const password = component.registerForm.controls['password'];
     errors = password.errors || {};
     expect(errors['required']).toBeTruthy();
     expect(password.valid).toBeFalsy();
@@ -106,10 +107,10 @@ describe('NgxAuthFirebaseuiRegisterComponent', () => {
   });
 
   it('login form validity', () => {
-    expect(component.loginForm.valid).toBeFalsy();
-    component.loginForm.controls['email'].setValue('test@test.com');
-    component.loginForm.controls['password'].setValue('123456789');
-    expect(component.loginForm.valid).toBeTruthy();
+    expect(component.registerForm.valid).toBeFalsy();
+    component.registerForm.controls['email'].setValue('test@test.com');
+    component.registerForm.controls['password'].setValue('123456789');
+    expect(component.registerForm.valid).toBeTruthy();
   });
 
   it('should login button be disabled if the login form is invalid', () => {
@@ -120,8 +121,8 @@ describe('NgxAuthFirebaseuiRegisterComponent', () => {
 
   it('should create button be enabled if the register form is valid', () => {
     const loginButton: DebugElement = fixture.debugElement.query(By.css('#loginButton'));
-    component.loginForm.controls['email'].setValue('test@test.com');
-    component.loginForm.controls['password'].setValue('123456789');
+    component.registerForm.controls['email'].setValue('test@test.com');
+    component.registerForm.controls['password'].setValue('123456789');
     fixture.detectChanges();
     expect(loginButton.nativeElement.disabled).toBeFalsy();
   });
