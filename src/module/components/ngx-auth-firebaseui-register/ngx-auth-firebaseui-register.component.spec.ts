@@ -130,4 +130,14 @@ describe('NgxAuthFirebaseuiRegisterComponent', () => {
     expect(createAccountButton.nativeElement.disabled).toBeFalsy();
   });
 
+  it('should trigger onLoginRequested event when its requested via the login button', () => {
+    const createAccountButton = fixture.nativeElement.querySelector('#loginButton');
+    spyOn(component.onLoginRequested, 'emit');
+    createAccountButton.dispatchEvent(new Event('click'));
+    fixture.detectChanges();
+
+    expect(component.onLoginRequested.emit).toHaveBeenCalled();
+
+  });
+
 });
