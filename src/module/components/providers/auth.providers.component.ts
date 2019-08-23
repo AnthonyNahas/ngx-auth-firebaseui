@@ -24,7 +24,7 @@ export enum Layout {
 })
 export class AuthProvidersComponent {
 
-  @Input() theme: string; // theme: string = Theme.DEFAULT;
+  @Input() theme: Theme; // theme: string = Theme.DEFAULT;
   @Input() layout: string = Layout.ROW;
   @Input() providers: string[] | string = AuthProvider.ALL; //  google, facebook, twitter, github, microsoft, yahoo
 

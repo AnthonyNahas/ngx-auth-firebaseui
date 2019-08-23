@@ -64,7 +64,7 @@ export class AuthComponent implements OnInit, AfterViewInit, OnChanges, OnDestro
   @Input() sendNewVerificationEmailText: string;
   @Input() signOutText: string;
 
-  @Input() providers: AuthProvider[] | AuthProvider; //  google, facebook, twitter, github as array or all as one single string
+  @Input() providers: AuthProvider[] | AuthProvider = AuthProvider.ALL; //  google, facebook, twitter, github as array or all as one single string
   @Input() providersTheme: Theme; // Classic, Stroked, etc.
 
   @Input() appearance: MatFormFieldAppearance;
