@@ -28,6 +28,7 @@ import {NgxAuthFirebaseUIConfigToken, UserProvidedConfigToken} from '../../../mo
 import {ngxAuthFirebaseUIConfigFactory} from '../../interfaces/config.interface';
 import {EmailConfirmationComponent} from '../email-confirmation/email-confirmation.component';
 import {AngularFireAuthStub, FirestoreStub} from '../../tests/helper';
+import {RouterTestingModule} from '@angular/router/testing';
 
 describe('AuthComponent', function () {
   let de: DebugElement;
@@ -62,6 +63,7 @@ describe('AuthComponent', function () {
         MatProgressBarModule,
         MatPasswordStrengthModule,
         MatDividerModule,
+        RouterTestingModule
       ],
       providers: [
         HttpClientTestingModule,

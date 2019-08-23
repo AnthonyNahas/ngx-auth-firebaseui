@@ -1,24 +1,22 @@
+// @angular/*
 import {CommonModule} from '@angular/common';
 import {InjectionToken, ModuleWithProviders, NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
-import {AuthComponent} from './components/ngx-auth-firebaseui/auth.component';
-import {UserComponent} from './components/ngx-auth-firebaseui-user/user.component';
-import {AuthProvidersComponent} from './components/providers/auth.providers.component';
-import {EmailConfirmationComponent} from './components/email-confirmation/email-confirmation.component';
-import {NgxAuthFirebaseUIConfig, ngxAuthFirebaseUIConfigFactory} from './interfaces/config.interface';
-import {FirestoreSyncService} from './services/firestore-sync.service';
-import {AuthProcessService} from './services/auth-process.service';
+import {RouterModule} from '@angular/router';
+import {FlexLayoutModule} from '@angular/flex-layout';
+// @angular/fire
 import {FirebaseAppConfig, FirebaseNameOrConfigToken, FirebaseOptionsToken} from '@angular/fire';
 import {AngularFireAuthModule} from '@angular/fire/auth';
-import {FlexLayoutModule} from '@angular/flex-layout';
+import {AngularFirestoreModule} from '@angular/fire/firestore';
+// @angular/material
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatDividerModule} from '@angular/material/divider';
-import {MatIconModule} from '@angular/material/icon';
+import {MatIconModule, MatIconRegistry} from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
@@ -26,33 +24,50 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatTooltipModule} from '@angular/material/tooltip';
-import {AngularFirestoreModule} from '@angular/fire/firestore';
+
 import {MatPasswordStrengthModule} from '@angular-material-extensions/password-strength';
-import {LegalityDialogComponent} from './components/legality-dialog/legality-dialog.component';
-import {LoggedInGuard} from './guards/logged-in.guard';
-import {NgxAuthFirebaseuiAvatarComponent} from './components/ngx-auth-firebaseui-avatar/ngx-auth-firebaseui-avatar.component';
-import {RouterModule} from '@angular/router';
+
+
 import {NgxAuthFirebaseuiLoginComponent} from './components/ngx-auth-firebaseui-login/ngx-auth-firebaseui-login.component';
 import {NgxAuthFirebaseuiRegisterComponent} from './components/ngx-auth-firebaseui-register/ngx-auth-firebaseui-register.component';
 
+
+import {DomSanitizer} from '@angular/platform-browser';
+// ngx-auth-firebaseui
+// components
+import {AuthComponent} from './components/ngx-auth-firebaseui/auth.component';
+import {UserComponent} from './components/ngx-auth-firebaseui-user/user.component';
+import {AuthProvidersComponent} from './components/providers/auth.providers.component';
+import {EmailConfirmationComponent} from './components/email-confirmation/email-confirmation.component';
+import {NgxAuthFirebaseUIConfig, ngxAuthFirebaseUIConfigFactory} from './interfaces/config.interface';
+import {NgxAuthFirebaseuiAvatarComponent} from './components/ngx-auth-firebaseui-avatar/ngx-auth-firebaseui-avatar.component';
+import {LegalityDialogComponent} from './components/legality-dialog/legality-dialog.component';
+// guards
+import {LoggedInGuard} from './guards/logged-in.guard';
+// interfaces
+
+// services
+import {FirestoreSyncService} from './services/firestore-sync.service';
+import {AuthProcessService} from './services/auth-process.service';
+// ###################################################################################################
 // Export module's public API
 // components
-export {AuthComponent} from './components/ngx-auth-firebaseui/auth.component';
-export {UserComponent} from './components/ngx-auth-firebaseui-user/user.component';
-export {NgxAuthFirebaseuiAvatarComponent, LinkMenuItem} from './components/ngx-auth-firebaseui-avatar/ngx-auth-firebaseui-avatar.component';
-export {AuthProvidersComponent, Theme, Layout} from './components/providers/auth.providers.component';
 export {LegalityDialogComponent} from './components/legality-dialog/legality-dialog.component';
+export {LinkMenuItem, NgxAuthFirebaseuiAvatarComponent} from './components/ngx-auth-firebaseui-avatar/ngx-auth-firebaseui-avatar.component';
+export {UserComponent} from './components/ngx-auth-firebaseui-user/user.component';
+export {AuthComponent} from './components/ngx-auth-firebaseui/auth.component';
+export {AuthProvidersComponent, Layout, Theme} from './components/providers/auth.providers.component';
 export {NgxAuthFirebaseuiLoginComponent} from './components/ngx-auth-firebaseui-login/ngx-auth-firebaseui-login.component';
 export {NgxAuthFirebaseuiRegisterComponent} from './components/ngx-auth-firebaseui-register/ngx-auth-firebaseui-register.component';
 
-// services
-export {AuthProcessService, AuthProvider} from './services/auth-process.service';
-export {FirestoreSyncService} from './services/firestore-sync.service';
 
 // guards
 export {LoggedInGuard} from './guards/logged-in.guard';
 // interfaces
 export {NgxAuthFirebaseUIConfig} from './interfaces/config.interface';
+// services
+export {AuthProcessService, AuthProvider} from './services/auth-process.service';
+export {FirestoreSyncService} from './services/firestore-sync.service';
 
 
 // This token is the official token containing the final configuration; ie. the merge between default and user provided configurations
@@ -149,5 +164,22 @@ export class NgxAuthFirebaseUIModule {
           LoggedInGuard
         ]
     };
+  }
+
+  constructor(private _iconRegistry: MatIconRegistry, private _sanitizer: DomSanitizer, _auth: AuthProcessService) {
+    _auth.listenToUserEvents();
+    this.registerProviderIcons();
+  }
+
+  registerProviderIcons() {
+    this._iconRegistry
+      .addSvgIcon('google', this._sanitizer.bypassSecurityTrustResourceUrl('/assets/mdi/google.svg'))
+      .addSvgIcon('google-colored', this._sanitizer.bypassSecurityTrustResourceUrl('/assets/google.svg'))
+      .addSvgIcon('facebook', this._sanitizer.bypassSecurityTrustResourceUrl('/assets/mdi/facebook.svg'))
+      .addSvgIcon('twitter', this._sanitizer.bypassSecurityTrustResourceUrl('/assets/mdi/twitter.svg'))
+      .addSvgIcon('github', this._sanitizer.bypassSecurityTrustResourceUrl('/assets/mdi/github-circle.svg'))
+      .addSvgIcon('microsoft', this._sanitizer.bypassSecurityTrustResourceUrl('/assets/mdi/microsoft.svg'))
+      .addSvgIcon('yahoo', this._sanitizer.bypassSecurityTrustResourceUrl('/assets/mdi/yahoo.svg'))
+      .addSvgIcon('phone', this._sanitizer.bypassSecurityTrustResourceUrl('/assets/phone.svg'));
   }
 }
