@@ -522,6 +522,7 @@ Once the library is imported, you can use its components, directives and pipes i
 
 ### `<ngx-auth-firebaseui></ngx-auth-firebaseui>`
 
+[open docs]()
 
 ### `<ngx-auth-firebaseui-providers></ngx-auth-firebaseui-providers>`
 ```html
@@ -544,62 +545,14 @@ Once the library is imported, you can use its components, directives and pipes i
 
 ### `<ngx-auth-firebaseui-avatar></ngx-auth-firebaseui-avatar>`
 
-```html
-<ngx-auth-firebaseui-avatar></ngx-auth-firebaseui-avatar>
-```
-
-<p align="center">
-  <img alt="ngx-auth-firebaseui-logo.png" width="384px" style="text-align: center;" 
-  src="assets/v3.0.0/avatar.png">
-</p>
+[open docs]()
 
 <a name="api"/>
 
 ## API
 
 ###  `<ngx-auth-firebaseui></ngx-auth-firebaseui>`
-
-
-
 ### `<ngx-auth-firebaseui-providers></ngx-auth-firebaseui-providers>`
-
-| option | bind  |  type  |   default    | description  |
-|:---------------------|:------:|:------:|:------------:|:-------------------------------------------------------------------------------------------------|
-| layout     | `Input()` | `string`     | `row` | set the layout of the providers buttons options: 'column' or 'row'
-| theme      | `Input()` | `string`     | `default` | set the theme of the providers buttons options: '', 'classic', 'stroked', 'fab', 'mini-fab', 'raised',
-| onSuccess  | `Output()`| `any`     | - | this will be fired when an authentication process was success. The authenticated user is emitted!
-| onError    | `Output()`| `any`     | - | this event will be fired when an error occurred during the authentication process! An error message is emitted!
-
-e.g: in template:
-```html
-<ngx-auth-firebaseui-providers [theme]="themes.CLASSIC"></ngx-auth-firebaseui-providers>
-<ngx-auth-firebaseui-providers [theme]="themes.STROKED"></ngx-auth-firebaseui-providers>
-<ngx-auth-firebaseui-providers [theme]="themes.RAISED"></ngx-auth-firebaseui-providers>
-<ngx-auth-firebaseui-providers [theme]="themes.FAB"></ngx-auth-firebaseui-providers>
-<ngx-auth-firebaseui-providers [theme]="themes.MINI_FAB"></ngx-auth-firebaseui-providers>
-```
-
-in your component: 
-
-```typescript
-import {Component} from '@angular/core';
-import {AuthProvider, Theme} from 'ngx-auth-firebaseui';
-
-@Component({
-selector: 'app-root',
-templateUrl: './app.component.html',
-styleUrls: ['./app.component.css']
-})
-export class AppComponent {
-
-  themes = Theme;
-}
-```
-
-<p align="center">
-  <img alt="auth providers themes for ngx-auth-firebaseui" width="384px" style="text-align: center;" 
-  src="assets/v3.0.0/providers.png">
-</p>
 
 ### `<ngx-auth-firebaseui-user></ngx-auth-firebaseui-user>`
 
@@ -614,32 +567,6 @@ export class AppComponent {
 
 ### `<ngx-auth-firebaseui-avatar></ngx-auth-firebaseui-avatar>`
 
-| option | bind  |  type  |   default    | description  |
-|:---------------------|:------:|:------:|:------------:|:-------------------------------------------------------------------------------------------------|
-| canLogout          | `Input()` | `boolean`     | true | whether to render the logout button
-| links              | `Input()` | `LinkMenuItem[]`    | - | additional routes and links to add to the component
-| onSignOut          | `Output()`| void        | - | this will be fired when the user signs out
-
-
-```ts
-
-import {LinkMenuItem} from 'ngx-auth-firebaseui';
-
-links: LinkMenuItem[];
-
- ngOnInit(): void {
-    this.links = [
-      {icon: 'home', text: 'Home', callback: this.printLog},
-      {icon: 'favorite', text: 'Favorite', callback: this.printLog},
-      {icon: 'add', text: 'Add', callback: this.printLog},
-    ];
-  }
-
-```
-
-```html
-<ngx-auth-firebaseui-avatar [links]="links"></ngx-auth-firebaseui-avatar>
-```
 
 ### EXTRA TIP: Login Authentication Guard
 

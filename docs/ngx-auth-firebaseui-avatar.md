@@ -55,14 +55,65 @@ by starring :star: and sharing it :loudspeaker:
 
 
 
+<a name="overview"/>
+
+## Overview `<ngx-auth-firebaseui-avatar>` used to display/edit the data of the current authenticated user in the toolbar 
+
+<a name="usage"/>
+
+## Usage
+
+```html
+<ngx-auth-firebaseui-avatar></ngx-auth-firebaseui-avatar>
+```
+
+<p align="center">
+  <img alt="ngx-auth-firebaseui-logo.png" width="384px" style="text-align: center;" 
+  src="assets/v3.0.0/avatar.png">
+</p>
 
 
+or more advanced
+
+```html
+<mat-toolbar color="primary">
+  <span>Your Title</span>
+  <span fxFlex></span>
+  <ngx-auth-firebaseui-avatar></ngx-auth-firebaseui-avatar>
+</mat-toolbar>
+```
+
+<a name="api"/>
+
+## API
 
 
+| option | bind  |  type  |   default    | description  |
+|:---------------------|:------:|:------:|:------------:|:-------------------------------------------------------------------------------------------------|
+| canLogout          | `Input()` | `boolean`     | true | whether to render the logout button
+| links              | `Input()` | `LinkMenuItem[]`    | - | additional routes and links to add to the component
+| onSignOut          | `Output()`| void        | - | this will be fired when the user signs out
 
 
+```ts
 
+import {LinkMenuItem} from 'ngx-auth-firebaseui';
 
+links: LinkMenuItem[];
+
+ ngOnInit(): void {
+    this.links = [
+      {icon: 'home', text: 'Home', callback: this.printLog},
+      {icon: 'favorite', text: 'Favorite', callback: this.printLog},
+      {icon: 'add', text: 'Add', callback: this.printLog},
+    ];
+  }
+
+```
+
+```html
+<ngx-auth-firebaseui-avatar [links]="links"></ngx-auth-firebaseui-avatar>
+```
 
 <a name="other-angular-libraries"/>
 
