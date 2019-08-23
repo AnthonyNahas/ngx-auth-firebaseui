@@ -1,9 +1,4 @@
 // import * as firebase from 'firebase';
-// import GoogleAuthProvider = firebase.auth.GoogleAuthProvider;
-// import FacebookAuthProvider = firebase.auth.FacebookAuthProvider;
-// import TwitterAuthProvider = firebase.auth.TwitterAuthProvider;
-// import GithubAuthProvider = firebase.auth.GithubAuthProvider;
-import AuthProvider = firebase.auth.AuthProvider;
 
 export interface NgxAuthFirebaseUIConfig {
   // authNextURL?: string, // popup or redirect
@@ -34,14 +29,13 @@ export interface NgxAuthFirebaseUIConfig {
 }
 
 export const defaultAuthFirebaseUIConfig: NgxAuthFirebaseUIConfig = {
-
   // authMethod: 'redirect',
   // authProviders: [new GoogleAuthProvider(), new FacebookAuthProvider(), new TwitterAuthProvider(), new GithubAuthProvider()],
-  authGuardFallbackURL: '/',
-  authGuardLoggedInURL: '/',
   enableFirestoreSync: true,
   toastMessageOnAuthSuccess: true,
   toastMessageOnAuthError: true,
+  authGuardFallbackURL: '/',
+  authGuardLoggedInURL: '/',
 
   // Password length min/max in forms independently of each componenet min/max.
   // `min/max` input parameters in components should be within this range.

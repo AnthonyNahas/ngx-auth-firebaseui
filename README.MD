@@ -95,6 +95,7 @@ by starring :star: and sharing it :loudspeaker:
 | Edit user's phone `number` (incl. validation)    | :heavy_check_mark:    |  :x:                   |
 | Configure your favorite auth provider in runtime| :heavy_check_mark:   |  :x:                   |
 | Sync user'auth with Firestore  [read more](FIRESTORE_SYNC.md)   | :heavy_check_mark:    |  :x:  |
+| Animations                                     | :heavy_check_mark:    |  :x:                   |
 | Angular v2-8 friendly                          | :heavy_check_mark:    |  :x:                   |
 | Internationalization (i18n)                    | :heavy_check_mark:    |  :heavy_check_mark:    |
 | Ionic/cordova support                          | :soon:  @firebaseui/ionic-auth |  :x: |
@@ -109,7 +110,7 @@ by starring :star: and sharing it :loudspeaker:
 <a name="why-to-use-ngx-auth-firebaseui"/>
 
 ## Why to use ngx-auth-firebaseui ?
-- :gift_heart: it uses a responsive and accessible web design UX/UI from google material concepts and components (supporting desktop and mobile view).
+- :gift_heart: it uses a responsive and accessible web design UX/UI from google material concepts and components (supporting desktop, tablet and mobile view) incl. smooth animations for a better UX.
 - :lipstick: pick up your own theme! change the primary, accent and warn colors whenever you need (e.g to support light and dark themes)
 - :ship: super easy to use with an angular based project (project that is created with the [angular-cli](https://cli.angular.io/))
 - :soon: optional configuration
@@ -123,15 +124,18 @@ by starring :star: and sharing it :loudspeaker:
 - :fire: [Sync user's authentication with FIRESTORE](FIRESTORE_SYNC.md) **AUTOMATICALLY**
 - :muscle: Forgot Password feature! Go and let your users to recover their passwords easily 
 - :tada: Supports SSR - Server Side Rendering
+- [support of i18n](https://ngx-auth-firebaseui.firebaseapp.com/i18n)
 
 
 <a name="components"/>
 
 ## Library's components
-- `<ngx-auth-firebaseui>` used for the authentication process
-- `<ngx-auth-firebaseui-providers>` used to display only buttons for providers like google, facebook, twitter, github, microsoft and yahoo
-- `<ngx-auth-firebaseui-user>` used to display/edit the data of the current authenticated user in form of a material card
-- `<ngx-auth-firebaseui-avatar>` used to display/edit the data of the current authenticated user in the toolbar
+- `<ngx-auth-firebaseui>` used for the authentication process [see more](docs/ngx-auth-firebaseui.md)
+- `<ngx-auth-firebaseui-register>` standalone registration component to create new accounts [see more]()
+- `<ngx-auth-firebaseui-login>` standalone login component to use already created accounts [see more]()
+- `<ngx-auth-firebaseui-providers>` used to display only buttons for providers like google, facebook, twitter, github, microsoft and yahoo [see more]()
+- `<ngx-auth-firebaseui-user>` used to display/edit the data of the current authenticated user in form of a material card [see more]()
+- `<ngx-auth-firebaseui-avatar>` used to display/edit the data of the current authenticated user in the toolbar [see more]()
 
 <a name="supported-providers"/>
 
@@ -161,14 +165,19 @@ by starring :star: and sharing it :loudspeaker:
 - firestore auto sync :fire:  
 - do not allow users to create new accounts before checking the terms of services and private policy - for mor info check this [here](https://ngx-auth-firebaseui.firebaseapp.com/examples/tos)
 
+## Supported Angular Guards
+- `LoggedInGuard` used to protect angular routes from unauthenticated users (with fallback routes via `NgxAuthFirebaseUIConfig`)
+
 <a name="requirements"/>
 
 - [angular material theme](https://material.angular.io/guide/getting-started#step-4-include-a-theme)
 - [angular material icons](https://material.angular.io/guide/getting-started#step-6-optional-add-material-icons)
+
 - [angular cdk - v8.x](https://www.npmjs.com/package/@angular/cdk)
 - [angular material - v8.x](https://www.npmjs.com/package/@angular/material)
 - [angular forms - v8.x](https://www.npmjs.com/package/@angular/forms)
 - [angular animations - v8.x](https://www.npmjs.com/package/@angular/animations)
+- [angular router - v8.x](https://www.npmjs.com/package/@angular/router)
 - [angular flex-layout v8.0.0-beta.26](https://www.npmjs.com/package/@angular/flex-layout)
 - [@angular/fire - v5.2.x](https://www.npmjs.com/package/@angular/fire)
 - [firebase - v6.x](https://www.npmjs.com/package/firebase)
@@ -223,7 +232,7 @@ v7
 #### after 
 <p align="center">
   <img alt="ngx-auth-firebaseui sign up" width="384px" style="text-align: center;" 
-  src="assets/v1.0.0/png/registered_confirm.png">
+  src="assets/v3.4.0/email_verification.png">
 </p>
 
 #### demo outlook
@@ -232,11 +241,6 @@ v7
   src="assets/v1.0.0/png/registration_full.png">
 </p>
 
-## Screenshots - Client Side Validation <ngx-auth-firebaseui></ngx-auth-firebaseui>
-<p align="center">
-  <img alt="ngx-auth-firebaseui sign up" width="384px" style="text-align: center;" 
-  src="assets/v1.0.0/png/register_validation_errors.png">
-</p>
 
 ## Screenshots  <ngx-auth-firebaseui-provider></ngx-auth-firebaseui-providers>
 
@@ -276,13 +280,6 @@ automatically change to `column`
   src="assets/v1.0.0/png/user_edit_mode.png">
 </p>
 
-## Screenshot - Mobile Browser
-- Sign in - mobile
-
-<p align="center">
-  <img alt="ngx-auth-firebaseui on mobile" width="384px" style="text-align: center;" 
-  src="assets/v1.0.0/png/signin_mobile.png">
-</p>
 
 ## Screenshots - Reset Password
 
@@ -379,7 +376,7 @@ npm install --save ngx-auth-firebaseui
 ```
 
 ```bash
-npm i -s @angular/material @angular/cdk @angular/flex-layout @angular/forms @angular/animations
+npm i -s @angular/material @angular/cdk @angular/flex-layout @angular/forms @angular/animations @angular/router
 ```
 
 Firebase deps
@@ -500,7 +497,10 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
                   passwordMinLength: 8, // Password length min/max in forms independently of each componenet min/max.
                   // Same as password but for the name
                   nameMaxLength: 50,
-                  nameMinLength: 2
+                  nameMinLength: 2,
+                  // If set, sign-in/up form is not available until email has been verified.
+                  // Plus protected routes are still protected even though user is connected.
+                  guardProtectedRoutesUntilEmailIsVerified: true
                 }),
   ],
   providers: [],
@@ -522,39 +522,6 @@ Once the library is imported, you can use its components, directives and pipes i
 
 ### `<ngx-auth-firebaseui></ngx-auth-firebaseui>`
 
-```html
-<!-- You can now use the library component in app.component.html  -->
-
-<ngx-auth-firebaseui (onSuccess)="printUser($event)"
-                     (onError)="printError()">
-</ngx-auth-firebaseui>
-```
-or
-```typescript
-<!-- or simply in the app.component.ts -->
-@Component({
-    selector: 'app',
-    template: `
-        <ngx-auth-firebaseui (onSuccess)="printUser($event)" (onError)="printError()"></ngx-auth-firebaseui>`
-})
-class AppComponent {
-
-    printUser(event) {
-        console.log(event);
-    }
-
-    printError(event) {
-        console.error(event);
-    }
-}
-```
-
-#### Result:
-
-<p align="center">
-  <img alt="ngx-auth-firebaseui-logo.png" width="384px" style="text-align: center;" 
-  src="assets/v0.7.1/features/overview/overview.png">
-</p>
 
 ### `<ngx-auth-firebaseui-providers></ngx-auth-firebaseui-providers>`
 ```html
@@ -592,87 +559,7 @@ class AppComponent {
 
 ###  `<ngx-auth-firebaseui></ngx-auth-firebaseui>`
 
-| option | bind  |  type  |   default    | description  |
-|:---------------------|:------:|:------:|:------------:|:-------------------------------------------------------------------------------------------------|
-| providers            | `Input()`  | ``string`[]` | ['all'] or [AuthProvider.All] | choose your favorite authentication provider: google | facebook | twitter | github
-| appearance           | `Input()`  | `MatFormFieldAppearance` | `standard` | the appearance of the mat-form-field #'legacy' | 'standard' | 'fill' | 'outline' 
-| tabIndex             | `Input()`  | `number`  | null; | `0` | the selected tab - either sign in or register
-| registrationEnabled  | `Input()`  | `boolean` | `true` | whether the user is able to register a new account
-| resetPasswordEnabled | `Input()`  | `boolean` | `true` | whether the user is able to reset his account password
-| guestEnabled         | `Input()`  | `boolean` | `true` | whether the user can sign in and continue as guest
-| tosUrl               | `Input()`  | `string`  | - | the url of term of services
-| privacyPolicyUrl     | `Input()`  | `string`  | - | the url of the private privacy
-| goBackURL            | `Input()`  | `string`  | - | the url to redirect to after creating a new user and clicking the `go back` button - the button is only available when the input is provided 
-| messageOnAuthSuccess | `Input()`  | `string`  | see the code -> | the message of the snackbar when the authentication process was successful
-| messageOnAuthError   | `Input()`  | `string`  | see the code -> | the message of the snackbar when the authentication process has failed
-| onSuccess            | `Output()` | `any`     | - | this will be fired when an authentication process was success. The authenticated user is emitted!
-| onError              | `Output()` | `any`     | - | this event will be fired when an error occurred during the authentication process! An error message is emitted!
-| selectedTabChange    | `Output()` | MatTabChangeEvent | - |  output event is emitted when the active tab changes (signin, register and reset password tab)
-| enableLengthRule     | `Input()`  | `boolean`  | `true` | whether to validate the length of the password
-| enableLowerCaseLetterRule      | `Input()`  | `boolean`  | `true` | whether a lowercase letter is optional
-| enableUpperCaseLetterRule      | `Input()`  | `boolean`  | `true` | whether a uppercase letter is optional
-| enableDigitRule      | `Input()`  | `boolean`  | `true` | whether a digit char is optional
-| enableSpecialCharRule      | `Input()`  | `boolean`  | true | whether a special char is optional
-| min      | `Input()`  | ``number``   | 8 | the minimum length of the password
-| max      | `Input()`  | ``number``   | 30 | the maximum length of the password
-| onStrengthChanged  | `Output()` | ``number``    | - | emits the strength of the provided password in % e.g: 20%, 40%, 60%, 80% or 100%
 
-if you prefer to customize the text of this component, check these inputs [here](https://ngx-auth-firebaseui.firebaseapp.com/i18n) that have been used for translations
-
-PS: if either `tosUrl or `privacyPolicyUrl` are provided, the user will be asked to check and accepts tos and pp before registering a new account or sign in in anonymously
-
-### How to disable users to sign in and continue as guest, use the `guestEnabled` input
-
-```html
-<ngx-auth-firebaseui [guestEnabled]="false"
-                     (onSuccess)="printUser($event)"
-                     (onError)="printError($event)">
-</ngx-auth-firebaseui>
-```
-
-Result:
-
-<p align="center">
-  <img alt="disable guests option with ngx-auth-firebaseui" width="384px" style="text-align: center;" 
-  src="assets/v1.1.0/guest_disabled.png">
-</p>
-
-### How to configure your input providers ? [see the examples](https://ngx-auth-firebaseui.firebaseapp.com/examples)
-e.g:
-in your component, import the AuthProvider enum to pick up your favorite provider:
-
-```typescript
-import {OnInit} from '@angular/core';
-import {AuthProvider} from 'ngx-auth-firebaseui';
-
-export class ExampleComponent implements OnInit {
-
-  providers = AuthProvider;
-
-  ngOnInit() {
-  }
-}
-```
-
-in your template -->
-```html
-  <ngx-auth-firebaseui
-  [providers]="[providers.Google, providers.Facebook, providers.Twitter]"
-  (onSuccess)="printUser($event)"
-   (onError)="printError()"></ngx-auth-firebaseui>
-```
-
-or
-
-```html
-  <ngx-auth-firebaseui
-  [providers]="['google', 'facebook', 'twitter']"
-  (onSuccess)="printUser($event)"
-  (onError)="printError()">
-</ngx-auth-firebaseui>
-```
-
-take a look at the full documentation [here](https://ngx-auth-firebaseui.firebaseapp.com/doc/index.html)
 
 ### `<ngx-auth-firebaseui-providers></ngx-auth-firebaseui-providers>`
 
