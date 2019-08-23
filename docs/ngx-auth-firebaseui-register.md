@@ -60,12 +60,12 @@ by starring :star: and sharing it :loudspeaker:
 
 <p align="center">
   <img alt="ngx-auth-firebaseui-logo.png" width="384px" style="text-align: center;" 
-  src="../assets/v3.4.0/ngx-auth-firebaseui-login.png">
+  src="assets/v3.4.0/register.png">
 </p>
 
 <p align="center">
   <img alt="ngx-auth-firebaseui-logo.png" width="384px" style="text-align: center;" 
-  src="../assets/v3.4.0/login.gif">
+  src="../assets/v3.4.0/register.gif">
 </p>
 
 <a name="usage"/>

@@ -58,6 +58,16 @@ by starring :star: and sharing it :loudspeaker:
 
 ## Overview `<ngx-auth-firebaseui-login>` standalone login component to use already created accounts [see more]()
 
+<p align="center">
+  <img alt="ngx-auth-firebaseui-logo.png" width="384px" style="text-align: center;" 
+  src="assets/v3.4.0/ngx-auth-firebaseui-login.png.png">
+</p>
+
+<p align="center">
+  <img alt="ngx-auth-firebaseui-logo.png" width="384px" style="text-align: center;" 
+  src="../assets/v3.4.0/login.gif">
+</p>
+
 <a name="usage"/>
 
 ## Usage
