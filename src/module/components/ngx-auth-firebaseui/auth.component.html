@@ -21,7 +21,7 @@
 
   <ng-template #signedInUser>
       <div class="signed-in-container" fxLayout="column" fxLayoutAlign="center center">
-        <img class="account-circle" *ngIf="user.photoUR; else noPhoto" [src]="user.photoURL">
+        <img class="account-circle" *ngIf="user.photoURL; else noPhoto" [src]="user.photoURL">
         <ng-template #noPhoto><mat-icon class="account-circle">account_circle</mat-icon></ng-template>
         <div class="user-display-name mat-title">{{ user.displayName }}</div>
         <div class="user-email mat-body-2">{{ user.email }}</div>
