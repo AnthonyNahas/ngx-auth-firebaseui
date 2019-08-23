@@ -54,10 +54,86 @@ by starring :star: and sharing it :loudspeaker:
 - [License](#license)
 
 
+## Overview `<ngx-auth-firebaseui-providers>` used to display only buttons for providers like google, facebook, twitter, github, microsoft and yahoo [see more]()
+
+<a name="usage"/>
+
+## Usage
+
+```html
+<!-- You can now use the library component in app.component.html  -->
+<ngx-auth-firebaseui-providers layout="column" thene="outline"></ngx-auth-firebaseui-providers>
+```
+
+<a name="api"/>
+
+## API
+
+
+| option | bind  |  type  |   default    | description  |
+|:---------------------|:------:|:------:|:------------:|:-------------------------------------------------------------------------------------------------|
+| layout     | `Input()` | `string`     | `row` | set the layout of the providers buttons options: 'column' or 'row'
+| theme      | `Input()` | `string`     | `default` | set the theme of the providers buttons options: '', 'classic', 'stroked', 'fab', 'mini-fab', 'raised',
+| onSuccess  | `Output()`| `any`     | - | this will be fired when an authentication process was success. The authenticated user is emitted!
+| onError    | `Output()`| `any`     | - | this event will be fired when an error occurred during the authentication process! An error message is emitted!
+
+e.g: in template:
+```html
+<ngx-auth-firebaseui-providers [theme]="themes.CLASSIC"></ngx-auth-firebaseui-providers>
+<ngx-auth-firebaseui-providers [theme]="themes.STROKED"></ngx-auth-firebaseui-providers>
+<ngx-auth-firebaseui-providers [theme]="themes.RAISED"></ngx-auth-firebaseui-providers>
+<ngx-auth-firebaseui-providers [theme]="themes.FAB"></ngx-auth-firebaseui-providers>
+<ngx-auth-firebaseui-providers [theme]="themes.MINI_FAB"></ngx-auth-firebaseui-providers>
+```
+
+in your component: 
+
+```typescript
+import {Component} from '@angular/core';
+import {AuthProvider, Theme} from 'ngx-auth-firebaseui';
+
+@Component({
+selector: 'app-root',
+templateUrl: './app.component.html',
+styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+
+  themes = Theme;
+}
+```
+
+<p align="center">
+  <img alt="auth providers themes for ngx-auth-firebaseui" width="384px" style="text-align: center;" 
+  src="assets/v3.0.0/providers.png">
+</p>
 
 
 
+#### row layout
+Please note: when the view port is getting too small, the layout will be 
+automatically change to `column`
+<p align="center">
+  <img alt="ngx-auth-firebaseui sign up" width="384px" style="text-align: center;" 
+  src="assets/v3.0.0/providers_column.png">
+</p>
 
+```html
+<!-- You can now use the library component in app.component.html  -->
+<ngx-auth-firebaseui-providers layout="row"></ngx-auth-firebaseui-providers>
+```
+
+#### column layout
+<p align="center">
+  <img alt="ngx-auth-firebaseui sign up" width="384px" style="text-align: center;" 
+  src="assets/v3.0.0/providers_rows.png">
+</p>
+
+
+```html
+<!-- You can now use the library component in app.component.html  -->
+<ngx-auth-firebaseui-providers layout="column"></ngx-auth-firebaseui-providers>
+```
 
 <a name="other-angular-libraries"/>
 

@@ -252,11 +252,6 @@ automatically change to `column`
   src="assets/v3.0.0/providers_column.png">
 </p>
 
-#### column layout
-<p align="center">
-  <img alt="ngx-auth-firebaseui sign up" width="384px" style="text-align: center;" 
-  src="assets/v3.0.0/providers_rows.png">
-</p>
 
 ## Screenshots  <ngx-auth-firebaseui-user></ngx-auth-firebaseui-user>
 - user profile
@@ -525,10 +520,7 @@ Once the library is imported, you can use its components, directives and pipes i
 [open docs]()
 
 ### `<ngx-auth-firebaseui-providers></ngx-auth-firebaseui-providers>`
-```html
-<!-- You can now use the library component in app.component.html  -->
-<ngx-auth-firebaseui-providers layout="column"></ngx-auth-firebaseui-providers>
-```
+
 
 ### `<ngx-auth-firebaseui-user></ngx-auth-firebaseui-user>`
 
