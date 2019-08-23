@@ -52,18 +52,6 @@ export class AuthComponent implements OnInit, AfterViewInit, OnChanges, OnDestro
 
   isLoading: boolean;
 
-  // Verify email template to use in place of default template.
-  // See email-confirmation component
-  @Input() verifyEmailTemplate: TemplateRef<any>;
-
-  // i18n translations to use in default template for email verification.
-  // See email-confirmation component
-  @Input() verifyEmailTitleText: string;
-  @Input() verifyEmailConfirmationText: string;
-  @Input() verifyEmailGoBackText: string;
-  @Input() sendNewVerificationEmailText: string;
-  @Input() signOutText: string;
-
   @Input() providers: AuthProvider[] | AuthProvider = AuthProvider.ALL; //  google, facebook, twitter, github as array or all as one single string
   @Input() providersTheme: Theme; // Classic, Stroked, etc.
 
@@ -94,6 +82,18 @@ export class AuthComponent implements OnInit, AfterViewInit, OnChanges, OnDestro
   @Input() max: number;
   @Input() customValidator: RegExp;
   @Output() onStrengthChanged: EventEmitter<number> = new EventEmitter();
+
+  // Verify email template to use in place of default template.
+  // See email-confirmation component
+  @Input() verifyEmailTemplate: TemplateRef<any>;
+
+  // i18n translations to use in default template for email verification.
+  // See email-confirmation component
+  @Input() verifyEmailTitleText: string;
+  @Input() verifyEmailConfirmationText: string;
+  @Input() verifyEmailGoBackText: string;
+  @Input() sendNewVerificationEmailText: string;
+  @Input() signOutText: string;
 
   // Customize the text
   // Reset Password Tab

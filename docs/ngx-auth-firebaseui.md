@@ -107,19 +107,19 @@ by starring :star: and sharing it :loudspeaker:
 
 ## Examples
 
-[demo - overview - everything you need](https://ngx-auth-firebaseui.firebaseapp.com)
-[i18n](https://ngx-auth-firebaseui.firebaseapp.com/i18n)
-[appearance - how should the inputs looks like](https://ngx-auth-firebaseui.firebaseapp.com/examples/appearance)
-[choose your authentication providers](https://ngx-auth-firebaseui.firebaseapp.com/examples/providers)
-[start with the login or register tab ?](https://ngx-auth-firebaseui.firebaseapp.com/examples/tabIndex)
-[enable/disable the registration tab](https://ngx-auth-firebaseui.firebaseapp.com/examples/registration)
-[is you user allowed to reset his/her password? You can disable the appropriate button](https://ngx-auth-firebaseui.firebaseapp.com/examples/reset-password)
-[Disable the anonymous registration on demand via the guest input](https://ngx-auth-firebaseui.firebaseapp.com/examples/guest)
-[if you are providing a terms of services url, the user should check the checkbox to continue the registration process](https://ngx-auth-firebaseui.firebaseapp.com/examples/tos)
-[customize you auth messages - for the onSuccess and onError events](https://ngx-auth-firebaseui.firebaseapp.com/examples/messages)
-[specify the url to use after authentication](https://ngx-auth-firebaseui.firebaseapp.com/examples/gobackurl)
-[password strengh api - customize the pass strength on your own](https://ngx-auth-firebaseui.firebaseapp.com/examples/password-strength)
-[guards api of the library can be used to protect any angular routes from unanthenticated users](https://ngx-auth-firebaseui.firebaseapp.com/examples/logged-in)
+- [demo - overview - everything you need](https://ngx-auth-firebaseui.firebaseapp.com)
+- [i18n](https://ngx-auth-firebaseui.firebaseapp.com/i18n)
+- [appearance - how should the inputs looks like](https://ngx-auth-firebaseui.firebaseapp.com/examples/appearance)
+- [choose your authentication providers](https://ngx-auth-firebaseui.firebaseapp.com/examples/providers)
+- [start with the login or register tab ?](https://ngx-auth-firebaseui.firebaseapp.com/examples/tabIndex)
+- [enable/disable the registration tab](https://ngx-auth-firebaseui.firebaseapp.com/examples/registration)
+- [is you user allowed to reset his/her password? You can disable the appropriate button](https://ngx-auth-firebaseui.firebaseapp.com/examples/reset-password)
+- [Disable the anonymous registration on demand via the guest input](https://ngx-auth-firebaseui.firebaseapp.com/examples/guest)
+- [if you are providing a terms of services url, the user should check the checkbox to continue the registration process](https://ngx-auth-firebaseui.firebaseapp.com/examples/tos)
+- [customize you auth messages - for the onSuccess and onError events](https://ngx-auth-firebaseui.firebaseapp.com/examples/messages)
+- [specify the url to use after authentication](https://ngx-auth-firebaseui.firebaseapp.com/examples/gobackurl)
+- [password strengh api - customize the pass strength on your own](https://ngx-auth-firebaseui.firebaseapp.com/examples/password-strength)
+- [guards api of the library can be used to protect any angular routes from unanthenticated users](https://ngx-auth-firebaseui.firebaseapp.com/examples/logged-in)
 
 <a name="usage"/>
 
@@ -152,22 +152,15 @@ class AppComponent {
 }
 ```
 
-#### Result:
-
-<p align="center">
-  <img alt="ngx-auth-firebaseui-logo.png" width="384px" style="text-align: center;" 
-  src="../assets/v0.7.1/features/overview/overview.png">
-</p>
-
 <a name="api"/>
 
 ## API
 
 | option | bind  |  type  |   default    | description  |
 |:---------------------|:------:|:------:|:------------:|:-------------------------------------------------------------------------------------------------|
-| providers            | `Input()`  | ``string`[]` | ['all'] or [AuthProvider.All] | choose your favorite authentication provider: google | facebook | twitter | github
+| providers            | `Input()`  | `string[]` | ['all'] or [AuthProvider.All] | choose your favorite authentication provider: google | facebook | twitter | github
 | appearance           | `Input()`  | `MatFormFieldAppearance` | `standard` | the appearance of the mat-form-field #'legacy' | 'standard' | 'fill' | 'outline' 
-| tabIndex             | `Input()`  | `number`  | null; | `0` | the selected tab - either sign in or register
+| tabIndex             | `Input()`  | `number`  | `null`; | `0` | the selected tab - either sign in or register
 | registrationEnabled  | `Input()`  | `boolean` | `true` | whether the user is able to register a new account
 | resetPasswordEnabled | `Input()`  | `boolean` | `true` | whether the user is able to reset his account password
 | guestEnabled         | `Input()`  | `boolean` | `true` | whether the user can sign in and continue as guest
@@ -178,19 +171,72 @@ class AppComponent {
 | messageOnAuthError   | `Input()`  | `string`  | see the code -> | the message of the snackbar when the authentication process has failed
 | onSuccess            | `Output()` | `any`     | - | this will be fired when an authentication process was success. The authenticated user is emitted!
 | onError              | `Output()` | `any`     | - | this event will be fired when an error occurred during the authentication process! An error message is emitted!
-| selectedTabChange    | `Output()` | MatTabChangeEvent | - |  output event is emitted when the active tab changes (signin, register and reset password tab)
+
+if you prefer to customize the text of this component, check these inputs [here](https://ngx-auth-firebaseui.firebaseapp.com/i18n) that have been used for translations
+
+PS: if either `tosUrl` or `privacyPolicyUrl` are provided, the user will be asked to check and accepts tos and pp before registering a new account or sign in in anonymously
+
+### Password strength API 
+
+| option | bind  |  type  |   default    | description  |
+|:---------------------|:------:|:------:|:------------:|:-------------------------------------------------------------------------------------------------|
+| selectedTabChange    | `Output()` | `MatTabChangeEvent` | - |  output event is emitted when the active tab changes (signin, register and reset password tab)
 | enableLengthRule     | `Input()`  | `boolean`  | `true` | whether to validate the length of the password
 | enableLowerCaseLetterRule      | `Input()`  | `boolean`  | `true` | whether a lowercase letter is optional
 | enableUpperCaseLetterRule      | `Input()`  | `boolean`  | `true` | whether a uppercase letter is optional
 | enableDigitRule      | `Input()`  | `boolean`  | `true` | whether a digit char is optional
 | enableSpecialCharRule      | `Input()`  | `boolean`  | true | whether a special char is optional
 | min      | `Input()`  | ``number``   | 8 | the minimum length of the password
-| max      | `Input()`  | ``number``   | 30 | the maximum length of the password
-| onStrengthChanged  | `Output()` | ``number``    | - | emits the strength of the provided password in % e.g: 20%, 40%, 60%, 80% or 100%
+| max      | `Input()`  | ``number``   | 60 | the maximum length of the password
+| onStrengthChanged  | `Output()` | ``number``    | - | emits the strength of the provided password in % e.g: 20%, 40%, 60%, 80% or 100% [learn more](https://github.com/angular-material-extensions/password-strength)
 
-if you prefer to customize the text of this component, check these inputs [here](https://ngx-auth-firebaseui.firebaseapp.com/i18n) that have been used for translations
 
-PS: if either `tosUrl or `privacyPolicyUrl` are provided, the user will be asked to check and accepts tos and pp before registering a new account or sign in in anonymously
+
+### Email Confirmation Component
+
+| option | bind  |  type  |   default    | description  |
+|:---------------------|:------:|:------:|:------------:|:-------------------------------------------------------------------------------------------------|
+|  verifyEmailTemplate      | `Input()`  | `TemplateRef<any>` | `-` | custom template for the email confirmation component 
+|  verifyEmailTitleText      | `Input()`  | `string` | `Confirm your e-mail address!` | - 
+|  verifyEmailConfirmationText      | `Input()`  | `string` | `A confirmation e-mail has been sent. Check your inbox and click on the link "Confirm my e-mail" to confirm your e-mail address.` | - 
+|  verifyEmailGoBackText      | `Input()`  | `string` | `Go back` | - 
+|  sendNewVerificationEmailText      | `Input()`  | `string` | `Send new confirmation e-mail` | - 
+|  signOutText      | `Input()`  | `string` | `Sign out` | - 
+
+
+### i18n
+
+| option | bind  |  type  |   default    | description  |
+|:---------------------|:------:|:------:|:------------:|:-------------------------------------------------------------------------------------------------|
+| resetPasswordTabText            | `Input()`  | `string` | `Reset e-mail address to password` | see context 
+| resetPasswordInputText            | `Input()`  | `string` | `Reset e-mail address to password` | see context 
+| resetPasswordErrorRequiredText            | `Input()`  | `string` | `E-mail is required to reset the password!` | see context 
+| resetPasswordErrorPatternText            | `Input()`  | `string` | `Please enter a valid e-mail address` | see context 
+| resetPasswordActionButtonText          | `Input()`  | `string` | `Reset` | see context 
+| resetPasswordInstructionsText       | `Input()`  | `string` | `Reset requested. Check your e-mail instructions.` | see context 
+| signInTabText      | `Input()`  | `string` | `Sign in` | see context 
+| signInCardTitleText    | `Input()`  | `string` | `Signing in` | see context 
+| loginButtonText       | `Input()`  | `string` | `Log In` | see context 
+| forgotPasswordButtonText      | `Input()`  | `string` | `Forgot Password ?` | see context 
+| nameText       | `Input()`  | `string` | `Name` | see context 
+| nameErrorRequiredText       | `Input()`  | `string` | `Name is required` | see context 
+| nameErrorMinLengthText      | `Input()`  | `string` | `The name is too short!` | see context 
+| nameErrorMaxLengthText       | `Input()`  | `string` | `The name is too long!` | see context 
+| emailText       | `Input()`  | `string` | `E-mail` | see context 
+| emailErrorRequiredText       | `Input()`  | `string` | `E-mail is required` | see context 
+| emailErrorPatternText       | `Input()`  | `string` | `Please enter a valid e-mail address` | see context 
+| passwordText       | `Input()`  | `string` | `Password` | see context 
+| passwordErrorRequiredText       | `Input()`  | `string` | `Password is required` | see context 
+| passwordErrorMinLengthText       | `Input()`  | `string` | `The password is too short!` | see context 
+| passwordErrorMaxLengthText       | `Input()`  | `string` | `The password is too long!` | see context 
+| registerTabText       | `Input()`  | `string` | `Register` | see context 
+| registerCardTitleText       | `Input()`  | `string` | `Registration` | see context 
+| registerButtonText       | `Input()`  | `string` | `Register` | see context 
+| guestButtonText      | `Input()`  | `string` | `continue as guest` | see context 
+| emailConfirmationTitle       | `Input()`  | `string` | `Confirm your e-mail address!` | see context 
+| emailConfirmationText      | `Input()`  | `string` | `A confirmation e-mail has been sent to you. Check your inbox and click on the link "Confirm my e-mail" to confirm your e-mail address.` | see context 
+
+
 
 ### How to disable users to sign in and continue as guest, use the `guestEnabled` input
 
