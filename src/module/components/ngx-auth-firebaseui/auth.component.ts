@@ -219,6 +219,7 @@ export class AuthComponent implements OnInit, AfterViewInit, OnChanges, OnDestro
 
   onTabChange(event: MatTabChangeEvent) {
     this.selectedTabChange.emit(event);
+    this.tabIndex = event.index;
   }
 
   async signOut() {
