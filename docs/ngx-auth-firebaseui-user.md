@@ -53,12 +53,54 @@ by starring :star: and sharing it :loudspeaker:
 - [Support](#support)
 - [License](#license)
 
+<a name="overview"/>
+
+## Overview `<ngx-auth-firebaseui-avatar>` used to display/edit the data of the current authenticated user in the toolbar [see more]()
+
+## Screenshots  <ngx-auth-firebaseui-user></ngx-auth-firebaseui-user>
+- user profile
+
+#### when logged out 
+<p align="center">
+  <img alt="ngx-auth-firebaseui user profile component" width="384px" style="text-align: center;" 
+  src="assets/v1.0.0/png/user_logged_out.png">
+</p>
+
+#### when logged in
+<p align="center">
+  <img alt="ngx-auth-firebaseui user profile component" width="384px" style="text-align: center;" 
+  src="assets/v1.0.0/png/user.png">
+</p>
+
+#### in edit mode
+
+<p align="center">
+  <img alt="ngx-auth-firebaseui edit user component" width="384px" style="text-align: center;" 
+  src="assets/v1.0.0/png/user_edit_mode.png">
+</p>
 
 
+<a name="usage"/>
+
+## Usage
+
+```html
+<ngx-auth-firebaseui-user></ngx-auth-firebaseui-user>
+```
 
 
+<a name="api"/>
 
+## API
 
+| option | bind  |  type  |   default    | description  |
+|:---------------------|:------:|:------:|:------------:|:-------------------------------------------------------------------------------------------------|
+| editMode           | `Input()` | `boolean`     | false | whether the use is in edit mode
+| canLogout          | `Input()` | `boolean`     | true | whether to render the logout button
+| canDeleteAccount   | `Input()` | `boolean`     | true | whether to render the delete account button
+| appearance         | `Input()` | `MatFormFieldAppearance`     | - | the style of the mat-input-form
+| onSignOut          | `Output()`| void        | - | this will be fired when the user signs out
+| onAccountDeleted   | `Output()`| void        | - | this will be fired when the user deletes his account
 
 
 

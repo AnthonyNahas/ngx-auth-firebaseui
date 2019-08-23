@@ -253,14 +253,7 @@ automatically change to `column`
 </p>
 
 
-## Screenshots  <ngx-auth-firebaseui-user></ngx-auth-firebaseui-user>
-- user profile
-
-#### when logged out 
-<p align="center">
-  <img alt="ngx-auth-firebaseui user profile component" width="384px" style="text-align: center;" 
-  src="assets/v1.0.0/png/user_logged_out.png">
-</p>
+##  <ngx-auth-firebaseui-user></ngx-auth-firebaseui-user> | User Profile
 
 #### when logged in
 <p align="center">
@@ -524,9 +517,6 @@ Once the library is imported, you can use its components, directives and pipes i
 
 ### `<ngx-auth-firebaseui-user></ngx-auth-firebaseui-user>`
 
-```html
-<ngx-auth-firebaseui-user></ngx-auth-firebaseui-user>
-```
 
 #### Result:
 
@@ -544,18 +534,10 @@ Once the library is imported, you can use its components, directives and pipes i
 ## API
 
 ###  `<ngx-auth-firebaseui></ngx-auth-firebaseui>`
+
 ### `<ngx-auth-firebaseui-providers></ngx-auth-firebaseui-providers>`
 
 ### `<ngx-auth-firebaseui-user></ngx-auth-firebaseui-user>`
-
-| option | bind  |  type  |   default    | description  |
-|:---------------------|:------:|:------:|:------------:|:-------------------------------------------------------------------------------------------------|
-| editMode           | `Input()` | `boolean`     | false | whether the use is in edit mode
-| canLogout          | `Input()` | `boolean`     | true | whether to render the logout button
-| canDeleteAccount   | `Input()` | `boolean`     | true | whether to render the delete account button
-| appearance         | `Input()` | `MatFormFieldAppearance`     | - | the style of the mat-input-form
-| onSignOut          | `Output()`| void        | - | this will be fired when the user signs out
-| onAccountDeleted   | `Output()`| void        | - | this will be fired when the user deletes his account
 
 ### `<ngx-auth-firebaseui-avatar></ngx-auth-firebaseui-avatar>`
 
