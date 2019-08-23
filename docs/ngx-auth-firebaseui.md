@@ -1,6 +1,6 @@
 <p align="center">
   <img height="256px" width="256px" style="text-align: center;" 
-  src="https://cdn.jsdelivr.net/gh/anthonynahas/ngx-auth-firebaseui@master/demo/src/assets/logo.svg">
+  src="https://cdn.jsdelivr.net/gh/anthonynahas/ngx-auth-firebaseui@master/demo/src/../assets/logo.svg">
 </p>
 
 # ngx-auth-firebaseui - Open Source Library for Angular Web Apps to integrate a material user interface for firebase authentication.
@@ -63,28 +63,28 @@ by starring :star: and sharing it :loudspeaker:
 
 <p align="center">
   <img alt="ngx-auth-firebaseui sign in" width="384px" style="text-align: center;" 
-  src="assets/v3.0.0/demo_full.png">
+  src="../assets/v3.0.0/demo_full.png">
 </p>
 
 #### animation
 
 <p align="center">
   <img alt="ngx-auth-firebaseui sign in" width="384px" style="text-align: center;" 
-  src="assets/v3.4.0/ngx-auth-firebaseui.gif">
+  src="../assets/v3.4.0/ngx-auth-firebaseui.gif">
 </p>
 
 #### Register
 
 <p align="center">
   <img alt="ngx-auth-firebaseui sign up" width="384px" style="text-align: center;" 
-  src="assets/v1.0.0/png/register_filled_2.png">
+  src="../assets/v1.0.0/png/register_filled_2.png">
 </p>
 
 #### i18n
 
 <p align="center">
   <img alt="ngx-auth-firebaseui on mobile" width="384px" style="text-align: center;" 
-  src="assets/v2.7.0/2.gif">
+  src="../assets/v2.7.0/2.gif">
 </p>
 
 
@@ -92,14 +92,14 @@ by starring :star: and sharing it :loudspeaker:
 
 <p align="center">
   <img alt="ngx-auth-firebaseui sign in" width="384px" style="text-align: center;" 
-  src="assets/v3.4.0/email_verification.png">
+  src="../assets/v3.4.0/email_verification.png">
 </p>
 
 #### Screenshots - Client Side Validation <ngx-auth-firebaseui></ngx-auth-firebaseui>
 
 <p align="center">
   <img alt="ngx-auth-firebaseui sign up" width="384px" style="text-align: center;" 
-  src="assets/v1.0.0/png/register_validation_errors.png">
+  src="../assets/v1.0.0/png/register_validation_errors.png">
 </p>
 
 
@@ -156,7 +156,7 @@ class AppComponent {
 
 <p align="center">
   <img alt="ngx-auth-firebaseui-logo.png" width="384px" style="text-align: center;" 
-  src="assets/v0.7.1/features/overview/overview.png">
+  src="../assets/v0.7.1/features/overview/overview.png">
 </p>
 
 <a name="api"/>
@@ -205,7 +205,7 @@ Result:
 
 <p align="center">
   <img alt="disable guests option with ngx-auth-firebaseui" width="384px" style="text-align: center;" 
-  src="assets/v1.1.0/guest_disabled.png">
+  src="../assets/v1.1.0/guest_disabled.png">
 </p>
 
 ### How to configure your input providers ? [see the examples](https://ngx-auth-firebaseui.firebaseapp.com/examples)
@@ -276,7 +276,7 @@ take a look at the full documentation [here](https://ngx-auth-firebaseui.firebas
 
 ---
 
-![jetbrains logo](assets/jetbrains-variant-4_logos/jetbrains-variant-4.png)
+![jetbrains logo](../assets/jetbrains-variant-4_logos/jetbrains-variant-4.png)
 
 This project is supported by [jetbrains](https://www.jetbrains.com/) with 1 ALL PRODUCTS PACK OS LICENSE incl. [webstorm](https://www.jetbrains.com/webstorm)
 
