@@ -1,6 +1,6 @@
 <p align="center">
   <img height="256px" width="256px" style="text-align: center;" 
-  src="https://cdn.jsdelivr.net/gh/anthonynahas/ngx-auth-firebaseui@master/demo/src/assets/logo.svg">
+  src="https://cdn.jsdelivr.net/gh/anthonynahas/ngx-auth-firebaseui@master/demo/src/../assets/logo.svg">
 </p>
 
 # ngx-auth-firebaseui - Open Source Library for Angular Web Apps to integrate a material user interface for firebase authentication.
@@ -105,7 +105,7 @@ export class AppComponent {
 
 <p align="center">
   <img alt="auth providers themes for ngx-auth-firebaseui" width="384px" style="text-align: center;" 
-  src="assets/v3.0.0/providers.png">
+  src="../assets/v3.0.0/providers.png">
 </p>
 
 
@@ -115,7 +115,7 @@ Please note: when the view port is getting too small, the layout will be
 automatically change to `column`
 <p align="center">
   <img alt="ngx-auth-firebaseui sign up" width="384px" style="text-align: center;" 
-  src="assets/v3.0.0/providers_column.png">
+  src="../assets/v3.0.0/providers_column.png">
 </p>
 
 ```html
@@ -126,7 +126,7 @@ automatically change to `column`
 #### column layout
 <p align="center">
   <img alt="ngx-auth-firebaseui sign up" width="384px" style="text-align: center;" 
-  src="assets/v3.0.0/providers_rows.png">
+  src="../assets/v3.0.0/providers_rows.png">
 </p>
 
 
@@ -164,7 +164,7 @@ automatically change to `column`
 
 ---
 
-![jetbrains logo](assets/jetbrains-variant-4_logos/jetbrains-variant-4.png)
+![jetbrains logo](../assets/jetbrains-variant-4_logos/jetbrains-variant-4.png)
 
 This project is supported by [jetbrains](https://www.jetbrains.com/) with 1 ALL PRODUCTS PACK OS LICENSE incl. [webstorm](https://www.jetbrains.com/webstorm)
 

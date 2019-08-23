@@ -54,8 +54,55 @@ by starring :star: and sharing it :loudspeaker:
 - [License](#license)
 
 
+<a name="overview"/>
+
+## Overview `<ngx-auth-firebaseui-login>` standalone login component to use already created accounts [see more]()
+
+<a name="usage"/>
+
+## Usage
+
+```html
+<ngx-auth-firebaseui-login></ngx-auth-firebaseui-login>
+```
+
+<a name="api"/>
+
+## API
 
 
+| option | bind  |  type  |   default    | description  |
+|:---------------------|:------:|:------:|:------------:|:-------------------------------------------------------------------------------------------------|
+| logoUrl            | `Input()`  | `string` | - | choose the source of an image url to display it as a logo
+| providers            | `Input()`  | `string[]` | ['all'] or [AuthProvider.All] | choose your favorite authentication provider: google | facebook | twitter | github
+| appearance           | `Input()`  | `MatFormFieldAppearance` | `standard` | the appearance of the mat-form-field #'legacy' | 'standard' | 'fill' | 'outline'
+| registrationEnabled  | `Input()`  | `boolean` | `true` | whether the user is able to register a new account
+| resetPasswordEnabled | `Input()`  | `boolean` | `true` | whether the user is able to reset his account password
+| messageOnAuthSuccess | `Input()`  | `string`  | see the code -> | the message of the snackbar when the authentication process was successful
+| messageOnAuthError   | `Input()`  | `string`  | see the code -> | the message of the snackbar when the authentication process has failed
+| onSuccess            | `Output()` | `any`     | - | this will be fired when an authentication process was success. The authenticated user is emitted!
+| onError              | `Output()` | `any`     | - | this event will be fired when an error occurred during the authentication process! An error message is emitted!
+| onCreateAccountRequested  | `Output()` | `void`     | - | this event will be fired when the user request to register or sign up 
+
+
+
+### i18n
+
+| option | bind  |  type  |   default    | description  |
+|:---------------------|:------:|:------:|:------------:|:-------------------------------------------------------------------------------------------------|
+|  titleText           | `Input()`  | `string` | `LOGIN TO YOUR ACCOUNT` | see context
+|  rememberMeText          | `Input()`  | `string` | `Remember Me` | see context
+|  loginButtonText           | `Input()`  | `string` | `LOGIN` | see context
+|  orLabelText          | `Input()`  | `string` | `OR` | see context
+|  forgotPasswordText           | `Input()`  | `string` | `Forgot Password?` | see context
+|  dontHaveAnAccountText           | `Input()`  | `string` | `Don't have an account?` | see context
+|  createAccountButtonText           | `Input()`  | `string` | `Create an account` | see context
+|  emailText           | `Input()`  | `string` | `Email` | see context
+|  emailErrorRequiredText           | `Input()`  | `string` | `Email is required` | see context
+|  emailErrorPatternText           | `Input()`  | `string` | `Please enter a valid email address` | see context
+|  passwordText          | `Input()`  | `string` | `Password` | see context
+|  passwordErrorRequiredText          | `Input()`  | `string` | `Password is required` see context
+ 
 
 
 <a name="other-angular-libraries"/>

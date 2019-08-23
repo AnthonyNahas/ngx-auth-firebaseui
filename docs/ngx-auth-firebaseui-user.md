@@ -1,6 +1,6 @@
 <p align="center">
   <img height="256px" width="256px" style="text-align: center;" 
-  src="https://cdn.jsdelivr.net/gh/anthonynahas/ngx-auth-firebaseui@master/demo/src/assets/logo.svg">
+  src="https://cdn.jsdelivr.net/gh/anthonynahas/ngx-auth-firebaseui@master/demo/src/../assets/logo.svg">
 </p>
 
 # ngx-auth-firebaseui - Open Source Library for Angular Web Apps to integrate a material user interface for firebase authentication.
@@ -63,20 +63,20 @@ by starring :star: and sharing it :loudspeaker:
 #### when logged out 
 <p align="center">
   <img alt="ngx-auth-firebaseui user profile component" width="384px" style="text-align: center;" 
-  src="assets/v1.0.0/png/user_logged_out.png">
+  src="../assets/v1.0.0/png/user_logged_out.png">
 </p>
 
 #### when logged in
 <p align="center">
   <img alt="ngx-auth-firebaseui user profile component" width="384px" style="text-align: center;" 
-  src="assets/v1.0.0/png/user.png">
+  src="../assets/v1.0.0/png/user.png">
 </p>
 
 #### in edit mode
 
 <p align="center">
   <img alt="ngx-auth-firebaseui edit user component" width="384px" style="text-align: center;" 
-  src="assets/v1.0.0/png/user_edit_mode.png">
+  src="../assets/v1.0.0/png/user_edit_mode.png">
 </p>
 
 
@@ -133,7 +133,7 @@ by starring :star: and sharing it :loudspeaker:
 
 ---
 
-![jetbrains logo](assets/jetbrains-variant-4_logos/jetbrains-variant-4.png)
+![jetbrains logo](../assets/jetbrains-variant-4_logos/jetbrains-variant-4.png)
 
 This project is supported by [jetbrains](https://www.jetbrains.com/) with 1 ALL PRODUCTS PACK OS LICENSE incl. [webstorm](https://www.jetbrains.com/webstorm)
 
