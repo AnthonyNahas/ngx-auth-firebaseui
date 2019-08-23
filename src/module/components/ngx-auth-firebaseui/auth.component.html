@@ -4,7 +4,8 @@
     - we just sent a verification mail (notably after sign up)
     - we arrived from the guard after trying to access a protected route even though we are connected
   -->
-  <div fxLayout="row" fxLayoutAlign="center center"  *ngIf="(config.guardProtectedRoutesUntilEmailIsVerified && !user.emailVerified) || (authProcess.emailConfirmationSent && !user.emailVerified); else signedInUser">
+  <div *ngIf="(config.guardProtectedRoutesUntilEmailIsVerified && !user.emailVerified) || (authProcess.emailConfirmationSent && !user.emailVerified); else signedInUser"
+       fxLayout="row" fxLayoutAlign="center center">
       <ngx-auth-firebaseui-email-confirmation
         [template]="verifyEmailTemplate"
         [email]="user.email"
@@ -42,10 +43,12 @@
       <mat-card>
         <mat-card-title>{{signInCardTitleText}}</mat-card-title>
         <mat-card-content>
-          <form [formGroup]="signInFormGroup"
+          <form  [@animateStagger]="{ value: '50' }"
+                 [formGroup]="signInFormGroup"
                 (ngSubmit)="signIn()">
             <div fxLayout="column" fxLayoutAlign="center">
-              <mat-form-field [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}" [appearance]="appearance">
+              <mat-form-field [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}"
+                              [appearance]="appearance">
                 <mat-label>{{emailText}}</mat-label>
                 <input matInput
                       formControlName="email"
@@ -116,7 +119,7 @@
       <mat-card>
         <mat-card-title>{{registerCardTitleText}}</mat-card-title>
           <mat-card-content fxLayout="column" fxLayoutAlign="center">
-            <form [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}"
+            <form [@animateStagger]="{ value: '50' }"
                 [formGroup]="signUpFormGroup" (ngSubmit)="signUpFormGroup.valid &&
             processLegalSignUP(authProvider.EmailAndPassword)">
               <div fxLayout="column" fxLayoutAlign="center">
@@ -253,10 +256,13 @@
           <mat-icon>close</mat-icon>
         </button>
       </ng-template>
-      <form [@animateStagger]="{ value: '50' }" [formGroup]="resetPasswordFormGroup" (ngSubmit)="resetPasswordFormGroup.valid && resetPassword()">
+      <form [@animateStagger]="{ value: '50' }"
+            [formGroup]="resetPasswordFormGroup"
+            (ngSubmit)="resetPasswordFormGroup.valid && resetPassword()">
         <mat-card class="reset-password-card">
           <mat-card-content>
-            <mat-form-field [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}" class="full-width" [appearance]="appearance">
+            <mat-form-field [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}" class="full-width"
+                            [appearance]="appearance">
               <mat-label> {{ resetPasswordTabText }} </mat-label>
               <input matInput
                     [title]="resetPasswordInputText"
