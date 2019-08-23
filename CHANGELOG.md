@@ -1,3 +1,45 @@
+# [3.4.0](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v3.3.2...v3.4.0) (2019-08-23)
+
+
+### Bug Fixes
+
+* **demo:** minor - adjusted the highlight code for the new components ([9de7709](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/9de7709))
+* **demo:** updated angular, firebase and other dependencies ([ad81691](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/ad81691))
+* **i18n:** remove hardcoded error messages for password length ([de57dd0](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/de57dd0))
+* **package:** added i18n support for the name input + tos as feature ([f117ca7](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/f117ca7))
+* **package:** added onLoginRequested event in `ngx-auth-firebaseui-register` [#323](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/323) ([13c5478](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/13c5478))
+* **package:** added the export of `ngx-auth-firebaseui-register` ([09951a1](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/09951a1))
+* **package:** adjusted the animations of `ngx-auth-firebaseui-register` [#323](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/323) ([647e195](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/647e195))
+* **package:** adjusted the imports [#316](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/316) ([e1e5ab2](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/e1e5ab2))
+* **package:** improved `ngx-auth-firebaseui-login` - dynamic color palette ([08f372c](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/08f372c))
+* **package:** improved `ngx-auth-firebaseui-register` + i18n support ([d1f1724](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/d1f1724))
+* **package:** improved `ngx-auth-firebaseui-register` | dynamic color palette [#323](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/323) ([220d855](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/220d855))
+* **package:** initialized the providers in `ngx-auth-firebaseui` ([04bc86c](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/04bc86c))
+* **package:** integration of auth providers [#316](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/316) ([cb4f36b](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/cb4f36b))
+* **package:** issue with generating angular components solved [#316](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/316) ([ecda449](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/ecda449))
+* **package:** orth. in `ngx-auth-firebaseui`'s template `photoURL` ([7c6aaf8](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/7c6aaf8))
+* **package:** removed tos and pp checkboxes for now in `ngx-auth-firebaseui-register` [#323](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/323) ([b4ed0e4](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/b4ed0e4))
+* **package:** removed unwanted files [#316](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/316) ([6539538](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/6539538))
+* **package:** updated `tabIndex` when `selectedTabChange` fired ([29bf087](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/29bf087))
+* **package:** updated angular, material, firebase and other dev deps ([69ecdc6](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/69ecdc6))
+* **package:** updated the animations of `ngx-auth-firebaseui` ([df257c9](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/df257c9))
+* **reset-password:** hide auth providers in reset password tab ([0527d49](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/0527d49))
+
+
+### Features
+
+* **package:** added animations to the ngx-auth-firebaseui component ([27b7704](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/27b7704))
+* **package:** added new single register component [#323](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/323) ([8bad446](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/8bad446))
+* **package:** added onCreateAccountRequested event `ngx-auth-firebaseui-login` comp. [#316](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/316) ([0f3c600](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/0f3c600))
+* **package:** added the first draft of `ngx-auth-firebaseui-login` comp. [#316](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/316) ([e5fec91](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/e5fec91))
+* **package:** enhanced - i18n  | `ngx-auth-firebaseui-login` comp. [#316](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/316) ([4071c63](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/4071c63))
+* **package:** enhanced - i18n and more | `ngx-auth-firebaseui-login` comp. [#316](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/316) ([e4dc5f8](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/e4dc5f8))
+* **package:** enhanced the animations of the auth providers component ([708b3a2](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/708b3a2))
+* **package:** integration of firebase auth in`ngx-auth-firebaseui-register` [#323](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/323) ([4b26a30](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/4b26a30))
+* **providers:** add possibility to override theme too in auth component ([a73bb7f](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/a73bb7f))
+
+
+
 ## [3.3.2](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v3.3.1...v3.3.2) (2019-08-09)
 
 
