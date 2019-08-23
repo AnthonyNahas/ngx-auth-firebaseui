@@ -1,6 +1,6 @@
 <p align="center">
   <img height="256px" width="256px" style="text-align: center;" 
-  src="https://cdn.jsdelivr.net/gh/anthonynahas/ngx-auth-firebaseui@master/demo/src/../../assets/logo.svg">
+  src="https://cdn.jsdelivr.net/gh/anthonynahas/ngx-auth-firebaseui@master/demo/src/assets/logo.svg">
 </p>
 
 # ngx-auth-firebaseui - Open Source Library for Angular Web Apps to integrate a material user interface for firebase authentication.
@@ -150,7 +150,7 @@ by starring :star: and sharing it :loudspeaker:
 
 ---
 
-![jetbrains logo](../../assets/jetbrains-variant-4_logos/jetbrains-variant-4.png)
+![jetbrains logo](../assets/jetbrains-variant-4_logos/jetbrains-variant-4.png)
 
 This project is supported by [jetbrains](https://www.jetbrains.com/) with 1 ALL PRODUCTS PACK OS LICENSE incl. [webstorm](https://www.jetbrains.com/webstorm)
 

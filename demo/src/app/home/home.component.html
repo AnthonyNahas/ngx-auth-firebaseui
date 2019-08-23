@@ -77,7 +77,7 @@
 
           <mat-toolbar>
             ngx-auth-firebaseui
-            <span style="width: 100%"></span>
+            <span fxFlex></span>
 
             <button mat-icon-button
                     color="primary"
@@ -114,7 +114,7 @@
 
           <mat-toolbar>
             ngx-auth-firebaseui-user
-            <span style="width: 100%"></span>
+            <span fxFlex></span>
 
             <button mat-icon-button
                     color="primary"
@@ -148,29 +148,31 @@
       </div>
 
       <div style="margin: 2rem 0 2rem 0"
-           fxLayout="column"
+           fxLayout="row"
+           fxLayout.lt-md="column"
            fxLayoutAlign="center"
            fxLayoutGap.lt-md="20px"
            fxLayoutGap="40px">
+        <!--ngx-auth-firebaseui-register-->
         <div>
           <mat-toolbar>
-            ngx-auth-firebaseui-register | ngx-auth-firebaseui-login
-            <span style="width: 100%"></span>
+            ngx-auth-firebaseui-register
+            <span fxFlex></span>
 
             <button mat-icon-button
                     color="primary"
                     matTooltip="view source"
-                    (click)="viewSourceOfTheProvidersComponentThemes = !viewSourceOfTheProvidersComponentThemes">
+                    (click)="viewSourceOfNgxAuthFirebaseuiRegisterComponent = !viewSourceOfNgxAuthFirebaseuiRegisterComponent">
               <mat-icon>code</mat-icon>
             </button>
           </mat-toolbar>
           <mat-card>
-            <mat-card-content *ngIf="viewSourceOfTheProvidersComponentThemes">
+            <mat-card-content *ngIf="viewSourceOfNgxAuthFirebaseuiRegisterComponent">
               <mat-tab-group [color]="color" [selectedIndex]="index">
                 <!--tab 1-->
                 <mat-tab>
                   <ng-template mat-tab-label>HTML</ng-template>
-                  <pre><code [highlight]="providersThemes"></code></pre>
+                  <pre><code [highlight]="providersRow"></code></pre>
                 </mat-tab>
                 <!--tab 2-->
                 <mat-tab>
@@ -179,20 +181,34 @@
                 </mat-tab>
               </mat-tab-group>
             </mat-card-content>
-            <mat-card-content class="stand-alone-providers">
-<!--              <ngx-auth-firebaseui-register appearance="outline"-->
-<!--                                            logoUrl="assets/logo.svg">-->
-<!--              </ngx-auth-firebaseui-register>-->
+            <mat-card-content>
+              <ngx-auth-firebaseui-register appearance="outline"
+                                            logoUrl="assets/logo.svg">
+              </ngx-auth-firebaseui-register>
             </mat-card-content>
           </mat-card>
+        </div>
 
+
+        <div>
+          <mat-toolbar>
+            ngx-auth-firebaseui-login
+            <span fxFlex></span>
+
+            <button mat-icon-button
+                    color="primary"
+                    matTooltip="view source"
+                    (click)="viewSourceOfNgxAuthFirebaseuiLoginComponent = !viewSourceOfNgxAuthFirebaseuiLoginComponent">
+              <mat-icon>code</mat-icon>
+            </button>
+          </mat-toolbar>
           <mat-card>
-            <mat-card-content *ngIf="viewSourceOfTheProvidersComponentThemes">
+            <mat-card-content *ngIf="viewSourceOfNgxAuthFirebaseuiLoginComponent">
               <mat-tab-group [color]="color" [selectedIndex]="index">
                 <!--tab 1-->
                 <mat-tab>
                   <ng-template mat-tab-label>HTML</ng-template>
-                  <pre><code [highlight]="providersThemes"></code></pre>
+                  <pre><code [highlight]="providersColumn"></code></pre>
                 </mat-tab>
                 <!--tab 2-->
                 <mat-tab>
@@ -201,11 +217,11 @@
                 </mat-tab>
               </mat-tab-group>
             </mat-card-content>
-            <mat-card-content class="stand-alone-providers">
-<!--              <ngx-auth-firebaseui-login appearance="outline"-->
-<!--                                         logoUrl="assets/logo.svg"-->
-<!--                                         (onCreateAccountRequested)="createAccount()">-->
-<!--              </ngx-auth-firebaseui-login>-->
+            <mat-card-content>
+              <ngx-auth-firebaseui-login appearance="outline"
+                                         logoUrl="assets/logo.svg"
+                                         (onCreateAccountRequested)="createAccount()">
+              </ngx-auth-firebaseui-login>
             </mat-card-content>
           </mat-card>
         </div>
@@ -221,7 +237,7 @@
         <div>
           <mat-toolbar>
             ngx-auth-firebaseui-providers - row
-            <span style="width: 100%"></span>
+            <span fxFlex></span>
 
             <button mat-icon-button
                     color="primary"
@@ -255,7 +271,7 @@
         <div>
           <mat-toolbar>
             ngx-auth-firebaseui-providers - column
-            <span style="width: 100%"></span>
+            <span fxFlex></span>
 
             <button mat-icon-button
                     color="primary"
@@ -298,7 +314,7 @@
         <div>
           <mat-toolbar>
             ngx-auth-firebaseui-providers - themes
-            <span style="width: 100%"></span>
+            <span fxFlex></span>
 
             <button mat-icon-button
                     color="primary"

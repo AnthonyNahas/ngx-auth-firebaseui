@@ -508,38 +508,24 @@ export class AppModule { }
 
 Once the library is imported, you can use its components, directives and pipes in your Angular application:
 
-### `<ngx-auth-firebaseui></ngx-auth-firebaseui>`
+### `<ngx-auth-firebaseui></ngx-auth-firebaseui>` [see the usage](https://github.com/AnthonyNahas/ngx-auth-firebaseui/blob/master/docs/ngx-auth-firebaseui.md#usage)
+### `<ngx-auth-firebaseui-providers></ngx-auth-firebaseui-login>` [see the usage](https://github.com/AnthonyNahas/ngx-auth-firebaseui/blob/master/docs/ngx-auth-firebaseui-login.md#usage)
+### `<ngx-auth-firebaseui-providers></ngx-auth-firebaseui-register>` [see the usage](https://github.com/AnthonyNahas/ngx-auth-firebaseui/blob/master/docs/ngx-auth-firebaseui-register.md#usage)
+### `<ngx-auth-firebaseui-providers></ngx-auth-firebaseui-providers>` [see the usage](https://github.com/AnthonyNahas/ngx-auth-firebaseui/blob/master/docs/ngx-auth-firebaseui-providers.md#usage)
+### `<ngx-auth-firebaseui-user></ngx-auth-firebaseui-user>` [see the usage](https://github.com/AnthonyNahas/ngx-auth-firebaseui/blob/master/docs/ngx-auth-firebaseui-user.md#usage)
+### `<ngx-auth-firebaseui-user></ngx-auth-firebaseui-avatar>` [see the usage](https://github.com/AnthonyNahas/ngx-auth-firebaseui/blob/master/docs/ngx-auth-firebaseui-avatar.md#usage)
 
-[open docs]()
-
-### `<ngx-auth-firebaseui-providers></ngx-auth-firebaseui-providers>`
-
-
-### `<ngx-auth-firebaseui-user></ngx-auth-firebaseui-user>`
-
-
-#### Result:
-
-<p align="center">
-  <img alt="ngx-auth-firebaseui-logo.png" width="384px" style="text-align: center;" 
-  src="assets/v0.7.1/features/user/user_verified_2.png">
-</p>
-
-### `<ngx-auth-firebaseui-avatar></ngx-auth-firebaseui-avatar>`
-
-[open docs]()
 
 <a name="api"/>
 
 ## API
 
-###  `<ngx-auth-firebaseui></ngx-auth-firebaseui>`
-
-### `<ngx-auth-firebaseui-providers></ngx-auth-firebaseui-providers>`
-
-### `<ngx-auth-firebaseui-user></ngx-auth-firebaseui-user>`
-
-### `<ngx-auth-firebaseui-avatar></ngx-auth-firebaseui-avatar>`
+### `<ngx-auth-firebaseui></ngx-auth-firebaseui>` [see the usage](https://github.com/AnthonyNahas/ngx-auth-firebaseui/blob/master/docs/ngx-auth-firebaseui.md#api)
+### `<ngx-auth-firebaseui-providers></ngx-auth-firebaseui-login>` [see the usage](https://github.com/AnthonyNahas/ngx-auth-firebaseui/blob/master/docs/ngx-auth-firebaseui-login.md#api)
+### `<ngx-auth-firebaseui-providers></ngx-auth-firebaseui-register>` [see the usage](https://github.com/AnthonyNahas/ngx-auth-firebaseui/blob/master/docs/ngx-auth-firebaseui-register.md#api)
+### `<ngx-auth-firebaseui-providers></ngx-auth-firebaseui-providers>` [see the usage](https://github.com/AnthonyNahas/ngx-auth-firebaseui/blob/master/docs/ngx-auth-firebaseui-providers.md#api)
+### `<ngx-auth-firebaseui-user></ngx-auth-firebaseui-user>` [see the usage](https://github.com/AnthonyNahas/ngx-auth-firebaseui/blob/master/docs/ngx-auth-firebaseui-user.md#api)
+### `<ngx-auth-firebaseui-user></ngx-auth-firebaseui-avatar>` [see the usage](https://github.com/AnthonyNahas/ngx-auth-firebaseui/blob/master/docs/ngx-auth-firebaseui-avatar.md#api)
 
 
 ### EXTRA TIP: Login Authentication Guard

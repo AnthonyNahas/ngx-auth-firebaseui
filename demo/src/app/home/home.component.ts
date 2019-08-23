@@ -18,6 +18,8 @@ export class HomeComponent implements OnInit, OnDestroy {
   title = 'app';
   error: boolean;
   userComponent = `<ngx-auth-firebaseui-user></ngx-auth-firebaseui-user>`;
+  registerComponent = `<ngx-auth-firebaseui-register></ngx-auth-firebaseui-register>`;
+  loginComponent = `<ngx-auth-firebaseui-login></ngx-auth-firebaseui-login>`;
   element = `<ngx-auth-firebaseui></ngx-auth-firebaseui>`;
   providersRow = `<ngx-auth-firebaseui-providers></ngx-auth-firebaseui-providers>`;
   providersColumn = `<ngx-auth-firebaseui-providers layout="column"></ngx-auth-firebaseui-providers>`;
@@ -66,6 +68,8 @@ export class HomeComponent implements OnInit, OnDestroy {
         </ngx-auth-firebaseui>`;
 
   viewSourceOfNgxAuthFirebaseuiComponent: boolean;
+  viewSourceOfNgxAuthFirebaseuiLoginComponent: boolean;
+  viewSourceOfNgxAuthFirebaseuiRegisterComponent: boolean;
   viewSourceOfTheUserComponent: boolean;
   viewSourceOfTheProvidersComponentRow: boolean;
   viewSourceOfTheProvidersComponentColumn: boolean;

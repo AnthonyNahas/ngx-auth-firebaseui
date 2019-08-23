@@ -134,7 +134,7 @@ by starring :star: and sharing it :loudspeaker:
 
 ---
 
-![jetbrains logo](assets/jetbrains-variant-4_logos/jetbrains-variant-4.png)
+![jetbrains logo](../assets/jetbrains-variant-4_logos/jetbrains-variant-4.png)
 
 This project is supported by [jetbrains](https://www.jetbrains.com/) with 1 ALL PRODUCTS PACK OS LICENSE incl. [webstorm](https://www.jetbrains.com/webstorm)
 
