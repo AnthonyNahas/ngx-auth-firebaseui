@@ -18,6 +18,7 @@ export class NgxAuthFirebaseuiLoginComponent implements OnInit {
   @Input() logoUrl: string;
   @Input() providers: string[] | string = AuthProvider.ALL; //  google, facebook, twitter, github as array or all as one single string
   @Input() appearance: MatFormFieldAppearance;
+  @Input() registrationEnabled = true;
   @Input() resetPasswordEnabled = true;
   @Input() messageOnAuthSuccess: string;
   @Input() messageOnAuthError: string;

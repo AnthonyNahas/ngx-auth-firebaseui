@@ -75,9 +75,10 @@
                                      theme="raised"
                                      [providers]="providers"></ngx-auth-firebaseui-providers>
 
-      <div class="register"
-           fxLayout="column" fxLayoutAlign="center center"
-           [@animateStagger]="{ value: '100' }">
+      <div *ngIf="registrationEnabled"
+           [@animateStagger]="{ value: '100' }"
+           class="register"
+           fxLayout="column" fxLayoutAlign="center center">
         <span class="text" [@animate]="{ value: '*', params: { x: '100px' } }">
           {{dontHaveAnAccountText}}
         </span>
