@@ -64,7 +64,9 @@
 
       </form>
 
-      <div class="separator" [@animate]="{ value: '*', params: { z: '50px', delay: '50ms', scale: '0.2' } }">
+      <div *ngIf="providers.length > 0"
+           class="separator"
+           [@animate]="{ value: '*', params: { z: '50px', delay: '50ms', scale: '0.2' } }">
         <span class="text">{{orLabelText}}</span>
       </div>
 
