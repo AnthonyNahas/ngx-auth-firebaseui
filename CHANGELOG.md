@@ -1,3 +1,14 @@
+## [3.4.1](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v3.4.0...v3.4.1) (2019-08-24)
+
+
+### Bug Fixes
+
+* **package:** added missed `registrationEnabled` input in the login component ([ce783d9](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/ce783d9))
+* **package:** do not render the or label if there were no providers ([cbe20e8](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/cbe20e8))
+* **package:** removed the remember password checkbox for now (future feature) ([079777a](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/079777a))
+
+
+
 # [3.4.0](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v3.3.2...v3.4.0) (2019-08-23)
 
 
