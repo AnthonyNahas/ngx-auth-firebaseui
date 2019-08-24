@@ -596,7 +596,7 @@ gulp.task('serve:demo-hmr', () => {
 });
 
 gulp.task('build:demo', () => {
-  return execDemoCmd(`build --preserve-symlinks --prod --aot --build-optimizer`, {cwd: `${config.demoDir}`});
+  return execDemoCmd(`build --preserve-symlinks --prod --aot --build-optimizer --output-hashing=all`, {cwd: `${config.demoDir}`});
 });
 
 gulp.task('build:demo:firebase', () => {
