@@ -1,13 +1,14 @@
 import {Injectable} from '@angular/core';
-import {AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument} from '@angular/fire/firestore';
-import {QueryFn} from '@angular/fire/firestore/interfaces';
+import {AngularFirestore, AngularFirestoreDocument} from '@angular/fire/firestore';
 import {UserInfo} from 'firebase';
 
 export const collections = {
   users: 'users',
 };
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class FirestoreSyncService {
 
   constructor(public afs: AngularFirestore) {

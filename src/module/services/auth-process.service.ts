@@ -40,7 +40,9 @@ export enum AuthProvider {
 export type getErrorMessageType = (error: any) => string;
 export type messageOnAuthErrorType = string | getErrorMessageType;
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class AuthProcessService implements ISignInProcess, ISignUpProcess {
   onSuccessEmitter: EventEmitter<any> = new EventEmitter<any>();
   onErrorEmitter: EventEmitter<any> = new EventEmitter<any>();
