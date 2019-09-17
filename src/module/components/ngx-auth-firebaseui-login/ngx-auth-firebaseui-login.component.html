@@ -47,7 +47,8 @@
                   mat-button
                   class="forgot-password"
                   [color]="color"
-                  type="button">
+                  type="button"
+                  (click)="onResetPasswordRequested.emit()">
             {{forgotPasswordText}}
           </button>
         </div>
