@@ -45,6 +45,7 @@ export class NgxAuthFirebaseuiLoginComponent implements OnInit {
   @Output() onSuccess: any;
   @Output() onError: any;
   @Output() onCreateAccountRequested: EventEmitter<void> = new EventEmitter<void>();
+  @Output() onResetPasswordRequested: EventEmitter<void> = new EventEmitter<void>();
 
   loginForm: FormGroup;
   authProviders = AuthProvider;
