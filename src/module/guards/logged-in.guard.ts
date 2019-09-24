@@ -19,7 +19,7 @@ export class LoggedInGuard implements CanActivate {
     return this.authProcess.afa.user.pipe(
       map(user => {
         if (user) {
-          if (this.config.guardProtectedRoutesUntilEmailIsVerified && !user.emailVerified) {
+          if (this.config.guardProtectedRoutesUntilEmailIsVerified && !user.emailVerified && !user.isAnonymous) {
             if (this.config.authGuardFallbackURL) {
               this.router.navigate([`${this.config.authGuardFallbackURL}`], { queryParams: { redirectUrl: state.url }});
             }
