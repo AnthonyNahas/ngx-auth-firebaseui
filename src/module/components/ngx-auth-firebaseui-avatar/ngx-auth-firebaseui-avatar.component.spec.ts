@@ -37,14 +37,12 @@ describe('NgxAuthFirebaseuiAvatarComponent', () => {
         {provide: MatDialogRef, useValue: {}}
       ]
     })
-      .compileComponents();
+      .compileComponents().then(() => {
+      fixture = TestBed.createComponent(NgxAuthFirebaseuiAvatarComponent);
+      component = fixture.componentInstance;
+      fixture.detectChanges();
+    });
   }));
-
-  beforeEach(() => {
-    fixture = TestBed.createComponent(NgxAuthFirebaseuiAvatarComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
 
   it('should create', () => {
     expect(component).toBeTruthy();
