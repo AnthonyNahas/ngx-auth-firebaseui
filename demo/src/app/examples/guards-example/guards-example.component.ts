@@ -7,6 +7,6 @@ import {ExampleBaseComponent} from '../example.abstract';
   templateUrl: 'guards-example.component.html',
   styleUrls: ['guards-example.component.scss']
 })
-export class GuardsExampleComponent extends ExampleBaseComponent {
+export class GuardsExampleComponent {
 
 }
