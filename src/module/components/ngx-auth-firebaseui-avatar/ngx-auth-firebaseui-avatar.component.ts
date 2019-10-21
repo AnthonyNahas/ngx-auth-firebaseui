@@ -29,7 +29,7 @@ export class NgxAuthFirebaseuiAvatarComponent implements OnInit {
 
   user: User;
   user$: Observable<User | null>;
-  displayNameInitials: string;
+  displayNameInitials: string | null;
 
   constructor(public afa: AngularFireAuth,
               public dialog: MatDialog) {
@@ -43,7 +43,7 @@ export class NgxAuthFirebaseuiAvatarComponent implements OnInit {
     });
   }
 
-  getDisplayNameInitials(displayName: string): string {
+  getDisplayNameInitials(displayName: string | null): string | null {
     if (!displayName) {
       return null;
     }

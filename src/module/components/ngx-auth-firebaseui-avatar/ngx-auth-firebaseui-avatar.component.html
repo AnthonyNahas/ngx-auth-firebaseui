@@ -5,7 +5,7 @@
         [style.background-image]="'url(' + user?.photoURL + ')'"
         style="background-size: cover"
         [matTooltip]="user?.displayName">
-  <span *ngIf="user?.photoURL">{{displayNameInitials}}</span>
+  <span *ngIf="user?.photoURL">{{displayNameInitials || ''}}</span>
 </button>
 
 <mat-menu xPosition="before" #posXMenu="matMenu" class="before">
@@ -13,7 +13,7 @@
     <button mat-fab
             [style.background-image]="'url(' + user?.photoURL + ')'"
             style="background-size: cover">
-      <span *ngIf="user?.photoURL">{{displayNameInitials}}</span>
+      <span *ngIf="user?.photoURL">{{displayNameInitials || ''}}</span>
     </button>
     <div fxLayout="column" style="padding-left: 10px; padding-right: 10px">
       <strong mat-card-title>{{user?.displayName}}</strong>

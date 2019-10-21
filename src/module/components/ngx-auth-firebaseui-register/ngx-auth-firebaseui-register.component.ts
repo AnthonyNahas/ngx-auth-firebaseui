@@ -114,10 +114,11 @@ export class NgxAuthFirebaseuiRegisterComponent implements OnInit, OnDestroy {
     // Update the validity of the 'passwordConfirm' field
     // when the 'password' field changes
     this.registerForm
-      .get('password')
+      .controls
+      .password
       .valueChanges.pipe(takeUntil(this._unsubscribeAll))
       .subscribe(() => {
-        this.registerForm.get('passwordConfirm').updateValueAndValidity();
+        this.registerForm.controls.passwordConfirm.updateValueAndValidity();
       });
   }
 
@@ -132,10 +133,10 @@ export class NgxAuthFirebaseuiRegisterComponent implements OnInit, OnDestroy {
 
   async createAccount() {
     return await this.authProcess.signUp(
-      this.registerForm.get('name').value,
+      this.registerForm.controls.name.value,
       {
-        email: this.registerForm.get('email').value,
-        password: this.registerForm.get('password').value
+        email: this.registerForm.controls.email.value,
+        password: this.registerForm.controls.password.value
       }
     )
   }

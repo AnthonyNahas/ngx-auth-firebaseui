@@ -90,8 +90,8 @@ export class NgxAuthFirebaseuiLoginComponent implements OnInit {
   async login() {
     return await this.authProcess.signInWith(this.authProviders.EmailAndPassword,
       {
-        email: this.loginForm.get('email').value,
-        password: this.loginForm.get('password').value
+        email: this.loginForm.controls.email.value,
+        password: this.loginForm.controls.password.value
       }
     )
   }
