@@ -138,7 +138,7 @@ export const UserProvidedConfigToken = new InjectionToken<NgxAuthFirebaseUIConfi
 export class NgxAuthFirebaseUIModule {
   static forRoot(
     configFactory: FirebaseAppConfig,
-    appNameFactory?: () => string,
+    appNameFactory: () => string | undefined = () => undefined,
     config: NgxAuthFirebaseUIConfig = {}
   ): ModuleWithProviders {
     return {
