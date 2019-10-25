@@ -208,7 +208,11 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
    * @returns
    */
   public updateProfile(name: string, photoURL: string): Promise<any> {
-    return this.afa.auth.currentUser.updateProfile({displayName: name, photoURL: photoURL});
+    if (!photoURL) {
+      return this.afa.auth.currentUser.updateProfile({displayName: name});
+    } else {
+      return this.afa.auth.currentUser.updateProfile({displayName: name, photoURL: photoURL});
+    }
   }
 
   public deleteAccount(): Promise<any> {
