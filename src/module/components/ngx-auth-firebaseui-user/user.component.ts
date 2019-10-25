@@ -74,7 +74,10 @@ export class UserComponent {
 
       phoneNumber: this.updatePhoneNumberFormControl = new FormControl(
         {value: currentUser.phoneNumber, disabled: this.editMode},
-        [Validators.pattern(PHONE_NUMBER_REGEX)])
+        [
+          Validators.required,
+          Validators.pattern(PHONE_NUMBER_REGEX)
+        ])
     });
 
     this.updateFormGroup.enable();
