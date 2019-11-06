@@ -131,7 +131,7 @@
     "source-map-loader": "^0.2.4",
     "to-string-loader": "1.1.5",
     "travis-status": "^3.0.1",
-    "tsickle": "^0.34.3",
+    "tsickle": "^0.37.1",
     "tslint": "^5.20.0",
     "typescript": "~3.4.5",
     "webpack": "^4.41.2",
