@@ -72,10 +72,10 @@
           </mat-form-field>
 
           <!--phone number-->
-          <mat-form-field class="full-width" [appearance]="appearance">
+          <mat-form-field *ngIf="false" class="full-width" [appearance]="appearance">
             <mat-label>Phone number</mat-label>
             <input matInput
-                   type="number"
+                   type="tel"
                    placeholder="Phone number"
                    [formControl]="updatePhoneNumberFormControl">
             <mat-icon matSuffix>phone</mat-icon>
@@ -130,7 +130,7 @@
       </mat-form-field>
 
       <!--phone number-->
-      <mat-form-field class="full-width" [appearance]="appearance">
+      <mat-form-field *ngIf="false" class="full-width" [appearance]="appearance">
         <mat-label>Phone number</mat-label>
         <input matInput
                placeholder="Phone number"
