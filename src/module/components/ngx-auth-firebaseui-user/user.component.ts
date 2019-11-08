@@ -103,7 +103,7 @@ export class UserComponent {
 
       try {
         if (this.updateNameFormControl.dirty) {
-          await user.updateProfile({displayName: this.updateNameFormControl.value, photoURL: null});
+          await user.updateProfile({displayName: this.updateNameFormControl.value});
           snackBarMsg.push(`your name has been updated to ${user.displayName}`);
         }
 
