@@ -24,6 +24,9 @@ export class NgxAuthFirebaseuiAvatarComponent implements OnInit {
   @Input()
   links: LinkMenuItem[];
 
+  @Input()
+  canDeleteAccount = true;
+
   @Output()
   onSignOut: EventEmitter<void> = new EventEmitter();
 
@@ -53,7 +56,9 @@ export class NgxAuthFirebaseuiAvatarComponent implements OnInit {
   }
 
   openProfile() {
-    this.dialog.open(UserComponent);
+    let dialogRef = this.dialog.open(UserComponent);
+    let instance = dialogRef.componentInstance;
+    instance.canDeleteAccount = this.canDeleteAccount;
   }
 
   async signOut() {
