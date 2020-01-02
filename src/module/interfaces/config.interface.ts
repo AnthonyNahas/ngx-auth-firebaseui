@@ -26,6 +26,9 @@ export interface NgxAuthFirebaseUIConfig {
   // If set, sign-in/up form is not available until email has been verified.
   // Plus protected routes are still protected even though user is connected.
   guardProtectedRoutesUntilEmailIsVerified?: boolean;
+
+  // Control whether or not email verification is used
+  enableEmailVerification?: boolean;
 }
 
 export const defaultAuthFirebaseUIConfig: NgxAuthFirebaseUIConfig = {
@@ -48,7 +51,10 @@ export const defaultAuthFirebaseUIConfig: NgxAuthFirebaseUIConfig = {
 
   // If set, sign-in/up form is not available until email has been verified.
   // Plus protected routes are still protected even though user is connected.
-  guardProtectedRoutesUntilEmailIsVerified: true
+  guardProtectedRoutesUntilEmailIsVerified: true,
+
+  // Default to email verification on
+  enableEmailVerification: true
 };
 
 // Merge default config with user provided config.

@@ -172,7 +172,9 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
           } as User);
       }
 
-      await user.sendEmailVerification();
+      if (this.config.enableEmailVerification) {
+        await user.sendEmailVerification();
+      }
 
       // Legacy fields
       this.emailConfirmationSent = true;
