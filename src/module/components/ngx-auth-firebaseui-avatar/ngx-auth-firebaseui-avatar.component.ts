@@ -56,8 +56,8 @@ export class NgxAuthFirebaseuiAvatarComponent implements OnInit {
   }
 
   openProfile() {
-    let dialogRef = this.dialog.open(UserComponent);
-    let instance = dialogRef.componentInstance;
+    const dialogRef = this.dialog.open(UserComponent);
+    const instance = dialogRef.componentInstance;
     instance.canDeleteAccount = this.canDeleteAccount;
   }
 
