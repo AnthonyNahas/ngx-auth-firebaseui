@@ -63,7 +63,7 @@
     "@angular/forms": "^8.2.14",
     "@angular/material": "^8.2.3",
     "@angular/router": "^8.2.14",
-    "firebase": "^6.6.2"
+    "firebase": "^7.6.1"
   },
   "devDependencies": {
     "@angular-devkit/core": "^8.3.21",
