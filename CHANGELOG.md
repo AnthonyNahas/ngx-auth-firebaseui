@@ -1,3 +1,20 @@
+# [3.5.0](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v3.4.2...v3.5.0) (2020-01-08)
+
+
+### Bug Fixes
+
+* **demo:** run demo in AOT mode ([08efe9f](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/08efe9fb8e474b78f6bd5f03011815fd2112db96))
+* **demo:** updated angular and other dependencies ([762ddd4](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/762ddd45714a2c98aa8c73bde95267baf9326587))
+* **demo:** updated firebase and other dependencies ([982e57e](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/982e57eba46fab657774bfe4d5196fedfb62ee81))
+* **package:** fixed condition, show displayNameInitials only if user photoURL is not available ([2a1ae29](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/2a1ae294860468ef9994f9903e93e763b61d1bdb))
+* **package:** handle null values in components ([e85f404](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/e85f40489c4550a1fe0406e34ea0c2ad8f8d310a))
+* **package:** Undefined provider fails prod build ([1e563b6](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/1e563b697e8b57ae03f53cc9567138851894b0a5))
+* **package:** updated angular and other dependencies ([1af5550](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/1af55506233c484394e4c9a9611a8ec1f4c5fda6))
+* **package:** updated angular, firebase and other dependencies ([0aeafd3](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/0aeafd30c1970da387b2b3b1fba72878ff1f410f))
+* **package:** updated firebase to v7.6.1 ([1241ea8](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/1241ea85606117f1692c01505a85890726bbf87b))
+
+
+
 ## [3.4.2](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v3.4.1...v3.4.2) (2019-10-10)
 
 
