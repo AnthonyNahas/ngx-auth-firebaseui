@@ -48,12 +48,18 @@ export class I18nComponent implements OnInit {
     ];
 
     // Set the selected language from default languages
-    this.selectedLanguage = this.languages.find((element: any) => {
+    const selectedLanguage: Language | undefined = this.languages.find((element: any) => {
       console.log('this._translateService.currentLang', this._translateService.currentLang);
       console.log('this._translateService.getLangs', this._translateService.getLangs());
       console.log('element.id === this._translateService.currentLang', element.id === this._translateService.currentLang);
       return element.id === this._translateService.currentLang;
     });
+
+    if (!selectedLanguage) {
+      return;
+    }
+
+    this.selectedLanguage = selectedLanguage;
   }
 
   /**
@@ -61,7 +67,7 @@ export class I18nComponent implements OnInit {
    *
    * @param lang
    */
-  setLanguage(lang): void {
+  setLanguage(lang: Language): void {
     // Set the selected language for the toolbar
     this.selectedLanguage = lang;
 
