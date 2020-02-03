@@ -1,7 +1,8 @@
 import { Component, EventEmitter, forwardRef, Inject, Input, Output } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { MatFormFieldAppearance, MatSnackBar } from '@angular/material';
+import { MatFormFieldAppearance } from '@angular/material/form-field';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { User } from 'firebase';
 import { NgxAuthFirebaseUIConfig, NgxAuthFirebaseUIConfigToken } from '../../ngx-auth-firebase-u-i.module';
 import { AuthProcessService } from '../../services/auth-process.service';

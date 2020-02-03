@@ -1,34 +1,20 @@
-import {isPlatformBrowser} from '@angular/common';
-import {
-  AfterViewInit,
-  ChangeDetectionStrategy,
-  ChangeDetectorRef,
-  Component,
-  EventEmitter,
-  forwardRef,
-  Inject,
-  Input,
-  OnChanges,
-  OnDestroy,
-  OnInit,
-  Output,
-  PLATFORM_ID,
-  SimpleChanges,
-  TemplateRef,
-  ViewChild
-} from '@angular/core';
-import {AngularFireAuth} from '@angular/fire/auth';
-import {AbstractControl, FormControl, FormGroup, Validators} from '@angular/forms';
-import {MatDialog, MatDialogRef, MatFormFieldAppearance, MatTabChangeEvent, MatTabGroup, ThemePalette} from '@angular/material';
-import {ActivatedRoute} from '@angular/router';
-import {Subscription} from 'rxjs/internal/Subscription';
-import {LegalityDialogComponent} from '../../components/legality-dialog/legality-dialog.component';
-import {LegalityDialogParams, LegalityDialogResult} from '../../interfaces/legality.dialog.intreface';
-import {NgxAuthFirebaseUIConfig, NgxAuthFirebaseUIConfigToken} from '../../ngx-auth-firebase-u-i.module';
-import {AuthProcessService, AuthProvider, messageOnAuthErrorType} from '../../services/auth-process.service';
-import {Theme} from '../providers/auth.providers.component';
-import {MatPasswordStrengthComponent} from '@angular-material-extensions/password-strength';
-import {NgxAuthFirebaseuiAnimations} from '../../animations';
+import { MatPasswordStrengthComponent } from '@angular-material-extensions/password-strength';
+import { isPlatformBrowser } from '@angular/common';
+import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, forwardRef, Inject, Input, OnChanges, OnDestroy, OnInit, Output, PLATFORM_ID, SimpleChanges, TemplateRef, ViewChild } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { AbstractControl, FormControl, FormGroup, Validators } from '@angular/forms';
+import { ThemePalette } from '@angular/material/core';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { MatFormFieldAppearance } from '@angular/material/form-field';
+import { MatTabChangeEvent, MatTabGroup } from '@angular/material/tabs';
+import { ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs/internal/Subscription';
+import { NgxAuthFirebaseuiAnimations } from '../../animations';
+import { LegalityDialogComponent } from '../../components/legality-dialog/legality-dialog.component';
+import { LegalityDialogParams, LegalityDialogResult } from '../../interfaces/legality.dialog.intreface';
+import { NgxAuthFirebaseUIConfig, NgxAuthFirebaseUIConfigToken } from '../../ngx-auth-firebase-u-i.module';
+import { AuthProcessService, AuthProvider, messageOnAuthErrorType } from '../../services/auth-process.service';
+import { Theme } from '../providers/auth.providers.component';
 
 
 export const EMAIL_REGEX = new RegExp(['^(([^<>()[\\]\\\.,;:\\s@\"]+(\\.[^<>()\\[\\]\\\.,;:\\s@\"]+)*)',

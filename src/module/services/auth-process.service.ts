@@ -1,6 +1,6 @@
 import { EventEmitter, forwardRef, Inject, Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { MatSnackBar, MatSnackBarConfig, MAT_SNACK_BAR_DEFAULT_OPTIONS } from '@angular/material';
+import { MatSnackBar, MatSnackBarConfig, MAT_SNACK_BAR_DEFAULT_OPTIONS } from '@angular/material/snack-bar';
 import { firebase } from '@firebase/app';
 import '@firebase/auth';
 import { User, UserInfo } from 'firebase/app';

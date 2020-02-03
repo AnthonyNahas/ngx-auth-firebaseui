@@ -1,10 +1,11 @@
-import {Component, EventEmitter, Inject, Input, OnInit, Output, PLATFORM_ID, ViewEncapsulation} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {MatFormFieldAppearance, ThemePalette} from '@angular/material';
-import {AuthProcessService, AuthProvider} from '../../services/auth-process.service';
-import {Subscription} from 'rxjs';
-import {NgxAuthFirebaseuiAnimations} from '../../animations';
-import {isPlatformBrowser} from '@angular/common';
+import { isPlatformBrowser } from '@angular/common';
+import { Component, EventEmitter, Inject, Input, OnInit, Output, PLATFORM_ID, ViewEncapsulation } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ThemePalette } from '@angular/material/core';
+import { MatFormFieldAppearance } from '@angular/material/form-field';
+import { Subscription } from 'rxjs';
+import { NgxAuthFirebaseuiAnimations } from '../../animations';
+import { AuthProcessService, AuthProvider } from '../../services/auth-process.service';
 
 @Component({
   selector: 'ngx-auth-firebaseui-login',

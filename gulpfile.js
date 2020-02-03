@@ -36,7 +36,10 @@ const jestCli = require('jest-cli');
 const runSequence = require('run-sequence');
 
 /** To compile & bundle the library with Angular & Rollup */
-const ngc = (args) => new Promise((resolve, reject) => {// Promisify version of the ngc compiler
+var ngFsUtils = require('@angular/compiler-cli/src/ngtsc/file_system');
+// Promisify version of the ngc compiler
+const ngc = (args) => new Promise((resolve, reject) => {
+  ngFsUtils.setFileSystem(new ngFsUtils.NodeJSFileSystem());
   let exitCode = require('@angular/compiler-cli/src/main').main(args);
   resolve(exitCode);
 });

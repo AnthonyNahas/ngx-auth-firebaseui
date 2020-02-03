@@ -1,9 +1,9 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {AngularFireAuth} from '@angular/fire/auth';
-import {User} from 'firebase';
-import {Observable} from 'rxjs';
-import {MatDialog} from '@angular/material';
-import {UserComponent} from '../../..';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { MatDialog } from '@angular/material/dialog';
+import { User } from 'firebase';
+import { Observable } from 'rxjs';
+import { UserComponent } from '../../..';
 
 export interface LinkMenuItem {
   text: string;

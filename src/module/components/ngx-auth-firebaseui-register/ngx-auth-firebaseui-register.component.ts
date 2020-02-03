@@ -1,12 +1,13 @@
-import {Component, EventEmitter, Inject, Input, OnDestroy, OnInit, Output, PLATFORM_ID, ViewEncapsulation} from '@angular/core';
-import {AbstractControl, FormBuilder, FormGroup, ValidationErrors, ValidatorFn, Validators} from '@angular/forms';
-import {MatFormFieldAppearance, ThemePalette} from '@angular/material';
-import {Subject, Subscription} from 'rxjs';
-import {takeUntil} from 'rxjs/internal/operators';
+import { isPlatformBrowser } from '@angular/common';
+import { Component, EventEmitter, Inject, Input, OnDestroy, OnInit, Output, PLATFORM_ID, ViewEncapsulation } from '@angular/core';
+import { AbstractControl, FormBuilder, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
+import { ThemePalette } from '@angular/material/core';
+import { MatFormFieldAppearance } from '@angular/material/form-field';
+import { Subject, Subscription } from 'rxjs';
+import { takeUntil } from 'rxjs/internal/operators';
+import { NgxAuthFirebaseuiAnimations } from '../../animations';
+import { AuthProcessService } from '../../services/auth-process.service';
 
-import {NgxAuthFirebaseuiAnimations} from '../../animations';
-import {AuthProcessService} from '../../services/auth-process.service';
-import {isPlatformBrowser} from '@angular/common';
 
 export const confirmPasswordValidator: ValidatorFn = (control: AbstractControl): ValidationErrors | null => {
   if (!control.parent || !control) {
