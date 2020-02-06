@@ -67,7 +67,7 @@
   },
   "devDependencies": {
     "@angular-devkit/core": "^8.3.24",
-    "@angular-devkit/schematics": "^8.3.24",
+    "@angular-devkit/schematics": "^9.0.0",
     "@angular/compiler": "^8.2.14",
     "@angular/compiler-cli": "8.0.3",
     "@angular/platform-browser": "^8.2.14",
