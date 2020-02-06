@@ -61,7 +61,7 @@
     "@angular/fire": "^5.4.0",
     "@angular/flex-layout": "^8.0.0-beta.27",
     "@angular/forms": "^8.2.14",
-    "@angular/material": "^8.2.3",
+    "@angular/material": "^9.0.0",
     "@angular/router": "^8.2.14",
     "firebase": "^7.8.0"
   },
