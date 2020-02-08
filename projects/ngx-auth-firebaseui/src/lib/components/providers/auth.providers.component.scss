@@ -1,0 +1,111 @@
+$google: #db4437;
+$facebook: #385899;
+$twitter: #1da1f2;
+$github: #000000;
+$phone: #02bd7e;
+$microsoft: #0078d4;
+$microsoft_fab: #f8f9fa;
+$yahoo: #720e9e;
+
+:host {
+  display: block;
+
+  .mat-icon {
+    vertical-align: inherit;
+  }
+}
+
+.space-full-xs {
+  width: 100%;
+  margin: .4rem;
+}
+
+.facebook-filled {
+  mat-icon {
+    fill: $facebook;
+  }
+}
+
+.twitter-filled {
+  mat-icon {
+    fill: $twitter;
+  }
+}
+
+.buttons-raised {
+
+  button {
+    color: white !important;
+  }
+
+  .google-raised {
+    background-color: $google;
+  }
+
+  .facebook-raised {
+    background-color: $facebook;
+  }
+
+  .twitter-raised {
+    background-color: $twitter;
+  }
+
+  .github-raised {
+    background-color: $github;
+  }
+
+  .microsoft-raised {
+    background-color: $microsoft;
+  }
+
+  .yahoo-raised {
+    background-color: $yahoo;
+  }
+
+  .phone-raised {
+    background-color: $phone;
+  }
+}
+
+.buttons-classic {
+
+  button.google-classic {
+    color: $google !important;
+  }
+
+  .facebook-classic {
+    color: $facebook !important;
+  }
+
+  .twitter-classic {
+    color: $twitter !important;
+  }
+
+  .github-classic {
+    color: $github !important;
+  }
+
+  .microsoft-classic {
+    color: $microsoft !important;
+  }
+
+  .yahoo-classic {
+    color: $yahoo !important;
+  }
+
+  .phone-classic {
+    color: $phone;
+  }
+}
+
+.icon-white {
+  color: white;
+
+  mat-icon {
+    fill: white;
+  }
+}
+
+button.microsoft {
+  background: $microsoft_fab;
+}

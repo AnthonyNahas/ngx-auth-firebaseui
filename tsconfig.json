@@ -17,7 +17,13 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ngx-auth-firebaseui": [
+        "dist/ngx-auth-firebaseui/ngx-auth-firebaseui",
+        "dist/ngx-auth-firebaseui"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

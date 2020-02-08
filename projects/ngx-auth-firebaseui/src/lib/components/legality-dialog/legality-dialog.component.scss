@@ -1,0 +1,14 @@
+::ng-deep .mat-checkbox-label {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+mat-dialog-content {
+  div {
+    margin-top: 1.5rem
+  }
+}
+
+mat-dialog-actions {
+  margin-top: 1rem;
+}
