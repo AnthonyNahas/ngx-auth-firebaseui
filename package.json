@@ -33,6 +33,7 @@
   },
   "private": true,
   "scripts": {
+    "prepare": "npm run build",
     "build": "gulp build",
     "build:watch": "gulp build:watch",
     "build:watch:fast": "gulp build:watch-fast",
