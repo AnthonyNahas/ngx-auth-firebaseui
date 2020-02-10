@@ -1,17 +1,16 @@
-import { EventEmitter, forwardRef, Inject, Injectable } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/auth';
-import { MatSnackBar, MatSnackBarConfig, MAT_SNACK_BAR_DEFAULT_OPTIONS } from '@angular/material';
-import { firebase } from '@firebase/app';
+import {EventEmitter, forwardRef, Inject, Injectable} from '@angular/core';
+import {AngularFireAuth} from '@angular/fire/auth';
+import {firebase} from '@firebase/app';
 import '@firebase/auth';
-import { User, UserInfo } from 'firebase/app';
-import { isFunction } from 'lodash';
-import { Observable } from 'rxjs';
-import { tap } from 'rxjs/operators';
-import { Accounts } from '../enums';
-import { NgxAuthFirebaseUIConfig } from '../interfaces/config.interface';
-import { ICredentials, ISignInProcess, ISignUpProcess } from '../interfaces/main.interface';
-import { NgxAuthFirebaseUIConfigToken } from '../ngx-auth-firebase-u-i.module';
-import { FirestoreSyncService } from './firestore-sync.service';
+import {User, UserInfo} from 'firebase/app';
+import {Observable} from 'rxjs';
+import {tap} from 'rxjs/operators';
+import {Accounts} from '../enums';
+import {NgxAuthFirebaseUIConfig} from '../interfaces/config.interface';
+import {ICredentials, ISignInProcess, ISignUpProcess} from '../interfaces/main.interface';
+import {FirestoreSyncService} from './firestore-sync.service';
+import {NgxAuthFirebaseUIConfigToken} from '../ngx-auth-firebaseui.module';
+import {MAT_SNACK_BAR_DEFAULT_OPTIONS, MatSnackBar, MatSnackBarConfig} from '@angular/material/snack-bar';
 
 // import User = firebase.User;
 
@@ -37,9 +36,6 @@ export enum AuthProvider {
   PhoneNumber = 'phoneNumber'
 }
 
-export type getErrorMessageType = (error: any) => string;
-export type messageOnAuthErrorType = string | getErrorMessageType;
-
 @Injectable({
   providedIn: 'root'
 })
@@ -53,9 +49,10 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
   user: User;
 
   messageOnAuthSuccess: string;
-  messageOnAuthError: messageOnAuthErrorType;
+  messageOnAuthError: string;
 
-  // Legacy field that is setted to true after sign up. Value is lost in case of reload. The idea here is to know if we just sent a verification email.
+  // Legacy field that is setted to true after sign up.
+  // Value is lost in case of reload. The idea here is to know if we just sent a verification email.
   emailConfirmationSent: boolean;
   // Lefacy filed that contain the mail to confirm. Same lifecyle than emailConfirmationSent.
   emailToConfirm: string;
@@ -63,10 +60,11 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
   constructor(
     public afa: AngularFireAuth,
     @Inject(forwardRef(() => NgxAuthFirebaseUIConfigToken)) public config: NgxAuthFirebaseUIConfig,
-    private _snackBar: MatSnackBar,
-    private _fireStoreService: FirestoreSyncService,
-    @Inject(MAT_SNACK_BAR_DEFAULT_OPTIONS) private _matSnackBarConfig: MatSnackBarConfig
-  ) {}
+    private snackBar: MatSnackBar,
+    private fireStoreService: FirestoreSyncService,
+    @Inject(MAT_SNACK_BAR_DEFAULT_OPTIONS) private matSnackBarConfig: MatSnackBarConfig
+  ) {
+  }
 
   listenToUserEvents() {
     this.user$ = this.afa.user.pipe(
@@ -80,12 +78,14 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
    * Reset the password of the ngx-auth-firebaseui-user via email
    *
    * @param email - the email to reset
-   * @returns
    */
-  public resetPassword(email: string) {
-    return this.afa.auth.sendPasswordResetEmail(email)
-      .then(() => console.log('Password reset email sent'))
-      .catch((error) => this.notifyError(error));
+  public async resetPassword(email: string): Promise<void> {
+    try {
+      console.log('Password reset email sent');
+      return await this.afa.auth.sendPasswordResetEmail(email);
+    } catch (error) {
+      return this.notifyError(error);
+    }
   }
 
   /**
@@ -94,8 +94,6 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
    * like google, facebook, twitter and github
    *
    * @param provider - the provider to authenticate with (google, facebook, twitter, github)
-   * @param credentials
-   * @returns
    */
   public async signInWith(provider: AuthProvider, credentials?: ICredentials) {
     try {
@@ -152,8 +150,7 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
    * After that the ngx-auth-firebaseui-user should verify and confirm an email sent via the firebase
    *
    * @param displayName - the displayName if the new ngx-auth-firebaseui-user
-   * @param credentials
-   * @returns
+   * @returns -
    */
   public async signUp(displayName: string, credentials: ICredentials) {
     try {
@@ -162,11 +159,11 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
       await this.updateProfile(displayName, user.photoURL);
 
       if (this.config.enableFirestoreSync) {
-        await this._fireStoreService
+        await this.fireStoreService
           .getUserDocRefByUID(user.uid)
           .set({
             uid: user.uid,
-            displayName: displayName,
+            displayName,
             email: user.email,
             photoURL: user.photoURL
           } as User);
@@ -207,13 +204,13 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
    *
    * @param name - the new name of the authenticated ngx-auth-firebaseui-user
    * @param photoURL - the new photo url of the authenticated ngx-auth-firebaseui-user
-   * @returns
+   * @returns -
    */
-  public updateProfile(name: string, photoURL: string): Promise<any> {
+  public updateProfile(name: string, photoURL: string): Promise<void> {
     if (!photoURL) {
       return this.afa.auth.currentUser.updateProfile({displayName: name});
     } else {
-      return this.afa.auth.currentUser.updateProfile({displayName: name, photoURL: photoURL});
+      return this.afa.auth.currentUser.updateProfile({displayName: name, photoURL});
     }
   }
 
@@ -261,7 +258,7 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
     this.onSuccessEmitter.next(userCredential.user);
     if (this.config.enableFirestoreSync) {
       try {
-        await this._fireStoreService.updateUserData(this.parseUserInfo(userCredential.user));
+        await this.fireStoreService.updateUserData(this.parseUserInfo(userCredential.user));
       } catch (e) {
         console.error(`Error occurred while updating user data with firestore: ${e}`);
       }
@@ -283,16 +280,11 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
   }
 
   // Search for an error message.
-  // Consumers of this library are given the possibility to provide a function in case they want to instrument message based on error properties.
+  // Consumers of this library are given the possibility to provide a
+  // function in case they want to instrument message based on error properties.
   getMessageOnAuthError(error: any) {
-    let message: string;
-    const fallbackMessage = 'Sorry, something went wrong. Please retry later.';
-    if (isFunction(this.messageOnAuthError)) {
-      message = this.messageOnAuthError(error);
-    } else {
-      message = this.messageOnAuthError || fallbackMessage;
-    }
-    return message;
+    // tslint:disable-next-line:no-bitwise
+    return error.toString() || 'Sorry, something went wrong. Please retry later.';
   }
 
   // Show a toast using current snackbar config. If message is empty, no toast is displayed allowing to opt-out when needed.
@@ -300,7 +292,7 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
   // If that's the case, an action button is added to allow the end-user to dismiss the toast.
   showToast(message: string) {
     if (message) {
-      this._snackBar.open(message, this._matSnackBarConfig.duration ? null : 'OK');
+      this.snackBar.open(message, this.matSnackBarConfig.duration ? null : 'OK');
     }
   }
 

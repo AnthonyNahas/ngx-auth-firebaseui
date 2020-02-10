@@ -1,10 +1,11 @@
 import {Component, EventEmitter, Inject, Input, OnInit, Output, PLATFORM_ID, ViewEncapsulation} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {MatFormFieldAppearance, ThemePalette} from '@angular/material';
 import {AuthProcessService, AuthProvider} from '../../services/auth-process.service';
 import {Subscription} from 'rxjs';
 import {NgxAuthFirebaseuiAnimations} from '../../animations';
 import {isPlatformBrowser} from '@angular/common';
+import {MatFormFieldAppearance} from '@angular/material/form-field';
+import {ThemePalette} from '@angular/material/core';
 
 @Component({
   selector: 'ngx-auth-firebaseui-login',
@@ -42,9 +43,13 @@ export class NgxAuthFirebaseuiLoginComponent implements OnInit {
   @Input() passwordErrorRequiredText = 'Password is required';
 
   // Events
+  // tslint:disable-next-line:no-output-on-prefix
   @Output() onSuccess: any;
+  // tslint:disable-next-line:no-output-on-prefix
   @Output() onError: any;
+  // tslint:disable-next-line:no-output-on-prefix
   @Output() onCreateAccountRequested: EventEmitter<void> = new EventEmitter<void>();
+  // tslint:disable-next-line:no-output-on-prefix
   @Output() onResetPasswordRequested: EventEmitter<void> = new EventEmitter<void>();
 
   loginForm: FormGroup;
@@ -53,9 +58,9 @@ export class NgxAuthFirebaseuiLoginComponent implements OnInit {
   authenticationError = false;
 
   constructor(
-    @Inject(PLATFORM_ID) private platformId: Object,
+    @Inject(PLATFORM_ID) private platformId: object,
     public authProcess: AuthProcessService,
-    private _formBuilder: FormBuilder) {
+    private formBuilder: FormBuilder) {
     this.onSuccess = authProcess.onSuccessEmitter;
     this.onError = authProcess.onErrorEmitter;
   }
@@ -76,7 +81,7 @@ export class NgxAuthFirebaseuiLoginComponent implements OnInit {
 
     this.updateAuthSnackbarMessages();
 
-    this.loginForm = this._formBuilder.group({
+    this.loginForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required]
     });
@@ -93,6 +98,6 @@ export class NgxAuthFirebaseuiLoginComponent implements OnInit {
         email: this.loginForm.controls.email.value,
         password: this.loginForm.controls.password.value
       }
-    )
+    );
   }
 }

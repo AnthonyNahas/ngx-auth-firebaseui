@@ -19,16 +19,19 @@ import {
 } from '@angular/core';
 import {AngularFireAuth} from '@angular/fire/auth';
 import {AbstractControl, FormControl, FormGroup, Validators} from '@angular/forms';
-import {MatDialog, MatDialogRef, MatFormFieldAppearance, MatTabChangeEvent, MatTabGroup, ThemePalette} from '@angular/material';
 import {ActivatedRoute} from '@angular/router';
 import {Subscription} from 'rxjs/internal/Subscription';
 import {LegalityDialogComponent} from '../../components/legality-dialog/legality-dialog.component';
 import {LegalityDialogParams, LegalityDialogResult} from '../../interfaces/legality.dialog.intreface';
-import {NgxAuthFirebaseUIConfig, NgxAuthFirebaseUIConfigToken} from '../../ngx-auth-firebase-u-i.module';
-import {AuthProcessService, AuthProvider, messageOnAuthErrorType} from '../../services/auth-process.service';
+import {AuthProcessService, AuthProvider} from '../../services/auth-process.service';
 import {Theme} from '../providers/auth.providers.component';
 import {MatPasswordStrengthComponent} from '@angular-material-extensions/password-strength';
 import {NgxAuthFirebaseuiAnimations} from '../../animations';
+import {MatTabChangeEvent, MatTabGroup} from '@angular/material/tabs';
+import {ThemePalette} from '@angular/material/core';
+import {MatDialog, MatDialogRef} from '@angular/material/dialog';
+import {NgxAuthFirebaseUIConfig, NgxAuthFirebaseUIConfigToken} from '../../ngx-auth-firebaseui.module';
+import {MatFormFieldAppearance} from '@angular/material/form-field';
 
 
 export const EMAIL_REGEX = new RegExp(['^(([^<>()[\\]\\\.,;:\\s@\"]+(\\.[^<>()\\[\\]\\\.,;:\\s@\"]+)*)',
@@ -36,6 +39,7 @@ export const EMAIL_REGEX = new RegExp(['^(([^<>()[\\]\\\.,;:\\s@\"]+(\\.[^<>()\\
   '[0-9]{1,3}\])|(([a-zA-Z\\-0-9]+\\.)+',
   '[a-zA-Z]{2,}))$'].join(''));
 
+// tslint:disable-next-line:max-line-length
 export const PHONE_NUMBER_REGEX = new RegExp(['^[+]{0,1}[(]{0,1}[0-9]{1,4}[)]{0,1}[-\\s\\.]{0,1}[(]{0,1}[0-9]{1,4}[)]{0,1}[-\\s\\./0-9]{4,12}$'].join(''));
 
 @Component({
@@ -51,8 +55,8 @@ export class AuthComponent implements OnInit, AfterViewInit, OnChanges, OnDestro
   @ViewChild(MatPasswordStrengthComponent, {static: false}) passwordStrength: MatPasswordStrengthComponent;
 
   isLoading: boolean;
-
-  @Input() providers: AuthProvider[] | AuthProvider = AuthProvider.ALL; //  google, facebook, twitter, github as array or all as one single string
+  //  google, facebook, twitter, github as array or all as one single string
+  @Input() providers: AuthProvider[] | AuthProvider = AuthProvider.ALL;
   @Input() providersTheme: Theme; // Classic, Stroked, etc.
 
   @Input() appearance: MatFormFieldAppearance;
@@ -64,11 +68,13 @@ export class AuthComponent implements OnInit, AfterViewInit, OnChanges, OnDestro
   @Input() privacyPolicyUrl: string;
   @Input() goBackURL: string;
   @Input() messageOnAuthSuccess: string;
-  @Input() messageOnAuthError: messageOnAuthErrorType;
+  @Input() messageOnAuthError: string;
   @Input() messageOnEmailConfirmationSuccess: string;
 
   // Events
+  // tslint:disable-next-line:no-output-on-prefix
   @Output() onSuccess: any;
+  // tslint:disable-next-line:no-output-on-prefix
   @Output() onError: any;
   @Output() selectedTabChange: EventEmitter<MatTabChangeEvent> = new EventEmitter();
 
@@ -81,6 +87,7 @@ export class AuthComponent implements OnInit, AfterViewInit, OnChanges, OnDestro
   @Input() min: number;
   @Input() max: number;
   @Input() customValidator: RegExp;
+  // tslint:disable-next-line:no-output-on-prefix
   @Output() onStrengthChanged: EventEmitter<number> = new EventEmitter();
 
   // Verify email template to use in place of default template.
@@ -133,6 +140,7 @@ export class AuthComponent implements OnInit, AfterViewInit, OnChanges, OnDestro
 
   // email confirmation component
   @Input() emailConfirmationTitle = 'Confirm your e-mail address!';
+  // tslint:disable-next-line:max-line-length
   @Input() emailConfirmationText = `A confirmation e-mail has been sent to you. Check your inbox and click on the link "Confirm my e-mail" to confirm your e-mail address.`;
 
   authProvider = AuthProvider;
@@ -160,13 +168,13 @@ export class AuthComponent implements OnInit, AfterViewInit, OnChanges, OnDestro
   resetPasswordEmailFormControl: AbstractControl;
 
   constructor(
-    @Inject(PLATFORM_ID) private platformId: Object,
+    @Inject(PLATFORM_ID) private platformId: object,
     public auth: AngularFireAuth,
     public authProcess: AuthProcessService,
     public dialog: MatDialog,
     @Inject(forwardRef(() => NgxAuthFirebaseUIConfigToken)) public config: NgxAuthFirebaseUIConfig,
-    private _activatedRoute: ActivatedRoute,
-    private _cdr: ChangeDetectorRef
+    private activatedRoute: ActivatedRoute,
+    private changeDetectorRef: ChangeDetectorRef
   ) {
     this.onSuccess = authProcess.onSuccessEmitter;
     this.onError = authProcess.onErrorEmitter;
@@ -225,11 +233,11 @@ export class AuthComponent implements OnInit, AfterViewInit, OnChanges, OnDestro
   async signOut() {
     try {
       this.isLoading = true;
-      this._cdr.markForCheck();
+      this.changeDetectorRef.markForCheck();
       await this.authProcess.signOut();
     } finally {
       this.isLoading = false;
-      this._cdr.markForCheck();
+      this.changeDetectorRef.markForCheck();
     }
   }
 
@@ -239,14 +247,14 @@ export class AuthComponent implements OnInit, AfterViewInit, OnChanges, OnDestro
     }
     try {
       this.isLoading = true;
-      this._cdr.markForCheck();
+      this.changeDetectorRef.markForCheck();
       await this.authProcess.signInWith(this.authProviders.EmailAndPassword, {
         email: this.signInFormGroup.value.email,
         password: this.signInFormGroup.value.password
       });
     } finally {
       this.isLoading = false;
-      this._cdr.markForCheck();
+      this.changeDetectorRef.markForCheck();
     }
   }
 
@@ -262,7 +270,7 @@ export class AuthComponent implements OnInit, AfterViewInit, OnChanges, OnDestro
   createForgotPasswordTab() {
     this.passwordResetWished = true;
     this.tabIndex = 2;
-    this._cdr.markForCheck();
+    this.changeDetectorRef.markForCheck();
   }
 
   processLegalSignUP(authProvider?: AuthProvider) {
@@ -270,7 +278,7 @@ export class AuthComponent implements OnInit, AfterViewInit, OnChanges, OnDestro
       const params: LegalityDialogParams = {
         tosUrl: this.tosUrl,
         privacyPolicyUrl: this.privacyPolicyUrl,
-        authProvider: authProvider
+        authProvider
       };
 
       this.dialogRef = this.dialog.open(LegalityDialogComponent, {data: params});
@@ -288,7 +296,7 @@ export class AuthComponent implements OnInit, AfterViewInit, OnChanges, OnDestro
   async signUp() {
     try {
       this.isLoading = true;
-      this._cdr.markForCheck();
+      this.changeDetectorRef.markForCheck();
       return await this.authProcess.signUp(
         this.signUpFormGroup.value.name,
         {
@@ -298,18 +306,18 @@ export class AuthComponent implements OnInit, AfterViewInit, OnChanges, OnDestro
       );
     } finally {
       this.isLoading = false;
-      this._cdr.markForCheck();
+      this.changeDetectorRef.markForCheck();
     }
   }
 
   async signUpAnonymously() {
     try {
       this.isLoading = true;
-      this._cdr.markForCheck();
+      this.changeDetectorRef.markForCheck();
       await this.authProcess.signInWith(this.authProvider.ANONYMOUS);
     } finally {
       this.isLoading = false;
-      this._cdr.markForCheck();
+      this.changeDetectorRef.markForCheck();
     }
   }
 
@@ -319,12 +327,12 @@ export class AuthComponent implements OnInit, AfterViewInit, OnChanges, OnDestro
       .then(() => {
         this.passReset = true;
         // this.tabIndex = 2;
-        this._cdr.markForCheck();
+        this.changeDetectorRef.markForCheck();
       });
   }
 
   private chooseBackUrl() {
-    return this._activatedRoute.snapshot.queryParams['redirectUrl'] || this.goBackURL || '/';
+    return this.activatedRoute.snapshot.queryParams.redirectUrl || this.goBackURL || '/';
   }
 
   private _initSignInFormGroupBuilder() {

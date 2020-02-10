@@ -2,12 +2,13 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {AngularFireAuth} from '@angular/fire/auth';
 import {User} from 'firebase';
 import {Observable} from 'rxjs';
-import {MatDialog} from '@angular/material';
-import {UserComponent} from '../../..';
+import {MatDialog} from '@angular/material/dialog';
+import {UserComponent} from '..';
 
 export interface LinkMenuItem {
   text: string;
   icon?: string;
+  // tslint:disable-next-line:ban-types
   callback?: Function;
 }
 
@@ -27,6 +28,7 @@ export class NgxAuthFirebaseuiAvatarComponent implements OnInit {
   @Input()
   canDeleteAccount = true;
 
+  // tslint:disable-next-line:no-output-on-prefix
   @Output()
   onSignOut: EventEmitter<void> = new EventEmitter();
 

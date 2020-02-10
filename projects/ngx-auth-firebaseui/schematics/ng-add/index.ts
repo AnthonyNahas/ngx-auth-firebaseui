@@ -1,19 +1,15 @@
 import {chain, noop, Rule, SchematicContext, Tree} from '@angular-devkit/schematics';
 import {NodePackageInstallTask} from '@angular-devkit/schematics/tasks';
-import {
-  addModuleImportToRootModule,
-  addPackageJsonDependency,
-  getProjectFromWorkspace,
-  getWorkspace,
-  NodeDependency,
-  NodeDependencyType
-} from '../../helpers';
+import {addPackageJsonDependency, NodeDependency, NodeDependencyType} from '../helpers';
+import {getWorkspace} from '@schematics/angular/utility/config';
+import {addModuleImportToRootModule, getProjectFromWorkspace} from '@angular/cdk/schematics';
+
 
 /** Loads the full version from the given Angular package gracefully. */
 function loadPackageVersionGracefully(): string | null {
   try {
-    console.log('ngx-auth-firebaseui version = ', require(`../../package.json`).version);
-    return require(`../../package.json`).version;
+    console.log('ngx-auth-firebaseui version = ', require(`../package.json`).version);
+    return require(`../package.json`).version;
   } catch {
     return null;
   }
@@ -57,11 +53,7 @@ export function installPackageJsonDependencies(): Rule {
 export function addModuleToImports(options: any): Rule {
   return (host: Tree, context: SchematicContext) => {
     const workspace = getWorkspace(host);
-    const project = getProjectFromWorkspace(
-      workspace,
-      // Takes the first project in case it's not provided by CLI
-      options.project ? options.project : Object.keys(workspace['projects'])[0]
-    );
+    const project = getProjectFromWorkspace(workspace, options.project);
 
     // const x =
     //   `apiKey: 'your-firebase-apiKey',
@@ -86,6 +78,7 @@ export function getPackageVersionFromPackageJson(tree: Tree, name: string): stri
     return null;
   }
 
+  // tslint:disable-next-line:no-non-null-assertion
   const packageJson = JSON.parse(tree.read('package.json')!.toString('utf8'));
 
   if (packageJson.dependencies && packageJson.dependencies[name]) {
@@ -105,7 +98,7 @@ function addLibAssetsToAssets(options: any) {
 
       if (angularJsonFile) {
         const angularJsonFileObject = JSON.parse(angularJsonFile.toString('utf-8'));
-        const project = options.project ? options.project : Object.keys(angularJsonFileObject['projects'])[0];
+        const project = options.project ? options.project : Object.keys(angularJsonFileObject.projects)[0];
         const projectObject = angularJsonFileObject.projects[project];
         const assets = projectObject.architect.build.options.assets;
         context.logger.log('info', `"${assets}`);
@@ -127,7 +120,7 @@ function addLibAssetsToAssets(options: any) {
   };
 }
 
-export default function (options: any): Rule {
+export default function(options: any): Rule {
   return chain([
     options && options.skipPackageJson ? noop() : addPackageJsonDependencies(),
     options && options.skipPackageJson ? noop() : installPackageJsonDependencies(),

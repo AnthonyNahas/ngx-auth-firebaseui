@@ -1,6 +1,6 @@
 import {Component, Inject} from '@angular/core';
-import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
 import {LegalityDialogParams, LegalityDialogResult} from '../../interfaces/legality.dialog.intreface';
+import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 
 @Component({
   selector: 'ngx-auth-firebaseui-legality-dialog',
@@ -22,9 +22,9 @@ export class LegalityDialogComponent {
     if (this.data.tosUrl && this.data.privacyPolicyUrl) {
       this._disableConfirmActionButton = !(this.checkTOS && this.checkPrivacyPolicy);
     } else if (this.data.tosUrl && !this.data.privacyPolicyUrl) {
-      this._disableConfirmActionButton = !this.checkTOS
+      this._disableConfirmActionButton = !this.checkTOS;
     } else if (!this.data.tosUrl && this.data.privacyPolicyUrl) {
-      this._disableConfirmActionButton = !this.checkPrivacyPolicy
+      this._disableConfirmActionButton = !this.checkPrivacyPolicy;
     }
     return this._disableConfirmActionButton;
   }

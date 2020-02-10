@@ -1,27 +1,27 @@
 import {
-  addBootstrapToModule as originalAddBootstrapToModule,
-  addDeclarationToModule as originalAddDeclarationToModule,
-  addEntryComponentToModule as originalAddEntryComponentToModule,
-  addExportToModule as originalAddExportToModule,
-  addImportToModule as originalAddImportToModule,
-  addProviderToModule as originalAddProviderToModule,
-  addRouteDeclarationToModule as originalAddRouteDeclarationToModule,
-  addSymbolToNgModuleMetadata as originalAddSymbolToNgModuleMetadata,
-  findNode as originalFindNode,
+  insertImport as originalInsertImport,
   findNodes as originalFindNodes,
-  getContentOfKeyLiteral as originalGetContentOfKeyLiteral,
-  getDecoratorMetadata as originalGetDecoratorMetadata,
-  getFirstNgModuleName as originalGetFirstNgModuleName,
-  getMetadataField as originalGetMetadataField,
-  getRouterModuleDeclaration as originalGetRouterModuleDeclaration,
+  findNode as originalFindNode,
   getSourceNodes as originalGetSourceNodes,
   insertAfterLastOccurrence as originalInsertAfterLastOccurrence,
-  insertImport as originalInsertImport,
+  getContentOfKeyLiteral as originalGetContentOfKeyLiteral,
+  getFirstNgModuleName as originalGetFirstNgModuleName,
+  getDecoratorMetadata as originalGetDecoratorMetadata,
+  getMetadataField as originalGetMetadataField,
+  getRouterModuleDeclaration as originalGetRouterModuleDeclaration,
+  addSymbolToNgModuleMetadata as originalAddSymbolToNgModuleMetadata,
+  addDeclarationToModule as originalAddDeclarationToModule,
+  addImportToModule as originalAddImportToModule,
+  addProviderToModule as originalAddProviderToModule,
+  addExportToModule as originalAddExportToModule,
+  addBootstrapToModule as originalAddBootstrapToModule,
+  addEntryComponentToModule as originalAddEntryComponentToModule,
+  addRouteDeclarationToModule as originalAddRouteDeclarationToModule,
   isImported as originalIsImported
 } from '@schematics/angular/utility/ast-utils';
 import * as ts from '@schematics/angular/third_party/github.com/Microsoft/TypeScript/lib/typescript';
 
-import {Change} from './change';
+import { Change } from './change';
 
 /**
  * Add Import `import { symbolName } from fileName` if the import doesn't exit

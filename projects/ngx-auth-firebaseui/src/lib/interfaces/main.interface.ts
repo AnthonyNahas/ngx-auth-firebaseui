@@ -1,8 +1,8 @@
 import {AuthProvider} from '../services/auth-process.service';
 
 export interface ICredentials {
-  email: string,
-  password: string
+  email: string;
+  password: string;
 }
 
 export interface ISignUpProcess {

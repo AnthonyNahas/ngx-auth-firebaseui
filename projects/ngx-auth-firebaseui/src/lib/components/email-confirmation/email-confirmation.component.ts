@@ -1,6 +1,18 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges, TemplateRef, ViewChild } from '@angular/core';
-import { Router } from '@angular/router';
-import { AuthProcessService } from './../../services/auth-process.service';
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  EventEmitter,
+  Input,
+  OnChanges,
+  OnInit,
+  Output,
+  SimpleChanges,
+  TemplateRef,
+  ViewChild
+} from '@angular/core';
+import {Router} from '@angular/router';
+import {AuthProcessService} from './../../services/auth-process.service';
 
 interface VerifyEmailContext {
   email: string;
@@ -14,7 +26,8 @@ interface VerifyEmailContext {
 
 const defaultTranslations = {
   verifyEmailTitleText: 'Confirm your e-mail address!',
-  verifyEmailConfirmationText: 'A confirmation e-mail has been sent. Check your inbox and click on the link "Confirm my e-mail" to confirm your e-mail address.',
+  verifyEmailConfirmationText: 'A confirmation e-mail has been sent.' +
+    ' Check your inbox and click on the link "Confirm my e-mail" to confirm your e-mail address.',
   verifyEmailGoBackText: 'Go back',
   sendNewVerificationEmailText: 'Send new confirmation e-mail',
   signOutText: 'Sign out',
@@ -53,7 +66,8 @@ export class EmailConfirmationComponent implements OnInit, OnChanges {
 
   @ViewChild('defaultVerifyEmail', {static: true}) defaultTemplate: TemplateRef<any>;
 
-  constructor(public authProcess: AuthProcessService, private _router: Router, private _cdr: ChangeDetectorRef) {}
+  constructor(public authProcess: AuthProcessService, private router: Router, private changeDetectorRef: ChangeDetectorRef) {
+  }
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.verifyEmailTemplate && changes.verifyEmailTemplate.currentValue == null) {
@@ -76,7 +90,7 @@ export class EmailConfirmationComponent implements OnInit, OnChanges {
   async continue() {
     try {
       await this.authProcess.reloadUserInfo();
-      await this._router.navigate([this.goBackURL]);
+      await this.router.navigate([this.goBackURL]);
     } catch (error) {
       this.authProcess.notifyError(error);
     }
@@ -85,14 +99,14 @@ export class EmailConfirmationComponent implements OnInit, OnChanges {
   async sendNewVerificationEmail() {
     try {
       this.isLoading = true;
-      this._cdr.markForCheck();
+      this.changeDetectorRef.markForCheck();
       await this.authProcess.sendNewVerificationEmail();
       this.authProcess.showToast(this.verifyEmailContext.messageOnEmailConfirmationSuccess);
     } catch (error) {
       this.authProcess.notifyError(error);
     } finally {
       this.isLoading = false;
-      this._cdr.markForCheck();
+      this.changeDetectorRef.markForCheck();
     }
   }
 

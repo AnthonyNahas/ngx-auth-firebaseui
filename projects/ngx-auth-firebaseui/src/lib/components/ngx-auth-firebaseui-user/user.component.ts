@@ -1,12 +1,12 @@
-import { Component, EventEmitter, forwardRef, Inject, Input, Output } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/auth';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { MatFormFieldAppearance, MatSnackBar } from '@angular/material';
-import { User } from 'firebase';
-import { NgxAuthFirebaseUIConfig, NgxAuthFirebaseUIConfigToken } from '../../ngx-auth-firebase-u-i.module';
-import { AuthProcessService } from '../../services/auth-process.service';
-import { FirestoreSyncService } from '../../services/firestore-sync.service';
-import { EMAIL_REGEX, PHONE_NUMBER_REGEX } from '../ngx-auth-firebaseui/auth.component';
+import {Component, EventEmitter, forwardRef, Inject, Input, Output} from '@angular/core';
+import {AngularFireAuth} from '@angular/fire/auth';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {User} from 'firebase';
+import {AuthProcessService} from '../../services/auth-process.service';
+import {FirestoreSyncService} from '../../services/firestore-sync.service';
+import {EMAIL_REGEX, PHONE_NUMBER_REGEX} from '../ngx-auth-firebaseui/auth.component';
+import {MatFormFieldAppearance} from '@angular/material/form-field';
+import {NgxAuthFirebaseUIConfig, NgxAuthFirebaseUIConfigToken} from '../../ngx-auth-firebaseui.module';
 
 @Component({
   selector: 'ngx-auth-firebaseui-user',
@@ -30,12 +30,15 @@ export class UserComponent {
   @Input()
   appearance: MatFormFieldAppearance;
 
+  // tslint:disable-next-line:no-output-on-prefix
   @Output()
   onSignOut: EventEmitter<void> = new EventEmitter();
 
+  // tslint:disable-next-line:no-output-on-prefix
   @Output()
   onAccountEdited: EventEmitter<void> = new EventEmitter();
 
+  // tslint:disable-next-line:no-output-on-prefix
   @Output()
   onAccountDeleted: EventEmitter<void> = new EventEmitter();
 
@@ -48,16 +51,16 @@ export class UserComponent {
   constructor(
     public auth: AngularFireAuth,
     public authProcess: AuthProcessService,
-    private _fireStoreService: FirestoreSyncService,
-    private snackBar: MatSnackBar,
+    private fireStoreService: FirestoreSyncService,
     @Inject(forwardRef(() => NgxAuthFirebaseUIConfigToken)) public config: NgxAuthFirebaseUIConfig
-  ) { }
+  ) {
+  }
 
   protected initUpdateFormGroup() {
     const currentUser: User = this.auth.auth.currentUser;
     this.updateFormGroup = new FormGroup({
       name: this.updateNameFormControl = new FormControl(
-        { value: currentUser.displayName, disabled: this.editMode },
+        {value: currentUser.displayName, disabled: this.editMode},
         [
           Validators.required,
           Validators.minLength(this.config.nameMinLength),
@@ -119,7 +122,7 @@ export class UserComponent {
         }
 
         if (this.config.enableFirestoreSync) {
-          await this._fireStoreService.updateUserData(this.authProcess.parseUserInfo(user));
+          await this.fireStoreService.updateUserData(this.authProcess.parseUserInfo(user));
         }
 
       } catch (error) {
@@ -157,7 +160,7 @@ export class UserComponent {
       // await this.authProcess.deleteAccount();
       await this.auth.auth.currentUser.delete();
       // if (this.config.enableFirestoreSync) {
-      await this._fireStoreService.deleteUserData(user.uid);
+      await this.fireStoreService.deleteUserData(user.uid);
       // }
       this.onAccountDeleted.emit();
       this.editMode = false;

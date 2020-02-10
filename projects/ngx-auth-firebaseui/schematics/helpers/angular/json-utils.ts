@@ -1,12 +1,12 @@
-import {JsonAstArray, JsonAstNode, JsonAstObject, JsonValue} from '@angular-devkit/core';
-import {UpdateRecorder} from '@angular-devkit/schematics';
+import { JsonAstArray, JsonAstNode, JsonAstObject, JsonValue } from '@angular-devkit/core';
+import { UpdateRecorder } from '@angular-devkit/schematics';
 
 import {
   appendPropertyInAstObject as originalAppendPropertyInAstObject,
-  appendValueInAstArray as originalAppendValueInAstArray,
-  findPropertyInAstObject as originalFindPropertyInAstObject,
+  removePropertyInAstObject as originalRemovePropertyInAstObject,
   insertPropertyInAstObjectInOrder as originalInsertPropertyInAstObjectInOrder,
-  removePropertyInAstObject as originalRemovePropertyInAstObject
+  appendValueInAstArray as originalAppendValueInAstArray,
+  findPropertyInAstObject as originalFindPropertyInAstObject
 } from '@schematics/angular/utility/json-utils';
 
 export function appendPropertyInAstObject(

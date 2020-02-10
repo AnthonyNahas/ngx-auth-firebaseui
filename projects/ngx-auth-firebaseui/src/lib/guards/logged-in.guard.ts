@@ -2,7 +2,8 @@ import { Inject, Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from '@angular/router';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { AuthProcessService, NgxAuthFirebaseUIConfig, NgxAuthFirebaseUIConfigToken } from '../ngx-auth-firebase-u-i.module';
+import {NgxAuthFirebaseUIConfig} from '../interfaces';
+import {AuthProcessService, NgxAuthFirebaseUIConfigToken} from '../ngx-auth-firebaseui.module';
 
 @Injectable({
   providedIn: 'root'

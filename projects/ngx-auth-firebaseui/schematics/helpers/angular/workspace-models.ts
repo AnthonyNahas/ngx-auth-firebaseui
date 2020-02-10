@@ -1,4 +1,4 @@
-import {experimental} from '@angular-devkit/core';
+import { experimental } from '@angular-devkit/core';
 
 export enum ProjectType {
   Application = 'application',
@@ -59,7 +59,6 @@ export interface BrowserBuilderOptions extends BrowserBuilderBaseOptions {
 export interface ServeBuilderOptions {
   browserTarget: string;
 }
-
 export interface LibraryBuilderOptions {
   tsConfig: string;
   project: string;

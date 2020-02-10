@@ -1,12 +1,13 @@
 import {Component, EventEmitter, Inject, Input, OnDestroy, OnInit, Output, PLATFORM_ID, ViewEncapsulation} from '@angular/core';
 import {AbstractControl, FormBuilder, FormGroup, ValidationErrors, ValidatorFn, Validators} from '@angular/forms';
-import {MatFormFieldAppearance, ThemePalette} from '@angular/material';
 import {Subject, Subscription} from 'rxjs';
 import {takeUntil} from 'rxjs/internal/operators';
 
 import {NgxAuthFirebaseuiAnimations} from '../../animations';
 import {AuthProcessService} from '../../services/auth-process.service';
 import {isPlatformBrowser} from '@angular/common';
+import {MatFormFieldAppearance} from '@angular/material/form-field';
+import {ThemePalette} from '@angular/material/core';
 
 export const confirmPasswordValidator: ValidatorFn = (control: AbstractControl): ValidationErrors | null => {
   if (!control.parent || !control) {
@@ -70,8 +71,11 @@ export class NgxAuthFirebaseuiRegisterComponent implements OnInit, OnDestroy {
   @Input() passwordErrorMatchText = 'Password must match';
 
   // Events
+  // tslint:disable-next-line:no-output-on-prefix
   @Output() onSuccess: any;
+  // tslint:disable-next-line:no-output-on-prefix
   @Output() onError: any;
+  // tslint:disable-next-line:no-output-on-prefix
   @Output() onLoginRequested: EventEmitter<void> = new EventEmitter<void>();
 
   registerForm: FormGroup;
@@ -79,15 +83,15 @@ export class NgxAuthFirebaseuiRegisterComponent implements OnInit, OnDestroy {
   authenticationError = false;
 
   // Private
-  private _unsubscribeAll: Subject<any>;
+  private unsubscribeAll: Subject<any>;
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object,
-              private _formBuilder: FormBuilder,
+  constructor(@Inject(PLATFORM_ID) private platformId: object,
+              private formBuilder: FormBuilder,
               public authProcess: AuthProcessService) {
     // Configure the layout
 
     // Set the private defaults
-    this._unsubscribeAll = new Subject();
+    this.unsubscribeAll = new Subject();
     this.onSuccess = authProcess.onSuccessEmitter;
     this.onError = authProcess.onErrorEmitter;
   }
@@ -104,7 +108,7 @@ export class NgxAuthFirebaseuiRegisterComponent implements OnInit, OnDestroy {
     if (isPlatformBrowser(this.platformId)) {
       this.onErrorSubscription = this.onError.subscribe(() => this.authenticationError = true);
     }
-    this.registerForm = this._formBuilder.group({
+    this.registerForm = this.formBuilder.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
@@ -116,7 +120,7 @@ export class NgxAuthFirebaseuiRegisterComponent implements OnInit, OnDestroy {
     this.registerForm
       .controls
       .password
-      .valueChanges.pipe(takeUntil(this._unsubscribeAll))
+      .valueChanges.pipe(takeUntil(this.unsubscribeAll))
       .subscribe(() => {
         this.registerForm.controls.passwordConfirm.updateValueAndValidity();
       });
@@ -127,8 +131,8 @@ export class NgxAuthFirebaseuiRegisterComponent implements OnInit, OnDestroy {
    */
   ngOnDestroy(): void {
     // Unsubscribe from all subscriptions
-    this._unsubscribeAll.next();
-    this._unsubscribeAll.complete();
+    this.unsubscribeAll.next();
+    this.unsubscribeAll.complete();
   }
 
   async createAccount() {
@@ -138,6 +142,6 @@ export class NgxAuthFirebaseuiRegisterComponent implements OnInit, OnDestroy {
         email: this.registerForm.controls.email.value,
         password: this.registerForm.controls.password.value
       }
-    )
+    );
   }
 }
