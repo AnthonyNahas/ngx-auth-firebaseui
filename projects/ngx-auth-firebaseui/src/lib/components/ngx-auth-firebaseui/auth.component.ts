@@ -180,6 +180,10 @@ export class AuthComponent implements OnInit, AfterViewInit, OnChanges, OnDestro
     this.onError = authProcess.onErrorEmitter;
   }
 
+  get color(): string | ThemePalette {
+    return this.authenticationError ? 'warn' : 'primary';
+  }
+
   public ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
       this.onErrorSubscription = this.onError.subscribe(() => this.authenticationError = true);
@@ -256,10 +260,6 @@ export class AuthComponent implements OnInit, AfterViewInit, OnChanges, OnDestro
       this.isLoading = false;
       this.changeDetectorRef.markForCheck();
     }
-  }
-
-  get color(): string | ThemePalette {
-    return this.authenticationError ? 'warn' : 'primary';
   }
 
   updateAuthSnackbarMessages(): void {

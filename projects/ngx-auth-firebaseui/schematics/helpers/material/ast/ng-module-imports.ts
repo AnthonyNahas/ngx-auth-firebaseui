@@ -1,5 +1,5 @@
-import { Tree } from '@angular-devkit/schematics';
-import { hasNgModuleImport as originalHasNgModuleImport } from '@angular/cdk/schematics';
+import {Tree} from '@angular-devkit/schematics';
+import {hasNgModuleImport as originalHasNgModuleImport} from '@angular/cdk/schematics';
 
 /**
  * Whether the Angular module in the given path imports the specified module class name.

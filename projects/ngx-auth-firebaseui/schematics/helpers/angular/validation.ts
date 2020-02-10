@@ -1,7 +1,7 @@
 import {
   htmlSelectorRe as originalHtmlSelectorRe,
-  validateName as originalValidateName,
   validateHtmlSelector as originalValidateHtmlSelector,
+  validateName as originalValidateName,
   validateProjectName as originalValidateProjectName
 } from '@schematics/angular/utility/validation';
 

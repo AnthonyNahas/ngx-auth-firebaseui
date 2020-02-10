@@ -1,29 +1,29 @@
-<div id="register" fxLayout="column">
+<div fxLayout="column" id="register">
 
-  <div id="register-form-wrapper" fxLayout="column" fxLayoutAlign="center center">
+  <div fxLayout="column" fxLayoutAlign="center center" id="register-form-wrapper">
 
-    <div id="register-form" [@animateStagger]="{ value: '50' }">
+    <div [@animateStagger]="{ value: '50' }" id="register-form">
 
       <div *ngIf="logoUrl" class="logo">
-        <img [src]="logoUrl" alt="logo" [@animate]="{ value: '*', params: { x: '50px' } }">
+        <img [@animate]="{ value: '*', params: { x: '50px' } }" [src]="logoUrl" alt="logo">
       </div>
 
-      <div class="title" [@animate]="{ value: '*', params: { x: '-50px' } }">{{titleText}}</div>
+      <div [@animate]="{ value: '*', params: { x: '-50px' } }" class="title">{{titleText}}</div>
 
-      <form [formGroup]="registerForm" name="registerForm" novalidate
-            [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}">
+      <form [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}" [formGroup]="registerForm" name="registerForm"
+            novalidate>
 
-        <mat-form-field [appearance]="appearance" [@animate]="{ value: '*', params: { x: '50px' } }">
-          <input formControlName="name" matInput [placeholder]="nameText"/>
-          <mat-icon matSuffix [color]="color">person</mat-icon>
+        <mat-form-field [@animate]="{ value: '*', params: { x: '50px' } }" [appearance]="appearance">
+          <input [placeholder]="nameText" formControlName="name" matInput/>
+          <mat-icon [color]="color" matSuffix>person</mat-icon>
           <mat-error>
             {{nameErrorRequiredText}}
           </mat-error>
         </mat-form-field>
 
-        <mat-form-field [appearance]="appearance" [@animate]="{ value: '*', params: { x: '50px' } }">
-          <input formControlName="email" matInput [placeholder]="emailText"/>
-          <mat-icon matSuffix [color]="color">email</mat-icon>
+        <mat-form-field [@animate]="{ value: '*', params: { x: '50px' } }" [appearance]="appearance">
+          <input [placeholder]="emailText" formControlName="email" matInput/>
+          <mat-icon [color]="color" matSuffix>email</mat-icon>
           <mat-error *ngIf="registerForm.get('email')?.hasError('required')">
             {{emailErrorRequiredText}}
           </mat-error>
@@ -32,17 +32,17 @@
           </mat-error>
         </mat-form-field>
 
-        <mat-form-field [appearance]="appearance" [@animate]="{ value: '*', params: { x: '50px' } }">
-          <input formControlName="password" matInput [placeholder]="passwordText" type="password"/>
-          <mat-icon matSuffix [color]="color">lock</mat-icon>
+        <mat-form-field [@animate]="{ value: '*', params: { x: '50px' } }" [appearance]="appearance">
+          <input [placeholder]="passwordText" formControlName="password" matInput type="password"/>
+          <mat-icon [color]="color" matSuffix>lock</mat-icon>
           <mat-error>
             {{passwordErrorRequiredText}}
           </mat-error>
         </mat-form-field>
 
-        <mat-form-field [appearance]="appearance" [@animate]="{ value: '*', params: { x: '50px' } }">
-          <input formControlName="passwordConfirm" matInput [placeholder]="passwordConfirmationText" type="password"/>
-          <mat-icon matSuffix [color]="color">lock</mat-icon>
+        <mat-form-field [@animate]="{ value: '*', params: { x: '50px' } }" [appearance]="appearance">
+          <input [placeholder]="passwordConfirmationText" formControlName="passwordConfirm" matInput type="password"/>
+          <mat-icon [color]="color" matSuffix>lock</mat-icon>
           <mat-error *ngIf="registerForm.get('passwordConfirm')?.hasError('required')">
             {{passwordConfirmationErrorRequiredText}}
           </mat-error>
@@ -70,28 +70,28 @@
         <!--          </mat-checkbox>-->
         <!--        </div>-->
 
-        <button mat-raised-button
-                id="createAccountButton"
-                class="submit-button"
-                aria-label="CREATE AN ACCOUNT"
+        <button (click)="createAccount()"
                 [color]="colorAccent"
                 [disabled]="registerForm.invalid"
-                (click)="createAccount()">
+                aria-label="CREATE AN ACCOUNT"
+                class="submit-button"
+                id="createAccountButton"
+                mat-raised-button>
           {{createAccountButtonText}}
         </button>
       </form>
 
-      <div class="register" fxLayout="column" fxLayoutAlign="center center"
-           [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}">
-        <span class="text" [@animate]="{ value: '*', params: { x: '100px' } }">
+      <div [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}" class="register" fxLayout="column"
+           fxLayoutAlign="center center">
+        <span [@animate]="{ value: '*', params: { x: '100px' } }" class="text">
           {{alreadyHaveAccountText}}
         </span>
-        <button mat-button
-                id="loginButton"
-                type="button"
+        <button (click)="onLoginRequested.emit()"
+                [@animate]="{ value: '*', params: { x: '-100px' } }"
                 [color]="colorAccent"
-                (click)="onLoginRequested.emit()"
-                [@animate]="{ value: '*', params: { x: '-100px' } }">
+                id="loginButton"
+                mat-button
+                type="button">
           {{loginButtonText}}
         </button>
       </div>

@@ -1,11 +1,11 @@
-import { Tree } from '@angular-devkit/schematics';
+import {Tree} from '@angular-devkit/schematics';
 import {
   buildDefaultPath as originalBuildDefaultPath,
   getProject as originalGetProject,
-  isWorkspaceSchema as originalIsWorkspaceSchema,
-  isWorkspaceProject as originalIsWorkspaceProject
+  isWorkspaceProject as originalIsWorkspaceProject,
+  isWorkspaceSchema as originalIsWorkspaceSchema
 } from '@schematics/angular/utility/project';
-import { ProjectType, WorkspaceProject, WorkspaceSchema } from '@schematics/angular/utility/workspace-models';
+import {ProjectType, WorkspaceProject, WorkspaceSchema} from '@schematics/angular/utility/workspace-models';
 
 /**
  * Build a default project path for generating.

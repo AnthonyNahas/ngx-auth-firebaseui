@@ -44,11 +44,10 @@ import {NgxAuthFirebaseuiAvatarComponent} from './components/ngx-auth-firebaseui
 import {LegalityDialogComponent} from './components/legality-dialog/legality-dialog.component';
 // guards
 import {LoggedInGuard} from './guards/logged-in.guard';
-// interfaces
-
 // services
 import {FirestoreSyncService} from './services/firestore-sync.service';
 import {AuthProcessService} from './services/auth-process.service';
+// interfaces
 // ###################################################################################################
 // Export module's public API
 // components
@@ -136,6 +135,11 @@ export const UserProvidedConfigToken = new InjectionToken<NgxAuthFirebaseUIConfi
   ]
 })
 export class NgxAuthFirebaseUIModule {
+  constructor(private iconRegistry: MatIconRegistry, private sanitizer: DomSanitizer, auth: AuthProcessService) {
+    auth.listenToUserEvents();
+    this.registerProviderIcons();
+  }
+
   static forRoot(
     configFactory: FirebaseAppConfig,
     appNameFactory: () => string | undefined = () => undefined,
@@ -164,11 +168,6 @@ export class NgxAuthFirebaseUIModule {
           LoggedInGuard
         ]
     };
-  }
-
-  constructor(private iconRegistry: MatIconRegistry, private sanitizer: DomSanitizer, auth: AuthProcessService) {
-    auth.listenToUserEvents();
-    this.registerProviderIcons();
   }
 
   registerProviderIcons() {

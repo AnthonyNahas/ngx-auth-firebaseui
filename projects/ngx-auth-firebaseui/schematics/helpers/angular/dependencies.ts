@@ -1,8 +1,8 @@
-import { Tree } from '@angular-devkit/schematics';
+import {Tree} from '@angular-devkit/schematics';
 import {
-  NodeDependency as OriginalNodeDependency,
   addPackageJsonDependency as originalAddPackageJsonDependency,
   getPackageJsonDependency as originalGetPackageJsonDependency,
+  NodeDependency as OriginalNodeDependency,
   removePackageJsonDependency as originalRemovePackageJsonDependency
 } from '@schematics/angular/utility/dependencies';
 
@@ -13,7 +13,8 @@ export enum NodeDependencyType {
   Optional = 'optionalDependencies'
 }
 
-export interface NodeDependency extends OriginalNodeDependency {}
+export interface NodeDependency extends OriginalNodeDependency {
+}
 
 export function addPackageJsonDependency(tree: Tree, dependency: NodeDependency): void {
   return originalAddPackageJsonDependency(tree, dependency);

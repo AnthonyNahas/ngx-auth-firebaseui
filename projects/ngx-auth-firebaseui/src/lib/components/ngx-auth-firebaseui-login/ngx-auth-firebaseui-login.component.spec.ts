@@ -28,7 +28,7 @@ describe('NgxAuthFirebaseuiLoginComponent', () => {
 
     Object.defineProperty(window, 'matchMedia', {
       value: jest.fn(() => {
-        return {matches: true}
+        return {matches: true};
       })
     });
 

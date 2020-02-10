@@ -1,4 +1,4 @@
-import { Tree } from '@angular-devkit/schematics';
+import {Tree} from '@angular-devkit/schematics';
 import {
   findBootstrapModuleCall as originalFindBootstrapModuleCall,
   findBootstrapModulePath as originalFindBootstrapModulePath,

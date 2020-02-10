@@ -1,20 +1,10 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {LegalityDialogComponent} from './legality-dialog.component';
-import {
-  MAT_DIALOG_DATA,
-  MatDialogModule,
-  MatDialogRef,
-  MatButtonModule,
-  MatCheckboxModule,
-  MatIconModule,
-  MatDialogTitle,
-  MatButton
-} from '@angular/material';
+import {MAT_DIALOG_DATA, MatButtonModule, MatCheckboxModule, MatDialogModule, MatDialogRef, MatIconModule} from '@angular/material';
 
 import {FormsModule} from '@angular/forms';
 import {DebugElement} from '@angular/core';
-import {By} from '@angular/platform-browser';
 import {getButtonById} from '../../tests/helper';
 
 describe('LegalityDialogComponent', () => {

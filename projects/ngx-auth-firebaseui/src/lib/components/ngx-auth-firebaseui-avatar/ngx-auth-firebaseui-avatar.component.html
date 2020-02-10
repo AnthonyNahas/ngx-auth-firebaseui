@@ -1,17 +1,17 @@
 <button *ngIf="user"
-        mat-mini-fab
         [matMenuTriggerFor]="posXMenu"
-        aria-label="Open x-positioned menu"
+        [matTooltip]="user?.displayName"
         [style.background-image]="'url(' + user?.photoURL + ')'"
-        style="background-size: cover"
-        [matTooltip]="user?.displayName">
+        aria-label="Open x-positioned menu"
+        mat-mini-fab
+        style="background-size: cover">
   <span *ngIf="!user?.photoURL">{{displayNameInitials || ''}}</span>
 </button>
 
-<mat-menu xPosition="before" #posXMenu="matMenu" class="before">
+<mat-menu #posXMenu="matMenu" class="before" xPosition="before">
   <div fxLayout="row" fxLayout.xs="column" style="padding-left: 10px; padding-right: 10px">
-    <button mat-fab
-            [style.background-image]="'url(' + user?.photoURL + ')'"
+    <button [style.background-image]="'url(' + user?.photoURL + ')'"
+            mat-fab
             style="background-size: cover">
       <span *ngIf="!user?.photoURL">{{displayNameInitials || ''}}</span>
     </button>
@@ -21,14 +21,15 @@
     </div>
   </div>
 
-  <div fxLayout="column" fxFlex="100">
-    <div class="links-menu" *ngFor="let menuItem of links">
-      <button mat-menu-item (click)="menuItem?.callback()">
-        <mat-icon>{{menuItem?.icon}}</mat-icon>{{menuItem?.text}}</button>
+  <div fxFlex="100" fxLayout="column">
+    <div *ngFor="let menuItem of links" class="links-menu">
+      <button (click)="menuItem?.callback()" mat-menu-item>
+        <mat-icon>{{menuItem?.icon}}</mat-icon>
+        {{menuItem?.text}}</button>
     </div>
-    <button mat-raised-button fxLayoutAlign="center" color="primary" (click)="openProfile()">Profile
+    <button (click)="openProfile()" color="primary" fxLayoutAlign="center" mat-raised-button>Profile
     </button>
-    <button *ngIf="canLogout" mat-raised-button fxLayoutAlign="center" color="warn" (click)="signOut()">Sign Out
+    <button (click)="signOut()" *ngIf="canLogout" color="warn" fxLayoutAlign="center" mat-raised-button>Sign Out
     </button>
   </div>
 </mat-menu>

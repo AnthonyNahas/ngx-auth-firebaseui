@@ -56,33 +56,6 @@ export class UserComponent {
   ) {
   }
 
-  protected initUpdateFormGroup() {
-    const currentUser: User = this.auth.auth.currentUser;
-    this.updateFormGroup = new FormGroup({
-      name: this.updateNameFormControl = new FormControl(
-        {value: currentUser.displayName, disabled: this.editMode},
-        [
-          Validators.required,
-          Validators.minLength(this.config.nameMinLength),
-          Validators.maxLength(this.config.nameMaxLength)
-        ]
-      ),
-
-      email: this.updateEmailFormControl = new FormControl(
-        {value: currentUser.email, disabled: this.editMode},
-        [
-          Validators.required,
-          Validators.pattern(EMAIL_REGEX)
-        ]),
-
-      phoneNumber: this.updatePhoneNumberFormControl = new FormControl(
-        {value: currentUser.phoneNumber, disabled: this.editMode},
-        [Validators.pattern(PHONE_NUMBER_REGEX)])
-    });
-
-    this.updateFormGroup.enable();
-  }
-
   changeEditMode() {
     this.editMode = !this.editMode;
 
@@ -170,5 +143,32 @@ export class UserComponent {
       console.log('Error while delete user account', error);
       this.authProcess.showToast(`Error occurred while deleting your account: ${error.message}`);
     }
+  }
+
+  protected initUpdateFormGroup() {
+    const currentUser: User = this.auth.auth.currentUser;
+    this.updateFormGroup = new FormGroup({
+      name: this.updateNameFormControl = new FormControl(
+        {value: currentUser.displayName, disabled: this.editMode},
+        [
+          Validators.required,
+          Validators.minLength(this.config.nameMinLength),
+          Validators.maxLength(this.config.nameMaxLength)
+        ]
+      ),
+
+      email: this.updateEmailFormControl = new FormControl(
+        {value: currentUser.email, disabled: this.editMode},
+        [
+          Validators.required,
+          Validators.pattern(EMAIL_REGEX)
+        ]),
+
+      phoneNumber: this.updatePhoneNumberFormControl = new FormControl(
+        {value: currentUser.phoneNumber, disabled: this.editMode},
+        [Validators.pattern(PHONE_NUMBER_REGEX)])
+    });
+
+    this.updateFormGroup.enable();
   }
 }

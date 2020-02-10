@@ -30,7 +30,7 @@ import {EmailConfirmationComponent} from '../email-confirmation/email-confirmati
 import {AngularFireAuthStub, FirestoreStub} from '../../tests/helper';
 import {RouterTestingModule} from '@angular/router/testing';
 
-describe('AuthComponent', function () {
+describe('AuthComponent', function() {
   let de: DebugElement;
   let component: AuthComponent;
   let fixture: ComponentFixture<AuthComponent>;
@@ -41,7 +41,7 @@ describe('AuthComponent', function () {
 
     Object.defineProperty(window, 'matchMedia', {
       value: jest.fn(() => {
-        return {matches: true}
+        return {matches: true};
       })
     });
 

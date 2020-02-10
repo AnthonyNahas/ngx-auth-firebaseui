@@ -1,11 +1,11 @@
-import { Tree } from '@angular-devkit/schematics';
+import {Tree} from '@angular-devkit/schematics';
 import {
-  getSourceFile as originalGetSourceFile,
-  addModuleImportToRootModule as originalAddModuleImportToRootModule,
   addModuleImportToModule as originalAddModuleImportToModule,
+  addModuleImportToRootModule as originalAddModuleImportToRootModule,
+  getSourceFile as originalGetSourceFile,
   typescript
 } from '@angular/cdk/schematics';
-import { WorkspaceProject } from '@angular-devkit/core/src/experimental/workspace';
+import {WorkspaceProject} from '@angular-devkit/core/src/experimental/workspace';
 
 /** Reads file given path and returns TypeScript source file. */
 export function getSourceFile(host: Tree, path: string): typescript.SourceFile {

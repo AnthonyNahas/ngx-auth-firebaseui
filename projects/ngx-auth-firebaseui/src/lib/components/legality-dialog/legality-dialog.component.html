@@ -5,8 +5,8 @@
     <mat-checkbox *ngIf="this.data.tosUrl" [(ngModel)]="checkTOS">
       I agree to the
       <span>&nbsp;</span>
-      <a target="_blank"
-         [href]="this.data.tosUrl">
+      <a [href]="this.data.tosUrl"
+         target="_blank">
         Terms of Service and Conditions
       </a>
     </mat-checkbox>
@@ -15,8 +15,8 @@
                   [(ngModel)]="checkPrivacyPolicy">
       I have read and agree to the
       <span>&nbsp;</span>
-      <a target="_blank"
-         [href]="this.data.privacyPolicyUrl">
+      <a [href]="this.data.privacyPolicyUrl"
+         target="_blank">
         Privacy
       </a>
     </mat-checkbox>
@@ -24,15 +24,16 @@
 </mat-dialog-content>
 
 <mat-dialog-actions>
-  <button id="decline-action"
+  <button color="warn"
+          id="decline-action"
           mat-raised-button
-          matDialogClose
-          color="warn">Decline</button>
-  <button id="confirm-action"
-          mat-raised-button
-          color="primary"
+          matDialogClose>Decline
+  </button>
+  <button (click)="closeDialog()"
           [disabled]="disableConfirmActionButton"
-          (click)="closeDialog()">Confirm
+          color="primary"
+          id="confirm-action"
+          mat-raised-button>Confirm
   </button>
 </mat-dialog-actions>
 

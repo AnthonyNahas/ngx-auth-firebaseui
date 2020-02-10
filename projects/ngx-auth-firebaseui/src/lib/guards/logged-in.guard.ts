@@ -1,7 +1,7 @@
-import { Inject, Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from '@angular/router';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import {Inject, Injectable} from '@angular/core';
+import {ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot} from '@angular/router';
+import {Observable} from 'rxjs';
+import {map} from 'rxjs/operators';
 import {NgxAuthFirebaseUIConfig} from '../interfaces';
 import {AuthProcessService, NgxAuthFirebaseUIConfigToken} from '../ngx-auth-firebaseui.module';
 
@@ -14,7 +14,8 @@ export class LoggedInGuard implements CanActivate {
     private config: NgxAuthFirebaseUIConfig,
     private router: Router,
     private authProcess: AuthProcessService
-  ) {}
+  ) {
+  }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {
     return this.authProcess.afa.user.pipe(
@@ -22,7 +23,7 @@ export class LoggedInGuard implements CanActivate {
         if (user) {
           if (this.config.guardProtectedRoutesUntilEmailIsVerified && !user.emailVerified && !user.isAnonymous) {
             if (this.config.authGuardFallbackURL) {
-              this.router.navigate([`${this.config.authGuardFallbackURL}`], { queryParams: { redirectUrl: state.url }});
+              this.router.navigate([`${this.config.authGuardFallbackURL}`], {queryParams: {redirectUrl: state.url}});
             }
             return false;
           } else {
@@ -30,7 +31,7 @@ export class LoggedInGuard implements CanActivate {
           }
         } else {
           if (this.config.authGuardFallbackURL) {
-            this.router.navigate([`/${this.config.authGuardFallbackURL}`], { queryParams: { redirectUrl: state.url }});
+            this.router.navigate([`/${this.config.authGuardFallbackURL}`], {queryParams: {redirectUrl: state.url}});
           }
           return false;
         }

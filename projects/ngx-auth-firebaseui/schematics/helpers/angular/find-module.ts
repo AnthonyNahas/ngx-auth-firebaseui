@@ -1,16 +1,17 @@
-import { Path } from '@angular-devkit/core';
-import { Tree } from '@angular-devkit/schematics';
+import {Path} from '@angular-devkit/core';
+import {Tree} from '@angular-devkit/schematics';
 
 import {
-  ModuleOptions as OriginalModuleOptions,
-  findModuleFromOptions as originalFindModuleFromOptions,
-  findModule as originalFindModule,
   buildRelativePath as originalBuildRelativePath,
+  findModule as originalFindModule,
+  findModuleFromOptions as originalFindModuleFromOptions,
   MODULE_EXT as ORIGINAL_MODULE_EXT,
+  ModuleOptions as OriginalModuleOptions,
   ROUTING_MODULE_EXT as ORIGINAL_ROUTING_MODULE_EXT
 } from '@schematics/angular/utility/find-module';
 
-export interface ModuleOptions extends OriginalModuleOptions {}
+export interface ModuleOptions extends OriginalModuleOptions {
+}
 
 /**
  * Find the module referred by a set of options passed to the schematics.

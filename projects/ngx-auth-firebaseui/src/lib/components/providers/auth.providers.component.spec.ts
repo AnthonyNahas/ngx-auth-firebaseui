@@ -15,7 +15,7 @@ import {AngularFireAuth} from '@angular/fire/auth';
 import {NgxAuthFirebaseUIConfigToken} from '../../ngx-auth-firebase-u-i.module';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 
-describe('AuthProvidersComponent', function () {
+describe('AuthProvidersComponent', function() {
   let de: DebugElement;
   let comp: AuthProvidersComponent;
   let fixture: ComponentFixture<AuthProvidersComponent>;
@@ -73,7 +73,7 @@ describe('AuthProvidersComponent', function () {
 
     Object.defineProperty(window, 'matchMedia', {
       value: jest.fn(() => {
-        return {matches: true}
+        return {matches: true};
       })
     });
 

@@ -11,12 +11,12 @@ export class LegalityDialogComponent {
 
   checkTOS: boolean;
   checkPrivacyPolicy: boolean;
-  private _disableConfirmActionButton = false;
 
   constructor(public dialogRef: MatDialogRef<LegalityDialogComponent>,
               @Inject(MAT_DIALOG_DATA) public data: LegalityDialogParams) {
   }
 
+  private _disableConfirmActionButton = false;
 
   get disableConfirmActionButton(): boolean {
     if (this.data.tosUrl && this.data.privacyPolicyUrl) {

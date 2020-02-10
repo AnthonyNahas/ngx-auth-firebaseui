@@ -1,6 +1,6 @@
-import { Rule } from '@angular-devkit/schematics';
-import { Schema as ComponentOptions } from '@schematics/angular/component/schema';
-import { buildComponent as originalBuildComponent } from '@angular/cdk/schematics';
+import {Rule} from '@angular-devkit/schematics';
+import {Schema as ComponentOptions} from '@schematics/angular/component/schema';
+import {buildComponent as originalBuildComponent} from '@angular/cdk/schematics';
 
 /**
  * Rule that copies and interpolates the files that belong to this schematic context. Additionally
