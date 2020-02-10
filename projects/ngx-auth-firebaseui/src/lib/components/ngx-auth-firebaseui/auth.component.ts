@@ -17,21 +17,29 @@ import {
   TemplateRef,
   ViewChild
 } from '@angular/core';
-import {AngularFireAuth} from '@angular/fire/auth';
-import {AbstractControl, FormControl, FormGroup, Validators} from '@angular/forms';
 import {ActivatedRoute} from '@angular/router';
-import {Subscription} from 'rxjs/internal/Subscription';
-import {LegalityDialogComponent} from '../../components/legality-dialog/legality-dialog.component';
-import {LegalityDialogParams, LegalityDialogResult} from '../../interfaces/legality.dialog.intreface';
-import {AuthProcessService, AuthProvider} from '../../services/auth-process.service';
-import {Theme} from '../providers/auth.providers.component';
-import {MatPasswordStrengthComponent} from '@angular-material-extensions/password-strength';
-import {NgxAuthFirebaseuiAnimations} from '../../animations';
+import {AbstractControl, FormControl, FormGroup, Validators} from '@angular/forms';
+
+// ANGULAR MATERIAL
 import {MatTabChangeEvent, MatTabGroup} from '@angular/material/tabs';
 import {ThemePalette} from '@angular/material/core';
 import {MatDialog, MatDialogRef} from '@angular/material/dialog';
-import {NgxAuthFirebaseUIConfig, NgxAuthFirebaseUIConfigToken} from '../../ngx-auth-firebaseui.module';
 import {MatFormFieldAppearance} from '@angular/material/form-field';
+
+// ANGULAR FIRE
+import {AngularFireAuth} from '@angular/fire/auth';
+
+// Third PARTY
+import {MatPasswordStrengthComponent} from '@angular-material-extensions/password-strength';
+
+// RXJS
+import {Subscription} from 'rxjs/internal/Subscription';
+
+import {LegalityDialogComponent, Theme} from '..';
+import {LegalityDialogParams, LegalityDialogResult, NgxAuthFirebaseUIConfig} from '../../interfaces';
+import {AuthProcessService, AuthProvider} from '../../services';
+import {NgxAuthFirebaseuiAnimations} from '../../animations';
+import {NgxAuthFirebaseUIConfigToken} from '../../tokens';
 
 
 export const EMAIL_REGEX = new RegExp(['^(([^<>()[\\]\\\.,;:\\s@\"]+(\\.[^<>()\\[\\]\\\.,;:\\s@\"]+)*)',
@@ -168,7 +176,7 @@ export class AuthComponent implements OnInit, AfterViewInit, OnChanges, OnDestro
   resetPasswordEmailFormControl: AbstractControl;
 
   constructor(
-    @Inject(PLATFORM_ID) private platformId: object,
+    @Inject(PLATFORM_ID) private platformId: Object,
     public auth: AngularFireAuth,
     public authProcess: AuthProcessService,
     public dialog: MatDialog,

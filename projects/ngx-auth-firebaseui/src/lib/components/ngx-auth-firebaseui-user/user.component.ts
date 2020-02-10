@@ -2,11 +2,12 @@ import {Component, EventEmitter, forwardRef, Inject, Input, Output} from '@angul
 import {AngularFireAuth} from '@angular/fire/auth';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {User} from 'firebase';
-import {AuthProcessService} from '../../services/auth-process.service';
-import {FirestoreSyncService} from '../../services/firestore-sync.service';
-import {EMAIL_REGEX, PHONE_NUMBER_REGEX} from '../ngx-auth-firebaseui/auth.component';
+import {AuthProcessService} from '../../services';
+import {FirestoreSyncService} from '../../services';
+import {EMAIL_REGEX, PHONE_NUMBER_REGEX} from '..';
 import {MatFormFieldAppearance} from '@angular/material/form-field';
-import {NgxAuthFirebaseUIConfig, NgxAuthFirebaseUIConfigToken} from '../../ngx-auth-firebaseui.module';
+import {NgxAuthFirebaseUIConfigToken} from '../../tokens';
+import {NgxAuthFirebaseUIConfig} from '../../interfaces';
 
 @Component({
   selector: 'ngx-auth-firebaseui-user',

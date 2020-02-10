@@ -1,5 +1,5 @@
 import {Component, Input, Output} from '@angular/core';
-import {AuthProcessService, AuthProvider} from '../../services/auth-process.service';
+import {AuthProcessService, AuthProvider} from '../../services';
 import {NgxAuthFirebaseuiAnimations} from '../../animations';
 
 export enum Theme {

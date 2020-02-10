@@ -6,11 +6,10 @@ import {User, UserInfo} from 'firebase/app';
 import {Observable} from 'rxjs';
 import {tap} from 'rxjs/operators';
 import {Accounts} from '../enums';
-import {NgxAuthFirebaseUIConfig} from '../interfaces/config.interface';
-import {ICredentials, ISignInProcess, ISignUpProcess} from '../interfaces/main.interface';
 import {FirestoreSyncService} from './firestore-sync.service';
-import {NgxAuthFirebaseUIConfigToken} from '../ngx-auth-firebaseui.module';
 import {MAT_SNACK_BAR_DEFAULT_OPTIONS, MatSnackBar, MatSnackBarConfig} from '@angular/material/snack-bar';
+import {ICredentials, ISignInProcess, ISignUpProcess, NgxAuthFirebaseUIConfig} from '../interfaces';
+import {NgxAuthFirebaseUIConfigToken} from '../tokens';
 
 // import User = firebase.User;
 
@@ -94,6 +93,7 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
    * like google, facebook, twitter and github
    *
    * @param provider - the provider to authenticate with (google, facebook, twitter, github)
+   * @param credentials
    */
   public async signInWith(provider: AuthProvider, credentials?: ICredentials) {
     try {

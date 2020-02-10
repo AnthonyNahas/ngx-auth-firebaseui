@@ -4,7 +4,7 @@ import {Subject, Subscription} from 'rxjs';
 import {takeUntil} from 'rxjs/internal/operators';
 
 import {NgxAuthFirebaseuiAnimations} from '../../animations';
-import {AuthProcessService} from '../../services/auth-process.service';
+import {AuthProcessService} from '../../services';
 import {isPlatformBrowser} from '@angular/common';
 import {MatFormFieldAppearance} from '@angular/material/form-field';
 import {ThemePalette} from '@angular/material/core';
@@ -85,7 +85,7 @@ export class NgxAuthFirebaseuiRegisterComponent implements OnInit, OnDestroy {
   // Private
   private unsubscribeAll: Subject<any>;
 
-  constructor(@Inject(PLATFORM_ID) private platformId: object,
+  constructor(@Inject(PLATFORM_ID) private platformId: Object,
               private formBuilder: FormBuilder,
               public authProcess: AuthProcessService) {
     // Configure the layout

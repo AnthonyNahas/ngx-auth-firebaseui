@@ -32,13 +32,14 @@
     "url": "https://github.com/anthonynahas/ngx-auth-firebaseui/issues"
   },
   "scripts": {
-    "build": "../../node_modules/.bin/ng build ngx-auth-firebaseui",
+    "build": "../../node_modules/.bin/ng build ngx-auth-firebaseui --prod",
     "build:schematics": "../../node_modules/.bin/tsc -p tsconfig.schematics.json",
     "clean": "rm -rf ../../dist",
     "lint": "../../node_modules/.bin/ng lint ngx-auth-firebaseui",
     "resync:schematics": "rsync -a schematics/collection.json ../../dist/ngx-auth-firebaseui/schematics/",
     "resync:readme": "rsync -a ../../README.md ../../dist/ngx-auth-firebaseui/",
-    "postbuild": "npm run build:schematics && npm run resync:readme && npm run resync:schematics",
+    "resync:assets": "rsync -a src/lib/assets ../../dist/ngx-auth-firebaseui/",
+    "postbuild": "npm run build:schematics && npm run resync:readme && npm run resync:assets && npm run resync:schematics",
     "prepublish": "npm run build",
     "release:patch": "../../node_modules/.bin/release-it --patch --ci",
     "release:minor": "../../node_modules/.bin/release-it --minor --ci",

@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Inject, Input, OnInit, Output, PLATFORM_ID, ViewEncapsulation} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {AuthProcessService, AuthProvider} from '../../services/auth-process.service';
+import {AuthProcessService, AuthProvider} from '../../services';
 import {Subscription} from 'rxjs';
 import {NgxAuthFirebaseuiAnimations} from '../../animations';
 import {isPlatformBrowser} from '@angular/common';
@@ -58,7 +58,7 @@ export class NgxAuthFirebaseuiLoginComponent implements OnInit {
   authenticationError = false;
 
   constructor(
-    @Inject(PLATFORM_ID) private platformId: object,
+    @Inject(PLATFORM_ID) private platformId: Object,
     public authProcess: AuthProcessService,
     private formBuilder: FormBuilder) {
     this.onSuccess = authProcess.onSuccessEmitter;

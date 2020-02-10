@@ -12,7 +12,7 @@ import {
   ViewChild
 } from '@angular/core';
 import {Router} from '@angular/router';
-import {AuthProcessService} from './../../services/auth-process.service';
+import {AuthProcessService} from '../../services';
 
 interface VerifyEmailContext {
   email: string;

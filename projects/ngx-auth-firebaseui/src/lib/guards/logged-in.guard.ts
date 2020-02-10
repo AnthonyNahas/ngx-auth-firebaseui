@@ -3,7 +3,8 @@ import {ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot} from '
 import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
 import {NgxAuthFirebaseUIConfig} from '../interfaces';
-import {AuthProcessService, NgxAuthFirebaseUIConfigToken} from '../ngx-auth-firebaseui.module';
+import {NgxAuthFirebaseUIConfigToken} from '../tokens';
+import {AuthProcessService} from '../services';
 
 @Injectable({
   providedIn: 'root'

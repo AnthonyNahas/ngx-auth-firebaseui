@@ -1,6 +1,6 @@
 import {Component, Inject} from '@angular/core';
-import {LegalityDialogParams, LegalityDialogResult} from '../../interfaces/legality.dialog.intreface';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
+import {LegalityDialogParams, LegalityDialogResult} from '../../interfaces';
 
 @Component({
   selector: 'ngx-auth-firebaseui-legality-dialog',

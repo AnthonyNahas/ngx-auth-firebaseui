@@ -31,6 +31,7 @@
   },
   "private": true,
   "dependencies": {
+    "@angular-material-extensions/pages": "^4.0.0",
     "@angular-material-extensions/password-strength": "^6.0.0",
     "@angular/animations": "~9.0.0",
     "@angular/cdk": "^9.0.0",
@@ -46,8 +47,12 @@
     "@angular/platform-server": "~9.0.0",
     "@angular/router": "~9.0.0",
     "@nguniversal/express-engine": "^9.0.0",
+    "@ngx-translate/core": "^12.0.0",
+    "@ngx-translate/http-loader": "^4.0.0",
+    "angulartics2": "^8.3.0",
     "express": "^4.15.2",
     "firebase": "^7.8.1",
+    "ngx-markdown": "^8.2.2",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"

@@ -47,6 +47,7 @@ import {LoggedInGuard} from './guards/logged-in.guard';
 // services
 import {FirestoreSyncService} from './services/firestore-sync.service';
 import {AuthProcessService} from './services/auth-process.service';
+import {NgxAuthFirebaseUIConfigToken, UserProvidedConfigToken} from './tokens';
 // interfaces
 // ###################################################################################################
 // Export module's public API
@@ -68,11 +69,6 @@ export {NgxAuthFirebaseUIConfig} from './interfaces/config.interface';
 export {AuthProcessService, AuthProvider} from './services/auth-process.service';
 export {FirestoreSyncService} from './services/firestore-sync.service';
 
-
-// This token is the official token containing the final configuration; ie. the merge between default and user provided configurations
-export const NgxAuthFirebaseUIConfigToken = new InjectionToken<NgxAuthFirebaseUIConfig>('NgxAuthFirebaseUIConfigToken');
-// This is an intermediate token containing only user-provided configuration
-export const UserProvidedConfigToken = new InjectionToken<NgxAuthFirebaseUIConfig>('UserProvidedConfigToken');
 
 @NgModule({
   imports: [
