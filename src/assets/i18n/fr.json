@@ -1,0 +1,29 @@
+{
+  "ngxauthfirebaseui": {
+    "signInTabText": "Se connecter",
+    "signInCardTitleText": "Connectez-vous",
+    "loginButtonText": "S'identifier",
+    "forgotPasswordButtonText": "Mot de passe oublié ?",
+    "nameText": "Nom",
+    "nameErrorRequiredText": "Le nom est requis",
+    "nameErrorMinLengthText": "Le nom est trop court !",
+    "nameErrorMaxLengthText": "Le nom est trop long !",
+    "emailText": "Email",
+    "emailErrorRequiredText": "L'email est requis",
+    "emailErrorPatternText": "S'il vous plaît, mettez une adresse email valide",
+    "passwordText": "Mot de passe",
+    "passwordErrorRequiredText": "Le mot de passe est requis",
+    "registerTabText": "Créer un compte",
+    "registerCardTitleText": "Enregistrement",
+    "registerButtonText": "Créer",
+    "guestButtonText": "continuer en tant qu'invité",
+    "resetPasswordTabText": "Réinitialisation du mot de passe par email",
+    "resetPasswordInputText": "Réinitialisation du mot de passe par email",
+    "resetPasswordErrorRequiredText": "Un email est requis pour réinitialiser le mot de passe !",
+    "resetPasswordErrorPatternText": "S'il vous plaît, mettez une adresse email valide",
+    "resetPasswordActionButtonText": "Réinitialiser",
+    "resetPasswordInstructionsText": "Réinitialisation demandée. Suivez les instructions du courrier électronique qui vous a été envoyé.",
+    "emailConfirmationTitle": "Confirmez votre adresse email !",
+    "emailConfirmationText": "Un email de confirmation vous a été envoyé.\n   Vérifiez votre boîte de réception et cliquez sur le lien \"Confirmer mon adresse e-mail\" pour confirmer votre adresse email."
+  }
+}
