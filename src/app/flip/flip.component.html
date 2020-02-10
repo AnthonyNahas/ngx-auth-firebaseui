@@ -1,0 +1,10 @@
+<div class="container">
+  <div class="flipper" (click)="toggle()" [@flip]="flip" (@flip.done)="animEnd($event)">
+    <div class="sides front">
+      <ng-content select="flip-front"></ng-content>
+    </div>
+    <div class="sides back">
+      <ng-content select="flip-back"></ng-content>
+    </div>
+  </div>
+</div>

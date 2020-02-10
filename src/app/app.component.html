@@ -436,17 +436,26 @@
   <!-- Usage -->
   <h2>Usage</h2>
 
-  <mat-card class="card-container-example">
-    <mat-card-content>
+  <!--  <mat-card class="card-container-example">-->
+  <!--    <mat-card-content>-->
+  <flip #flip>
+    <flip-front class="front">
+
       <ngx-auth-firebaseui appearance="outline"
                            (onSuccess)="printUser($event)"
                            (onError)="printError($event)">
       </ngx-auth-firebaseui>
-    </mat-card-content>
-  </mat-card>
+    </flip-front>
+    <flip-back class="back">
+      <ngx-auth-firebaseui-user></ngx-auth-firebaseui-user>
+    </flip-back>
+  </flip>
+  <!--    </mat-card-content>-->
+  <!--  </mat-card>-->
 
 
-  <p>For more info, please read the official readme - see the links above GITHUB - DOCS - NPM</p>
+  <p style="margin-top: 4rem">For more info, please read the official readme - see the links above GITHUB - DOCS -
+    NPM</p>
 
   <!--  </div>-->
 

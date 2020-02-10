@@ -14,6 +14,8 @@ import {NgxAuthFirebaseUIModule} from 'ngx-auth-firebaseui';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {FormsModule} from '@angular/forms';
 import {MarkdownModule} from 'ngx-markdown';
+import {FlipComponent, FlipSection} from './flip/flip.component';
+import {MatButtonModule} from '@angular/material/button';
 
 export const firebaseKey = {
   apiKey: 'AIzaSyASG7KxDO2z5AH9r0jlUmwiw68Ap8kG20c',
@@ -34,10 +36,12 @@ export function createTranslateLoader(http: HttpClient) {
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FlipSection,
+    FlipComponent
   ],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    BrowserModule.withServerTransition({appId: 'serverApp'}),
     AppRoutingModule,
     BrowserAnimationsModule,
     Angulartics2Module.forRoot(),
@@ -61,7 +65,8 @@ export function createTranslateLoader(http: HttpClient) {
     HttpClientModule,
     FormsModule,
     FlexLayoutModule,
-    MatCardModule
+    MatCardModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
