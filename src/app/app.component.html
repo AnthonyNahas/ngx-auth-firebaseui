@@ -334,6 +334,8 @@
     </svg>
 
   </a>
+
+  <ngx-auth-firebaseui-avatar></ngx-auth-firebaseui-avatar>
 </div>
 
 <div class="content" role="main">
@@ -436,7 +438,8 @@
 
   <mat-card class="card-container-example">
     <mat-card-content>
-      <ngx-auth-firebaseui (onSuccess)="printUser($event)"
+      <ngx-auth-firebaseui appearance="outline"
+                           (onSuccess)="printUser($event)"
                            (onError)="printError($event)">
       </ngx-auth-firebaseui>
     </mat-card-content>

@@ -23,12 +23,12 @@
 
   <ng-template #signedInUser>
     <div class="signed-in-container" fxLayout="column" fxLayoutAlign="center center">
-      <img *ngIf="user.photoURL; else noPhoto" [src]="user.photoURL" class="account-circle">
+      <img *ngIf="user?.photoURL; else noPhoto" [src]="user?.photoURL" class="account-circle">
       <ng-template #noPhoto>
         <mat-icon class="account-circle">account_circle</mat-icon>
       </ng-template>
-      <div class="user-display-name mat-title">{{ user.displayName }}</div>
-      <div class="user-email mat-body-2">{{ user.email }}</div>
+      <div class="user-display-name mat-title">{{ user?.displayName }}</div>
+      <div class="user-email mat-body-2">{{ user?.email }}</div>
       <div class="actions">
         <mat-progress-bar *ngIf="isLoading" mode="indeterminate"></mat-progress-bar>
         <a [routerLink]="goBackURL" class="go-back-button action-button" color="primary"

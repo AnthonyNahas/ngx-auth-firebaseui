@@ -177,10 +177,10 @@ export class AuthComponent implements OnInit, AfterViewInit, OnChanges, OnDestro
 
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object,
+    @Inject(forwardRef(() => NgxAuthFirebaseUIConfigToken)) public config: NgxAuthFirebaseUIConfig,
     public auth: AngularFireAuth,
     public authProcess: AuthProcessService,
     public dialog: MatDialog,
-    @Inject(forwardRef(() => NgxAuthFirebaseUIConfigToken)) public config: NgxAuthFirebaseUIConfig,
     private activatedRoute: ActivatedRoute,
     private changeDetectorRef: ChangeDetectorRef
   ) {
