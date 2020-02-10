@@ -1,0 +1,95 @@
+<div fxLayout="column" id="login">
+
+  <div fxLayout="column" fxLayoutAlign="center center" id="login-form-wrapper">
+
+    <div [@animateStagger]="{ value: '50' }" id="login-form">
+
+      <div *ngIf="logoUrl" class="logo">
+        <img [@animate]="{ value: '*', params: { x: '50px' } }" [src]="logoUrl" alt="logo">
+      </div>
+
+      <div [@animate]="{ value: '*', params: { x: '-50px' } }" class="title">{{titleText}}</div>
+
+      <form [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}" [formGroup]="loginForm" name="loginForm"
+            novalidate>
+
+        <mat-form-field [@animate]="{ value: '*', params: { x: '50px' } }" [appearance]="appearance">
+          <input [placeholder]="emailText" formControlName="email" matInput>
+          <mat-icon [color]="color" matSuffix>email</mat-icon>
+          <mat-error *ngIf="loginForm.get('email')?.hasError('required')">
+            {{emailErrorRequiredText}}
+          </mat-error>
+          <mat-error
+            *ngIf="!loginForm.get('email')?.hasError('required') &&
+                                loginForm.get('email')?.hasError('email')">
+            {{emailErrorPatternText}}
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field [@animate]="{ value: '*', params: { x: '50px' } }" [appearance]="appearance">
+          <input [placeholder]="passwordText" formControlName="password" matInput type="password">
+          <mat-icon [color]="color" matSuffix>lock</mat-icon>
+          <mat-error>
+            {{passwordErrorRequiredText}}
+          </mat-error>
+        </mat-form-field>
+
+        <div [@animate]="{ value: '*', params: { x: '50px' } }"
+             class="remember-forgot-password" fxLayout="row"
+             fxLayout.xs="column"
+             fxLayoutAlign="space-between center">
+          <!--          <mat-checkbox class="remember-me" aria-label="Remember Me">-->
+          <!--            {{rememberMeText}}-->
+          <!--          </mat-checkbox>-->
+
+          <button (click)="onResetPasswordRequested.emit()"
+                  *ngIf="resetPasswordEnabled"
+                  [@animate]="{ value: '*', params: { x: '-50px' } }"
+                  [color]="color"
+                  class="forgot-password"
+                  mat-button
+                  type="button">
+            {{forgotPasswordText}}
+          </button>
+        </div>
+
+        <button (click)="login()"
+                [color]="colorAccent"
+                [disabled]="loginForm.invalid"
+                aria-label="LOG IN"
+                class="submit-button"
+                id="loginButton"
+                mat-raised-button>
+          {{loginButtonText}}
+        </button>
+
+      </form>
+
+      <div *ngIf="providers.length > 0"
+           [@animate]="{ value: '*', params: { z: '50px', delay: '50ms', scale: '0.2' } }"
+           class="separator">
+        <span class="text">{{orLabelText}}</span>
+      </div>
+
+      <ngx-auth-firebaseui-providers [providers]="providers"
+                                     fxLayoutAlign="center center"
+                                     layout="column"
+                                     theme="raised"></ngx-auth-firebaseui-providers>
+
+      <div *ngIf="registrationEnabled"
+           [@animateStagger]="{ value: '100' }"
+           class="register"
+           fxLayout="column" fxLayoutAlign="center center">
+        <span [@animate]="{ value: '*', params: { x: '100px' } }" class="text">
+          {{dontHaveAnAccountText}}
+        </span>
+        <button (click)="onCreateAccountRequested.emit()"
+                [@animate]="{ value: '*', params: { x: '-100px' } }"
+                [color]="color"
+                id="createAccountButton"
+                mat-button
+                type="button">{{createAccountButtonText}}</button>
+      </div>
+    </div>
+  </div>
+</div>

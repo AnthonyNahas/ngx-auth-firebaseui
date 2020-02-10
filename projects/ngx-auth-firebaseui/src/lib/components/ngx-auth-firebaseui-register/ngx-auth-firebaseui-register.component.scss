@@ -1,0 +1,143 @@
+
+ngx-auth-firebaseui-register {
+  #register {
+    width: 100%;
+    //background: url("/assets/images/backgrounds/dark-material-bg.jpg") no-repeat;
+    background-size: cover;
+
+    #register-form-wrapper {
+      flex: 1 0 auto;
+      padding: 32px;
+
+      @media screen and (max-width: 599px) {
+        padding: 16px;
+      }
+
+      #register-form {
+        width: 384px;
+        max-width: 384px;
+        padding: 32px;
+        text-align: center;
+        //@include mat-elevation(16);
+
+        @media screen and (max-width: 599px) {
+          padding: 24px;
+          width: 100%;
+        }
+
+        .logo {
+          width: 128px;
+          margin: 32px auto;
+        }
+
+        .title {
+          font-size: 20px;
+          margin: 16px 0 32px 0;
+        }
+
+        form {
+          width: 100%;
+          text-align: left;
+
+          mat-form-field {
+            width: 100%;
+          }
+
+          mat-checkbox {
+            margin: 0;
+          }
+
+          .terms {
+            margin: 16px 0 32px 0;
+
+            a {
+              font-size: 16px;
+              margin-left: 4px;
+            }
+          }
+
+          .submit-button {
+            width: 220px;
+            margin: 16px auto;
+            display: block;
+
+            @media screen and (max-width: 599px) {
+              width: 90%;
+            }
+          }
+        }
+
+        .register {
+          margin: 32px auto 24px auto;
+          font-weight: 500;
+
+          .text {
+            margin-right: 8px;
+          }
+        }
+
+        .separator {
+          font-size: 15px;
+          font-weight: 600;
+          margin: 24px auto;
+          position: relative;
+          overflow: hidden;
+          width: 100px;
+
+          .text {
+            display: inline-flex;
+            position: relative;
+            padding: 0 8px;
+            z-index: 9999;
+
+            &:before,
+            &:after {
+              content: "";
+              display: block;
+              width: 30px;
+              position: absolute;
+              top: 10px;
+              border-top: 1px solid;
+            }
+
+            &:before {
+              right: 100%;
+            }
+
+            &:after {
+              left: 100%;
+            }
+          }
+        }
+
+        button {
+          &.google,
+          &.facebook {
+            width: 192px;
+            text-transform: none;
+            color: #ffffff;
+            font-size: 13px;
+          }
+
+          @media screen and (max-width: 599px) {
+            width: 80%;
+          }
+
+          &.google {
+            background-color: #d73d32;
+            margin-bottom: 8px;
+          }
+
+          &.facebook {
+            background-color: rgb(63, 92, 154);
+          }
+        }
+      }
+    }
+  }
+
+  ::ng-deep .mat-checkbox-label {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}

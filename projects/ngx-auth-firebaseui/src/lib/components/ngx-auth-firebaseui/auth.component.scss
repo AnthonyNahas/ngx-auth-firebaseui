@@ -1,0 +1,73 @@
+.mat-card {
+  margin: 2rem;
+}
+
+.space-top {
+  margin-top: .5rem;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.cut-text {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.signed-in-container {
+  .account-circle {
+    font-size: 12rem;
+    width: 12rem;
+    height: 12rem;
+  }
+
+  img.account-circle {
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  .sign-out-button {
+    margin-top: 2rem;
+  }
+
+  .user-display-name {
+    margin-top: 1rem;
+  }
+
+  .user-email {
+    margin-top: -1rem;
+  }
+
+  .actions {
+    margin-top: 2rem;
+
+    .action-button, mat-progress-bar {
+      width: 100%;
+    }
+
+    .action-button {
+      margin-top: 1rem;
+    }
+  }
+}
+
+.reset-password-tab {
+  mat-progress-bar {
+    margin-bottom: 1rem;
+  }
+
+  &__close-button {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    mat-icon {
+      font-size: 18px;
+      position: relative;
+      top: -1px;
+    }
+  }
+}

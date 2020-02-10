@@ -1,0 +1,101 @@
+<div fxLayout="column" id="register">
+
+  <div fxLayout="column" fxLayoutAlign="center center" id="register-form-wrapper">
+
+    <div [@animateStagger]="{ value: '50' }" id="register-form">
+
+      <div *ngIf="logoUrl" class="logo">
+        <img [@animate]="{ value: '*', params: { x: '50px' } }" [src]="logoUrl" alt="logo">
+      </div>
+
+      <div [@animate]="{ value: '*', params: { x: '-50px' } }" class="title">{{titleText}}</div>
+
+      <form [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}" [formGroup]="registerForm" name="registerForm"
+            novalidate>
+
+        <mat-form-field [@animate]="{ value: '*', params: { x: '50px' } }" [appearance]="appearance">
+          <input [placeholder]="nameText" formControlName="name" matInput/>
+          <mat-icon [color]="color" matSuffix>person</mat-icon>
+          <mat-error>
+            {{nameErrorRequiredText}}
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field [@animate]="{ value: '*', params: { x: '50px' } }" [appearance]="appearance">
+          <input [placeholder]="emailText" formControlName="email" matInput/>
+          <mat-icon [color]="color" matSuffix>email</mat-icon>
+          <mat-error *ngIf="registerForm.get('email')?.hasError('required')">
+            {{emailErrorRequiredText}}
+          </mat-error>
+          <mat-error *ngIf="registerForm.get('email')?.hasError('email')">
+            {{emailErrorPatternText}}
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field [@animate]="{ value: '*', params: { x: '50px' } }" [appearance]="appearance">
+          <input [placeholder]="passwordText" formControlName="password" matInput type="password"/>
+          <mat-icon [color]="color" matSuffix>lock</mat-icon>
+          <mat-error>
+            {{passwordErrorRequiredText}}
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field [@animate]="{ value: '*', params: { x: '50px' } }" [appearance]="appearance">
+          <input [placeholder]="passwordConfirmationText" formControlName="passwordConfirm" matInput type="password"/>
+          <mat-icon [color]="color" matSuffix>lock</mat-icon>
+          <mat-error *ngIf="registerForm.get('passwordConfirm')?.hasError('required')">
+            {{passwordConfirmationErrorRequiredText}}
+          </mat-error>
+          <mat-error
+            *ngIf="
+              !registerForm.get('passwordConfirm')?.hasError('required') &&
+              registerForm.get('passwordConfirm')?.hasError('passwordsNotMatching')
+            ">
+            {{passwordErrorMatchText}}
+          </mat-error>
+        </mat-form-field>
+
+        <!--        <div *ngIf="this.tosUrl || this.privacyPolicyUrl"-->
+        <!--        <div-->
+        <!--          class="terms"-->
+        <!--          fxLayout="row" fxLayoutAlign="center center"-->
+        <!--          [@animate]="{value:'*',params:{duration:'250ms',y:'100px'}}">-->
+        <!--          <mat-checkbox aria-label="I read and accept" name="terms" required>-->
+        <!--            <span>{{readAncAcceptText}}</span>-->
+        <!--            <span>&nbsp;</span>-->
+        <!--            <a target="_blank"-->
+        <!--               [href]="this.tosUrl">-->
+        <!--              Terms of Service and Conditions-->
+        <!--            </a>-->
+        <!--          </mat-checkbox>-->
+        <!--        </div>-->
+
+        <button (click)="createAccount()"
+                [color]="colorAccent"
+                [disabled]="registerForm.invalid"
+                aria-label="CREATE AN ACCOUNT"
+                class="submit-button"
+                id="createAccountButton"
+                mat-raised-button>
+          {{createAccountButtonText}}
+        </button>
+      </form>
+
+      <div [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}" class="register" fxLayout="column"
+           fxLayoutAlign="center center">
+        <span [@animate]="{ value: '*', params: { x: '100px' } }" class="text">
+          {{alreadyHaveAccountText}}
+        </span>
+        <button (click)="onLoginRequested.emit()"
+                [@animate]="{ value: '*', params: { x: '-100px' } }"
+                [color]="colorAccent"
+                id="loginButton"
+                mat-button
+                type="button">
+          {{loginButtonText}}
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>

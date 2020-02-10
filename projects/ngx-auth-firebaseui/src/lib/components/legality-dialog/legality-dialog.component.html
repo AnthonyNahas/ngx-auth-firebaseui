@@ -1,0 +1,39 @@
+<h1 matDialogTitle>Legal requirements</h1>
+
+<mat-dialog-content>
+  <div fxLayout="column" fxLayoutAlign="start">
+    <mat-checkbox *ngIf="this.data.tosUrl" [(ngModel)]="checkTOS">
+      I agree to the
+      <span>&nbsp;</span>
+      <a [href]="this.data.tosUrl"
+         target="_blank">
+        Terms of Service and Conditions
+      </a>
+    </mat-checkbox>
+
+    <mat-checkbox *ngIf="this.data.privacyPolicyUrl"
+                  [(ngModel)]="checkPrivacyPolicy">
+      I have read and agree to the
+      <span>&nbsp;</span>
+      <a [href]="this.data.privacyPolicyUrl"
+         target="_blank">
+        Privacy
+      </a>
+    </mat-checkbox>
+  </div>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button color="warn"
+          id="decline-action"
+          mat-raised-button
+          matDialogClose>Decline
+  </button>
+  <button (click)="closeDialog()"
+          [disabled]="disableConfirmActionButton"
+          color="primary"
+          id="confirm-action"
+          mat-raised-button>Confirm
+  </button>
+</mat-dialog-actions>
+

@@ -1,0 +1,29 @@
+{
+  "ngxauthfirebaseui": {
+    "signInTabText": "Přihlášení",
+    "signInCardTitleText": "Přihlášení",
+    "loginButtonText": "Přihlásit",
+    "forgotPasswordButtonText": "Zapoměl jsi heslo ?",
+    "nameText": "Jméno",
+    "nameErrorRequiredText": "Jméno je povinné",
+    "nameErrorMinLengthText": "Jméno je příliš krátké!",
+    "nameErrorMaxLengthText": "Jméno je přiliš dlouhé!",
+    "emailText": "E-mail",
+    "emailErrorRequiredText": "E-mail je povinný",
+    "emailErrorPatternText": "Zadejte existující E=mailovou adresu!",
+    "passwordText": "Heslo",
+    "passwordErrorRequiredText": "Heslo je povinné",
+    "registerTabText": "Registrace",
+    "registerCardTitleText": "Registrace",
+    "registerButtonText": "Registrace",
+    "guestButtonText": "pokračuj jako host",
+    "resetPasswordTabText": "Resetovat heslo ",
+    "resetPasswordInputText": "Resetovat heslo",
+    "resetPasswordErrorRequiredText": "E-mail je povinný pro reset hesla!",
+    "resetPasswordErrorPatternText": "Prosím zadejte správnou E=maiolovou adresu",
+    "resetPasswordActionButtonText": "Reset",
+    "resetPasswordInstructionsText": "Reset poslán, zkontrolujte si e-mail.",
+    "emailConfirmationTitle": "Potvrď e-mailovou adresu!",
+    "emailConfirmationText": "E-mail pro potvrzení Vám byl odeslán.\n  Zkontolujte si doručenou poštu a klikněte na odkz \"Confirm my e-mail\" pro potvrzení Vaší e-mailove adresy."
+  }
+}

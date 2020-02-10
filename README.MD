@@ -173,14 +173,14 @@ by starring :star: and sharing it :loudspeaker:
 - [angular material theme](https://material.angular.io/guide/getting-started#step-4-include-a-theme)
 - [angular material icons](https://material.angular.io/guide/getting-started#step-6-optional-add-material-icons)
 
-- [angular cdk - v8.x](https://www.npmjs.com/package/@angular/cdk)
-- [angular material - v8.x](https://www.npmjs.com/package/@angular/material)
-- [angular forms - v8.x](https://www.npmjs.com/package/@angular/forms)
-- [angular animations - v8.x](https://www.npmjs.com/package/@angular/animations)
-- [angular router - v8.x](https://www.npmjs.com/package/@angular/router)
-- [angular flex-layout v8.0.0-beta.26](https://www.npmjs.com/package/@angular/flex-layout)
-- [@angular/fire - v5.2.x](https://www.npmjs.com/package/@angular/fire)
-- [firebase - v6.x](https://www.npmjs.com/package/firebase)
+- [angular cdk - v9.x](https://www.npmjs.com/package/@angular/cdk)
+- [angular material - v9.x](https://www.npmjs.com/package/@angular/material)
+- [angular forms - v9.x](https://www.npmjs.com/package/@angular/forms)
+- [angular animations - v9.x](https://www.npmjs.com/package/@angular/animations)
+- [angular router - v9.x](https://www.npmjs.com/package/@angular/router)
+- [angular flex-layout v9.0.0-beta.29](https://www.npmjs.com/package/@angular/flex-layout)
+- [@angular/fire - v5.4.x](https://www.npmjs.com/package/@angular/fire)
+- [firebase - v7.x](https://www.npmjs.com/package/firebase)
 
 the full tutorial guide can be found [here](https://ngx-auth-firebaseui.firebaseapp.com/getting-started)
 
@@ -589,13 +589,14 @@ export class AppRoutingModule {
 - [@angular-material-extensions/components](https://github.com/angular-material-extensions/components)
 - [@angular-material-extensions/password-strength](https://github.com/angular-material-extensions/password-strength)
 - [@angular-material-extensions/google-maps-autocomplete](https://github.com/angular-material-extensions/google-maps-autocomplete)
+- [@angular-material-extensions/fab-menu](https://github.com/angular-material-extensions/fab-menu)
+- [@angular-material-extensions/select-country](https://github.com/angular-material-extensions/select-country)
 - [@angular-material-extensions/pages](https://github.com/angular-material-extensions/pages)
 - [@angular-material-extensions/link-preview](https://github.com/angular-material-extensions/link-preview)
 - [@angular-material-extensions/contacts](https://github.com/angular-material-extensions/contacts)
 - [@angular-material-extensions/faq](https://github.com/angular-material-extensions/faq)
 - [@angular-material-extensions/jumbotron](https://github.com/angular-material-extensions/jumbotron)
 - [angular-material-extensions/freelancer-theme](https://github.com/angular-material-extensions/freelancer-theme)
-- [@angular-material-extensions/combination-generator](https://github.com/angular-material-extensions/combination-generator)
 
 ---
 

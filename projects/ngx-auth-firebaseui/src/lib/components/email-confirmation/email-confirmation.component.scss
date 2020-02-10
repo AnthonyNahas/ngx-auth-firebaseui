@@ -1,0 +1,49 @@
+.material-icons {
+  font-size: 4rem;
+}
+
+.verify-email {
+
+  width: 360px;
+
+  .mat-icon {
+    height: 4rem;
+    width: 4rem;
+    color: #444;
+  }
+
+  .title {
+    margin-top: 16px;
+
+    .mat-subheading-2 {
+      margin-bottom: 0;
+    }
+  }
+
+  .subtitle {
+    margin: 16px auto;
+    text-align: justify;
+  }
+
+  p {
+    display: block;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+  }
+
+  mat-card-actions {
+    text-align: center;
+    margin-top: 1rem;
+
+    .action-button {
+      width: 100%;
+    }
+
+    .action-button + .action-button {
+      margin-top: 1rem;
+    }
+  }
+}
+
