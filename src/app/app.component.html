@@ -442,6 +442,7 @@
     <flip-front class="front">
 
       <ngx-auth-firebaseui appearance="outline"
+                           [tabIndex]="1"
                            (onSuccess)="printUser($event)"
                            (onError)="printError($event)">
       </ngx-auth-firebaseui>

@@ -301,22 +301,22 @@ automatically change to `column`
 
 ```json
 "peerDependencies": {
-    "@angular/core": "^8.x",
-    "@angular/animations": "^8.x",
-    "@angular/cdk": "^8.x",
-    "@angular/flex-layout": "^8.0.0-beta.27",
-    "@angular/forms": "^8.x",
-    "@angular/material": "^8.x",
-    "@angular/fire": "5.3.x",
+    "@angular/core": "^9.x",
+    "@angular/animations": "^9.x",
+    "@angular/cdk": "^9.x",
+    "@angular/flex-layout": "^9.0.0-beta.29",
+    "@angular/forms": "^9.x",
+    "@angular/material": "^9.x",
+    "@angular/fire": "5.4.x",
     "firebase": "7.x",
   }
 ```
 
 #### NOTE:
-If you are still running angular v5, please consider to user `ngx-auth-firebaseui` v0.x
 
 v1.x should be used with angular v7 projects
 v3.x should be used with angular v8 projects
+v4.x should be used with angular v9 projects
 
 [help!](https://ngx-auth-firebaseui.firebaseapp.com/getting-started)
 
@@ -326,7 +326,7 @@ v3.x should be used with angular v8 projects
 <a name="dependencies"/>
 
 ## Dependencies
-* [Angular](https://angular.io) (*requires* Angular 2 or higher, developed with 8.x) - obviously
+* [Angular](https://angular.io) (*requires* Angular 2 or higher, developed with 9.x) - obviously
 * [@angular-material-extensions/password-strength](https://www.npmjs.com/package/@angular-material-extensions/password-strength)
 
 the [@angular-material-extensions/password-strength](https://www.npmjs.com/package/@angular-material-extensions/password-strength) is used
