@@ -1,4 +1,5 @@
 $google: #db4437;
+$apple: #000000;
 $facebook: #385899;
 $twitter: #1da1f2;
 $github: #000000;
@@ -14,6 +15,12 @@ $yahoo: #720e9e;
 .space-full-xs {
   width: 100%;
   margin: .4rem;
+}
+
+.apple-filled {
+  mat-icon {
+    fill: white;
+  }
 }
 
 .facebook-filled {
@@ -36,6 +43,10 @@ $yahoo: #720e9e;
 
   .google-raised {
     background-color: $google;
+  }
+
+  .apple-raised {
+    background-color: $apple;
   }
 
   .facebook-raised {
@@ -67,6 +78,10 @@ $yahoo: #720e9e;
 
   button.google-classic {
     color: $google !important;
+  }
+
+  button.apple-classic {
+    color: $apple !important;
   }
 
   .facebook-classic {

@@ -13,6 +13,15 @@
       <mat-icon svgIcon="google-colored"></mat-icon>
       Google
     </button>
+    <button (click)="authProcess.signInWith(authProvider.Apple)"
+            *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Apple)"
+            [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}"
+            [ngClass.xs]="{'space-full-xs':true}"
+            class="apple-filled"
+            mat-button>
+      <mat-icon svgIcon="apple"></mat-icon>
+      Apple
+    </button>
     <button (click)="authProcess.signInWith(authProvider.Facebook)"
             *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Facebook)"
             [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}"
@@ -71,6 +80,14 @@
             mat-button>
       Google
     </button>
+    <button (click)="authProcess.signInWith(authProvider.Apple)"
+            *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Apple)"
+            [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}"
+            [ngClass.xs]="{'space-full-xs':true}"
+            class="apple-classic"
+            mat-button>
+      Apple
+    </button>
     <button (click)="authProcess.signInWith(authProvider.Facebook)"
             *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Facebook)"
             [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}"
@@ -126,6 +143,14 @@
             class="google-classic"
             mat-stroked-button>
       Google
+    </button>
+    <button (click)="authProcess.signInWith(authProvider.Apple)"
+            *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Apple)"
+            [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}"
+            [ngClass.xs]="{'space-full-xs':true}"
+            class="apple-classic"
+            mat-stroked-button>
+      Apple
     </button>
     <button (click)="authProcess.signInWith(authProvider.Facebook)"
             *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Facebook)"
@@ -183,6 +208,14 @@
             mat-raised-button>
       Google
     </button>
+    <button (click)="authProcess.signInWith(authProvider.Apple)"
+            *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Apple)"
+            [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}"
+            [ngClass.xs]="{'space-full-xs':true}"
+            class="apple-raised"
+            mat-raised-button>
+      Apple
+    </button>
     <button (click)="authProcess.signInWith(authProvider.Facebook)"
             *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Facebook)"
             [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}"
@@ -237,6 +270,13 @@
             mat-fab>
       <mat-icon svgIcon="google"></mat-icon>
     </button>
+    <button (click)="authProcess.signInWith(authProvider.Apple)"
+            *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Apple)"
+            [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}"
+            class="apple-raised"
+            mat-fab>
+      <mat-icon svgIcon="apple"></mat-icon>
+    </button>
     <button (click)="authProcess.signInWith(authProvider.Facebook)"
             *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Facebook)"
             [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}"
@@ -287,6 +327,13 @@
             fxFlexAlign="center"
             mat-mini-fab>
       <mat-icon svgIcon="google"></mat-icon>
+    </button>
+    <button (click)="authProcess.signInWith(authProvider.Apple)"
+            *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Apple)"
+            [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}"
+            class="apple-raised"
+            mat-mini-fab>
+      <mat-icon svgIcon="apple"></mat-icon>
     </button>
     <button (click)="authProcess.signInWith(authProvider.Facebook)"
             *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Facebook)"

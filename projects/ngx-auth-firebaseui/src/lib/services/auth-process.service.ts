@@ -17,6 +17,7 @@ import UserCredential = firebase.auth.UserCredential;
 
 export const facebookAuthProvider = new firebase.auth.FacebookAuthProvider();
 export const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
+export const appleAuthProvider = new firebase.auth.OAuthProvider('apple.com');
 export const twitterAuthProvider = new firebase.auth.TwitterAuthProvider();
 export const githubAuthProvider = new firebase.auth.GithubAuthProvider();
 export const microsoftAuthProvider = new firebase.auth.OAuthProvider('microsoft.com');
@@ -27,6 +28,7 @@ export enum AuthProvider {
   ANONYMOUS = 'anonymous',
   EmailAndPassword = 'firebase',
   Google = 'google',
+  Apple = 'Apple',
   Facebook = 'facebook',
   Twitter = 'twitter',
   Github = 'github',
@@ -110,6 +112,10 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
 
         case AuthProvider.Google:
           signInResult = await this.afa.auth.signInWithPopup(googleAuthProvider) as UserCredential;
+          break;
+
+        case AuthProvider.Apple:
+          signInResult = await this.afa.auth.signInWithPopup(appleAuthProvider) as UserCredential;
           break;
 
         case AuthProvider.Facebook:
