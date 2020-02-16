@@ -25,6 +25,35 @@
 
 * czech tranlation ([fcfab00](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/fcfab00e11f50982ecf74f89849709caa4876524))
 * **lib:** added apple support [#397](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/397) ([83488e8](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/83488e8fe7b0c5d55b549bdf10bcf39ff589fed4))
+* **lib:** updating CHANGELOG.md for v4.0.0 ([801a337](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/801a33716b07e6b22e30bcfe9d798b718ce1f547))
+
+# [4.0.0](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v3.5.0...v4.0.0) (2020-02-16)
+
+
+### Bug Fixes
+
+* **demo:** added getting started component ([8a7716c](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/8a7716c85e23bbfc1f4f072b2feb10a4d14513b7))
+* **demo:** added the required assets ([4a1daee](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/4a1daee2aa6ad99de09474293dca8aa91698bcae))
+* **demo:** improved the new demo app ([2aa0767](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/2aa07670a5107a3a83f98ffc6184b4f8fa23c1d0))
+* **demo:** integration of the lib with angular v9 demo app ([b326c11](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/b326c11f0f03343c591c512e331f93dcc94d0d6a))
+* **demo:** integration of the lib with angular v9 demo app ([96108a5](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/96108a5f4d2088dbd708e4369f466d0b3aa83f38))
+* **demo:** integration of the lib with angular v9 demo app ([f493b10](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/f493b1071d7a37f382113ef6ca61a20a991a5c9c))
+* **demo:** updated the demo app with angular v9 ([6513065](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/651306549d7199e3a6302cc4c71e37ec0a840607))
+* **demo:** updated the demo app with angular v9 ([bd18548](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/bd18548cef9ea6a7e013bc0149d9a33a91aa6253))
+* **demo:** updated the dependencies ([8aca5e7](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/8aca5e78ffb05f2f1e82a45a3c599e1a16c941c8))
+* **lib:** alignment icons are now safe ([d86b33d](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/d86b33d0bf990b2e022c0b2ed7f4f08b9b65d7fd))
+* **lib:** updated angular deps to v9.0.1 ([5fbb120](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/5fbb1200a0e50d6157c120ef080e6d5c5ad0f55c))
+* **lib:** updated package.json file ([59e0eed](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/59e0eeda90a3d23b861d207e9d24d680008646b0))
+* **lib:** updated package.json file ([02eaed5](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/02eaed55ba1be0c3616b7df1bfe4172cc37fd644))
+* **lib:** updated the angular fire to v5.4.1 ([a909315](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/a909315774d9b3b67fe2a3fdb356e645fbd2c570))
+* **lib:** updated the dependencies ([6b829e3](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/6b829e34df735eb89a32db47559752ad9a4bd0f2))
+* **lib:** upgraded the lib to angular V9 ([918e594](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/918e5948fcf56b1f8dc1fe886eee47d740534941))
+
+
+### Features
+
+* czech tranlation ([fcfab00](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/fcfab00e11f50982ecf74f89849709caa4876524))
+* **lib:** added apple support [#397](https://github.com/anthonynahas/ngx-auth-firebaseui/issues/397) ([83488e8](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/83488e8fe7b0c5d55b549bdf10bcf39ff589fed4))
 
 
 
