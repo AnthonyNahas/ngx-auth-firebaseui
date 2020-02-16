@@ -1,7 +1,7 @@
 {
   "name": "ngx-auth-firebaseui",
   "description": "Open Source Library for Angular Web Apps to integrate a material user interface for firebase authentication",
-  "version": "3.5.0",
+  "version": "4.0.0",
   "homepage": "https://ngx-auth-firebaseui.firebaseapp.com",
   "author": {
     "name": "anthonynahas",
@@ -44,7 +44,7 @@
     "release:patch": "../../node_modules/.bin/release-it --patch --ci",
     "release:minor": "../../node_modules/.bin/release-it --minor --ci",
     "release:major": "../../node_modules/.bin/release-it --major --ci",
-    "release:custom": "../../node_modules/.bin/release-it 4.0.0 --ci",
+    "release:custom": "../../node_modules/.bin/release-it 4.0.0 --ci --no-git.requireCleanWorkingDir",
     "ng:test": "../../node_modules/.bin/ng test ngx-auth-firebaseui",
     "test": "../../node_modules/.bin/jest --coverage",
     "test:watch": "../../node_modules/.bin/jest --coverage --watch"
@@ -88,7 +88,7 @@
         "npm run clean"
       ],
       "after:bump": "echo \"building lib v${version}... \" && npm run build",
-      "before:git:release": "echo \"Updating CHANGELOG.md for v${version} \" && git commit -m \"Updating CHANGELOG.md for v${version} \" ../../CHANGELOG.md",
+      "before:git:release": "echo \"Updating CHANGELOG.md for v${version} \" && git commit -m \"feat(lib): updating CHANGELOG.md for v${version} \" ../../CHANGELOG.md",
       "after:release": "echo Successfully released ${name} v${version} to ${repo.repository}.",
       "before:npm": "echo building the library..."
     }
