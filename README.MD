@@ -1,6 +1,6 @@
 <p align="center">
   <img height="256px" width="256px" style="text-align: center;"
-  src="https://cdn.jsdelivr.net/gh/anthonynahas/ngx-auth-firebaseui@master/demo/src/assets/logo.svg">
+  src="https://cdn.jsdelivr.net/gh/anthonynahas/ngx-auth-firebaseui@master/assets/angular-material-extensions-logo.svg">
 </p>
 
 # ngx-auth-firebaseui - Open Source Library for Angular Web Apps to integrate a material user interface for firebase authentication.
@@ -24,10 +24,7 @@
 [![Twitter Follow](https://img.shields.io/twitter/follow/ngAnthonyy.svg?style=social&label=Follow)](https://twitter.com/ngAnthonyy)
 [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/gdi2290/awesome-angular)
 
-<p align="center">
-  <img alt="ngx-auth-firebaseui-logo.png" width="256px" style="text-align: center;"
-  src="ngx-auth-firebaseui-logo.png">
-</p>
+
 
 Angular UI component for [firebase](https://firebase.google.com/docs/auth/web/firebaseui) authentication.
 This library is an angular module (including angular components and services) that allows to authenticate
@@ -75,12 +72,13 @@ by starring :star: and sharing it :loudspeaker:
 | Sign In                                        | :heavy_check_mark:    |  :heavy_check_mark:    |
 | Sign In Anonymously                            | :heavy_check_mark:    |  :heavy_check_mark:    |
 | Sign In with Google                            | :heavy_check_mark:    |  :heavy_check_mark:    |
+| Sign In with Apple                             | :heavy_check_mark:    |  :heavy_check_mark:    |
 | Sign In with Facebook                          | :heavy_check_mark:    |  :heavy_check_mark:    |
 | Sign In with Twitter                           | :heavy_check_mark:    |  :heavy_check_mark:    |
 | Sign In with Github                            | :heavy_check_mark:    |  :heavy_check_mark:    |
 | Sign In with Microsoft                         | :heavy_check_mark:    |  :heavy_check_mark:    |
 | Sign In with Yahoo                             | :heavy_check_mark:    |  :heavy_check_mark:    |
-| Sign In with Phone`number`                       | :x:                   |  :heavy_check_mark:    |
+| Sign In with Phone`number`                     | :x:                   |  :heavy_check_mark:    |
 | Sign out                                       | :heavy_check_mark:    |  :x:                   |
 | Sign in/up progress indicator                  | :heavy_check_mark:    |  :x:                   |
 | Password Strength indicator                    | :heavy_check_mark:    |  :x:                   |
@@ -334,7 +332,7 @@ to indicate how secure is the provided password when registering a new firebase 
 
 <p align="center">
   <img width="384px" style="text-align: center;"
-   src="assets/v0.7.1/features/password/ngx-material-password-strength.gif">
+   src="assets/v0.7.1****/features/password/ngx-material-password-strength.gif">
 </p>
 
 <a name="installation"/>
