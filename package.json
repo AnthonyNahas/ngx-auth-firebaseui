@@ -71,7 +71,6 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^12.12.27",
     "codelyzer": "^5.1.2",
-    "commitplease": "^3.2.0",
     "jasmine-core": "~3.5.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~4.3.0",
