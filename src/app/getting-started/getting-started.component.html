@@ -1,0 +1,793 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1>Getting Started</h1>
+  </div>
+</div>
+
+<section class="getting-started">
+  <div class="container">
+
+    <mat-pages title="ngx-auth-firebaseui">
+      <!--1-->
+      <mat-page-loader>
+        <mat-page-outlook title="Setup Development Environment">
+        </mat-page-outlook>
+        <mat-page-content>
+          <mat-card-title>Please make sure that you have <a href="https://nodejs.org/en/" mat-button
+                                                            color="primary">NodeJS</a>
+            and <a href="https://www.npmjs.com/package/npm"
+                   mat-button
+                   color="primary">
+              npm</a>
+            running on your machine in order to be able to develop some wonderful apps.
+          </mat-card-title>
+          <mat-card>
+            <mat-card-content fxLayout="row" fxLayoutAlign="space-between">
+              <!-- static markdown -->
+              <div markdown ngPreserveWhitespaces>
+                $ node -v
+              </div>
+<!--              <pre><code [highlight]="'$ node -v'"></code></pre>-->
+              <button mat-icon-button
+                      ngxClipboard
+                      [cbContent]="'node -v'"
+                      matTooltip="copy"
+                      (click)="showCopyMessage('node -v')">
+                <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+              </button>
+            </mat-card-content>
+            <mat-divider></mat-divider>
+          </mat-card>
+          <mat-card>
+            <mat-card-content fxLayout="row" fxLayoutAlign="space-between">
+              <pre><code [highlight]="'$ npm -v'"></code></pre>
+              <button mat-icon-button
+                      ngxClipboard
+                      [cbContent]="'node -v'"
+                      matTooltip="copy"
+                      (click)="showCopyMessage('npm -v')">
+                <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+              </button>
+            </mat-card-content>
+            <mat-divider></mat-divider>
+            <mat-card-footer fxLayoutAlign="center" style="flex-wrap: wrap">
+              <a href="https://nodejs.org/en/download/" mat-button
+                 color="primary"> If they are not already downloaded, please install Node.js and npm </a>
+            </mat-card-footer>
+          </mat-card>
+          <mat-card>
+            <mat-card-subtitle>
+              Check if <a href="https://cli.angular.io/" mat-button
+                          color="primary">angular cli </a> is already installed globally
+            </mat-card-subtitle>
+            <mat-card-content>
+              <div fxLayout="row" fxLayoutAlign="space-between">
+                <div markdown ngPreserveWhitespaces>
+                  $ ng -v
+                </div>
+<!--                <pre><code [highlight]="'$ ng -v'"></code></pre>-->
+                <button mat-icon-button
+                        ngxClipboard
+                        [cbContent]="'ng -v'"
+                        matTooltip="copy"
+                        (click)="showCopyMessage('ng -v')">
+                  <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+                </button>
+              </div>
+              <p>If angular cli is installed on you machine, you should get something like this</p>
+              <markdown [data]="ngVersion"></markdown>
+<!--              <pre><code [highlight]="ngVersion"></code></pre>-->
+
+              <p>If not please run the following command to install angular cli globally in order to create an angular
+                project</p>
+
+              <div fxLayout="row" fxLayoutAlign="space-between">
+                <div markdown ngPreserveWhitespaces>
+                  $ npm install -g @angular/cli
+                </div>
+<!--                <pre><code [highlight]="'$ npm install -g @angular/cli'"></code></pre>-->
+                <button mat-icon-button
+                        ngxClipboard
+                        [cbContent]="'npm install -g @angular/cli'"
+                        matTooltip="copy"
+                        (click)="showCopyMessage('npm install -g @angular/cli')">
+                  <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+                </button>
+              </div>
+            </mat-card-content>
+          </mat-card>
+        </mat-page-content>
+      </mat-page-loader>
+
+
+      <!--2-->
+      <mat-page-loader>
+        <mat-page-outlook title="Setup Angular App">
+        </mat-page-outlook>
+        <mat-page-content>
+          <mat-card-title> Time to begin with Angular</mat-card-title>
+          <p>If you have already a setup angular project, you can skip this step, otherwise you can generate a project
+            via the angular cli by running the following</p>
+          <div fxLayout="row" fxLayoutAlign="space-between">
+            <div markdown ngPreserveWhitespaces>
+              $ ng new yourappname'
+            </div>
+
+<!--            <pre><code [highlight]="'$ ng new yourappname'"></code></pre>-->
+            <button mat-icon-button
+                    ngxClipboard
+                    [cbContent]="'ng new yourappname'"
+                    matTooltip="copy"
+                    (click)="showCopyMessage('ng new yourappname')">
+              <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+            </button>
+          </div>
+          <div fxLayout="column" fxLayoutAlign="center">
+            <video *ngIf="true" controls autoplay loop aria-label="generate new angular project">
+              <source
+                src="https://firebasestorage.googleapis.com/v0/b/ngx-auth-firebaseui.appspot.com/o/tutorials%2Fng_g_appname2.mp4?alt=media&token=d3e5b2d4-d806-44d9-a1ed-7a7b8a1c877f"
+                type="video/mp4">
+            </video>
+
+            <div class="comment-container">
+              <p>waiting......</p>
+            </div>
+
+            <video *ngIf="true" controls autoplay loop aria-label="Done with generating the project">
+              <source
+                src="https://firebasestorage.googleapis.com/v0/b/ngx-auth-firebaseui.appspot.com/o/tutorials%2Fng_g_appname_done2.mp4?alt=media&token=1f7591bf-e147-4dd4-91c2-23793ffeed6b"
+                type="video/mp4">
+            </video>
+
+            <div class="comment-container">
+              <p> When the angular cli is done with generating the project, navigate to you your app
+                and check the project structure.</p>
+            </div>
+
+            <video *ngIf="true" controls autoplay loop
+                   aria-label="go into the generated project and checkout the generated files">
+              <source
+                src="https://firebasestorage.googleapis.com/v0/b/ngx-auth-firebaseui.appspot.com/o/tutorials%2Fcd_angularapp.mp4?alt=media&token=830c3b21-ad94-405b-8b9f-d1ee4504685d"
+                type="video/mp4">
+            </video>
+          </div>
+        </mat-page-content>
+      </mat-page-loader>
+
+
+      <!--3-->
+      <mat-page-loader>
+        <mat-page-outlook title="Peer dependencies">
+        </mat-page-outlook>
+        <mat-page-content>
+          <mat-card-title>Animations + Material + CDK + FlexLayout + Firebase + Angularfire2</mat-card-title>
+          <div class="comment-container">
+            <p><a href="https://www.npmjs.com/package/ngx-auth-firebaseui"
+                  mat-button
+                  color="primary">
+              ngx-auth-firebaseui
+            </a>
+              is built on the top of
+              <a href="https://www.npmjs.com/package/@angular/material"
+                 mat-button
+                 color="primary">
+                angular material
+              </a> and
+              <a href="https://www.npmjs.com/package/@angular/cdk"
+                 mat-button
+                 color="primary">
+                angular component development kit
+              </a> ! That's why we need to install them as peer dependencies to the ngx-auth-firebaseui module.
+            </p>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="space-between">
+            <div markdown ngPreserveWhitespaces>
+              $ npm i -s @angular/material @angular/cdk
+            </div>
+
+<!--            <pre><code [highlight]="'$ npm i -s @angular/material @angular/cdk'"></code></pre>-->
+            <button mat-icon-button
+                    ngxClipboard
+                    [cbContent]="'npm i -s @angular/material @angular/cdk'"
+                    matTooltip="copy"
+                    (click)="showCopyMessage('npm i -s @angular/material @angular/cdk')">
+              <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+            </button>
+          </div>
+          <div fxLayoutAlign="center">
+            <video *ngIf="true" controls autoplay loop aria-label="install angular material and angular cdk with npm">
+              <source
+                src="https://firebasestorage.googleapis.com/v0/b/ngx-auth-firebaseui.appspot.com/o/tutorials%2Fnpm_i_material_cdk.mp4?alt=media&token=1cc60fb7-e347-4212-9f61-5b4ed527dd3e"
+                type="video/mp4">
+            </video>
+          </div>
+          <div class="comment-container">
+            <p>
+              Furthermore, <a href="https://www.npmjs.com/package/@angular/animations"
+                              mat-button
+                              color="primary">
+              angular animations
+            </a> is required too to provide advanced transitions between the components.
+            </p>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="space-between">
+            <div markdown ngPreserveWhitespaces>
+              $ npm i -s @angular/animations
+            </div>
+<!--            <pre><code [highlight]="'$ npm i -s @angular/animations'"></code></pre>-->
+            <button mat-icon-button
+                    ngxClipboard
+                    [cbContent]="'npm i -s @angular/animations'"
+                    matTooltip="copy"
+                    (click)="showCopyMessage('npm i -s @angular/animations')">
+              <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+            </button>
+          </div>
+          <div fxLayoutAlign="center">
+            <video *ngIf="true" controls autoplay loop aria-label="install angular animations with npm">
+              <source
+                src="https://firebasestorage.googleapis.com/v0/b/ngx-auth-firebaseui.appspot.com/o/tutorials%2Fnpm_i_animations.mp4?alt=media&token=c8fcac6a-7fd6-48ab-871b-785991eb2fdb"
+                type="video/mp4">
+            </video>
+          </div>
+          <div class="comment-container">
+            <p>Now it's time to import the animations module.</p>
+          </div>
+          <mat-card>
+            <mat-card-content>
+              <markdown [data]="importBrowserAnimationsModule"></markdown>
+<!--              <pre><code [highlight]="importBrowserAnimationsModule"></code></pre>-->
+            </mat-card-content>
+          </mat-card>
+          <mat-card-footer fxLayoutAlign="center">
+            <a href="https://material.angular.io/guide/getting-started#step-2-animations"
+               mat-button color="primary">Learn more</a>
+          </mat-card-footer>
+
+          <!--<div fxLayoutAlign="center">-->
+          <!--<video *ngIf="true" controls autoplay loop aria-label="install angular animations with npm">-->
+          <!--<source-->
+          <!--src="https://firebasestorage.googleapis.com/v0/b/ngx-auth-firebaseui.appspot.com/o/tutorials%2Fnpm_i_animations.mp4?alt=media&token=c8fcac6a-7fd6-48ab-871b-785991eb2fdb"-->
+          <!--type="video/mp4">-->
+          <!--</video>-->
+          <!--</div>-->
+
+          <div class="comment-container">
+            <p>Fire Fire Firebase!</p>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="space-between">
+            <div markdown ngPreserveWhitespaces>
+              $ npm i -s firebase @angular/fire
+            </div>
+<!--            <pre><code [highlight]="'$ npm i -s firebase @angular/fire'"></code></pre>-->
+            <button mat-icon-button
+                    ngxClipboard
+                    [cbContent]="'npm i -s firebase @angular/fire'"
+                    matTooltip="copy"
+                    (click)="showCopyMessage('npm i -s firebase @angular/fire')">
+              <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+            </button>
+          </div>
+
+        </mat-page-content>
+      </mat-page-loader>
+
+
+      <!--4-->
+      <mat-page-loader>
+        <mat-page-outlook title="Material Theme">
+        </mat-page-outlook>
+        <mat-page-content>
+          <mat-card-title>Styling and more...</mat-card-title>
+          <div class="comment-container">
+            <p>In order to use angular material/ material design, we need include at least one theme.
+              To get started, you can just import one of the prebuilt material themes from the angular material module
+              in your style.css file.</p>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="space-between">
+<!--            <pre><code [highlight]="importMaterialThemeSCSS"></code></pre>-->
+            <button mat-icon-button
+                    ngxClipboard
+                    [cbContent]="importMaterialThemeSCSS"
+                    matTooltip="copy"
+                    (click)="showCopyMessage(importMaterialThemeSCSS)">
+              <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+            </button>
+          </div>
+          <div fxLayoutAlign="center">
+            <video *ngIf="true" controls autoplay loop aria-label="video of linking's material design themes">
+              <source
+                src="https://firebasestorage.googleapis.com/v0/b/ngx-auth-firebaseui.appspot.com/o/tutorials%2Fimport_theme.mp4?alt=media&token=5011fdd5-48c9-4f2d-8f36-61bdf78be460"
+                type="video/mp4">
+            </video>
+          </div>
+          <div class="comment-container">
+            <p>Or create your own material theme and import it in the style.css file</p>
+          </div>
+          <div fxLayoutAlign="center">
+            <video *ngIf="true" controls autoplay loop aria-label="video of creating a custom material theme">
+              <source
+                src="https://firebasestorage.googleapis.com/v0/b/ngx-auth-firebaseui.appspot.com/o/tutorials%2Fimport_custom_theme.mp4?alt=media&token=f2995ca2-1bc6-4a1a-b8b6-6ce259ff26c6"
+                type="video/mp4">
+            </video>
+          </div>
+          <mat-card>
+            <mat-card-subtitle>Custom material theme</mat-card-subtitle>
+            <mat-card-content>
+              <div fxLayout="row" fxLayoutAlign="space-between">
+                <markdown [data]="customMaterialTheme"></markdown>
+<!--                <pre><code [highlight]="customMaterialTheme"></code></pre>-->
+                <button mat-icon-button
+                        ngxClipboard
+                        [cbContent]="customMaterialTheme"
+                        matTooltip="copy"
+                        (click)="showCopyMessage(customMaterialTheme)">
+                  <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+                </button>
+              </div>
+            </mat-card-content>
+            <mat-card-footer fxLayoutAlign="center">
+              <a href="https://material.angular.io/guide/theming"
+                 target="_blank"
+                 mat-button
+                 color="primary">
+                <mat-icon>link</mat-icon>
+                Learn more about angular material themes</a>
+            </mat-card-footer>
+          </mat-card>
+        </mat-page-content>
+      </mat-page-loader>
+
+
+      <!--5-->
+      <mat-page-loader>
+        <mat-page-outlook title="Material Icons">
+        </mat-page-outlook>
+        <mat-page-content>
+          <mat-card-title>Linking the icons</mat-card-title>
+          <mat-card-content>
+            <div class="comment-container">
+              <p>The easiest way to load the material design icons is to provide the
+                following link in your
+              <p>
+              <pre><code [highlight]="'index.html '"></code></pre>
+              <p>file </p>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="space-between">
+              <pre><code [highlight]="materialIconsLink"></code></pre>
+              <button mat-icon-button
+                      ngxClipboard
+                      [cbContent]="materialIconsLink"
+                      matTooltip="copy"
+                      (click)="showCopyMessage(materialIconsLink)">
+                <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+              </button>
+            </div>
+            <div fxLayoutAlign="center">
+              <video *ngIf="true" controls autoplay loop aria-label="video of linking material design icons">
+                <source
+                  src="https://firebasestorage.googleapis.com/v0/b/ngx-auth-firebaseui.appspot.com/o/tutorials%2Flink_material_design_icons.mp4?alt=media&token=d3e7848b-6977-4044-909c-c75b701988a4"
+                  type="video/mp4">
+              </video>
+            </div>
+            <div class="comment-container">
+              <p>Or, if you want to host the material design icons by yourself, please follow these two steps.</p>
+            </div>
+
+            <div class="comment-container">
+              <p>First, install the <a href="https://www.npmjs.com/package/material-design-icons"
+                                       mat-button color="primary">material design icons' npm module</a></p>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="space-between">
+<!--              <pre><code [highlight]="'$ npm i -s material-design-icons'"></code></pre>-->
+              <button mat-icon-button
+                      ngxClipboard
+                      [cbContent]="'npm i -s material-design-icons'"
+                      matTooltip="copy"
+                      (click)="showCopyMessage('npm i -s material-design-icons')">
+                <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+              </button>
+            </div>
+            <div class="comment-container">
+              <p>After that, you need to update you
+              <p>
+<!--              <pre><code [highlight]="'angular.json'"></code></pre>-->
+              <p>files. Under the styles sections, add
+                the path of the material design icons in order to be imported to your distribution files
+                when you build your app. <i>See below</i></p>
+            </div>
+            <div class="comment-container">
+              <p>First of all, copy the path of the material design icons</p>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="space-between">
+            <pre><code highlight
+<!--                       [highlight]="'node_modules/material-design-icons/iconfont/material-icons.css'"></code></pre>-->
+              <button mat-icon-button
+                      ngxClipboard
+                      [cbContent]="'node_modules/material-design-icons/iconfont/material-icons.css'"
+                      matTooltip="copy"
+                      (click)="showCopyMessage('node_modules/material-design-icons/iconfont/material-icons.css')">
+                <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+              </button>
+            </div>
+            <div class="comment-container">
+              <p>Adjust your angular.json file</p>
+            </div>
+            <mat-card-subtitle>Before</mat-card-subtitle>
+            <div fxLayout="row" fxLayoutAlign="space-between">
+            <pre><code highlight
+<!--                       [highlight]="stylesBeforeImportMDI"></code></pre>-->
+              <button mat-icon-button
+                      ngxClipboard
+                      [cbContent]="stylesBeforeImportMDI"
+                      matTooltip="copy"
+                      (click)="showCopyMessage(stylesBeforeImportMDI)">
+                <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+              </button>
+            </div>
+            <mat-card-subtitle>After</mat-card-subtitle>
+            <div fxLayout="row" fxLayoutAlign="space-between">
+            <pre><code highlight
+<!--                       [highlight]="stylesAfterImportMDI"></code></pre>-->
+              <button mat-icon-button
+                      ngxClipboard
+                      [cbContent]="stylesAfterImportMDI"
+                      matTooltip="copy"
+                      (click)="showCopyMessage(stylesAfterImportMDI)">
+                <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+              </button>
+            </div>
+            <div fxLayoutAlign="center">
+              <video *ngIf="true" controls autoplay loop aria-label="video of selfhosting material design icons">
+                <source
+                  src="https://firebasestorage.googleapis.com/v0/b/ngx-auth-firebaseui.appspot.com/o/tutorials%2Fmaterial_design_icons_self_hosting.mp4?alt=media&token=8b444b0e-62b5-4fc4-b925-aa81cf2dff9e"
+                  type="video/mp4">
+              </video>
+            </div>
+            <div class="comment-container">
+              <p>Great! You are done with the basics
+                <mat-icon color="accent">done</mat-icon>
+              </p>
+            </div>
+          </mat-card-content>
+          <mat-card-footer fxLayoutAlign="center">
+            <a href="https://material.angular.io/guide/getting-started#step-6-optional-add-material-icons"
+               target="_blank"
+               mat-button
+               color="primary">
+              <mat-icon>link</mat-icon>
+              Learn more about angular material icons</a>
+          </mat-card-footer>
+        </mat-page-content>
+      </mat-page-loader>
+
+
+      <!--6-->
+      <mat-page-loader>
+        <mat-page-outlook title="Installation">
+        </mat-page-outlook>
+        <mat-page-content>
+          <mat-card-title>Here we go
+            <mat-icon>flight_takeoff</mat-icon>
+          </mat-card-title>
+          <div class="comment-container">
+            Open a new terminal and run the following command to get
+            <a href="https://www.npmjs.com/package/ngx-auth-firebaseui" mat-button
+               color="primary">ngx-auth-firebaseui</a>
+            from npm
+          </div>
+          <div fxLayout="row" fxLayoutAlign="space-between">
+            <pre><code highlight
+<!--                       [highlight]="'$ npm i -s ngx-auth-firebaseui'"></code></pre>-->
+            <button mat-icon-button
+                    ngxClipboard
+                    [cbContent]="'npm i -s ngx-auth-firebaseui'"
+                    matTooltip="copy"
+                    (click)="showCopyMessage('npm i -s ngx-auth-firebaseui')">
+              <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+            </button>
+          </div>
+          <div fxLayoutAlign="center">
+            <video *ngIf="true" controls autoplay loop aria-label="video of installing ngx-auth-firebaseui via npm">
+              <source
+                src="https://firebasestorage.googleapis.com/v0/b/ngx-auth-firebaseui.appspot.com/o/tutorials%2Fnpm_i_ngx_auth_firebaseui.mp4?alt=media&token=8c17ba14-9a8c-4e40-80ac-df8388a5eaa5"
+                type="video/mp4">
+            </video>
+          </div>
+          <div class="comment-container">
+            <p>Now you just need to import the library </p>
+          </div>
+          <mat-card>
+            <mat-card-title>SystemJS</mat-card-title>
+            <mat-card-subtitle>
+              Note:If you are using SystemJS, you should adjust your configuration to point to the UMD
+              bundle. In your systemjs config file, map needs to tell the System loader where to look for
+              ngx-auth-firebaseui
+            </mat-card-subtitle>
+            <mat-card-content>
+              <div fxLayout="row" fxLayoutAlign="space-between">
+                 <pre><code highlight
+<!--                            [highlight]="systemJSModuleImport"></code></pre>-->
+                <button mat-icon-button
+                        ngxClipboard
+                        [cbContent]="systemJSModuleImport"
+                        matTooltip="copy"
+                        (click)="showCopyMessage(systemJSModuleImport)">
+                  <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+                </button>
+              </div>
+            </mat-card-content>
+          </mat-card>
+          <div class="comment-container">
+            <p>Once installed you need to import the main module:</p>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="space-between">
+                 <pre><code highlight
+<!--                            [highlight]="importNgxAuthFirebaseUIModule"></code></pre>-->
+            <button mat-icon-button
+                    ngxClipboard
+                    [cbContent]="importNgxAuthFirebaseUIModule"
+                    matTooltip="copy"
+                    (click)="showCopyMessage(importNgxAuthFirebaseUIModule)">
+              <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+            </button>
+          </div>
+          <div class="comment-container">
+            <p>The only remaining part is to list the imported module in your application module. The exact method
+              will be slightly different for the root (top-level) module for which you should end up with the code
+              similar to (notice NgxMaterialPagesModule .forRoot()):
+
+              NB: please do not forget to import the angular animations module in your root component too!
+              (usally app.component.ts)</p>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="space-between">
+                 <pre><code highlight
+<!--                            [highlight]="importNgxAuthFirebaseUIModuleInAppModule"></code></pre>-->
+            <button mat-icon-button
+                    ngxClipboard
+                    [cbContent]="importNgxAuthFirebaseUIModuleInAppModule"
+                    matTooltip="copy"
+                    (click)="showCopyMessage(importNgxAuthFirebaseUIModuleInAppModule)">
+              <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+            </button>
+          </div>
+          <div class="comment-container">
+            <p>Please do not forget to add your configuration to the module. The is absolutely required to link
+              your firebase project with</p>
+            <pre><code highlight
+<!--                       [highlight]="'ngx-auth-firebaseui'"></code></pre>-->
+            <p>See below again...</p>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="space-between">
+                 <pre><code highlight
+<!--                            [highlight]="firebaseConfiguration"></code></pre>-->
+            <button mat-icon-button
+                    ngxClipboard
+                    [cbContent]="firebaseConfiguration"
+                    matTooltip="copy"
+                    (click)="showCopyMessage(firebaseConfiguration)">
+              <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+            </button>
+          </div>
+          <div class="comment-container">
+            <p>Other modules in your application can simply import NgxMaterialPagesModule:</p>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="space-between">
+                 <pre><code highlight
+<!--                            [highlight]="importNgxAuthFirebaseUIModuleInOtherModule"></code></pre>-->
+            <button mat-icon-button
+                    ngxClipboard
+                    [cbContent]="importNgxAuthFirebaseUIModuleInOtherModule"
+                    matTooltip="copy"
+                    (click)="showCopyMessage(importNgxAuthFirebaseUIModuleInOtherModule)">
+              <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+            </button>
+          </div>
+        </mat-page-content>
+      </mat-page-loader>
+
+
+      <!--7-->
+      <mat-page-loader>
+        <mat-page-outlook title="Copy Asset to angular.json"></mat-page-outlook>
+        <mat-page-content>
+          <mat-card-title>We need ngx-auth-firebaseui's assets</mat-card-title>
+
+          <mat-card>
+            <mat-card-title>Via Angular CLI</mat-card-title>
+            <mat-card-content>
+              <div class="comment-container">
+                <p>First of all, open the following file</p>
+                <pre><code highlight
+<!--                           [highlight]="'angular.json'"></code></pre>-->
+                <p>after that, add the following snippet under the <strong>assets</strong> section</p>
+                <div fxLayout="row" fxLayoutAlign="space-between">
+                 <pre><code highlight
+<!--                            [highlight]="copyAssetSnippet"></code></pre>-->
+                  <button mat-icon-button
+                          ngxClipboard
+                          [cbContent]="copyAssetSnippet"
+                          matTooltip="copy"
+                          (click)="showCopyMessage(copyAssetSnippet)">
+                    <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+                  </button>
+                </div>
+                <p>Now, the required images will be copied to the assets directory and they will be available for your
+                  app.
+                  The assets section should look</p>
+              </div>
+              <div fxLayout="row" fxLayoutAlign="space-between">
+                 <pre><code highlight
+<!--                            [highlight]="afterCopyingAssestSnippet"></code></pre>-->
+                <button mat-icon-button
+                        ngxClipboard
+                        [cbContent]="afterCopyingAssestSnippet"
+                        matTooltip="copy"
+                        (click)="showCopyMessage(afterCopyingAssestSnippet)">
+                  <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+                </button>
+              </div>
+            </mat-card-content>
+          </mat-card>
+
+          <mat-card>
+            <mat-card-title>Without Angular CLI</mat-card-title>
+            <mat-card-content>
+              <div class="comment-container">
+                <p>copy the assets directory into the root of your project, so that your app can get the required images
+                  for the UI. This is an example of requesting an image from the library Request
+                  URL:http://localhost:4200/assets/google.svg.
+                  Please make sur that the images will be hosted in the right place</p>
+              </div>
+            </mat-card-content>
+            <mat-card-content>
+
+            </mat-card-content>
+          </mat-card>
+
+        </mat-page-content>
+      </mat-page-loader>
+
+      <!--8-->
+      <mat-page-loader>
+        <mat-page-outlook title="Usage">
+        </mat-page-outlook>
+        <mat-page-content>
+          <mat-card-title>Library's components</mat-card-title>
+          <mat-card-subtitle>This library consists of 2 essential components.</mat-card-subtitle>
+
+          <mat-card class="lib-compontent">
+            <mat-card-title>
+              <pre><code highlight
+                         [highlight]="'<ngx-auth-firebaseui></ngx-auth-firebaseui>'"></code></pre>
+              <mat-card-subtitle>
+                ngx-auth-firebaseui the main container that is used for the authentication process
+              </mat-card-subtitle>
+            </mat-card-title>
+            <mat-card-content>
+              <ngx-auth-firebaseui></ngx-auth-firebaseui>
+            </mat-card-content>
+          </mat-card>
+
+          <mat-card>
+            <mat-card-title>
+<!--              <pre><code highlight-->
+<!--                         [highlight]="'<ngx-auth-firebaseui-user></ngx-auth-firebaseui-user>'"></code></pre>-->
+            </mat-card-title>
+            <mat-card-subtitle>
+              ngx-auth-firebaseui-user is used to display/edit the data of the current authenticated user.
+              Please note if you want to try out this component, you need to be authenticated. So if you sign in/up,
+              <strong>ngx-auth-firebaseui-user</strong> will be displayed.
+            </mat-card-subtitle>
+            <mat-card-content>
+              <ngx-auth-firebaseui-user></ngx-auth-firebaseui-user>
+            </mat-card-content>
+          </mat-card>
+        </mat-page-content>
+      </mat-page-loader>
+
+      <!--8-->
+      <mat-page-loader>
+        <mat-page-outlook title="Run demo locally">
+          <img style="width: 50px; height: 50px" src="../../assets/icons/github.svg">
+        </mat-page-outlook>
+        <mat-page-content>
+          <mat-card-title-group><a href="https://github.com/AnthonyNahas/ngx-auth-firebaseui"
+                                   mat-button
+                                   color="primary">Clone the repo</a></mat-card-title-group>
+          <mat-card-title>Interested? Try it out on your machine
+          </mat-card-title>
+          <div class="comment-container">
+            <p>Clone this repo by running this following command</p>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="space-between">
+<!--                 <pre><code highlight-->
+<!--                            [highlight]="'git clone https://github.com/AnthonyNahas/ngx-auth-firebaseui.git'"></code></pre>-->
+            <button mat-icon-button
+                    ngxClipboard
+                    [cbContent]="'git clone https://github.com/AnthonyNahas/ngx-auth-firebaseui.git'"
+                    matTooltip="copy"
+                    (click)="showCopyMessage('git clone https://github.com/AnthonyNahas/ngx-auth-firebaseui.git')">
+              <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+            </button>
+          </div>
+          <div class="comment-container">
+            <p>install the dependencies</p>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="space-between">
+<!--                 <pre><code highlight-->
+<!--                            [highlight]="'$ npm i'"></code></pre>-->
+            <button mat-icon-button
+                    ngxClipboard
+                    [cbContent]="'npm i'"
+                    matTooltip="copy"
+                    (click)="showCopyMessage('npm i')">
+              <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+            </button>
+          </div>
+          <div class="comment-container">
+            <p>Link ngx-auth-firebaseui</p>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="space-between">
+<!--                 <pre><code highlight-->
+<!--                            [highlight]="'$ gulp link'"></code></pre>-->
+            <button mat-icon-button
+                    ngxClipboard
+                    [cbContent]="'gulp link'"
+                    matTooltip="copy"
+                    (click)="showCopyMessage('gulp link')">
+              <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+            </button>
+          </div>
+          <div class="comment-container">
+            <p>navigate to the demo directory</p>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="space-between">
+<!--                 <pre><code highlight-->
+<!--                            [highlight]="'$ cd demo'"></code></pre>-->
+            <button mat-icon-button
+                    ngxClipboard
+                    [cbContent]="'cd demo'"
+                    matTooltip="copy"
+                    (click)="showCopyMessage('cd demo')">
+              <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+            </button>
+          </div>
+          <div class="comment-container">
+            <p>install the dependencies</p>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="space-between">
+<!--                 <pre><code highlight-->
+<!--                            [highlight]="'$ npm i'"></code></pre>-->
+            <button mat-icon-button
+                    ngxClipboard
+                    [cbContent]="'npm i'"
+                    matTooltip="copy"
+                    (click)="showCopyMessage('npm i')">
+              <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+            </button>
+          </div>
+          <div class="comment-container">
+            <p>start the app</p>
+          </div>
+          <div fxLayout="row" fxLayoutAlign="space-between">
+<!--                 <pre><code highlight-->
+<!--                            [highlight]="'$ ng serve &#45;&#45;open'"></code></pre>-->
+            <button mat-icon-button
+                    ngxClipboard
+                    [cbContent]="'ng serve --open'"
+                    matTooltip="copy"
+                    (click)="showCopyMessage('ng serve --open')">
+              <mat-icon aria-label="copy content" class="mat-18">content_copy</mat-icon>
+            </button>
+          </div>
+          <div class="comment-container">
+            <p>the app is now hosted on http://localhost:4200/</p>
+          </div>
+        </mat-page-content>
+      </mat-page-loader>
+    </mat-pages>
+
+  </div>
+
+</section>
