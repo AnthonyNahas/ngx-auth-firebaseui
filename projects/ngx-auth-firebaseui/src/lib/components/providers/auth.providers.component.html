@@ -13,6 +13,7 @@
       <mat-icon svgIcon="google-colored"></mat-icon>
       Google
     </button>
+
     <button (click)="authProcess.signInWith(authProvider.Apple)"
             *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Apple)"
             [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}"
@@ -22,6 +23,7 @@
       <mat-icon svgIcon="apple"></mat-icon>
       Apple
     </button>
+
     <button (click)="authProcess.signInWith(authProvider.Facebook)"
             *ngIf="providers === authProvider.ALL || providers.includes(authProvider.Facebook)"
             [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}"

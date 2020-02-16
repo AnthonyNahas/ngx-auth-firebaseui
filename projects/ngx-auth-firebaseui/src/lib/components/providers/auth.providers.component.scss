@@ -19,7 +19,11 @@ $yahoo: #720e9e;
 
 .apple-filled {
   mat-icon {
-    fill: white;
+    svg {
+      path {
+        fill: $apple;
+      }
+    }
   }
 }
 
