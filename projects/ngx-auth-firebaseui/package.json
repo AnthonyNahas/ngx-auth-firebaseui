@@ -64,7 +64,7 @@
     "tslib": "^1.10.0"
   },
   "engines": {
-    "node": ">=10.13 <12"
+    "node": ">=10.13"
   },
   "release-it": {
     "github": {
