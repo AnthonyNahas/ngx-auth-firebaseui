@@ -1,3 +1,12 @@
+## [4.0.1](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/4.0.0...4.0.1) (2020-02-17)
+
+
+### Bug Fixes
+
+* **lib:** fixed node engine version ([42fa8b6](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/42fa8b663aa3d9470643a9c57203edb9965822c6))
+* **lib:** inc. version ([efeb46f](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/efeb46f61272b9bf7d7c3e7494c17b4c6f679245))
+* **lib:** updated package.json file ([f093641](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/f09364139ac0396f217d6c0d8ccd67753d56fca1))
+
 # [4.0.0](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/v3.5.0...v4.0.0) (2020-02-16)
 
 
