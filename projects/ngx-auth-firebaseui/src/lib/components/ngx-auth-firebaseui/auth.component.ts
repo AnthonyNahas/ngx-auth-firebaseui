@@ -71,6 +71,7 @@ export class AuthComponent implements OnInit, AfterViewInit, OnChanges, OnDestro
   @Input() tabIndex: number | null;
   @Input() registrationEnabled = true;
   @Input() resetPasswordEnabled = true;
+  @Input() connectedUserScreenEnabled = true;
   @Input() guestEnabled = true;
   @Input() tosUrl: string;
   @Input() privacyPolicyUrl: string;
@@ -190,6 +191,15 @@ export class AuthComponent implements OnInit, AfterViewInit, OnChanges, OnDestro
 
   get color(): string | ThemePalette {
     return this.authenticationError ? 'warn' : 'primary';
+  }
+
+  public isEmailConfirmationScreenVisible(user: firebase.User): boolean {
+    return (this.config.guardProtectedRoutesUntilEmailIsVerified && !user.emailVerified)
+      || (this.authProcess.emailConfirmationSent && !user.emailVerified);
+  }
+
+  public isUserProfileScreenVisible(user: firebase.User): boolean {
+    return !this.isEmailConfirmationScreenVisible(user) && this.connectedUserScreenEnabled;
   }
 
   public ngOnInit(): void {
@@ -338,6 +348,8 @@ export class AuthComponent implements OnInit, AfterViewInit, OnChanges, OnDestro
         this.changeDetectorRef.markForCheck();
       });
   }
+
+
 
   private chooseBackUrl() {
     return this.activatedRoute.snapshot.queryParams.redirectUrl || this.goBackURL || '/';
