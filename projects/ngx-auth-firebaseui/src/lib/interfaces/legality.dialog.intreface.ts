@@ -1,5 +1,5 @@
 import {ICredentials} from './main.interface';
-import {AuthProvider} from '../services';
+import {AuthProvider} from '../services/auth-process.service';
 
 export interface LegalityDialogParams {
   tosUrl: string;

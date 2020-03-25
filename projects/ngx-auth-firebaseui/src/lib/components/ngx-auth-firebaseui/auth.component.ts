@@ -37,7 +37,7 @@ import {Subscription} from 'rxjs/internal/Subscription';
 
 import {LegalityDialogComponent, Theme} from '..';
 import {LegalityDialogParams, LegalityDialogResult, NgxAuthFirebaseUIConfig} from '../../interfaces';
-import {AuthProcessService, AuthProvider} from '../../services';
+import { AuthProcessService, AuthProvider} from '../../services/auth-process.service';
 import {NgxAuthFirebaseuiAnimations} from '../../animations';
 import {NgxAuthFirebaseUIConfigToken} from '../../tokens';
 
