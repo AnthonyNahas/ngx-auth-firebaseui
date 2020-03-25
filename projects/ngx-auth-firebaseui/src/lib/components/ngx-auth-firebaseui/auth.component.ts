@@ -339,7 +339,6 @@ export class AuthComponent implements OnInit, AfterViewInit, OnChanges, OnDestro
     }
   }
 
-
   resetPassword() {
     this.authProcess.resetPassword(this.resetPasswordEmailFormControl.value)
       .then(() => {
@@ -348,8 +347,6 @@ export class AuthComponent implements OnInit, AfterViewInit, OnChanges, OnDestro
         this.changeDetectorRef.markForCheck();
       });
   }
-
-
 
   private chooseBackUrl() {
     return this.activatedRoute.snapshot.queryParams.redirectUrl || this.goBackURL || '/';
