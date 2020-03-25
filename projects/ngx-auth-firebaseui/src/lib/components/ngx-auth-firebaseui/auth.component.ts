@@ -86,6 +86,7 @@ export class AuthComponent implements OnInit, AfterViewInit, OnChanges, OnDestro
   // tslint:disable-next-line:no-output-on-prefix
   @Output() onError: any;
   @Output() selectedTabChange: EventEmitter<MatTabChangeEvent> = new EventEmitter();
+  @Output() loading: EventEmitter<boolean> = new EventEmitter();
 
   // Password strength api
   @Input() enableLengthRule = true;
@@ -255,10 +256,12 @@ export class AuthComponent implements OnInit, AfterViewInit, OnChanges, OnDestro
   async signOut() {
     try {
       this.isLoading = true;
+      this.loading.emit(true);
       this.changeDetectorRef.markForCheck();
       await this.authProcess.signOut();
     } finally {
       this.isLoading = false;
+      this.loading.emit(true);
       this.changeDetectorRef.markForCheck();
     }
   }
@@ -269,6 +272,7 @@ export class AuthComponent implements OnInit, AfterViewInit, OnChanges, OnDestro
     }
     try {
       this.isLoading = true;
+      this.loading.emit(true);
       this.changeDetectorRef.markForCheck();
       await this.authProcess.signInWith(this.authProviders.EmailAndPassword, {
         email: this.signInFormGroup.value.email,
@@ -276,6 +280,7 @@ export class AuthComponent implements OnInit, AfterViewInit, OnChanges, OnDestro
       });
     } finally {
       this.isLoading = false;
+      this.loading.emit(false);
       this.changeDetectorRef.markForCheck();
     }
   }
@@ -314,6 +319,7 @@ export class AuthComponent implements OnInit, AfterViewInit, OnChanges, OnDestro
   async signUp() {
     try {
       this.isLoading = true;
+      this.loading.emit(true);
       this.changeDetectorRef.markForCheck();
       return await this.authProcess.signUp(
         this.signUpFormGroup.value.name,
@@ -324,6 +330,7 @@ export class AuthComponent implements OnInit, AfterViewInit, OnChanges, OnDestro
       );
     } finally {
       this.isLoading = false;
+      this.loading.emit(false);
       this.changeDetectorRef.markForCheck();
     }
   }
@@ -331,10 +338,12 @@ export class AuthComponent implements OnInit, AfterViewInit, OnChanges, OnDestro
   async signUpAnonymously() {
     try {
       this.isLoading = true;
+      this.loading.emit(true);
       this.changeDetectorRef.markForCheck();
       await this.authProcess.signInWith(this.authProvider.ANONYMOUS);
     } finally {
       this.isLoading = false;
+      this.loading.emit(false);
       this.changeDetectorRef.markForCheck();
     }
   }
