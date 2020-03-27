@@ -46,7 +46,7 @@ by starring :star: and sharing it :loudspeaker:
 - [ngx-auth-firebaseui vs firebaseui-web](#vs)
 - [Why to use ngx-auth-firebaseui ?](#why-to-use-ngx-auth-firebaseui)
 - [Library's components](#components)
-- [Supported Providers](#supported-procress-and-actions)
+- [Supported Providers](#supported-providers)
 - [Supported Processes and Actions](#supported-procress-and-actions)
 - [Requirements](#requirements)
 - [Demo](#demo)
