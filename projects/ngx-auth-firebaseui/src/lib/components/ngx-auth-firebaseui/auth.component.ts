@@ -249,6 +249,7 @@ export class AuthComponent implements OnInit, AfterViewInit, OnChanges, OnDestro
       await this.authProcess.signOut();
     } finally {
       this.isLoading = false;
+      this.tabIndex = 0;
       this.changeDetectorRef.markForCheck();
     }
   }
