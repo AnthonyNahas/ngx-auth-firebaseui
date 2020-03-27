@@ -276,7 +276,7 @@ in your template -->
   <ngx-auth-firebaseui
   [providers]="[providers.Google, providers.Facebook, providers.Twitter]"
   (onSuccess)="printUser($event)"
-   (onError)="printError()"></ngx-auth-firebaseui>
+   (onError)="printError($event)"></ngx-auth-firebaseui>
 ```
 
 or
@@ -285,7 +285,7 @@ or
   <ngx-auth-firebaseui
   [providers]="['google', 'facebook', 'twitter']"
   (onSuccess)="printUser($event)"
-  (onError)="printError()">
+  (onError)="printError($event)">
 </ngx-auth-firebaseui>
 ```
 
