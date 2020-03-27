@@ -4,7 +4,7 @@ import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
 import {NgxAuthFirebaseUIConfig} from '../interfaces';
 import {NgxAuthFirebaseUIConfigToken} from '../tokens';
-import {AuthProcessService} from '../services';
+import {AuthProcessService} from '../services/auth-process.service';
 
 @Injectable({
   providedIn: 'root'

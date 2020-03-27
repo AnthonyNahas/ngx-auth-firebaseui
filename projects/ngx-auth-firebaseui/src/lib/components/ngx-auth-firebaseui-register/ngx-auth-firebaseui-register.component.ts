@@ -4,7 +4,7 @@ import {Subject, Subscription} from 'rxjs';
 import {takeUntil} from 'rxjs/internal/operators';
 
 import {NgxAuthFirebaseuiAnimations} from '../../animations';
-import {AuthProcessService} from '../../services';
+import {AuthProcessService} from '../../services/auth-process.service';
 import {isPlatformBrowser} from '@angular/common';
 import {MatFormFieldAppearance} from '@angular/material/form-field';
 import {ThemePalette} from '@angular/material/core';
