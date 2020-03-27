@@ -1,3 +1,10 @@
+## [4.0.2](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/4.0.1...4.0.2) (2020-03-27)
+
+
+### Bug Fixes
+
+* **lib:** updated angular cli ([4c0396e](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/4c0396ef395bee442cac7ac2d28c4b4750d75ec7))
+
 ## [4.0.1](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/4.0.0...4.0.1) (2020-02-17)
 
 
