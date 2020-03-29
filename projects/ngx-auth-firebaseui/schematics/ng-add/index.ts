@@ -23,7 +23,7 @@ export function addPackageJsonDependencies(): Rule {
     const ngCoreVersionTag = getPackageVersionFromPackageJson(host, '@angular/core');
 
     const dependencies: NodeDependency[] = [
-      {type: NodeDependencyType.Default, version: loadPackageVersionGracefully() || '4.0.2', name: 'ngx-auth-firebaseui'},
+      {type: NodeDependencyType.Default, version: loadPackageVersionGracefully() || '4.0.3', name: 'ngx-auth-firebaseui'},
       {type: NodeDependencyType.Default, version: ngCoreVersionTag || '9.0.0', name: '@angular/animations'},
       {type: NodeDependencyType.Default, version: ngCoreVersionTag || '9.0.0', name: '@angular/forms'},
       {type: NodeDependencyType.Default, version: ngCoreVersionTag || '9.0.0', name: '@angular/router'},
