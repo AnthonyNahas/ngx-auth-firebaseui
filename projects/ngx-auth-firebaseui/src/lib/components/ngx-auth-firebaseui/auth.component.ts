@@ -106,9 +106,9 @@ export class AuthComponent implements OnInit, AfterViewInit, OnChanges, OnDestro
   // See email-confirmation component
   @Input() verifyEmailTitleText: string;
   @Input() verifyEmailConfirmationText: string;
-  @Input() verifyEmailGoBackText: string;
+  @Input() verifyEmailGoBackText = 'Go back'
   @Input() sendNewVerificationEmailText: string;
-  @Input() signOutText: string;
+  @Input() signOutText = 'Sign out';
 
   // Customize the text
   // Reset Password Tab
