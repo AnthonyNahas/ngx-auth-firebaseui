@@ -38,7 +38,7 @@
     "@angular/common": "^9.0.1",
     "@angular/compiler": "^9.0.1",
     "@angular/core": "^9.0.1",
-    "@angular/fire": "^5.4.2",
+    "@angular/fire": "^6.0.0",
     "@angular/flex-layout": "^9.0.0-beta.29",
     "@angular/forms": "^9.0.1",
     "@angular/material": "^9.0.0",
