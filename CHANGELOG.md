@@ -1,3 +1,10 @@
+## [4.0.4](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/4.0.3...4.0.4) (2020-04-07)
+
+
+### Bug Fixes
+
+* **lib:** minor - export `NgxAuthFirebaseUIConfigToken` ([507e7a9](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/507e7a983fee897e1f2a011a7cb550ed26732cf1))
+
 ## [4.0.3](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/4.0.2...4.0.3) (2020-03-29)
 
 
