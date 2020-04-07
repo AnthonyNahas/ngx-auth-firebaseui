@@ -105,7 +105,7 @@
 
     <ng-template #readonly>
       <div fxLayoutAlign="center">
-        <button (click)="changeEditMode()" class="edit-button" color="primary"
+        <button *ngIf="canEditAccount" (click)="changeEditMode()" class="edit-button" color="primary"
                 mat-raised-button>
           edit
         </button>
