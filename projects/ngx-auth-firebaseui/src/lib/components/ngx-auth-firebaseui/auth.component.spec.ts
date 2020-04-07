@@ -2,17 +2,6 @@ import 'core-js/es7/reflect'; // needed for unit testing
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import {CUSTOM_ELEMENTS_SCHEMA, DebugElement, SimpleChange} from '@angular/core';
 
-import {
-  MatButtonModule,
-  MatCardModule,
-  MatDialogModule,
-  MatDividerModule,
-  MatIconModule,
-  MatInputModule,
-  MatProgressBarModule,
-  MatSnackBarModule,
-  MatTabsModule
-} from '@angular/material';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {FlexLayoutModule} from '@angular/flex-layout';
@@ -24,11 +13,20 @@ import {MatPasswordStrengthComponent, MatPasswordStrengthModule} from '@angular-
 import {AuthComponent} from './auth.component';
 import {AuthProcessService} from '../../services/auth-process.service';
 import {FirestoreSyncService} from '../../services/firestore-sync.service';
-import {NgxAuthFirebaseUIConfigToken, UserProvidedConfigToken} from '../../../module/ngx-auth-firebase-u-i.module';
 import {ngxAuthFirebaseUIConfigFactory} from '../../interfaces/config.interface';
 import {EmailConfirmationComponent} from '../email-confirmation/email-confirmation.component';
 import {AngularFireAuthStub, FirestoreStub} from '../../tests/helper';
 import {RouterTestingModule} from '@angular/router/testing';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatCardModule} from '@angular/material/card';
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatIconModule} from '@angular/material/icon';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {MatDividerModule} from '@angular/material/divider';
+import {NgxAuthFirebaseUIConfigToken, UserProvidedConfigToken} from '../../tokens';
 
 describe('AuthComponent', function() {
   let de: DebugElement;

@@ -85,6 +85,7 @@ export class NgxAuthFirebaseuiRegisterComponent implements OnInit, OnDestroy {
   // Private
   private unsubscribeAll: Subject<any>;
 
+  // tslint:disable-next-line:ban-types
   constructor(@Inject(PLATFORM_ID) private platformId: Object,
               private formBuilder: FormBuilder,
               public authProcess: AuthProcessService) {

@@ -65,7 +65,7 @@ export class NgxAuthFirebaseuiAvatarComponent implements OnInit {
 
   async signOut() {
     try {
-      await this.afa.auth.signOut();
+      await this.afa.signOut();
       // Sign-out successful.
       this.onSignOut.emit();
     } catch (e) {

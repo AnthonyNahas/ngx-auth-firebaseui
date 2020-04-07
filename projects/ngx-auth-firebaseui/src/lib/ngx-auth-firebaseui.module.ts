@@ -1,12 +1,12 @@
 // @angular/*
 import {CommonModule} from '@angular/common';
-import {InjectionToken, ModuleWithProviders, NgModule} from '@angular/core';
+import {ModuleWithProviders, NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {RouterModule} from '@angular/router';
 import {FlexLayoutModule} from '@angular/flex-layout';
 // @angular/fire
-import {FirebaseAppConfig, FirebaseNameOrConfigToken, FirebaseOptionsToken} from '@angular/fire';
+import {FIREBASE_APP_NAME, FIREBASE_OPTIONS, FirebaseAppConfig} from '@angular/fire';
 import {AngularFireAuthModule} from '@angular/fire/auth';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
 // @angular/material
@@ -140,17 +140,17 @@ export class NgxAuthFirebaseUIModule {
     configFactory: FirebaseAppConfig,
     appNameFactory: () => string | undefined = () => undefined,
     config: NgxAuthFirebaseUIConfig = {}
-): ModuleWithProviders {
+  ): ModuleWithProviders {
     return {
       ngModule: NgxAuthFirebaseUIModule,
       providers:
         [
           {
-            provide: FirebaseOptionsToken,
+            provide: FIREBASE_OPTIONS,
             useValue: configFactory
           },
           {
-            provide: FirebaseNameOrConfigToken,
+            provide: FIREBASE_APP_NAME,
             useFactory: appNameFactory
           },
           {provide: UserProvidedConfigToken, useValue: config},

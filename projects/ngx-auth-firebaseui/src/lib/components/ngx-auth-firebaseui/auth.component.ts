@@ -106,7 +106,7 @@ export class AuthComponent implements OnInit, AfterViewInit, OnChanges, OnDestro
   // See email-confirmation component
   @Input() verifyEmailTitleText: string;
   @Input() verifyEmailConfirmationText: string;
-  @Input() verifyEmailGoBackText = 'Go back'
+  @Input() verifyEmailGoBackText = 'Go back';
   @Input() sendNewVerificationEmailText: string;
   @Input() signOutText = 'Sign out';
 
@@ -176,6 +176,7 @@ export class AuthComponent implements OnInit, AfterViewInit, OnChanges, OnDestro
   resetPasswordEmailFormControl: AbstractControl;
 
   constructor(
+    // tslint:disable-next-line:ban-types
     @Inject(PLATFORM_ID) private platformId: Object,
     @Inject(forwardRef(() => NgxAuthFirebaseUIConfigToken)) public config: NgxAuthFirebaseUIConfig,
     public auth: AngularFireAuth,

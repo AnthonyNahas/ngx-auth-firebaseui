@@ -111,7 +111,7 @@ export class EmailConfirmationComponent implements OnInit, OnChanges {
   }
 
   private createTemplateContext(): any {
-    const context = {
+    return {
       email: this.email,
       goBackURL: this.goBackURL,
       verifyEmailTitleText: this.verifyEmailTitleText || defaultTranslations.verifyEmailTitleText,
@@ -121,6 +121,5 @@ export class EmailConfirmationComponent implements OnInit, OnChanges {
       signOutText: this.signOutText || defaultTranslations.signOutText,
       messageOnEmailConfirmationSuccess: this.messageOnEmailConfirmationSuccess || defaultTranslations.messageOnEmailConfirmationSuccess
     };
-    return context;
   }
 }

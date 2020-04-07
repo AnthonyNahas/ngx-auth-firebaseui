@@ -71,7 +71,7 @@ export class UserComponent {
 
   async save() {
     if (this.updateFormGroup.dirty) {
-      const user = this.auth.auth.currentUser;
+      const user = this.authProcess.user;
       // ngx-auth-firebaseui-user.updateProfile()
       // ngx-auth-firebaseui-user.updateEmail()
       // console.log('form = ', this.updateFormGroup);
@@ -115,7 +115,7 @@ export class UserComponent {
   }
 
   signOut() {
-    this.auth.auth.signOut()
+    this.auth.signOut()
       .then(() => this.onSignOut.emit())
       .catch(e => console.error('An error happened while signing out!', e));
   }
@@ -129,10 +129,10 @@ export class UserComponent {
    */
   async deleteAccount() {
     try {
-      const user = this.auth.auth.currentUser;
+      const user = this.authProcess.user;
 
       // await this.authProcess.deleteAccount();
-      await this.auth.auth.currentUser.delete();
+      await this.authProcess.user.delete();
       // if (this.config.enableFirestoreSync) {
       await this.fireStoreService.deleteUserData(user.uid);
       // }
@@ -147,7 +147,7 @@ export class UserComponent {
   }
 
   protected initUpdateFormGroup() {
-    const currentUser: User = this.auth.auth.currentUser;
+    const currentUser: User = this.authProcess.user;
     this.updateFormGroup = new FormGroup({
       name: this.updateNameFormControl = new FormControl(
         {value: currentUser.displayName, disabled: this.editMode},

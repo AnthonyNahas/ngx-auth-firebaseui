@@ -58,6 +58,7 @@ export class NgxAuthFirebaseuiLoginComponent implements OnInit {
   authenticationError = false;
 
   constructor(
+    // tslint:disable-next-line:ban-types
     @Inject(PLATFORM_ID) private platformId: Object,
     public authProcess: AuthProcessService,
     private formBuilder: FormBuilder) {

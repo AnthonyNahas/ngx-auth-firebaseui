@@ -16,6 +16,7 @@ export class LegalityDialogComponent {
               @Inject(MAT_DIALOG_DATA) public data: LegalityDialogParams) {
   }
 
+  // tslint:disable-next-line:variable-name
   private _disableConfirmActionButton = false;
 
   get disableConfirmActionButton(): boolean {

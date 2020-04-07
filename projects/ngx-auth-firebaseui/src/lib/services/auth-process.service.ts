@@ -83,7 +83,7 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
   public async resetPassword(email: string): Promise<void> {
     try {
       console.log('Password reset email sent');
-      return await this.afa.auth.sendPasswordResetEmail(email);
+      return await this.afa.sendPasswordResetEmail(email);
     } catch (error) {
       return this.notifyError(error);
     }
@@ -95,6 +95,7 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
    * like google, facebook, twitter and github
    *
    * @param provider - the provider to authenticate with (google, facebook, twitter, github)
+   // tslint:disable-next-line:no-redundant-jsdoc
    * @param credentials
    */
   public async signInWith(provider: AuthProvider, credentials?: ICredentials) {
@@ -103,39 +104,39 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
 
       switch (provider) {
         case AuthProvider.ANONYMOUS:
-          signInResult = await this.afa.auth.signInAnonymously() as UserCredential;
+          signInResult = await this.afa.signInAnonymously() as UserCredential;
           break;
 
         case AuthProvider.EmailAndPassword:
-          signInResult = await this.afa.auth.signInWithEmailAndPassword(credentials.email, credentials.password) as UserCredential;
+          signInResult = await this.afa.signInWithEmailAndPassword(credentials.email, credentials.password) as UserCredential;
           break;
 
         case AuthProvider.Google:
-          signInResult = await this.afa.auth.signInWithPopup(googleAuthProvider) as UserCredential;
+          signInResult = await this.afa.signInWithPopup(googleAuthProvider) as UserCredential;
           break;
 
         case AuthProvider.Apple:
-          signInResult = await this.afa.auth.signInWithPopup(appleAuthProvider) as UserCredential;
+          signInResult = await this.afa.signInWithPopup(appleAuthProvider) as UserCredential;
           break;
 
         case AuthProvider.Facebook:
-          signInResult = await this.afa.auth.signInWithPopup(facebookAuthProvider) as UserCredential;
+          signInResult = await this.afa.signInWithPopup(facebookAuthProvider) as UserCredential;
           break;
 
         case AuthProvider.Twitter:
-          signInResult = await this.afa.auth.signInWithPopup(twitterAuthProvider) as UserCredential;
+          signInResult = await this.afa.signInWithPopup(twitterAuthProvider) as UserCredential;
           break;
 
         case AuthProvider.Github:
-          signInResult = await this.afa.auth.signInWithPopup(githubAuthProvider) as UserCredential;
+          signInResult = await this.afa.signInWithPopup(githubAuthProvider) as UserCredential;
           break;
 
         case AuthProvider.Microsoft:
-          signInResult = await this.afa.auth.signInWithPopup(microsoftAuthProvider) as UserCredential;
+          signInResult = await this.afa.signInWithPopup(microsoftAuthProvider) as UserCredential;
           break;
 
         case AuthProvider.Yahoo:
-          signInResult = await this.afa.auth.signInWithPopup(yahooAuthProvider) as UserCredential;
+          signInResult = await this.afa.signInWithPopup(yahooAuthProvider) as UserCredential;
           break;
 
         case AuthProvider.PhoneNumber:
@@ -160,7 +161,7 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
    */
   public async signUp(displayName: string, credentials: ICredentials) {
     try {
-      const userCredential: UserCredential = await this.afa.auth.createUserWithEmailAndPassword(credentials.email, credentials.password);
+      const userCredential: UserCredential = await this.afa.createUserWithEmailAndPassword(credentials.email, credentials.password);
       const user = userCredential.user;
       await this.updateProfile(displayName, user.photoURL);
 
@@ -198,7 +199,7 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
 
   async signOut() {
     try {
-      await this.afa.auth.signOut();
+      await this.afa.signOut();
     } catch (error) {
       this.notifyError(error);
     }
@@ -214,14 +215,10 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
    */
   public updateProfile(name: string, photoURL: string): Promise<void> {
     if (!photoURL) {
-      return this.afa.auth.currentUser.updateProfile({displayName: name});
+      return this.user.updateProfile({displayName: name});
     } else {
-      return this.afa.auth.currentUser.updateProfile({displayName: name, photoURL});
+      return this.user.updateProfile({displayName: name, photoURL});
     }
-  }
-
-  public deleteAccount(): Promise<any> {
-    return this.afa.auth.currentUser.delete();
   }
 
   public parseUserInfo(user: User): UserInfo {
@@ -237,7 +234,7 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
 
   public getUserPhotoUrl(): string {
 
-    const user: firebase.User | null = this.afa.auth.currentUser;
+    const user: firebase.User | null = this.user;
 
     if (!user) {
       return;
