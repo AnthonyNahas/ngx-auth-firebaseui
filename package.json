@@ -54,9 +54,9 @@
     "firebase": "^7.13.2",
     "ngx-clipboard": "^12.3.1",
     "ngx-markdown": "^8.2.2",
-    "rxjs": "~6.5.4",
+    "rxjs": "~6.5.5",
     "tslib": "^1.11.1",
-    "zone.js": "~0.10.2"
+    "zone.js": "~0.10.3"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^0.901.0",
@@ -78,7 +78,7 @@
     "karma-coverage-istanbul-reporter": "~2.1.0",
     "karma-jasmine": "~2.0.1",
     "karma-jasmine-html-reporter": "^1.4.2",
-    "ng-packagr": "^9.0.0",
+    "ng-packagr": "^9.1.0",
     "protractor": "~5.4.3",
     "release-it": "^12.4.3",
     "ts-node": "~8.3.0",
