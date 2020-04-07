@@ -140,7 +140,7 @@ export class NgxAuthFirebaseUIModule {
     configFactory: FirebaseAppConfig,
     appNameFactory: () => string | undefined = () => undefined,
     config: NgxAuthFirebaseUIConfig = {}
-  ): ModuleWithProviders {
+): ModuleWithProviders {
     return {
       ngModule: NgxAuthFirebaseUIModule,
       providers:
