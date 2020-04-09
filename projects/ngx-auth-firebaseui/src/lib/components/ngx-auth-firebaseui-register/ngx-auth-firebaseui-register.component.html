@@ -55,20 +55,23 @@
           </mat-error>
         </mat-form-field>
 
-        <!--        <div *ngIf="this.tosUrl || this.privacyPolicyUrl"-->
-        <!--        <div-->
-        <!--          class="terms"-->
-        <!--          fxLayout="row" fxLayoutAlign="center center"-->
-        <!--          [@animate]="{value:'*',params:{duration:'250ms',y:'100px'}}">-->
-        <!--          <mat-checkbox aria-label="I read and accept" name="terms" required>-->
-        <!--            <span>{{readAncAcceptText}}</span>-->
-        <!--            <span>&nbsp;</span>-->
-        <!--            <a target="_blank"-->
-        <!--               [href]="this.tosUrl">-->
-        <!--              Terms of Service and Conditions-->
-        <!--            </a>-->
-        <!--          </mat-checkbox>-->
-        <!--        </div>-->
+        <div *ngIf="this.tosUrl">
+          <mat-checkbox aria-label="{{readAndAcceptText}}" formControlName="tos" required>
+            <span>{{readAndAcceptText}}</span>
+            <a target="_blank" [href]="this.tosUrl">
+                {{termsAndConditionsText}}
+            </a>
+          </mat-checkbox>
+        </div>
+
+        <div *ngIf="this.privacyPolicyUrl">
+          <mat-checkbox aria-label="{{readAndAcceptText}}" formControlName="privacyPolicy" required>
+            <span>{{readAndAcceptText}}</span>
+            <a target="_blank" [href]="this.privacyPolicyUrl">
+                {{privacyPolicyText}}
+            </a>
+          </mat-checkbox>
+        </div>
 
         <button (click)="createAccount()"
                 [color]="colorAccent"

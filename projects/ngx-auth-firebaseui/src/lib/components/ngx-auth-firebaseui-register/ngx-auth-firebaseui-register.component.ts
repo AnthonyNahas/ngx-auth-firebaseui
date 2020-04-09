@@ -48,13 +48,14 @@ export class NgxAuthFirebaseuiRegisterComponent implements OnInit, OnDestroy {
 
   // i18n common
   @Input() titleText = 'CREATE AN ACCOUNT';
-  @Input() readAncAcceptText = 'I read and accept';
+  @Input() readAndAcceptText = 'I read and accept the';
   @Input() termsAndConditionsText = 'terms and conditions';
+  @Input() privacyPolicyText = 'privacy policy';
   @Input() createAccountButtonText = 'CREATE AN ACCOUNT';
   @Input() alreadyHaveAccountText = 'Already have an account?';
   @Input() loginButtonText = 'LOGIN';
 
-  // i18n emnameail
+  // i18n name
   @Input() nameText = 'Name';
   @Input() nameErrorRequiredText = 'Name is required';
 
@@ -112,8 +113,19 @@ export class NgxAuthFirebaseuiRegisterComponent implements OnInit, OnDestroy {
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
-      passwordConfirm: ['', [Validators.required, confirmPasswordValidator]]
+      passwordConfirm: ['', [Validators.required, confirmPasswordValidator]],
+      tos: [''],
+      privacyPolicy: ['']
     });
+
+    // If tos or privacy policy url set, ensure that the two form items are required
+    if (this.tosUrl) {
+      this.registerForm.controls.tos.setValidators(Validators.requiredTrue);
+    }
+
+    if (this.privacyPolicyUrl) {
+      this.registerForm.controls.privacyPolicy.setValidators(Validators.requiredTrue);
+    }
 
     // Update the validity of the 'passwordConfirm' field
     // when the 'password' field changes
