@@ -9,7 +9,7 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 import {AuthProcessService, AuthProvider} from '../../services/auth-process.service';
 import {FirestoreSyncService} from '../../services/firestore-sync.service';
 import {AngularFireModule} from '@angular/fire';
-import {BehaviorSubject} from 'rxjs/internal/BehaviorSubject';
+import {BehaviorSubject} from 'rxjs/BehaviorSubject';
 import {AngularFirestore} from '@angular/fire/firestore';
 import {AngularFireAuth} from '@angular/fire/auth';
 import {NgxAuthFirebaseUIConfigToken} from '../../ngx-auth-firebase-u-i.module';
