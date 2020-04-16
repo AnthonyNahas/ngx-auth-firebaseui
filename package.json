@@ -49,7 +49,7 @@
     "@nguniversal/express-engine": "^9.0.0",
     "@ngx-translate/core": "^12.1.1",
     "@ngx-translate/http-loader": "^4.0.0",
-    "angulartics2": "^8.3.0",
+    "angulartics2": "^9.0.0",
     "express": "^4.15.2",
     "firebase": "^7.8.2",
     "ngx-clipboard": "^12.3.1",
