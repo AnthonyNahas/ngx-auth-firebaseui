@@ -1,3 +1,16 @@
+# [4.1.0](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/4.0.4...4.1.0) (2020-04-18)
+
+
+### Bug Fixes
+
+* **lib:** minor ([a976025](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/a97602541178d909179e195f12e4b5b3a49a2b19))
+* **lib:** support of angular fire v6 # ([66ccf56](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/66ccf565f37417b34d21beb3276eed5e8d4bce6a))
+* **lib:** updated 3rd party deps ([43b2b01](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/43b2b01418aa11157d4b2c4c9f16b7de267c0d88))
+* **lib:** updated angular and material to the latest version ([b0511b0](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/b0511b0836a7f2fb45105c1e02c3b641d3609c3c))
+* **lib:** updated angular deps to the latest version ([59928f4](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/59928f44c8958416a052add905481a8d767f3add))
+* **lib:** updated angular deps to the latest version ([acef244](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/acef2445c6645e86065dce7be9cba6f33066bf5b))
+* **lib:** updated angular material and cdk to v9.2.0 ([a281e32](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/a281e32ec00cf995cb2cf60d45ea6a59d9fec8da))
+
 ## [4.0.4](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/4.0.3...4.0.4) (2020-04-07)
 
 
