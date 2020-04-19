@@ -1,7 +1,7 @@
 import {Component, EventEmitter, Inject, Input, OnDestroy, OnInit, Output, PLATFORM_ID, ViewEncapsulation} from '@angular/core';
 import {AbstractControl, FormBuilder, FormGroup, ValidationErrors, ValidatorFn, Validators} from '@angular/forms';
 import {Subject, Subscription} from 'rxjs';
-import {takeUntil} from 'rxjs/internal/operators';
+import {takeUntil} from 'rxjs/operators';
 
 import {NgxAuthFirebaseuiAnimations} from '../../animations';
 import {AuthProcessService} from '../../services/auth-process.service';

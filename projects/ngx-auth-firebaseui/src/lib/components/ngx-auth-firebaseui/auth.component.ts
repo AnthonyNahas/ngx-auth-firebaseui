@@ -33,7 +33,7 @@ import {AngularFireAuth} from '@angular/fire/auth';
 import {MatPasswordStrengthComponent} from '@angular-material-extensions/password-strength';
 
 // RXJS
-import {Subscription} from 'rxjs/internal/Subscription';
+import {Subscription} from 'rxjs';
 
 import {LegalityDialogComponent, Theme} from '..';
 import {LegalityDialogParams, LegalityDialogResult, NgxAuthFirebaseUIConfig} from '../../interfaces';
