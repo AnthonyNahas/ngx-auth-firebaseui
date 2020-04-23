@@ -1,3 +1,19 @@
+* Fix Register Account Bug (b577442)
+* Merge pull request #513 from mukaschultze/488-remove-internal-rxjs-imports (2add36a)
+* Merge pull request #509 from asithade/tos-privacy (04c3896)
+* Release 4.1.0 (1098a11)
+* feat(lib): updating CHANGELOG.md for v4.1.0 (2ea9069)
+* fix(lib): minor (a976025)
+* fix(lib): updated angular deps to the latest version (59928f4)
+* fix(lib): updated angular deps to the latest version (acef244)
+* fix(lib): updated angular material and cdk to v9.2.0 (a281e32)
+* Forgot to change 'rxjs/BehaviorSubject' (cbd5941)
+* Remove imports from 'rxjs/internal' (7b0904c)
+* ToS & Privacy Policy on Register Component (363dd81)
+* fix(lib): updated 3rd party deps (43b2b01)
+* fix(lib): updated angular and material to the latest version (b0511b0)
+* fix(lib): support of angular fire v6 # (66ccf56)
+
 # [4.1.0](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/4.0.4...4.1.0) (2020-04-18)
 
 
