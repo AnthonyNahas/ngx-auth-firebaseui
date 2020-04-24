@@ -92,6 +92,8 @@ or more advanced
 |:---------------------|:------:|:------:|:------------:|:-------------------------------------------------------------------------------------------------|
 | canLogout          | `Input()` | `boolean`     | true | whether to render the logout button
 | links              | `Input()` | `LinkMenuItem[]`    | - | additional routes and links to add to the component
+| canDeleteAccount   | `Input()` | `boolean`     | true | whether to render the delete account button
+| canEditAccount     | `Input()` | `boolean`     | true | whether to render the edit account button
 | onSignOut          | `Output()`| void        | - | this will be fired when the user signs out
 
 
