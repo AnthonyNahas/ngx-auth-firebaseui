@@ -28,6 +28,9 @@ export class NgxAuthFirebaseuiAvatarComponent implements OnInit {
   @Input()
   canDeleteAccount = true;
 
+  @Input()
+  canEditAccount = true;
+
   // tslint:disable-next-line:no-output-on-prefix
   @Output()
   onSignOut: EventEmitter<void> = new EventEmitter();
@@ -61,6 +64,7 @@ export class NgxAuthFirebaseuiAvatarComponent implements OnInit {
     const dialogRef = this.dialog.open(UserComponent);
     const instance = dialogRef.componentInstance;
     instance.canDeleteAccount = this.canDeleteAccount;
+    instance.canEditAccount = this.canEditAccount;
   }
 
   async signOut() {

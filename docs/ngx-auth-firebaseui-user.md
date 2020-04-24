@@ -98,6 +98,7 @@ by starring :star: and sharing it :loudspeaker:
 | editMode           | `Input()` | `boolean`     | false | whether the use is in edit mode
 | canLogout          | `Input()` | `boolean`     | true | whether to render the logout button
 | canDeleteAccount   | `Input()` | `boolean`     | true | whether to render the delete account button
+| canEditAccount     | `Input()` | `boolean`     | true | whether to render the edit account button
 | appearance         | `Input()` | `MatFormFieldAppearance`     | - | the style of the mat-input-form
 | onSignOut          | `Output()`| void        | - | this will be fired when the user signs out
 | onAccountDeleted   | `Output()`| void        | - | this will be fired when the user deletes his account
