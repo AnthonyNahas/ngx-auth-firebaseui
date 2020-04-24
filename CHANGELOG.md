@@ -1,3 +1,17 @@
+* Merge remote-tracking branch 'origin/master' (5836b4f)
+* Merge pull request #499 from semla/tos-privacy-dialog-for-providers (a93fe38)
+* Merge remote-tracking branch 'origin/master' (1fe1733)
+* Merge pull request #500 from alonshmiel/can-edit-account (f1b2ab2)
+* fix(lib): updated deps (86656f7)
+* Update readme files (f488236)
+* Merge pull request #513 from mukaschultze/488-remove-internal-rxjs-imports (2add36a)
+* Merge pull request #509 from asithade/tos-privacy (04c3896)
+* Forgot to change 'rxjs/BehaviorSubject' (cbd5941)
+* Remove imports from 'rxjs/internal' (7b0904c)
+* ToS & Privacy Policy on Register Component (363dd81)
+* whether to render the edit account button (cf63928)
+* show tos & privacy dialog also for providers (119feeb)
+
 # [4.1.0](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/4.0.4...4.1.0) (2020-04-18)
 
 
