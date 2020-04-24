@@ -1,3 +1,12 @@
+* docs(project): updated the readme (325ad05)
+* fix(lib): updated deps (f6f8742)
+* Merge pull request #519 from asithade/bug-fix-register-account (b210659)
+* Revert (9430719)
+* Revert "feat(lib): updating CHANGELOG.md for v4.2.0" (09ff2f3)
+* Release 4.2.0 (abba03f)
+* feat(lib): updating CHANGELOG.md for v4.2.0 (a337afe)
+* Fix Register Account Bug (b577442)
+
 * Merge remote-tracking branch 'origin/master' (5836b4f)
 * Merge pull request #499 from semla/tos-privacy-dialog-for-providers (a93fe38)
 * Merge remote-tracking branch 'origin/master' (1fe1733)
