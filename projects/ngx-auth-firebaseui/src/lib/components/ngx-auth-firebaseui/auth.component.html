@@ -300,6 +300,8 @@
   <mat-divider></mat-divider>
   <ngx-auth-firebaseui-providers *ngIf="tabIndex !== 2"
                                  [providers]="providers"
-                                 [theme]="providersTheme">
+                                 [theme]="providersTheme"
+                                 [tosUrl]="tosUrl"
+                                 [privacyPolicyUrl]="privacyPolicyUrl">
   </ngx-auth-firebaseui-providers>
 </ng-template>
