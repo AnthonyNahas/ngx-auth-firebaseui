@@ -177,7 +177,7 @@ by starring :star: and sharing it :loudspeaker:
 - [angular animations - v9.x](https://www.npmjs.com/package/@angular/animations)
 - [angular router - v9.x](https://www.npmjs.com/package/@angular/router)
 - [angular flex-layout v9.0.0-beta.29](https://www.npmjs.com/package/@angular/flex-layout)
-- [@angular/fire - v5.4.x](https://www.npmjs.com/package/@angular/fire)
+- [@angular/fire - v6.x](https://www.npmjs.com/package/@angular/fire)
 - [firebase - v7.x](https://www.npmjs.com/package/firebase)
 
 the full tutorial guide can be found [here](https://ngx-auth-firebaseui.firebaseapp.com/getting-started)
