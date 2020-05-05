@@ -52,7 +52,7 @@
     "angulartics2": "^8.3.0",
     "express": "^4.15.2",
     "firebase": "^7.14.2",
-    "ngx-clipboard": "^12.3.1",
+    "ngx-clipboard": "^13.0.1",
     "ngx-markdown": "^8.2.2",
     "rxjs": "~6.5.5",
     "tslib": "^1.11.1",
