@@ -1,18 +1,15 @@
-import {EventEmitter, forwardRef, Inject, Injectable} from '@angular/core';
-import {AngularFireAuth} from '@angular/fire/auth';
-import {firebase} from '@firebase/app';
+import { EventEmitter, forwardRef, Inject, Injectable } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { firebase } from '@firebase/app';
 import '@firebase/auth';
-import {User, UserInfo} from 'firebase/app';
-import {Observable} from 'rxjs';
-import {tap} from 'rxjs/operators';
-import {Accounts} from '../enums';
-import {FirestoreSyncService} from './firestore-sync.service';
-import {MAT_SNACK_BAR_DEFAULT_OPTIONS, MatSnackBar, MatSnackBarConfig} from '@angular/material/snack-bar';
-import {ICredentials, ISignInProcess, ISignUpProcess, NgxAuthFirebaseUIConfig} from '../interfaces';
-import {NgxAuthFirebaseUIConfigToken} from '../tokens';
-
-// import User = firebase.User;
-
+import { User, UserInfo } from 'firebase/app';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { map, take } from 'rxjs/operators';
+import { Accounts } from '../enums';
+import { FirestoreSyncService } from './firestore-sync.service';
+import { MAT_SNACK_BAR_DEFAULT_OPTIONS, MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
+import { ICredentials, ISignInProcess, ISignUpProcess, NgxAuthFirebaseUIConfig } from '../interfaces';
+import { NgxAuthFirebaseUIConfigToken } from '../tokens';
 import UserCredential = firebase.auth.UserCredential;
 
 export const facebookAuthProvider = new firebase.auth.FacebookAuthProvider();
@@ -44,18 +41,25 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
   onSuccessEmitter: EventEmitter<any> = new EventEmitter<any>();
   onErrorEmitter: EventEmitter<any> = new EventEmitter<any>();
 
-  // Useful to know aubout auth state even between reloads.
+  // Useful to know about auth state even between reloads.
   // Replace emailConfirmationSent and emailToConfirm.
-  user$: Observable<User>;
+  private _user$ = new BehaviorSubject<firebase.User | null>(null);
+  get user$(): Observable<firebase.User | null> {
+    return this._user$.asObservable();
+  }
+
+  /**
+   * @deprecated access via user$ asynchronously instead
+   */
   user: User;
 
   messageOnAuthSuccess: string;
   messageOnAuthError: string;
 
-  // Legacy field that is setted to true after sign up.
+  // Legacy field that is set to true after sign up.
   // Value is lost in case of reload. The idea here is to know if we just sent a verification email.
   emailConfirmationSent: boolean;
-  // Lefacy filed that contain the mail to confirm. Same lifecyle than emailConfirmationSent.
+  // Legacy filed that contain the mail to confirm. Same lifecycle than emailConfirmationSent.
   emailToConfirm: string;
 
   constructor(
@@ -68,11 +72,10 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
   }
 
   listenToUserEvents() {
-    this.user$ = this.afa.user.pipe(
-      tap(user => {
-        this.user = user;
-      })
-    );
+    this.afa.user.subscribe((user: firebase.User | null) => {
+      this._user$.next(user);
+      this.user = user;
+    });
   }
 
   /**
@@ -95,8 +98,7 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
    * like google, facebook, twitter and github
    *
    * @param provider - the provider to authenticate with (google, facebook, twitter, github)
-   // tslint:disable-next-line:no-redundant-jsdoc
-   * @param credentials
+   * @param credentials optional email and password
    */
   public async signInWith(provider: AuthProvider, credentials?: ICredentials) {
     try {
@@ -157,6 +159,7 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
    * After that the ngx-auth-firebaseui-user should verify and confirm an email sent via the firebase
    *
    * @param displayName - the displayName if the new ngx-auth-firebaseui-user
+   * @param credentials email and password
    * @returns -
    */
   public async signUp(displayName: string, credentials: ICredentials) {
@@ -190,7 +193,7 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
     }
   }
 
-  async sendNewVerificationEmail() {
+  async sendNewVerificationEmail(): Promise<void | never> {
     if (!this.user) {
       return Promise.reject(new Error('No signed in user'));
     }
@@ -234,24 +237,25 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
     };
   }
 
-  public getUserPhotoUrl(): string {
-
-    const user: firebase.User | null = this.user;
-
-    if (!user) {
-      return;
-    } else if (user.photoURL) {
-      return user.photoURL;
-    } else if (user.emailVerified) {
-      return this.getPhotoPath(Accounts.CHECK);
-    } else if (user.isAnonymous) {
-      return this.getPhotoPath(Accounts.OFF);
-    } else {
-      return this.getPhotoPath(Accounts.NONE);
-    }
+  public getUserPhotoUrl(): Observable<string | null> {
+    return this._user$.pipe(
+      map((user: firebase.User | null) => {
+        if (!user) {
+          return null;
+        } else if (user.photoURL) {
+          return user.photoURL;
+        } else if (user.emailVerified) {
+          return this.getPhotoPath(Accounts.CHECK);
+        } else if (user.isAnonymous) {
+          return this.getPhotoPath(Accounts.OFF);
+        } else {
+          return this.getPhotoPath(Accounts.NONE);
+        }
+      })
+    );
   }
 
-  public getPhotoPath(image: string) {
+  public getPhotoPath(image: string): string {
     return `assets/user/${image}.svg`;
   }
 
@@ -281,7 +285,7 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
 
   // Refresh user info. Can be useful for instance to get latest status regarding email verification.
   reloadUserInfo() {
-    return this.user.reload();
+    return this._user$.pipe(take(1)).subscribe((user: User | null) => user && user.reload());
   }
 
   // Search for an error message.

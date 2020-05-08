@@ -1,4 +1,4 @@
-<div *ngIf="auth.authState| async as user; then authenticated else none">
+<div *ngIf="auth.authState| async; then authenticated else none">
 
 </div>
 
@@ -8,7 +8,7 @@
     <!--card header-->
     <mat-card-header fxLayout="column" fxLayoutAlign="center center">
 
-      <img [src]="authProcess?.getUserPhotoUrl()" mat-card-avatar>
+      <img *ngIf="authProcess?.getUserPhotoUrl() | async as photoUrl" [src]="photoUrl" mat-card-avatar>
 
       <div *ngIf="user.emailVerified; then emailVerified else emailNotVerified"></div>
       <ng-template #emailVerified>
