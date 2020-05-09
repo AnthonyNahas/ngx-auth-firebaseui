@@ -1,3 +1,12 @@
+* feat(lib): updating CHANGELOG.md for v4.3.0 (daff43f)
+* fix(lib): updated firebase, tslib and release changelog package (fcbaa5e)
+* fix(lib): updated angular material and cdk to v9.2.3 (0cacc41)
+* fix(lib): updated angular to v9.1.6 (cb541dc)
+* Merge pull request #539 from DevIntent/fix-user-component (9b86c68)
+* fix(user): user photo fails to display, edit form & save are broken (db11d16)
+* Merge pull request #534 from grant-wilson/grant-wilson-patch-1 (067d7a8)
+* Fix typos in API section of README.md (119c7a3)
+
 * fix(lib): updated firebase, tslib and release changelog package (fcbaa5e)
 * fix(lib): updated angular material and cdk to v9.2.3 (0cacc41)
 * fix(lib): updated angular to v9.1.6 (cb541dc)
