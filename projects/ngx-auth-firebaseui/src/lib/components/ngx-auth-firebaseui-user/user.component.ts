@@ -8,6 +8,8 @@ import {NgxAuthFirebaseUIConfigToken} from '../../tokens';
 import {NgxAuthFirebaseUIConfig} from '../../interfaces';
 import { AuthProcessService } from '../../services/auth-process.service';
 import { FirestoreSyncService } from '../../services/firestore-sync.service';
+import { map, take } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'ngx-auth-firebaseui-user',
@@ -47,7 +49,6 @@ export class UserComponent {
   updateNameFormControl: FormControl;
   updateEmailFormControl: FormControl;
   updatePhoneNumberFormControl: FormControl;
-  updatePasswordFormControl: FormControl;
 
   constructor(
     public auth: AngularFireAuth,
@@ -58,9 +59,15 @@ export class UserComponent {
   }
 
   changeEditMode() {
-    this.editMode = !this.editMode;
-
-    this.editMode ? this.initUpdateFormGroup() : this.reset();
+    if (this.editMode) {
+      this.reset();
+      this.editMode = false;
+    } else {
+      this.initUpdateFormGroup().subscribe((updateFormGroup: FormGroup) => {
+        this.updateFormGroup = updateFormGroup;
+        this.editMode = true;
+      });
+    }
   }
 
   reset() {
@@ -71,6 +78,7 @@ export class UserComponent {
 
   async save() {
     if (this.updateFormGroup.dirty) {
+      this.editMode = false;
       const user = this.authProcess.user;
       // ngx-auth-firebaseui-user.updateProfile()
       // ngx-auth-firebaseui-user.updateEmail()
@@ -108,10 +116,8 @@ export class UserComponent {
       if (snackBarMsg.length > 0) {
         this.authProcess.showToast(snackBarMsg.join('\\n'));
       }
-      // this.updateFormGroup.reset();
+      this.updateFormGroup.reset();
     }
-
-    this.editMode = false;
   }
 
   signOut() {
@@ -146,30 +152,35 @@ export class UserComponent {
     }
   }
 
-  protected initUpdateFormGroup() {
-    const currentUser: User = this.authProcess.user;
-    this.updateFormGroup = new FormGroup({
-      name: this.updateNameFormControl = new FormControl(
-        {value: currentUser.displayName, disabled: this.editMode},
-        [
-          Validators.required,
-          Validators.minLength(this.config.nameMinLength),
-          Validators.maxLength(this.config.nameMaxLength)
-        ]
-      ),
+  protected initUpdateFormGroup(): Observable<FormGroup> {
+    return this.authProcess.user$.pipe(
+      take(1),
+      map((currentUser: User) => {
+      const updateFormGroup = new FormGroup({
+        name: this.updateNameFormControl = new FormControl(
+          {value: currentUser.displayName, disabled: this.editMode},
+          [
+            Validators.required,
+            Validators.minLength(this.config.nameMinLength),
+            Validators.maxLength(this.config.nameMaxLength)
+          ]
+        ),
 
-      email: this.updateEmailFormControl = new FormControl(
-        {value: currentUser.email, disabled: this.editMode},
-        [
-          Validators.required,
-          Validators.pattern(EMAIL_REGEX)
-        ]),
+        email: this.updateEmailFormControl = new FormControl(
+          {value: currentUser.email, disabled: this.editMode},
+          [
+            Validators.required,
+            Validators.pattern(EMAIL_REGEX)
+          ]),
 
-      phoneNumber: this.updatePhoneNumberFormControl = new FormControl(
-        {value: currentUser.phoneNumber, disabled: this.editMode},
-        [Validators.pattern(PHONE_NUMBER_REGEX)])
-    });
+        phoneNumber: this.updatePhoneNumberFormControl = new FormControl(
+          {value: currentUser.phoneNumber, disabled: this.editMode},
+          [Validators.pattern(PHONE_NUMBER_REGEX)])
+      });
 
-    this.updateFormGroup.enable();
+      updateFormGroup.enable();
+      return updateFormGroup;
+      })
+    );
   }
 }
