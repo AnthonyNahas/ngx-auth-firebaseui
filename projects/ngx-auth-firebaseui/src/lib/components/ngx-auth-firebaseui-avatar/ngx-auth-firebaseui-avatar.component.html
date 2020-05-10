@@ -4,7 +4,7 @@
         [style.background-image]="'url(' + user?.photoURL + ')'"
         aria-label="Open x-positioned menu"
         mat-mini-fab
-        style="background-size: cover">
+        style="background-size: cover; background-position: center;">
   <span *ngIf="!user?.photoURL">{{displayNameInitials || ''}}</span>
 </button>
 
@@ -12,7 +12,7 @@
   <div fxLayout="row" fxLayout.xs="column" style="padding-left: 10px; padding-right: 10px">
     <button [style.background-image]="'url(' + user?.photoURL + ')'"
             mat-fab
-            style="background-size: cover">
+            style="background-size: cover; background-position: center;">
       <span *ngIf="!user?.photoURL">{{displayNameInitials || ''}}</span>
     </button>
     <div fxLayout="column" style="padding-left: 10px; padding-right: 10px">
