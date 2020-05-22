@@ -31,7 +31,7 @@
       <div class="user-email mat-body-2">{{ user?.email }}</div>
       <div class="actions">
         <mat-progress-bar *ngIf="isLoading" mode="indeterminate"></mat-progress-bar>
-        <a [routerLink]="goBackURL" class="go-back-button action-button" color="primary"
+        <a *ngIf="verifyEmailGoBackText" [routerLink]="goBackURL" class="go-back-button action-button" color="primary"
            mat-stroked-button>{{ verifyEmailGoBackText }}</a>
         <button (click)="signOut()" class="sign-out-button action-button" color="warn"
                 mat-stroked-button>{{ signOutText }}</button>
