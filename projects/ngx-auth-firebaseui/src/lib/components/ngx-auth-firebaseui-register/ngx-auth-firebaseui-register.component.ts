@@ -48,9 +48,10 @@ export class NgxAuthFirebaseuiRegisterComponent implements OnInit, OnDestroy {
 
   // i18n common
   @Input() titleText = 'CREATE AN ACCOUNT';
-  @Input() readAndAcceptText = 'I read and accept the';
-  @Input() termsAndConditionsText = 'terms and conditions';
-  @Input() privacyPolicyText = 'privacy policy';
+  @Input() termsAndConditionsText = 'I read and accept the';
+  @Input() termsAndConditionsLinkText = 'terms and conditions';
+  @Input() privacyPolicyText = 'I read and accept the';
+  @Input() privacyPolicyLinkText = 'privacy policy';
   @Input() createAccountButtonText = 'CREATE AN ACCOUNT';
   @Input() alreadyHaveAccountText = 'Already have an account?';
   @Input() loginButtonText = 'LOGIN';

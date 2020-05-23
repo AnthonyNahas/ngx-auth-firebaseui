@@ -56,19 +56,19 @@
         </mat-form-field>
 
         <div *ngIf="this.tosUrl">
-          <mat-checkbox aria-label="{{readAndAcceptText}}" formControlName="tos" required>
-            <span>{{readAndAcceptText}}</span>
+          <mat-checkbox aria-label="{{termsAndConditionsText}}" formControlName="tos" required>
+            <span>{{termsAndConditionsText}}</span>
             <a target="_blank" [href]="this.tosUrl">
-                {{termsAndConditionsText}}
+                {{termsAndConditionsLinkText}}
             </a>
           </mat-checkbox>
         </div>
 
         <div *ngIf="this.privacyPolicyUrl">
-          <mat-checkbox aria-label="{{readAndAcceptText}}" formControlName="privacyPolicy" required>
-            <span>{{readAndAcceptText}}</span>
+          <mat-checkbox aria-label="{{privacyPolicyText}}" formControlName="privacyPolicy" required>
+            <span>{{privacyPolicyText}}</span>
             <a target="_blank" [href]="this.privacyPolicyUrl">
-                {{privacyPolicyText}}
+                {{privacyPolicyLinkText}}
             </a>
           </mat-checkbox>
         </div>
