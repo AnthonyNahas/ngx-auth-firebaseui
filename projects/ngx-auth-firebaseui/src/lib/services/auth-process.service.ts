@@ -25,7 +25,7 @@ export enum AuthProvider {
   ANONYMOUS = 'anonymous',
   EmailAndPassword = 'firebase',
   Google = 'google',
-  Apple = 'Apple',
+  Apple = 'apple',
   Facebook = 'facebook',
   Twitter = 'twitter',
   Github = 'github',
