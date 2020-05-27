@@ -1,8 +1,8 @@
 import {Component, Input, Output} from '@angular/core';
 import {AuthProcessService, AuthProvider} from '../../services/auth-process.service';
 import {NgxAuthFirebaseuiAnimations} from '../../animations';
-import {LegalityDialogComponent } from '..';
-import {LegalityDialogParams, LegalityDialogResult } from '../../interfaces';
+import {LegalityDialogComponent} from '..';
+import {LegalityDialogParams, LegalityDialogResult} from '../../interfaces';
 import {MatDialog, MatDialogRef} from '@angular/material/dialog';
 
 export enum Theme {
@@ -41,7 +41,7 @@ export class AuthProvidersComponent {
   themes = Theme;
   authProvider = AuthProvider;
 
-  constructor(public authProcess: AuthProcessService, public dialog: MatDialog ) {
+  constructor(public authProcess: AuthProcessService, public dialog: MatDialog) {
     this.onSuccess = authProcess.onSuccessEmitter;
     this.onError = authProcess.onErrorEmitter;
   }
@@ -58,13 +58,13 @@ export class AuthProvidersComponent {
       this.dialogRef.afterClosed().subscribe((result: LegalityDialogResult) => {
         if (result && result.checked) {
           // this._afterSignUpMiddleware(result.authProvider).then(() => this.signUpFormGroup.reset());
-            this.authProcess.signInWith(authProvider)
+          this.authProcess.signInWith(authProvider);
         }
         this.dialogRef = null;
       });
     } else {
       // this._afterSignUpMiddleware(authProvider).then(() => this.signUpFormGroup.reset());
-        this.authProcess.signInWith(authProvider)
+      this.authProcess.signInWith(authProvider);
     }
   }
 
