@@ -1,4 +1,5 @@
 <button *ngIf="user"
+        class="ngx-auth-firebaseui-avatar-button"
         [matMenuTriggerFor]="posXMenu"
         [matTooltip]="user?.displayName"
         [style.background-image]="'url(' + user?.photoURL + ')'"
