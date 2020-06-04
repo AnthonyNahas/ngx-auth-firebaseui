@@ -20,16 +20,28 @@ export interface LinkMenuItem {
 export class NgxAuthFirebaseuiAvatarComponent implements OnInit {
 
   @Input()
+  layout: 'default' | 'simple' = 'default';
+
+  @Input()
   canLogout = true;
 
   @Input()
   links: LinkMenuItem[];
 
   @Input()
+  canViewAccount = true;
+
+  @Input()
   canDeleteAccount = true;
 
   @Input()
   canEditAccount = true;
+
+  @Input()
+  textProfile = 'Profile';
+
+  @Input()
+  textSignOut = 'Sign Out';
 
   // tslint:disable-next-line:no-output-on-prefix
   @Output()

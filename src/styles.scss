@@ -2,3 +2,8 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+// Custom CSS style for avatar mat-menu
+.ngx-auth-firebaseui-avatar-menu {
+    margin-top: 5px;
+}

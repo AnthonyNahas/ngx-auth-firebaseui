@@ -92,9 +92,13 @@ or more advanced
 |:---------------------|:------:|:------:|:------------:|:-------------------------------------------------------------------------------------------------|
 | canLogout          | `Input()` | `boolean`     | true | whether to render the logout button
 | links              | `Input()` | `LinkMenuItem[]`    | - | additional routes and links to add to the component
+| mode               | `Input()` | `string: 'default' | 'simple'` | `default` | in which mode show details in the menu
+| canViewAccount     | `Input()` | `boolean`     | true | whether to render the profile button to view account
 | canDeleteAccount   | `Input()` | `boolean`     | true | whether to render the delete account button
 | canEditAccount     | `Input()` | `boolean`     | true | whether to render the edit account button
-| onSignOut          | `Output()`| void        | - | this will be fired when the user signs out
+| textProfile        | `Input()` | `string`      | `Profile` | text at the profile button
+| textSignOut        | `Input()` | `string`      | `Sign Out` | text at the sign out button
+| onSignOut          | `Output()`| void          | - | this will be fired when the user signs out
 
 
 ```ts
