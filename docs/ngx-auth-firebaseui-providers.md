@@ -140,7 +140,8 @@ automatically change to `column`
 ## Other Angular Libraries
 - [@firebaseui/ng-bootstrap](https://github.com/firebaseui/ng-bootstrap)
 - [ngx-linkifyjs](https://github.com/anthonynahas/ngx-linkifyjs)
-- [@angular-material-extensions/components](https://github.com/angular-material-extensions/components)
+- [@angular-material-extensions/select-country](https://github.com/angular-material-extensions/select-country)
+- [@angular-material-extensions/fab-menu](https://github.com/angular-material-extensions/fab-menu)
 - [@angular-material-extensions/password-strength](https://github.com/angular-material-extensions/password-strength)
 - [@angular-material-extensions/google-maps-autocomplete](https://github.com/angular-material-extensions/google-maps-autocomplete)
 - [@angular-material-extensions/pages](https://github.com/angular-material-extensions/pages)

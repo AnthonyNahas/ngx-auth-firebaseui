@@ -141,6 +141,7 @@ by starring :star: and sharing it :loudspeaker:
 - anonymously
 - email and password (traditional)
 - google
+- apple
 - facebook
 - twitter
 - github
@@ -153,7 +154,7 @@ by starring :star: and sharing it :loudspeaker:
 ## Supported Processes and Actions:
 - sign up
 - sign in
-- sign in Anonymously | with google, facebook, twitter, github, microsoft, yahoo
+- sign in Anonymously | with google, apple, facebook, twitter, github, microsoft, yahoo
 - sign out
 - validation of password's strength while creating a new account using [@angular-material-extensions/password-strength](https://github.com/AnthonyNahas/@angular-material-extensions/password-strength)
 - forgot/reset password
@@ -176,7 +177,7 @@ by starring :star: and sharing it :loudspeaker:
 - [angular forms - v9.x](https://www.npmjs.com/package/@angular/forms)
 - [angular animations - v9.x](https://www.npmjs.com/package/@angular/animations)
 - [angular router - v9.x](https://www.npmjs.com/package/@angular/router)
-- [angular flex-layout v9.0.0-beta.29](https://www.npmjs.com/package/@angular/flex-layout)
+- [angular flex-layout v9.0.0-beta.31](https://www.npmjs.com/package/@angular/flex-layout)
 - [@angular/fire - v6.x](https://www.npmjs.com/package/@angular/fire)
 - [firebase - v7.x](https://www.npmjs.com/package/firebase)
 
