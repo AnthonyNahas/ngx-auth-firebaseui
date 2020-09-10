@@ -103,6 +103,7 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
   public async signInWith(provider: AuthProvider, credentials?: ICredentials) {
     try {
       let signInResult: UserCredential | any;
+      let signIn = this.config.authMethod === 'popup' ? this.afa.signInWithPopup : this.afa.signInWithRedirect;
 
       switch (provider) {
         case AuthProvider.ANONYMOUS:
@@ -114,31 +115,31 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
           break;
 
         case AuthProvider.Google:
-          signInResult = await this.afa.signInWithPopup(googleAuthProvider) as UserCredential;
+          signInResult = await signIn(googleAuthProvider) as UserCredential;
           break;
 
         case AuthProvider.Apple:
-          signInResult = await this.afa.signInWithPopup(appleAuthProvider) as UserCredential;
+          signInResult = await signIn(appleAuthProvider) as UserCredential;
           break;
 
         case AuthProvider.Facebook:
-          signInResult = await this.afa.signInWithPopup(facebookAuthProvider) as UserCredential;
+          signInResult = await signIn(facebookAuthProvider) as UserCredential;
           break;
 
         case AuthProvider.Twitter:
-          signInResult = await this.afa.signInWithPopup(twitterAuthProvider) as UserCredential;
+          signInResult = await signIn(twitterAuthProvider) as UserCredential;
           break;
 
         case AuthProvider.Github:
-          signInResult = await this.afa.signInWithPopup(githubAuthProvider) as UserCredential;
+          signInResult = await signIn(githubAuthProvider) as UserCredential;
           break;
 
         case AuthProvider.Microsoft:
-          signInResult = await this.afa.signInWithPopup(microsoftAuthProvider) as UserCredential;
+          signInResult = await signIn(microsoftAuthProvider) as UserCredential;
           break;
 
         case AuthProvider.Yahoo:
-          signInResult = await this.afa.signInWithPopup(yahooAuthProvider) as UserCredential;
+          signInResult = await signIn(yahooAuthProvider) as UserCredential;
           break;
 
         case AuthProvider.PhoneNumber:

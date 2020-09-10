@@ -29,10 +29,13 @@ export interface NgxAuthFirebaseUIConfig {
 
   // Control whether or not email verification is used
   enableEmailVerification?: boolean;
+
+  // whether we sign in with popup or redirect
+  authMethod: 'popup' | 'redirect';
 }
 
 export const defaultAuthFirebaseUIConfig: NgxAuthFirebaseUIConfig = {
-  // authMethod: 'redirect',
+  authMethod: 'popup',
   // authProviders: [new GoogleAuthProvider(), new FacebookAuthProvider(), new TwitterAuthProvider(), new GithubAuthProvider()],
   enableFirestoreSync: true,
   toastMessageOnAuthSuccess: true,
