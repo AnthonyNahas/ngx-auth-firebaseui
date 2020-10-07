@@ -79,6 +79,8 @@ export class NgxAuthFirebaseuiRegisterComponent implements OnInit, OnDestroy {
   // tslint:disable-next-line:no-output-on-prefix
   @Output() onLoginRequested: EventEmitter<void> = new EventEmitter<void>();
 
+  @Output() onCreateAccountButtonClicked: EventEmitter<void> = new EventEmitter();
+
   registerForm: FormGroup;
   onErrorSubscription: Subscription;
   authenticationError = false;
@@ -149,6 +151,10 @@ export class NgxAuthFirebaseuiRegisterComponent implements OnInit, OnDestroy {
   }
 
   async createAccount() {
+    // Emit the create account clicked event.
+    this.onCreateAccountButtonClicked.emit();
+
+
     return await this.authProcess.signUp(
       this.registerForm.controls.name.value,
       {
