@@ -140,4 +140,14 @@ describe('NgxAuthFirebaseuiRegisterComponent', () => {
 
   });
 
+  it('should trigger onCreateAccountButtonClicked event when create account button is clicked', () => {
+    const createAccountButton = fixture.nativeElement.querySelector('#createAccountButton');
+    spyOn(component.onCreateAccountButtonClicked, 'emit');
+    createAccountButton.dispatchEvent(new Event('click'));
+    fixture.detectChanges();
+
+    expect(component.onCreateAccountButtonClicked.emit).toHaveBeenCalled();
+
+  });
+
 });
