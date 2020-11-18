@@ -60,8 +60,7 @@
     "@angular/forms": "^9.0.0",
     "@angular/material": "^9.0.0",
     "@angular/router": "^9.0.0",
-    "firebase": "^7.8.1",
-    "tslib": "^1.10.0"
+    "firebase": "^7.8.1"
   },
   "engines": {
     "node": ">=10.13"
@@ -133,6 +132,9 @@
       "conventional-github-releaser",
       "rollup-plugin-uglify"
     ]
+  },
+  "dependencies": {
+    "tslib": "^2.0.0"
   },
   "commitplease": {
     "style": "angular",

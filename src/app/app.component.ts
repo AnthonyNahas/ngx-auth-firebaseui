@@ -1,19 +1,21 @@
-import {Component, OnDestroy} from '@angular/core';
-import {AuthProvider, Theme} from 'ngx-auth-firebaseui';
-import {Subscription} from 'rxjs';
-import {MatSnackBar} from '@angular/material/snack-bar';
-import {Router} from '@angular/router';
-import {AngularFireAuth} from '@angular/fire/auth';
-import {MatTabChangeEvent} from '@angular/material/tabs';
+import { Component, OnDestroy } from "@angular/core";
+import { Subscription } from "rxjs";
+import { MatSnackBar } from "@angular/material/snack-bar";
+import { Router } from "@angular/router";
+import { AngularFireAuth } from "@angular/fire/auth";
+import { MatTabChangeEvent } from "@angular/material/tabs";
+import {
+  AuthProvider,
+  Theme,
+} from "projects/ngx-auth-firebaseui/src/public-api";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.scss"],
 })
 export class AppComponent implements OnDestroy {
-
-  title = 'ngx-auth-firebaseui';
+  title = "ngx-auth-firebaseui";
 
   viewSourceOfNgxAuthFirebaseuiComponent: boolean;
   viewSourceOfNgxAuthFirebaseuiLoginComponent: boolean;
@@ -32,24 +34,24 @@ export class AppComponent implements OnDestroy {
   providers = [AuthProvider.Facebook];
   themes = Theme;
 
-
-  constructor(public auth: AngularFireAuth,
-              public router: Router,
-              public snackbar: MatSnackBar) {
-  }
+  constructor(
+    public auth: AngularFireAuth,
+    public router: Router,
+    public snackbar: MatSnackBar
+  ) {}
 
   get color(): string {
-    return this.error ? 'warn' : 'primary';
+    return this.error ? "warn" : "primary";
   }
 
   printUser(event) {
-    console.log('onSuccess event ->', event);
+    console.log("onSuccess event ->", event);
     this.error = false;
     this.index = 2;
   }
 
   printError(event) {
-    console.error('onError event --> ', event);
+    console.error("onError event --> ", event);
     this.error = true;
 
     // this.snackbar.open(event.message, 'OK', {duration: 5000});
@@ -62,18 +64,18 @@ export class AppComponent implements OnDestroy {
   }
 
   onTabChange(event: MatTabChangeEvent) {
-    console.log('on tab change: ', event);
+    console.log("on tab change: ", event);
   }
 
   onSignOut() {
-    console.log('Sign-out successful!');
+    console.log("Sign-out successful!");
   }
 
   onAccountDeleted() {
-    console.log('Account Delete successful!');
+    console.log("Account Delete successful!");
   }
 
   createAccount() {
-    console.log('create account has beeen requested');
+    console.log("create account has beeen requested");
   }
 }
