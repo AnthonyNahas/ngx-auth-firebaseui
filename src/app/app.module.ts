@@ -10,7 +10,6 @@ import {Angulartics2Module} from 'angulartics2';
 import {AngularFireModule} from '@angular/fire';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
-import {NgxAuthFirebaseUIModule} from 'ngx-auth-firebaseui';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {FormsModule} from '@angular/forms';
 import {MarkdownModule} from 'ngx-markdown';
@@ -19,6 +18,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import { NgxAuthFirebaseUIModule } from 'projects/ngx-auth-firebaseui/src/public-api';
 
 export const firebaseKey = {
   apiKey: 'AIzaSyASG7KxDO2z5AH9r0jlUmwiw68Ap8kG20c',

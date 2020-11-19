@@ -1,4 +1,4 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import {LegalityDialogComponent} from './legality-dialog.component';
 import {MAT_DIALOG_DATA, MatButtonModule, MatCheckboxModule, MatDialogModule, MatDialogRef, MatIconModule} from '@angular/material';
@@ -12,7 +12,7 @@ describe('LegalityDialogComponent', () => {
   let fixture: ComponentFixture<LegalityDialogComponent>;
   const testURL = 'link.com';
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       imports: [
         FormsModule,

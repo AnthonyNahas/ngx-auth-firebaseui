@@ -1,41 +1,51 @@
-import { EventEmitter, forwardRef, Inject, Injectable } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/auth';
-import { firebase } from '@firebase/app';
-import '@firebase/auth';
-import { User, UserInfo } from 'firebase/app';
-import { BehaviorSubject, Observable } from 'rxjs';
-import { map, take } from 'rxjs/operators';
-import { Accounts } from '../enums';
-import { FirestoreSyncService } from './firestore-sync.service';
-import { MAT_SNACK_BAR_DEFAULT_OPTIONS, MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
-import { ICredentials, ISignInProcess, ISignUpProcess, NgxAuthFirebaseUIConfig } from '../interfaces';
-import { NgxAuthFirebaseUIConfigToken } from '../tokens';
+import { EventEmitter, forwardRef, Inject, Injectable } from "@angular/core";
+import { AngularFireAuth } from "@angular/fire/auth";
+import "@firebase/auth";
+import firebase from "firebase/app";
+import { BehaviorSubject, Observable } from "rxjs";
+import { map, take } from "rxjs/operators";
+import { Accounts } from "../enums";
+import { FirestoreSyncService } from "./firestore-sync.service";
+import {
+  MAT_SNACK_BAR_DEFAULT_OPTIONS,
+  MatSnackBar,
+  MatSnackBarConfig,
+} from "@angular/material/snack-bar";
+import {
+  ICredentials,
+  ISignInProcess,
+  ISignUpProcess,
+  NgxAuthFirebaseUIConfig,
+} from "../interfaces";
+import { NgxAuthFirebaseUIConfigToken } from "../tokens";
 import UserCredential = firebase.auth.UserCredential;
 
 export const facebookAuthProvider = new firebase.auth.FacebookAuthProvider();
 export const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
-export const appleAuthProvider = new firebase.auth.OAuthProvider('apple.com');
+export const appleAuthProvider = new firebase.auth.OAuthProvider("apple.com");
 export const twitterAuthProvider = new firebase.auth.TwitterAuthProvider();
 export const githubAuthProvider = new firebase.auth.GithubAuthProvider();
-export const microsoftAuthProvider = new firebase.auth.OAuthProvider('microsoft.com');
-export const yahooAuthProvider = new firebase.auth.OAuthProvider('yahoo.com');
+export const microsoftAuthProvider = new firebase.auth.OAuthProvider(
+  "microsoft.com"
+);
+export const yahooAuthProvider = new firebase.auth.OAuthProvider("yahoo.com");
 
 export enum AuthProvider {
-  ALL = 'all',
-  ANONYMOUS = 'anonymous',
-  EmailAndPassword = 'firebase',
-  Google = 'google',
-  Apple = 'apple',
-  Facebook = 'facebook',
-  Twitter = 'twitter',
-  Github = 'github',
-  Microsoft = 'microsoft',
-  Yahoo = 'yahoo',
-  PhoneNumber = 'phoneNumber'
+  ALL = "all",
+  ANONYMOUS = "anonymous",
+  EmailAndPassword = "firebase",
+  Google = "google",
+  Apple = "apple",
+  Facebook = "facebook",
+  Twitter = "twitter",
+  Github = "github",
+  Microsoft = "microsoft",
+  Yahoo = "yahoo",
+  PhoneNumber = "phoneNumber",
 }
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class AuthProcessService implements ISignInProcess, ISignUpProcess {
   onSuccessEmitter: EventEmitter<any> = new EventEmitter<any>();
@@ -51,7 +61,7 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
   /**
    * @deprecated access via user$ asynchronously instead
    */
-  user: User;
+  user: firebase.User;
 
   messageOnAuthSuccess: string;
   messageOnAuthError: string;
@@ -64,12 +74,13 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
 
   constructor(
     public afa: AngularFireAuth,
-    @Inject(forwardRef(() => NgxAuthFirebaseUIConfigToken)) public config: NgxAuthFirebaseUIConfig,
+    @Inject(forwardRef(() => NgxAuthFirebaseUIConfigToken))
+    public config: NgxAuthFirebaseUIConfig,
     private snackBar: MatSnackBar,
     private fireStoreService: FirestoreSyncService,
-    @Inject(MAT_SNACK_BAR_DEFAULT_OPTIONS) private matSnackBarConfig: MatSnackBarConfig
-  ) {
-  }
+    @Inject(MAT_SNACK_BAR_DEFAULT_OPTIONS)
+    private matSnackBarConfig: MatSnackBarConfig
+  ) {}
 
   listenToUserEvents() {
     this.afa.user.subscribe((user: firebase.User | null) => {
@@ -85,7 +96,7 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
    */
   public async resetPassword(email: string): Promise<void> {
     try {
-      console.log('Password reset email sent');
+      console.log("Password reset email sent");
       return await this.afa.sendPasswordResetEmail(email);
     } catch (error) {
       return this.notifyError(error);
@@ -106,39 +117,56 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
 
       switch (provider) {
         case AuthProvider.ANONYMOUS:
-          signInResult = await this.afa.signInAnonymously() as UserCredential;
+          signInResult = (await this.afa.signInAnonymously()) as UserCredential;
           break;
 
         case AuthProvider.EmailAndPassword:
-          signInResult = await this.afa.signInWithEmailAndPassword(credentials.email, credentials.password) as UserCredential;
+          signInResult = (await this.afa.signInWithEmailAndPassword(
+            credentials.email,
+            credentials.password
+          )) as UserCredential;
           break;
 
         case AuthProvider.Google:
-          signInResult = await this.afa.signInWithPopup(googleAuthProvider) as UserCredential;
+          signInResult = (await this.afa.signInWithPopup(
+            googleAuthProvider
+          )) as UserCredential;
           break;
 
         case AuthProvider.Apple:
-          signInResult = await this.afa.signInWithPopup(appleAuthProvider) as UserCredential;
+          signInResult = (await this.afa.signInWithPopup(
+            appleAuthProvider
+          )) as UserCredential;
           break;
 
         case AuthProvider.Facebook:
-          signInResult = await this.afa.signInWithPopup(facebookAuthProvider) as UserCredential;
+          signInResult = (await this.afa.signInWithPopup(
+            facebookAuthProvider
+          )) as UserCredential;
           break;
 
         case AuthProvider.Twitter:
-          signInResult = await this.afa.signInWithPopup(twitterAuthProvider) as UserCredential;
+          signInResult = (await this.afa.signInWithPopup(
+            twitterAuthProvider
+          )) as UserCredential;
           break;
 
         case AuthProvider.Github:
-          signInResult = await this.afa.signInWithPopup(githubAuthProvider) as UserCredential;
+          signInResult = (await this.afa.signInWithPopup(
+            githubAuthProvider
+          )) as UserCredential;
           break;
 
         case AuthProvider.Microsoft:
-          signInResult = await this.afa.signInWithPopup(microsoftAuthProvider) as UserCredential;
+          signInResult = (await this.afa.signInWithPopup(
+            microsoftAuthProvider
+          )) as UserCredential;
           break;
 
         case AuthProvider.Yahoo:
-          signInResult = await this.afa.signInWithPopup(yahooAuthProvider) as UserCredential;
+          signInResult = (await this.afa.signInWithPopup(
+            yahooAuthProvider
+          )) as UserCredential;
           break;
 
         case AuthProvider.PhoneNumber:
@@ -146,7 +174,9 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
           break;
 
         default:
-          throw new Error(`${AuthProvider[provider]} is not available as auth provider`);
+          throw new Error(
+            `${AuthProvider[provider]} is not available as auth provider`
+          );
       }
       await this.handleSuccess(signInResult);
     } catch (err) {
@@ -164,19 +194,20 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
    */
   public async signUp(displayName: string, credentials: ICredentials) {
     try {
-      const userCredential: UserCredential = await this.afa.createUserWithEmailAndPassword(credentials.email, credentials.password);
+      const userCredential: UserCredential = await this.afa.createUserWithEmailAndPassword(
+        credentials.email,
+        credentials.password
+      );
       const user = userCredential.user;
       await this.updateProfile(displayName, user.photoURL);
 
       if (this.config.enableFirestoreSync) {
-        await this.fireStoreService
-          .getUserDocRefByUID(user.uid)
-          .set({
-            uid: user.uid,
-            displayName,
-            email: user.email,
-            photoURL: user.photoURL
-          } as User);
+        await this.fireStoreService.getUserDocRefByUID(user.uid).set({
+          uid: user.uid,
+          displayName,
+          email: user.email,
+          photoURL: user.photoURL,
+        } as firebase.User);
       }
 
       if (this.config.enableEmailVerification) {
@@ -195,7 +226,7 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
 
   async sendNewVerificationEmail(): Promise<void | never> {
     if (!this.user) {
-      return Promise.reject(new Error('No signed in user'));
+      return Promise.reject(new Error("No signed in user"));
     }
     return this.user.sendEmailVerification();
   }
@@ -217,23 +248,24 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
    * @returns -
    */
   public updateProfile(name: string, photoURL: string): Promise<void> {
-    return this.afa.currentUser.then((user: User) => {
+    return this.afa.currentUser.then((user: firebase.User) => {
       if (!photoURL) {
-        return user.updateProfile({displayName: name});
+        return user.updateProfile({ displayName: name });
       } else {
-        return user.updateProfile({displayName: name, photoURL});
+        return user.updateProfile({ displayName: name, photoURL });
       }
     });
   }
 
-  public parseUserInfo(user: User): UserInfo {
+  public parseUserInfo(user: firebase.User): firebase.UserInfo {
     return {
       uid: user.uid,
       displayName: user.displayName,
       email: user.email,
       phoneNumber: user.phoneNumber,
       photoURL: user.photoURL,
-      providerId: user.providerData.length > 0 ? user.providerData[0].providerId : null
+      providerId:
+        user.providerData.length > 0 ? user.providerData[0].providerId : null,
     };
   }
 
@@ -267,13 +299,19 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
     this.onSuccessEmitter.next(userCredential.user);
     if (this.config.enableFirestoreSync) {
       try {
-        await this.fireStoreService.updateUserData(this.parseUserInfo(userCredential.user));
+        await this.fireStoreService.updateUserData(
+          this.parseUserInfo(userCredential.user)
+        );
       } catch (e) {
-        console.error(`Error occurred while updating user data with firestore: ${e}`);
+        console.error(
+          `Error occurred while updating user data with firestore: ${e}`
+        );
       }
     }
     if (this.config.toastMessageOnAuthSuccess) {
-      const fallbackMessage = `Hello ${userCredential.user.displayName ? userCredential.user.displayName : ''}!`;
+      const fallbackMessage = `Hello ${
+        userCredential.user.displayName ? userCredential.user.displayName : ""
+      }!`;
       this.showToast(this.messageOnAuthSuccess || fallbackMessage);
     }
   }
@@ -285,7 +323,9 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
 
   // Refresh user info. Can be useful for instance to get latest status regarding email verification.
   reloadUserInfo() {
-    return this._user$.pipe(take(1)).subscribe((user: User | null) => user && user.reload());
+    return this._user$
+      .pipe(take(1))
+      .subscribe((user: firebase.User | null) => user && user.reload());
   }
 
   // Search for an error message.
@@ -293,7 +333,9 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
   // function in case they want to instrument message based on error properties.
   getMessageOnAuthError(error: any) {
     // tslint:disable-next-line:no-bitwise
-    return error.toString() || 'Sorry, something went wrong. Please retry later.';
+    return (
+      error.toString() || "Sorry, something went wrong. Please retry later."
+    );
   }
 
   // Show a toast using current snackbar config. If message is empty, no toast is displayed allowing to opt-out when needed.
@@ -301,7 +343,10 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
   // If that's the case, an action button is added to allow the end-user to dismiss the toast.
   showToast(message: string) {
     if (message) {
-      this.snackBar.open(message, this.matSnackBarConfig.duration ? null : 'OK');
+      this.snackBar.open(
+        message,
+        this.matSnackBarConfig.duration ? null : "OK"
+      );
     }
   }
 
@@ -315,5 +360,4 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
     this.onErrorEmitter.emit(error);
     this.showErrorToast(error);
   }
-
 }
