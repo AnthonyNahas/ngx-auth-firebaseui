@@ -1,4 +1,4 @@
-import {isPlatformBrowser} from '@angular/common';
+import { isPlatformBrowser } from "@angular/common";
 import {
   AfterViewInit,
   ChangeDetectionStrategy,
@@ -15,52 +15,72 @@ import {
   PLATFORM_ID,
   SimpleChanges,
   TemplateRef,
-  ViewChild
-} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
-import {AbstractControl, FormControl, FormGroup, Validators} from '@angular/forms';
+  ViewChild,
+} from "@angular/core";
+import { ActivatedRoute } from "@angular/router";
+import {
+  AbstractControl,
+  FormControl,
+  FormGroup,
+  Validators,
+} from "@angular/forms";
 
 // ANGULAR MATERIAL
-import {MatTabChangeEvent, MatTabGroup} from '@angular/material/tabs';
-import {ThemePalette} from '@angular/material/core';
-import {MatDialog, MatDialogRef} from '@angular/material/dialog';
-import {MatFormFieldAppearance} from '@angular/material/form-field';
+import { MatTabChangeEvent, MatTabGroup } from "@angular/material/tabs";
+import { ThemePalette } from "@angular/material/core";
+import { MatDialog, MatDialogRef } from "@angular/material/dialog";
+import { MatFormFieldAppearance } from "@angular/material/form-field";
 
 // ANGULAR FIRE
-import {AngularFireAuth} from '@angular/fire/auth';
+import { AngularFireAuth } from "@angular/fire/auth";
 
 // Third PARTY
-import {MatPasswordStrengthComponent} from '@angular-material-extensions/password-strength';
+import { MatPasswordStrengthComponent } from "@angular-material-extensions/password-strength";
 
 // RXJS
-import {Subscription} from 'rxjs';
+import { Subscription } from "rxjs";
 
-import {LegalityDialogComponent, Theme} from '..';
-import {LegalityDialogParams, LegalityDialogResult, NgxAuthFirebaseUIConfig} from '../../interfaces';
-import { AuthProcessService, AuthProvider} from '../../services/auth-process.service';
-import {NgxAuthFirebaseuiAnimations} from '../../animations';
-import {NgxAuthFirebaseUIConfigToken} from '../../tokens';
+import { LegalityDialogComponent, Theme } from "..";
+import {
+  LegalityDialogParams,
+  LegalityDialogResult,
+  NgxAuthFirebaseUIConfig,
+} from "../../interfaces";
+import {
+  AuthProcessService,
+  AuthProvider,
+} from "../../services/auth-process.service";
+import { NgxAuthFirebaseuiAnimations } from "../../animations";
+import { NgxAuthFirebaseUIConfigToken } from "../../tokens";
 
-
-export const EMAIL_REGEX = new RegExp(['^(([^<>()[\\]\\\.,;:\\s@\"]+(\\.[^<>()\\[\\]\\\.,;:\\s@\"]+)*)',
-  '|(".+"))@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.',
-  '[0-9]{1,3}\])|(([a-zA-Z\\-0-9]+\\.)+',
-  '[a-zA-Z]{2,}))$'].join(''));
+export const EMAIL_REGEX = new RegExp(
+  [
+    '^(([^<>()[\\]\\.,;:\\s@"]+(\\.[^<>()\\[\\]\\.,;:\\s@"]+)*)',
+    '|(".+"))@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.',
+    "[0-9]{1,3}])|(([a-zA-Z\\-0-9]+\\.)+",
+    "[a-zA-Z]{2,}))$",
+  ].join("")
+);
 
 // tslint:disable-next-line:max-line-length
-export const PHONE_NUMBER_REGEX = new RegExp(['^[+]{0,1}[(]{0,1}[0-9]{1,4}[)]{0,1}[-\\s\\.]{0,1}[(]{0,1}[0-9]{1,4}[)]{0,1}[-\\s\\./0-9]{4,12}$'].join(''));
+export const PHONE_NUMBER_REGEX = new RegExp(
+  [
+    "^[+]{0,1}[(]{0,1}[0-9]{1,4}[)]{0,1}[-\\s\\.]{0,1}[(]{0,1}[0-9]{1,4}[)]{0,1}[-\\s\\./0-9]{4,12}$",
+  ].join("")
+);
 
 @Component({
-  selector: 'ngx-auth-firebaseui',
-  templateUrl: 'auth.component.html',
-  styleUrls: ['auth.component.scss'],
+  selector: "ngx-auth-firebaseui",
+  templateUrl: "auth.component.html",
+  styleUrls: ["auth.component.scss"],
   animations: NgxAuthFirebaseuiAnimations,
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AuthComponent implements OnInit, AfterViewInit, OnChanges, OnDestroy {
-
-  @ViewChild(MatTabGroup, {static: false}) matTabGroup: MatTabGroup;
-  @ViewChild(MatPasswordStrengthComponent, {static: false}) passwordStrength: MatPasswordStrengthComponent;
+export class AuthComponent
+  implements OnInit, AfterViewInit, OnChanges, OnDestroy {
+  @ViewChild(MatTabGroup, { static: false }) matTabGroup: MatTabGroup;
+  @ViewChild(MatPasswordStrengthComponent, { static: false })
+  passwordStrength: MatPasswordStrengthComponent;
 
   isLoading: boolean;
   //  google, facebook, twitter, github as array or all as one single string
@@ -84,7 +104,9 @@ export class AuthComponent implements OnInit, AfterViewInit, OnChanges, OnDestro
   @Output() onSuccess: any;
   // tslint:disable-next-line:no-output-on-prefix
   @Output() onError: any;
-  @Output() selectedTabChange: EventEmitter<MatTabChangeEvent> = new EventEmitter();
+  @Output() selectedTabChange: EventEmitter<
+    MatTabChangeEvent
+  > = new EventEmitter();
 
   // Password strength api
   @Input() enableLengthRule = true;
@@ -108,48 +130,52 @@ export class AuthComponent implements OnInit, AfterViewInit, OnChanges, OnDestro
   @Input() verifyEmailConfirmationText: string;
   @Input() verifyEmailGoBackText: string;
   @Input() sendNewVerificationEmailText: string;
-  @Input() signOutText = 'Sign out';
+  @Input() signOutText = "Sign out";
 
   // Customize the text
   // Reset Password Tab
-  @Input() resetPasswordTabText = 'Reset e-mail address to password';
-  @Input() resetPasswordInputText = 'Reset e-mail address to password';
-  @Input() resetPasswordErrorRequiredText = 'E-mail is required to reset the password!';
-  @Input() resetPasswordErrorPatternText = 'Please enter a valid e-mail address';
-  @Input() resetPasswordActionButtonText = 'Reset';
-  @Input() resetPasswordInstructionsText = 'Reset requested. Check your e-mail instructions.';
+  @Input() resetPasswordTabText = "Reset e-mail address to password";
+  @Input() resetPasswordInputText = "Reset e-mail address to password";
+  @Input() resetPasswordErrorRequiredText =
+    "E-mail is required to reset the password!";
+  @Input() resetPasswordErrorPatternText =
+    "Please enter a valid e-mail address";
+  @Input() resetPasswordActionButtonText = "Reset";
+  @Input() resetPasswordInstructionsText =
+    "Reset requested. Check your e-mail instructions.";
 
   // SignIn Tab
-  @Input() signInTabText = 'Sign in';
-  @Input() signInCardTitleText = 'Signing in';
-  @Input() loginButtonText = 'Log In';
-  @Input() forgotPasswordButtonText = 'Forgot Password ?';
+  @Input() signInTabText = "Sign in";
+  @Input() signInCardTitleText = "Signing in";
+  @Input() loginButtonText = "Log In";
+  @Input() forgotPasswordButtonText = "Forgot Password ?";
 
   // Common
-  @Input() nameText = 'Name';
-  @Input() nameErrorRequiredText = 'Name is required';
-  @Input() nameErrorMinLengthText = 'The name is too short!';
-  @Input() nameErrorMaxLengthText = 'The name is too long!';
+  @Input() nameText = "Name";
+  @Input() nameErrorRequiredText = "Name is required";
+  @Input() nameErrorMinLengthText = "The name is too short!";
+  @Input() nameErrorMaxLengthText = "The name is too long!";
 
-  @Input() emailText = 'E-mail';
-  @Input() emailErrorRequiredText = 'E-mail is required';
-  @Input() emailErrorPatternText = 'Please enter a valid e-mail address';
+  @Input() emailText = "E-mail";
+  @Input() emailErrorRequiredText = "E-mail is required";
+  @Input() emailErrorPatternText = "Please enter a valid e-mail address";
 
-  @Input() passwordText = 'Password';
-  @Input() passwordErrorRequiredText = 'Password is required';
-  @Input() passwordErrorMinLengthText = 'The password is too short!';
-  @Input() passwordErrorMaxLengthText = 'The password is too long!';
+  @Input() passwordText = "Password";
+  @Input() passwordErrorRequiredText = "Password is required";
+  @Input() passwordErrorMinLengthText = "The password is too short!";
+  @Input() passwordErrorMaxLengthText = "The password is too long!";
 
   // Register Tab
-  @Input() registerTabText = 'Register';
-  @Input() registerCardTitleText = 'Registration';
-  @Input() registerButtonText = 'Register';
-  @Input() guestButtonText = 'continue as guest';
+  @Input() registerTabText = "Register";
+  @Input() registerCardTitleText = "Registration";
+  @Input() registerButtonText = "Register";
+  @Input() guestButtonText = "continue as guest";
 
   // email confirmation component
-  @Input() emailConfirmationTitle = 'Confirm your e-mail address!';
+  @Input() emailConfirmationTitle = "Confirm your e-mail address!";
   // tslint:disable-next-line:max-line-length
-  @Input() emailConfirmationText = `A confirmation e-mail has been sent to you. Check your inbox and click on the link "Confirm my e-mail" to confirm your e-mail address.`;
+  @Input()
+  emailConfirmationText = `A confirmation e-mail has been sent to you. Check your inbox and click on the link "Confirm my e-mail" to confirm your e-mail address.`;
 
   authProvider = AuthProvider;
   passwordResetWished: boolean;
@@ -178,7 +204,8 @@ export class AuthComponent implements OnInit, AfterViewInit, OnChanges, OnDestro
   constructor(
     // tslint:disable-next-line:ban-types
     @Inject(PLATFORM_ID) private platformId: Object,
-    @Inject(forwardRef(() => NgxAuthFirebaseUIConfigToken)) public config: NgxAuthFirebaseUIConfig,
+    @Inject(forwardRef(() => NgxAuthFirebaseUIConfigToken))
+    public config: NgxAuthFirebaseUIConfig,
     public auth: AngularFireAuth,
     public authProcess: AuthProcessService,
     public dialog: MatDialog,
@@ -190,15 +217,23 @@ export class AuthComponent implements OnInit, AfterViewInit, OnChanges, OnDestro
   }
 
   get color(): string | ThemePalette {
-    return this.authenticationError ? 'warn' : 'primary';
+    return this.authenticationError ? "warn" : "primary";
   }
 
   public ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
-      this.onErrorSubscription = this.onError.subscribe(() => this.authenticationError = true);
+      this.onErrorSubscription = this.onError.subscribe(
+        () => (this.authenticationError = true)
+      );
     }
-    this.min = this.min != null ? Math.max(this.min, this.config.passwordMinLength) : this.config.passwordMinLength;
-    this.max = this.max != null ? Math.min(this.max, this.config.passwordMaxLength) : this.config.passwordMaxLength;
+    this.min =
+      this.min != null
+        ? Math.max(this.min, this.config.passwordMinLength)
+        : this.config.passwordMinLength;
+    this.max =
+      this.max != null
+        ? Math.min(this.max, this.config.passwordMaxLength)
+        : this.config.passwordMaxLength;
 
     this.goBackURL = this.chooseBackUrl();
 
@@ -222,10 +257,16 @@ export class AuthComponent implements OnInit, AfterViewInit, OnChanges, OnDestro
       this.updateAuthSnackbarMessages();
     }
     if (changes.min) {
-      this.min = this.min != null ? Math.max(this.min, this.config.passwordMinLength) : this.config.passwordMinLength;
+      this.min =
+        this.min != null
+          ? Math.max(this.min, this.config.passwordMinLength)
+          : this.config.passwordMinLength;
     }
     if (changes.max) {
-      this.max = this.max != null ? Math.min(this.max, this.config.passwordMaxLength) : this.config.passwordMaxLength;
+      this.max =
+        this.max != null
+          ? Math.min(this.max, this.config.passwordMaxLength)
+          : this.config.passwordMaxLength;
     }
     if (changes.goBackURL) {
       this.goBackURL = this.chooseBackUrl();
@@ -264,7 +305,7 @@ export class AuthComponent implements OnInit, AfterViewInit, OnChanges, OnDestro
       this.changeDetectorRef.markForCheck();
       await this.authProcess.signInWith(this.authProviders.EmailAndPassword, {
         email: this.signInFormGroup.value.email,
-        password: this.signInFormGroup.value.password
+        password: this.signInFormGroup.value.password,
       });
     } finally {
       this.isLoading = false;
@@ -288,18 +329,24 @@ export class AuthComponent implements OnInit, AfterViewInit, OnChanges, OnDestro
       const params: LegalityDialogParams = {
         tosUrl: this.tosUrl,
         privacyPolicyUrl: this.privacyPolicyUrl,
-        authProvider
+        authProvider,
       };
 
-      this.dialogRef = this.dialog.open(LegalityDialogComponent, {data: params});
+      this.dialogRef = this.dialog.open(LegalityDialogComponent, {
+        data: params,
+      });
       this.dialogRef.afterClosed().subscribe((result: LegalityDialogResult) => {
         if (result && result.checked) {
-          this._afterSignUpMiddleware(result.authProvider).then(() => this.signUpFormGroup.reset());
+          this._afterSignUpMiddleware(result.authProvider).then(() =>
+            this.signUpFormGroup.reset()
+          );
         }
         this.dialogRef = null;
       });
     } else {
-      this._afterSignUpMiddleware(authProvider).then(() => this.signUpFormGroup.reset());
+      this._afterSignUpMiddleware(authProvider).then(() =>
+        this.signUpFormGroup.reset()
+      );
     }
   }
 
@@ -307,13 +354,10 @@ export class AuthComponent implements OnInit, AfterViewInit, OnChanges, OnDestro
     try {
       this.isLoading = true;
       this.changeDetectorRef.markForCheck();
-      return await this.authProcess.signUp(
-        this.signUpFormGroup.value.name,
-        {
-          email: this.signUpFormGroup.value.email,
-          password: this.signUpFormGroup.value.password
-        }
-      );
+      return await this.authProcess.signUp(this.signUpFormGroup.value.name, {
+        email: this.signUpFormGroup.value.email,
+        password: this.signUpFormGroup.value.password,
+      });
     } finally {
       this.isLoading = false;
       this.changeDetectorRef.markForCheck();
@@ -331,9 +375,9 @@ export class AuthComponent implements OnInit, AfterViewInit, OnChanges, OnDestro
     }
   }
 
-
   resetPassword() {
-    this.authProcess.resetPassword(this.resetPasswordEmailFormControl.value)
+    this.authProcess
+      .resetPassword(this.resetPasswordEmailFormControl.value)
       .then(() => {
         this.passReset = true;
         // this.tabIndex = 2;
@@ -342,53 +386,57 @@ export class AuthComponent implements OnInit, AfterViewInit, OnChanges, OnDestro
   }
 
   private chooseBackUrl() {
-    return this.activatedRoute.snapshot.queryParams.redirectUrl || this.goBackURL || '/';
+    return (
+      this.activatedRoute.snapshot.queryParams.redirectUrl ||
+      this.goBackURL ||
+      "/"
+    );
   }
 
   private _initSignInFormGroupBuilder() {
     this.signInFormGroup = new FormGroup({});
-    this.signInFormGroup.registerControl('email', this.signInEmailFormControl = new FormControl('',
-      [
+    this.signInFormGroup.registerControl(
+      "email",
+      (this.signInEmailFormControl = new FormControl("", [
         Validators.required,
-        Validators.pattern(EMAIL_REGEX)
-      ]));
-    this.signInFormGroup.registerControl('password', this.sigInPasswordFormControl = new FormControl('',
-      [
+        Validators.pattern(EMAIL_REGEX),
+      ]))
+    );
+    this.signInFormGroup.registerControl(
+      "password",
+      (this.sigInPasswordFormControl = new FormControl("", [
         Validators.required,
         Validators.minLength(this.min),
-        Validators.maxLength(this.max)
-      ]));
+        Validators.maxLength(this.max),
+      ]))
+    );
   }
 
   private _initSignUpFormGroupBuilder() {
     this.signUpFormGroup = new FormGroup({
-      name: this.sigUpNameFormControl = new FormControl('',
-        [
-          Validators.required,
-          Validators.minLength(this.config.nameMinLength),
-          Validators.maxLength(this.config.nameMaxLength)
-        ]),
-      email: this.sigUpEmailFormControl = new FormControl('',
-        [
-          Validators.required,
-          Validators.pattern(EMAIL_REGEX)
-        ]),
-      password: this.sigUpPasswordFormControl = new FormControl('',
-        [
-          Validators.required,
-          Validators.minLength(this.min),
-          Validators.maxLength(this.max),
-        ])
+      name: this.sigUpNameFormControl = new FormControl("", [
+        Validators.required,
+        Validators.minLength(this.config.nameMinLength),
+        Validators.maxLength(this.config.nameMaxLength),
+      ]),
+      email: this.sigUpEmailFormControl = new FormControl("", [
+        Validators.required,
+        Validators.pattern(EMAIL_REGEX),
+      ]),
+      password: this.sigUpPasswordFormControl = new FormControl("", [
+        Validators.required,
+        Validators.minLength(this.min),
+        Validators.maxLength(this.max),
+      ]),
     });
   }
 
   private _initResetPasswordFormGroupBuilder() {
     this.resetPasswordFormGroup = new FormGroup({
-      email: this.resetPasswordEmailFormControl = new FormControl('',
-        [
-          Validators.required,
-          Validators.pattern(EMAIL_REGEX)
-        ])
+      email: this.resetPasswordEmailFormControl = new FormControl("", [
+        Validators.required,
+        Validators.pattern(EMAIL_REGEX),
+      ]),
     });
   }
 
@@ -398,5 +446,4 @@ export class AuthComponent implements OnInit, AfterViewInit, OnChanges, OnDestro
     }
     return this.signUp();
   }
-
 }
