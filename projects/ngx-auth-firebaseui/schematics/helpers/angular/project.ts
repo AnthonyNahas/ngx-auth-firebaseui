@@ -4,7 +4,7 @@ import {
   getProject as originalGetProject,
   isWorkspaceProject as originalIsWorkspaceProject,
   isWorkspaceSchema as originalIsWorkspaceSchema
-} from '@schematics/angular/utility/project';
+} from '@schematics/angular/utility/project-targets';
 import {ProjectType, WorkspaceProject, WorkspaceSchema} from '@schematics/angular/utility/workspace-models';
 
 /**
