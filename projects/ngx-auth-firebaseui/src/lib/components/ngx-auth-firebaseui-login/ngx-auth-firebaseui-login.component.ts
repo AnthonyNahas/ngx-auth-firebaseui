@@ -52,6 +52,8 @@ export class NgxAuthFirebaseuiLoginComponent implements OnInit {
   // tslint:disable-next-line:no-output-on-prefix
   @Output() onResetPasswordRequested: EventEmitter<void> = new EventEmitter<void>();
 
+  @Output() onLoginButtonClicked: EventEmitter<void> = new EventEmitter<void>();
+
   loginForm: FormGroup;
   authProviders = AuthProvider;
   onErrorSubscription: Subscription;
@@ -94,6 +96,9 @@ export class NgxAuthFirebaseuiLoginComponent implements OnInit {
   }
 
   async login() {
+    // Emit event for button click
+    this.onLoginButtonClicked.emit();
+
     return await this.authProcess.signInWith(this.authProviders.EmailAndPassword,
       {
         email: this.loginForm.controls.email.value,
