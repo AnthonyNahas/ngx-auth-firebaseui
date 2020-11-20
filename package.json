@@ -33,7 +33,7 @@
   "private": true,
   "dependencies": {
     "@angular-material-extensions/pages": "^4.0.0",
-    "@angular-material-extensions/password-strength": "^6.0.0",
+    "@angular-material-extensions/password-strength": "^7.0.0",
     "@angular/animations": "^11.0.2",
     "@angular/cdk": "^11.0.0",
     "@angular/common": "^11.0.2",
