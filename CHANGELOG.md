@@ -1,3 +1,5 @@
+* fix(project): updated the dependencies (ec0ebab)
+
 * docs(project): updated the reamde (d4292ea)
 * fix(lib): updated angular-material-extensions/password-strength (5c95975)
 * fix(lib): updated angular flex layout (1bd0aee)
