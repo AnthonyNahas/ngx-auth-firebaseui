@@ -22,7 +22,7 @@
         </mat-form-field>
 
         <mat-form-field [@animate]="{ value: '*', params: { x: '50px' } }" [appearance]="appearance">
-          <input [placeholder]="emailText" formControlName="email" matInput/>
+          <input [placeholder]="emailText" formControlName="email" matInput autocomplete="username"/>
           <mat-icon [color]="color" matSuffix>email</mat-icon>
           <mat-error *ngIf="registerForm.get('email')?.hasError('required')">
             {{emailErrorRequiredText}}
@@ -33,7 +33,7 @@
         </mat-form-field>
 
         <mat-form-field [@animate]="{ value: '*', params: { x: '50px' } }" [appearance]="appearance">
-          <input [placeholder]="passwordText" formControlName="password" matInput type="password"/>
+          <input [placeholder]="passwordText" formControlName="password" matInput type="password" autocomplete="new-password"/>
           <mat-icon [color]="color" matSuffix>lock</mat-icon>
           <mat-error>
             {{passwordErrorRequiredText}}
@@ -41,7 +41,7 @@
         </mat-form-field>
 
         <mat-form-field [@animate]="{ value: '*', params: { x: '50px' } }" [appearance]="appearance">
-          <input [placeholder]="passwordConfirmationText" formControlName="passwordConfirm" matInput type="password"/>
+          <input [placeholder]="passwordConfirmationText" formControlName="passwordConfirm" matInput type="password" autocomplete="new-password"/>
           <mat-icon [color]="color" matSuffix>lock</mat-icon>
           <mat-error *ngIf="registerForm.get('passwordConfirm')?.hasError('required')">
             {{passwordConfirmationErrorRequiredText}}
