@@ -1,5 +1,5 @@
 import {CUSTOM_ELEMENTS_SCHEMA, DebugElement} from '@angular/core';
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import {HttpClientTestingModule} from '@angular/common/http/testing';
 import {By} from '@angular/platform-browser';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
@@ -26,7 +26,7 @@ describe('NgxAuthFirebaseuiRegisterComponent', () => {
   let fixture: ComponentFixture<NgxAuthFirebaseuiRegisterComponent>;
   let componentService: AuthProcessService;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
 
     Object.defineProperty(window, 'matchMedia', {
       value: jest.fn(() => {
@@ -137,6 +137,16 @@ describe('NgxAuthFirebaseuiRegisterComponent', () => {
     fixture.detectChanges();
 
     expect(component.onLoginRequested.emit).toHaveBeenCalled();
+
+  });
+
+  it('should trigger onCreateAccountButtonClicked event when create account button is clicked', () => {
+    const createAccountButton = fixture.nativeElement.querySelector('#createAccountButton');
+    spyOn(component.onCreateAccountButtonClicked, 'emit');
+    createAccountButton.dispatchEvent(new Event('click'));
+    fixture.detectChanges();
+
+    expect(component.onCreateAccountButtonClicked.emit).toHaveBeenCalled();
 
   });
 

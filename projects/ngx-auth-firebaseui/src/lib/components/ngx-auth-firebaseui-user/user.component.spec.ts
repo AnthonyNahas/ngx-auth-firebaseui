@@ -1,6 +1,6 @@
 import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import {HttpClientTestingModule} from '@angular/common/http/testing';
 
 import {MatButtonModule, MatCardModule, MatIconModule, MatInputModule, MatSnackBarModule, MatTooltipModule} from '@angular/material';
@@ -19,7 +19,7 @@ describe('UserComponent', () => {
   let component: UserComponent;
   let fixture: ComponentFixture<UserComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [UserComponent],
       imports: [

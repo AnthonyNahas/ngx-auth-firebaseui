@@ -1,4 +1,4 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import {HttpClientTestingModule} from '@angular/common/http/testing';
 import {By} from '@angular/platform-browser';
 import {CUSTOM_ELEMENTS_SCHEMA, DebugElement} from '@angular/core';
@@ -24,7 +24,7 @@ describe('NgxAuthFirebaseuiLoginComponent', () => {
   let fixture: ComponentFixture<NgxAuthFirebaseuiLoginComponent>;
   let componentService: AuthProcessService;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
 
     Object.defineProperty(window, 'matchMedia', {
       value: jest.fn(() => {
@@ -136,6 +136,16 @@ describe('NgxAuthFirebaseuiLoginComponent', () => {
     fixture.detectChanges();
 
     expect(component.onCreateAccountRequested.emit).toHaveBeenCalled();
+
+  });
+
+  it('should trigger onLoginButtonClicked event when login button is clicked', () => {
+    const loginButton = fixture.nativeElement.querySelector('#loginButton');
+    spyOn(component.onLoginButtonClicked, 'emit');
+    loginButton.dispatchEvent(new Event('click'));
+    fixture.detectChanges();
+
+    expect(component.onLoginButtonClicked.emit).toHaveBeenCalled();
 
   });
 });

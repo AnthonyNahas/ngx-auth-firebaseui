@@ -93,6 +93,7 @@ by starring :star: and sharing it :loudspeaker:
 | onSuccess            | `Output()` | `any`     | - | this will be fired when an authentication process was success. The authenticated user is emitted!
 | onError              | `Output()` | `any`     | - | this event will be fired when an error occurred during the authentication process! An error message is emitted!
 | onCreateAccountRequested  | `Output()` | `void`     | - | this event will be fired when the user request to register or sign up 
+| onLoginButtonClicked  | `Output()` | `void`     | - | this event will be fired when the user clicks the login button 
 
 
 

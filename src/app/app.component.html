@@ -335,7 +335,12 @@
 
   </a>
 
-  <ngx-auth-firebaseui-avatar></ngx-auth-firebaseui-avatar>
+  DEFAULT <ngx-auth-firebaseui-avatar></ngx-auth-firebaseui-avatar>
+  SIMPLE <ngx-auth-firebaseui-avatar [layout]="'simple'"
+                              [canViewAccount]="false"
+                              [textProfile]="'My profile'"
+                              [textSignOut]="'Logout'"></ngx-auth-firebaseui-avatar>
+
 </div>
 
 <div class="content" role="main">

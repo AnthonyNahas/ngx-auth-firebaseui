@@ -1,7 +1,7 @@
 {
   "name": "ngx-auth-firebaseui",
   "description": "Open Source Library for Angular Web Apps to integrate a material user interface for firebase authentication",
-  "version": "4.3.0",
+  "version": "5.0.1",
   "homepage": "https://ngx-auth-firebaseui.firebaseapp.com",
   "author": {
     "name": "anthonynahas",
@@ -44,24 +44,23 @@
     "release:patch": "../../node_modules/.bin/release-it --patch --ci",
     "release:minor": "../../node_modules/.bin/release-it --minor --ci",
     "release:major": "../../node_modules/.bin/release-it --major --ci",
-    "release:custom": "../../node_modules/.bin/release-it 4.3.0 --ci --no-git.requireCleanWorkingDir",
+    "release:custom": "../../node_modules/.bin/release-it 5.0.1 --ci --no-git.requireCleanWorkingDir",
     "ng:test": "../../node_modules/.bin/ng test ngx-auth-firebaseui",
     "test": "../../node_modules/.bin/jest --coverage",
     "test:watch": "../../node_modules/.bin/jest --coverage --watch"
   },
   "peerDependencies": {
-    "@angular/common": "^9.0.0",
-    "@angular/core": "^9.0.0",
-    "@angular-material-extensions/password-strength": "^6.0.0",
-    "@angular/animations": "^9.0.0",
-    "@angular/cdk": "^9.0.0",
-    "@angular/fire": "^6.0.0",
-    "@angular/flex-layout": "^9.0.0-beta.29",
-    "@angular/forms": "^9.0.0",
-    "@angular/material": "^9.0.0",
-    "@angular/router": "^9.0.0",
-    "firebase": "^7.8.1",
-    "tslib": "^1.10.0"
+    "@angular/common": "^11.0.2",
+    "@angular/core": "^11.0.2",
+    "@angular-material-extensions/password-strength": "^7.0.0",
+    "@angular/animations": "^11.0.2",
+    "@angular/cdk": "^11.0.0",
+    "@angular/fire": "^6.1.1",
+    "@angular/flex-layout": "^11.0.0-beta.33",
+    "@angular/forms": "^11.0.2",
+    "@angular/material": "^11.0.0",
+    "@angular/router": "^11.0.2",
+    "firebase": "^8.1.1"
   },
   "engines": {
     "node": ">=10.13"
@@ -133,6 +132,9 @@
       "conventional-github-releaser",
       "rollup-plugin-uglify"
     ]
+  },
+  "dependencies": {
+    "tslib": "^2.0.0"
   },
   "commitplease": {
     "style": "angular",

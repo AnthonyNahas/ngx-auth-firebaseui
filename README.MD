@@ -10,7 +10,6 @@
 [![docs: typedoc](https://img.shields.io/badge/docs-typedoc-4D0080.svg)](https://ngx-auth-firebaseui.firebaseapp.com/doc/index.html)
 [![codecov](https://codecov.io/gh/anthonynahas/ngx-auth-firebaseui/branch/master/graph/badge.svg)](https://codecov.io/gh/anthonynahas/ngx-auth-firebaseui)
 [![CircleCI branch](https://img.shields.io/circleci/project/github/AnthonyNahas/ngx-auth-firebaseui/master.svg?label=circleci)](https://circleci.com/gh/AnthonyNahas/ngx-auth-firebaseui)
-[![Build Status](https://travis-ci.org/AnthonyNahas/ngx-auth-firebaseui.svg?branch=master)](https://travis-ci.org/AnthonyNahas/ngx-auth-firebaseui)
 [![Join the chat at https://gitter.im/ngx-auth-firebaseui/Lobby](https://badges.gitter.im/ngx-auth-firebaseui/Lobby.svg)](https://gitter.im/ngx-auth-firebaseui/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![dependency Status](https://david-dm.org/anthonynahas/ngx-auth-firebaseui/status.svg)](https://david-dm.org/anthonynahas/ngx-auth-firebaseui)
 [![devDependency Status](https://david-dm.org/anthonynahas/ngx-auth-firebaseui/dev-status.svg?branch=master)](https://david-dm.org/anthonynahas/ngx-auth-firebaseui#info=devDependencies)
@@ -141,6 +140,7 @@ by starring :star: and sharing it :loudspeaker:
 - anonymously
 - email and password (traditional)
 - google
+- apple
 - facebook
 - twitter
 - github
@@ -153,7 +153,7 @@ by starring :star: and sharing it :loudspeaker:
 ## Supported Processes and Actions:
 - sign up
 - sign in
-- sign in Anonymously | with google, facebook, twitter, github, microsoft, yahoo
+- sign in Anonymously | with google, apple, facebook, twitter, github, microsoft, yahoo
 - sign out
 - validation of password's strength while creating a new account using [@angular-material-extensions/password-strength](https://github.com/AnthonyNahas/@angular-material-extensions/password-strength)
 - forgot/reset password
@@ -171,14 +171,14 @@ by starring :star: and sharing it :loudspeaker:
 - [angular material theme](https://material.angular.io/guide/getting-started#step-4-include-a-theme)
 - [angular material icons](https://material.angular.io/guide/getting-started#step-6-optional-add-material-icons)
 
-- [angular cdk - v9.x](https://www.npmjs.com/package/@angular/cdk)
-- [angular material - v9.x](https://www.npmjs.com/package/@angular/material)
-- [angular forms - v9.x](https://www.npmjs.com/package/@angular/forms)
-- [angular animations - v9.x](https://www.npmjs.com/package/@angular/animations)
-- [angular router - v9.x](https://www.npmjs.com/package/@angular/router)
-- [angular flex-layout v9.0.0-beta.29](https://www.npmjs.com/package/@angular/flex-layout)
+- [angular cdk - v11.x](https://www.npmjs.com/package/@angular/cdk)
+- [angular material - v11.x](https://www.npmjs.com/package/@angular/material)
+- [angular forms - v11.x](https://www.npmjs.com/package/@angular/forms)
+- [angular animations - v11.x](https://www.npmjs.com/package/@angular/animations)
+- [angular router - v11.x](https://www.npmjs.com/package/@angular/router)
+- [angular flex-layout v11.0.0-beta.33](https://www.npmjs.com/package/@angular/flex-layout)
 - [@angular/fire - v6.x](https://www.npmjs.com/package/@angular/fire)
-- [firebase - v7.x](https://www.npmjs.com/package/firebase)
+- [firebase - v8.x](https://www.npmjs.com/package/firebase)
 
 the full tutorial guide can be found [here](https://ngx-auth-firebaseui.firebaseapp.com/getting-started)
 
@@ -299,14 +299,14 @@ automatically change to `column`
 
 ```json
 "peerDependencies": {
-    "@angular/core": "^9.x",
-    "@angular/animations": "^9.x",
-    "@angular/cdk": "^9.x",
-    "@angular/flex-layout": "^9.0.0-beta.29",
-    "@angular/forms": "^9.x",
-    "@angular/material": "^9.x",
-    "@angular/fire": "5.4.x",
-    "firebase": "7.x",
+    "@angular/core": "^11.x",
+    "@angular/animations": "^11.x",
+    "@angular/cdk": "^11.x",
+    "@angular/flex-layout": "^11.0.0-beta.33",
+    "@angular/forms": "^11.x",
+    "@angular/material": "^11.x",
+    "@angular/fire": "6.x",
+    "firebase": "8.x",
   }
 ```
 
@@ -314,7 +314,8 @@ automatically change to `column`
 
 v1.x should be used with angular v7 projects
 v3.x should be used with angular v8 projects
-v4.x should be used with angular v9 projects
+v4.x should be used with angular v9/10 projects
+v5.x should be used with angular v11 projects
 
 [help!](https://ngx-auth-firebaseui.firebaseapp.com/getting-started)
 
@@ -324,7 +325,7 @@ v4.x should be used with angular v9 projects
 <a name="dependencies"/>
 
 ## Dependencies
-* [Angular](https://angular.io) (*requires* Angular 2 or higher, developed with 9.x) - obviously
+* [Angular](https://angular.io) (*requires* Angular 2 or higher, developed with 11.x) - obviously
 * [@angular-material-extensions/password-strength](https://www.npmjs.com/package/@angular-material-extensions/password-strength)
 
 the [@angular-material-extensions/password-strength](https://www.npmjs.com/package/@angular-material-extensions/password-strength) is used
@@ -582,19 +583,20 @@ export class AppRoutingModule {
 <a name="other-angular-libraries"/>
 
 ## Other Angular Libraries
-- [@firebaseui/ng-bootstrap](https://github.com/firebaseui/ng-bootstrap)
 - [ngx-linkifyjs](https://github.com/anthonynahas/ngx-linkifyjs)
 - [@angular-material-extensions/components](https://github.com/angular-material-extensions/components)
 - [@angular-material-extensions/password-strength](https://github.com/angular-material-extensions/password-strength)
 - [@angular-material-extensions/google-maps-autocomplete](https://github.com/angular-material-extensions/google-maps-autocomplete)
 - [@angular-material-extensions/fab-menu](https://github.com/angular-material-extensions/fab-menu)
 - [@angular-material-extensions/select-country](https://github.com/angular-material-extensions/select-country)
+- [@angular-material-extensions/select-icon](https://github.com/angular-material-extensions/select-icon)
 - [@angular-material-extensions/pages](https://github.com/angular-material-extensions/pages)
 - [@angular-material-extensions/link-preview](https://github.com/angular-material-extensions/link-preview)
 - [@angular-material-extensions/contacts](https://github.com/angular-material-extensions/contacts)
 - [@angular-material-extensions/faq](https://github.com/angular-material-extensions/faq)
 - [@angular-material-extensions/jumbotron](https://github.com/angular-material-extensions/jumbotron)
 - [angular-material-extensions/freelancer-theme](https://github.com/angular-material-extensions/freelancer-theme)
+- [@firebaseui/ng-bootstrap](https://github.com/firebaseui/ng-bootstrap)
 
 ---
 
@@ -609,11 +611,28 @@ export class AppRoutingModule {
 
 ---
 
+# Youtube Videos
+
+https://www.youtube.com/watch?v=qP5zw7fjQgo&feature=emb_logo&ab_channel=Fireship
+https://www.youtube.com/watch?v=KpfJCEvpS9g&t=2s&ab_channel=JsWiz
+
+# Sponsors
+
 ![jetbrains logo](assets/jetbrains-variant-4_logos/jetbrains-variant-4.png)
 
 This project is supported by [jetbrains](https://www.jetbrains.com/) with 1 ALL PRODUCTS PACK OS LICENSE incl. [webstorm](https://www.jetbrains.com/webstorm)
 
+
+![fireship.io logo](assets/fireship.png)
+
+Best angular and firebase stuff by Jeff Delaney on [firebase.io](https://fireship.io/)
+
+check this [out](https://www.youtube.com/watch?v=qP5zw7fjQgo&feature=emb_logo&ab_channel=Fireship)
+
 ---
+
+
+
 
 <a name="license"/>
 
