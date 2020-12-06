@@ -85,7 +85,7 @@ by starring :star: and sharing it :loudspeaker:
 
 | option | bind  |  type  |   default    | description  |
 |:---------------------|:------:|:------:|:------------:|:-------------------------------------------------------------------------------------------------|
-| logoUrl            | `Input()`  | `string` | - | choose the source of an image url to display it as a logo
+| logoUrl              | `Input()`  | `string` | - | choose the source of an image url to display it as a logo
 | appearance           | `Input()`  | `MatFormFieldAppearance` | `standard` | the appearance of the mat-form-field #'legacy' | 'standard' | 'fill' | 'outline'
 | tosUrl               | `Input()`  | `string`  | - | the url of term of services
 | privacyPolicyUrl     | `Input()`  | `string`  | - | the url of the private privacy
@@ -97,27 +97,28 @@ by starring :star: and sharing it :loudspeaker:
 | onCreateAccountButtonClicked  | `Output()` | `void`     | - | this event will be fired when the user clicks on the create account button
 
 
-
 ### i18n
 
 | option | bind  |  type  |   default    | description  |
 |:---------------------|:------:|:------:|:------------:|:-------------------------------------------------------------------------------------------------|
-|  titleText           | `Input()`  | `string` | `CREATE AN ACCOUNT` | see context
-|  readAncAcceptText          | `Input()`  | `string` | `I read and accept` | see context
-|  termsAndConditionsText           | `Input()`  | `string` | `terms and conditions` | see context
-|  createAccountButtonText          | `Input()`  | `string` | `CREATE AN ACCOUNT` | see context
-|  alreadyHaveAccountText           | `Input()`  | `string` | `Already have an account?` | see context
-|  loginButtonText          | `Input()`  | `string` | `LOGIN` | see context
-|  nameText          | `Input()`  | `string` | `Name` | see context
-|  nameErrorRequiredText           | `Input()`  | `string` | `` | see context
-| emailText       | `Input()`  | `string` | `Email` | see context 
-| emailErrorRequiredText       | `Input()`  | `string` | `Email is required` | see context 
+| titleText                   | `Input()`  | `string` | `CREATE AN ACCOUNT` | see context
+| termsAndConditionsText      | `Input()`  | `string` | `I read and accept the` | see context
+| termsAndConditionsLinkText  | `Input()`  | `string` | `terms and conditions` | see context
+| privacyPolicyText           | `Input()`  | `string` | `I read and accept the` | see context
+| privacyPolicyLinkText       | `Input()`  | `string` | `privacy policy` | see context
+| createAccountButtonText     | `Input()`  | `string` | `CREATE AN ACCOUNT` | see context
+| alreadyHaveAccountText      | `Input()`  | `string` | `Already have an account?` | see context
+| loginButtonText             | `Input()`  | `string` | `LOGIN` | see context
+| nameText                    | `Input()`  | `string` | `Name` | see context
+| nameErrorRequiredText       | `Input()`  | `string` | `` | see context
+| emailText                   | `Input()`  | `string` | `Email` | see context
+| emailErrorRequiredText      | `Input()`  | `string` | `Email is required` | see context
 | emailErrorPatternText       | `Input()`  | `string` | `Please enter a valid email address` | see context
-| passwordText       | `Input()`  | `string` | `Password` | see context 
-| passwordErrorRequiredText       | `Input()`  | `string` | `Password is required` | see context 
-| passwordConfirmationText       | `Input()`  | `string` | `Password Confirmation` | see context 
+| passwordText                | `Input()`  | `string` | `Password` | see context
+| passwordErrorRequiredText   | `Input()`  | `string` | `Password is required` | see context
+| passwordConfirmationText    | `Input()`  | `string` | `Password Confirmation` | see context
 | passwordConfirmationErrorRequiredText       | `Input()`  | `string` | `Password confirmation is required` | see context
-| passwordErrorMatchText       | `Input()`  | `string` | `Password must match` | see context
+| passwordErrorMatchText      | `Input()`  | `string` | `Password must match` | see context
 
 
 
