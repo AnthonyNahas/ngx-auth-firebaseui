@@ -14,7 +14,7 @@
             novalidate>
 
         <mat-form-field [@animate]="{ value: '*', params: { x: '50px' } }" [appearance]="appearance">
-          <input [placeholder]="emailText" formControlName="email" matInput>
+          <input [placeholder]="emailText" formControlName="email" matInput autocomplete="username">
           <mat-icon [color]="color" matSuffix>email</mat-icon>
           <mat-error *ngIf="loginForm.get('email')?.hasError('required')">
             {{emailErrorRequiredText}}
@@ -27,7 +27,7 @@
         </mat-form-field>
 
         <mat-form-field [@animate]="{ value: '*', params: { x: '50px' } }" [appearance]="appearance">
-          <input [placeholder]="passwordText" formControlName="password" matInput type="password">
+          <input [placeholder]="passwordText" formControlName="password" matInput type="password" autocomplete="current-password">
           <mat-icon [color]="color" matSuffix>lock</mat-icon>
           <mat-error>
             {{passwordErrorRequiredText}}

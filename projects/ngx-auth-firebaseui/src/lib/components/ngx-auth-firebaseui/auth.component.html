@@ -57,7 +57,8 @@
                 <mat-label>{{emailText}}</mat-label>
                 <input formControlName="email"
                        matInput
-                       required>
+                       required
+                       autocomplete="username">
                 <mat-icon [color]="color" matSuffix>email</mat-icon>
                 <mat-error *ngIf="signInEmailFormControl.hasError('required')">
                   {{emailErrorRequiredText}}
@@ -70,7 +71,7 @@
               <mat-form-field [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}"
                               [appearance]="appearance">
                 <mat-label>{{passwordText}}</mat-label>
-                <input [maxlength]="max" [minlength]="min" [type]="togglePass.type" formControlName="password" matInput
+                <input [maxlength]="max" [minlength]="min" [type]="togglePass.type" formControlName="password" autocomplete="current-password" matInput
                        required/>
                 <mat-pass-toggle-visibility #togglePass matSuffix></mat-pass-toggle-visibility>
                 <mat-icon [color]="color" matSuffix>lock</mat-icon>
@@ -161,7 +162,8 @@
                 <input [formControl]="sigUpEmailFormControl"
                        matInput
                        required
-                       type="email">
+                       type="email"
+                       autocomplete="username">
                 <mat-icon [color]="color" matSuffix>email</mat-icon>
                 <mat-error *ngIf="sigUpEmailFormControl.hasError('required')">
                   {{emailErrorRequiredText}}
@@ -183,6 +185,7 @@
                     [type]="toggle.type"
                     matInput
                     name="password"
+                    autocomplete="new-password"
                     required
                   />
                   <mat-pass-toggle-visibility #toggle matSuffix></mat-pass-toggle-visibility>
