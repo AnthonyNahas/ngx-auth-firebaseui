@@ -22,7 +22,7 @@
         </mat-form-field>
 
         <mat-form-field [@animate]="{ value: '*', params: { x: '50px' } }" [appearance]="appearance">
-          <input [placeholder]="emailText" formControlName="email" matInput/>
+          <input [placeholder]="emailText" formControlName="email" matInput autocomplete="username"/>
           <mat-icon [color]="color" matSuffix>email</mat-icon>
           <mat-error *ngIf="registerForm.get('email')?.hasError('required')">
             {{emailErrorRequiredText}}
@@ -33,7 +33,7 @@
         </mat-form-field>
 
         <mat-form-field [@animate]="{ value: '*', params: { x: '50px' } }" [appearance]="appearance">
-          <input [placeholder]="passwordText" formControlName="password" matInput type="password"/>
+          <input [placeholder]="passwordText" formControlName="password" matInput type="password" autocomplete="new-password"/>
           <mat-icon [color]="color" matSuffix>lock</mat-icon>
           <mat-error>
             {{passwordErrorRequiredText}}
@@ -41,7 +41,7 @@
         </mat-form-field>
 
         <mat-form-field [@animate]="{ value: '*', params: { x: '50px' } }" [appearance]="appearance">
-          <input [placeholder]="passwordConfirmationText" formControlName="passwordConfirm" matInput type="password"/>
+          <input [placeholder]="passwordConfirmationText" formControlName="passwordConfirm" matInput type="password" autocomplete="new-password"/>
           <mat-icon [color]="color" matSuffix>lock</mat-icon>
           <mat-error *ngIf="registerForm.get('passwordConfirm')?.hasError('required')">
             {{passwordConfirmationErrorRequiredText}}
@@ -56,19 +56,19 @@
         </mat-form-field>
 
         <div *ngIf="this.tosUrl">
-          <mat-checkbox aria-label="{{readAndAcceptText}}" formControlName="tos" required>
-            <span>{{readAndAcceptText}}</span>
+          <mat-checkbox aria-label="{{termsAndConditionsText}}" formControlName="tos" required>
+            <span>{{termsAndConditionsText}}</span>
             <a target="_blank" [href]="this.tosUrl">
-                {{termsAndConditionsText}}
+                {{termsAndConditionsLinkText}}
             </a>
           </mat-checkbox>
         </div>
 
         <div *ngIf="this.privacyPolicyUrl">
-          <mat-checkbox aria-label="{{readAndAcceptText}}" formControlName="privacyPolicy" required>
-            <span>{{readAndAcceptText}}</span>
+          <mat-checkbox aria-label="{{privacyPolicyText}}" formControlName="privacyPolicy" required>
+            <span>{{privacyPolicyText}}</span>
             <a target="_blank" [href]="this.privacyPolicyUrl">
-                {{privacyPolicyText}}
+                {{privacyPolicyLinkText}}
             </a>
           </mat-checkbox>
         </div>

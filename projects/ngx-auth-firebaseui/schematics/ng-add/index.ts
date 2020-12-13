@@ -24,12 +24,12 @@ export function addPackageJsonDependencies(): Rule {
 
     const dependencies: NodeDependency[] = [
       {type: NodeDependencyType.Default, version: loadPackageVersionGracefully() || '4.0.3', name: 'ngx-auth-firebaseui'},
-      {type: NodeDependencyType.Default, version: ngCoreVersionTag || '9.0.0', name: '@angular/animations'},
-      {type: NodeDependencyType.Default, version: ngCoreVersionTag || '9.0.0', name: '@angular/forms'},
-      {type: NodeDependencyType.Default, version: ngCoreVersionTag || '9.0.0', name: '@angular/router'},
-      {type: NodeDependencyType.Default, version: '^9.0.0-beta.29', name: '@angular/flex-layout'},
-      {type: NodeDependencyType.Default, version: '^5.4.2', name: '@angular/fire'},
-      {type: NodeDependencyType.Default, version: '^7.8.1', name: 'firebase'}
+      {type: NodeDependencyType.Default, version: ngCoreVersionTag || '11.0.0', name: '@angular/animations'},
+      {type: NodeDependencyType.Default, version: ngCoreVersionTag || '11.0.0', name: '@angular/forms'},
+      {type: NodeDependencyType.Default, version: ngCoreVersionTag || '11.0.0', name: '@angular/router'},
+      {type: NodeDependencyType.Default, version: '^11.0.0-beta.33', name: '@angular/flex-layout'},
+      {type: NodeDependencyType.Default, version: '^6.1.1', name: '@angular/fire'},
+      {type: NodeDependencyType.Default, version: '^8.1.1', name: 'firebase'}
     ];
 
     dependencies.forEach(dependency => {
@@ -53,6 +53,7 @@ export function installPackageJsonDependencies(): Rule {
 export function addModuleToImports(options: any): Rule {
   return (host: Tree, context: SchematicContext) => {
     const workspace = getWorkspace(host);
+    // @ts-ignore
     const project = getProjectFromWorkspace(workspace, options.project);
 
     // const x =
