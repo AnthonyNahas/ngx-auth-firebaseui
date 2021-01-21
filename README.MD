@@ -489,6 +489,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
                   // Plus protected routes are still protected even though user is connected.
                   guardProtectedRoutesUntilEmailIsVerified: true,
                   enableEmailVerification: true, // default: true
+                  useRawUserCredential: true, // If set to true outputs the UserCredential object instead of firebase.User after login and signup - Default: false
                 }),
   ],
   providers: [],

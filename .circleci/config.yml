@@ -25,12 +25,8 @@ jobs:
           - v1-dependencies-{{ checksum "package.json" }}
           # fallback to using the latest cache if no exact match is found
           - v1-dependencies-
-      - run: ls -la && pwd
-      - run: git --version
       - run: npm install
-      - run: npm install --only=dev
       - run: npm run build
-      - run: ls -la && pwd
 
       - save_cache:
           paths:

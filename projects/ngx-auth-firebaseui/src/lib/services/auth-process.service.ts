@@ -1,23 +1,17 @@
-import { EventEmitter, forwardRef, Inject, Injectable } from "@angular/core";
-import { AngularFireAuth } from "@angular/fire/auth";
-import "@firebase/auth";
-import firebase from "firebase/app";
-import { BehaviorSubject, Observable } from "rxjs";
-import { map, take } from "rxjs/operators";
-import { Accounts } from "../enums";
-import { FirestoreSyncService } from "./firestore-sync.service";
-import {
-  MAT_SNACK_BAR_DEFAULT_OPTIONS,
-  MatSnackBar,
-  MatSnackBarConfig,
-} from "@angular/material/snack-bar";
-import {
-  ICredentials,
-  ISignInProcess,
-  ISignUpProcess,
-  NgxAuthFirebaseUIConfig,
-} from "../interfaces";
-import { NgxAuthFirebaseUIConfigToken } from "../tokens";
+import '@firebase/auth';
+
+import { EventEmitter, forwardRef, Inject, Injectable } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/auth';
+import { MAT_SNACK_BAR_DEFAULT_OPTIONS, MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
+import firebase from 'firebase/app';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { map, take } from 'rxjs/operators';
+
+import { Accounts } from '../enums';
+import { ICredentials, ISignInProcess, ISignUpProcess, NgxAuthFirebaseUIConfig } from '../interfaces';
+import { NgxAuthFirebaseUIConfigToken } from '../tokens';
+import { FirestoreSyncService } from './firestore-sync.service';
+
 import UserCredential = firebase.auth.UserCredential;
 
 export const facebookAuthProvider = new firebase.auth.FacebookAuthProvider();
@@ -296,7 +290,13 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
   }
 
   async handleSuccess(userCredential: UserCredential) {
-    this.onSuccessEmitter.next(userCredential.user);
+
+    if(this.config.useRawUserCredential) {
+      this.onSuccessEmitter.next(userCredential);
+    } else {
+      this.onSuccessEmitter.next(userCredential.user);
+    }
+
     if (this.config.enableFirestoreSync) {
       try {
         await this.fireStoreService.updateUserData(

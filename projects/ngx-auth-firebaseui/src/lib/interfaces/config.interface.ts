@@ -29,6 +29,9 @@ export interface NgxAuthFirebaseUIConfig {
 
   // Control whether or not email verification is used
   enableEmailVerification?: boolean;
+
+  // If set to true outputs the UserCredential object instead of firebase.User after login and signup
+  useRawUserCredential?: boolean
 }
 
 export const defaultAuthFirebaseUIConfig: NgxAuthFirebaseUIConfig = {
@@ -54,7 +57,10 @@ export const defaultAuthFirebaseUIConfig: NgxAuthFirebaseUIConfig = {
   guardProtectedRoutesUntilEmailIsVerified: true,
 
   // Default to email verification on
-  enableEmailVerification: true
+  enableEmailVerification: true,
+
+  // Default to false to keep the current projects working as is
+  useRawUserCredential: false
 };
 
 // Merge default config with user provided config.
