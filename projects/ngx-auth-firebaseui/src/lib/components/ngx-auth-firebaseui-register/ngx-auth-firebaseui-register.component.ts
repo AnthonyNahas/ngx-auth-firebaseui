@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Inject, Input, OnDestroy, OnInit, Output, PLATFORM_ID, ViewEncapsulation} from '@angular/core';
+import {Component, EventEmitter, forwardRef, Inject, Input, OnDestroy, OnInit, Output, PLATFORM_ID, ViewEncapsulation} from '@angular/core';
 import {AbstractControl, FormBuilder, FormGroup, ValidationErrors, ValidatorFn, Validators} from '@angular/forms';
 import {Subject, Subscription} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
@@ -8,6 +8,8 @@ import {AuthProcessService} from '../../services/auth-process.service';
 import {isPlatformBrowser} from '@angular/common';
 import {MatFormFieldAppearance} from '@angular/material/form-field';
 import {ThemePalette} from '@angular/material/core';
+import { NgxAuthFirebaseUIConfigToken } from '../../tokens';
+import { NgxAuthFirebaseUIConfig } from '../../interfaces';
 
 export const confirmPasswordValidator: ValidatorFn = (control: AbstractControl): ValidationErrors | null => {
   if (!control.parent || !control) {
@@ -71,6 +73,9 @@ export class NgxAuthFirebaseuiRegisterComponent implements OnInit, OnDestroy {
   @Input() passwordConfirmationText = 'Password Confirmation';
   @Input() passwordConfirmationErrorRequiredText = 'Password confirmation is required';
   @Input() passwordErrorMatchText = 'Password must match';
+  // crunck78 - request feature password length control for standalone registration component 
+  @Input() passwordErrorMinLengthText = "The password is too short!";
+  @Input() passwordErrorMaxLengthText = "The password is too long!";
 
   // Events
   // tslint:disable-next-line:no-output-on-prefix
@@ -90,9 +95,13 @@ export class NgxAuthFirebaseuiRegisterComponent implements OnInit, OnDestroy {
   private unsubscribeAll: Subject<any>;
 
   // tslint:disable-next-line:ban-types
-  constructor(@Inject(PLATFORM_ID) private platformId: Object,
-              private formBuilder: FormBuilder,
-              public authProcess: AuthProcessService) {
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: Object,
+    @Inject(forwardRef(() => NgxAuthFirebaseUIConfigToken))
+    public config: NgxAuthFirebaseUIConfig,
+    private formBuilder: FormBuilder,
+    public authProcess: AuthProcessService
+  ) {
     // Configure the layout
 
     // Set the private defaults
@@ -116,7 +125,9 @@ export class NgxAuthFirebaseuiRegisterComponent implements OnInit, OnDestroy {
     this.registerForm = this.formBuilder.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required],
+      password: ['', [Validators.required,
+                     Validators.minLength(this.config.passwordMinLength), 
+                     Validators.maxLength(this.config.passwordMaxLength)]], //TODO add Validator password
       passwordConfirm: ['', [Validators.required, confirmPasswordValidator]],
       tos: [''],
       privacyPolicy: ['']
