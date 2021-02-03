@@ -72,8 +72,7 @@ export class NgxAuthFirebaseuiRegisterComponent implements OnInit, OnDestroy {
   @Input() passwordErrorRequiredText = 'Password is required';
   @Input() passwordConfirmationText = 'Password Confirmation';
   @Input() passwordConfirmationErrorRequiredText = 'Password confirmation is required';
-  @Input() passwordErrorMatchText = 'Password must match';
-  // crunck78 - request feature password length control for standalone registration component 
+  @Input() passwordErrorMatchText = 'Password must match'; 
   @Input() passwordErrorMinLengthText = "The password is too short!";
   @Input() passwordErrorMaxLengthText = "The password is too long!";
 
@@ -127,7 +126,7 @@ export class NgxAuthFirebaseuiRegisterComponent implements OnInit, OnDestroy {
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required,
                      Validators.minLength(this.config.passwordMinLength), 
-                     Validators.maxLength(this.config.passwordMaxLength)]], //TODO add Validator password
+                     Validators.maxLength(this.config.passwordMaxLength)]],
       passwordConfirm: ['', [Validators.required, confirmPasswordValidator]],
       tos: [''],
       privacyPolicy: ['']
