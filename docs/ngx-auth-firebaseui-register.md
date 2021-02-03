@@ -119,6 +119,8 @@ by starring :star: and sharing it :loudspeaker:
 | passwordConfirmationText    | `Input()`  | `string` | `Password Confirmation` | see context
 | passwordConfirmationErrorRequiredText       | `Input()`  | `string` | `Password confirmation is required` | see context
 | passwordErrorMatchText      | `Input()`  | `string` | `Password must match` | see context
+| passwordErrorMinLengthText  | `Input()`  | `string` | `The password is too short!` | see context
+| passwordErrorMaxLengthText  | `Input()`  | `string` | `The password is too long!` | see context
 
 
 

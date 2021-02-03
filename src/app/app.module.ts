@@ -52,6 +52,8 @@ export function createTranslateLoader(http: HttpClient) {
     NgxAuthFirebaseUIModule.forRoot(firebaseKey, firebaseAppNameFactory,
       {
         enableFirestoreSync: true,
+        passwordMinLength: 8,
+        passwordMaxLength: 16,
         toastMessageOnAuthSuccess: true,
         toastMessageOnAuthError: true,
         authGuardFallbackURL: 'examples/logged-out',
