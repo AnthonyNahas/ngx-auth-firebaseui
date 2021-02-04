@@ -24,6 +24,17 @@
     "resetPasswordActionButtonText": "Reiniciar",
     "resetPasswordInstructionsText": "Restablecimiento solicitado. Revise sus instrucciones de correo electrónico.",
     "emailConfirmationTitle": "¡Confirme su dirección de correo electrónico!",
-    "emailConfirmationText": "Se le ha enviado un correo electrónico de confirmación.\n   Revise su bandeja de entrada y haga clic en el enlace \"Confirmar mi correo electrónico\" para confirmar su dirección de correo electrónico."
+    "emailConfirmationText": "Se le ha enviado un correo electrónico de confirmación.\n   Revise su bandeja de entrada y haga clic en el enlace \"Confirmar mi correo electrónico\" para confirmar su dirección de correo electrónico.",
+    "notLoggedInText": "traducción faltante",
+    "emailVerifiedText": "traducción faltante",
+    "emailNotVerifiedText": "traducción faltante",
+    "cancelButtonText": "traducción faltante",
+    "saveChangesButtonText": "traducción faltante",
+    "editButtonText": "traducción faltanteN",
+    "signoutButtonText": "traducción faltante",
+    "deleteAccountButtonText": "traducción faltante",
+    "phoneText": "traducción faltante",
+    "phoneHintText": "traducción faltante",
+    "phoneErrorPatternText": "traducción faltante"
   }
 }

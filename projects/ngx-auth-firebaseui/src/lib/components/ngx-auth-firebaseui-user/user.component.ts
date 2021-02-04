@@ -24,32 +24,48 @@ import { Observable } from "rxjs";
   styleUrls: ["./user.component.scss"],
 })
 export class UserComponent {
-  @Input()
-  editMode: boolean;
+  @Input() editMode: boolean;
+  @Input() canLogout = true;
+  @Input() canEditAccount = true;
+  @Input() canDeleteAccount = true;
+  @Input() appearance: MatFormFieldAppearance;
 
-  @Input()
-  canLogout = true;
+  // i18n commons
+  @Input() notLoggedInText = "You are not logged in!";
+  @Input() emailVerifiedText = "email is verified";
+  @Input() emailNotVerifiedText = "email is not verified";
+  @Input() cancelButtonText = "cancel";
+  @Input() saveChangesButtonText = "Save changes";
+  @Input() editButtonText = "edit";
+  @Input() signoutButtonText = "Sign out";
+  @Input() deleteAccountButtonText = "Delete account";
 
-  @Input()
-  canEditAccount = true;
+  //i18n name
+  @Input() nameText = "Name";
+  @Input() nameErrorRequiredText = "Name is required";
 
-  @Input()
-  canDeleteAccount = true;
+  // i18n email
+  @Input() emailText = "Email";
+  @Input() emailErrorRequiredText = "Email is required";
+  @Input() emailErrorPatternText = "Please enter a valid email address";
 
-  @Input()
-  appearance: MatFormFieldAppearance;
+  // i18n phone
+  @Input() phoneText = "Phone number";
+  @Input() phoneHintText = `
+    The phone number is international. Therefore, it should start with a + sign or 00,
+    followed by the country code, - and national number e.g: +49-12345678 or 0041-1234567890
+
+      NOTE : the phone number must be a valid phone credential !!`;
+  @Input() phoneErrorPatternText = "Please enter a valid phone number";
 
   // tslint:disable-next-line:no-output-on-prefix
-  @Output()
-  onSignOut: EventEmitter<void> = new EventEmitter();
+  @Output() onSignOut: EventEmitter<void> = new EventEmitter();
 
   // tslint:disable-next-line:no-output-on-prefix
-  @Output()
-  onAccountEdited: EventEmitter<void> = new EventEmitter();
+  @Output() onAccountEdited: EventEmitter<void> = new EventEmitter();
 
   // tslint:disable-next-line:no-output-on-prefix
-  @Output()
-  onAccountDeleted: EventEmitter<void> = new EventEmitter();
+  @Output() onAccountDeleted: EventEmitter<void> = new EventEmitter();
 
   updateFormGroup: FormGroup;
   updateNameFormControl: FormControl;

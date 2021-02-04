@@ -13,14 +13,14 @@
       <div *ngIf="user.emailVerified; then emailVerified else emailNotVerified"></div>
       <ng-template #emailVerified>
         <mat-icon color="primary"
-                  matTooltip="email is verified"
+                  [matTooltip]="emailVerifiedText"
                   matTooltipPosition="after">
           verified_user
         </mat-icon>
       </ng-template>
       <ng-template #emailNotVerified>
         <mat-icon color="warn"
-                  matTooltip="email is not verified"
+                  [matTooltip]="emailNotVerifiedText"
                   matTooltipPosition="after">
           warning
         </mat-icon>
@@ -39,55 +39,52 @@
           <div fxLayoutAlign="center">
             <button (click)="changeEditMode()" class="edit-button" color="warn"
                     mat-raised-button>
-              cancel
+              {{cancelButtonText}}
             </button>
           </div>
 
           <!--name-->
           <mat-form-field [appearance]="appearance" class="full-width">
-            <mat-label>Name</mat-label>
+            <mat-label>{{nameText}}</mat-label>
             <input [formControl]="updateNameFormControl"
                    matInput
-                   placeholder="Name">
+                   [placeholder]="nameText">
             <mat-icon matSuffix>person</mat-icon>
             <mat-hint align="end" aria-live="polite"> {{ updateNameFormControl.value?.length }}
               / {{ config.nameMaxLength }} </mat-hint>
             <mat-error *ngIf="updateNameFormControl.hasError('required')">
-              Name is required
+              {{nameErrorRequiredText}}
             </mat-error>
           </mat-form-field>
 
           <!--email-->
           <mat-form-field [appearance]="appearance" class="full-width">
-            <mat-label>E-mail</mat-label>
+            <mat-label>{{emailText}}</mat-label>
             <input [formControl]="updateEmailFormControl"
                    matInput
-                   placeholder="E-mail">
+                   [placeholder]="emailText">
             <mat-icon matSuffix>email</mat-icon>
             <mat-error *ngIf="updateEmailFormControl.hasError('required')">
-              E-mail is required {{updateEmailFormControl.value}}
+              {{emailErrorRequiredText}} {{updateEmailFormControl.value}}
             </mat-error>
             <mat-error *ngIf="updateEmailFormControl.hasError('pattern')">
-              Please enter a valid e-mail address {{updateEmailFormControl.value}}
+              {{emailErrorPatternText}} {{updateEmailFormControl.value}}
             </mat-error>
           </mat-form-field>
 
           <!--phone number-->
           <mat-form-field *ngIf="false" [appearance]="appearance" class="full-width">
-            <mat-label>Phone number</mat-label>
+            <mat-label>{{phoneText}}</mat-label>
             <input [formControl]="updatePhoneNumberFormControl"
                    matInput
-                   placeholder="Phone number"
+                   [placeholder]="phoneText"
                    type="tel">
             <mat-icon matSuffix>phone</mat-icon>
             <mat-hint align="end" aria-live="polite">
-              The phone number is international. Therefore, it should start with a + sign or 00,
-              followed by the country code, - and national number e.g: +49-12345678 or 0041-1234567890
-
-              NOTE : the phone number must be a valid phone credential !!
+              {{phoneHintText}}
             </mat-hint>
             <mat-error *ngIf="updatePhoneNumberFormControl.hasError('pattern')">
-              Please enter a valid phone number
+              {{phoneErrorPatternText}}
             </mat-error>
           </mat-form-field>
 
@@ -97,7 +94,7 @@
           <button color="primary"
                   mat-button
                   type="submit">
-            Save changes
+            {{saveChangesButtonText}}
           </button>
         </mat-card-actions>
       </form>
@@ -107,42 +104,42 @@
       <div fxLayoutAlign="center">
         <button *ngIf="canEditAccount" (click)="changeEditMode()" class="edit-button" color="primary"
                 mat-raised-button>
-          edit
+          {{editButtonText}}
         </button>
       </div>
 
       <!--name-->
       <mat-form-field [appearance]="appearance" class="full-width">
-        <mat-label>Name</mat-label>
+        <mat-label>{{nameText}}</mat-label>
         <input [disabled]="!editMode"
                [value]="user.displayName"
                matInput
-               placeholder="Name">
+               [placeholder]="nameText">
         <mat-icon color="primary" matSuffix>person</mat-icon>
       </mat-form-field>
 
       <!--email-->
       <mat-form-field [appearance]="appearance" class="full-width">
-        <mat-label>E-mail</mat-label>
+        <mat-label>{{emailText}}</mat-label>
         <input [disabled]="!editMode"
                [value]="user.email" matInput
-               placeholder="E-mail">
+               [placeholder]="emailText">
         <mat-icon color="primary" matSuffix>email</mat-icon>
       </mat-form-field>
 
       <!--phone number-->
       <mat-form-field *ngIf="false" [appearance]="appearance" class="full-width">
-        <mat-label>Phone number</mat-label>
+        <mat-label>{{phoneText}}</mat-label>
         <input [disabled]="!editMode"
                [value]="user.phoneNumber"
                matInput
-               placeholder="Phone number">
+               [placeholder]="phoneText">
         <mat-icon color="primary" matSuffix>phone</mat-icon>
       </mat-form-field>
 
       <mat-card-actions fxLayout="column">
-        <button (click)="signOut()" *ngIf="canLogout" color="primary" mat-button>Sign out</button>
-        <button (click)="deleteAccount()" *ngIf="canDeleteAccount" color="warn" mat-button>Delete account</button>
+        <button (click)="signOut()" *ngIf="canLogout" color="primary" mat-button>{{signoutButtonText}}</button>
+        <button (click)="deleteAccount()" *ngIf="canDeleteAccount" color="warn" mat-button>{{deleteAccountButtonText}}</button>
       </mat-card-actions>
 
     </ng-template>
@@ -156,7 +153,7 @@
   <mat-card class="none-card" fxLayout="row" fxLayoutAlign="center center">
     <mat-card-content fxLayout="row" fxLayoutAlign="center center">
       <mat-icon color="accent">warning</mat-icon>
-      <span>You are not logged in!</span>
+      <span>{{notLoggedInText}}</span>
     </mat-card-content>
   </mat-card>
 </ng-template>

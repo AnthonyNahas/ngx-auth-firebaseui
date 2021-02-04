@@ -24,6 +24,17 @@
     "resetPasswordActionButtonText": "Reset",
     "resetPasswordInstructionsText": "Reset requested. Check your e-mail instructions.",
     "emailConfirmationTitle": "Confirm your e-mail address!",
-    "emailConfirmationText": "A confirmation e-mail has been sent to you.\n  Check your inbox and click on the link \"Confirm my e-mail\" to confirm your e-mail address."
+    "emailConfirmationText": "A confirmation e-mail has been sent to you.\n  Check your inbox and click on the link \"Confirm my e-mail\" to confirm your e-mail address.",
+    "notLoggedInText": "You are not logged in!",
+    "emailVerifiedText": "email is verified",
+    "emailNotVerifiedText": "email is not verified",
+    "cancelButtonText": "cancel",
+    "saveChangesButtonText": "Save changes",
+    "editButtonText": "edit",
+    "signoutButtonText": "Sign out",
+    "deleteAccountButtonText": "Delete account",
+    "phoneText": "Phone number",
+    "phoneHintText": "The phone number is international. Therefore, it should start with a + sign or 00, followed by the country code, - and national number e.g: +49-12345678 or 0041-1234567890\n\n NOTE : the phone number must be a valid phone credential !",
+    "phoneErrorPatternText": "Please enter a valid phone number"
   }
 }

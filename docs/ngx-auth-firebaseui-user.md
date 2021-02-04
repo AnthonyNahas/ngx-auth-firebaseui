@@ -103,6 +103,26 @@ by starring :star: and sharing it :loudspeaker:
 | onSignOut          | `Output()`| void        | - | this will be fired when the user signs out
 | onAccountDeleted   | `Output()`| void        | - | this will be fired when the user deletes his account
 
+### i18n
+
+| option | bind  |  type  |   default    | description  |
+|:---------------------|:------:|:------:|:------------:|:-------------------------------------------------------------------------------------------------|
+| notLoggedInText                   | `Input()`  | `string` | `You are not logged in!` | see context
+| emailVerifiedText                 | `Input()`  | `string` | `email is verified` | see context
+| emailNotVerifiedText              | `Input()`  | `string` | `email is not verified` | see context
+| cancelButtonText                  | `Input()`  | `string` | `cancel` | see context
+| saveChangesButtonText             | `Input()`  | `string` | `Save changes` | see context
+| editButtonText                    | `Input()`  | `string` | `edit` | see context
+| signoutButtonText                 | `Input()`  | `string` | `Sign out` | see context
+| deleteAccountButtonText           | `Input()`  | `string` | `Delete account` | see context
+| nameText                          | `Input()`  | `string` | `Name` | see context
+| nameErrorRequiredText             | `Input()`  | `string` | `Name is required` | see context
+| emailText                         | `Input()`  | `string` | `Email` | see context
+| emailErrorRequiredText            | `Input()`  | `string` | `Email is required` | see context
+| emailErrorPatternText             | `Input()`  | `string` | `Please enter a valid email address` | see context
+| phoneText                         | `Input()`  | `string` | `Phone number` | see context
+| phoneHintText                     | `Input()`  | `string` | `The phone number is international. Therefore, it should start with a + sign or 00, followed by the country code, - and national number e.g: +49-12345678 or 0041-1234567890  NOTE : the phone number must be a valid phone credential !!` | see context
+| phoneErrorPatternText             | `Input()`  | `string` | `Please enter a valid phone numbe` | see context
 
 
 <a name="other-angular-libraries"/>

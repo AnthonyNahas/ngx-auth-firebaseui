@@ -24,6 +24,17 @@
     "resetPasswordActionButtonText": "Zurücksetzen",
     "resetPasswordInstructionsText": "Zurücksetzen angefordert. Überprüfen Sie Ihre E-Mail-Anweisungen.",
     "emailConfirmationTitle": "Bestätigen Sie Ihre E-Mail-Adresse!",
-    "emailConfirmationText": "Eine Bestätigungs-E-Mail wurde an Sie gesendet.\n   Überprüfen Sie Ihren Posteingang und klicken Sie auf den Link \"Bestätigen Sie meine E-Mail\", um Ihre E-Mail-Adresse zu bestätigen."
+    "emailConfirmationText": "Eine Bestätigungs-E-Mail wurde an Sie gesendet.\n   Überprüfen Sie Ihren Posteingang und klicken Sie auf den Link \"Bestätigen Sie meine E-Mail\", um Ihre E-Mail-Adresse zu bestätigen.",
+    "notLoggedInText": "fehlende Übersetzung",
+    "emailVerifiedText": "fehlende Übersetzung",
+    "emailNotVerifiedText": "fehlende Übersetzung",
+    "cancelButtonText": "fehlende ÜbersetzungN",
+    "saveChangesButtonText": "fehlende Übersetzung",
+    "editButtonText": "fehlende Übersetzung",
+    "signoutButtonText": "fehlende Übersetzung",
+    "deleteAccountButtonText": "fehlende Übersetzung",
+    "phoneText": "fehlende Übersetzung",
+    "phoneHintText": "fehlende ÜbersetzungN",
+    "phoneErrorPatternText": "fehlende Übersetzung"
   }
 }
