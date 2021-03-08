@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 import { AngularFireAuth } from "@angular/fire/auth";
 import firebase from "firebase/app";
 import { Observable } from "rxjs";
+import { take } from 'rxjs/operators';
 import { MatDialog } from "@angular/material/dialog";
 import { UserComponent } from "..";
 
@@ -78,6 +79,11 @@ export class NgxAuthFirebaseuiAvatarComponent implements OnInit {
     const instance = dialogRef.componentInstance;
     instance.canDeleteAccount = this.canDeleteAccount;
     instance.canEditAccount = this.canEditAccount;
+    instance
+    .onSignOut
+    .pipe(
+      take(1)
+      ).subscribe(_ => this.onSignOut.emit()); // propagate the onSignout event
   }
 
   async signOut() {
