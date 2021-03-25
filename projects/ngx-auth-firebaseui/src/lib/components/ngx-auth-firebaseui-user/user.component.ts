@@ -131,6 +131,7 @@ export class UserComponent {
       if (snackBarMsg.length > 0) {
         this.authProcess.showToast(snackBarMsg.join("\\n"));
       }
+      this.onAccountEdited.emit(); // emit event if the form was dirty
       this.updateFormGroup.reset();
     }
   }

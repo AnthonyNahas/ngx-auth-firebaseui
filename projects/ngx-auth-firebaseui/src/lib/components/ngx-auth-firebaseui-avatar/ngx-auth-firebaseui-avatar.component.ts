@@ -2,8 +2,10 @@ import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 import { AngularFireAuth } from "@angular/fire/auth";
 import firebase from "firebase/app";
 import { Observable } from "rxjs";
+import { take } from 'rxjs/operators';
 import { MatDialog } from "@angular/material/dialog";
 import { UserComponent } from "..";
+import { AuthProcessService } from "../../services/auth-process.service";
 
 export interface LinkMenuItem {
   text: string;
@@ -50,7 +52,7 @@ export class NgxAuthFirebaseuiAvatarComponent implements OnInit {
   user$: Observable<firebase.User | null>;
   displayNameInitials: string | null;
 
-  constructor(public afa: AngularFireAuth, public dialog: MatDialog) {}
+  constructor(public afa: AngularFireAuth, public dialog: MatDialog, private authProcess: AuthProcessService) {}
 
   ngOnInit() {
     this.user$ = this.afa.user;
@@ -78,6 +80,16 @@ export class NgxAuthFirebaseuiAvatarComponent implements OnInit {
     const instance = dialogRef.componentInstance;
     instance.canDeleteAccount = this.canDeleteAccount;
     instance.canEditAccount = this.canEditAccount;
+    instance
+    .onSignOut
+    .pipe(
+      take(1)
+      ).subscribe(_ => this.onSignOut.emit()); // propagate the onSignout event
+    instance
+    .onAccountEdited
+    .pipe(
+      take(1)
+    ).subscribe(_ => this.displayNameInitials = this.getDisplayNameInitials(this.authProcess.user.displayName)) // update display name initials?
   }
 
   async signOut() {
