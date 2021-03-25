@@ -362,6 +362,11 @@ Now install `ngx-auth-firebaseui` via:
 npm install --save ngx-auth-firebaseui
 ```
 
+Install the dependencies `@angular-material-extensions/password-strength` via:
+```shell
+npm install --save @angular-material-extensions/password-strength
+```
+
 ```bash
 npm i -s @angular/material @angular/cdk @angular/flex-layout @angular/forms @angular/animations @angular/router
 ```
@@ -639,4 +644,4 @@ check this [out](https://www.youtube.com/watch?v=qP5zw7fjQgo&feature=emb_logo&ab
 
 ## License
 
-Copyright (c) 2019-2020 [Anthony Nahas](https://github.com/AnthonyNahas). Licensed under the MIT License (MIT)
+Copyright (c) 2019-2021 [Anthony Nahas](https://github.com/AnthonyNahas). Licensed under the MIT License (MIT)
