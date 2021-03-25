@@ -24,6 +24,17 @@
     "resetPasswordActionButtonText": "Reset",
     "resetPasswordInstructionsText": "Reset poslán, zkontrolujte si e-mail.",
     "emailConfirmationTitle": "Potvrď e-mailovou adresu!",
-    "emailConfirmationText": "E-mail pro potvrzení Vám byl odeslán.\n  Zkontolujte si doručenou poštu a klikněte na odkz \"Confirm my e-mail\" pro potvrzení Vaší e-mailove adresy."
+    "emailConfirmationText": "E-mail pro potvrzení Vám byl odeslán.\n  Zkontolujte si doručenou poštu a klikněte na odkz \"Confirm my e-mail\" pro potvrzení Vaší e-mailove adresy.",
+    "notLoggedInText": "chybějící překlad",
+    "emailVerifiedText": "chybějící překlad",
+    "emailNotVerifiedText": "chybějící překlad",
+    "cancelButtonText": "chybějící překlad",
+    "saveChangesButtonText": "chybějící překlad",
+    "editButtonText": "chybějící překlad",
+    "signoutButtonText": "chybějící překlad",
+    "deleteAccountButtonText": "chybějící překlad",
+    "phoneText": "chybějící překlad",
+    "phoneHintText": "chybějící překlad",
+    "phoneErrorPatternText": "chybějící překlad"
   }
 }

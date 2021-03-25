@@ -24,6 +24,17 @@
     "resetPasswordActionButtonText": "Réinitialiser",
     "resetPasswordInstructionsText": "Réinitialisation demandée. Suivez les instructions du courrier électronique qui vous a été envoyé.",
     "emailConfirmationTitle": "Confirmez votre adresse email !",
-    "emailConfirmationText": "Un email de confirmation vous a été envoyé.\n   Vérifiez votre boîte de réception et cliquez sur le lien \"Confirmer mon adresse e-mail\" pour confirmer votre adresse email."
+    "emailConfirmationText": "Un email de confirmation vous a été envoyé.\n   Vérifiez votre boîte de réception et cliquez sur le lien \"Confirmer mon adresse e-mail\" pour confirmer votre adresse email.",
+    "notLoggedInText": "Vous n'êtes pas connecté!",
+    "emailVerifiedText": "email vérifié",
+    "emailNotVerifiedText": "email non vérifié",
+    "cancelButtonText": "annuler",
+    "saveChangesButtonText": "Enregistrer les modifications",
+    "editButtonText": "modifier",
+    "signoutButtonText": "Se déconnecter",
+    "deleteAccountButtonText": "Supprimer le compte",
+    "phoneText": "Numéro de téléphone",
+    "phoneHintText": "Le numéro de téléphone est international. Cependant, il doit être préfixé par un + ou 00, suivi par le code du pays, - et le numéro national soit : +49-12345678 ou 0041-1234567890\n\n NOTE : le numéro de téléphone doit être attribué !",
+    "phoneErrorPatternText": "S'il vous plaît, mettez un numéro de téléphone valide"
   }
 }
