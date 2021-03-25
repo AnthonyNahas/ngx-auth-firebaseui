@@ -44,7 +44,7 @@
     "release:patch": "../../node_modules/.bin/release-it --patch --ci",
     "release:minor": "../../node_modules/.bin/release-it --minor --ci",
     "release:major": "../../node_modules/.bin/release-it --major --ci",
-    "release:custom": "../../node_modules/.bin/release-it 5.1.0 --ci --no-git.requireCleanWorkingDir",
+    "release:custom": "../../node_modules/.bin/release-it 5.2.0 --ci --no-git.requireCleanWorkingDir",
     "ng:test": "../../node_modules/.bin/ng test ngx-auth-firebaseui",
     "test": "../../node_modules/.bin/jest --coverage",
     "test:watch": "../../node_modules/.bin/jest --coverage --watch"
@@ -52,7 +52,7 @@
   "peerDependencies": {
     "@angular/common": "^11.0.2",
     "@angular/core": "^11.0.2",
-    "@angular-material-extensions/password-strength": "^8.0.0",
+    "@angular-material-extensions/password-strength": "^8.1.1",
     "@angular/animations": "^11.0.2",
     "@angular/cdk": "^11.0.0",
     "@angular/fire": "^6.1.1",
