@@ -37,7 +37,7 @@
     "clean": "rm -rf ../../dist",
     "lint": "../../node_modules/.bin/ng lint ngx-auth-firebaseui",
     "resync:schematics": "rsync -a schematics/collection.json ../../dist/ngx-auth-firebaseui/schematics/",
-    "resync:readme": "rsync -a ../../README.md ../../dist/ngx-auth-firebaseui/",
+    "resync:readme": "rsync -a ../../README.MD ../../dist/ngx-auth-firebaseui/",
     "resync:assets": "rsync -a src/lib/assets ../../dist/ngx-auth-firebaseui/",
     "postbuild": "npm run build:schematics && npm run resync:readme && npm run resync:assets && npm run resync:schematics",
     "prepublish": "npm run build",
