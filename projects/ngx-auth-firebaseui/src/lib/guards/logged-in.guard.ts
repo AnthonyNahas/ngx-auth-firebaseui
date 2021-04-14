@@ -31,8 +31,8 @@ export class LoggedInGuard implements CanActivate {
             return true;
           }
         } else {
-          if (this.config.authGuardFallbackURL) {
-            this.router.navigate([`/${this.config.authGuardFallbackURL}`], {queryParams: {redirectUrl: state.url}});
+          if (this.config.authGuardLoggedInURL) {
+            this.router.navigate([`/${this.config.authGuardLoggedInURL}`], {queryParams: {redirectUrl: state.url}});
           }
           return false;
         }
