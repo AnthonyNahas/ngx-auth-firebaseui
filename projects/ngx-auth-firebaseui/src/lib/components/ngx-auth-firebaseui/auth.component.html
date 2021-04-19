@@ -3,9 +3,12 @@
   <!-- This component will be shown when:
     - we just sent a verification mail (notably after sign up)
     - we arrived from the guard after trying to access a protected route even though we are connected
+    - config.enableEmailVerification is undefined, null or true
   -->
   <div
-    *ngIf="(config.guardProtectedRoutesUntilEmailIsVerified && !user.emailVerified) || (authProcess.emailConfirmationSent && !user.emailVerified); else signedInUser"
+    *ngIf="(config.enableEmailVerification !== false) && (
+     (config.guardProtectedRoutesUntilEmailIsVerified && !user.emailVerified) || (authProcess.emailConfirmationSent && !user.emailVerified)
+     ); else signedInUser"
     fxLayout="row" fxLayoutAlign="center center">
     <ngx-auth-firebaseui-email-confirmation
       (signOut)="signOut()"
@@ -71,7 +74,8 @@
               <mat-form-field [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}"
                               [appearance]="appearance">
                 <mat-label>{{passwordText}}</mat-label>
-                <input [maxlength]="max" [minlength]="min" [type]="togglePass.type" formControlName="password" autocomplete="current-password" matInput
+                <input [maxlength]="max" [minlength]="min" [type]="togglePass.type" formControlName="password"
+                       autocomplete="current-password" matInput
                        required/>
                 <mat-pass-toggle-visibility #togglePass matSuffix></mat-pass-toggle-visibility>
                 <mat-icon [color]="color" matSuffix>lock</mat-icon>
