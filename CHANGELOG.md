@@ -1,3 +1,13 @@
+* Merge remote-tracking branch 'origin/master' (75b1cde)
+* Merge pull request #618 from AndriiNeverov/schematics-angular11-support (955782a)
+* Merge pull request #623 from jkiipper/master (1213af3)
+* Fix: hide ngx-auth-firebaseui-email-confirmation if config.enableEmailVerification=false (0e6ceda)
+* Merge pull request #1 from AnthonyNahas/master (eb5705d)
+* Merge pull request #622 from rikwilbrink/patch-2 (21a3508)
+* Fix background-img Avatar when photoURL is empty (e131ecd)
+* schematics: upgraded Schematics to 11.1.2 (fe97d88)
+* fix(project): updated the readme (02b8537)
+
 * fix(project): updated the dependencies (4b1a6b6)
 * Merge pull request #611 from geromegrignon/master (f3868ca)
 * Merge pull request #616 from anaob/master (61de7dd)
