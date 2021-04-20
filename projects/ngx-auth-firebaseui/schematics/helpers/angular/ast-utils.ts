@@ -9,9 +9,7 @@ import {
   addSymbolToNgModuleMetadata as originalAddSymbolToNgModuleMetadata,
   findNode as originalFindNode,
   findNodes as originalFindNodes,
-  getContentOfKeyLiteral as originalGetContentOfKeyLiteral,
   getDecoratorMetadata as originalGetDecoratorMetadata,
-  getFirstNgModuleName as originalGetFirstNgModuleName,
   getMetadataField as originalGetMetadataField,
   getRouterModuleDeclaration as originalGetRouterModuleDeclaration,
   getSourceNodes as originalGetSourceNodes,
@@ -91,22 +89,8 @@ export function insertAfterLastOccurrence(
   return originalInsertAfterLastOccurrence(nodes, toInsert, file, fallbackPos, syntaxKind);
 }
 
-export function getContentOfKeyLiteral(_source: ts.SourceFile, node: ts.Node): string | null {
-  return originalGetContentOfKeyLiteral(_source, node);
-}
-
 export function getDecoratorMetadata(source: ts.SourceFile, identifier: string, module: string): ts.Node[] {
   return originalGetDecoratorMetadata(source, identifier, module);
-}
-
-/**
- * Given a source file with @NgModule class(es), find the name of the first @NgModule class.
- *
- * @param source source file containing one or more @NgModule
- * @returns the name of the first @NgModule, or `undefined` if none is found
- */
-export function getFirstNgModuleName(source: ts.SourceFile): string | undefined {
-  return originalGetFirstNgModuleName(source);
 }
 
 export function getMetadataField(node: ts.ObjectLiteralExpression, metadataField: string): ts.ObjectLiteralElement[] {
