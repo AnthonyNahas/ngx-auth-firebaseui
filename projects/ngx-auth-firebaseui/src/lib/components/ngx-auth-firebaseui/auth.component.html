@@ -74,7 +74,7 @@
               <mat-form-field [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}"
                               [appearance]="appearance">
                 <mat-label>{{passwordText}}</mat-label>
-                <input [maxlength]="max" [minlength]="min" [type]="togglePass.type" formControlName="password"
+                <input [maxlength]="max" [minlength]="min" [type]="togglePass?.type" formControlName="password"
                        autocomplete="current-password" matInput
                        required/>
                 <mat-pass-toggle-visibility #togglePass matSuffix></mat-pass-toggle-visibility>
