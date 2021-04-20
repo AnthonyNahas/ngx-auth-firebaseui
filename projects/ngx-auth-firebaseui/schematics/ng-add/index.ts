@@ -1,9 +1,8 @@
-import {chain, noop, Rule, SchematicContext, Tree} from '@angular-devkit/schematics';
+import { virtualFs, workspaces } from '@angular-devkit/core';
+import {chain, noop, Rule, SchematicContext, SchematicsException, Tree} from '@angular-devkit/schematics';
 import {NodePackageInstallTask} from '@angular-devkit/schematics/tasks';
 import {addPackageJsonDependency, NodeDependency, NodeDependencyType} from '../helpers';
-import {getWorkspace} from '@schematics/angular/utility/config';
-import {addModuleImportToRootModule, getProjectFromWorkspace} from '@angular/cdk/schematics';
-
+import {addModuleImportToRootModule} from '@angular/cdk/schematics';
 
 /** Loads the full version from the given Angular package gracefully. */
 function loadPackageVersionGracefully(): string | null {
@@ -50,12 +49,8 @@ export function installPackageJsonDependencies(): Rule {
   };
 }
 
-export function addModuleToImports(options: any): Rule {
+export function addModuleToImports(options: any, project: any): Rule {
   return (host: Tree, context: SchematicContext) => {
-    const workspace = getWorkspace(host);
-    // @ts-ignore
-    const project = getProjectFromWorkspace(workspace, options.project);
-
     // const x =
     //   `apiKey: 'your-firebase-apiKey',
     //   authDomain: 'your-firebase-authDomain',
@@ -67,7 +62,7 @@ export function addModuleToImports(options: any): Rule {
 
     addModuleImportToRootModule(host, moduleName, 'ngx-auth-firebaseui', project);
 
-    context.logger.log('info', `✅️ "${moduleName}" is imported`);
+    context.logger.log('info', `✅️ "${moduleName}" is imported into project ${options.project}`);
 
     return host;
   };
@@ -121,11 +116,46 @@ function addLibAssetsToAssets(options: any) {
   };
 }
 
+function createHost(tree: Tree): workspaces.WorkspaceHost {
+  return {
+    async readFile(path: string): Promise<string> {
+      const data = tree.read(path);
+      if (!data) {
+        throw new SchematicsException('File not found.');
+      }
+      return virtualFs.fileBufferToString(data);
+    },
+    async writeFile(path: string, data: string): Promise<void> {
+      return tree.overwrite(path, data);
+    },
+    async isDirectory(path: string): Promise<boolean> {
+      return !tree.exists(path) && tree.getDir(path).subfiles.length > 0;
+    },
+    async isFile(path: string): Promise<boolean> {
+      return tree.exists(path);
+    },
+  };
+}
+
 export default function(options: any): Rule {
-  return chain([
-    options && options.skipPackageJson ? noop() : addPackageJsonDependencies(),
-    options && options.skipPackageJson ? noop() : installPackageJsonDependencies(),
-    options && options.skipModuleImport ? noop() : addModuleToImports(options),
-    options && options.skipPolyfill ? noop() : addLibAssetsToAssets(options)
-  ]);
+  return async (tree: Tree) => {
+    const host = createHost(tree);
+    const {workspace} = await workspaces.readWorkspace('/', host);
+
+    if (!options.project) {
+      options.project = workspace.extensions.defaultProject;
+    }
+
+    const project = workspace.projects.get(options.project);
+    if (!project) {
+      throw new SchematicsException(`Invalid project name: ${options.project}`);
+    }
+
+    return chain([
+      options && options.skipPackageJson ? noop() : addPackageJsonDependencies(),
+      options && options.skipPackageJson ? noop() : installPackageJsonDependencies(),
+      options && options.skipModuleImport ? noop() : addModuleToImports(options, project),
+      options && options.skipPolyfill ? noop() : addLibAssetsToAssets(options)
+    ]);
+  };
 }

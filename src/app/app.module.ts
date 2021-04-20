@@ -58,6 +58,7 @@ export function createTranslateLoader(http: HttpClient) {
         toastMessageOnAuthError: true,
         authGuardFallbackURL: 'examples/logged-out',
         authGuardLoggedInURL: 'examples/logged-in',
+        // enableEmailVerification: false // If you want to disable email verification
       }),
     TranslateModule.forRoot({
       loader: {

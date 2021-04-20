@@ -11,7 +11,7 @@
 
 <mat-menu #posXMenu="matMenu" class="before ngx-auth-firebaseui-avatar-menu" xPosition="before" >
   <div fxLayout="row" fxLayout.xs="column" style="padding-left: 10px; padding-right: 10px" [ngStyle]="{ 'padding-top.px': layout === 'default' ? 0 : 10 }">
-    <button [style.background-image]="'url(' + user?.photoURL + ')'"
+    <button [style.background-image]="user?.photoURL ? 'url(' + user?.photoURL + ')' : ''"
             mat-fab
             style="background-size: cover"
             *ngIf="layout === 'default'">

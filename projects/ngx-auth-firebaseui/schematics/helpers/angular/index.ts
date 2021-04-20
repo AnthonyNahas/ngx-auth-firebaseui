@@ -3,7 +3,6 @@ export * from './change';
 export * from './component-schema';
 export * from './dependencies';
 export * from './find-module';
-export * from './json-utils';
 export * from './latest-versions';
 export * from './ng-ast-utils';
 export * from './parse-name';
