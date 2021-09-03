@@ -62,7 +62,7 @@ by starring :star: and sharing it :loudspeaker:
 
 ```html
 <!-- You can now use the library component in app.component.html  -->
-<ngx-auth-firebaseui-providers layout="column" thene="outline"></ngx-auth-firebaseui-providers>
+<ngx-auth-firebaseui-providers layout="column" theme="outline"></ngx-auth-firebaseui-providers>
 ```
 
 <a name="api"/>
