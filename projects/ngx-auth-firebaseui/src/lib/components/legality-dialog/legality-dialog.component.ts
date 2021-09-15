@@ -1,6 +1,7 @@
-import {Component, Inject} from '@angular/core';
+import {Component, Inject, Input} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from '@angular/material/dialog';
 import {LegalityDialogParams, LegalityDialogResult} from '../../interfaces';
+import {I18nMessagesService} from '../../services/i18n-messages.service';
 
 @Component({
   selector: 'ngx-auth-firebaseui-legality-dialog',
@@ -11,6 +12,7 @@ export class LegalityDialogComponent {
 
   checkTOS: boolean;
   checkPrivacyPolicy: boolean;
+  i18nMessageService = I18nMessagesService;
 
   constructor(public dialogRef: MatDialogRef<LegalityDialogComponent>,
               @Inject(MAT_DIALOG_DATA) public data: LegalityDialogParams) {

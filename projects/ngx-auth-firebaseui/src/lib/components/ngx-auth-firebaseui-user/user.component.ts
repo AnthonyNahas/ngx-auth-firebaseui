@@ -17,6 +17,7 @@ import { AuthProcessService } from "../../services/auth-process.service";
 import { FirestoreSyncService } from "../../services/firestore-sync.service";
 import { map, take } from "rxjs/operators";
 import { Observable } from "rxjs";
+import {I18nMessagesService} from "../../services/i18n-messages.service";
 
 @Component({
   selector: "ngx-auth-firebaseui-user",
@@ -30,34 +31,6 @@ export class UserComponent {
   @Input() canDeleteAccount = true;
   @Input() appearance: MatFormFieldAppearance;
 
-  // i18n commons
-  @Input() notLoggedInText = "You are not logged in!";
-  @Input() emailVerifiedText = "email is verified";
-  @Input() emailNotVerifiedText = "email is not verified";
-  @Input() cancelButtonText = "cancel";
-  @Input() saveChangesButtonText = "Save changes";
-  @Input() editButtonText = "edit";
-  @Input() signoutButtonText = "Sign out";
-  @Input() deleteAccountButtonText = "Delete account";
-
-  //i18n name
-  @Input() nameText = "Name";
-  @Input() nameErrorRequiredText = "Name is required";
-
-  // i18n email
-  @Input() emailText = "Email";
-  @Input() emailErrorRequiredText = "Email is required";
-  @Input() emailErrorPatternText = "Please enter a valid email address";
-
-  // i18n phone
-  @Input() phoneText = "Phone number";
-  @Input() phoneHintText = `
-    The phone number is international. Therefore, it should start with a + sign or 00,
-    followed by the country code, - and national number e.g: +49-12345678 or 0041-1234567890
-
-      NOTE : the phone number must be a valid phone credential !!`;
-  @Input() phoneErrorPatternText = "Please enter a valid phone number";
-
   // tslint:disable-next-line:no-output-on-prefix
   @Output() onSignOut: EventEmitter<void> = new EventEmitter();
 
@@ -66,6 +39,8 @@ export class UserComponent {
 
   // tslint:disable-next-line:no-output-on-prefix
   @Output() onAccountDeleted: EventEmitter<void> = new EventEmitter();
+
+  i18nMessageService = I18nMessagesService;
 
   updateFormGroup: FormGroup;
   updateNameFormControl: FormControl;

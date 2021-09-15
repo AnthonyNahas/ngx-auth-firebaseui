@@ -10,6 +10,7 @@ import {MatFormFieldAppearance} from '@angular/material/form-field';
 import {ThemePalette} from '@angular/material/core';
 import { NgxAuthFirebaseUIConfigToken } from '../../tokens';
 import { NgxAuthFirebaseUIConfig } from '../../interfaces';
+import {I18nMessagesService} from '../../services/i18n-messages.service';
 
 export const confirmPasswordValidator: ValidatorFn = (control: AbstractControl): ValidationErrors | null => {
   if (!control.parent || !control) {
@@ -48,34 +49,7 @@ export class NgxAuthFirebaseuiRegisterComponent implements OnInit, OnDestroy {
   @Input() tosUrl: string;
   @Input() privacyPolicyUrl: string;
 
-  // i18n common
-  @Input() titleText = 'CREATE AN ACCOUNT';
-  @Input() termsAndConditionsText = 'I read and accept the';
-  @Input() termsAndConditionsLinkText = 'terms and conditions';
-  @Input() privacyPolicyText = 'I read and accept the';
-  @Input() privacyPolicyLinkText = 'privacy policy';
-  @Input() createAccountButtonText = 'CREATE AN ACCOUNT';
-  @Input() alreadyHaveAccountText = 'Already have an account?';
-  @Input() loginButtonText = 'LOGIN';
-
-  // i18n name
-  @Input() nameText = 'Name';
-  @Input() nameErrorRequiredText = 'Name is required';
-
-  // i18n email
-  @Input() emailText = 'Email';
-  @Input() emailErrorRequiredText = 'Email is required';
-  @Input() emailErrorPatternText = 'Please enter a valid email address';
-
-  // i18n password
-  @Input() passwordText = 'Password';
-  @Input() passwordErrorRequiredText = 'Password is required';
-  @Input() passwordConfirmationText = 'Password Confirmation';
-  @Input() passwordConfirmationErrorRequiredText = 'Password confirmation is required';
-  @Input() passwordErrorMatchText = 'Password must match'; 
-  @Input() passwordErrorMinLengthText = "The password is too short!";
-  @Input() passwordErrorMaxLengthText = "The password is too long!";
-
+  i18nMessageService = I18nMessagesService;
   // Events
   // tslint:disable-next-line:no-output-on-prefix
   @Output() onSuccess: any;
@@ -83,7 +57,7 @@ export class NgxAuthFirebaseuiRegisterComponent implements OnInit, OnDestroy {
   @Output() onError: any;
   // tslint:disable-next-line:no-output-on-prefix
   @Output() onLoginRequested: EventEmitter<void> = new EventEmitter<void>();
-
+  // tslint:disable-next-line:no-output-on-prefix
   @Output() onCreateAccountButtonClicked: EventEmitter<void> = new EventEmitter();
 
   registerForm: FormGroup;
@@ -95,6 +69,7 @@ export class NgxAuthFirebaseuiRegisterComponent implements OnInit, OnDestroy {
 
   // tslint:disable-next-line:ban-types
   constructor(
+    // tslint:disable-next-line:ban-types
     @Inject(PLATFORM_ID) private platformId: Object,
     @Inject(forwardRef(() => NgxAuthFirebaseUIConfigToken))
     public config: NgxAuthFirebaseUIConfig,
@@ -125,7 +100,7 @@ export class NgxAuthFirebaseuiRegisterComponent implements OnInit, OnDestroy {
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required,
-                     Validators.minLength(this.config.passwordMinLength), 
+                     Validators.minLength(this.config.passwordMinLength),
                      Validators.maxLength(this.config.passwordMaxLength)]],
       passwordConfirm: ['', [Validators.required, confirmPasswordValidator]],
       tos: [''],

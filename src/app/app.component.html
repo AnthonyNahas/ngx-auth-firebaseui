@@ -337,9 +337,7 @@
 
   DEFAULT <ngx-auth-firebaseui-avatar></ngx-auth-firebaseui-avatar>
   SIMPLE <ngx-auth-firebaseui-avatar [layout]="'simple'"
-                              [canViewAccount]="false"
-                              [textProfile]="'My profile'"
-                              [textSignOut]="'Logout'"></ngx-auth-firebaseui-avatar>
+                              [canViewAccount]="false"></ngx-auth-firebaseui-avatar>
 
 </div>
 
@@ -567,7 +565,7 @@
           </mat-tab-group>
         </mat-card-content>
         <mat-card-content>
-          <ngx-auth-firebaseui-register appearance="outline"
+          <ngx-auth-firebaseui-register appearance="outline" tosUrl="./legal" privacyPolicyUrl="./legal"
                                         logoUrl="assets/angular-material-extensions-logo.svg">
           </ngx-auth-firebaseui-register>
         </mat-card-content>

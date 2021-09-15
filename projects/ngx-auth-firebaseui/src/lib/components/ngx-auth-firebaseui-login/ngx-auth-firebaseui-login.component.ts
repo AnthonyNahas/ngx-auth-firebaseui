@@ -6,6 +6,7 @@ import {NgxAuthFirebaseuiAnimations} from '../../animations';
 import {isPlatformBrowser} from '@angular/common';
 import {MatFormFieldAppearance} from '@angular/material/form-field';
 import {ThemePalette} from '@angular/material/core';
+import {I18nMessagesService} from "../../services/i18n-messages.service";
 
 @Component({
   selector: 'ngx-auth-firebaseui-login',
@@ -24,24 +25,6 @@ export class NgxAuthFirebaseuiLoginComponent implements OnInit {
   @Input() messageOnAuthSuccess: string;
   @Input() messageOnAuthError: string;
 
-  // i18n
-  @Input() titleText = 'LOGIN TO YOUR ACCOUNT';
-  @Input() rememberMeText = 'Remember Me';
-  @Input() loginButtonText = 'LOGIN';
-  @Input() orLabelText = 'OR';
-  @Input() forgotPasswordText = 'Forgot Password?';
-  @Input() dontHaveAnAccountText = 'Don\'t have an account?';
-  @Input() createAccountButtonText = 'Create an account';
-
-  // i18n email
-  @Input() emailText = 'Email';
-  @Input() emailErrorRequiredText = 'Email is required';
-  @Input() emailErrorPatternText = 'Please enter a valid email address';
-
-  // i18n password
-  @Input() passwordText = 'Password';
-  @Input() passwordErrorRequiredText = 'Password is required';
-
   // Events
   // tslint:disable-next-line:no-output-on-prefix
   @Output() onSuccess: any;
@@ -51,8 +34,10 @@ export class NgxAuthFirebaseuiLoginComponent implements OnInit {
   @Output() onCreateAccountRequested: EventEmitter<void> = new EventEmitter<void>();
   // tslint:disable-next-line:no-output-on-prefix
   @Output() onResetPasswordRequested: EventEmitter<void> = new EventEmitter<void>();
-
+  // tslint:disable-next-line:no-output-on-prefix
   @Output() onLoginButtonClicked: EventEmitter<void> = new EventEmitter<void>();
+
+  i18nMessageService = I18nMessagesService;
 
   loginForm: FormGroup;
   authProviders = AuthProvider;

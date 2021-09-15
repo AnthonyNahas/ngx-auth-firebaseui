@@ -13,6 +13,7 @@ import {
 } from '@angular/core';
 import {Router} from '@angular/router';
 import {AuthProcessService} from '../../services/auth-process.service';
+import {I18nMessagesService} from '../../services/i18n-messages.service';
 
 interface VerifyEmailContext {
   email: string;
@@ -24,16 +25,6 @@ interface VerifyEmailContext {
   messageOnError: string;
 }
 
-const defaultTranslations = {
-  verifyEmailTitleText: 'Confirm your e-mail address!',
-  verifyEmailConfirmationText: 'A confirmation e-mail has been sent.' +
-    ' Check your inbox and click on the link "Confirm my e-mail" to confirm your e-mail address.',
-  verifyEmailGoBackText: 'Go back',
-  sendNewVerificationEmailText: 'Send new confirmation e-mail',
-  signOutText: 'Sign out',
-  messageOnEmailConfirmationSuccess: 'A new confirmation e-mail has been sent. Please check your inbox.',
-};
-
 @Component({
   selector: 'ngx-auth-firebaseui-email-confirmation',
   templateUrl: './email-confirmation.component.html',
@@ -44,13 +35,6 @@ export class EmailConfirmationComponent implements OnInit, OnChanges {
 
   @Input() email: string;
   @Input() goBackURL: string;
-  // i18n translations to use in default template
-  @Input() verifyEmailTitleText: string;
-  @Input() verifyEmailConfirmationText: string;
-  @Input() verifyEmailGoBackText: string;
-  @Input() sendNewVerificationEmailText: string;
-  @Input() signOutText: string;
-  @Input() messageOnEmailConfirmationSuccess: string;
 
   // Template to use in place of default template
   @Input() template: TemplateRef<any>;
@@ -114,12 +98,12 @@ export class EmailConfirmationComponent implements OnInit, OnChanges {
     return {
       email: this.email,
       goBackURL: this.goBackURL,
-      verifyEmailTitleText: this.verifyEmailTitleText || defaultTranslations.verifyEmailTitleText,
-      verifyEmailConfirmationText: this.verifyEmailConfirmationText || defaultTranslations.verifyEmailConfirmationText,
-      verifyEmailGoBackText: this.verifyEmailGoBackText || defaultTranslations.verifyEmailGoBackText,
-      sendNewVerificationEmailText: this.sendNewVerificationEmailText || defaultTranslations.sendNewVerificationEmailText,
-      signOutText: this.signOutText || defaultTranslations.signOutText,
-      messageOnEmailConfirmationSuccess: this.messageOnEmailConfirmationSuccess || defaultTranslations.messageOnEmailConfirmationSuccess
+      verifyEmailTitleText: I18nMessagesService.emailConfirmation.verifyEmailTitleText,
+      verifyEmailConfirmationText: I18nMessagesService.emailConfirmation.verifyEmailConfirmationText,
+      verifyEmailGoBackText: I18nMessagesService.emailConfirmation.verifyEmailGoBackText,
+      sendNewVerificationEmailText: I18nMessagesService.emailConfirmation.sendNewVerificationEmailText,
+      signOutText: I18nMessagesService.emailConfirmation.signOutText,
+      messageOnEmailConfirmationSuccess: I18nMessagesService.emailConfirmation.messageOnEmailConfirmationSuccess
     };
   }
 }

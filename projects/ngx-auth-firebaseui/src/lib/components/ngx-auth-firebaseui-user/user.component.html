@@ -13,14 +13,14 @@
       <div *ngIf="user.emailVerified; then emailVerified else emailNotVerified"></div>
       <ng-template #emailVerified>
         <mat-icon color="primary"
-                  [matTooltip]="emailVerifiedText"
+                  [matTooltip]="i18nMessageService.user.emailVerifiedText"
                   matTooltipPosition="after">
           verified_user
         </mat-icon>
       </ng-template>
       <ng-template #emailNotVerified>
         <mat-icon color="warn"
-                  [matTooltip]="emailNotVerifiedText"
+                  [matTooltip]="i18nMessageService.user.emailNotVerifiedText"
                   matTooltipPosition="after">
           warning
         </mat-icon>
@@ -39,52 +39,52 @@
           <div fxLayoutAlign="center">
             <button (click)="changeEditMode()" class="edit-button" color="warn"
                     mat-raised-button>
-              {{cancelButtonText}}
+              {{i18nMessageService.user.cancelButtonText}}
             </button>
           </div>
 
           <!--name-->
           <mat-form-field [appearance]="appearance" class="full-width">
-            <mat-label>{{nameText}}</mat-label>
+            <mat-label>{{i18nMessageService.user.nameText}}</mat-label>
             <input [formControl]="updateNameFormControl"
                    matInput
-                   [placeholder]="nameText">
+                   [placeholder]="i18nMessageService.user.nameText">
             <mat-icon matSuffix>person</mat-icon>
             <mat-hint align="end" aria-live="polite"> {{ updateNameFormControl.value?.length }}
               / {{ config.nameMaxLength }} </mat-hint>
             <mat-error *ngIf="updateNameFormControl.hasError('required')">
-              {{nameErrorRequiredText}}
+              {{i18nMessageService.user.nameErrorRequiredText}}
             </mat-error>
           </mat-form-field>
 
           <!--email-->
           <mat-form-field [appearance]="appearance" class="full-width">
-            <mat-label>{{emailText}}</mat-label>
+            <mat-label>{{i18nMessageService.user.emailText}}</mat-label>
             <input [formControl]="updateEmailFormControl"
                    matInput
-                   [placeholder]="emailText">
+                   [placeholder]="i18nMessageService.user.emailText">
             <mat-icon matSuffix>email</mat-icon>
             <mat-error *ngIf="updateEmailFormControl.hasError('required')">
-              {{emailErrorRequiredText}} {{updateEmailFormControl.value}}
+              {{i18nMessageService.user.emailErrorRequiredText}} {{updateEmailFormControl.value}}
             </mat-error>
             <mat-error *ngIf="updateEmailFormControl.hasError('pattern')">
-              {{emailErrorPatternText}} {{updateEmailFormControl.value}}
+              {{i18nMessageService.user.emailErrorPatternText}} {{updateEmailFormControl.value}}
             </mat-error>
           </mat-form-field>
 
           <!--phone number-->
           <mat-form-field *ngIf="false" [appearance]="appearance" class="full-width">
-            <mat-label>{{phoneText}}</mat-label>
+            <mat-label>{{i18nMessageService.user.phoneText}}</mat-label>
             <input [formControl]="updatePhoneNumberFormControl"
                    matInput
-                   [placeholder]="phoneText"
+                   [placeholder]="i18nMessageService.user.phoneText"
                    type="tel">
             <mat-icon matSuffix>phone</mat-icon>
             <mat-hint align="end" aria-live="polite">
-              {{phoneHintText}}
+              {{i18nMessageService.user.phoneHintText}}
             </mat-hint>
             <mat-error *ngIf="updatePhoneNumberFormControl.hasError('pattern')">
-              {{phoneErrorPatternText}}
+              {{i18nMessageService.user.phoneErrorPatternText}}
             </mat-error>
           </mat-form-field>
 
@@ -94,7 +94,7 @@
           <button color="primary"
                   mat-button
                   type="submit">
-            {{saveChangesButtonText}}
+            {{i18nMessageService.user.saveChangesButtonText}}
           </button>
         </mat-card-actions>
       </form>
@@ -104,42 +104,42 @@
       <div fxLayoutAlign="center">
         <button *ngIf="canEditAccount" (click)="changeEditMode()" class="edit-button" color="primary"
                 mat-raised-button>
-          {{editButtonText}}
+          {{i18nMessageService.user.editButtonText}}
         </button>
       </div>
 
       <!--name-->
       <mat-form-field [appearance]="appearance" class="full-width">
-        <mat-label>{{nameText}}</mat-label>
+        <mat-label>{{i18nMessageService.user.nameText}}</mat-label>
         <input [disabled]="!editMode"
                [value]="user.displayName"
                matInput
-               [placeholder]="nameText">
+               [placeholder]="i18nMessageService.user.nameText">
         <mat-icon color="primary" matSuffix>person</mat-icon>
       </mat-form-field>
 
       <!--email-->
       <mat-form-field [appearance]="appearance" class="full-width">
-        <mat-label>{{emailText}}</mat-label>
+        <mat-label>{{i18nMessageService.user.emailText}}</mat-label>
         <input [disabled]="!editMode"
                [value]="user.email" matInput
-               [placeholder]="emailText">
+               [placeholder]="i18nMessageService.user.emailText">
         <mat-icon color="primary" matSuffix>email</mat-icon>
       </mat-form-field>
 
       <!--phone number-->
       <mat-form-field *ngIf="false" [appearance]="appearance" class="full-width">
-        <mat-label>{{phoneText}}</mat-label>
+        <mat-label>{{i18nMessageService.user.phoneText}}</mat-label>
         <input [disabled]="!editMode"
                [value]="user.phoneNumber"
                matInput
-               [placeholder]="phoneText">
+               [placeholder]="i18nMessageService.user.phoneText">
         <mat-icon color="primary" matSuffix>phone</mat-icon>
       </mat-form-field>
 
       <mat-card-actions fxLayout="column">
-        <button (click)="signOut()" *ngIf="canLogout" color="primary" mat-button>{{signoutButtonText}}</button>
-        <button (click)="deleteAccount()" *ngIf="canDeleteAccount" color="warn" mat-button>{{deleteAccountButtonText}}</button>
+        <button (click)="signOut()" *ngIf="canLogout" color="primary" mat-button>{{i18nMessageService.user.signoutButtonText}}</button>
+        <button (click)="deleteAccount()" *ngIf="canDeleteAccount" color="warn" mat-button>{{i18nMessageService.user.deleteAccountButtonText}}</button>
       </mat-card-actions>
 
     </ng-template>
@@ -153,7 +153,7 @@
   <mat-card class="none-card" fxLayout="row" fxLayoutAlign="center center">
     <mat-card-content fxLayout="row" fxLayoutAlign="center center">
       <mat-icon color="accent">warning</mat-icon>
-      <span>{{notLoggedInText}}</span>
+      <span>{{i18nMessageService.user.notLoggedInText}}</span>
     </mat-card-content>
   </mat-card>
 </ng-template>

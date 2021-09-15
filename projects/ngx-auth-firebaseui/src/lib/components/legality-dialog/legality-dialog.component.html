@@ -1,23 +1,23 @@
-<h1 matDialogTitle>Legal requirements</h1>
+<h1 matDialogTitle>{{i18nMessageService.legalityDialog.legalRequirementsMessage}}</h1>
 
 <mat-dialog-content>
   <div fxLayout="column" fxLayoutAlign="start">
     <mat-checkbox *ngIf="this.data.tosUrl" [(ngModel)]="checkTOS">
-      I agree to the
+      {{i18nMessageService.legalityDialog.iAgreeWithMessage}}
       <span>&nbsp;</span>
       <a [href]="this.data.tosUrl"
          target="_blank">
-        Terms of Service and Conditions
+        {{i18nMessageService.legalityDialog.termsOfServiceAndConditionsMessage}}
       </a>
     </mat-checkbox>
 
     <mat-checkbox *ngIf="this.data.privacyPolicyUrl"
                   [(ngModel)]="checkPrivacyPolicy">
-      I have read and agree to the
+      {{i18nMessageService.legalityDialog.iHaveReadAndAgreeToTheMessage}}
       <span>&nbsp;</span>
       <a [href]="this.data.privacyPolicyUrl"
          target="_blank">
-        Privacy
+        {{i18nMessageService.legalityDialog.privacyMessage}}
       </a>
     </mat-checkbox>
   </div>
@@ -33,7 +33,7 @@
           [disabled]="disableConfirmActionButton"
           color="primary"
           id="confirm-action"
-          mat-raised-button>Confirm
+          mat-raised-button>{{i18nMessageService.legalityDialog.confirmMessage}}
   </button>
 </mat-dialog-actions>
 

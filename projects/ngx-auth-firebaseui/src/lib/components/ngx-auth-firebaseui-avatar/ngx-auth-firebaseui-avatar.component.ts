@@ -6,6 +6,7 @@ import { take } from 'rxjs/operators';
 import { MatDialog } from "@angular/material/dialog";
 import { UserComponent } from "..";
 import { AuthProcessService } from "../../services/auth-process.service";
+import {I18nMessagesService} from "../../services/i18n-messages.service";
 
 export interface LinkMenuItem {
   text: string;
@@ -20,33 +21,18 @@ export interface LinkMenuItem {
   styleUrls: ["./ngx-auth-firebaseui-avatar.component.scss"],
 })
 export class NgxAuthFirebaseuiAvatarComponent implements OnInit {
-  @Input()
-  layout: "default" | "simple" = "default";
 
-  @Input()
-  canLogout = true;
+  @Input() layout: "default" | "simple" = "default";
+  @Input() canLogout = true;
+  @Input() links: LinkMenuItem[];
+  @Input() canViewAccount = true;
+  @Input() canDeleteAccount = true;
+  @Input() canEditAccount = true;
 
-  @Input()
-  links: LinkMenuItem[];
-
-  @Input()
-  canViewAccount = true;
-
-  @Input()
-  canDeleteAccount = true;
-
-  @Input()
-  canEditAccount = true;
-
-  @Input()
-  textProfile = "Profile";
-
-  @Input()
-  textSignOut = "Sign Out";
+  i18nMessageService = I18nMessagesService;
 
   // tslint:disable-next-line:no-output-on-prefix
-  @Output()
-  onSignOut: EventEmitter<void> = new EventEmitter();
+  @Output() onSignOut: EventEmitter<void> = new EventEmitter();
 
   user: firebase.User;
   user$: Observable<firebase.User | null>;

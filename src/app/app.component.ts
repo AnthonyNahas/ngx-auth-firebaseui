@@ -1,13 +1,14 @@
-import { Component, OnDestroy } from "@angular/core";
-import { Subscription } from "rxjs";
-import { MatSnackBar } from "@angular/material/snack-bar";
-import { Router } from "@angular/router";
-import { AngularFireAuth } from "@angular/fire/auth";
-import { MatTabChangeEvent } from "@angular/material/tabs";
+import {Component, OnDestroy} from "@angular/core";
+import {Subscription} from "rxjs";
+import {MatSnackBar} from "@angular/material/snack-bar";
+import {Router} from "@angular/router";
+import {AngularFireAuth} from "@angular/fire/auth";
+import {MatTabChangeEvent} from "@angular/material/tabs";
 import {
   AuthProvider,
   Theme,
 } from "projects/ngx-auth-firebaseui/src/public-api";
+import {I18nMessagesService} from "../../projects/ngx-auth-firebaseui/src/lib/services/i18n-messages.service";
 
 @Component({
   selector: "app-root",
@@ -38,7 +39,16 @@ export class AppComponent implements OnDestroy {
     public auth: AngularFireAuth,
     public router: Router,
     public snackbar: MatSnackBar
-  ) {}
+  ) {
+    I18nMessagesService.legalityDialog.iHaveReadAndAgreeToTheMessage = 'Li e aceito o';
+    I18nMessagesService.legalityDialog.iAgreeWithMessage = 'Li e aceito o';
+    I18nMessagesService.legalityDialog.privacyMessage = 'Privacidade';
+    I18nMessagesService.legalityDialog.confirmMessage = 'Confirmo';
+    I18nMessagesService.legalityDialog.termsOfServiceAndConditionsMessage = 'Termos de Serviço e Condições Message';
+    I18nMessagesService.legalityDialog.legalRequirementsMessage = 'Requerimento Legal';
+    I18nMessagesService.register.termsAndConditionsText = 'Li e aceito os';
+    I18nMessagesService.register.termsAndConditionsLinkText = 'termos e condições';
+  }
 
   get color(): string {
     return this.error ? "warn" : "primary";

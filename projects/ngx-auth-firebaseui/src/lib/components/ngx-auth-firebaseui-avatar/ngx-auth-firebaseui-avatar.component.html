@@ -29,9 +29,9 @@
         <mat-icon>{{menuItem?.icon}}</mat-icon>
         {{menuItem?.text}}</button>
     </div>
-    <button *ngIf="canViewAccount" (click)="openProfile()" color="primary" fxLayoutAlign="center" mat-raised-button>{{ textProfile }}
+    <button *ngIf="canViewAccount" (click)="openProfile()" color="primary" fxLayoutAlign="center" mat-raised-button>{{i18nMessageService.avatar.textProfile}}
     </button>
-    <button (click)="signOut()" *ngIf="canLogout" color="warn" fxLayoutAlign="center" mat-raised-button>{{ textSignOut }}
+    <button (click)="signOut()" *ngIf="canLogout" color="warn" fxLayoutAlign="center" mat-raised-button>{{i18nMessageService.avatar.textSignOut}}
     </button>
   </div>
 </mat-menu>

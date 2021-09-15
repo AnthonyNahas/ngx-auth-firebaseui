@@ -8,29 +8,29 @@
         <img [@animate]="{ value: '*', params: { x: '50px' } }" [src]="logoUrl" alt="logo">
       </div>
 
-      <div [@animate]="{ value: '*', params: { x: '-50px' } }" class="title">{{titleText}}</div>
+      <div [@animate]="{ value: '*', params: { x: '-50px' } }" class="title">{{i18nMessageService.login.titleText}}</div>
 
       <form [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}" [formGroup]="loginForm" name="loginForm"
             novalidate>
 
         <mat-form-field [@animate]="{ value: '*', params: { x: '50px' } }" [appearance]="appearance">
-          <input [placeholder]="emailText" formControlName="email" matInput autocomplete="username">
+          <input [placeholder]="i18nMessageService.login.emailText" formControlName="email" matInput autocomplete="username">
           <mat-icon [color]="color" matSuffix>email</mat-icon>
           <mat-error *ngIf="loginForm.get('email')?.hasError('required')">
-            {{emailErrorRequiredText}}
+            {{i18nMessageService.login.emailErrorRequiredText}}
           </mat-error>
           <mat-error
             *ngIf="!loginForm.get('email')?.hasError('required') &&
                                 loginForm.get('email')?.hasError('email')">
-            {{emailErrorPatternText}}
+            {{i18nMessageService.login.emailErrorPatternText}}
           </mat-error>
         </mat-form-field>
 
         <mat-form-field [@animate]="{ value: '*', params: { x: '50px' } }" [appearance]="appearance">
-          <input [placeholder]="passwordText" formControlName="password" matInput type="password" autocomplete="current-password">
+          <input [placeholder]="i18nMessageService.login.passwordText" formControlName="password" matInput type="password" autocomplete="current-password">
           <mat-icon [color]="color" matSuffix>lock</mat-icon>
           <mat-error>
-            {{passwordErrorRequiredText}}
+            {{i18nMessageService.login.passwordErrorRequiredText}}
           </mat-error>
         </mat-form-field>
 
@@ -49,7 +49,7 @@
                   class="forgot-password"
                   mat-button
                   type="button">
-            {{forgotPasswordText}}
+            {{i18nMessageService.login.forgotPasswordText}}
           </button>
         </div>
 
@@ -60,7 +60,7 @@
                 class="submit-button"
                 id="loginButton"
                 mat-raised-button>
-          {{loginButtonText}}
+          {{i18nMessageService.login.loginButtonText}}
         </button>
 
       </form>
@@ -68,7 +68,7 @@
       <div *ngIf="providers.length > 0"
            [@animate]="{ value: '*', params: { z: '50px', delay: '50ms', scale: '0.2' } }"
            class="separator">
-        <span class="text">{{orLabelText}}</span>
+        <span class="text">{{i18nMessageService.login.orLabelText}}</span>
       </div>
 
       <ngx-auth-firebaseui-providers [providers]="providers"
@@ -81,14 +81,14 @@
            class="register"
            fxLayout="column" fxLayoutAlign="center center">
         <span [@animate]="{ value: '*', params: { x: '100px' } }" class="text">
-          {{dontHaveAnAccountText}}
+          {{i18nMessageService.login.dontHaveAnAccountText}}
         </span>
         <button (click)="onCreateAccountRequested.emit()"
                 [@animate]="{ value: '*', params: { x: '-100px' } }"
                 [color]="color"
                 id="createAccountButton"
                 mat-button
-                type="button">{{createAccountButtonText}}</button>
+                type="button">{{i18nMessageService.login.createAccountButtonText}}</button>
       </div>
     </div>
   </div>

@@ -52,6 +52,7 @@ import {
 } from "../../services/auth-process.service";
 import { NgxAuthFirebaseuiAnimations } from "../../animations";
 import { NgxAuthFirebaseUIConfigToken } from "../../tokens";
+import {I18nMessagesService} from "../../services/i18n-messages.service";
 
 export const EMAIL_REGEX = new RegExp(
   [
@@ -124,58 +125,7 @@ export class AuthComponent
   // See email-confirmation component
   @Input() verifyEmailTemplate: TemplateRef<any>;
 
-  // i18n translations to use in default template for email verification.
-  // See email-confirmation component
-  @Input() verifyEmailTitleText: string;
-  @Input() verifyEmailConfirmationText: string;
-  @Input() verifyEmailGoBackText: string;
-  @Input() sendNewVerificationEmailText: string;
-  @Input() signOutText = "Sign out";
-
-  // Customize the text
-  // Reset Password Tab
-  @Input() resetPasswordTabText = "Reset e-mail address to password";
-  @Input() resetPasswordInputText = "Reset e-mail address to password";
-  @Input() resetPasswordErrorRequiredText =
-    "E-mail is required to reset the password!";
-  @Input() resetPasswordErrorPatternText =
-    "Please enter a valid e-mail address";
-  @Input() resetPasswordActionButtonText = "Reset";
-  @Input() resetPasswordInstructionsText =
-    "Reset requested. Check your e-mail instructions.";
-
-  // SignIn Tab
-  @Input() signInTabText = "Sign in";
-  @Input() signInCardTitleText = "Signing in";
-  @Input() loginButtonText = "Log In";
-  @Input() forgotPasswordButtonText = "Forgot Password ?";
-
-  // Common
-  @Input() nameText = "Name";
-  @Input() nameErrorRequiredText = "Name is required";
-  @Input() nameErrorMinLengthText = "The name is too short!";
-  @Input() nameErrorMaxLengthText = "The name is too long!";
-
-  @Input() emailText = "E-mail";
-  @Input() emailErrorRequiredText = "E-mail is required";
-  @Input() emailErrorPatternText = "Please enter a valid e-mail address";
-
-  @Input() passwordText = "Password";
-  @Input() passwordErrorRequiredText = "Password is required";
-  @Input() passwordErrorMinLengthText = "The password is too short!";
-  @Input() passwordErrorMaxLengthText = "The password is too long!";
-
-  // Register Tab
-  @Input() registerTabText = "Register";
-  @Input() registerCardTitleText = "Registration";
-  @Input() registerButtonText = "Register";
-  @Input() guestButtonText = "continue as guest";
-
-  // email confirmation component
-  @Input() emailConfirmationTitle = "Confirm your e-mail address!";
-  // tslint:disable-next-line:max-line-length
-  @Input()
-  emailConfirmationText = `A confirmation e-mail has been sent to you. Check your inbox and click on the link "Confirm my e-mail" to confirm your e-mail address.`;
+  i18nMessagesService = I18nMessagesService;
 
   authProvider = AuthProvider;
   passwordResetWished: boolean;

@@ -8,73 +8,73 @@
         <img [@animate]="{ value: '*', params: { x: '50px' } }" [src]="logoUrl" alt="logo">
       </div>
 
-      <div [@animate]="{ value: '*', params: { x: '-50px' } }" class="title">{{titleText}}</div>
+      <div [@animate]="{ value: '*', params: { x: '-50px' } }" class="title">{{i18nMessageService.register.titleText}}</div>
 
       <form [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}" [formGroup]="registerForm" name="registerForm"
             novalidate>
 
         <mat-form-field [@animate]="{ value: '*', params: { x: '50px' } }" [appearance]="appearance">
-          <input [placeholder]="nameText" formControlName="name" matInput/>
+          <input [placeholder]="i18nMessageService.register.nameText" formControlName="name" matInput/>
           <mat-icon [color]="color" matSuffix>person</mat-icon>
           <mat-error>
-            {{nameErrorRequiredText}}
+            {{i18nMessageService.register.nameErrorRequiredText}}
           </mat-error>
         </mat-form-field>
 
         <mat-form-field [@animate]="{ value: '*', params: { x: '50px' } }" [appearance]="appearance">
-          <input [placeholder]="emailText" formControlName="email" matInput autocomplete="username"/>
+          <input [placeholder]="i18nMessageService.register.emailText" formControlName="email" matInput autocomplete="username"/>
           <mat-icon [color]="color" matSuffix>email</mat-icon>
           <mat-error *ngIf="registerForm.get('email')?.hasError('required')">
-            {{emailErrorRequiredText}}
+            {{i18nMessageService.register.emailErrorRequiredText}}
           </mat-error>
           <mat-error *ngIf="registerForm.get('email')?.hasError('email')">
-            {{emailErrorPatternText}}
+            {{i18nMessageService.register.emailErrorPatternText}}
           </mat-error>
         </mat-form-field>
 
         <mat-form-field [@animate]="{ value: '*', params: { x: '50px' } }" [appearance]="appearance">
-          <input [placeholder]="passwordText" formControlName="password" matInput type="password" autocomplete="new-password"/>
+          <input [placeholder]="i18nMessageService.register.passwordText" formControlName="password" matInput type="password" autocomplete="new-password"/>
           <mat-icon [color]="color" matSuffix>lock</mat-icon>
           <mat-error  *ngIf="registerForm.get('password')?.hasError('required')">
-            {{passwordErrorRequiredText}}
+            {{i18nMessageService.register.passwordErrorRequiredText}}
           </mat-error>
           <mat-error  *ngIf="registerForm.get('password')?.hasError('minlength')">
-            {{ passwordErrorMinLengthText }}
+            {{i18nMessageService.register.passwordErrorMinLengthText}}
           </mat-error>
           <mat-error  *ngIf="registerForm.get('password')?.hasError('maxlength')">
-            {{ passwordErrorMaxLengthText }}
+            {{i18nMessageService.register.passwordErrorMaxLengthText}}
           </mat-error>
         </mat-form-field>
 
         <mat-form-field [@animate]="{ value: '*', params: { x: '50px' } }" [appearance]="appearance">
-          <input [placeholder]="passwordConfirmationText" formControlName="passwordConfirm" matInput type="password" autocomplete="new-password"/>
+          <input [placeholder]="i18nMessageService.register.passwordConfirmationText" formControlName="passwordConfirm" matInput type="password" autocomplete="new-password"/>
           <mat-icon [color]="color" matSuffix>lock</mat-icon>
           <mat-error *ngIf="registerForm.get('passwordConfirm')?.hasError('required')">
-            {{passwordConfirmationErrorRequiredText}}
+            {{i18nMessageService.register.passwordConfirmationErrorRequiredText}}
           </mat-error>
           <mat-error
             *ngIf="
               !registerForm.get('passwordConfirm')?.hasError('required') &&
               registerForm.get('passwordConfirm')?.hasError('passwordsNotMatching')
             ">
-            {{passwordErrorMatchText}}
+            {{i18nMessageService.register.passwordErrorMatchText}}
           </mat-error>
         </mat-form-field>
 
         <div *ngIf="this.tosUrl">
-          <mat-checkbox aria-label="{{termsAndConditionsText}}" formControlName="tos" required>
-            <span>{{termsAndConditionsText}}</span>
+          <mat-checkbox aria-label="{{i18nMessageService.register.termsAndConditionsText}}" formControlName="tos" required>
+            <span>{{i18nMessageService.register.termsAndConditionsText}}</span>
             <a target="_blank" [href]="this.tosUrl">
-                {{termsAndConditionsLinkText}}
+                {{i18nMessageService.register.termsAndConditionsLinkText}}
             </a>
           </mat-checkbox>
         </div>
 
         <div *ngIf="this.privacyPolicyUrl">
-          <mat-checkbox aria-label="{{privacyPolicyText}}" formControlName="privacyPolicy" required>
-            <span>{{privacyPolicyText}}</span>
+          <mat-checkbox aria-label="{{i18nMessageService.register.privacyPolicyText}}" formControlName="privacyPolicy" required>
+            <span>{{i18nMessageService.register.privacyPolicyText}}</span>
             <a target="_blank" [href]="this.privacyPolicyUrl">
-                {{privacyPolicyLinkText}}
+                {{i18nMessageService.register.privacyPolicyLinkText}}
             </a>
           </mat-checkbox>
         </div>
@@ -86,14 +86,14 @@
                 class="submit-button"
                 id="createAccountButton"
                 mat-raised-button>
-          {{createAccountButtonText}}
+          {{i18nMessageService.register.createAccountButtonText}}
         </button>
       </form>
 
       <div [@animate]="{value:'*',params:{duration:'300ms',y:'100px'}}" class="register" fxLayout="column"
            fxLayoutAlign="center center">
         <span [@animate]="{ value: '*', params: { x: '100px' } }" class="text">
-          {{alreadyHaveAccountText}}
+          {{i18nMessageService.register.alreadyHaveAccountText}}
         </span>
         <button (click)="onLoginRequested.emit()"
                 [@animate]="{ value: '*', params: { x: '-100px' } }"
@@ -101,7 +101,7 @@
                 id="loginButton"
                 mat-button
                 type="button">
-          {{loginButtonText}}
+          {{i18nMessageService.register.loginButtonText}}
         </button>
       </div>
 
