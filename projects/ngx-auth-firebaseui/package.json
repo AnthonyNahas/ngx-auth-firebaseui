@@ -52,7 +52,7 @@
   "peerDependencies": {
     "@angular/common": "^11.0.2",
     "@angular/core": "^11.0.2",
-    "@angular-material-extensions/password-strength": "^8.1.1",
+    "@angular-material-extensions/password-strength": "^9.0.0",
     "@angular/animations": "^11.0.2",
     "@angular/cdk": "^11.0.0",
     "@angular/fire": "^6.1.1",
