@@ -77,11 +77,11 @@ export class NgxAuthFirebaseuiRegisterComponent implements OnInit, OnDestroy {
   @Input() passwordErrorMaxLengthText = "The password is too long!";
 
   // Events
-  // tslint:disable-next-line:no-output-on-prefix
+  // eslint-disable-next-line @angular-eslint/no-output-on-prefix
   @Output() onSuccess: any;
-  // tslint:disable-next-line:no-output-on-prefix
+  // eslint-disable-next-line @angular-eslint/no-output-on-prefix
   @Output() onError: any;
-  // tslint:disable-next-line:no-output-on-prefix
+  // eslint-disable-next-line @angular-eslint/no-output-on-prefix
   @Output() onLoginRequested: EventEmitter<void> = new EventEmitter<void>();
 
   @Output() onCreateAccountButtonClicked: EventEmitter<void> = new EventEmitter();
@@ -93,7 +93,7 @@ export class NgxAuthFirebaseuiRegisterComponent implements OnInit, OnDestroy {
   // Private
   private unsubscribeAll: Subject<any>;
 
-  // tslint:disable-next-line:ban-types
+  // eslint-disable-next-line @typescript-eslint/ban-types
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object,
     @Inject(forwardRef(() => NgxAuthFirebaseUIConfigToken))

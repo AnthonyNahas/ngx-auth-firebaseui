@@ -1,9 +1,9 @@
 import '@firebase/auth';
 
 import { EventEmitter, forwardRef, Inject, Injectable } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { MAT_SNACK_BAR_DEFAULT_OPTIONS, MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
-import firebase from 'firebase/app';
+import firebase from 'firebase/compat/app';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map, take } from 'rxjs/operators';
 
@@ -332,7 +332,7 @@ export class AuthProcessService implements ISignInProcess, ISignUpProcess {
   // Consumers of this library are given the possibility to provide a
   // function in case they want to instrument message based on error properties.
   getMessageOnAuthError(error: any) {
-    // tslint:disable-next-line:no-bitwise
+    // eslint-disable-next-line no-bitwise
     return (
       error.toString() || "Sorry, something went wrong. Please retry later."
     );

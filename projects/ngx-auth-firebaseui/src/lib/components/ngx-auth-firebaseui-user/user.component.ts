@@ -6,9 +6,9 @@ import {
   Input,
   Output,
 } from "@angular/core";
-import { AngularFireAuth } from "@angular/fire/auth";
+import { AngularFireAuth } from "@angular/fire/compat/auth";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
-import firebase from "firebase/app";
+import firebase from "firebase/compat/app";
 import { EMAIL_REGEX, PHONE_NUMBER_REGEX } from "..";
 import { MatFormFieldAppearance } from "@angular/material/form-field";
 import { NgxAuthFirebaseUIConfigToken } from "../../tokens";
@@ -58,13 +58,13 @@ export class UserComponent {
       NOTE : the phone number must be a valid phone credential !!`;
   @Input() phoneErrorPatternText = "Please enter a valid phone number";
 
-  // tslint:disable-next-line:no-output-on-prefix
+  // eslint-disable-next-line @angular-eslint/no-output-on-prefix
   @Output() onSignOut: EventEmitter<void> = new EventEmitter();
 
-  // tslint:disable-next-line:no-output-on-prefix
+  // eslint-disable-next-line @angular-eslint/no-output-on-prefix
   @Output() onAccountEdited: EventEmitter<void> = new EventEmitter();
 
-  // tslint:disable-next-line:no-output-on-prefix
+  // eslint-disable-next-line @angular-eslint/no-output-on-prefix
   @Output() onAccountDeleted: EventEmitter<void> = new EventEmitter();
 
   updateFormGroup: FormGroup;

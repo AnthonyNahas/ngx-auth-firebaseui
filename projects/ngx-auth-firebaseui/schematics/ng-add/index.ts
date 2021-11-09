@@ -27,8 +27,8 @@ export function addPackageJsonDependencies(): Rule {
       {type: NodeDependencyType.Default, version: ngCoreVersionTag || '11.0.0', name: '@angular/forms'},
       {type: NodeDependencyType.Default, version: ngCoreVersionTag || '11.0.0', name: '@angular/router'},
       {type: NodeDependencyType.Default, version: '^11.0.0-beta.33', name: '@angular/flex-layout'},
-      {type: NodeDependencyType.Default, version: '^6.1.1', name: '@angular/fire'},
-      {type: NodeDependencyType.Default, version: '^8.1.1', name: 'firebase'}
+      {type: NodeDependencyType.Default, version: '^7.1.1', name: '@angular/fire/compat'},
+      {type: NodeDependencyType.Default, version: '^9.3.0', name: 'firebase'}
     ];
 
     dependencies.forEach(dependency => {
@@ -74,7 +74,7 @@ export function getPackageVersionFromPackageJson(tree: Tree, name: string): stri
     return null;
   }
 
-  // tslint:disable-next-line:no-non-null-assertion
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   const packageJson = JSON.parse(tree.read('package.json')!.toString('utf8'));
 
   if (packageJson.dependencies && packageJson.dependencies[name]) {

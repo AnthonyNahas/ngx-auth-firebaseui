@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
-import { AngularFireAuth } from "@angular/fire/auth";
-import firebase from "firebase/app";
+import { AngularFireAuth } from "@angular/fire/compat/auth";
+import firebase from "firebase/compat/app";
 import { Observable } from "rxjs";
 import { take } from 'rxjs/operators';
 import { MatDialog } from "@angular/material/dialog";
@@ -10,7 +10,7 @@ import { AuthProcessService } from "../../services/auth-process.service";
 export interface LinkMenuItem {
   text: string;
   icon?: string;
-  // tslint:disable-next-line:ban-types
+  // eslint-disable-next-line @typescript-eslint/ban-types
   callback?: Function;
 }
 
@@ -44,7 +44,7 @@ export class NgxAuthFirebaseuiAvatarComponent implements OnInit {
   @Input()
   textSignOut = "Sign Out";
 
-  // tslint:disable-next-line:no-output-on-prefix
+  // eslint-disable-next-line @angular-eslint/no-output-on-prefix
   @Output()
   onSignOut: EventEmitter<void> = new EventEmitter();
 

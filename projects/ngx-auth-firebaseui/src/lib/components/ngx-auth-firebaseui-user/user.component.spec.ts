@@ -5,10 +5,10 @@ import {HttpClientTestingModule} from '@angular/common/http/testing';
 
 import {MatButtonModule, MatCardModule, MatIconModule, MatInputModule, MatSnackBarModule, MatTooltipModule} from '@angular/material';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {AngularFireModule} from '@angular/fire';
-import {AngularFirestore} from '@angular/fire/firestore';
+import {AngularFireModule} from '@angular/fire/compat';
+import {AngularFirestore} from '@angular/fire/compat/firestore';
 import {AngularFireAuthStub, FirestoreStub} from '../../tests/helper';
-import {AngularFireAuth} from '@angular/fire/auth';
+import {AngularFireAuth} from '@angular/fire/compat/auth';
 import {UserComponent} from './user.component';
 import {NgxAuthFirebaseUIConfigToken, UserProvidedConfigToken} from '../../ngx-auth-firebase-u-i.module';
 import {ngxAuthFirebaseUIConfigFactory} from '../../interfaces/config.interface';

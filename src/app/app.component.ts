@@ -2,7 +2,7 @@ import { Component, OnDestroy } from "@angular/core";
 import { Subscription } from "rxjs";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { Router } from "@angular/router";
-import { AngularFireAuth } from "@angular/fire/auth";
+import { AngularFireAuth } from "@angular/fire/compat/auth";
 import { MatTabChangeEvent } from "@angular/material/tabs";
 import {
   AuthProvider,
