@@ -8,10 +8,10 @@ import {AuthProvidersComponent, Layout} from './auth.providers.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {AuthProcessService, AuthProvider} from '../../services/auth-process.service';
 import {FirestoreSyncService} from '../../services/firestore-sync.service';
-import {AngularFireModule} from '@angular/fire';
+import {AngularFireModule} from '@angular/fire/compat';
 import {BehaviorSubject} from 'rxjs';
-import {AngularFirestore} from '@angular/fire/firestore';
-import {AngularFireAuth} from '@angular/fire/auth';
+import {AngularFirestore} from '@angular/fire/compat/firestore';
+import {AngularFireAuth} from '@angular/fire/compat/auth';
 import {NgxAuthFirebaseUIConfigToken} from '../../ngx-auth-firebase-u-i.module';
 import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 

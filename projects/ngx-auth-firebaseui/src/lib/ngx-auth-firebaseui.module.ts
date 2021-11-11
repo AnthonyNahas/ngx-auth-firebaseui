@@ -6,9 +6,10 @@ import {HttpClientModule} from '@angular/common/http';
 import {RouterModule} from '@angular/router';
 import {FlexLayoutModule} from '@angular/flex-layout';
 // @angular/fire
-import {FIREBASE_APP_NAME, FIREBASE_OPTIONS, FirebaseAppConfig} from '@angular/fire';
-import {AngularFireAuthModule} from '@angular/fire/auth';
-import {AngularFirestoreModule} from '@angular/fire/firestore';
+import {FIREBASE_APP_NAME, FIREBASE_OPTIONS } from '@angular/fire/compat';
+import { FirebaseOptions } from '@firebase/app-types';
+import {AngularFireAuthModule} from '@angular/fire/compat/auth';
+import {AngularFirestoreModule} from '@angular/fire/compat/firestore';
 // @angular/material
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
@@ -136,11 +137,13 @@ export class NgxAuthFirebaseUIModule {
     this.registerProviderIcons();
   }
 
+
   static forRoot(
-    configFactory: FirebaseAppConfig,
+    configFactory: FirebaseOptions,
     appNameFactory: () => string | undefined = () => undefined,
     config: NgxAuthFirebaseUIConfig = {}
   ): ModuleWithProviders<NgxAuthFirebaseUIModule> {
+
     return {
       ngModule: NgxAuthFirebaseUIModule,
       providers:

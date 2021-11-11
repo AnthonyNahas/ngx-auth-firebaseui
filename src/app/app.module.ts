@@ -7,7 +7,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {MatCardModule} from '@angular/material/card';
 import {Angulartics2Module} from 'angulartics2';
-import {AngularFireModule} from '@angular/fire';
+import {AngularFireModule} from '@angular/fire/compat';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
@@ -19,15 +19,18 @@ import {MatTabsModule} from '@angular/material/tabs';
 import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { NgxAuthFirebaseUIModule } from 'projects/ngx-auth-firebaseui/src/public-api';
+import { environment } from '../environments/environment';
 
-export const firebaseKey = {
-  apiKey: 'AIzaSyASG7KxDO2z5AH9r0jlUmwiw68Ap8kG20c',
-  authDomain: 'ngx-auth-firebaseui.firebaseapp.com',
-  databaseURL: 'https://ngx-auth-firebaseui.firebaseio.com',
-  projectId: 'ngx-auth-firebaseui',
-  storageBucket: 'ngx-auth-firebaseui.appspot.com',
-  messagingSenderId: '520699629648'
-};
+
+export const firebaseKey = environment.firebaseConfig;
+// export const firebaseKey = {
+//   apiKey: 'AIzaSyASG7KxDO2z5AH9r0jlUmwiw68Ap8kG20c',
+//   authDomain: 'ngx-auth-firebaseui.firebaseapp.com',
+//   databaseURL: 'https://ngx-auth-firebaseui.firebaseio.com',
+//   projectId: 'ngx-auth-firebaseui',
+//   storageBucket: 'ngx-auth-firebaseui.appspot.com',
+//   messagingSenderId: '520699629648'
+// };
 
 export function firebaseAppNameFactory() {
   return `you_app_name`;

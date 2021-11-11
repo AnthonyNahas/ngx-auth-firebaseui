@@ -10,8 +10,8 @@ import {
   MatMenuModule,
   MatTooltipModule
 } from '@angular/material';
-import {AngularFireAuth} from '@angular/fire/auth';
-import {AngularFireModule} from '@angular/fire';
+import {AngularFireAuth} from '@angular/fire/compat/auth';
+import {AngularFireModule} from '@angular/fire/compat';
 import {AngularFireAuthStub} from '../../tests/helper';
 import {RouterTestingModule} from '@angular/router/testing';
 

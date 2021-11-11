@@ -2,8 +2,8 @@ import { Injectable } from "@angular/core";
 import {
   AngularFirestore,
   AngularFirestoreDocument,
-} from "@angular/fire/firestore";
-import firebase from "firebase/app";
+} from "@angular/fire/compat/firestore";
+import firebase from "firebase/compat/app";
 
 export const collections = {
   users: "users",

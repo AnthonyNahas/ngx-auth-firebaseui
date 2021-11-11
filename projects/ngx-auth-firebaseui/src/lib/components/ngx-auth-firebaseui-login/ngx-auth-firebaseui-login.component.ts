@@ -43,13 +43,13 @@ export class NgxAuthFirebaseuiLoginComponent implements OnInit {
   @Input() passwordErrorRequiredText = 'Password is required';
 
   // Events
-  // tslint:disable-next-line:no-output-on-prefix
+  // eslint-disable-next-line @angular-eslint/no-output-on-prefix
   @Output() onSuccess: any;
-  // tslint:disable-next-line:no-output-on-prefix
+  // eslint-disable-next-line @angular-eslint/no-output-on-prefix
   @Output() onError: any;
-  // tslint:disable-next-line:no-output-on-prefix
+  // eslint-disable-next-line @angular-eslint/no-output-on-prefix
   @Output() onCreateAccountRequested: EventEmitter<void> = new EventEmitter<void>();
-  // tslint:disable-next-line:no-output-on-prefix
+  // eslint-disable-next-line @angular-eslint/no-output-on-prefix
   @Output() onResetPasswordRequested: EventEmitter<void> = new EventEmitter<void>();
 
   @Output() onLoginButtonClicked: EventEmitter<void> = new EventEmitter<void>();
@@ -60,7 +60,7 @@ export class NgxAuthFirebaseuiLoginComponent implements OnInit {
   authenticationError = false;
 
   constructor(
-    // tslint:disable-next-line:ban-types
+    // eslint-disable-next-line @typescript-eslint/ban-types
     @Inject(PLATFORM_ID) private platformId: Object,
     public authProcess: AuthProcessService,
     private formBuilder: FormBuilder) {

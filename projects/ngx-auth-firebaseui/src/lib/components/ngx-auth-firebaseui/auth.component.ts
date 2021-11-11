@@ -32,7 +32,7 @@ import { MatDialog, MatDialogRef } from "@angular/material/dialog";
 import { MatFormFieldAppearance } from "@angular/material/form-field";
 
 // ANGULAR FIRE
-import { AngularFireAuth } from "@angular/fire/auth";
+import { AngularFireAuth } from "@angular/fire/compat/auth";
 
 // Third PARTY
 import { MatPasswordStrengthComponent } from "@angular-material-extensions/password-strength";
@@ -62,7 +62,7 @@ export const EMAIL_REGEX = new RegExp(
   ].join("")
 );
 
-// tslint:disable-next-line:max-line-length
+// eslint-disable-next-line max-len
 export const PHONE_NUMBER_REGEX = new RegExp(
   [
     "^[+]{0,1}[(]{0,1}[0-9]{1,4}[)]{0,1}[-\\s\\.]{0,1}[(]{0,1}[0-9]{1,4}[)]{0,1}[-\\s\\./0-9]{4,12}$",
@@ -100,9 +100,9 @@ export class AuthComponent
   @Input() messageOnEmailConfirmationSuccess: string;
 
   // Events
-  // tslint:disable-next-line:no-output-on-prefix
+  // eslint-disable-next-line @angular-eslint/no-output-on-prefix
   @Output() onSuccess: any;
-  // tslint:disable-next-line:no-output-on-prefix
+  // eslint-disable-next-line @angular-eslint/no-output-on-prefix
   @Output() onError: any;
   @Output() selectedTabChange: EventEmitter<
     MatTabChangeEvent
@@ -117,7 +117,7 @@ export class AuthComponent
   @Input() min: number;
   @Input() max: number;
   @Input() customValidator: RegExp;
-  // tslint:disable-next-line:no-output-on-prefix
+  // eslint-disable-next-line @angular-eslint/no-output-on-prefix
   @Output() onStrengthChanged: EventEmitter<number> = new EventEmitter();
 
   // Verify email template to use in place of default template.
@@ -173,7 +173,7 @@ export class AuthComponent
 
   // email confirmation component
   @Input() emailConfirmationTitle = "Confirm your e-mail address!";
-  // tslint:disable-next-line:max-line-length
+  // eslint-disable-next-line max-len
   @Input()
   emailConfirmationText = `A confirmation e-mail has been sent to you. Check your inbox and click on the link "Confirm my e-mail" to confirm your e-mail address.`;
 
@@ -202,7 +202,7 @@ export class AuthComponent
   resetPasswordEmailFormControl: AbstractControl;
 
   constructor(
-    // tslint:disable-next-line:ban-types
+    // eslint-disable-next-line @typescript-eslint/ban-types
     @Inject(PLATFORM_ID) private platformId: Object,
     @Inject(forwardRef(() => NgxAuthFirebaseUIConfigToken))
     public config: NgxAuthFirebaseUIConfig,
