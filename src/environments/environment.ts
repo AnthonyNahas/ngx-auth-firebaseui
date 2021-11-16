@@ -4,10 +4,10 @@
 
 export const environment = {
   production: false,
-  config: {}
+  firebaseConfig: {}
 };
 
-// YOU MUST PROVIDE YOUR OWN FIREBASE CONFIG AS config ABOVE
+// YOU MUST PROVIDE YOUR OWN FIREBASE CONFIG AS firebaseConfig ABOVE
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
