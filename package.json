@@ -27,8 +27,7 @@
     "dev:ssr": "ng run ngx-auth-firebaseui-demo:serve-ssr",
     "serve:ssr": "node dist/server/main.js",
     "build:ssr": "ng build --configuration production && ng run ngx-auth-firebaseui-demo:server:production",
-    "prerender": "ng run ngx-auth-firebaseui-demo:prerender",
-    "postinstall": "ngcc"
+    "prerender": "ng run ngx-auth-firebaseui-demo:prerender"
   },
   "private": true,
   "dependencies": {

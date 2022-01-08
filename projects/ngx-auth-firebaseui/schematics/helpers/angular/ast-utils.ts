@@ -1,7 +1,6 @@
 import {
   addBootstrapToModule as originalAddBootstrapToModule,
   addDeclarationToModule as originalAddDeclarationToModule,
-  addEntryComponentToModule as originalAddEntryComponentToModule,
   addExportToModule as originalAddExportToModule,
   addImportToModule as originalAddImportToModule,
   addProviderToModule as originalAddProviderToModule,
@@ -168,17 +167,6 @@ export function addBootstrapToModule(
   return originalAddBootstrapToModule(source, modulePath, classifiedName, importPath);
 }
 
-/**
- * Custom function to insert an entryComponent into NgModule. It also imports it.
- */
-export function addEntryComponentToModule(
-  source: ts.SourceFile,
-  modulePath: string,
-  classifiedName: string,
-  importPath: string
-): Change[] {
-  return originalAddEntryComponentToModule(source, modulePath, classifiedName, importPath);
-}
 
 /**
  * Determine if an import already exists.

@@ -32,7 +32,7 @@
     "url": "https://github.com/anthonynahas/ngx-auth-firebaseui/issues"
   },
   "scripts": {
-    "build": "../../node_modules/.bin/ng build ngx-auth-firebaseui --prod",
+    "build": "../../node_modules/.bin/ng build ngx-auth-firebaseui",
     "build:schematics": "../../node_modules/.bin/tsc -p tsconfig.schematics.json",
     "clean": "rm -rf ../../dist",
     "lint": "../../node_modules/.bin/ng lint ngx-auth-firebaseui",
@@ -63,7 +63,7 @@
     "firebase": "^8.1.1"
   },
   "engines": {
-    "node": ">=10.13"
+    "node": ">=14"
   },
   "release-it": {
     "git": {
