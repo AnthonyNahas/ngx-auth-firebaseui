@@ -32,7 +32,7 @@
     "url": "https://github.com/anthonynahas/ngx-auth-firebaseui/issues"
   },
   "scripts": {
-    "build": "../../node_modules/.bin/ng build ngx-auth-firebaseui --prod",
+    "build": "../../node_modules/.bin/ng build ngx-auth-firebaseui --configuration production",
     "build:schematics": "../../node_modules/.bin/tsc -p tsconfig.schematics.json",
     "clean": "rm -rf ../../dist",
     "lint": "../../node_modules/.bin/ng lint ngx-auth-firebaseui",
@@ -50,17 +50,17 @@
     "test:watch": "../../node_modules/.bin/jest --coverage --watch"
   },
   "peerDependencies": {
-    "@angular/common": "^11.0.2",
-    "@angular/core": "^11.0.2",
+    "@angular/common": "^13.2.2",
+    "@angular/core": "^13.2.2",
     "@angular-material-extensions/password-strength": "^9.0.0",
-    "@angular/animations": "^11.0.2",
-    "@angular/cdk": "^11.0.0",
-    "@angular/fire": "^6.1.1",
-    "@angular/flex-layout": "^11.0.0-beta.33",
-    "@angular/forms": "^11.0.2",
-    "@angular/material": "^11.0.0",
-    "@angular/router": "^11.0.2",
-    "firebase": "^8.1.1"
+    "@angular/animations": "^13.2.2",
+    "@angular/cdk": "^13.2.1",
+    "@angular/fire": "^7.2.0",
+    "@angular/flex-layout": "^13.0.0-beta.38",
+    "@angular/forms": "^13.2.2",
+    "@angular/material": "^13.2.1",
+    "@angular/router": "^13.2.2",
+    "firebase": "^9.4.0"
   },
   "engines": {
     "node": ">=10.13"

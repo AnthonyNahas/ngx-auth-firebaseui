@@ -72,64 +72,60 @@ export {FirestoreSyncService} from './services/firestore-sync.service';
 
 
 @NgModule({
-  imports: [
-    CommonModule,
-    // HTTP
-    RouterModule,
-    HttpClientModule,
-    // FLEX_LAYOUT
-    FlexLayoutModule,
-    // FORMS
-    FormsModule,
-    ReactiveFormsModule,
-    // MATERIAL2
-    MatTabsModule,
-    MatCardModule,
-    MatInputModule,
-    MatButtonModule,
-    MatIconModule,
-    MatSnackBarModule,
-    MatDividerModule,
-    MatChipsModule,
-    MatTooltipModule,
-    MatDialogModule,
-    MatCheckboxModule,
-    MatProgressSpinnerModule,
-    MatProgressBarModule,
-    MatDialogModule,
-    MatMenuModule,
-    // ANGULAR MATERIAL EXTENSIONS
-    MatPasswordStrengthModule,
-    // ANGULARFIRE2
-    AngularFireAuthModule,
-    AngularFirestoreModule,
-  ],
-  exports: [
-    AuthComponent,
-    UserComponent,
-    NgxAuthFirebaseuiAvatarComponent,
-    AuthProvidersComponent,
-    EmailConfirmationComponent,
-    // LoggedInGuard,
-    AngularFireAuthModule,
-    AngularFirestoreModule,
-    NgxAuthFirebaseuiLoginComponent,
-    NgxAuthFirebaseuiRegisterComponent
-  ],
-  declarations: [
-    AuthComponent,
-    UserComponent,
-    NgxAuthFirebaseuiAvatarComponent,
-    AuthProvidersComponent,
-    EmailConfirmationComponent,
-    LegalityDialogComponent,
-    NgxAuthFirebaseuiLoginComponent,
-    NgxAuthFirebaseuiRegisterComponent
-  ],
-  entryComponents: [
-    UserComponent,
-    LegalityDialogComponent
-  ]
+    imports: [
+        CommonModule,
+        // HTTP
+        RouterModule,
+        HttpClientModule,
+        // FLEX_LAYOUT
+        FlexLayoutModule,
+        // FORMS
+        FormsModule,
+        ReactiveFormsModule,
+        // MATERIAL2
+        MatTabsModule,
+        MatCardModule,
+        MatInputModule,
+        MatButtonModule,
+        MatIconModule,
+        MatSnackBarModule,
+        MatDividerModule,
+        MatChipsModule,
+        MatTooltipModule,
+        MatDialogModule,
+        MatCheckboxModule,
+        MatProgressSpinnerModule,
+        MatProgressBarModule,
+        MatDialogModule,
+        MatMenuModule,
+        // ANGULAR MATERIAL EXTENSIONS
+        MatPasswordStrengthModule,
+        // ANGULARFIRE2
+        AngularFireAuthModule,
+        AngularFirestoreModule,
+    ],
+    exports: [
+        AuthComponent,
+        UserComponent,
+        NgxAuthFirebaseuiAvatarComponent,
+        AuthProvidersComponent,
+        EmailConfirmationComponent,
+        // LoggedInGuard,
+        AngularFireAuthModule,
+        AngularFirestoreModule,
+        NgxAuthFirebaseuiLoginComponent,
+        NgxAuthFirebaseuiRegisterComponent
+    ],
+    declarations: [
+        AuthComponent,
+        UserComponent,
+        NgxAuthFirebaseuiAvatarComponent,
+        AuthProvidersComponent,
+        EmailConfirmationComponent,
+        LegalityDialogComponent,
+        NgxAuthFirebaseuiLoginComponent,
+        NgxAuthFirebaseuiRegisterComponent
+    ]
 })
 export class NgxAuthFirebaseUIModule {
   constructor(private iconRegistry: MatIconRegistry, private sanitizer: DomSanitizer, auth: AuthProcessService) {
