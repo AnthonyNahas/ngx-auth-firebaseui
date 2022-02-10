@@ -1,7 +1,7 @@
 import {
   addBootstrapToModule as originalAddBootstrapToModule,
   addDeclarationToModule as originalAddDeclarationToModule,
-  addEntryComponentToModule as originalAddEntryComponentToModule,
+  //addEntryComponentToModule as originalAddEntryComponentToModule,
   addExportToModule as originalAddExportToModule,
   addImportToModule as originalAddImportToModule,
   addProviderToModule as originalAddProviderToModule,
@@ -200,3 +200,7 @@ export function getRouterModuleDeclaration(source: ts.SourceFile): ts.Expression
 export function addRouteDeclarationToModule(source: ts.SourceFile, fileToAdd: string, routeLiteral: string): Change {
   return originalAddRouteDeclarationToModule(source, fileToAdd, routeLiteral);
 }
+function originalAddEntryComponentToModule(_source: ts.SourceFile, _modulePath: string, _classifiedName: string, _importPath: string): Change[] {
+  throw new Error('Function not implemented.');
+}
+
