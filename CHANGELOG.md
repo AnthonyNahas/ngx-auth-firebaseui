@@ -1,3 +1,6 @@
+* feat(lib): updating CHANGELOG.md for v6.0.0 (690961c)
+* fix(project): updated the Ivy configuration (29ace07)
+
 * fix(project): updated the Ivy configuration (29ace07)
 
 * fix(project): updated the docs (05d036d)
