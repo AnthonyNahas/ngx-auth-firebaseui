@@ -1,9 +1,9 @@
 import {Component, Input, Output} from '@angular/core';
 import {AuthProcessService, AuthProvider} from '../../services/auth-process.service';
 import {NgxAuthFirebaseuiAnimations} from '../../animations';
-import {LegalityDialogComponent} from '..';
 import {Layout, LegalityDialogParams, LegalityDialogResult, Theme} from '../../interfaces';
 import {MatDialog, MatDialogRef} from '@angular/material/dialog';
+import {LegalityDialogComponent} from '../legality-dialog/legality-dialog.component';
 
 @Component({
   selector: 'ngx-auth-firebaseui-providers',
