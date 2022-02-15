@@ -6,8 +6,8 @@ import {HttpClientModule} from '@angular/common/http';
 import {RouterModule} from '@angular/router';
 import {FlexLayoutModule} from '@angular/flex-layout';
 // @angular/fire
-import {FIREBASE_APP_NAME, FIREBASE_OPTIONS } from '@angular/fire/compat';
-import { FirebaseOptions } from '@firebase/app-types';
+import {FIREBASE_APP_NAME, FIREBASE_OPTIONS} from '@angular/fire/compat';
+import {FirebaseOptions} from '@firebase/app-types';
 import {AngularFireAuthModule} from '@angular/fire/compat/auth';
 import {AngularFirestoreModule} from '@angular/fire/compat/firestore';
 // @angular/material
@@ -57,7 +57,7 @@ export {LegalityDialogComponent} from './components/legality-dialog/legality-dia
 export {LinkMenuItem, NgxAuthFirebaseuiAvatarComponent} from './components/ngx-auth-firebaseui-avatar/ngx-auth-firebaseui-avatar.component';
 export {UserComponent} from './components/ngx-auth-firebaseui-user/user.component';
 export {AuthComponent} from './components/ngx-auth-firebaseui/auth.component';
-export {AuthProvidersComponent, Layout, Theme} from './components/providers/auth.providers.component';
+export {AuthProvidersComponent} from './components/providers/auth.providers.component';
 export {NgxAuthFirebaseuiLoginComponent} from './components/ngx-auth-firebaseui-login/ngx-auth-firebaseui-login.component';
 export {NgxAuthFirebaseuiRegisterComponent} from './components/ngx-auth-firebaseui-register/ngx-auth-firebaseui-register.component';
 

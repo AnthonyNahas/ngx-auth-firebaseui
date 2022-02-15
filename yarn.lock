@@ -289,7 +289,7 @@
   dependencies:
     "tslib" "^2.2.0"
 
-"@angular/fire@^7.1.1":
+"@angular/fire@^7.2.1":
   "integrity" "sha512-hi63xI17MW1mC0KKWQbUBAUkkvB61O6LoBHsP/Mgy/dCM9pAYJ1NxYamAHqAD2WI670FMAqJOqXoS86RSH4rYg=="
   "resolved" "https://registry.npmjs.org/@angular/fire/-/fire-7.2.1.tgz"
   "version" "7.2.1"
@@ -6507,7 +6507,7 @@
     "object.pick" "^1.2.0"
     "parse-filepath" "^1.0.1"
 
-"firebase@^9.0.0", "firebase@^9.3.0", "firebase@^9.4.0":
+"firebase@^9.0.0", "firebase@^9.4.0", "firebase@^9.6.6":
   "integrity" "sha512-roF8aQ8D7YOI0txUNm45BQJZG5t4Xip2lg/V0u6BxnScaefuo9T6baR70soWMecCMQYys5h3OKNLlCpnC5PJxg=="
   "resolved" "https://registry.npmjs.org/firebase/-/firebase-9.6.6.tgz"
   "version" "9.6.6"

@@ -40,34 +40,19 @@ import { MatPasswordStrengthComponent } from "@angular-material-extensions/passw
 // RXJS
 import { Subscription } from "rxjs";
 
-import { LegalityDialogComponent, Theme } from "..";
+import { LegalityDialogComponent } from "..";
 import {
+  EMAIL_REGEX,
   LegalityDialogParams,
   LegalityDialogResult,
-  NgxAuthFirebaseUIConfig,
-} from "../../interfaces";
+  NgxAuthFirebaseUIConfig, Theme,
+} from '../../interfaces';
 import {
   AuthProcessService,
   AuthProvider,
 } from "../../services/auth-process.service";
 import { NgxAuthFirebaseuiAnimations } from "../../animations";
 import { NgxAuthFirebaseUIConfigToken } from "../../tokens";
-
-export const EMAIL_REGEX = new RegExp(
-  [
-    '^(([^<>()[\\]\\.,;:\\s@"]+(\\.[^<>()\\[\\]\\.,;:\\s@"]+)*)',
-    '|(".+"))@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.',
-    "[0-9]{1,3}])|(([a-zA-Z\\-0-9]+\\.)+",
-    "[a-zA-Z]{2,}))$",
-  ].join("")
-);
-
-// eslint-disable-next-line max-len
-export const PHONE_NUMBER_REGEX = new RegExp(
-  [
-    "^[+]{0,1}[(]{0,1}[0-9]{1,4}[)]{0,1}[-\\s\\.]{0,1}[(]{0,1}[0-9]{1,4}[)]{0,1}[-\\s\\./0-9]{4,12}$",
-  ].join("")
-);
 
 @Component({
   selector: "ngx-auth-firebaseui",
