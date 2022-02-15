@@ -314,8 +314,7 @@ v1.x should be used with angular v7 projects
 v3.x should be used with angular v8 projects
 v4.x should be used with angular v9/10 projects
 v5.x should be used with angular v11 projects
-v6.x should be used with angular v12 projects
-v7.x should be used with angular v13 projects
+v6.x should be used with angular v12/13 projects
 
 [help!](https://ngx-auth-firebaseui.firebaseapp.com/getting-started)
 
