@@ -1,3 +1,5 @@
+* fix(project): updated the Ivy configuration (29ace07)
+
 * fix(project): updated the docs (05d036d)
 * fix(project): updated the docs (e88bb83)
 * fix(project): minor (c0dc665)
