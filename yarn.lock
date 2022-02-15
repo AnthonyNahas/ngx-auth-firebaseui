@@ -211,7 +211,7 @@
   dependencies:
     "tslib" "^2.3.0"
 
-"@angular/cdk@^11.0.0", "@angular/cdk@^12.x", "@angular/cdk@^13.0.0", "@angular/cdk@^9.0.0", "@angular/cdk@13.2.2":
+"@angular/cdk@^12.x", "@angular/cdk@^13.0.0", "@angular/cdk@^9.0.0", "@angular/cdk@13.2.2":
   "integrity" "sha512-cT5DIaz+NI9IGb3X61Wh26+L6zdRcOXT1BP37iRbK2Qa2qM8/0VNeK6hrBBIblyoHKR/WUmRlS8XYf6mmArpZw=="
   "resolved" "https://registry.npmjs.org/@angular/cdk/-/cdk-13.2.2.tgz"
   "version" "13.2.2"
@@ -245,7 +245,7 @@
     "symbol-observable" "4.0.0"
     "uuid" "8.3.2"
 
-"@angular/common@^12.0.0 || ^13.0.0", "@angular/common@^12.2.12", "@angular/common@^12.x", "@angular/common@^13.0.0", "@angular/common@^13.0.0 || ^14.0.0-0", "@angular/common@^8.0.0 || ^9.0.0", "@angular/common@^9.0.0", "@angular/common@>=11.0.0", "@angular/common@>=6.0.0", "@angular/common@>=6.0.0 || >=7.0.0 || >=8.0.0", "@angular/common@>=7.0.0", "@angular/common@>=8.0.0", "@angular/common@13.2.2":
+"@angular/common@^12.0.0 || ^13.0.0", "@angular/common@^12.2.12", "@angular/common@^12.x", "@angular/common@^13.0.0", "@angular/common@^13.0.0 || ^14.0.0-0", "@angular/common@^8.0.0 || ^9.0.0", "@angular/common@^9.0.0", "@angular/common@>=6.0.0", "@angular/common@>=6.0.0 || >=7.0.0 || >=8.0.0", "@angular/common@>=7.0.0", "@angular/common@>=8.0.0", "@angular/common@13.2.2":
   "integrity" "sha512-56C/bheNLKtTCyQUZCiYtKbBIZN9jj6rjFILPtJCGls3cBCxp7t9tIdoLiQG/wVQRmaxdj1ioLT+sCWz7mLtQw=="
   "resolved" "https://registry.npmjs.org/@angular/common/-/common-13.2.2.tgz"
   "version" "13.2.2"
@@ -275,7 +275,7 @@
   dependencies:
     "tslib" "^2.3.0"
 
-"@angular/core@^12.0.0 || ^13.0.0", "@angular/core@^12.2.12", "@angular/core@^12.x", "@angular/core@^13.0.0", "@angular/core@^13.0.0 || ^14.0.0-0", "@angular/core@^8.0.0 || ^9.0.0", "@angular/core@^9.0.0", "@angular/core@>=11.0.0", "@angular/core@>=6.0.0", "@angular/core@>=6.0.0 || >=7.0.0 || >=8.0.0", "@angular/core@>=8.0.0", "@angular/core@13.2.2":
+"@angular/core@^12.0.0 || ^13.0.0", "@angular/core@^12.2.12", "@angular/core@^12.x", "@angular/core@^13.0.0", "@angular/core@^13.0.0 || ^14.0.0-0", "@angular/core@^8.0.0 || ^9.0.0", "@angular/core@^9.0.0", "@angular/core@>=6.0.0", "@angular/core@>=6.0.0 || >=7.0.0 || >=8.0.0", "@angular/core@>=8.0.0", "@angular/core@13.2.2":
   "integrity" "sha512-zpctw0BxIVOsRFnckchK15SD1L8tzhf5GzwIDaM6+VylDQj1uYkm8mvAjJTQZyUuApomoFet2Rfj7XQPV+cNSQ=="
   "resolved" "https://registry.npmjs.org/@angular/core/-/core-13.2.2.tgz"
   "version" "13.2.2"
@@ -310,12 +310,12 @@
     "tslib" "^2.0.0"
     "winston" "^3.0.0"
 
-"@angular/flex-layout@^11.0.0-beta.33":
-  "integrity" "sha512-unfhw3abZuKtdwQicRStHCYGbANPTHYg4WNRQk/RC5Mxq+4WOp4Q8HI7GqRHCGUYDCGUP7w1sU/oDt8f09nM8w=="
-  "resolved" "https://registry.npmjs.org/@angular/flex-layout/-/flex-layout-11.0.0-beta.33.tgz"
-  "version" "11.0.0-beta.33"
+"@angular/flex-layout@^13.0.0-beta.38":
+  "integrity" "sha512-kcWb7CcoHbvw7fjo/knizWVmSSmvaTnr8v1ML6zOdxu1PK9UPPOcOS8RTm6fy61zoC2LABivP1/6Z2jF5XfpdQ=="
+  "resolved" "https://registry.npmjs.org/@angular/flex-layout/-/flex-layout-13.0.0-beta.38.tgz"
+  "version" "13.0.0-beta.38"
   dependencies:
-    "tslib" "^2.0.0"
+    "tslib" "^2.3.0"
 
 "@angular/forms@^12.x", "@angular/forms@^13.0.0", "@angular/forms@^13.0.0 || ^14.0.0-0":
   "integrity" "sha512-T61W4Ay9X9qhxjc6lLqpNFeHrGKwg2mqdsZ3zIm/c7oKo37mgl9TB5kkrtnS+205r3N2hF4ICnGFZ4a/egUP/g=="
@@ -343,7 +343,7 @@
   dependencies:
     "tslib" "^2.3.0"
 
-"@angular/platform-browser@^12.0.0 || ^13.0.0", "@angular/platform-browser@^13.0.0", "@angular/platform-browser@^13.0.0 || ^14.0.0-0", "@angular/platform-browser@^8.0.0 || ^9.0.0", "@angular/platform-browser@>=11.0.0", "@angular/platform-browser@13.2.2":
+"@angular/platform-browser@^12.0.0 || ^13.0.0", "@angular/platform-browser@^13.0.0", "@angular/platform-browser@^13.0.0 || ^14.0.0-0", "@angular/platform-browser@^8.0.0 || ^9.0.0", "@angular/platform-browser@13.2.2":
   "integrity" "sha512-M7gWC8fFCPc/CRcHCzqe/j7WzwAUMeKt9vwlK633XnesHBoqZdYgbb3YHHc6WPVU0YI09Nb/Hm5sezEKmjUmPg=="
   "resolved" "https://registry.npmjs.org/@angular/platform-browser/-/platform-browser-13.2.2.tgz"
   "version" "13.2.2"
@@ -1331,9 +1331,9 @@
     "@cspotcode/source-map-consumer" "0.8.0"
 
 "@csstools/postcss-progressive-custom-properties@^1.1.0":
-  "integrity" "sha512-DO76V3295AqhjJZvgeaDP5GAGAat4g6wYfF8X+1n+76MpJat8ffY5bCJ9eSUqFY71nImxXgaDTRYJcRnA9oo7g=="
-  "resolved" "https://registry.npmjs.org/@csstools/postcss-progressive-custom-properties/-/postcss-progressive-custom-properties-1.1.0.tgz"
-  "version" "1.1.0"
+  "integrity" "sha512-YLpFPK5OaLIRKZhUfnrZPT9s9cmtqltIOg7W6jPcxmiDpnZ4lk+odfufZttOAgcg6IHWvNLgcITSLpJxIQB/qQ=="
+  "resolved" "https://registry.npmjs.org/@csstools/postcss-progressive-custom-properties/-/postcss-progressive-custom-properties-1.2.0.tgz"
+  "version" "1.2.0"
   dependencies:
     "postcss-value-parser" "^4.2.0"
 
@@ -10954,10 +10954,11 @@
     "postcss-selector-parser" "^6.0.9"
 
 "postcss-double-position-gradients@^3.0.4":
-  "integrity" "sha512-XiZzvdxLOWZwtt/1GgHJYGoD9scog/DD/yI5dcvPrXNdNDEv7T53/6tL7ikl+EM3jcerII5/XIQzd1UHOdTi2w=="
-  "resolved" "https://registry.npmjs.org/postcss-double-position-gradients/-/postcss-double-position-gradients-3.0.5.tgz"
-  "version" "3.0.5"
+  "integrity" "sha512-oz73I08yMN3oxjj0s8mED1rG+uOYoK3H8N9RjQofyg52KBRNmePJKg3fVwTpL2U5ZFbCzXoZBsUD/CvZdlqE4Q=="
+  "resolved" "https://registry.npmjs.org/postcss-double-position-gradients/-/postcss-double-position-gradients-3.1.0.tgz"
+  "version" "3.1.0"
   dependencies:
+    "@csstools/postcss-progressive-custom-properties" "^1.1.0"
     "postcss-value-parser" "^4.2.0"
 
 "postcss-env-function@^4.0.4":
@@ -11013,9 +11014,9 @@
   "version" "4.0.1"
 
 "postcss-lab-function@^4.0.3":
-  "integrity" "sha512-59uHN/2wRaOd7whDyeaJ82E0kncIEeJkwcmvXFPNus8v1YMhtv2IUo9OtOAncn7sifZVMRsyoPlhxwckTjn4cQ=="
-  "resolved" "https://registry.npmjs.org/postcss-lab-function/-/postcss-lab-function-4.1.0.tgz"
-  "version" "4.1.0"
+  "integrity" "sha512-j3Z0WQCimY2tMle++YcmygnnVbt6XdnrCV1FO2IpzaCSmtTF2oO8h4ZYUA1Q+QHYroIiaWPvNHt9uBR4riCksQ=="
+  "resolved" "https://registry.npmjs.org/postcss-lab-function/-/postcss-lab-function-4.1.1.tgz"
+  "version" "4.1.1"
   dependencies:
     "@csstools/postcss-progressive-custom-properties" "^1.1.0"
     "postcss-value-parser" "^4.2.0"
@@ -13212,14 +13213,7 @@
   dependencies:
     "has-flag" "^3.0.0"
 
-"supports-color@^7.0.0":
-  "integrity" "sha512-qpCAvRl9stuOHveKsn7HncJRvv501qIacKzQlO/+Lwxc9+0q2wLyv4Dfvt80/DPn2pqOBsJdDiogXGR9+OvwRw=="
-  "resolved" "https://registry.npmjs.org/supports-color/-/supports-color-7.2.0.tgz"
-  "version" "7.2.0"
-  dependencies:
-    "has-flag" "^4.0.0"
-
-"supports-color@^7.1.0", "supports-color@7.2.0":
+"supports-color@^7.0.0", "supports-color@^7.1.0", "supports-color@7.2.0":
   "integrity" "sha512-qpCAvRl9stuOHveKsn7HncJRvv501qIacKzQlO/+Lwxc9+0q2wLyv4Dfvt80/DPn2pqOBsJdDiogXGR9+OvwRw=="
   "resolved" "https://registry.npmjs.org/supports-color/-/supports-color-7.2.0.tgz"
   "version" "7.2.0"

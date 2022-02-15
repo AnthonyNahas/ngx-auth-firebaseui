@@ -174,9 +174,9 @@ by starring :star: and sharing it :loudspeaker:
 - [angular forms - v13.x](https://www.npmjs.com/package/@angular/forms)
 - [angular animations - v13.x](https://www.npmjs.com/package/@angular/animations)
 - [angular router - v13.x](https://www.npmjs.com/package/@angular/router)
-- [angular flex-layout v13.0.0-beta.33](https://www.npmjs.com/package/@angular/flex-layout)
-- [@angular/fire - v6.x](https://www.npmjs.com/package/@angular/fire)
-- [firebase - v8.x](https://www.npmjs.com/package/firebase)
+- [angular flex-layout v13.0.0-beta.38](https://www.npmjs.com/package/@angular/flex-layout)
+- [@angular/fire - v7.x](https://www.npmjs.com/package/@angular/fire)
+- [firebase - v9.x](https://www.npmjs.com/package/firebase)
 
 the full tutorial guide can be found [here](https://ngx-auth-firebaseui.firebaseapp.com/getting-started)
 
@@ -297,14 +297,14 @@ automatically change to `column`
 
 ```json
 "peerDependencies": {
-    "@angular/core": "^11.x",
-    "@angular/animations": "^11.x",
-    "@angular/cdk": "^11.x",
-    "@angular/flex-layout": "^11.0.0-beta.33",
-    "@angular/forms": "^11.x",
-    "@angular/material": "^11.x",
-    "@angular/fire": "6.x",
-    "firebase": "8.x",
+    "@angular/core": "^13.x",
+    "@angular/animations": "^13.x",
+    "@angular/cdk": "^13.x",
+    "@angular/flex-layout": "^13.0.0-beta.38",
+    "@angular/forms": "^13.x",
+    "@angular/material": "^13.x",
+    "@angular/fire": "7.x",
+    "firebase": "9.x",
   }
 ```
 
@@ -314,6 +314,8 @@ v1.x should be used with angular v7 projects
 v3.x should be used with angular v8 projects
 v4.x should be used with angular v9/10 projects
 v5.x should be used with angular v11 projects
+v6.x should be used with angular v12 projects
+v7.x should be used with angular v13 projects
 
 [help!](https://ngx-auth-firebaseui.firebaseapp.com/getting-started)
 
@@ -323,7 +325,7 @@ v5.x should be used with angular v11 projects
 <a name="dependencies"/>
 
 ## Dependencies
-* [Angular](https://angular.io) (*requires* Angular 2 or higher, developed with 11.x) - obviously
+* [Angular](https://angular.io) (*requires* Angular 2 or higher, developed with 13.x) - obviously
 * [@angular-material-extensions/password-strength](https://www.npmjs.com/package/@angular-material-extensions/password-strength)
 
 the [@angular-material-extensions/password-strength](https://www.npmjs.com/package/@angular-material-extensions/password-strength) is used
@@ -642,4 +644,4 @@ check this [out](https://www.youtube.com/watch?v=qP5zw7fjQgo&feature=emb_logo&ab
 
 ## License
 
-Copyright (c) 2019-2021 [Anthony Nahas](https://github.com/AnthonyNahas). Licensed under the MIT License (MIT)
+Copyright (c) 2019-2022 [Anthony Nahas](https://github.com/AnthonyNahas). Licensed under the MIT License (MIT)
