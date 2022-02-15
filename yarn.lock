@@ -9950,7 +9950,7 @@
   "resolved" "https://registry.npmjs.org/next-tick/-/next-tick-1.0.0.tgz"
   "version" "1.0.0"
 
-"ng-packagr@^13.0.0", "ng-packagr@^13.0.3":
+"ng-packagr@^13.0.0", "ng-packagr@^13.2.1":
   "integrity" "sha512-N0eiTTj5yxOBO7NX8kv+UV08bdLJOBG/ABZkaod9uAwflT6qZG1etX4DHnpfy1I591AZtAJNOnAwdRVoaBIDwQ=="
   "resolved" "https://registry.npmjs.org/ng-packagr/-/ng-packagr-13.2.1.tgz"
   "version" "13.2.1"
