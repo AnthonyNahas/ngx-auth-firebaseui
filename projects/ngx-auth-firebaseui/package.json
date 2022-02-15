@@ -32,7 +32,7 @@
     "url": "https://github.com/anthonynahas/ngx-auth-firebaseui/issues"
   },
   "scripts": {
-    "build": "../../node_modules/.bin/ng build ngx-auth-firebaseui",
+    "build": "ng build ngx-auth-firebaseui --configuration production",
     "build:schematics": "../../node_modules/.bin/tsc -p tsconfig.schematics.json",
     "clean": "rm -rf ../../dist",
     "lint": "../../node_modules/.bin/ng lint ngx-auth-firebaseui",
