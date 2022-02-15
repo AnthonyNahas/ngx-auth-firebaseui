@@ -70,7 +70,7 @@
       "commitMessage": "chore(lib): release v${version}"
     },
     "github": {
-      "release": true
+      "release": false
     },
     "npm": {
       "publish": true,
