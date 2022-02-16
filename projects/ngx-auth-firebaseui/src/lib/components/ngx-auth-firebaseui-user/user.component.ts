@@ -9,10 +9,10 @@ import {
 import { AngularFireAuth } from "@angular/fire/compat/auth";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import firebase from "firebase/compat/app";
-import { EMAIL_REGEX, PHONE_NUMBER_REGEX } from "../ngx-auth-firebaseui/auth.component";
+//import { EMAIL_REGEX, PHONE_NUMBER_REGEX } from "../ngx-auth-firebaseui/auth.component";
 import { MatFormFieldAppearance } from "@angular/material/form-field";
 import { NgxAuthFirebaseUIConfigToken } from "../../tokens";
-import { NgxAuthFirebaseUIConfig } from "../../interfaces";
+import {EMAIL_REGEX, NgxAuthFirebaseUIConfig, PHONE_NUMBER_REGEX} from '../../interfaces';
 import { AuthProcessService } from "../../services/auth-process.service";
 import { FirestoreSyncService } from "../../services/firestore-sync.service";
 import { map, take } from "rxjs/operators";

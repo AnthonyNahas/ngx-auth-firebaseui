@@ -18,11 +18,11 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
-import { NgxAuthFirebaseUIModule } from 'projects/ngx-auth-firebaseui/src/public-api';
-import { environment } from '../environments/environment';
+import {NgxAuthFirebaseUIModule} from 'projects/ngx-auth-firebaseui/src/public-api';
+import {environment} from '../environments/environment';
 
 
-export const firebaseKey = environment.firebaseConfig;
+export const firebaseKey = environment.config;
 // export const firebaseKey = {
 //   apiKey: 'AIzaSyASG7KxDO2z5AH9r0jlUmwiw68Ap8kG20c',
 //   authDomain: 'ngx-auth-firebaseui.firebaseapp.com',

@@ -11,8 +11,6 @@
 [![codecov](https://codecov.io/gh/anthonynahas/ngx-auth-firebaseui/branch/master/graph/badge.svg)](https://codecov.io/gh/anthonynahas/ngx-auth-firebaseui)
 [![CircleCI branch](https://img.shields.io/circleci/project/github/AnthonyNahas/ngx-auth-firebaseui/master.svg?label=circleci)](https://circleci.com/gh/AnthonyNahas/ngx-auth-firebaseui)
 [![Join the chat at https://gitter.im/ngx-auth-firebaseui/Lobby](https://badges.gitter.im/ngx-auth-firebaseui/Lobby.svg)](https://gitter.im/ngx-auth-firebaseui/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-[![dependency Status](https://david-dm.org/anthonynahas/ngx-auth-firebaseui/status.svg)](https://david-dm.org/anthonynahas/ngx-auth-firebaseui)
-[![devDependency Status](https://david-dm.org/anthonynahas/ngx-auth-firebaseui/dev-status.svg?branch=master)](https://david-dm.org/anthonynahas/ngx-auth-firebaseui#info=devDependencies)
 [![npm](https://img.shields.io/npm/dt/ngx-auth-firebaseui.svg?style=flat-square)](https://www.npmjs.com/package/ngx-auth-firebaseui)
 [![Greenkeeper badge](https://badges.greenkeeper.io/AnthonyNahas/ngx-auth-firebaseui.svg)](https://greenkeeper.io/)
 [![license](https://img.shields.io/github/license/anthonynahas/ngx-auth-firebaseui.svg?style=flat-square)](https://github.com/AnthonyNahas/ngx-auth-firebaseui/blob/master/LICENSE)
@@ -65,43 +63,43 @@ by starring :star: and sharing it :loudspeaker:
 
 ## ngx-auth-firebaseui vs firebaseui-web
 
-| Features                                       | ngx-auth-firebaseui       | firebaseui  |
-| -----------------------------------------------|:-------------:|         :-------------------:  |
-| Sign Up                                        | :heavy_check_mark:    |  :heavy_check_mark:    |
-| Sign In                                        | :heavy_check_mark:    |  :heavy_check_mark:    |
-| Sign In Anonymously                            | :heavy_check_mark:    |  :heavy_check_mark:    |
-| Sign In with Google                            | :heavy_check_mark:    |  :heavy_check_mark:    |
-| Sign In with Apple                             | :heavy_check_mark:    |  :heavy_check_mark:    |
-| Sign In with Facebook                          | :heavy_check_mark:    |  :heavy_check_mark:    |
-| Sign In with Twitter                           | :heavy_check_mark:    |  :heavy_check_mark:    |
-| Sign In with Github                            | :heavy_check_mark:    |  :heavy_check_mark:    |
-| Sign In with Microsoft                         | :heavy_check_mark:    |  :heavy_check_mark:    |
-| Sign In with Yahoo                             | :heavy_check_mark:    |  :heavy_check_mark:    |
-| Sign In with Phone`number`                     | :x:                   |  :heavy_check_mark:    |
-| Sign out                                       | :heavy_check_mark:    |  :x:                   |
-| Sign in/up progress indicator                  | :heavy_check_mark:    |  :x:                   |
-| Password Strength indicator                    | :heavy_check_mark:    |  :x:                   |
-| Forgot/Reset Password                          | :heavy_check_mark:    |  :x:                   |
-| [Password Strength Meter ](https://github.com/angular-material-extensions/password-strength)  | :heavy_check_mark:    |  :x:                   |
-| Delete account                                 | :heavy_check_mark:    |  :x:                   |
-| Login Authentication Guard                     | :heavy_check_mark:    |  :x:                   |
-| User Profile                                   | :heavy_check_mark:    |  :x:                   |
-| Check whether user's email is verified         | :heavy_check_mark:    |  :x:                   |
-| Edit user's display name (incl. validation)    | :heavy_check_mark:    |  :x:                   |
-| Edit user's email (incl. validation)           | :heavy_check_mark:    |  :x:                   |
-| Edit user's phone `number` (incl. validation)    | :heavy_check_mark:    |  :x:                   |
-| Configure your favorite auth provider in runtime| :heavy_check_mark:   |  :x:                   |
-| Sync user'auth with Firestore  [read more](FIRESTORE_SYNC.md)   | :heavy_check_mark:    |  :x:  |
-| Animations                                     | :heavy_check_mark:    |  :x:                   |
-| Angular v2-8 friendly                          | :heavy_check_mark:    |  :x:                   |
-| Internationalization (i18n)                    | :heavy_check_mark:    |  :heavy_check_mark:    |
-| Ionic/cordova support                          | :soon:  @firebaseui/ionic-auth |  :x: |
-| Real time form validation                      | :heavy_check_mark:    |  :x:                   |
-| Easy to integrate                              | :heavy_check_mark:    |  :x:                   |
-| Support Server Side Rendering                  | :heavy_check_mark:    |  :x:                   |
-| Support SPA without further config             | :heavy_check_mark:    |  :x:                   |
-| Support Safari private browsing                | :heavy_check_mark:    |  :interrobang:         |
-| AWESOME                                        | :heavy_check_mark:    |  :interrobang:         |
+| Features                                                                                     | ngx-auth-firebaseui       | firebaseui  |
+|----------------------------------------------------------------------------------------------|:-------------:|         :-------------------:  |
+| Sign Up                                                                                      | :heavy_check_mark:    |  :heavy_check_mark:    |
+| Sign In                                                                                      | :heavy_check_mark:    |  :heavy_check_mark:    |
+| Sign In Anonymously                                                                          | :heavy_check_mark:    |  :heavy_check_mark:    |
+| Sign In with Google                                                                          | :heavy_check_mark:    |  :heavy_check_mark:    |
+| Sign In with Apple                                                                           | :heavy_check_mark:    |  :heavy_check_mark:    |
+| Sign In with Facebook                                                                        | :heavy_check_mark:    |  :heavy_check_mark:    |
+| Sign In with Twitter                                                                         | :heavy_check_mark:    |  :heavy_check_mark:    |
+| Sign In with Github                                                                          | :heavy_check_mark:    |  :heavy_check_mark:    |
+| Sign In with Microsoft                                                                       | :heavy_check_mark:    |  :heavy_check_mark:    |
+| Sign In with Yahoo                                                                           | :heavy_check_mark:    |  :heavy_check_mark:    |
+| Sign In with Phone`number`                                                                   | :x:                   |  :heavy_check_mark:    |
+| Sign out                                                                                     | :heavy_check_mark:    |  :x:                   |
+| Sign in/up progress indicator                                                                | :heavy_check_mark:    |  :x:                   |
+| Password Strength indicator                                                                  | :heavy_check_mark:    |  :x:                   |
+| Forgot/Reset Password                                                                        | :heavy_check_mark:    |  :x:                   |
+| [Password Strength Meter ](https://github.com/angular-material-extensions/password-strength) | :heavy_check_mark:    |  :x:                   |
+| Delete account                                                                               | :heavy_check_mark:    |  :x:                   |
+| Login Authentication Guard                                                                   | :heavy_check_mark:    |  :x:                   |
+| User Profile                                                                                 | :heavy_check_mark:    |  :x:                   |
+| Check whether user's email is verified                                                       | :heavy_check_mark:    |  :x:                   |
+| Edit user's display name (incl. validation)                                                  | :heavy_check_mark:    |  :x:                   |
+| Edit user's email (incl. validation)                                                         | :heavy_check_mark:    |  :x:                   |
+| Edit user's phone `number` (incl. validation)                                                | :heavy_check_mark:    |  :x:                   |
+| Configure your favorite auth provider in runtime                                             | :heavy_check_mark:   |  :x:                   |
+| Sync user'auth with Firestore  [read more](FIRESTORE_SYNC.md)                                | :heavy_check_mark:    |  :x:  |
+| Animations                                                                                   | :heavy_check_mark:    |  :x:                   |
+| Angular v2-13 friendly                                                                       | :heavy_check_mark:    |  :x:                   |
+| Internationalization (i18n)                                                                  | :heavy_check_mark:    |  :heavy_check_mark:    |
+| Ionic/cordova support                                                                        | :soon:  @firebaseui/ionic-auth |  :x: |
+| Real time form validation                                                                    | :heavy_check_mark:    |  :x:                   |
+| Easy to integrate                                                                            | :heavy_check_mark:    |  :x:                   |
+| Support Server Side Rendering                                                                | :heavy_check_mark:    |  :x:                   |
+| Support SPA without further config                                                           | :heavy_check_mark:    |  :x:                   |
+| Support Safari private browsing                                                              | :heavy_check_mark:    |  :interrobang:         |
+| AWESOME                                                                                      | :heavy_check_mark:    |  :interrobang:         |
 
 
 <a name="why-to-use-ngx-auth-firebaseui"/>
@@ -171,14 +169,14 @@ by starring :star: and sharing it :loudspeaker:
 - [angular material theme](https://material.angular.io/guide/getting-started#step-4-include-a-theme)
 - [angular material icons](https://material.angular.io/guide/getting-started#step-6-optional-add-material-icons)
 
-- [angular cdk - v11.x](https://www.npmjs.com/package/@angular/cdk)
-- [angular material - v11.x](https://www.npmjs.com/package/@angular/material)
-- [angular forms - v11.x](https://www.npmjs.com/package/@angular/forms)
-- [angular animations - v11.x](https://www.npmjs.com/package/@angular/animations)
-- [angular router - v11.x](https://www.npmjs.com/package/@angular/router)
-- [angular flex-layout v11.0.0-beta.33](https://www.npmjs.com/package/@angular/flex-layout)
-- [@angular/fire - v6.x](https://www.npmjs.com/package/@angular/fire)
-- [firebase - v8.x](https://www.npmjs.com/package/firebase)
+- [angular cdk - v13.x](https://www.npmjs.com/package/@angular/cdk)
+- [angular material - v13.x](https://www.npmjs.com/package/@angular/material)
+- [angular forms - v13.x](https://www.npmjs.com/package/@angular/forms)
+- [angular animations - v13.x](https://www.npmjs.com/package/@angular/animations)
+- [angular router - v13.x](https://www.npmjs.com/package/@angular/router)
+- [angular flex-layout v13.0.0-beta.38](https://www.npmjs.com/package/@angular/flex-layout)
+- [@angular/fire - v7.x](https://www.npmjs.com/package/@angular/fire)
+- [firebase - v9.x](https://www.npmjs.com/package/firebase)
 
 the full tutorial guide can be found [here](https://ngx-auth-firebaseui.firebaseapp.com/getting-started)
 
@@ -299,14 +297,14 @@ automatically change to `column`
 
 ```json
 "peerDependencies": {
-    "@angular/core": "^11.x",
-    "@angular/animations": "^11.x",
-    "@angular/cdk": "^11.x",
-    "@angular/flex-layout": "^11.0.0-beta.33",
-    "@angular/forms": "^11.x",
-    "@angular/material": "^11.x",
-    "@angular/fire": "6.x",
-    "firebase": "8.x",
+    "@angular/core": "^13.x",
+    "@angular/animations": "^13.x",
+    "@angular/cdk": "^13.x",
+    "@angular/flex-layout": "^13.0.0-beta.38",
+    "@angular/forms": "^13.x",
+    "@angular/material": "^13.x",
+    "@angular/fire": "7.x",
+    "firebase": "9.x",
   }
 ```
 
@@ -316,6 +314,7 @@ v1.x should be used with angular v7 projects
 v3.x should be used with angular v8 projects
 v4.x should be used with angular v9/10 projects
 v5.x should be used with angular v11 projects
+v6.x should be used with angular v12/13 projects
 
 [help!](https://ngx-auth-firebaseui.firebaseapp.com/getting-started)
 
@@ -325,7 +324,7 @@ v5.x should be used with angular v11 projects
 <a name="dependencies"/>
 
 ## Dependencies
-* [Angular](https://angular.io) (*requires* Angular 2 or higher, developed with 11.x) - obviously
+* [Angular](https://angular.io) (*requires* Angular 2 or higher, developed with 13.x) - obviously
 * [@angular-material-extensions/password-strength](https://www.npmjs.com/package/@angular-material-extensions/password-strength)
 
 the [@angular-material-extensions/password-strength](https://www.npmjs.com/package/@angular-material-extensions/password-strength) is used
@@ -644,4 +643,4 @@ check this [out](https://www.youtube.com/watch?v=qP5zw7fjQgo&feature=emb_logo&ab
 
 ## License
 
-Copyright (c) 2019-2021 [Anthony Nahas](https://github.com/AnthonyNahas). Licensed under the MIT License (MIT)
+Copyright (c) 2019-2022 [Anthony Nahas](https://github.com/AnthonyNahas). Licensed under the MIT License (MIT)
