@@ -157,7 +157,7 @@ export class NgxAuthFirebaseuiRegisterComponent implements OnInit, OnDestroy {
    */
   ngOnDestroy(): void {
     // Unsubscribe from all subscriptions
-    this.unsubscribeAll.next();
+    this.unsubscribeAll.next(null);
     this.unsubscribeAll.complete();
   }
 

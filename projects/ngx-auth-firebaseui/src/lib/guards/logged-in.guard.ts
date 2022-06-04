@@ -1,5 +1,5 @@
 import {Inject, Injectable} from '@angular/core';
-import {ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot} from '@angular/router';
+import {ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot, UrlTree} from '@angular/router';
 import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
 import {NgxAuthFirebaseUIConfig} from '../interfaces';
@@ -18,7 +18,7 @@ export class LoggedInGuard implements CanActivate {
   ) {
   }
 
-  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {
+  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) : Observable<boolean|UrlTree>|Promise<boolean|UrlTree>|boolean|UrlTree{
     return this.authProcess.afa.user.pipe(
       map(user => {
         if (user) {

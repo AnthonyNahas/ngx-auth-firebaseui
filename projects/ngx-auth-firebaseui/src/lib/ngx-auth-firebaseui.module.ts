@@ -125,10 +125,6 @@ export {FirestoreSyncService} from './services/firestore-sync.service';
     LegalityDialogComponent,
     NgxAuthFirebaseuiLoginComponent,
     NgxAuthFirebaseuiRegisterComponent
-  ],
-  entryComponents: [
-    UserComponent,
-    LegalityDialogComponent
   ]
 })
 export class NgxAuthFirebaseUIModule {

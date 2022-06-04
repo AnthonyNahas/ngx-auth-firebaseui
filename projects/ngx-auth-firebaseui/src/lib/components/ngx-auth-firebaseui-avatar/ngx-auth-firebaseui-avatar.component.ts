@@ -4,7 +4,7 @@ import firebase from "firebase/compat/app";
 import { Observable } from "rxjs";
 import { take } from 'rxjs/operators';
 import { MatDialog } from "@angular/material/dialog";
-import { UserComponent } from "..";
+import { UserComponent } from "../ngx-auth-firebaseui-user/user.component";
 import { AuthProcessService } from "../../services/auth-process.service";
 
 export interface LinkMenuItem {

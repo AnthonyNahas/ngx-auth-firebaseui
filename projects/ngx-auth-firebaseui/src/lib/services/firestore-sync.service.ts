@@ -1,4 +1,4 @@
-import { Injectable } from "@angular/core";
+import { Injectable, Inject } from "@angular/core";
 import {
   AngularFirestore,
   AngularFirestoreDocument,
@@ -13,7 +13,7 @@ export const collections = {
   providedIn: "root",
 })
 export class FirestoreSyncService {
-  constructor(public afs: AngularFirestore) {
+  constructor(@Inject(AngularFirestore) public afs: AngularFirestore) {
     // this.afs.firestore.settings({timestampsInSnapshots: true});
   }
 

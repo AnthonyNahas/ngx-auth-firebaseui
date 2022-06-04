@@ -4,6 +4,7 @@ import { EventEmitter, forwardRef, Inject, Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { MAT_SNACK_BAR_DEFAULT_OPTIONS, MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
 import firebase from 'firebase/compat/app';
+import { FacebookAuthProvider,GoogleAuthProvider, GithubAuthProvider, OAuthProvider, TwitterAuthProvider} from 'firebase/auth';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map, take } from 'rxjs/operators';
 
@@ -14,15 +15,15 @@ import { FirestoreSyncService } from './firestore-sync.service';
 
 import UserCredential = firebase.auth.UserCredential;
 
-export const facebookAuthProvider = new firebase.auth.FacebookAuthProvider();
-export const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
-export const appleAuthProvider = new firebase.auth.OAuthProvider("apple.com");
-export const twitterAuthProvider = new firebase.auth.TwitterAuthProvider();
-export const githubAuthProvider = new firebase.auth.GithubAuthProvider();
-export const microsoftAuthProvider = new firebase.auth.OAuthProvider(
+export const facebookAuthProvider = new FacebookAuthProvider();
+export const googleAuthProvider = new GoogleAuthProvider();
+export const appleAuthProvider = new OAuthProvider("apple.com");
+export const twitterAuthProvider = new TwitterAuthProvider();
+export const githubAuthProvider = new GithubAuthProvider();
+export const microsoftAuthProvider = new OAuthProvider(
   "microsoft.com"
 );
-export const yahooAuthProvider = new firebase.auth.OAuthProvider("yahoo.com");
+export const yahooAuthProvider = new OAuthProvider("yahoo.com");
 
 export enum AuthProvider {
   ALL = "all",

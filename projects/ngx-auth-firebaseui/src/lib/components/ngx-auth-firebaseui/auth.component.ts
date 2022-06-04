@@ -40,7 +40,7 @@ import { MatPasswordStrengthComponent } from "@angular-material-extensions/passw
 // RXJS
 import { Subscription } from "rxjs";
 
-import { LegalityDialogComponent } from "..";
+import { LegalityDialogComponent } from "../legality-dialog/legality-dialog.component";
 import {
   EMAIL_REGEX,
   LegalityDialogParams,
