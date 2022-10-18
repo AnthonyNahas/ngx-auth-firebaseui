@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Inject, Input, OnInit, Output, PLATFORM_ID, ViewEncapsulation} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {UntypedFormBuilder, UntypedFormGroup, Validators} from '@angular/forms';
 import {AuthProcessService, AuthProvider} from '../../services/auth-process.service';
 import {Subscription} from 'rxjs';
 import {NgxAuthFirebaseuiAnimations} from '../../animations';
@@ -54,7 +54,7 @@ export class NgxAuthFirebaseuiLoginComponent implements OnInit {
 
   @Output() onLoginButtonClicked: EventEmitter<void> = new EventEmitter<void>();
 
-  loginForm: FormGroup;
+  loginForm: UntypedFormGroup;
   authProviders = AuthProvider;
   onErrorSubscription: Subscription;
   authenticationError = false;
@@ -63,7 +63,7 @@ export class NgxAuthFirebaseuiLoginComponent implements OnInit {
     // eslint-disable-next-line @typescript-eslint/ban-types
     @Inject(PLATFORM_ID) private platformId: Object,
     public authProcess: AuthProcessService,
-    private formBuilder: FormBuilder) {
+    private formBuilder: UntypedFormBuilder) {
     this.onSuccess = authProcess.onSuccessEmitter;
     this.onError = authProcess.onErrorEmitter;
   }

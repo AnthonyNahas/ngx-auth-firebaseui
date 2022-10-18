@@ -20,8 +20,8 @@ import {
 import { ActivatedRoute } from "@angular/router";
 import {
   AbstractControl,
-  FormControl,
-  FormGroup,
+  UntypedFormControl,
+  UntypedFormGroup,
   Validators,
 } from "@angular/forms";
 
@@ -165,9 +165,9 @@ export class AuthComponent
   authProvider = AuthProvider;
   passwordResetWished: boolean;
 
-  public signInFormGroup: FormGroup;
-  public signUpFormGroup: FormGroup;
-  public resetPasswordFormGroup: FormGroup;
+  public signInFormGroup: UntypedFormGroup;
+  public signUpFormGroup: UntypedFormGroup;
+  public resetPasswordFormGroup: UntypedFormGroup;
 
   onErrorSubscription: Subscription;
   authenticationError = false;
@@ -379,17 +379,17 @@ export class AuthComponent
   }
 
   private _initSignInFormGroupBuilder() {
-    this.signInFormGroup = new FormGroup({});
+    this.signInFormGroup = new UntypedFormGroup({});
     this.signInFormGroup.registerControl(
       "email",
-      (this.signInEmailFormControl = new FormControl("", [
+      (this.signInEmailFormControl = new UntypedFormControl("", [
         Validators.required,
         Validators.pattern(EMAIL_REGEX),
       ]))
     );
     this.signInFormGroup.registerControl(
       "password",
-      (this.sigInPasswordFormControl = new FormControl("", [
+      (this.sigInPasswordFormControl = new UntypedFormControl("", [
         Validators.required,
         Validators.minLength(this.min),
         Validators.maxLength(this.max),
@@ -398,17 +398,17 @@ export class AuthComponent
   }
 
   private _initSignUpFormGroupBuilder() {
-    this.signUpFormGroup = new FormGroup({
-      name: this.sigUpNameFormControl = new FormControl("", [
+    this.signUpFormGroup = new UntypedFormGroup({
+      name: this.sigUpNameFormControl = new UntypedFormControl("", [
         Validators.required,
         Validators.minLength(this.config.nameMinLength),
         Validators.maxLength(this.config.nameMaxLength),
       ]),
-      email: this.sigUpEmailFormControl = new FormControl("", [
+      email: this.sigUpEmailFormControl = new UntypedFormControl("", [
         Validators.required,
         Validators.pattern(EMAIL_REGEX),
       ]),
-      password: this.sigUpPasswordFormControl = new FormControl("", [
+      password: this.sigUpPasswordFormControl = new UntypedFormControl("", [
         Validators.required,
         Validators.minLength(this.min),
         Validators.maxLength(this.max),
@@ -417,8 +417,8 @@ export class AuthComponent
   }
 
   private _initResetPasswordFormGroupBuilder() {
-    this.resetPasswordFormGroup = new FormGroup({
-      email: this.resetPasswordEmailFormControl = new FormControl("", [
+    this.resetPasswordFormGroup = new UntypedFormGroup({
+      email: this.resetPasswordEmailFormControl = new UntypedFormControl("", [
         Validators.required,
         Validators.pattern(EMAIL_REGEX),
       ]),

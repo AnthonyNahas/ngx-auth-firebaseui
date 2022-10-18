@@ -1,5 +1,5 @@
 import {Component, EventEmitter, forwardRef, Inject, Input, OnDestroy, OnInit, Output, PLATFORM_ID, ViewEncapsulation} from '@angular/core';
-import {AbstractControl, FormBuilder, FormGroup, ValidationErrors, ValidatorFn, Validators} from '@angular/forms';
+import {AbstractControl, UntypedFormBuilder, UntypedFormGroup, ValidationErrors, ValidatorFn, Validators} from '@angular/forms';
 import {Subject, Subscription} from 'rxjs';
 import {takeUntil} from 'rxjs/operators';
 
@@ -86,7 +86,7 @@ export class NgxAuthFirebaseuiRegisterComponent implements OnInit, OnDestroy {
 
   @Output() onCreateAccountButtonClicked: EventEmitter<void> = new EventEmitter();
 
-  registerForm: FormGroup;
+  registerForm: UntypedFormGroup;
   onErrorSubscription: Subscription;
   authenticationError = false;
 
@@ -98,7 +98,7 @@ export class NgxAuthFirebaseuiRegisterComponent implements OnInit, OnDestroy {
     @Inject(PLATFORM_ID) private platformId: Object,
     @Inject(forwardRef(() => NgxAuthFirebaseUIConfigToken))
     public config: NgxAuthFirebaseUIConfig,
-    private formBuilder: FormBuilder,
+    private formBuilder: UntypedFormBuilder,
     public authProcess: AuthProcessService
   ) {
     // Configure the layout

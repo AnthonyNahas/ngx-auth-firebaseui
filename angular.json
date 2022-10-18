@@ -222,9 +222,10 @@
       }
     }
   },
-  "defaultProject": "ngx-auth-firebaseui-demo",
   "cli": {
     "analytics": "af28f968-6e85-4238-baee-375b2abdd684",
-    "defaultCollection": "@angular-eslint/schematics"
+    "schematicCollections": [
+      "@angular-eslint/schematics"
+    ]
   }
 }

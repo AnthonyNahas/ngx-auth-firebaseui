@@ -7,7 +7,7 @@ import {
   Output,
 } from "@angular/core";
 import { AngularFireAuth } from "@angular/fire/compat/auth";
-import { FormControl, FormGroup, Validators } from "@angular/forms";
+import { UntypedFormControl, UntypedFormGroup, Validators } from "@angular/forms";
 import firebase from "firebase/compat/app";
 import { MatFormFieldAppearance } from "@angular/material/form-field";
 import { NgxAuthFirebaseUIConfigToken } from "../../tokens";
@@ -66,10 +66,10 @@ export class UserComponent {
   // eslint-disable-next-line @angular-eslint/no-output-on-prefix
   @Output() onAccountDeleted: EventEmitter<void> = new EventEmitter();
 
-  updateFormGroup: FormGroup;
-  updateNameFormControl: FormControl;
-  updateEmailFormControl: FormControl;
-  updatePhoneNumberFormControl: FormControl;
+  updateFormGroup: UntypedFormGroup;
+  updateNameFormControl: UntypedFormControl;
+  updateEmailFormControl: UntypedFormControl;
+  updatePhoneNumberFormControl: UntypedFormControl;
 
   constructor(
     public auth: AngularFireAuth,
@@ -84,7 +84,7 @@ export class UserComponent {
       this.reset();
       this.editMode = false;
     } else {
-      this.initUpdateFormGroup().subscribe((updateFormGroup: FormGroup) => {
+      this.initUpdateFormGroup().subscribe((updateFormGroup: UntypedFormGroup) => {
         this.updateFormGroup = updateFormGroup;
         this.editMode = true;
       });
@@ -186,12 +186,12 @@ export class UserComponent {
     }
   }
 
-  protected initUpdateFormGroup(): Observable<FormGroup> {
+  protected initUpdateFormGroup(): Observable<UntypedFormGroup> {
     return this.authProcess.user$.pipe(
       take(1),
       map((currentUser: firebase.User) => {
-        const updateFormGroup = new FormGroup({
-          name: this.updateNameFormControl = new FormControl(
+        const updateFormGroup = new UntypedFormGroup({
+          name: this.updateNameFormControl = new UntypedFormControl(
             { value: currentUser.displayName, disabled: this.editMode },
             [
               Validators.required,
@@ -200,12 +200,12 @@ export class UserComponent {
             ]
           ),
 
-          email: this.updateEmailFormControl = new FormControl(
+          email: this.updateEmailFormControl = new UntypedFormControl(
             { value: currentUser.email, disabled: this.editMode },
             [Validators.required, Validators.pattern(EMAIL_REGEX)]
           ),
 
-          phoneNumber: this.updatePhoneNumberFormControl = new FormControl(
+          phoneNumber: this.updatePhoneNumberFormControl = new UntypedFormControl(
             { value: currentUser.phoneNumber, disabled: this.editMode },
             [Validators.pattern(PHONE_NUMBER_REGEX)]
           ),
