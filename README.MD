@@ -169,12 +169,12 @@ by starring :star: and sharing it :loudspeaker:
 - [angular material theme](https://material.angular.io/guide/getting-started#step-4-include-a-theme)
 - [angular material icons](https://material.angular.io/guide/getting-started#step-6-optional-add-material-icons)
 
-- [angular cdk - v13.x](https://www.npmjs.com/package/@angular/cdk)
-- [angular material - v13.x](https://www.npmjs.com/package/@angular/material)
-- [angular forms - v13.x](https://www.npmjs.com/package/@angular/forms)
-- [angular animations - v13.x](https://www.npmjs.com/package/@angular/animations)
-- [angular router - v13.x](https://www.npmjs.com/package/@angular/router)
-- [angular flex-layout v13.0.0-beta.38](https://www.npmjs.com/package/@angular/flex-layout)
+- [angular cdk - v14.x](https://www.npmjs.com/package/@angular/cdk)
+- [angular material - v14.x](https://www.npmjs.com/package/@angular/material)
+- [angular forms - v14.x](https://www.npmjs.com/package/@angular/forms)
+- [angular animations - v14.x](https://www.npmjs.com/package/@angular/animations)
+- [angular router - v14.x](https://www.npmjs.com/package/@angular/router)
+- [angular flex-layout v14.0.0-beta.41](https://www.npmjs.com/package/@angular/flex-layout)
 - [@angular/fire - v7.x](https://www.npmjs.com/package/@angular/fire)
 - [firebase - v9.x](https://www.npmjs.com/package/firebase)
 
@@ -195,8 +195,6 @@ take a look at live example with firestore's synchronization [here](FIRESTORE_SY
 ## Screenshots - Browser <ngx-auth-firebaseui></ngx-auth-firebaseui>
 - sign in
 
-v8
-
 <p align="center">
   <img alt="ngx-auth-firebaseui sign in" width="384px" style="text-align: center;"
   src="assets/v3.0.0/demo.png">
@@ -209,12 +207,6 @@ in combination with `ngx-auth-firebaseui-user`
   src="assets/v3.0.0/demo_full.png">
 </p>
 
-v7
-
-<p align="center">
-  <img alt="ngx-auth-firebaseui sign in" width="384px" style="text-align: center;"
-  src="assets/v1.0.0/png/signin.png">
-</p>
 
 - Sign up - registration
 
@@ -620,6 +612,18 @@ export class AppRoutingModule {
 
 https://www.youtube.com/watch?v=qP5zw7fjQgo&feature=emb_logo&ab_channel=Fireship
 https://www.youtube.com/watch?v=KpfJCEvpS9g&t=2s&ab_channel=JsWiz
+
+---
+
+
+## Who is using ngx-mailto? Awesome apps?
+
+1. [Nahaus.de](https://nahaus.de)
+
+
+Are you missing your project or you app? PR me to publish it on the README
+
+---
 
 # Sponsors
 
