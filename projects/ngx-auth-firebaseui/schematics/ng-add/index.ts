@@ -22,13 +22,13 @@ export function addPackageJsonDependencies(): Rule {
     const ngCoreVersionTag = getPackageVersionFromPackageJson(host, '@angular/core');
 
     const dependencies: NodeDependency[] = [
-      {type: NodeDependencyType.Default, version: loadPackageVersionGracefully() || '4.0.3', name: 'ngx-auth-firebaseui'},
-      {type: NodeDependencyType.Default, version: ngCoreVersionTag || '11.0.0', name: '@angular/animations'},
-      {type: NodeDependencyType.Default, version: ngCoreVersionTag || '11.0.0', name: '@angular/forms'},
-      {type: NodeDependencyType.Default, version: ngCoreVersionTag || '11.0.0', name: '@angular/router'},
-      {type: NodeDependencyType.Default, version: '^11.0.0-beta.33', name: '@angular/flex-layout'},
-      {type: NodeDependencyType.Default, version: '^7.1.1', name: '@angular/fire/compat'},
-      {type: NodeDependencyType.Default, version: '^9.3.0', name: 'firebase'}
+      {type: NodeDependencyType.Default, version: loadPackageVersionGracefully() || '7.1.0', name: 'ngx-auth-firebaseui'},
+      {type: NodeDependencyType.Default, version: ngCoreVersionTag || '14.0.0', name: '@angular/animations'},
+      {type: NodeDependencyType.Default, version: ngCoreVersionTag || '14.0.0', name: '@angular/forms'},
+      {type: NodeDependencyType.Default, version: ngCoreVersionTag || '14.0.0', name: '@angular/router'},
+      {type: NodeDependencyType.Default, version: '^14.0.0-beta.41', name: '@angular/flex-layout'},
+      {type: NodeDependencyType.Default, version: '^7.4.1', name: '@angular/fire/compat'},
+      {type: NodeDependencyType.Default, version: '^9.6.6', name: 'firebase'}
     ];
 
     dependencies.forEach(dependency => {
