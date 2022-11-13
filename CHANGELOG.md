@@ -1,3 +1,16 @@
+
+
+# [7.1.0](https://github.com/anthonynahas/ngx-auth-firebaseui/compare/7.0.0...7.1.0) (2022-11-13)
+
+
+### Bug Fixes
+
+* **project:** minor ([6b5def4](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/6b5def466f95def1c0cb90647e6454703a56605f))
+* **project:** minor in schematics ([4520c8f](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/4520c8fa3c7d4ba8536b9f62a9b4e03ff3b7bc91))
+* **project:** updated the schematics ([3295a71](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/3295a71b4d740d32ddbdf53254ef23b237f8dd3d))
+* **project:** upgraded angular cli and core ([3d2f825](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/3d2f825a3e38158aa36f680d678b531bfd66903b))
+* **project:** upgraded angular material and cdk ([6fbec7b](https://github.com/anthonynahas/ngx-auth-firebaseui/commit/6fbec7b6c9d0a83cb118522b2b1df0895c187504))
+
 * docs(project): updated the readme (4ea3942)
 * docs(project): updated the readme (20e18f8)
 * fix(project): minor (a949169)
@@ -1050,4 +1063,3 @@
 
 
 # 0.1.0 (2017-12-29)
-
