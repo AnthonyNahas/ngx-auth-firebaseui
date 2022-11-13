@@ -2152,14 +2152,14 @@
   "resolved" "https://registry.npmjs.org/@ngtools/webpack/-/webpack-14.2.9.tgz"
   "version" "14.2.9"
 
-"@nguniversal/builders@^14.2.0":
-  "integrity" "sha512-7rElvsL1OdLtYmn1zNwijga21KhDtjkhuM2o2Mwqafiud3a4zfxzmdv/hOAvFapVTlpUYgb+m4pBwq7V4DYiUA=="
-  "resolved" "https://registry.npmjs.org/@nguniversal/builders/-/builders-14.2.0.tgz"
-  "version" "14.2.0"
+"@nguniversal/builders@^14.2.2":
+  "integrity" "sha512-0T4N8N+TNhjzqifqRhtyWJbazeQcXuOZT7hT0p9Wpht9UsWeMScpKZk1+9mFhHo97rZyL65LRq9waO9qJPUIGQ=="
+  "resolved" "https://registry.npmjs.org/@nguniversal/builders/-/builders-14.2.2.tgz"
+  "version" "14.2.2"
   dependencies:
     "@angular-devkit/architect" "^0.1402.0"
     "@angular-devkit/core" "^14.2.0"
-    "@nguniversal/common" "14.2.0"
+    "@nguniversal/common" "14.2.2"
     "browser-sync" "^2.26.7"
     "express" "^4.17.1"
     "guess-parser" "^0.4.12"
@@ -2169,21 +2169,21 @@
     "rxjs" "^6.5.5"
     "tree-kill" "^1.2.2"
 
-"@nguniversal/common@14.2.0":
-  "integrity" "sha512-6dpPSpCo6Kz4OrFa0RRFu8kmR6QDAEhwgTjD2MNU+WVf5ngwBAcakxW5/3bIx6A17et+Zr1/EVyhpyXFYSUjhw=="
-  "resolved" "https://registry.npmjs.org/@nguniversal/common/-/common-14.2.0.tgz"
-  "version" "14.2.0"
+"@nguniversal/common@14.2.2":
+  "integrity" "sha512-Aa2T2dywU6NJKOFcDn4Bfzlqr/fQoGT9LfQukUcSQl+gaOWSuCf56GGW979pEPX410zODJadn3mbs33/Fs/a3A=="
+  "resolved" "https://registry.npmjs.org/@nguniversal/common/-/common-14.2.2.tgz"
+  "version" "14.2.2"
   dependencies:
     "critters" "0.0.16"
     "jsdom" "20.0.0"
     "tslib" "^2.3.0"
 
-"@nguniversal/express-engine@^14.2.0":
-  "integrity" "sha512-t6JlyjXuC4CAD2YIcO7uTiEQ88qgRauWivrpy0YqH37M3jw7OE10NmSxTxsorN8b+A6xcHEJ7mXFVHD03gxbeQ=="
-  "resolved" "https://registry.npmjs.org/@nguniversal/express-engine/-/express-engine-14.2.0.tgz"
-  "version" "14.2.0"
+"@nguniversal/express-engine@^14.2.2":
+  "integrity" "sha512-bn+tHctxsJeOdetWth7fNnfOVfOKoXdsFbnXYVX+a41JMpI15kiX09yHPQVG2ZyoHAnY10JJPQJfPMP3M2g6ug=="
+  "resolved" "https://registry.npmjs.org/@nguniversal/express-engine/-/express-engine-14.2.2.tgz"
+  "version" "14.2.2"
   dependencies:
-    "@nguniversal/common" "14.2.0"
+    "@nguniversal/common" "14.2.2"
     "tslib" "^2.3.0"
 
 "@ngx-translate/core@^12.1.1", "@ngx-translate/core@>=11.0.0":
@@ -14755,9 +14755,9 @@
   "version" "8.11.0"
 
 "ws@^8.8.0":
-  "integrity" "sha512-Ja7nszREasGaYUYCI2k4lCKIRTt+y7XuqVoHR44YpI49TtryyqbqvDMn5eqfW7e6HzTukDRIsXqzVHScqRcafg=="
-  "resolved" "https://registry.npmjs.org/ws/-/ws-8.9.0.tgz"
-  "version" "8.9.0"
+  "integrity" "sha512-HPG3wQd9sNQoT9xHyNCXoDUa+Xw/VevmY9FoHyQ+g+rrMn4j6FB4np7Z0OhdTgjx6MgQLK7jwSy1YecU1+4Asg=="
+  "resolved" "https://registry.npmjs.org/ws/-/ws-8.11.0.tgz"
+  "version" "8.11.0"
 
 "ws@~7.4.2":
   "integrity" "sha512-YmhHDO4MzaDLB+M9ym/mDA5z0naX8j7SIlT8f8z+I0VtzsRbekxEutHSme7NPS2qE8StCYQNUnfWdXta/Yu85A=="

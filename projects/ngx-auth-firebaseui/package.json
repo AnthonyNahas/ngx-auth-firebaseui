@@ -44,7 +44,7 @@
     "release:patch": "../../node_modules/.bin/release-it --patch --ci",
     "release:minor": "../../node_modules/.bin/release-it --minor --ci",
     "release:major": "../../node_modules/.bin/release-it --major --ci",
-    "release:custom": "../../node_modules/.bin/release-it 7.0.0 --ci --no-git.requireCleanWorkingDir",
+    "release:custom": "release-it 7.1.0 --ci --no-git.requireCleanWorkingDir",
     "ng:test": "../../node_modules/.bin/ng test ngx-auth-firebaseui",
     "test": "../../node_modules/.bin/jest --coverage",
     "test:watch": "../../node_modules/.bin/jest --coverage --watch"
@@ -56,7 +56,7 @@
     "@angular/animations": "^14.x",
     "@angular/cdk": "^14.0.0",
     "@angular/fire": "^7.x",
-    "@angular/flex-layout": "^14.x",
+    "@angular/flex-layout": "^14.0.0-beta.41",
     "@angular/forms": "^14.x",
     "@angular/material": "^14.0.0",
     "@angular/router": "^14.x",

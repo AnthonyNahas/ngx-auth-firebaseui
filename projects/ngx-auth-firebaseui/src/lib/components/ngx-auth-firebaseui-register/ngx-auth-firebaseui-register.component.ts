@@ -72,7 +72,7 @@ export class NgxAuthFirebaseuiRegisterComponent implements OnInit, OnDestroy {
   @Input() passwordErrorRequiredText = 'Password is required';
   @Input() passwordConfirmationText = 'Password Confirmation';
   @Input() passwordConfirmationErrorRequiredText = 'Password confirmation is required';
-  @Input() passwordErrorMatchText = 'Password must match'; 
+  @Input() passwordErrorMatchText = 'Password must match';
   @Input() passwordErrorMinLengthText = "The password is too short!";
   @Input() passwordErrorMaxLengthText = "The password is too long!";
 
@@ -125,7 +125,7 @@ export class NgxAuthFirebaseuiRegisterComponent implements OnInit, OnDestroy {
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required,
-                     Validators.minLength(this.config.passwordMinLength), 
+                     Validators.minLength(this.config.passwordMinLength),
                      Validators.maxLength(this.config.passwordMaxLength)]],
       passwordConfirm: ['', [Validators.required, confirmPasswordValidator]],
       tos: [''],
@@ -157,7 +157,7 @@ export class NgxAuthFirebaseuiRegisterComponent implements OnInit, OnDestroy {
    */
   ngOnDestroy(): void {
     // Unsubscribe from all subscriptions
-    this.unsubscribeAll.next();
+    this.unsubscribeAll.next(null);
     this.unsubscribeAll.complete();
   }
 
