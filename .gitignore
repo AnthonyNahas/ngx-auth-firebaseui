@@ -6,6 +6,7 @@
 
 # dependencies
 /node_modules
+/projects/ngx-auth-firebaseui/node_modules
 
 # IDEs and editors
 /.idea
