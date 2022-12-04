@@ -2,7 +2,7 @@ import {Component, Input, Output} from '@angular/core';
 import {AuthProcessService, AuthProvider} from '../../services/auth-process.service';
 import {NgxAuthFirebaseuiAnimations} from '../../animations';
 import {Layout, LegalityDialogParams, LegalityDialogResult, Theme} from '../../interfaces';
-import {MatLegacyDialog as MatDialog, MatLegacyDialogRef as MatDialogRef} from '@angular/material/legacy-dialog';
+import {MatDialog,MatDialogRef} from '@angular/material/dialog';
 import {LegalityDialogComponent} from '../legality-dialog/legality-dialog.component';
 
 @Component({

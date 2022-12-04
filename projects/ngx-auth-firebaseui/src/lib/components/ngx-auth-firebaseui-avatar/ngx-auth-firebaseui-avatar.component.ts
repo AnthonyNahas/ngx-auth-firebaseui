@@ -3,7 +3,7 @@ import { AngularFireAuth } from "@angular/fire/compat/auth";
 import firebase from "firebase/compat/app";
 import { Observable } from "rxjs";
 import { take } from 'rxjs/operators';
-import { MatLegacyDialog as MatDialog } from "@angular/material/legacy-dialog";
+import { MatDialog } from "@angular/material/dialog";
 import { UserComponent } from "..";
 import { AuthProcessService } from "../../services/auth-process.service";
 

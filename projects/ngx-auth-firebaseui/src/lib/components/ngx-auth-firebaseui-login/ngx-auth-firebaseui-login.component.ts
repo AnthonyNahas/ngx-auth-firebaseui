@@ -4,7 +4,7 @@ import {AuthProcessService, AuthProvider} from '../../services/auth-process.serv
 import {Subscription} from 'rxjs';
 import {NgxAuthFirebaseuiAnimations} from '../../animations';
 import {isPlatformBrowser} from '@angular/common';
-import {MatLegacyFormFieldAppearance as MatFormFieldAppearance} from '@angular/material/legacy-form-field';
+import {MatFormFieldAppearance} from '@angular/material/form-field';
 import {ThemePalette} from '@angular/material/core';
 
 @Component({

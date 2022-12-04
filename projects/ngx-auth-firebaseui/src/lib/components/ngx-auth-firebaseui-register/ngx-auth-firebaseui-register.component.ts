@@ -6,7 +6,7 @@ import {takeUntil} from 'rxjs/operators';
 import {NgxAuthFirebaseuiAnimations} from '../../animations';
 import {AuthProcessService} from '../../services/auth-process.service';
 import {isPlatformBrowser} from '@angular/common';
-import {MatLegacyFormFieldAppearance as MatFormFieldAppearance} from '@angular/material/legacy-form-field';
+import {MatFormFieldAppearance} from '@angular/material/form-field';
 import {ThemePalette} from '@angular/material/core';
 import { NgxAuthFirebaseUIConfigToken } from '../../tokens';
 import { NgxAuthFirebaseUIConfig } from '../../interfaces';
