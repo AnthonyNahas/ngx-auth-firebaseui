@@ -31,7 +31,7 @@
   },
   "private": true,
   "dependencies": {
-    "@angular-eslint/schematics": "^14.1.2",
+    "@angular-eslint/schematics": "^15.1.0",
     "@angular-material-extensions/pages": "^4.0.0",
     "@angular-material-extensions/password-strength": "^9.0.0",
     "@angular/animations": "^15.0.2",
