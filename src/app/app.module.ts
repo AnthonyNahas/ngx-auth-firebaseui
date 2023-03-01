@@ -15,7 +15,7 @@ import {FormsModule} from '@angular/forms';
 import {MarkdownModule} from 'ngx-markdown';
 import {FlipComponent, FlipSection} from './flip/flip.component';
 import {MatButtonModule} from '@angular/material/button';
-import {MatLegacyTabsModule as MatTabsModule} from '@angular/material/tabs';
+import {MatLegacyTabsModule as MatTabsModule} from '@angular/material/legacy-tabs';
 import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {NgxAuthFirebaseUIModule} from 'projects/ngx-auth-firebaseui/src/public-api';
