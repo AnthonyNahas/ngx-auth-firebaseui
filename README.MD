@@ -25,7 +25,7 @@
 
 Angular UI component for [firebase](https://firebase.google.com/docs/auth/web/firebaseui) authentication.
 This library is an angular module (including angular components and services) that allows to authenticate
-your users with your firebase project. NgxAuthFirebseUI is compatible with
+your users with your firebase project. NgxAuthFirebaseUI is compatible with
 [angular material](https://material.angular.io/) and [angular flexLayout](https://github.com/angular/flex-layout).
 
 
