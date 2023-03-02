@@ -26,10 +26,10 @@ import {
 } from "@angular/forms";
 
 // ANGULAR MATERIAL
-import { MatLegacyTabChangeEvent as MatTabChangeEvent, MatLegacyTabGroup as MatTabGroup } from "@angular/material/tabs";
+import { MatLegacyTabChangeEvent as MatTabChangeEvent, MatLegacyTabGroup as MatTabGroup } from "@angular/material/legacy-tabs";
 import { ThemePalette } from "@angular/material/core";
-import { MatLegacyDialog as MatDialog, MatLegacyDialogRef as MatDialogRef } from "@angular/material/dialog";
-import { MatLegacyFormFieldAppearance as MatFormFieldAppearance } from "@angular/material/form-field";
+import { MatLegacyDialog as MatDialog, MatLegacyDialogRef as MatDialogRef } from "@angular/material/legacy-dialog";
+import { MatLegacyFormFieldAppearance as MatFormFieldAppearance } from "@angular/material/legacy-form-field";
 
 // ANGULAR FIRE
 import { AngularFireAuth } from "@angular/fire/compat/auth";
