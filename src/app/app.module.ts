@@ -7,7 +7,6 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import {MatCardModule} from '@angular/material/card';
 import {Angulartics2Module} from 'angulartics2';
-import {AngularFireModule} from '@angular/fire/compat';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
@@ -20,6 +19,7 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {NgxAuthFirebaseUIModule} from 'projects/ngx-auth-firebaseui/src/public-api';
 import {environment} from '../environments/environment';
+import {initializeApp, provideFirebaseApp} from '@angular/fire/app';
 
 
 export const firebaseKey = environment.config;
@@ -51,7 +51,7 @@ export function createTranslateLoader(http: HttpClient) {
     AppRoutingModule,
     BrowserAnimationsModule,
     Angulartics2Module.forRoot(),
-    AngularFireModule.initializeApp(firebaseKey),
+    provideFirebaseApp(() => initializeApp(firebaseKey)),
     NgxAuthFirebaseUIModule.forRoot(firebaseKey, firebaseAppNameFactory,
       {
         enableFirestoreSync: true,

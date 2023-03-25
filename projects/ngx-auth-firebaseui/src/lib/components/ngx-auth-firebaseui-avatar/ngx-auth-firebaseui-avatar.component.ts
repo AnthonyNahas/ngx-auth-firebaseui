@@ -1,11 +1,10 @@
 import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
-import { AngularFireAuth } from "@angular/fire/compat/auth";
-import firebase from "firebase/compat/app";
 import { Observable } from "rxjs";
 import { take } from 'rxjs/operators';
 import { MatDialog } from "@angular/material/dialog";
 import { UserComponent } from "..";
 import { AuthProcessService } from "../../services/auth-process.service";
+import { Auth, user, User } from "@angular/fire/auth";
 
 export interface LinkMenuItem {
   text: string;
@@ -48,15 +47,15 @@ export class NgxAuthFirebaseuiAvatarComponent implements OnInit {
   @Output()
   onSignOut: EventEmitter<void> = new EventEmitter();
 
-  user: firebase.User;
-  user$: Observable<firebase.User | null>;
+  user: User;
+  user$: Observable<User | null>;
   displayNameInitials: string | null;
 
-  constructor(public afa: AngularFireAuth, public dialog: MatDialog, private authProcess: AuthProcessService) {}
+  constructor(public afa: Auth, public dialog: MatDialog, private authProcess: AuthProcessService) {}
 
   ngOnInit() {
-    this.user$ = this.afa.user;
-    this.user$.subscribe((user: firebase.User) => {
+    this.user$ = user(this.afa);
+    this.user$.subscribe((user: User) => {
       this.user = user;
       this.displayNameInitials = user
         ? this.getDisplayNameInitials(user.displayName)
@@ -68,7 +67,7 @@ export class NgxAuthFirebaseuiAvatarComponent implements OnInit {
     if (!displayName) {
       return null;
     }
-    const initialsRegExp: RegExpMatchArray = displayName.match(/\b\w/g) || [];
+    const initialsRegExp: RegExpMatchArray = (displayName.match(/\b\w/g) || []) as RegExpMatchArray;
     const initials = (
       (initialsRegExp.shift() || "") + (initialsRegExp.pop() || "")
     ).toUpperCase();

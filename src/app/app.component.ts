@@ -2,12 +2,12 @@ import { Component, OnDestroy } from "@angular/core";
 import { Subscription } from "rxjs";
 import { MatLegacySnackBar as MatSnackBar } from "@angular/material/legacy-snack-bar";
 import { Router } from "@angular/router";
-import { AngularFireAuth } from "@angular/fire/compat/auth";
 import { MatLegacyTabChangeEvent as MatTabChangeEvent } from "@angular/material/legacy-tabs";
 import {
   AuthProvider,
   Theme,
 } from "projects/ngx-auth-firebaseui/src/public-api";
+import { Auth } from "@angular/fire/auth";
 
 @Component({
   selector: "app-root",
@@ -35,7 +35,7 @@ export class AppComponent implements OnDestroy {
   themes = Theme;
 
   constructor(
-    public auth: AngularFireAuth,
+    public auth: Auth,
     public router: Router,
     public snackbar: MatSnackBar
   ) {}

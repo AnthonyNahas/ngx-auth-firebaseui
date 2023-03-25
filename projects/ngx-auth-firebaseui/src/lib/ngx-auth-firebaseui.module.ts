@@ -8,8 +8,8 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 // @angular/fire
 import {FIREBASE_APP_NAME, FIREBASE_OPTIONS} from '@angular/fire/compat';
 import {FirebaseOptions} from '@firebase/app-types';
-import {AngularFireAuthModule} from '@angular/fire/compat/auth';
-import {AngularFirestoreModule} from '@angular/fire/compat/firestore';
+import {getAuth, provideAuth} from '@angular/fire/auth';
+import {getFirestore, provideFirestore} from '@angular/fire/firestore';
 // @angular/material
 import {MatButtonModule} from '@angular/material/button';
 import {MatCardModule} from '@angular/material/card';
@@ -101,8 +101,8 @@ export {FirestoreSyncService} from './services/firestore-sync.service';
     // ANGULAR MATERIAL EXTENSIONS
     MatPasswordStrengthModule,
     // ANGULARFIRE2
-    AngularFireAuthModule,
-    AngularFirestoreModule,
+    provideAuth(()=> getAuth()),
+    provideFirestore(()=> getFirestore()),
   ],
   exports: [
     AuthComponent,
@@ -111,8 +111,6 @@ export {FirestoreSyncService} from './services/firestore-sync.service';
     AuthProvidersComponent,
     EmailConfirmationComponent,
     // LoggedInGuard,
-    AngularFireAuthModule,
-    AngularFirestoreModule,
     NgxAuthFirebaseuiLoginComponent,
     NgxAuthFirebaseuiRegisterComponent
   ],
