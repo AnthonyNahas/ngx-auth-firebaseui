@@ -1,5 +1,5 @@
 import {Inject, Injectable} from '@angular/core';
-import {ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot} from '@angular/router';
+import { ActivatedRouteSnapshot, Router, RouterStateSnapshot } from '@angular/router';
 import {Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
 import {NgxAuthFirebaseUIConfig} from '../interfaces';
@@ -9,7 +9,7 @@ import {AuthProcessService} from '../services/auth-process.service';
 @Injectable({
   providedIn: 'root'
 })
-export class LoggedInGuard implements CanActivate {
+export class LoggedInGuard  {
   constructor(
     @Inject(NgxAuthFirebaseUIConfigToken)
     private config: NgxAuthFirebaseUIConfig,
