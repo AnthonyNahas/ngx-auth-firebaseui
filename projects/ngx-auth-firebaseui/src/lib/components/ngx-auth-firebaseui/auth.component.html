@@ -6,7 +6,7 @@
     - config.enableEmailVerification is undefined, null or true
   -->
   <div
-    *ngIf="(config.enableEmailVerification !== false) && (
+    *ngIf="(config.enableEmailVerification !== false) && !user.isAnonymous (
      (config.guardProtectedRoutesUntilEmailIsVerified && !user.emailVerified) || (authProcess.emailConfirmationSent && !user.emailVerified)
      ); else signedInUser"
     fxLayout="row" fxLayoutAlign="center center">
