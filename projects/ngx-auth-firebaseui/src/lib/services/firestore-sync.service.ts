@@ -1,9 +1,6 @@
 import { Injectable } from "@angular/core";
-import {
-  AngularFirestore,
-  AngularFirestoreDocument,
-} from "@angular/fire/compat/firestore";
-import firebase from "firebase/compat/app";
+import { UserInfo } from "@angular/fire/auth";
+import { deleteDoc, doc, DocumentReference, Firestore, setDoc } from "@angular/fire/firestore";
 
 export const collections = {
   users: "users",
@@ -13,33 +10,33 @@ export const collections = {
   providedIn: "root",
 })
 export class FirestoreSyncService {
-  constructor(public afs: AngularFirestore) {
+  constructor(public afs: Firestore) {
     // this.afs.firestore.settings({timestampsInSnapshots: true});
   }
 
   // get timestamp() {
-  //     return firebase.firestore.FieldValue.serverTimestamp();
+  //     return firestore.FieldValue.serverTimestamp();
   // }
 
   public getUserDocRefByUID(
     uid: string
-  ): AngularFirestoreDocument<firebase.UserInfo> {
-    return this.afs.doc(`${collections.users}/${uid}`);
+  ): DocumentReference<UserInfo> {
+    return doc(this.afs, `${collections.users}/${uid}`) as DocumentReference<UserInfo>;
   }
 
   public deleteUserData(uid: string): Promise<any> {
-    const userRef: AngularFirestoreDocument<firebase.UserInfo> = this.getUserDocRefByUID(
+    const userRef: DocumentReference<UserInfo> = this.getUserDocRefByUID(
       uid
     );
-    return userRef.delete();
+    return deleteDoc(userRef);
   }
 
-  public updateUserData(user: firebase.UserInfo): Promise<any> {
+  public updateUserData(user: UserInfo): Promise<any> {
     // Sets user$ data to firestore on login
-    const userRef: AngularFirestoreDocument<firebase.UserInfo> = this.getUserDocRefByUID(
+    const userRef: DocumentReference<UserInfo> = this.getUserDocRefByUID(
       user.uid
     );
-    const data: firebase.UserInfo = {
+    const data: UserInfo = {
       uid: user.uid,
       email: user.email,
       displayName: user.displayName,
@@ -47,6 +44,6 @@ export class FirestoreSyncService {
       phoneNumber: user.phoneNumber,
       providerId: user.providerId,
     };
-    return userRef.set(data, { merge: true });
+    return setDoc(userRef, data, { merge: true });
   }
 }

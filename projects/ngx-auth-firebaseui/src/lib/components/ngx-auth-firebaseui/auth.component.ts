@@ -32,7 +32,7 @@ import { MatLegacyDialog as MatDialog, MatLegacyDialogRef as MatDialogRef } from
 import { MatLegacyFormFieldAppearance as MatFormFieldAppearance } from "@angular/material/legacy-form-field";
 
 // ANGULAR FIRE
-import { AngularFireAuth } from "@angular/fire/compat/auth";
+import { Auth } from "@angular/fire/auth";
 
 // Third PARTY
 import { MatPasswordStrengthComponent } from "@angular-material-extensions/password-strength";
@@ -191,7 +191,7 @@ export class AuthComponent
     @Inject(PLATFORM_ID) private platformId: Object,
     @Inject(forwardRef(() => NgxAuthFirebaseUIConfigToken))
     public config: NgxAuthFirebaseUIConfig,
-    public auth: AngularFireAuth,
+    public auth: Auth,
     public authProcess: AuthProcessService,
     public dialog: MatDialog,
     private activatedRoute: ActivatedRoute,

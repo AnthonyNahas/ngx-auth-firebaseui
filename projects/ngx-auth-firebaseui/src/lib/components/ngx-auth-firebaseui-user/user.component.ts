@@ -6,9 +6,8 @@ import {
   Input,
   Output,
 } from "@angular/core";
-import { AngularFireAuth } from "@angular/fire/compat/auth";
+import { Auth, updateEmail, updatePhoneNumber, updateProfile, User } from "@angular/fire/auth";
 import { UntypedFormControl, UntypedFormGroup, Validators } from "@angular/forms";
-import firebase from "firebase/compat/app";
 import {  MatFormFieldAppearance } from "@angular/material/form-field";
 import { NgxAuthFirebaseUIConfigToken } from "../../tokens";
 import {EMAIL_REGEX, NgxAuthFirebaseUIConfig, PHONE_NUMBER_REGEX} from '../../interfaces';
@@ -72,7 +71,7 @@ export class UserComponent {
   updatePhoneNumberFormControl: UntypedFormControl;
 
   constructor(
-    public auth: AngularFireAuth,
+    public auth: Auth,
     public authProcess: AuthProcessService,
     private fireStoreService: FirestoreSyncService,
     @Inject(forwardRef(() => NgxAuthFirebaseUIConfigToken))
@@ -109,19 +108,19 @@ export class UserComponent {
 
       try {
         if (this.updateNameFormControl.dirty) {
-          await user.updateProfile({
+          await updateProfile(user, {
             displayName: this.updateNameFormControl.value,
           });
           snackBarMsg.push(`your name has been updated to ${user.displayName}`);
         }
 
         if (this.updateEmailFormControl.dirty) {
-          await user.updateEmail(this.updateEmailFormControl.value);
+          await updateEmail(user, this.updateEmailFormControl.value);
           snackBarMsg.push(`your email has been updated to ${user.email}`);
         }
 
         if (this.updatePhoneNumberFormControl.dirty) {
-          await user.updatePhoneNumber(this.updatePhoneNumberFormControl.value);
+          await updatePhoneNumber(user, this.updatePhoneNumberFormControl.value);
           console.log(
             "phone number = ",
             this.updatePhoneNumberFormControl.value
@@ -189,7 +188,7 @@ export class UserComponent {
   protected initUpdateFormGroup(): Observable<UntypedFormGroup> {
     return this.authProcess.user$.pipe(
       take(1),
-      map((currentUser: firebase.User) => {
+      map((currentUser: User) => {
         const updateFormGroup = new UntypedFormGroup({
           name: this.updateNameFormControl = new UntypedFormControl(
             { value: currentUser.displayName, disabled: this.editMode },
